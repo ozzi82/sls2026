@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   Lock,
+  Phone,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
@@ -34,8 +35,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* HERO — Full image, text block bottom-right */}
-      <section className="relative h-[calc(100vh-80px)] min-h-[550px] overflow-hidden">
+      {/* HERO — Full image background, compact text block on left */}
+      <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -43,29 +44,32 @@ export default function Home() {
             alt="Illuminated channel letters manufactured by Sunlite Signs"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
         </div>
 
-        {/* Navigation arrows (decorative) */}
-        <button className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center text-white/40 hover:text-white transition-colors" aria-label="Previous">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" /></svg>
-        </button>
-        <button className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center text-white/40 hover:text-white transition-colors" aria-label="Next">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" /></svg>
-        </button>
-
-        {/* Text block — bottom right */}
-        <HeroContent className="absolute bottom-0 right-0 z-10 bg-primary-dark/85 backdrop-blur-sm px-8 sm:px-12 lg:px-16 py-8 sm:py-10 max-w-xl lg:max-w-2xl">
-          <p className="text-white/60 font-heading text-sm sm:text-base tracking-wide mb-2">
-            German-Engineered &middot; Only For The Trade
-          </p>
-          <div className="flex items-start gap-3">
-            <div className="w-1 h-12 sm:h-14 bg-brand-gold mt-1 shrink-0" />
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.1] uppercase">
+        <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-40 pb-32 lg:pt-52 lg:pb-40 flex items-center min-h-screen">
+          <HeroContent className="max-w-lg">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.1] mb-3">
               Wholesale Channel Letters
+              <br />
+              <span className="text-brand-gold">&amp; Illuminated Signs</span>
             </h1>
-          </div>
-        </HeroContent>
+
+            <p className="text-sm text-white/60 mb-5 max-w-sm">
+              German-engineered. UL listed. Built for sign shops.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="/get-a-quote" className="btn-primary text-sm px-7 py-3">
+                Get Your Product Started
+              </Link>
+              <a href="tel:+6892940912" className="btn-secondary text-sm px-6 py-3 gap-2 border-white/30 hover:border-brand-gold">
+                <Phone className="w-4 h-4" />
+                (689) 294-0912
+              </a>
+            </div>
+          </HeroContent>
+        </div>
       </section>
 
       {/* CUSTOM EUROPEAN SIGNAGE WHOLESALE — Tagline + Our Story teaser */}
