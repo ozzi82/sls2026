@@ -111,7 +111,7 @@ const specs = [
   { label: "Wind Load", value: "Engineered for project-specific requirements" },
   { label: "Certifications", value: "UL Listed (illuminated models)" },
   { label: "Warranty", value: "5-year LED, 3-year construction" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [

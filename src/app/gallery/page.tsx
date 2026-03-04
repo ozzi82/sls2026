@@ -8,7 +8,7 @@ import GalleryFilter from "./GalleryFilter";
 export const metadata: Metadata = {
   title: "Wholesale Sign Gallery — Trade Partner Installations | Sunlite Signs",
   description:
-    "Browse completed wholesale sign projects manufactured by Sunlite Signs and installed by our trade partners. Channel letters, halo lit signs, EdgeLuxe trimless, blade signs — available exclusively to sign shops at trade pricing.",
+    "Browse completed wholesale sign projects manufactured by Sunlite Signs and installed by our trade partners. Channel letters, halo lit signs, trimless, blade signs — available exclusively to sign shops at trade pricing.",
   openGraph: {
     title: "Wholesale Sign Gallery — Trade Partner Installations",
     description:

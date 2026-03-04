@@ -252,17 +252,17 @@ export default function GermanEngineeringPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
-                EdgeLuxe: Engineering in Action
+                Trimless: Engineering in Action
               </h2>
               <p className="text-text-light/60 leading-relaxed mb-6">
-                Our EdgeLuxe trimless channel letter line is the clearest
+                Our trimless channel letter line is the clearest
                 expression of German engineering applied to modern signage.
                 No visible trim cap. Clean, seamless edges. A premium
                 architectural finish — available exclusively through our
                 wholesale trade partners.
               </p>
               <p className="text-text-light/60 leading-relaxed mb-8">
-                EdgeLuxe exists because of our engineering heritage. The
+                Trimless exists because of our engineering heritage. The
                 tolerances required for a trimless letter leave no room for
                 approximation. Your clients get a product no competitor can
                 replicate. Your margins reflect the premium.
@@ -281,7 +281,7 @@ export default function GermanEngineeringPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <PlaceholderImage
-                label="EdgeLuxe trimless channel letter close-up detail"
+                label="Trimless channel letter close-up detail"
                 className="rounded-xl"
                 aspectRatio="aspect-square"
               />

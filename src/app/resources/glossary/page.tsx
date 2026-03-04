@@ -68,9 +68,9 @@ const glossaryTerms: GlossaryTerm[] = [
       "Any letter or graphic that has three-dimensional depth. This includes channel letters, flat cut letters, cast letters, and formed plastic letters. Dimensional letters add visual depth and a premium appearance compared to flat vinyl graphics.",
   },
   {
-    term: "EdgeLuxe",
+    term: "Trimless Channel Letter",
     definition:
-      "Sunlite Signs' proprietary trimless channel letter system. EdgeLuxe letters eliminate the traditional trim cap, creating a seamless, modern junction between the acrylic face and aluminum return. Engineered using German precision manufacturing techniques for a premium aesthetic.",
+      "A channel letter construction method that eliminates the traditional trim cap, creating a seamless, modern junction between the acrylic face and aluminum return. Sunlite Signs' trimless system is engineered using German precision manufacturing techniques for a premium aesthetic.",
   },
   {
     term: "Face",
@@ -85,7 +85,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Front-Lit",
     definition:
-      "An illumination style where LED light passes forward through a translucent acrylic face, making the letter glow from the front. Also called face-lit. Front-lit channel letters provide the highest visibility and readability, especially from a distance.",
+      "An illumination style where LED light passes forward through a translucent acrylic face, making the letter glow from the front. Also called face-lit. Face-lit channel letters provide the highest visibility and readability, especially from a distance.",
   },
   {
     term: "Halo-Lit",
@@ -155,7 +155,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Trim Cap",
     definition:
-      "A plastic retainer strip (typically PVC or polycarbonate) that snaps around the perimeter of a channel letter face, securing the acrylic panel to the aluminum return. Available in various colors, trim cap has been the industry standard for decades. See also: EdgeLuxe (trimless alternative).",
+      "A plastic retainer strip (typically PVC or polycarbonate) that snaps around the perimeter of a channel letter face, securing the acrylic panel to the aluminum return. Available in various colors, trim cap has been the industry standard for decades. See also: Trimless Channel Letter (trimless alternative).",
   },
   {
     term: "UL Listed",

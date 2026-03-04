@@ -8,11 +8,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Wholesale Channel Letters — Trade Pricing for Sign Shops | Sunlite Signs",
   description:
-    "Wholesale channel letters for sign shops only. Front lit, halo lit, trimless EdgeLuxe, and non-illuminated. Trade pricing, UL listed, German-engineered. We never sell retail.",
+    "Wholesale channel letters for sign shops only. Face lit, halo lit, trimless, and non-illuminated. Trade pricing, UL listed, German-engineered. We never sell retail.",
   keywords: [
     "wholesale channel letters",
     "channel letters manufacturer",
-    "front lit channel letters",
+    "face lit channel letters",
     "halo lit channel letters",
     "trimless channel letters wholesale",
     "LED channel letters",
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 
 const channelLetterTypes = [
   {
-    name: "Front Lit Channel Letters",
+    name: "Face Lit Channel Letters",
     slug: "front-lit",
     description:
       "The industry standard for illuminated signage. LEDs face forward through a translucent acrylic face for maximum readability day and night. Available exclusively to trade accounts at wholesale pricing.",
-    image: "Front lit channel letters — illuminated face, night view",
+    image: "Face lit channel letters — illuminated face, night view",
     highlights: ["Maximum face illumination", "Best daytime readability", "Broadest color range"],
   },
   {
@@ -49,11 +49,11 @@ const channelLetterTypes = [
     highlights: ["Dual illumination effect", "Maximum nighttime impact", "Versatile applications"],
   },
   {
-    name: "EdgeLuxe Trimless Channel Letters",
+    name: "Trimless Channel Letters",
     slug: "trimless",
     description:
       "Our flagship innovation. No visible trim cap, seamless aluminum returns, and a modern architectural aesthetic that is redefining the industry. Available exclusively at wholesale trade pricing.",
-    image: "EdgeLuxe trimless channel letters — seamless modern design",
+    image: "Trimless channel letters — seamless modern design",
     highlights: ["No visible trim cap", "Seamless construction", "Modern architectural aesthetic"],
     featured: true,
   },
@@ -94,7 +94,7 @@ export default function ChannelLettersPage() {
     "@type": "ItemList",
     name: "Wholesale Channel Letters by Sunlite Signs",
     description:
-      "Complete range of wholesale channel letters for trade accounts including front lit, halo lit, trimless, and non-illuminated options. Sign shops only.",
+      "Complete range of wholesale channel letters for trade accounts including face lit, halo lit, trimless, and non-illuminated options. Sign shops only.",
     itemListElement: channelLetterTypes.map((type, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -134,13 +134,13 @@ export default function ChannelLettersPage() {
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
                 <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
-                  From classic front lit to our proprietary EdgeLuxe trimless
+                  From classic face lit to our proprietary trimless
                   line, Sunlite manufactures the full spectrum of channel letter
                   styles. Wholesale direct to sign shops — we never sell retail.
                 </p>
                 <p className="text-text-light/50 mb-8">
                   Every set is German-engineered, UL listed, and
-                  delivered within 4 weeks. Trade pricing with no retail markup. Your clients stay yours.
+                  delivered within 3 weeks door to door. Trade pricing with no retail markup. Your clients stay yours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/get-a-quote" className="btn-primary">
@@ -151,7 +151,7 @@ export default function ChannelLettersPage() {
                     href="/products/channel-letters/trimless"
                     className="btn-secondary"
                   >
-                    Explore EdgeLuxe
+                    Explore Trimless
                   </Link>
                 </div>
               </div>

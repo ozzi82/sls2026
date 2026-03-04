@@ -47,7 +47,7 @@ const guides = [
   {
     title: "Choosing the Right Illumination Type",
     description:
-      "A detailed comparison of front-lit, halo-lit, front-and-halo, and non-illuminated channel letters for trade buyers. Learn when to specify each type based on visibility, brand, and budget.",
+      "A detailed comparison of face-lit, halo-lit, front-and-halo, and non-illuminated channel letters for trade buyers. Learn when to specify each type based on visibility, brand, and budget.",
     href: "/resources/guides/choosing-illumination-types",
     icon: Lightbulb,
     image: "Guide cover — four illumination types shown at night",

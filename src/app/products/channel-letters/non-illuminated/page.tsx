@@ -77,7 +77,7 @@ const specs = [
   { label: "Face Material", value: '0.063" aluminum or 3/16" acrylic (colored)' },
   { label: "Back Material", value: "0.040\" aluminum (closed back) or open" },
   { label: "Return Depth", value: '1" to 6" (custom depths available)' },
-  { label: "Trim Cap", value: "Standard aluminum or EdgeLuxe trimless" },
+  { label: "Trim Cap", value: "Standard aluminum or trimless" },
   { label: "Finish Options", value: "Pantone paint, brushed, anodized, specialty" },
   { label: "Mounting", value: "Stud, flush, or raceway" },
   { label: "Weight", value: "Significantly lighter than illuminated equivalent" },
@@ -163,7 +163,7 @@ export default function NonIlluminatedPage() {
                 </p>
                 <p className="text-text-light/50 mb-8">
                   Ideal for code-restricted areas, interior signage, and
-                  budget-conscious projects. Available with EdgeLuxe trimless
+                  budget-conscious projects. Available with trimless
                   construction. Wholesale direct to sign shops — we never sell retail.
                 </p>
                 <Link href="/get-a-quote" className="btn-primary">

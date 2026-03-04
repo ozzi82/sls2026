@@ -13,7 +13,7 @@ const differentiators = [
   { icon: Lock, text: "Wholesale only — no retail sales" },
   { icon: Clock, text: "Trade quotes within 48 hours" },
   { icon: Shield, text: "Every sign UL listed" },
-  { icon: Truck, text: "4-week delivery, crated & shipped" },
+  { icon: Truck, text: "3-week door-to-door delivery, crated & shipped" },
   { icon: Award, text: "German-engineered with LKF" },
 ];
 
@@ -81,11 +81,11 @@ export default function GetAQuotePage() {
                         (123) 456-7890
                       </a>
                       <a
-                        href="mailto:info@sunlitesigns.com"
+                        href="mailto:hello@sunlitesigns.com"
                         className="flex items-center gap-3 text-text-light/60 hover:text-brand-gold transition-colors"
                       >
                         <Mail className="w-5 h-5 text-brand-gold" />
-                        info@sunlitesigns.com
+                        hello@sunlitesigns.com
                       </a>
                     </div>
                   </div>

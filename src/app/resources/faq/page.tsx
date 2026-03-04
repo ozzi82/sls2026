@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "What is your typical turnaround time?",
     answer:
-      "Standard production time is approximately 4 weeks from approval of shop drawings and receipt of deposit. Rush orders may be accommodated depending on current production capacity. Contact us to discuss timeline requirements for time-sensitive projects.",
+      "Standard production time is approximately 3 weeks from approval of shop drawings and receipt of deposit. Rush orders may be accommodated depending on current production capacity. Contact us to discuss timeline requirements for time-sensitive projects.",
   },
   {
     question: "Do you ship to both the USA and Canada?",
@@ -70,12 +70,12 @@ const faqs = [
   {
     question: "What is the difference between trimless and trim cap channel letters?",
     answer:
-      "Traditional channel letters use a plastic trim cap to secure the acrylic face to the aluminum return. Trimless channel letters (our EdgeLuxe system) eliminate this trim cap entirely, creating a seamless, modern junction between the face and return. Trimless letters offer a cleaner, more contemporary appearance and are increasingly specified by architects and designers. Both options are available at wholesale trade pricing. See our detailed comparison in the blog.",
+      "Traditional channel letters use a plastic trim cap to secure the acrylic face to the aluminum return. Trimless channel letters eliminate this trim cap entirely, creating a seamless, modern junction between the face and return. Trimless letters offer a cleaner, more contemporary appearance and are increasingly specified by architects and designers. Both options are available at wholesale trade pricing. See our detailed comparison in the blog.",
   },
   {
     question: "What illumination options are available?",
     answer:
-      "We offer four illumination options at wholesale trade pricing: front-lit (light through the face for maximum visibility), halo-lit (light projected backward for an elegant halo effect), front-and-halo (dual illumination for premium impact), and non-illuminated (no internal lighting). Each option serves different aesthetic and functional needs. Our Choosing Illumination Types guide covers this in detail.",
+      "We offer four illumination options at wholesale trade pricing: face-lit (light through the face for maximum visibility), halo-lit (light projected backward for an elegant halo effect), front-and-halo (dual illumination for premium impact), and non-illuminated (no internal lighting). Each option serves different aesthetic and functional needs. Our Choosing Illumination Types guide covers this in detail.",
   },
   {
     question: "Do you provide shop drawings for approval before production?",
@@ -105,7 +105,7 @@ const faqs = [
   {
     question: "What is German engineering and how does it apply to your signs?",
     answer:
-      "Sunlite Signs has a manufacturing partnership with LKF Lichtwerbung, a precision sign manufacturing firm based in Nuremberg, Germany. This partnership brings decades of German engineering expertise, tooling, and quality standards to our Florida-based production facility. It influences our fabrication tolerances, quality control processes, and the design of our EdgeLuxe trimless system.",
+      "Sunlite Signs has a manufacturing partnership with LKF Lichtwerbung, a precision sign manufacturing firm based in Nuremberg, Germany. This partnership brings decades of German engineering expertise, tooling, and quality standards to our Florida-based production facility. It influences our fabrication tolerances, quality control processes, and the design of our trimless system.",
   },
   {
     question: "Why should my sign shop choose a wholesale-only manufacturer?",
@@ -210,7 +210,7 @@ export default function FAQPage() {
                   Request Wholesale Pricing
                 </Link>
                 <a
-                  href="mailto:info@sunlitesigns.com"
+                  href="mailto:hello@sunlitesigns.com"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-text-dark/20 text-text-dark font-heading font-semibold text-sm uppercase tracking-wider rounded hover:border-brand-gold hover:text-brand-gold transition-colors duration-300"
                 >
                   Email Us
@@ -221,10 +221,10 @@ export default function FAQPage() {
                   (123) 456-7890
                 </a>
                 <a
-                  href="mailto:info@sunlitesigns.com"
+                  href="mailto:hello@sunlitesigns.com"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  info@sunlitesigns.com
+                  hello@sunlitesigns.com
                 </a>
               </div>
             </div>

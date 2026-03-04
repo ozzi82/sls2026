@@ -83,7 +83,7 @@ const specs = [
   { label: "Mounting", value: "Stud mount with spacers (standard)" },
   { label: "Certifications", value: "UL Listed (UL 48)" },
   { label: "Warranty", value: "5-year LED, 2-year electrical components" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [

@@ -21,7 +21,7 @@ const blogPosts: Record<string, BlogPost> = {
     slug: "channel-letter-types-explained",
     title: "Channel Letter Types Explained: A Complete Guide for Sign Shops",
     excerpt:
-      "From front-lit to halo-lit, trimless to reverse channel letters, learn about every channel letter type available and when to recommend each to your clients.",
+      "From face-lit to halo-lit, trimless to reverse channel letters, learn about every channel letter type available and when to recommend each to your clients.",
     date: "2025-12-15",
     image: "Blog hero — various channel letter types on building facades",
     category: "Education",
@@ -36,7 +36,7 @@ For sign shops sourcing wholesale channel letters, understanding these types is 
 
 ## Front-Lit Channel Letters
 
-Front-lit (also called face-lit) channel letters are the most common type. Light passes through a translucent acrylic face, making the letter glow from the front. These are ideal for maximum readability and work especially well for retail locations, restaurants, and any business that needs high-visibility signage.
+Face-lit (also called face-lit) channel letters are the most common type. Light passes through a translucent acrylic face, making the letter glow from the front. These are ideal for maximum readability and work especially well for retail locations, restaurants, and any business that needs high-visibility signage.
 
 The face is typically made from acrylic sheet that can be painted or produced in virtually any Pantone color. Aluminum returns form the sides of the letter, and LED modules inside the letter cavity project light forward through the acrylic face.
 
@@ -66,11 +66,11 @@ These letters are often fabricated from stainless steel or brushed aluminum for 
 
 **Best for:** Corporate headquarters, luxury hospitality, modern architectural facades.
 
-## Trimless (EdgeLuxe) Channel Letters
+## Trimless Channel Letters
 
 Trimless channel letters represent the cutting edge of channel letter design. Traditional channel letters use a trim cap (a plastic retainer) to secure the acrylic face to the aluminum returns. Trimless letters eliminate this trim cap entirely, producing a seamless, modern aesthetic where the face and returns meet in a clean, flush line.
 
-Sunlite Signs' EdgeLuxe trimless system is engineered for precision fit and long-term durability. The result is a letter with cleaner lines, a more contemporary appearance, and a premium look that architects and designers increasingly specify. As a wholesale trade partner, offering EdgeLuxe gives your sign shop a competitive edge.
+Sunlite Signs' trimless system is engineered for precision fit and long-term durability. The result is a letter with cleaner lines, a more contemporary appearance, and a premium look that architects and designers increasingly specify. As a wholesale trade partner, offering trimless letters gives your sign shop a competitive edge.
 
 **Best for:** Modern architecture, design-forward brands, high-end retail and hospitality, any project where a clean aesthetic is a priority.
 
@@ -92,11 +92,11 @@ Non-illuminated channel letters are cost-effective, require no electrical connec
 
 When recommending a channel letter type to your client, consider these factors:
 
-1. **Visibility requirements** — How far away does the sign need to be readable? Front-lit provides maximum readability at distance.
-2. **Brand aesthetic** — Does the brand lean modern and minimal (trimless), classic and bold (front-lit), or upscale and subtle (halo-lit)?
+1. **Visibility requirements** — How far away does the sign need to be readable? Face-lit provides maximum readability at distance.
+2. **Brand aesthetic** — Does the brand lean modern and minimal (trimless), classic and bold (face-lit), or upscale and subtle (halo-lit)?
 3. **Mounting surface** — Halo-lit letters need a flat, light-colored surface to reflect the halo effectively.
-4. **Building architecture** — Modern facades suit trimless; traditional buildings may favor standard front-lit or reverse channel.
-5. **Budget** — Non-illuminated and standard front-lit are the most cost-effective; dual-lit and trimless are premium options.
+4. **Building architecture** — Modern facades suit trimless; traditional buildings may favor standard face-lit or reverse channel.
+5. **Budget** — Non-illuminated and standard face-lit are the most cost-effective; dual-lit and trimless are premium options.
 6. **Local regulations** — Some municipalities restrict illuminated signage or specific sign types.
 
 As a sign shop professional, partnering with a wholesale-only manufacturer like Sunlite Signs gives you the flexibility to offer the full range of channel letter types at competitive trade pricing — and we will never compete with you for retail business.
@@ -106,7 +106,7 @@ As a sign shop professional, partnering with a wholesale-only manufacturer like 
     slug: "trimless-vs-trimcap-channel-letters",
     title: "Trimless vs. Trim Cap Channel Letters: Which Should You Specify?",
     excerpt:
-      "The architectural trend toward trimless (EdgeLuxe) channel letters is growing fast. Compare trimless and trim cap options to help your clients choose the right look.",
+      "The architectural trend toward trimless channel letters is growing fast. Compare trimless and trim cap options to help your clients choose the right look.",
     date: "2025-11-28",
     image: "Blog hero — side-by-side comparison of trimless and trim cap letters",
     category: "Product Spotlight",
@@ -115,7 +115,7 @@ As a sign shop professional, partnering with a wholesale-only manufacturer like 
 
 The sign industry is in the middle of a significant aesthetic shift. For decades, trim cap channel letters have been the default standard, but a growing number of architects, designers, and brand managers are now specifying trimless channel letters for their cleaner, more contemporary appearance.
 
-At Sunlite Signs, we've seen demand for our EdgeLuxe trimless channel letters increase substantially year over year among our wholesale trade partners. Understanding the differences between trimless and trim cap construction helps sign shop professionals guide their clients toward the right choice — and strengthen their position as a knowledgeable trade partner.
+At Sunlite Signs, we've seen demand for our trimless channel letters increase substantially year over year among our wholesale trade partners. Understanding the differences between trimless and trim cap construction helps sign shop professionals guide their clients toward the right choice — and strengthen their position as a knowledgeable trade partner.
 
 ## What Is a Trim Cap?
 
@@ -140,9 +140,9 @@ Trim caps are available in a range of colors, with black and white being the mos
 
 Trimless channel letters eliminate the plastic trim cap entirely. The acrylic face is bonded directly to the aluminum return using precision engineering and specialized adhesives or mechanical attachment methods. The result is a seamless junction between the face and return with no visible retainer.
 
-Sunlite Signs' EdgeLuxe system uses German-engineered precision fabrication to achieve tight tolerances that ensure the face-to-return junction is clean, flush, and durable over the long term.
+Sunlite Signs' trimless system uses German-engineered precision fabrication to achieve tight tolerances that ensure the face-to-return junction is clean, flush, and durable over the long term.
 
-### Advantages of Trimless (EdgeLuxe) Construction
+### Advantages of Trimless Construction
 
 - **Clean, modern aesthetic** — No visible plastic border. The letter appears as a single, cohesive form.
 - **Architect-preferred** — Trimless letters are increasingly specified in architectural signage packages.
@@ -163,7 +163,7 @@ For signage on buildings where pedestrians or customers pass directly beneath or
 
 ## When to Recommend Each Style
 
-**Specify trimless (EdgeLuxe) when:**
+**Specify trimless when:**
 - The architect or designer requires a modern, minimalist aesthetic
 - The sign will be viewed at close range (street-level storefronts, hotel entrances)
 - The brand identity emphasizes clean, contemporary design
@@ -176,9 +176,9 @@ For signage on buildings where pedestrians or customers pass directly beneath or
 - The client prefers a traditional channel letter appearance
 - Rapid face replaceability is a priority (high-vandalism areas)
 
-## Sunlite Signs EdgeLuxe: German-Engineered Trimless Excellence
+## Sunlite Signs Trimless: German-Engineered Trimless Excellence
 
-Our EdgeLuxe trimless channel letters are manufactured using precision CNC fabrication and German-engineered processes from our partnership with LKF Lichtwerbung. Every EdgeLuxe letter is UL listed, ensuring safety and code compliance alongside premium aesthetics.
+Our trimless channel letters are manufactured using precision CNC fabrication and German-engineered processes from our partnership with LKF Lichtwerbung. Every trimless letter is UL listed, ensuring safety and code compliance alongside premium aesthetics.
 
 We encourage our wholesale trade partners to offer both trim cap and trimless options to their clients, presenting the aesthetic and value differences clearly. In our experience, when clients see the trimless option, a significant number choose to upgrade — and that means better margins for your sign shop.
     `,
@@ -187,7 +187,7 @@ We encourage our wholesale trade partners to offer both trim cap and trimless op
     slug: "how-to-choose-sign-illumination",
     title: "How to Choose the Right Sign Illumination for Any Project",
     excerpt:
-      "Front-lit, halo-lit, front-and-halo, or non-illuminated? Walk through the decision factors including visibility, brand aesthetic, building facade, and budget.",
+      "Face-lit, halo-lit, front-and-halo, or non-illuminated? Walk through the decision factors including visibility, brand aesthetic, building facade, and budget.",
     date: "2025-11-10",
     image: "Blog hero — different illumination types shown at night",
     category: "Guides",
@@ -200,13 +200,13 @@ This guide walks through the four primary illumination options and the key facto
 
 ## Front-Lit Illumination
 
-Front-lit (face-lit) channel letters project light forward through a translucent acrylic face. This is the most common illumination style and provides the highest visibility and readability, especially from a distance.
+Face-lit (face-lit) channel letters project light forward through a translucent acrylic face. This is the most common illumination style and provides the highest visibility and readability, especially from a distance.
 
 **How it works:** LED modules mounted inside the letter cavity face forward, projecting light through the colored or white acrylic face panel. The light is bright, even, and visible in both daylight and nighttime conditions.
 
-**Visibility:** Excellent. Front-lit letters are the most readable illumination type at all distances and in all ambient lighting conditions. They are the default recommendation when maximum visibility is the primary objective.
+**Visibility:** Excellent. Face-lit letters are the most readable illumination type at all distances and in all ambient lighting conditions. They are the default recommendation when maximum visibility is the primary objective.
 
-**Aesthetic:** Bold, bright, and attention-grabbing. Front-lit letters make a strong brand statement and work well for retail, dining, and any business that relies on drive-by or walk-by visibility.
+**Aesthetic:** Bold, bright, and attention-grabbing. Face-lit letters make a strong brand statement and work well for retail, dining, and any business that relies on drive-by or walk-by visibility.
 
 **Considerations:** The bright, forward-facing glow may be too intense for brands seeking a subtle, understated look. Color accuracy of the face material is critical, as the illumination changes how the color appears.
 
@@ -216,7 +216,7 @@ Halo-lit (back-lit) channel letters project light backward against the mounting 
 
 **How it works:** LEDs inside the channel face backward, projecting light through an open or translucent back panel onto the wall or raceway behind the letter. The result is a sophisticated, indirect lighting effect.
 
-**Visibility:** Good in medium to low ambient light. Halo-lit letters are less readable than front-lit at long distances or in bright daylight, but they create a striking effect at night.
+**Visibility:** Good in medium to low ambient light. Halo-lit letters are less readable than face-lit at long distances or in bright daylight, but they create a striking effect at night.
 
 **Aesthetic:** Elegant, architectural, and understated. Halo-lit letters are the go-to choice for upscale brands, hotels, corporate offices, and any project where a refined, sophisticated look is desired.
 
@@ -228,7 +228,7 @@ Front-and-halo-lit letters combine both illumination methods, projecting light t
 
 **How it works:** Two sets of LED modules (or a carefully positioned single set) illuminate both the acrylic face and the back panel. The letter glows from the front while also casting a halo on the mounting surface.
 
-**Visibility:** Excellent. Combines the high readability of front-lit with the dramatic depth of halo-lit.
+**Visibility:** Excellent. Combines the high readability of face-lit with the dramatic depth of halo-lit.
 
 **Aesthetic:** Premium, dramatic, and high-impact. Front-and-halo letters command attention and convey quality. They are ideal for flagship locations, high-end retail, and any project where the sign is a key architectural element.
 
@@ -250,11 +250,11 @@ Non-illuminated channel letters have no internal lighting. They rely on ambient 
 
 ### 1. Primary Viewing Distance
 
-If the sign must be readable from a highway or major road (100+ feet), front-lit is almost always the right choice. For pedestrian-level viewing (10-30 feet), halo-lit and dual-lit options shine.
+If the sign must be readable from a highway or major road (100+ feet), face-lit is almost always the right choice. For pedestrian-level viewing (10-30 feet), halo-lit and dual-lit options shine.
 
 ### 2. Brand Identity
 
-Bold, vibrant brands (fast food, retail chains, entertainment) typically favor front-lit. Luxury, corporate, and architectural brands tend toward halo-lit or dual-lit.
+Bold, vibrant brands (fast food, retail chains, entertainment) typically favor face-lit. Luxury, corporate, and architectural brands tend toward halo-lit or dual-lit.
 
 ### 3. Mounting Surface
 
@@ -266,7 +266,7 @@ Some municipalities restrict sign illumination brightness, hours of operation, o
 
 ### 5. Budget
 
-From least to most expensive: non-illuminated, front-lit, halo-lit, front-and-halo. Present options at multiple price points so clients can make an informed choice. Wholesale trade pricing from Sunlite Signs helps you maintain strong margins across all illumination types.
+From least to most expensive: non-illuminated, face-lit, halo-lit, front-and-halo. Present options at multiple price points so clients can make an informed choice. Wholesale trade pricing from Sunlite Signs helps you maintain strong margins across all illumination types.
 
 ### 6. Energy Efficiency
 
@@ -483,7 +483,7 @@ export default function BlogPostPage({
                 Ready to Get Wholesale Pricing?
               </h2>
               <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Whether you need front-lit, halo-lit, or trimless channel letters, Sunlite Signs
+                Ready to get trade pricing on your next project? Whether you need face-lit, halo-lit, or trimless channel letters, Sunlite Signs
                 delivers German-engineered quality at wholesale pricing. We never sell retail.
               </p>
               <Link href="/get-a-quote" className="btn-primary">

@@ -27,7 +27,7 @@ const productCategories = [
   {
     name: "Channel Letters",
     description:
-      "Front lit, halo lit, trimless, and combination illuminated channel letters. Wholesale direct to sign shops. German-engineered with UL listing. Available exclusively to trade accounts.",
+      "Face lit, halo lit, trimless, and combination illuminated channel letters. Wholesale direct to sign shops. German-engineered with UL listing. Available exclusively to trade accounts.",
     href: "/products/channel-letters",
     image: "Channel letters product category — illuminated storefront sign",
     featured: true,
@@ -54,6 +54,13 @@ const productCategories = [
     image: "Illuminated lightbox sign — LED cabinet sign",
   },
   {
+    name: "SEG Light Boxes",
+    description:
+      "Custom-sized Silicone-edged Graphic (SEG) light box solutions in low form factors down to 1\" deep. High-resolution printed and illuminated signage. Custom SEG light boxes and prints in 3 weeks. Wholesale only.",
+    href: "/products/seg-light-boxes",
+    image: "SEG Light Box — illuminated fabric sign display",
+  },
+  {
     name: "Custom Fabrication",
     description:
       "Bespoke signage solutions at trade pricing for projects that require something beyond standard products. Wholesale only — we never compete with our sign shop partners.",
@@ -69,7 +76,7 @@ const trustPoints = [
   },
   {
     icon: Clock,
-    label: "4-Week Delivery",
+    label: "3-Week Door-to-Door Delivery",
   },
   {
     icon: Wrench,
@@ -123,7 +130,7 @@ export default function ProductsPage() {
               <p className="text-lg text-text-light/70 max-w-2xl mb-4">
                 German-engineered illuminated signage, wholesale direct to sign
                 shops across the USA and Canada. Every product is UL listed,
-                precision built, and delivered within 4 weeks.
+                precision built, and delivered within 3 weeks door to door.
               </p>
               <p className="text-text-light/50 mb-8">
                 We never sell retail. Your clients stay yours. No retail markup, no middlemen — just trade pricing direct from the manufacturer.

@@ -112,7 +112,7 @@ const specs = [
   { label: "Electrical Access", value: "Hinged door, removable face, or rear access" },
   { label: "Certifications", value: "UL Listed (UL 48)" },
   { label: "Warranty", value: "5-year LED, 3-year cabinet and finish" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [
@@ -191,7 +191,7 @@ export default function LightboxesPage() {
                 </p>
                 <p className="text-text-light/50 mb-8">
                   UL listed. German-engineered LED layouts. Wholesale direct to
-                  sign shops. Delivered in 3-4 weeks. We never sell retail — your clients stay yours.
+                  sign shops. Delivered in 3 weeks door to door. We never sell retail — your clients stay yours.
                 </p>
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing

@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
 const projectTypes = [
-  "Channel Letters — Front Lit",
+  "Channel Letters — Face Lit",
   "Channel Letters — Halo Lit",
   "Channel Letters — Front & Halo",
-  "Channel Letters — Trimless / EdgeLuxe",
+  "Channel Letters — Trimless",
   "Channel Letters — Non-Illuminated",
   "Flat Cut Letters",
   "Blade Signs",

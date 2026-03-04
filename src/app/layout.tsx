@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Sunlite Signs",
   },
   description:
-    "German-engineered wholesale channel letters, blade signs, and flat cut letters for sign shops across the USA and Canada. UL listed. Precision built. Delivered in 4 weeks.",
+    "German-engineered wholesale channel letters, blade signs, and flat cut letters for sign shops across the USA and Canada. UL listed. Precision built. Delivered in 3 weeks door to door.",
   keywords: [
     "wholesale channel letters",
     "trimless channel letters wholesale",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     siteName: "Sunlite Signs",
     title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
     description:
-      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 4 weeks.",
+      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
     description:
-      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 4 weeks.",
+      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
   },
   robots: {
     index: true,

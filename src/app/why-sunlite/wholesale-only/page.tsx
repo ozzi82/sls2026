@@ -67,7 +67,7 @@ const whatYouGet = [
   "Wholesale trade pricing with healthy margins for your business",
   "No minimum order requirements to get started",
   "48-hour detailed quotes with material specifications",
-  "4-week standard delivery to your shop or job site",
+  "3-week door-to-door delivery to your shop or job site",
   "Dedicated account support from sign industry professionals",
   "UL listed products that meet code requirements on every job",
   "Custom crating for safe, damage-free delivery",
@@ -296,7 +296,7 @@ export default function WholesaleOnlyPage() {
                   {
                     step: "3",
                     title: "We build, you sell and install",
-                    detail: "Your signs are fabricated, UL listed, and shipped to your door in about 4 weeks. Your brand. Your client. Your margin.",
+                    detail: "Your signs are fabricated, UL listed, and shipped to your door in about 3 weeks door to door. Your brand. Your client. Your margin.",
                   },
                   {
                     step: "4",

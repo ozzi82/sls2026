@@ -42,7 +42,7 @@ const features = [
     icon: Sun,
     title: "Front Face Brightness",
     description:
-      "Forward-facing LEDs deliver the same high-visibility face illumination as our standard front lit letters, ensuring excellent daytime and nighttime readability.",
+      "Forward-facing LEDs deliver the same high-visibility face illumination as our standard face lit letters, ensuring excellent daytime and nighttime readability.",
   },
   {
     icon: Moon,
@@ -83,7 +83,7 @@ const specs = [
   { label: "Mounting", value: "Stud mount with spacers" },
   { label: "Certifications", value: "UL Listed (UL 48)" },
   { label: "Warranty", value: "5-year LED, 2-year electrical components" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [
@@ -200,12 +200,12 @@ export default function FrontAndHaloLitPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <PlaceholderImage
-                  label="Front lit only — face illumination view"
+                  label="Face lit only — face illumination view"
                   className="rounded-xl mb-4"
                   aspectRatio="aspect-square"
                 />
                 <h3 className="font-heading font-semibold text-text-light mb-1">
-                  Front Lit Effect
+                  Face Lit Effect
                 </h3>
                 <p className="text-sm text-text-light/50">
                   Bright face illumination for readability

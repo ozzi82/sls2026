@@ -4,114 +4,12 @@ import {
   Truck,
   Clock,
   Globe,
-  Send,
-  FileText,
-  Package,
   ArrowRight,
   Lock,
   Phone,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
-
-const products = [
-  {
-    name: "Front Lit Channel Letters",
-    description: "Classic illuminated letters with front-facing LED glow. Wholesale pricing for sign shops.",
-    href: "/products/channel-letters/front-lit",
-  },
-  {
-    name: "Halo Lit Channel Letters",
-    description: "Elegant backlit glow for a premium architectural look. Trade accounts only.",
-    href: "/products/channel-letters/halo-lit",
-  },
-  {
-    name: "Trimless / EdgeLuxe",
-    description: "Our flagship innovation — seamless letters with zero trim cap. Exclusive to the trade.",
-    href: "/products/channel-letters/trimless",
-  },
-  {
-    name: "Flat Cut Letters",
-    description: "Precision-cut metal letters for a clean, dimensional look. Wholesale direct.",
-    href: "/products/flat-cut-letters",
-  },
-  {
-    name: "Blade Signs",
-    description: "Projecting signs for maximum storefront visibility. Trade pricing available.",
-    href: "/products/blade-signs",
-  },
-  {
-    name: "Lightboxes",
-    description: "Illuminated cabinet signs for bold brand presence. Wholesale to sign companies only.",
-    href: "/products/lightboxes",
-  },
-];
-
-const whyBlocks = [
-  {
-    title: "German Engineering, American Wholesale",
-    description:
-      "Our partnership with LKF Lichtwerbung in Nuremberg brings decades of German precision engineering to every sign we produce — and we pass it direct to you at wholesale pricing. No middlemen. No retail markup. Just German-engineered quality at trade prices.",
-    image: "LKF facility or German precision equipment",
-  },
-  {
-    title: "UL Listed — Every Single Sign",
-    description:
-      "Every illuminated sign that leaves our facility carries UL certification. As a wholesale partner, you get signs your clients can trust and inspectors will approve. Your reputation is protected.",
-    image: "UL certification badge or testing process",
-  },
-  {
-    title: "We Never Compete With You. Period.",
-    description:
-      "Sunlite sells exclusively to the trade. We do not have a retail storefront. We do not sell direct to end users. Your clients are YOUR clients. We are your silent manufacturing partner.",
-    image: "Crated signs ready for wholesale shipping",
-  },
-  {
-    title: "EdgeLuxe Trimless — Only Through the Trade",
-    description:
-      "The hottest trend in architectural signage — trimless channel letters with zero visible trim cap. Clean. Modern. Seamless. And only available through authorized sign shops like you.",
-    image: "EdgeLuxe trimless channel letter detail shot",
-  },
-];
-
-const steps = [
-  {
-    icon: Send,
-    title: "Submit Your Project",
-    description: "Send drawings, specs, or even a napkin sketch. We work with whatever you have. Trade accounts only.",
-  },
-  {
-    icon: FileText,
-    title: "Wholesale Quote in 48 Hrs",
-    description: "Detailed trade pricing with full material specs. No retail markup. No obligation. No games.",
-  },
-  {
-    icon: Package,
-    title: "We Build, You Profit",
-    description: "UL-listed, German-engineered, crated and shipped direct. Your brand, your margin, our craftsmanship.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Finally a wholesale manufacturer that stays in their lane. They build, we sell, everybody wins.",
-    company: "[Sign Shop]",
-    location: "[City, State]",
-  },
-  {
-    quote:
-      "48-hour wholesale quotes and they never undercut us with retail clients. That is a real partner.",
-    company: "[Sign Shop]",
-    location: "[City, State]",
-  },
-  {
-    quote:
-      "The EdgeLuxe trimless letters are the cleanest product we have ever installed. Our margins are excellent.",
-    company: "[Sign Shop]",
-    location: "[City, State]",
-  },
-];
 
 export default function Home() {
   const jsonLd = {
@@ -140,305 +38,300 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* HERO SECTION — Full-width background image with overlay */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background image placeholder — replace with real image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-navy to-primary-dark">
-          {/* When you have a real image, use next/image with fill + objectCover here */}
-          <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat" />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/80 to-primary-dark/40" />
-          {/* Bottom gradient fade */}
+      {/* HERO — Full image background, compact text block on left */}
+      <section className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-bg.jpg"
+            alt="Illuminated channel letters manufactured by Sunlite Signs"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary-dark to-transparent" />
         </div>
 
-        <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-28">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-brand-gold/15 border border-brand-gold/40 rounded-sm px-4 py-1.5 mb-8">
-              <Lock className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="text-brand-gold text-xs font-heading font-bold uppercase tracking-widest">
-                Wholesale Only — Trade Accounts
+        <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-36 pb-28 lg:pt-44 lg:pb-36 flex items-center min-h-screen">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold/40 rounded-sm px-3 py-1 mb-6 w-fit">
+              <Lock className="w-3 h-3 text-brand-gold" />
+              <span className="text-brand-gold text-[10px] font-heading font-bold uppercase tracking-widest">
+                Wholesale Only
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.05] mb-6">
-              Wholesale
-              <br />
-              Channel Letters
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.1] mb-4">
+              Wholesale Channel Letters
               <br />
               <span className="text-brand-gold">&amp; Illuminated Signs</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
-              German-engineered. UL listed. Built exclusively for sign shops
-              across the USA &amp; Canada. We never sell retail.
+            <p className="text-base text-white/70 mb-6 max-w-md leading-relaxed">
+              German-engineered. UL listed. Built for sign shops.
+              We never sell retail.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                Request Wholesale Pricing
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <Link href="/get-a-quote" className="btn-primary text-sm px-7 py-3.5">
+                Get Your Product Started
               </Link>
-              <a href="tel:+1234567890" className="btn-secondary text-base px-10 py-5 gap-2 border-white/30 hover:border-brand-gold">
+              <a href="tel:+1234567890" className="btn-secondary text-sm px-7 py-3.5 gap-2 border-white/30 hover:border-brand-gold">
                 <Phone className="w-4 h-4" />
                 (123) 456-7890
               </a>
             </div>
 
-            {/* Stats bar */}
-            <div className="flex flex-wrap gap-8 lg:gap-12">
+            <div className="flex gap-6">
               {[
-                { value: "48hr", label: "Trade Quotes" },
-                { value: "4 wk", label: "Production" },
+                { value: "48hr", label: "Quotes" },
+                { value: "3wk", label: "Delivery" },
                 { value: "UL", label: "Listed" },
                 { value: "100%", label: "Wholesale" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold">{stat.value}</div>
-                  <div className="text-xs text-white/50 font-heading uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div className="text-xl font-heading font-bold text-brand-gold">{stat.value}</div>
+                  <div className="text-[10px] text-white/40 font-heading uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Trust Bar — bottom of hero */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-primary-dark/80 backdrop-blur-sm">
-          <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-heading uppercase tracking-wider text-white/50">
-              <span className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-brand-gold" /> Wholesale Only
+        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+          <div className="container-max px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] font-heading uppercase tracking-wider text-white/50">
+              <span className="flex items-center gap-1.5">
+                <Lock className="w-3 h-3 text-brand-gold" /> Wholesale Only
               </span>
               <span className="hidden sm:inline text-white/20">|</span>
-              <span className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-brand-gold" /> UL Listed
+              <span className="flex items-center gap-1.5">
+                <Shield className="w-3 h-3 text-brand-gold" /> UL Listed
               </span>
               <span className="hidden sm:inline text-white/20">|</span>
-              <span className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-brand-gold" /> German Engineering
+              <span className="flex items-center gap-1.5">
+                <Globe className="w-3 h-3 text-brand-gold" /> German Engineering
               </span>
               <span className="hidden sm:inline text-white/20">|</span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-brand-gold" /> 48-Hour Quotes
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-3 h-3 text-brand-gold" /> 48-Hour Quotes
               </span>
               <span className="hidden sm:inline text-white/20">|</span>
-              <span className="flex items-center gap-2">
-                <Truck className="w-4 h-4 text-brand-gold" /> USA &amp; Canada
+              <span className="flex items-center gap-1.5">
+                <Truck className="w-3 h-3 text-brand-gold" /> USA &amp; Canada
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PRODUCT CATEGORIES — Big image grid, product-forward */}
-      <section className="section-padding bg-primary-dark">
-        <div className="container-max">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-            <div>
-              <div className="gold-line mb-4" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light">
-                Wholesale Product Catalog
-              </h2>
-            </div>
-            <Link href="/products" className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all">
-              View All Products <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {products.map((product) => (
-              <Link key={product.name} href={product.href} className="group block">
-                <div className="bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-brand-gold/40 transition-all duration-300">
-                  <PlaceholderImage
-                    label={product.name}
-                    className="rounded-none border-0"
-                    aspectRatio="aspect-[16/10]"
-                  />
-                  <div className="p-5">
-                    <h3 className="text-base font-heading font-semibold text-text-light group-hover:text-brand-gold transition-colors mb-1">
-                      {product.name}
-                    </h3>
-                    <p className="text-text-light/40 text-sm mb-3">{product.description}</p>
-                    <span className="text-brand-gold text-xs font-heading font-bold uppercase tracking-wider flex items-center gap-1.5">
-                      View Trade Specs
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHOLESALE ONLY BANNER */}
-      <section className="bg-brand-gold py-5">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-            <Lock className="w-6 h-6 text-white" />
-            <p className="text-center md:text-left text-white font-heading font-bold text-sm md:text-base uppercase tracking-wider">
-              We sell exclusively to sign companies, sign shops, and trade professionals.
-            </p>
-            <Link href="/why-sunlite/wholesale-only" className="text-white border-2 border-white/40 hover:border-white hover:bg-white/10 font-heading font-bold text-xs uppercase tracking-wider px-5 py-2 rounded transition-colors">
-              Learn Why
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY SIGN SHOPS CHOOSE SUNLITE */}
+      {/* CUSTOM EUROPEAN SIGNAGE WHOLESALE — Tagline + Our Story teaser */}
       <section className="section-padding bg-light-bg">
         <div className="container-max">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Built for the Trade. Never Sold Retail.
-              </h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">
-                We exist for one reason: to be the best wholesale sign manufacturer your shop has ever worked with.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                  Custom European Signage Wholesale.
+                </h2>
+                <p className="text-brand-gold font-heading font-semibold text-lg mb-4">
+                  Our Story.
+                </p>
+                <p className="text-text-dark/60 leading-relaxed mb-4">
+                  What makes us passionate about signage and experience. The foundation
+                  of Sunlite Signs begins with a partnership rooted in German precision
+                  engineering — and a commitment to never compete with our customers.
+                </p>
+                <p className="text-text-dark/60 leading-relaxed mb-6">
+                  From LKF Lichtwerbung in Nuremberg to Florida, we bring decades of
+                  European signage expertise exclusively to the trade.
+                </p>
+                <Link
+                  href="/about"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Read Our Story <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <PlaceholderImage
+                label="Sunlite Signs team or LKF Lichtwerbung partnership"
+                aspectRatio="aspect-[4/3]"
+              />
             </div>
           </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {whyBlocks.map((block) => (
-              <AnimatedSection key={block.title}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-black/5">
-                  <PlaceholderImage
-                    label={block.image}
-                    className="rounded-none border-0"
-                    aspectRatio="aspect-[16/9]"
-                  />
-                  <div className="p-6 md:p-8">
-                    <h3 className="text-xl font-heading font-bold text-text-dark mb-3">
-                      {block.title}
-                    </h3>
-                    <p className="text-text-dark/60 text-sm leading-relaxed">{block.description}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/why-sunlite" className="btn-primary">
-              Why Sign Shops Choose Sunlite
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* GALLERY PREVIEW */}
+      {/* COMPLIMENTARY ENGINEERING SERVICES */}
       <section className="section-padding bg-primary-dark">
         <div className="container-max">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Installed by Our Trade Partners
-              </h2>
-              <p className="text-text-light/60">Products we manufactured. Installed by sign shops like yours.</p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              {[
-                "Front lit channel letters — night installation",
-                "Halo lit letters on brick facade",
-                "EdgeLuxe trimless installation",
-                "Blade sign — street view",
-              ].map((label, i) => (
-                <PlaceholderImage
-                  key={i}
-                  label={label}
-                  className="rounded-lg"
-                  aspectRatio="aspect-square"
-                />
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <Link href="/gallery" className="btn-secondary">
-                View Full Project Gallery
-              </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <PlaceholderImage
+                label="Engineering services — structural design and LED layout"
+                aspectRatio="aspect-[4/3]"
+              />
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                  Complimentary Engineering Services
+                </h2>
+                <p className="text-text-light/60 leading-relaxed mb-4">
+                  With our German design and engineering roots, we contribute our
+                  complimentary engineering services to your project. From conceptual
+                  integration of structural and material sciences, to manufacturing
+                  engineering and packaging.
+                </p>
+                <p className="text-text-light/60 leading-relaxed mb-6">
+                  Concept &amp; materials. Structural engineering. Electrical layout.
+                  Manufacturing engineering. We are happy to contribute our expertise
+                  at every stage of your project. Wholesale accounts only.
+                </p>
+                <Link
+                  href="/services"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Explore Our Services <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Your Wholesale Partner in 3 Steps
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <AnimatedSection key={step.title} delay={index * 0.15}>
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
-                    <step.icon className="w-7 h-7 text-brand-gold" />
-                  </div>
-                  <div className="text-brand-gold font-heading font-bold text-sm mb-2">
-                    Step {index + 1}
-                  </div>
-                  <h3 className="text-xl font-heading font-semibold text-text-light mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-text-light/60 text-sm">{step.description}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/get-a-quote" className="btn-primary">
-              Request Wholesale Pricing
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
+      {/* LOW PROFILE CHANNEL LETTERS */}
       <section className="section-padding bg-light-bg">
         <div className="container-max">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Trusted by Sign Shops Nationwide
-              </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                  Low Profile Channel Letters
+                </h2>
+                <p className="text-text-dark/60 leading-relaxed mb-4">
+                  The foundation of Sunlite Signs — precision-designed,
+                  German-engineered LED-illuminated low profile lettering. Close-up
+                  viewing precision, the best illumination diffusion quality, and
+                  profiles as low as 1.2&quot; deep with embedded LED diodes. No
+                  legacy trim cap. UL Listed.
+                </p>
+                <p className="text-text-dark/60 leading-relaxed mb-6">
+                  Available in face lit, halo lit, trimless stainless steel, and
+                  block acrylic configurations. Wholesale trade pricing for sign shops.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <Link href="/products/channel-letters/front-lit" className="text-xs font-heading font-semibold uppercase tracking-wider bg-primary-dark text-white px-4 py-2 rounded hover:bg-brand-gold transition-colors">
+                    Face Lit
+                  </Link>
+                  <Link href="/products/channel-letters/halo-lit" className="text-xs font-heading font-semibold uppercase tracking-wider bg-primary-dark text-white px-4 py-2 rounded hover:bg-brand-gold transition-colors">
+                    Halo Lit
+                  </Link>
+                  <Link href="/products/channel-letters/trimless" className="text-xs font-heading font-semibold uppercase tracking-wider bg-primary-dark text-white px-4 py-2 rounded hover:bg-brand-gold transition-colors">
+                    Trimless
+                  </Link>
+                  <Link href="/products/flat-cut-letters" className="text-xs font-heading font-semibold uppercase tracking-wider bg-primary-dark text-white px-4 py-2 rounded hover:bg-brand-gold transition-colors">
+                    Flat Cut
+                  </Link>
+                </div>
+                <Link
+                  href="/products/channel-letters"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  View All Channel Letters <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <PlaceholderImage
+                label="Low profile channel letters — trimless stainless steel close-up"
+                aspectRatio="aspect-[4/3]"
+              />
             </div>
           </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-xl p-8 shadow-sm border border-black/5">
-                  <div className="text-brand-gold text-4xl font-heading mb-4">&ldquo;</div>
-                  <p className="text-text-dark/80 leading-relaxed mb-6 italic">
-                    {testimonial.quote}
-                  </p>
-                  <div className="text-sm">
-                    <p className="font-heading font-semibold text-text-dark">
-                      {testimonial.company}
-                    </p>
-                    <p className="text-text-dark/50">{testimonial.location}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* CTA BANNER */}
+      {/* BLADE AND CABINET SIGNS */}
+      <section className="section-padding bg-primary-dark">
+        <div className="container-max">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <PlaceholderImage
+                label="Blade sign and cabinet sign installations"
+                aspectRatio="aspect-[4/3]"
+              />
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                  Blade and Cabinet Signs
+                </h2>
+                <p className="text-text-light/60 leading-relaxed mb-4">
+                  While we are known for low profile LED-illuminated letterforms,
+                  we also have expertise to structurally engineer and fabricate blade
+                  signage, push-through cabinet signs, and recessed cabinet signage.
+                  UL Listed. Wholesale only.
+                </p>
+                <p className="text-text-light/60 leading-relaxed mb-6">
+                  Projecting blade signs for maximum storefront visibility.
+                  Illuminated cabinet signs for bold brand presence. All delivered
+                  in 3 weeks door to door, exclusively to the trade.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/products/blade-signs"
+                    className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                  >
+                    Blade Signs <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/products/lightboxes"
+                    className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                  >
+                    Cabinet Signs <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* SEG LIGHT BOXES */}
+      <section className="section-padding bg-light-bg">
+        <div className="container-max">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                  SEG Light Boxes
+                </h2>
+                <p className="text-brand-gold font-heading font-semibold text-base mb-4">
+                  Custom SEG Light Boxes and Prints in 3 Weeks
+                </p>
+                <p className="text-text-dark/60 leading-relaxed mb-6">
+                  From experiential retail experiences to advertising and wayfinding
+                  content, Sunlite Signs custom-sized Silicone-edged Graphic (SEG)
+                  Light Box solutions are like no other in the USA industry — in low
+                  form factors down to 1&quot; deep, high-quality, high-resolution
+                  printed and illuminated light box signage. Wholesale to the trade.
+                </p>
+                <Link
+                  href="/products/seg-light-boxes"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Explore SEG Light Boxes <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <PlaceholderImage
+                label="SEG Light Box — illuminated fabric display in retail environment"
+                aspectRatio="aspect-[4/3]"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* GET YOUR PRODUCT STARTED — CTA */}
       <section className="section-padding bg-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
         <div className="container-max relative z-10">
@@ -451,25 +344,26 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Add Sunlite to Your Supply Chain?
+                Get Your Product Started
               </h2>
               <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Request wholesale pricing for your next project. Detailed trade quotes within 48 hours.
+                Request wholesale pricing for your next project. Detailed trade
+                quotes within 48 hours. Delivered in 3 weeks door to door.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
+                  Get Your Product Started
                 </Link>
-                <Link href="/why-sunlite/wholesale-only" className="btn-secondary text-base px-10 py-5">
-                  Why We Sell Wholesale Only
+                <Link href="/contact" className="btn-secondary text-base px-10 py-5">
+                  Contact Us
                 </Link>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-text-light/50">
                 <a href="tel:+1234567890" className="hover:text-brand-gold transition-colors">
                   (123) 456-7890
                 </a>
-                <a href="mailto:info@sunlitesigns.com" className="hover:text-brand-gold transition-colors">
-                  info@sunlitesigns.com
+                <a href="mailto:hello@sunlitesigns.com" className="hover:text-brand-gold transition-colors">
+                  hello@sunlitesigns.com
                 </a>
               </div>
             </div>

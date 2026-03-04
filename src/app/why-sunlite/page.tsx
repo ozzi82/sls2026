@@ -65,7 +65,7 @@ const pillars = [
 
 const trustStats = [
   { value: "48 hrs", label: "Quote turnaround" },
-  { value: "4 weeks", label: "Standard delivery" },
+  { value: "3 weeks", label: "Door-to-door delivery" },
   { value: "100%", label: "Wholesale only" },
   { value: "USA & CA", label: "Trade accounts served" },
 ];
@@ -220,7 +220,7 @@ export default function WhySunlitePage() {
                 <span className="hidden sm:inline text-white/20">|</span>
                 <span className="flex items-center gap-2">
                   <Truck className="w-4 h-4 text-brand-gold" />
-                  4-Week Delivery
+                  3-Week Door-to-Door Delivery
                 </span>
                 <span className="hidden sm:inline text-white/20">|</span>
                 <span className="flex items-center gap-2">

@@ -36,8 +36,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@sunlitesigns.com",
-    href: "mailto:info@sunlitesigns.com",
+    value: "hello@sunlitesigns.com",
+    href: "mailto:hello@sunlitesigns.com",
     description: "Wholesale accounts — response within 1 business day",
   },
   {
@@ -68,7 +68,7 @@ export default function ContactPage() {
       "Florida-based wholesale-only LED signage manufacturer. Channel letters, blade signs, flat cut letters, and lightboxes exclusively for sign shops.",
     url: "https://sunlitesigns.com",
     telephone: "+1-234-567-890",
-    email: "info@sunlitesigns.com",
+    email: "hello@sunlitesigns.com",
     address: {
       "@type": "PostalAddress",
       addressRegion: "FL",

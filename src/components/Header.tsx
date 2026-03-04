@@ -13,13 +13,13 @@ const navigation = [
       { name: "Flat Cut Letters", href: "/products/flat-cut-letters" },
       { name: "Blade Signs", href: "/products/blade-signs" },
       { name: "Lightboxes", href: "/products/lightboxes" },
+      { name: "SEG Light Boxes", href: "/products/seg-light-boxes" },
       { name: "Custom Fabrication", href: "/products/custom-fabrication" },
     ],
   },
-  { name: "Why Sunlite", href: "/why-sunlite" },
+  { name: "Services", href: "/services" },
+  { name: "Our Story", href: "/about" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Resources", href: "/resources" },
-  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 

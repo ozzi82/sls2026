@@ -16,12 +16,12 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Wholesale Front Lit Channel Letters — Trade Pricing | Sunlite Signs",
+  title: "Wholesale Face Lit Channel Letters — Trade Pricing | Sunlite Signs",
   description:
-    "Wholesale front lit channel letters for sign shops only. Forward-facing LED illumination, UL listed, German-engineered. Trade pricing direct from manufacturer. We never sell retail.",
+    "Wholesale face lit channel letters for sign shops only. Forward-facing LED illumination, UL listed, German-engineered. Trade pricing direct from manufacturer. We never sell retail.",
   keywords: [
-    "front lit channel letters",
-    "front lit channel letters wholesale",
+    "face lit channel letters",
+    "face lit channel letters wholesale",
     "illuminated channel letters",
     "LED channel letters",
     "wholesale channel letter manufacturer",
@@ -54,7 +54,7 @@ const features = [
     icon: Shield,
     title: "UL Listed",
     description:
-      "Every front lit channel letter set ships with UL listing labels and documentation for fast, compliant permitting.",
+      "Every face lit channel letter set ships with UL listing labels and documentation for fast, compliant permitting.",
   },
   {
     icon: Ruler,
@@ -74,13 +74,13 @@ const specs = [
   { label: "Letter Height Range", value: '4" to 72"+' },
   { label: "Return Material", value: "0.040\" aluminum, painted" },
   { label: "Face Material", value: '3/16" or 1/8" acrylic, Pantone-matched' },
-  { label: "Trim Cap", value: "Standard 1\" aluminum or EdgeLuxe trimless" },
+  { label: "Trim Cap", value: "Standard 1\" aluminum or trimless" },
   { label: "LED Modules", value: "Samsung or Nichia, UL recognized" },
   { label: "Power Supply", value: "UL listed Class 2, remote mounted" },
   { label: "Mounting", value: "Stud, flush, or raceway" },
   { label: "Certifications", value: "UL Listed (UL 48)" },
   { label: "Warranty", value: "5-year LED, 2-year electrical components" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [
@@ -98,9 +98,9 @@ export default function FrontLitPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Wholesale Front Lit Channel Letters",
+    name: "Wholesale Face Lit Channel Letters",
     description:
-      "Wholesale front lit channel letters with forward-facing LED illumination. German-engineered, UL listed. Trade pricing for sign shops only.",
+      "Wholesale face lit channel letters with forward-facing LED illumination. German-engineered, UL listed. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
       name: "Sunlite Signs",
@@ -138,7 +138,7 @@ export default function FrontLitPage() {
               { name: "Home", href: "/" },
               { name: "Products", href: "/products" },
               { name: "Channel Letters", href: "/products/channel-letters" },
-              { name: "Front Lit" },
+              { name: "Face Lit" },
             ]}
           />
           <AnimatedSection>
@@ -150,7 +150,7 @@ export default function FrontLitPage() {
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
-                  Wholesale Front Lit{" "}
+                  Wholesale Face Lit{" "}
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
                 <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
@@ -169,7 +169,7 @@ export default function FrontLitPage() {
                 </Link>
               </div>
               <PlaceholderImage
-                label="Front lit channel letters — illuminated storefront, night shot"
+                label="Face lit channel letters — illuminated storefront, night shot"
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -188,7 +188,7 @@ export default function FrontLitPage() {
                 Trade Specifications & Benefits
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
-                Every front lit channel letter set is manufactured to the same
+                Every face lit channel letter set is manufactured to the same
                 exacting standards that define the Sunlite brand. Wholesale direct to your shop.
               </p>
             </div>
@@ -227,7 +227,7 @@ export default function FrontLitPage() {
                 reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.
               </p>
               <PlaceholderImage
-                label="Front lit channel letter — cross-section detail showing LED placement"
+                label="Face lit channel letter — cross-section detail showing LED placement"
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -266,7 +266,7 @@ export default function FrontLitPage() {
                   Common Applications
                 </h2>
                 <p className="text-text-light/60 mb-8">
-                  Front lit channel letters are the most versatile illuminated
+                  Face lit channel letters are the most versatile illuminated
                   sign type, suitable for virtually any commercial application
                   where visibility matters. Wholesale direct to sign shops for all project types.
                 </p>
@@ -283,7 +283,7 @@ export default function FrontLitPage() {
                 </ul>
               </div>
               <PlaceholderImage
-                label="Front lit channel letters — retail installation, daytime"
+                label="Face lit channel letters — retail installation, daytime"
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -299,19 +299,19 @@ export default function FrontLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Front Lit Projects
+                Face Lit Projects
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "Front lit letters — restaurant facade, night",
-                "Front lit letters — retail shopping center",
-                "Front lit letters — healthcare facility",
-                "Front lit letters — corporate office building",
-                "Front lit letters — hotel entrance",
-                "Front lit letters — multi-tenant commercial",
+                "Face lit letters — restaurant facade, night",
+                "Face lit letters — retail shopping center",
+                "Face lit letters — healthcare facility",
+                "Face lit letters — corporate office building",
+                "Face lit letters — hotel entrance",
+                "Face lit letters — multi-tenant commercial",
               ].map((label, i) => (
                 <PlaceholderImage
                   key={i}
@@ -335,7 +335,7 @@ export default function FrontLitPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Request Trade Pricing for Front Lit Letters
+                Request Trade Pricing for Face Lit Letters
               </h2>
               <p className="text-text-dark/60 mb-4">
                 Send your project files and receive a detailed wholesale quote

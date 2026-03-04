@@ -30,7 +30,7 @@ const blogPosts = [
     slug: "channel-letter-types-explained",
     title: "Channel Letter Types Explained: A Complete Guide for Sign Shops",
     excerpt:
-      "From front-lit to halo-lit, trimless to reverse channel letters, learn about every channel letter type available and when to recommend each to your clients. Written for wholesale trade buyers.",
+      "From face-lit to halo-lit, trimless to reverse channel letters, learn about every channel letter type available and when to recommend each to your clients. Written for wholesale trade buyers.",
     date: "2025-12-15",
     image: "Blog hero — various channel letter types on building facades",
     category: "Education",
@@ -39,7 +39,7 @@ const blogPosts = [
     slug: "trimless-vs-trimcap-channel-letters",
     title: "Trimless vs. Trim Cap Channel Letters: Which Should You Specify?",
     excerpt:
-      "The architectural trend toward trimless (EdgeLuxe) channel letters is growing fast. Compare trimless and trim cap options to help your sign shop clients choose the right look at wholesale pricing.",
+      "The architectural trend toward trimless channel letters is growing fast. Compare trimless and trim cap options to help your sign shop clients choose the right look at wholesale pricing.",
     date: "2025-11-28",
     image: "Blog hero — side-by-side comparison of trimless and trim cap letters",
     category: "Product Spotlight",
@@ -48,7 +48,7 @@ const blogPosts = [
     slug: "how-to-choose-sign-illumination",
     title: "How to Choose the Right Sign Illumination for Any Project",
     excerpt:
-      "Front-lit, halo-lit, front-and-halo, or non-illuminated? Walk through the decision factors including visibility, brand aesthetic, building facade, and budget — a guide for trade professionals.",
+      "Face-lit, halo-lit, front-and-halo, or non-illuminated? Walk through the decision factors including visibility, brand aesthetic, building facade, and budget — a guide for trade professionals.",
     date: "2025-11-10",
     image: "Blog hero — different illumination types shown at night",
     category: "Guides",

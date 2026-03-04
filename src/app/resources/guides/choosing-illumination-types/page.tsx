@@ -8,10 +8,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Choosing the Right Illumination Type — Wholesale Guide for Sign Shops | Sunlite Signs",
   description:
-    "Compare front-lit, halo-lit, front-and-halo, and non-illuminated channel letters at wholesale trade pricing. Learn when to specify each illumination type for your sign shop clients.",
+    "Compare face-lit, halo-lit, front-and-halo, and non-illuminated channel letters at wholesale trade pricing. Learn when to specify each illumination type for your sign shop clients.",
   keywords: [
     "wholesale channel letter illumination types",
-    "front lit vs halo lit trade",
+    "face lit vs halo lit trade",
     "backlit channel letters wholesale",
     "LED sign illumination guide",
     "halo lit channel letters wholesale",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Choosing the Right Illumination Type — Wholesale Guide for Sign Shops | Sunlite Signs",
     description:
-      "Compare front-lit, halo-lit, front-and-halo, and non-illuminated channel letters at wholesale trade pricing for your next sign project.",
+      "Compare face-lit, halo-lit, front-and-halo, and non-illuminated channel letters at wholesale trade pricing for your next sign project.",
     url: "https://sunlitesigns.com/resources/guides/choosing-illumination-types",
   },
 };
@@ -31,8 +31,8 @@ const illuminationTypes = [
     name: "Front-Lit",
     aka: "Face-Lit",
     description:
-      "LEDs inside the channel project light forward through a translucent acrylic face, producing a bright, colorful glow visible from long distances. Front-lit letters are the most common and versatile illumination type in the channel letter industry.",
-    image: "Front-lit channel letters glowing at night on a retail storefront",
+      "LEDs inside the channel project light forward through a translucent acrylic face, producing a bright, colorful glow visible from long distances. Face-lit letters are the most common and versatile illumination type in the channel letter industry.",
+    image: "Face-lit channel letters glowing at night on a retail storefront",
     bestFor: [
       "Maximum visibility from long distances",
       "Retail storefronts and shopping centers",
@@ -64,7 +64,7 @@ const illuminationTypes = [
     ],
     considerations: [
       "Requires a flat, light-colored mounting surface for best effect",
-      "Less readable than front-lit at long distances or in bright daylight",
+      "Less readable than face-lit at long distances or in bright daylight",
       "Requires standoff mounting to create the gap for the halo",
       "Dark or textured walls diminish the halo effect",
     ],
@@ -324,22 +324,22 @@ export default function ChoosingIlluminationTypesPage() {
                   {
                     question: "What is the primary viewing distance?",
                     guidance:
-                      "Highway or major road (100+ feet): front-lit. Pedestrian or street level (under 50 feet): any illumination type works. Interior: non-illuminated is often sufficient.",
+                      "Highway or major road (100+ feet): face-lit. Pedestrian or street level (under 50 feet): any illumination type works. Interior: non-illuminated is often sufficient.",
                   },
                   {
                     question: "What is the brand personality?",
                     guidance:
-                      "Bold, energetic, attention-grabbing brands favor front-lit. Refined, luxury, or architectural brands favor halo-lit. Premium brands wanting maximum impact choose front-and-halo.",
+                      "Bold, energetic, attention-grabbing brands favor face-lit. Refined, luxury, or architectural brands favor halo-lit. Premium brands wanting maximum impact choose front-and-halo.",
                   },
                   {
                     question: "What is the mounting surface?",
                     guidance:
-                      "Flat, light-colored walls are ideal for halo-lit. Dark, textured, or uneven surfaces favor front-lit or non-illuminated. Evaluate the surface before committing to halo illumination.",
+                      "Flat, light-colored walls are ideal for halo-lit. Dark, textured, or uneven surfaces favor face-lit or non-illuminated. Evaluate the surface before committing to halo illumination.",
                   },
                   {
                     question: "What is the budget range?",
                     guidance:
-                      "Present options at multiple price points. Many clients who start with a front-lit budget upgrade to front-and-halo when they see the difference in renderings. Wholesale trade pricing from Sunlite Signs helps you maintain strong margins across all options.",
+                      "Present options at multiple price points. Many clients who start with a face-lit budget upgrade to front-and-halo when they see the difference in renderings. Wholesale trade pricing from Sunlite Signs helps you maintain strong margins across all options.",
                   },
                   {
                     question: "Are there local sign code restrictions?",

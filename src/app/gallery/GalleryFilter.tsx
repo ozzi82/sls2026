@@ -22,7 +22,7 @@ const categories: Category[] = [
 
 const galleryItems: GalleryItem[] = [
   {
-    label: "Front Lit Channel Letters — Restaurant Storefront, Night",
+    label: "Face Lit Channel Letters — Restaurant Storefront, Night",
     category: "Channel Letters",
     aspectRatio: "aspect-[3/4]",
   },
@@ -32,7 +32,7 @@ const galleryItems: GalleryItem[] = [
     aspectRatio: "aspect-video",
   },
   {
-    label: "Trimless EdgeLuxe Letters — Modern Office Building",
+    label: "Trimless Letters — Modern Office Building",
     category: "Channel Letters",
     aspectRatio: "aspect-square",
   },

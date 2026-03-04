@@ -114,10 +114,10 @@ export default function ChannelLetterBuyingGuidePage() {
                   The most common configuration features aluminum returns, an acrylic face, and an aluminum back panel. LED modules inside the cavity illuminate the translucent face. Standard channel letters use a trim cap to secure the face to the returns.
                 </p>
                 <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
-                  Trimless (EdgeLuxe) Channel Letters
+                  Trimless Channel Letters
                 </h3>
                 <p className="text-text-light/70 leading-relaxed mb-4">
-                  Trimless letters eliminate the plastic trim cap, creating a seamless, modern junction between the face and returns. Sunlite Signs&apos; EdgeLuxe system uses German-engineered precision to achieve this clean aesthetic without compromising durability. Available exclusively at wholesale trade pricing.
+                  Trimless letters eliminate the plastic trim cap, creating a seamless, modern junction between the face and returns. Sunlite Signs&apos; trimless system uses German-engineered precision to achieve this clean aesthetic without compromising durability. Available exclusively at wholesale trade pricing.
                 </p>
                 <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
                   Reverse Channel Letters
@@ -296,7 +296,7 @@ export default function ChannelLetterBuyingGuidePage() {
                     "Manufacturing precision — Look for CNC fabrication, tight tolerances, and consistent quality. Ask to see samples.",
                     "LED quality — Inquire about the LED brand and specifications. Premium LEDs from Samsung, Nichia, or Cree offer superior color consistency and longevity.",
                     "Quote turnaround — How fast can the manufacturer provide a detailed wholesale quote? Sunlite Signs delivers quotes within 48 hours.",
-                    "Production time — Standard production time ranges from 3-6 weeks. Sunlite Signs delivers in 4 weeks.",
+                    "Production time — Standard production time ranges from 2-4 weeks. Sunlite Signs delivers in 3 weeks door to door.",
                     "Warranty — A strong warranty reflects manufacturing confidence. Look for at least 5 years on LEDs and 2 years on components.",
                     "Wholesale-only commitment — A true wholesale manufacturer will never compete with you for retail business. This is critical. Sunlite Signs never sells retail.",
                     "Support and communication — Evaluate responsiveness, willingness to provide shop drawings, and technical support availability.",
@@ -335,7 +335,7 @@ export default function ChannelLetterBuyingGuidePage() {
                     {
                       step: "3",
                       title: "Approve and Produce",
-                      desc: "Once you approve the shop drawings and pricing, we begin production. Our German-engineered manufacturing process ensures precision and consistency. Standard production time is 4 weeks.",
+                      desc: "Once you approve the shop drawings and pricing, we begin production. Our German-engineered manufacturing process ensures precision and consistency. Standard production time is 3 weeks.",
                     },
                     {
                       step: "4",

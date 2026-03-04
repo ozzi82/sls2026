@@ -7,13 +7,14 @@ const footerLinks = {
     { name: "Flat Cut Letters", href: "/products/flat-cut-letters" },
     { name: "Blade Signs", href: "/products/blade-signs" },
     { name: "Lightboxes", href: "/products/lightboxes" },
+    { name: "SEG Light Boxes", href: "/products/seg-light-boxes" },
     { name: "Custom Fabrication", href: "/products/custom-fabrication" },
   ],
   Company: [
-    { name: "Why Sunlite", href: "/why-sunlite" },
-    { name: "Wholesale Only Policy", href: "/why-sunlite/wholesale-only" },
-    { name: "About Us", href: "/about" },
+    { name: "Our Story", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Wholesale Only Policy", href: "/why-sunlite/wholesale-only" },
     { name: "Contact", href: "/contact" },
   ],
   "Trade Resources": [
@@ -97,9 +98,9 @@ export default function Footer() {
               <Phone className="w-4 h-4" />
               (123) 456-7890
             </a>
-            <a href="mailto:info@sunlitesigns.com" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
+            <a href="mailto:hello@sunlitesigns.com" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
               <Mail className="w-4 h-4" />
-              info@sunlitesigns.com
+              hello@sunlitesigns.com
             </a>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />

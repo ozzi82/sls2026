@@ -1,55 +1,58 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Shield,
-  Lightbulb,
-  Users,
-  Award,
-  Target,
-  Handshake,
-  Lock,
-} from "lucide-react";
+import { ArrowRight, Lock, Phone, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "About Sunlite Signs — Wholesale Channel Letter Manufacturer",
+  title: "Our Story — Sunlite Signs",
   description:
-    "Sunlite Signs LLC is a wholesale-only LED signage manufacturer based in Florida. Founded on one principle: never compete with our customers. German engineering heritage, UL listed, trade pricing for sign shops only.",
+    "The story of Sunlite Signs LLC — from German engineering roots in Nuremberg to a wholesale-only LED signage manufacturer in Florida. Built exclusively for sign shops across the USA and Canada.",
   openGraph: {
-    title: "About Sunlite Signs — Wholesale Channel Letter Manufacturer",
+    title: "Our Story — Sunlite Signs",
     description:
-      "Florida wholesale-only sign manufacturer. Founded on one principle: never compete with our customers. Trade pricing, German engineering, UL listed — sign shops only.",
+      "From Nuremberg to Florida — how German engineering heritage became a wholesale-only signage manufacturer built exclusively for the trade.",
     url: "https://sunlitesigns.com/about",
   },
 };
 
-const values = [
+const timelineEntries = [
   {
-    icon: Shield,
-    title: "Quality Without Compromise",
-    description:
-      "Every sign leaves our wholesale facility UL listed and rigorously inspected. We do not cut corners on materials, engineering, or craftsmanship — because our trade partners stake their reputation on every product we ship.",
+    number: "01",
+    title: "The Foundation: LKF Lichtwerbung, Nuremberg",
+    text: "The story begins with LKF Lichtwerbung in Nuremberg, Germany — a company built on decades of precision engineering in illuminated signage. European craftsmanship at its finest. The German standard for channel letter manufacturing that would eventually find its way across the Atlantic.",
+    imageLabel: "LKF Lichtwerbung facility in Nuremberg, Germany",
   },
   {
-    icon: Handshake,
-    title: "Wholesale Integrity — No Exceptions",
-    description:
-      "We sell exclusively to the trade. We will never compete with our partners for retail customers. No retail storefront. No direct-to-consumer sales. Your business stays your business. Period.",
+    number: "02",
+    title: "Father & Son: A Legacy of Precision",
+    text: "The growth of LKF under father-son collaboration deepened a heritage of German engineering excellence. Every letterform, every LED integration, every structural calculation refined over generations. A legacy that demanded nothing less than perfection.",
+    imageLabel: "Father and son working together at LKF — precision engineering heritage",
   },
   {
-    icon: Lightbulb,
-    title: "Innovation for the Trade",
-    description:
-      "From our EdgeLuxe trimless technology to advanced LED solutions, we invest in R&D that gives our wholesale partners a competitive edge. Available exclusively through the trade.",
+    number: "03",
+    title: "Kenan Meets Ozan in Germany",
+    text: "A chance meeting in Germany between Kenan and Ozan sparked a shared vision. Two minds united by a passion for precision signage and a belief that the American market deserved better — European engineering quality at wholesale prices, delivered direct to sign shops.",
+    imageLabel: "Kenan and Ozan — the meeting that started it all",
   },
   {
-    icon: Target,
-    title: "Precision Engineering at Trade Pricing",
-    description:
-      "Our German engineering heritage is not just a tagline. It defines our tolerances, our processes, and our commitment to perfection — all delivered at wholesale pricing that protects your margins.",
+    number: "04",
+    title: "A Friendship Becomes Something Larger",
+    text: "What started as a friendship evolved into a business vision: bring German-engineered signage to the USA, exclusively for the trade. No retail. No competing with customers. A wholesale manufacturing partner that stays in its lane.",
+    imageLabel: "Vision taking shape — planning the wholesale signage business",
+  },
+  {
+    number: "05",
+    title: "Ozan & Ayla Move to Florida",
+    text: "Ozan and Ayla, together with their family, made the move to Florida — establishing the American base for what would become Sunlite Signs. The sunshine state became home to a new kind of signage manufacturer: one that would never sell retail.",
+    imageLabel: "Ozan and Ayla — building a new home and business in Florida",
+  },
+  {
+    number: "06",
+    title: "Sunlite Signs Is Born",
+    text: "Sunlite Signs LLC — founded on one unbreakable principle: we manufacture, you sell. German-engineered, UL-listed channel letters and illuminated signs, delivered in 3 weeks door to door, exclusively to sign shops across the USA and Canada. The beginning of something larger.",
+    imageLabel: "Sunlite Signs LLC — wholesale signage manufacturer, Florida",
   },
 ];
 
@@ -62,7 +65,7 @@ export default function AboutPage() {
       "Florida-based wholesale-only LED signage manufacturer with German engineering heritage. UL listed channel letters, blade signs, flat cut letters, and lightboxes exclusively for sign shops across the USA and Canada.",
     url: "https://sunlitesigns.com",
     telephone: "+1-234-567-890",
-    email: "info@sunlitesigns.com",
+    email: "hello@sunlitesigns.com",
     address: {
       "@type": "PostalAddress",
       addressRegion: "FL",
@@ -105,7 +108,7 @@ export default function AboutPage() {
             <Breadcrumbs
               items={[
                 { name: "Home", href: "/" },
-                { name: "About" },
+                { name: "Our Story" },
               ]}
             />
           </div>
@@ -115,17 +118,16 @@ export default function AboutPage() {
               <AnimatedSection>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
+                    Wholesale Only
+                  </span>
                 </div>
                 <div className="gold-line mx-auto mb-6" />
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
-                  About Sunlite Signs
+                  Our Story
                 </h1>
                 <p className="text-lg text-text-light/60 max-w-2xl mx-auto">
-                  A wholesale-only manufacturer founded on one principle:{" "}
-                  <span className="text-brand-gold font-semibold">never compete with our customers.</span>{" "}
-                  German engineering precision. UL listed products. Trade pricing
-                  exclusively for sign shops.
+                  What makes us passionate about signage and experience.
                 </p>
               </AnimatedSection>
             </div>
@@ -133,287 +135,56 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* COMPANY STORY */}
-      <section className="section-padding bg-light-bg">
-        <div className="container-max">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            <AnimatedSection className="flex-1">
-              <PlaceholderImage
-                label="Sunlite Signs Florida facility exterior"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-            </AnimatedSection>
-            <AnimatedSection className="flex-1" delay={0.1}>
-              <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">
-                Built for the Trade. Nobody Else.
-              </h2>
-              <div className="space-y-4 text-text-dark/70 leading-relaxed">
-                <p>
-                  Sunlite Signs LLC is a wholesale-only LED signage manufacturer
-                  based in Florida. We exist for one reason: to give sign shops
-                  across the USA and Canada a manufacturing partner they can rely
-                  on for quality, consistency, speed, and the absolute guarantee
-                  that we will never compete with them for retail business.
-                </p>
-                <p>
-                  Every product we build is UL listed and engineered to the
-                  highest standards. From front lit and halo lit channel letters
-                  to our proprietary EdgeLuxe trimless technology, blade signs,
-                  flat cut letters, and lightboxes — everything we manufacture is
-                  available exclusively through the trade at wholesale pricing.
-                </p>
-                <p className="font-semibold text-text-dark">
-                  We manufacture. You sell. Your clients stay yours. Your margins
-                  stay yours. Zero retail competition — guaranteed.
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
+      {/* TIMELINE */}
+      {timelineEntries.map((entry, index) => {
+        const isEven = index % 2 === 0;
+        const bgClass = isEven ? "bg-light-bg" : "bg-primary-dark";
+        const titleColor = isEven ? "text-text-dark" : "text-text-light";
+        const textColor = isEven ? "text-text-dark/70" : "text-text-light/60";
+        const imageFirst = isEven;
 
-      {/* GERMAN ENGINEERING HERITAGE */}
-      <section className="section-padding bg-primary-dark">
-        <div className="container-max">
-          <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
-            <AnimatedSection className="flex-1">
-              <PlaceholderImage
-                label="LKF Lichtwerbung facility, Nuremberg, Germany"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-            </AnimatedSection>
-            <AnimatedSection className="flex-1" delay={0.1}>
-              <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
-                German Engineering, Exclusively for the Trade
-              </h2>
-              <div className="space-y-4 text-text-light/60 leading-relaxed">
-                <p>
-                  Our partnership with LKF Lichtwerbung in Nuremberg, Germany,
-                  is not a marketing tagline. It is the foundation of how we
-                  design, engineer, and manufacture every sign — and this
-                  engineering advantage is available exclusively to our
-                  wholesale trade partners.
-                </p>
-                <p>
-                  LKF brings decades of German precision engineering to our
-                  processes, from material selection and LED integration to
-                  structural design and quality control. This partnership gives
-                  our sign shop partners a manufacturing DNA that no retail
-                  competitor can access.
-                </p>
-                <p>
-                  The result is signage that is built tighter, lasts longer, and
-                  installs cleaner. Your clients see the difference. Your
-                  installers feel it. Your margins reflect the premium.
-                </p>
-              </div>
-              <div className="flex items-center gap-3 mt-6 p-4 bg-brand-gold/10 border border-brand-gold/20 rounded-lg">
-                <Award className="w-6 h-6 text-brand-gold flex-shrink-0" />
-                <span className="text-sm text-brand-gold font-heading font-medium">
-                  LKF Lichtwerbung Partnership — Available Exclusively to Trade Accounts
-                </span>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <section className="section-padding bg-light-bg">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                The Team Behind Your Wholesale Partner
-              </h2>
-              <p className="text-text-dark/60 max-w-xl mx-auto">
-                Experienced professionals dedicated to wholesale signage
-                excellence and the success of our trade partners.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <AnimatedSection>
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-black/5">
-                <PlaceholderImage
-                  label="Ozan — Founder / Principal"
-                  className="rounded-none border-0"
-                  aspectRatio="aspect-[4/5]"
-                />
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-heading font-bold text-text-dark mb-1">
-                    Ozan
-                  </h3>
-                  <p className="text-brand-gold font-heading text-sm font-medium uppercase tracking-wider mb-3">
-                    Founder
-                  </p>
-                  <p className="text-text-dark/60 text-sm leading-relaxed">
-                    With deep roots in the sign industry, Ozan founded Sunlite
-                    Signs on one conviction: a wholesale manufacturer should
-                    never compete with the sign shops it serves. That principle
-                    drives every decision we make.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-black/5">
-                <PlaceholderImage
-                  label="Sunlite Signs production team"
-                  className="rounded-none border-0"
-                  aspectRatio="aspect-[4/5]"
-                />
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-heading font-bold text-text-dark mb-1">
-                    Our Production Team
-                  </h3>
-                  <p className="text-brand-gold font-heading text-sm font-medium uppercase tracking-wider mb-3">
-                    Skilled Fabricators
-                  </p>
-                  <p className="text-text-dark/60 text-sm leading-relaxed">
-                    Our skilled fabricators, engineers, and quality inspectors
-                    work together to ensure every wholesale sign meets the
-                    standards our trade partners expect. Your success is their
-                    daily mission.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* FACILITY */}
-      <section className="section-padding bg-primary-dark">
-        <div className="container-max">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            <AnimatedSection className="flex-1">
-              <PlaceholderImage
-                label="Sunlite Signs manufacturing floor — CNC, bending, LED assembly"
-                className="rounded-xl"
-                aspectRatio="aspect-video"
-              />
-            </AnimatedSection>
-            <AnimatedSection className="flex-1" delay={0.1}>
-              <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
-                Our Wholesale Facility
-              </h2>
-              <div className="space-y-4 text-text-light/60 leading-relaxed">
-                <p>
-                  Our Florida manufacturing facility is equipped with
-                  state-of-the-art CNC machinery, precision bending equipment,
-                  and dedicated LED assembly stations. Every stage of production
-                  is managed in-house for complete quality control — exclusively
-                  serving trade accounts.
-                </p>
-                <p>
-                  From raw materials to finished, UL-listed signs crated for
-                  safe shipping, our wholesale facility is built to handle
-                  projects of any scale with the consistency and speed that
-                  sign shop partners require. No retail walk-ins. No consumer
-                  showroom. Just manufacturing, for the trade.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-brand-gold">UL</p>
-                  <p className="text-xs text-text-light/50 uppercase tracking-wider mt-1">
-                    Listed Facility
-                  </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-brand-gold">4 Wk</p>
-                  <p className="text-xs text-text-light/50 uppercase tracking-wider mt-1">
-                    Lead Time
-                  </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-brand-gold">USA</p>
-                  <p className="text-xs text-text-light/50 uppercase tracking-wider mt-1">
-                    & Canada Shipping
-                  </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-heading font-bold text-brand-gold">100%</p>
-                  <p className="text-xs text-text-light/50 uppercase tracking-wider mt-1">
-                    Trade Accounts Only
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* VALUES / MISSION */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                What Drives Us
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto">
-                Our values define every wholesale sign we build and every
-                trade partnership we maintain.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <AnimatedSection key={value.title} delay={index * 0.1}>
-                <div className="flex gap-5 p-6 bg-white/5 border border-white/10 rounded-xl hover:border-brand-gold/20 transition-colors">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center">
-                      <value.icon className="w-5 h-5 text-brand-gold" />
+        return (
+          <section key={entry.number} className={`section-padding ${bgClass}`}>
+            <div className="container-max">
+              <div
+                className={`flex flex-col ${
+                  imageFirst ? "md:flex-row" : "md:flex-row-reverse"
+                } items-center gap-12 md:gap-16`}
+              >
+                {/* Image side */}
+                <AnimatedSection className="flex-1 w-full">
+                  <div className="relative">
+                    {/* Numbered accent circle */}
+                    <div className="absolute -top-4 -left-4 z-10 w-14 h-14 rounded-full bg-brand-gold flex items-center justify-center shadow-lg">
+                      <span className="text-white font-heading font-bold text-lg">
+                        {entry.number}
+                      </span>
                     </div>
+                    <PlaceholderImage
+                      label={entry.imageLabel}
+                      className="rounded-xl"
+                      aspectRatio="aspect-[4/3]"
+                    />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-heading font-semibold text-text-light mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-text-light/50 text-sm leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
+                </AnimatedSection>
 
-      {/* MISSION STATEMENT */}
-      <section className="section-padding bg-light-bg">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <Users className="w-10 h-10 text-brand-gold mx-auto mb-6" />
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-dark mb-6">
-                Our Mission
-              </h2>
-              <p className="text-lg text-text-dark/70 leading-relaxed">
-                To be the most trusted wholesale signage manufacturer in North
-                America by combining German engineering heritage with
-                American manufacturing capability — exclusively for the trade.
-                We empower sign shops with premium products, trade pricing,
-                reliable lead times, and an unbreakable commitment: we will
-                never compete with our customers. We manufacture. You sell.
-                Simple.
-              </p>
+                {/* Text side */}
+                <AnimatedSection className="flex-1" delay={0.1}>
+                  <div className="gold-line mb-6" />
+                  <h2
+                    className={`text-3xl md:text-4xl font-heading font-bold ${titleColor} mb-6`}
+                  >
+                    {entry.title}
+                  </h2>
+                  <p className={`${textColor} leading-relaxed text-lg`}>
+                    {entry.text}
+                  </p>
+                </AnimatedSection>
+              </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </section>
+        );
+      })}
 
       {/* CTA */}
       <section className="section-padding bg-primary-dark relative overflow-hidden">
@@ -423,24 +194,43 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
+                  Trade Accounts Only
+                </span>
               </div>
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Partner with a Wholesale Manufacturer That Will Never Compete With You
+                Get Your Product Started
               </h2>
               <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to work with a wholesale partner that holds itself to
-                the highest standards — and stays out of your market? Get
-                trade pricing today.
+                Ready to work with a wholesale partner that holds itself to the
+                highest standards — and stays out of your market? Get trade
+                pricing today.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Link href="/get-a-quote" className="btn-primary gap-2">
-                  Request Wholesale Pricing <ArrowRight className="w-4 h-4" />
+                  Request Wholesale Pricing{" "}
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Contact Us
+                <Link href="/products" className="btn-secondary">
+                  View Products
                 </Link>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-text-light/50 text-sm">
+                <a
+                  href="tel:+1234567890"
+                  className="inline-flex items-center gap-2 hover:text-brand-gold transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  (123) 456-7890
+                </a>
+                <a
+                  href="mailto:hello@sunlitesigns.com"
+                  className="inline-flex items-center gap-2 hover:text-brand-gold transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  hello@sunlitesigns.com
+                </a>
               </div>
             </div>
           </AnimatedSection>

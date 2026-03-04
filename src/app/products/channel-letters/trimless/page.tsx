@@ -75,7 +75,7 @@ const keyDifferentiators = [
     icon: Lightbulb,
     title: "All Illumination Styles",
     description:
-      "Available in front lit, halo lit, and front-and-halo lit configurations. The trimless construction works with any LED configuration.",
+      "Available in face lit, halo lit, and front-and-halo lit configurations. The trimless construction works with any LED configuration.",
   },
 ];
 
@@ -125,18 +125,18 @@ const comparisonRows = [
 const specs = [
   { label: "Letter Height Range", value: '6" to 60"+' },
   { label: "Return Material", value: '0.040" aluminum, precision-formed' },
-  { label: "Face Material", value: '3/16" acrylic (front lit) or 0.063" aluminum (halo)' },
+  { label: "Face Material", value: '3/16" acrylic (face lit) or 0.063" aluminum (halo)' },
   { label: "Trim Cap", value: "None — proprietary trimless construction" },
   { label: "Face Attachment", value: "Precision aluminum channel, mechanical fit" },
   { label: "LED Modules", value: "Samsung or Nichia, UL recognized" },
-  { label: "Illumination Options", value: "Front lit, halo lit, front & halo" },
+  { label: "Illumination Options", value: "Face lit, halo lit, front & halo" },
   { label: "Return Depth", value: '3" to 5" (varies by letter size and illumination type)' },
   { label: "Power Supply", value: "UL listed Class 2, remote mounted" },
   { label: "Mounting", value: "Stud, flush, or raceway" },
   { label: "Finish", value: "Any Pantone color, brushed aluminum, or anodized" },
   { label: "Certifications", value: "UL Listed (UL 48)" },
   { label: "Warranty", value: "5-year LED, 3-year construction, 2-year electrical" },
-  { label: "Lead Time", value: "3-4 weeks standard" },
+  { label: "Lead Time", value: "3 weeks door to door" },
 ];
 
 const useCases = [
@@ -158,7 +158,7 @@ export default function TrimlessPage() {
     "@type": "Product",
     name: "Wholesale EdgeLuxe Trimless Channel Letters",
     description:
-      "Wholesale trimless channel letters with no visible trim cap. Seamless aluminum construction, German-engineered precision, UL listed. Available in front lit, halo lit, and combination configurations. Trade pricing for sign shops only.",
+      "Wholesale trimless channel letters with no visible trim cap. Seamless aluminum construction, German-engineered precision, UL listed. Available in face lit, halo lit, and combination configurations. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
       name: "Sunlite Signs — EdgeLuxe",
@@ -238,7 +238,7 @@ export default function TrimlessPage() {
                 </p>
                 <p className="text-text-light/50 mb-8">
                   Developed with LKF Lichtwerbung in Nuremberg. UL listed.
-                  Available in front lit, halo lit, and combination
+                  Available in face lit, halo lit, and combination
                   configurations. Wholesale direct to sign shops — we never sell retail.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -534,7 +534,7 @@ export default function TrimlessPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "EdgeLuxe trimless — luxury retail facade, front lit, night",
+                "EdgeLuxe trimless — luxury retail facade, face lit, night",
                 "EdgeLuxe trimless — corporate headquarters, halo lit",
                 "EdgeLuxe trimless — boutique hotel entrance, warm white",
                 "EdgeLuxe trimless — tech campus, large scale letters",
