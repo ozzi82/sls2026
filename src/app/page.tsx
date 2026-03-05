@@ -102,23 +102,23 @@ export default function Home() {
           <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-heading uppercase tracking-wider text-white/70">
               <span className="flex items-center gap-2">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" /> Wholesale Only
+                <Lock className="w-3.5 h-3.5 text-accent-teal" /> Wholesale Only
               </span>
               <span className="hidden sm:inline text-white/30">|</span>
               <span className="flex items-center gap-2">
-                <Shield className="w-3.5 h-3.5 text-brand-gold" /> UL Listed
+                <Shield className="w-3.5 h-3.5 text-accent-teal" /> UL Listed
               </span>
               <span className="hidden sm:inline text-white/30">|</span>
               <span className="flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-brand-gold" /> German Engineering
+                <Globe className="w-3.5 h-3.5 text-accent-teal" /> German Engineering
               </span>
               <span className="hidden sm:inline text-white/30">|</span>
               <span className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-brand-gold" /> 48-Hour Quotes
+                <Clock className="w-3.5 h-3.5 text-accent-teal" /> 48-Hour Quotes
               </span>
               <span className="hidden sm:inline text-white/30">|</span>
               <span className="flex items-center gap-2">
-                <Truck className="w-3.5 h-3.5 text-brand-gold" /> USA &amp; Canada
+                <Truck className="w-3.5 h-3.5 text-accent-teal" /> USA &amp; Canada
               </span>
             </div>
           </div>

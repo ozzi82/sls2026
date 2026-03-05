@@ -9,15 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary-dark": "#111111",
-        "brand-gold": "#E09F3E",
-        "brand-gold-light": "#EDB454",
-        navy: "#1A1A1A",
-        "navy-light": "#2D2D2D",
-        "light-bg": "#FAFAF8",
-        "text-dark": "#111111",
-        "text-light": "#FAFAF8",
-        "accent-red": "#C4762E",
+        "primary-dark": "#0F172A",
+        "brand-gold": "#E8590C",
+        "brand-gold-light": "#F97316",
+        navy: "#1E293B",
+        "navy-light": "#334155",
+        "light-bg": "#F8FAFC",
+        "text-dark": "#0F172A",
+        "text-light": "#F8FAFC",
+        "accent-red": "#DC2626",
+        "accent-teal": "#E8590C",
+        "accent-teal-light": "#F97316",
       },
       fontFamily: {
         heading: ["var(--font-outfit)", "sans-serif"],
