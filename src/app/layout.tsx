@@ -68,7 +68,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <MobileCTABar />
+        {/* MobileCTABar removed — CTAs now inline in hero on mobile */}
       </body>
     </html>
   );

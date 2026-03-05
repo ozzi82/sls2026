@@ -44,33 +44,58 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero-bg.jpg"
+            src="/hero-bg.webp"
             alt="Illuminated channel letters manufactured by Sunlite Signs"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
 
-        <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32 flex items-center min-h-screen">
-          <HeroContent className="bg-primary-dark/80 backdrop-blur-sm px-8 sm:px-10 py-8 sm:py-10 max-w-xl rounded-sm">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-[1.1] mb-3">
-              Wholesale Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
-            </h1>
+        {/* Desktop: horizontal strip flowing from right */}
+        <div className="relative z-10 hidden lg:flex items-end min-h-screen pb-28">
+          <HeroContent className="ml-auto w-[75%] bg-primary-dark/80 backdrop-blur-sm rounded-l-md flex flex-row items-center gap-6 pl-10 pr-10 py-4">
+            <div className="min-w-0 flex-1">
+              <h1 className="text-[1.7rem] xl:text-[2rem] font-heading font-bold text-white leading-[1.15]">
+                Wholesale Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
+              </h1>
+              <p className="text-xs text-white/50 mt-1">
+                German-engineered. UL listed. Built for sign shops.
+              </p>
+            </div>
 
-            <p className="text-sm text-white/60 mb-6">
-              German-engineered. UL listed. Built for sign shops.
-            </p>
+            <div className="w-px self-stretch bg-white/20 flex-shrink-0" />
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/get-a-quote" className="btn-primary text-sm px-7 py-3">
+            <div className="flex flex-row gap-3 flex-shrink-0">
+              <Link href="/get-a-quote" className="btn-primary text-sm px-7 py-3 whitespace-nowrap">
                 Get Your Product Started
               </Link>
-              <a href="tel:+6892940912" className="btn-secondary text-sm px-6 py-3 gap-2 border-white/30 hover:border-brand-gold">
+              <a href="tel:+6892940912" className="btn-secondary text-sm px-6 py-3 gap-2 border-white/30 hover:border-brand-gold whitespace-nowrap">
                 <Phone className="w-4 h-4" />
                 (689) 294-0912
               </a>
             </div>
           </HeroContent>
+        </div>
+
+        {/* Mobile: clean image, bold CTAs at bottom */}
+        <div className="relative z-10 flex lg:hidden flex-col justify-end min-h-screen pb-20">
+          <div className="bg-primary-dark/90 backdrop-blur-sm px-5 py-6">
+            <h1 className="text-xl sm:text-2xl font-heading font-bold text-white leading-[1.15] mb-1">
+              Wholesale Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
+            </h1>
+            <p className="text-xs text-white/50 mb-5">
+              German-engineered. UL listed. Built for sign shops.
+            </p>
+            <div className="flex gap-3">
+              <a href="tel:+6892940912" className="flex-1 flex items-center justify-center gap-2 bg-brand-gold text-white font-heading font-semibold text-base uppercase tracking-wider py-4 rounded-sm">
+                <Phone className="w-5 h-5" />
+                Call Now
+              </a>
+              <Link href="/get-a-quote" className="flex-1 flex items-center justify-center gap-2 border-2 border-white text-white font-heading font-semibold text-base uppercase tracking-wider py-4 rounded-sm">
+                Get a Quote
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/50 backdrop-blur-sm">
@@ -143,10 +168,14 @@ export default function Home() {
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <PlaceholderImage
-                label="Engineering services — structural design and LED layout"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="aspect-[4/3] rounded-sm overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/homepage-engineering.jpg"
+                  alt="Sunlite Signs engineering team designing channel letters with CAD software"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
@@ -217,10 +246,14 @@ export default function Home() {
                   View All Channel Letters <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="Low profile channel letters — trimless stainless steel close-up"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="aspect-[4/3] rounded-sm overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/homepage-channel-letters.jpg"
+                  alt="Low profile channel letters — trimless stainless steel close-up"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
