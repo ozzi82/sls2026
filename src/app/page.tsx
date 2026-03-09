@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -41,11 +42,13 @@ export default function Home() {
       {/* HERO — Full image background, compact text block on left */}
       <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/hero-bg.webp"
             alt="Illuminated channel letters manufactured by Sunlite Signs"
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/10" />
         </div>
@@ -153,12 +156,13 @@ export default function Home() {
                   Read Our Story <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
                   src="/homepage-story.png"
                   alt="Sunlite Signs team and LKF Lichtwerbung partnership"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -171,12 +175,13 @@ export default function Home() {
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
                   src="/homepage-engineering.jpg"
                   alt="Sunlite Signs engineering team designing channel letters with CAD software"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <div>
@@ -249,12 +254,13 @@ export default function Home() {
                   View All Channel Letters <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
                   src="/homepage-channel-letters.jpg"
                   alt="Low profile channel letters — trimless stainless steel close-up"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -267,12 +273,13 @@ export default function Home() {
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
                   src="/homepage-blade-cabinet.jpg"
                   alt="Blade sign and cabinet sign installations"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <div>
@@ -338,12 +345,13 @@ export default function Home() {
                   Explore SEG Light Boxes <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
                   src="/homepage-seg.jpg"
                   alt="SEG Light Box — illuminated fabric display in retail environment"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>

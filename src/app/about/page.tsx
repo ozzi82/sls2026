@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Lock, Phone, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -165,12 +166,13 @@ export default function AboutPage() {
                       </span>
                     </div>
                     {entry.imageSrc ? (
-                      <div className="aspect-[4/3] rounded-xl overflow-hidden">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                      <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                        <Image
                           src={entry.imageSrc}
                           alt={entry.imageLabel}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover"
                         />
                       </div>
                     ) : (
