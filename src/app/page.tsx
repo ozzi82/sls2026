@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
-import PlaceholderImage from "@/components/PlaceholderImage";
 
 export default function Home() {
   const jsonLd = {
