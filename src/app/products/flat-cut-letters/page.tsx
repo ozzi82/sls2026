@@ -11,6 +11,7 @@ import {
   Mountain,
   Lock,
 } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -201,11 +202,16 @@ export default function FlatCutLettersPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="Flat cut letters — brushed stainless steel on dark stone wall, corporate lobby"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src="/products/flat-cut-day.jpg"
+                  alt="Flat cut letters — brushed stainless steel on dark stone wall, corporate lobby"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>

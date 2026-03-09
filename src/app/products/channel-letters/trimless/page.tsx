@@ -12,6 +12,7 @@ import {
   Eye,
   Lock,
 } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -252,11 +253,16 @@ export default function TrimlessPage() {
                 </div>
               </div>
               <div className="relative">
-                <PlaceholderImage
-                  label="EdgeLuxe trimless channel letters — hero close-up showing seamless face-to-return joint, no trim cap"
-                  className="rounded-xl"
-                  aspectRatio="aspect-[4/3]"
-                />
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  <Image
+                    src="/products/trimless-night.jpg"
+                    alt="EdgeLuxe trimless channel letters — seamless face-to-return joint, no trim cap"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                    className="object-cover"
+                  />
+                </div>
                 <div className="absolute -bottom-4 -right-4 bg-brand-gold text-primary-dark px-6 py-3 rounded-lg font-heading font-bold text-sm uppercase tracking-wider shadow-lg">
                   Zero Trim Cap
                 </div>

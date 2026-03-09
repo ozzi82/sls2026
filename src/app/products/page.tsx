@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Shield, Clock, Wrench, Lock } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -30,6 +31,7 @@ const productCategories = [
       "Face lit, halo lit, trimless, and combination illuminated channel letters. Wholesale direct to sign shops. German-engineered with UL listing. Available exclusively to trade accounts.",
     href: "/products/channel-letters",
     image: "Channel letters product category — illuminated storefront sign",
+    imageSrc: "/products/front-halo-night.jpg",
     featured: true,
   },
   {
@@ -38,6 +40,7 @@ const productCategories = [
       "Precision-cut metal and acrylic dimensional letters at wholesale trade pricing. Clean lines, flush or stud-mounted, available in brushed aluminum, painted steel, and brass finishes.",
     href: "/products/flat-cut-letters",
     image: "Flat cut metal letters — dimensional signage",
+    imageSrc: "/products/flat-cut-day.jpg",
   },
   {
     name: "Blade Signs",
@@ -160,11 +163,24 @@ export default function ProductsPage() {
               <AnimatedSection key={cat.name}>
                 <Link href={cat.href} className="group block">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold/30 transition-all duration-300">
-                    <PlaceholderImage
-                      label={cat.image}
-                      className="rounded-none border-0 lg:min-h-[400px]"
-                      aspectRatio="aspect-[4/3] lg:aspect-auto"
-                    />
+                    {cat.imageSrc ? (
+                      <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
+                        <Image
+                          src={cat.imageSrc}
+                          alt={cat.image}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          priority
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <PlaceholderImage
+                        label={cat.image}
+                        className="rounded-none border-0 lg:min-h-[400px]"
+                        aspectRatio="aspect-[4/3] lg:aspect-auto"
+                      />
+                    )}
                     <div className="p-8 lg:p-12 lg:pr-16">
                       <span className="text-brand-gold text-xs font-heading uppercase tracking-widest">
                         Flagship Product Line — Wholesale Direct
@@ -211,11 +227,23 @@ export default function ProductsPage() {
                 <AnimatedSection key={cat.name} delay={index * 0.1}>
                   <Link href={cat.href} className="group block h-full">
                     <div className="bg-white border border-black/5 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 transition-all duration-300 h-full flex flex-col">
-                      <PlaceholderImage
-                        label={cat.image}
-                        className="rounded-none border-0"
-                        aspectRatio="aspect-[16/10]"
-                      />
+                      {cat.imageSrc ? (
+                        <div className="relative aspect-[16/10]">
+                          <Image
+                            src={cat.imageSrc}
+                            alt={cat.image}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <PlaceholderImage
+                          label={cat.image}
+                          className="rounded-none border-0"
+                          aspectRatio="aspect-[16/10]"
+                        />
+                      )}
                       <div className="p-6 flex-1 flex flex-col">
                         <h3 className="text-xl font-heading font-bold text-text-dark group-hover:text-brand-gold transition-colors mb-3">
                           Wholesale {cat.name}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Shield, Zap, Layers, CheckCircle, Lock } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -30,6 +31,7 @@ const channelLetterTypes = [
     description:
       "The industry standard for illuminated signage. LEDs face forward through a translucent acrylic face for maximum readability day and night. Available exclusively to trade accounts at wholesale pricing.",
     image: "Face lit channel letters — illuminated face, night view",
+    imageSrc: "/products/front-lit-night.jpg",
     highlights: ["Maximum face illumination", "Best daytime readability", "Broadest color range"],
   },
   {
@@ -38,6 +40,7 @@ const channelLetterTypes = [
     description:
       "A soft LED glow behind each letter creates a sophisticated halo effect against the mounting surface. The premium choice for upscale branding. Wholesale direct to sign shops.",
     image: "Halo lit channel letters — backlit glow on dark facade",
+    imageSrc: "/products/halo-lit-night.jpg",
     highlights: ["Elegant backlit glow", "Premium architectural look", "Ideal for dark facades"],
   },
   {
@@ -46,6 +49,7 @@ const channelLetterTypes = [
     description:
       "Combines front illumination with a rear halo glow for maximum visual impact. Two lighting effects in a single letter construction. Trade pricing for sign shops.",
     image: "Front and halo lit channel letters — dual illumination",
+    imageSrc: "/products/front-halo-night.jpg",
     highlights: ["Dual illumination effect", "Maximum nighttime impact", "Versatile applications"],
   },
   {
@@ -54,6 +58,7 @@ const channelLetterTypes = [
     description:
       "Our flagship innovation. No visible trim cap, seamless aluminum returns, and a modern architectural aesthetic that is redefining the industry. Available exclusively at wholesale trade pricing.",
     image: "Trimless channel letters — seamless modern design",
+    imageSrc: "/products/trimless-night.jpg",
     highlights: ["No visible trim cap", "Seamless construction", "Modern architectural aesthetic"],
     featured: true,
   },
@@ -63,6 +68,7 @@ const channelLetterTypes = [
     description:
       "Dimensional metal channel letters without illumination. Cost-effective dimensional signage with the same precision fabrication as our illuminated products. Wholesale pricing for trade accounts.",
     image: "Non-illuminated channel letters — painted aluminum",
+    imageSrc: "/products/flat-cut-day.jpg",
     highlights: ["Cost-effective option", "Same precision build", "Ideal for codes restricting illumination"],
   },
 ];
@@ -155,11 +161,16 @@ export default function ChannelLettersPage() {
                   </Link>
                 </div>
               </div>
-              <PlaceholderImage
-                label="Channel letters hero — multiple styles showcase"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src="/products/front-halo-night.jpg"
+                  alt="Channel letters — multiple illumination styles showcase"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -223,12 +234,24 @@ export default function ChannelLettersPage() {
                         index % 2 === 0 ? "lg:grid-cols-[1fr_1.2fr]" : "lg:grid-cols-[1.2fr_1fr]"
                       } items-center`}
                     >
-                      <div className={index % 2 === 0 ? "" : "lg:order-2"}>
-                        <PlaceholderImage
-                          label={type.image}
-                          className="rounded-none border-0 lg:min-h-[280px]"
-                          aspectRatio="aspect-[16/10] lg:aspect-auto"
-                        />
+                      <div className={`relative ${index % 2 === 0 ? "" : "lg:order-2"}`}>
+                        {type.imageSrc ? (
+                          <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[280px]">
+                            <Image
+                              src={type.imageSrc}
+                              alt={type.image}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              className="object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <PlaceholderImage
+                            label={type.image}
+                            className="rounded-none border-0 lg:min-h-[280px]"
+                            aspectRatio="aspect-[16/10] lg:aspect-auto"
+                          />
+                        )}
                       </div>
                       <div className="p-8 lg:p-10">
                         {type.featured && (

@@ -11,6 +11,7 @@ import {
   Zap,
   Lock,
 } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -170,11 +171,16 @@ export default function FrontAndHaloLitPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="Front and halo lit channel letters — dual illumination effect, night shot"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src="/products/front-halo-night.jpg"
+                  alt="Front and halo lit channel letters — dual illumination effect, night shot"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -199,11 +205,15 @@ export default function FrontAndHaloLitPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <PlaceholderImage
-                  label="Face lit only — face illumination view"
-                  className="rounded-xl mb-4"
-                  aspectRatio="aspect-square"
-                />
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/products/front-lit-night.jpg"
+                    alt="Face lit only — face illumination view"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="font-heading font-semibold text-text-light mb-1">
                   Face Lit Effect
                 </h3>
@@ -212,11 +222,15 @@ export default function FrontAndHaloLitPage() {
                 </p>
               </div>
               <div className="text-center">
-                <PlaceholderImage
-                  label="Halo lit only — rear glow view"
-                  className="rounded-xl mb-4"
-                  aspectRatio="aspect-square"
-                />
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/products/halo-lit-night.jpg"
+                    alt="Halo lit only — rear glow view"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="font-heading font-semibold text-text-light mb-1">
                   Halo Lit Effect
                 </h3>
@@ -225,11 +239,15 @@ export default function FrontAndHaloLitPage() {
                 </p>
               </div>
               <div className="text-center">
-                <PlaceholderImage
-                  label="Front and halo combined — full dual illumination"
-                  className="rounded-xl mb-4 ring-2 ring-brand-gold/30"
-                  aspectRatio="aspect-square"
-                />
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-4 ring-2 ring-brand-gold/30">
+                  <Image
+                    src="/products/front-halo-night.jpg"
+                    alt="Front and halo combined — full dual illumination"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="font-heading font-semibold text-brand-gold mb-1">
                   Combined Effect
                 </h3>

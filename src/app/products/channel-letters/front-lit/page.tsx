@@ -11,6 +11,7 @@ import {
   Lightbulb,
   Lock,
 } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -168,11 +169,16 @@ export default function FrontLitPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="Face lit channel letters — illuminated storefront, night shot"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src="/products/front-lit-night.jpg"
+                  alt="Face lit channel letters — illuminated storefront, night shot"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -282,11 +288,15 @@ export default function FrontLitPage() {
                   ))}
                 </ul>
               </div>
-              <PlaceholderImage
-                label="Face lit channel letters — retail installation, daytime"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src="/products/front-lit-day.jpg"
+                  alt="Face lit channel letters — retail installation, daytime"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
