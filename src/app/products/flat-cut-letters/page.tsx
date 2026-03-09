@@ -11,10 +11,12 @@ import {
   Mountain,
   Lock,
 } from "lucide-react";
-import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SpecsTable from "@/components/SpecsTable";
+import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
   title: "Wholesale Flat Cut Letters — Trade Pricing | Sunlite Signs",
@@ -104,20 +106,7 @@ const features = [
   },
 ];
 
-const specs = [
-  { label: "Materials", value: "Aluminum, stainless steel, brass, acrylic" },
-  { label: "Letter Height Range", value: '1" to 72"+' },
-  { label: "Aluminum Thickness", value: '1/8" to 1/2"' },
-  { label: "Stainless Thickness", value: '1/16" to 1/4"' },
-  { label: "Brass Thickness", value: '1/8" to 1/4"' },
-  { label: "Acrylic Thickness", value: '1/4" to 1"' },
-  { label: "Cutting Method", value: "CNC laser and waterjet" },
-  { label: "Cutting Tolerance", value: "+/- 0.005\"" },
-  { label: "Mounting Options", value: "Stud, flush, pin, or pattern provided" },
-  { label: "Finish", value: "Paint, brush, polish, anodize, powder coat, specialty" },
-  { label: "Warranty", value: "3-year construction and finish" },
-  { label: "Lead Time", value: "2-3 weeks standard" },
-];
+const product = getProduct("LP 1");
 
 const useCases = [
   "Corporate lobby and reception signage",
@@ -139,7 +128,12 @@ export default function FlatCutLettersPage() {
       "Wholesale flat cut letters in aluminum, stainless steel, brass, and acrylic. CNC precision-cut with multiple finishes and mounting options. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
-      name: "Sunlite Signs",
+      name: "Sunlite Signs — EdgeLuxe",
+    },
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: "Model",
+      value: "EdgeLuxe LP 1",
     },
     manufacturer: {
       "@type": "Organization",
@@ -202,16 +196,10 @@ export default function FlatCutLettersPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image
-                  src="/products/flat-cut-day.jpg"
-                  alt="Flat cut letters — brushed stainless steel on dark stone wall, corporate lobby"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                  className="object-cover"
-                />
-              </div>
+              <BeforeAfterSlider
+                daySrc="/products/flat-cut-day.jpg"
+                alt="Flat cut letters — brushed stainless steel on dark stone wall, corporate lobby"
+              />
             </div>
           </AnimatedSection>
         </div>
@@ -360,23 +348,7 @@ export default function FlatCutLettersPage() {
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                {specs.map((spec, index) => (
-                  <div
-                    key={spec.label}
-                    className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/5" : ""
-                    }`}
-                  >
-                    <span className="text-sm text-text-light/50 font-heading">
-                      {spec.label}
-                    </span>
-                    <span className="text-sm text-text-light font-medium text-right ml-4">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <SpecsTable specs={product.specs} modelNumber={product.modelNumber} />
             </AnimatedSection>
           </div>
         </div>

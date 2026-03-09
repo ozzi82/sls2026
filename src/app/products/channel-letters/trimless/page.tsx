@@ -12,10 +12,12 @@ import {
   Eye,
   Lock,
 } from "lucide-react";
-import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SpecsTable from "@/components/SpecsTable";
+import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
   title: "Wholesale EdgeLuxe Trimless Channel Letters — Trade Pricing | Sunlite Signs",
@@ -123,22 +125,7 @@ const comparisonRows = [
   },
 ];
 
-const specs = [
-  { label: "Letter Height Range", value: '6" to 60"+' },
-  { label: "Return Material", value: '0.040" aluminum, precision-formed' },
-  { label: "Face Material", value: '3/16" acrylic (face lit) or 0.063" aluminum (halo)' },
-  { label: "Trim Cap", value: "None — proprietary trimless construction" },
-  { label: "Face Attachment", value: "Precision aluminum channel, mechanical fit" },
-  { label: "LED Modules", value: "Samsung or Nichia, UL recognized" },
-  { label: "Illumination Options", value: "Face lit, halo lit, front & halo" },
-  { label: "Return Depth", value: '3" to 5" (varies by letter size and illumination type)' },
-  { label: "Power Supply", value: "UL listed Class 2, remote mounted" },
-  { label: "Mounting", value: "Stud, flush, or raceway" },
-  { label: "Finish", value: "Any Pantone color, brushed aluminum, or anodized" },
-  { label: "Certifications", value: "UL Listed (UL 48)" },
-  { label: "Warranty", value: "5-year LED, 3-year construction, 2-year electrical" },
-  { label: "Lead Time", value: "3 weeks door to door" },
-];
+const product = getProduct("LP 5");
 
 const useCases = [
   "Architect-specified brand signage",
@@ -253,16 +240,11 @@ export default function TrimlessPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                  <Image
-                    src="/products/trimless-night.jpg"
-                    alt="EdgeLuxe trimless channel letters — seamless face-to-return joint, no trim cap"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                    className="object-cover"
-                  />
-                </div>
+                <BeforeAfterSlider
+                  daySrc="/products/trimless-day.jpg"
+                  nightSrc="/products/trimless-night.jpg"
+                  alt="EdgeLuxe trimless channel letters — seamless face-to-return joint, no trim cap"
+                />
                 <div className="absolute -bottom-4 -right-4 bg-brand-gold text-primary-dark px-6 py-3 rounded-lg font-heading font-bold text-sm uppercase tracking-wider shadow-lg">
                   Zero Trim Cap
                 </div>
@@ -463,23 +445,7 @@ export default function TrimlessPage() {
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                {specs.map((spec, index) => (
-                  <div
-                    key={spec.label}
-                    className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/5" : ""
-                    }`}
-                  >
-                    <span className="text-sm text-text-light/50 font-heading">
-                      {spec.label}
-                    </span>
-                    <span className="text-sm text-text-light font-medium text-right ml-4">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <SpecsTable specs={product.specs} modelNumber={product.modelNumber} />
             </AnimatedSection>
           </div>
         </div>

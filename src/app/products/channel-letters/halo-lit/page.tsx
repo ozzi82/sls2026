@@ -11,10 +11,12 @@ import {
   Lightbulb,
   Lock,
 } from "lucide-react";
-import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SpecsTable from "@/components/SpecsTable";
+import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
   title: "Wholesale Halo Lit Channel Letters — Trade Pricing | Sunlite Signs",
@@ -72,20 +74,7 @@ const features = [
   },
 ];
 
-const specs = [
-  { label: "Letter Height Range", value: '6" to 72"+' },
-  { label: "Return Material", value: '0.040" aluminum, painted' },
-  { label: "Back Material", value: "Clear polycarbonate or open back" },
-  { label: "Face Material", value: '0.063" aluminum, painted to match returns' },
-  { label: "Standoff", value: '1" to 2" from wall (adjustable)' },
-  { label: "LED Modules", value: "Samsung rear-facing, UL recognized" },
-  { label: "Color Temperature", value: "3000K / 4000K / 6500K / RGB" },
-  { label: "Power Supply", value: "UL listed Class 2, remote mounted" },
-  { label: "Mounting", value: "Stud mount with spacers (standard)" },
-  { label: "Certifications", value: "UL Listed (UL 48)" },
-  { label: "Warranty", value: "5-year LED, 2-year electrical components" },
-  { label: "Lead Time", value: "3 weeks door to door" },
-];
+const product = getProduct("LP 11-B");
 
 const useCases = [
   "Luxury retail and boutiques",
@@ -107,7 +96,12 @@ export default function HaloLitPage() {
       "Wholesale halo lit channel letters with rear-mounted LED illumination for an elegant backlit glow. UL listed, German-engineered. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
-      name: "Sunlite Signs",
+      name: "Sunlite Signs — EdgeLuxe",
+    },
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: "Model",
+      value: "EdgeLuxe LP 11-B",
     },
     manufacturer: {
       "@type": "Organization",
@@ -171,16 +165,11 @@ export default function HaloLitPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image
-                  src="/products/halo-lit-night.jpg"
-                  alt="Halo lit channel letters — soft backlit glow on dark stone facade, night"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                  className="object-cover"
-                />
-              </div>
+              <BeforeAfterSlider
+                daySrc="/products/halo-lit-day.jpg"
+                nightSrc="/products/halo-lit-night.jpg"
+                alt="Halo lit channel letters — soft backlit glow on dark stone facade, night"
+              />
             </div>
           </AnimatedSection>
         </div>
@@ -285,23 +274,7 @@ export default function HaloLitPage() {
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                {specs.map((spec, index) => (
-                  <div
-                    key={spec.label}
-                    className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/5" : ""
-                    }`}
-                  >
-                    <span className="text-sm text-text-light/50 font-heading">
-                      {spec.label}
-                    </span>
-                    <span className="text-sm text-text-light font-medium text-right ml-4">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <SpecsTable specs={product.specs} modelNumber={product.modelNumber} />
             </AnimatedSection>
           </div>
         </div>

@@ -11,10 +11,12 @@ import {
   Layers,
   Lock,
 } from "lucide-react";
-import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SpecsTable from "@/components/SpecsTable";
+import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
   title: "Wholesale Non-Illuminated Channel Letters — Trade Pricing | Sunlite Signs",
@@ -72,19 +74,7 @@ const features = [
   },
 ];
 
-const specs = [
-  { label: "Letter Height Range", value: '3" to 72"+' },
-  { label: "Return Material", value: '0.040" aluminum, painted or finished' },
-  { label: "Face Material", value: '0.063" aluminum or 3/16" acrylic (colored)' },
-  { label: "Back Material", value: "0.040\" aluminum (closed back) or open" },
-  { label: "Return Depth", value: '1" to 6" (custom depths available)' },
-  { label: "Trim Cap", value: "Standard aluminum or trimless" },
-  { label: "Finish Options", value: "Pantone paint, brushed, anodized, specialty" },
-  { label: "Mounting", value: "Stud, flush, or raceway" },
-  { label: "Weight", value: "Significantly lighter than illuminated equivalent" },
-  { label: "Warranty", value: "3-year construction and finish" },
-  { label: "Lead Time", value: "2-3 weeks standard" },
-];
+const product = getProduct("LP 1");
 
 const useCases = [
   "Historical districts with lighting restrictions",
@@ -106,7 +96,12 @@ export default function NonIlluminatedPage() {
       "Wholesale non-illuminated channel letters for trade accounts. Dimensional aluminum letters without lighting, same precision fabrication as illuminated products. Sign shops only.",
     brand: {
       "@type": "Brand",
-      name: "Sunlite Signs",
+      name: "Sunlite Signs — EdgeLuxe",
+    },
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: "Model",
+      value: "EdgeLuxe LP 1",
     },
     manufacturer: {
       "@type": "Organization",
@@ -172,16 +167,10 @@ export default function NonIlluminatedPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image
-                  src="/products/flat-cut-day.jpg"
-                  alt="Non-illuminated channel letters — painted aluminum on stone facade, daytime"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                  className="object-cover"
-                />
-              </div>
+              <BeforeAfterSlider
+                daySrc="/products/flat-cut-day.jpg"
+                alt="Non-illuminated channel letters — painted aluminum on stone facade, daytime"
+              />
             </div>
           </AnimatedSection>
         </div>
@@ -297,23 +286,7 @@ export default function NonIlluminatedPage() {
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
-                {specs.map((spec, index) => (
-                  <div
-                    key={spec.label}
-                    className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/5" : ""
-                    }`}
-                  >
-                    <span className="text-sm text-text-light/50 font-heading">
-                      {spec.label}
-                    </span>
-                    <span className="text-sm text-text-light font-medium text-right ml-4">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <SpecsTable specs={product.specs} modelNumber={product.modelNumber} />
             </AnimatedSection>
           </div>
         </div>

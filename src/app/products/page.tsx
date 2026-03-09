@@ -28,7 +28,7 @@ const productCategories = [
   {
     name: "Channel Letters",
     description:
-      "Face lit, halo lit, trimless, and combination illuminated channel letters. Wholesale direct to sign shops. German-engineered with UL listing. Available exclusively to trade accounts.",
+      "The EdgeLuxe product line — 12 channel letter styles across 4 families: Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. German-engineered, UL listed. Wholesale direct to sign shops.",
     href: "/products/channel-letters",
     image: "Channel letters product category — illuminated storefront sign",
     imageSrc: "/products/front-halo-night.jpg",

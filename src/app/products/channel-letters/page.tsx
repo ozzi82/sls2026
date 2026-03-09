@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Shield, Zap, Layers, CheckCircle, Lock } from "lucide-react";
+import { ArrowRight, Shield, Zap, Layers, Lock } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
-import PlaceholderImage from "@/components/PlaceholderImage";
+import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Wholesale Channel Letters — Trade Pricing for Sign Shops | Sunlite Signs",
+  title: "Wholesale Channel Letters — EdgeLuxe Product Families | Sunlite Signs",
   description:
-    "Wholesale channel letters for sign shops only. Face lit, halo lit, trimless, and non-illuminated. Trade pricing, UL listed, German-engineered. We never sell retail.",
+    "Wholesale channel letters for sign shops only. 12 EdgeLuxe products across 4 families: Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. Trade pricing, UL listed, German-engineered.",
   keywords: [
     "wholesale channel letters",
+    "EdgeLuxe channel letters",
     "channel letters manufacturer",
-    "face lit channel letters",
-    "halo lit channel letters",
+    "block acrylic channel letters",
     "trimless channel letters wholesale",
-    "LED channel letters",
+    "stainless steel letters",
     "UL listed channel letters",
     "channel letter supplier USA",
     "trade pricing channel letters",
@@ -24,52 +24,46 @@ export const metadata: Metadata = {
   ],
 };
 
-const channelLetterTypes = [
+const productFamilies = [
   {
-    name: "Face Lit Channel Letters",
-    slug: "front-lit",
-    description:
-      "The industry standard for illuminated signage. LEDs face forward through a translucent acrylic face for maximum readability day and night. Available exclusively to trade accounts at wholesale pricing.",
-    image: "Face lit channel letters — illuminated face, night view",
-    imageSrc: "/products/front-lit-night.jpg",
-    highlights: ["Maximum face illumination", "Best daytime readability", "Broadest color range"],
+    familyName: "EdgeLuxe LP 11 — Block Acrylic Series",
+    familyDescription:
+      "30mm cast block acrylic, IP67 epoxy-sealed, zero maintenance. Eight illumination styles from the same rugged, waterproof platform.",
+    products: [
+      { name: "Face Lit", slug: "front-lit", model: "LP 11-F", dayImg: "/products/front-lit-day.jpg", nightImg: "/products/front-lit-night.jpg" },
+      { name: "Halo Lit", slug: "halo-lit", model: "LP 11-B", dayImg: "/products/halo-lit-day.jpg", nightImg: "/products/halo-lit-night.jpg" },
+      { name: "Face & Halo Combo", slug: "front-and-halo-lit", model: "LP 11-FB", dayImg: "/products/front-halo-day.jpg", nightImg: "/products/front-halo-night.jpg" },
+      { name: "Full Side Lit", slug: "side-lit", model: "LP 11-S", dayImg: "/products/side-lit-day.jpg", nightImg: "/products/side-lit-night.jpg" },
+      { name: "Back Side Lit", slug: "back-side-lit", model: "LP 11-BS", dayImg: "/products/back-side-day.jpg", nightImg: "/products/back-side-night.jpg" },
+      { name: "Front Side Lit", slug: "front-side-lit", model: "LP 11-FS", dayImg: "/products/face-side-day.jpg", nightImg: "/products/face-side-night.jpg" },
+      { name: "Faux Neon", slug: "faux-neon", model: "LP 11-N", dayImg: "/products/faux-neon-day.jpg", nightImg: "/products/faux-neon-night.jpg" },
+      { name: "Conical Profile", slug: "conical", model: "LP 11-C", dayImg: "/products/conical-day.jpg", nightImg: "/products/conical-night.jpg" },
+    ],
   },
   {
-    name: "Halo Lit Channel Letters",
-    slug: "halo-lit",
-    description:
-      "A soft LED glow behind each letter creates a sophisticated halo effect against the mounting surface. The premium choice for upscale branding. Wholesale direct to sign shops.",
-    image: "Halo lit channel letters — backlit glow on dark facade",
-    imageSrc: "/products/halo-lit-night.jpg",
-    highlights: ["Elegant backlit glow", "Premium architectural look", "Ideal for dark facades"],
+    familyName: "EdgeLuxe LP 5 — Trimless Stainless Steel",
+    familyDescription:
+      "Fabricated stainless steel with step-router acrylic face. No visible trim cap. The cleanest channel letter on the market.",
+    products: [
+      { name: "Trimless Face Lit", slug: "trimless", model: "LP 5", dayImg: "/products/trimless-day.jpg", nightImg: "/products/trimless-night.jpg" },
+    ],
   },
   {
-    name: "Front & Halo Lit Channel Letters",
-    slug: "front-and-halo-lit",
-    description:
-      "Combines front illumination with a rear halo glow for maximum visual impact. Two lighting effects in a single letter construction. Trade pricing for sign shops.",
-    image: "Front and halo lit channel letters — dual illumination",
-    imageSrc: "/products/front-halo-night.jpg",
-    highlights: ["Dual illumination effect", "Maximum nighttime impact", "Versatile applications"],
+    familyName: "EdgeLuxe LP 3 — Fabricated Stainless Steel",
+    familyDescription:
+      "Fabricated stainless steel with serviceable LEDs. Available in standoff halo and flush-mount configurations.",
+    products: [
+      { name: "Standoff Halo", slug: "stainless-standoff", model: "LP 3.1", dayImg: "/products/stainless-standoff-day.jpg", nightImg: "/products/stainless-standoff-night.jpg" },
+      { name: "Flush-Mount Halo", slug: "stainless-flush", model: "LP 3.2", dayImg: "/products/stainless-flush-day.jpg", nightImg: "/products/stainless-flush-night.jpg" },
+    ],
   },
   {
-    name: "Trimless Channel Letters",
-    slug: "trimless",
-    description:
-      "Our flagship innovation. No visible trim cap, seamless aluminum returns, and a modern architectural aesthetic that is redefining the industry. Available exclusively at wholesale trade pricing.",
-    image: "Trimless channel letters — seamless modern design",
-    imageSrc: "/products/trimless-night.jpg",
-    highlights: ["No visible trim cap", "Seamless construction", "Modern architectural aesthetic"],
-    featured: true,
-  },
-  {
-    name: "Non-Illuminated Channel Letters",
-    slug: "non-illuminated",
-    description:
-      "Dimensional metal channel letters without illumination. Cost-effective dimensional signage with the same precision fabrication as our illuminated products. Wholesale pricing for trade accounts.",
-    image: "Non-illuminated channel letters — painted aluminum",
-    imageSrc: "/products/flat-cut-day.jpg",
-    highlights: ["Cost-effective option", "Same precision build", "Ideal for codes restricting illumination"],
+    familyName: "EdgeLuxe LP 1 — Flat Cutout Letters",
+    familyDescription:
+      "Non-illuminated flat cutout letters in wood, aluminum, stainless steel, and acrylic. Same precision, no LEDs.",
+    products: [
+      { name: "Flat Cut (Non-Illuminated)", slug: "non-illuminated", model: "LP 1", dayImg: "/products/flat-cut-day.jpg" },
+    ],
   },
 ];
 
@@ -95,17 +89,18 @@ const advantages = [
 ];
 
 export default function ChannelLettersPage() {
+  const allProducts = productFamilies.flatMap((f) => f.products);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Wholesale Channel Letters by Sunlite Signs",
+    name: "Wholesale EdgeLuxe Channel Letters by Sunlite Signs",
     description:
-      "Complete range of wholesale channel letters for trade accounts including face lit, halo lit, trimless, and non-illuminated options. Sign shops only.",
-    itemListElement: channelLetterTypes.map((type, index) => ({
+      "Complete EdgeLuxe product line: 12 wholesale channel letter styles across 4 product families. Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. Sign shops only.",
+    itemListElement: allProducts.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: type.name,
-      url: `https://sunlitesigns.com/products/channel-letters/${type.slug}`,
+      name: `EdgeLuxe ${product.model} — ${product.name}`,
+      url: `https://sunlitesigns.com/products/channel-letters/${product.slug}`,
     })),
   };
 
@@ -140,13 +135,13 @@ export default function ChannelLettersPage() {
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
                 <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
-                  From classic face lit to our proprietary trimless
-                  line, Sunlite manufactures the full spectrum of channel letter
-                  styles. Wholesale direct to sign shops — we never sell retail.
+                  The EdgeLuxe product line — 12 channel letter styles across 4
+                  product families. From IP67-sealed block acrylic to fabricated
+                  stainless steel, every style manufactured in-house. Wholesale direct to sign shops.
                 </p>
                 <p className="text-text-light/50 mb-8">
-                  Every set is German-engineered, UL listed, and
-                  delivered within 3 weeks door to door. Trade pricing with no retail markup. Your clients stay yours.
+                  German-engineered precision. UL listed. Delivered within 3 weeks
+                  door to door. Trade pricing with no retail markup. Your clients stay yours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/get-a-quote" className="btn-primary">
@@ -199,96 +194,65 @@ export default function ChannelLettersPage() {
         </div>
       </section>
 
-      {/* Channel Letter Types */}
-      <section className="section-padding bg-light-bg">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Wholesale Channel Letter Types
-              </h2>
-              <p className="text-text-dark/60 max-w-xl mx-auto">
-                Five distinct styles to match every brand, building, and budget.
-                All manufactured in-house and available exclusively at trade pricing for sign shops.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="space-y-8">
-            {channelLetterTypes.map((type, index) => (
-              <AnimatedSection key={type.slug} delay={index * 0.05}>
-                <Link
-                  href={`/products/channel-letters/${type.slug}`}
-                  className="group block"
-                >
-                  <div
-                    className={`bg-white border rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 ${
-                      type.featured
-                        ? "border-brand-gold/30 ring-1 ring-brand-gold/10"
-                        : "border-black/5"
-                    }`}
+      {/* Product Families */}
+      {productFamilies.map((family, familyIndex) => (
+        <section
+          key={family.familyName}
+          className={`section-padding ${familyIndex % 2 === 0 ? "bg-light-bg" : "bg-primary-dark"}`}
+        >
+          <div className="container-max">
+            <AnimatedSection>
+              <div className="mb-12">
+                <div className="gold-line mb-6" />
+                <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${familyIndex % 2 === 0 ? "text-text-dark" : "text-text-light"}`}>
+                  {family.familyName}
+                </h2>
+                <p className={`max-w-2xl ${familyIndex % 2 === 0 ? "text-text-dark/60" : "text-text-light/60"}`}>
+                  {family.familyDescription}
+                </p>
+              </div>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {family.products.map((product, productIndex) => (
+                <AnimatedSection key={product.slug} delay={productIndex * 0.05}>
+                  <Link
+                    href={`/products/channel-letters/${product.slug}`}
+                    className="group block h-full"
                   >
-                    <div
-                      className={`grid grid-cols-1 ${
-                        index % 2 === 0 ? "lg:grid-cols-[1fr_1.2fr]" : "lg:grid-cols-[1.2fr_1fr]"
-                      } items-center`}
-                    >
-                      <div className={`relative ${index % 2 === 0 ? "" : "lg:order-2"}`}>
-                        {type.imageSrc ? (
-                          <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[280px]">
-                            <Image
-                              src={type.imageSrc}
-                              alt={type.image}
-                              fill
-                              sizes="(max-width: 1024px) 100vw, 50vw"
-                              className="object-cover"
-                            />
-                          </div>
-                        ) : (
-                          <PlaceholderImage
-                            label={type.image}
-                            className="rounded-none border-0 lg:min-h-[280px]"
-                            aspectRatio="aspect-[16/10] lg:aspect-auto"
-                          />
-                        )}
-                      </div>
-                      <div className="p-8 lg:p-10">
-                        {type.featured && (
-                          <span className="inline-block text-xs font-heading font-semibold uppercase tracking-widest text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full mb-3">
-                            Flagship Innovation
-                          </span>
-                        )}
-                        <h3 className="text-2xl font-heading font-bold text-text-dark group-hover:text-brand-gold transition-colors mb-3">
-                          {type.name}
+                    <div className={`rounded-xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg ${
+                      familyIndex % 2 === 0
+                        ? "bg-white border border-black/5 hover:border-brand-gold/30"
+                        : "bg-white/5 border border-white/10 hover:border-brand-gold/30"
+                    }`}>
+                      <ProductImageHover
+                        daySrc={product.dayImg}
+                        nightSrc={"nightImg" in product ? product.nightImg : undefined}
+                        alt={`${product.name} — EdgeLuxe ${product.model}`}
+                      />
+                      <div className="p-5">
+                        <span className={`text-xs font-heading font-semibold uppercase tracking-widest ${
+                          familyIndex % 2 === 0 ? "text-text-dark/40" : "text-text-light/40"
+                        }`}>
+                          {product.model}
+                        </span>
+                        <h3 className={`text-lg font-heading font-bold mt-1 mb-2 group-hover:text-brand-gold transition-colors ${
+                          familyIndex % 2 === 0 ? "text-text-dark" : "text-text-light"
+                        }`}>
+                          {product.name}
                         </h3>
-                        <p className="text-text-dark/60 leading-relaxed mb-5">
-                          {type.description}
-                        </p>
-                        <ul className="space-y-2 mb-6">
-                          {type.highlights.map((h) => (
-                            <li
-                              key={h}
-                              className="flex items-center gap-2 text-sm text-text-dark/70"
-                            >
-                              <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                              {h}
-                            </li>
-                          ))}
-                        </ul>
                         <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
-                          Get Trade Pricing
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          View Details
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                         </span>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* CTA */}
       <section className="section-padding bg-primary-dark relative overflow-hidden">

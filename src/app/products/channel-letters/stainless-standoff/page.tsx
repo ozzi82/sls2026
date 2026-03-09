@@ -3,12 +3,12 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
-  Sun,
-  Eye,
-  Palette,
+  Moon,
+  Wrench,
   Shield,
+  Palette,
   Ruler,
-  Lightbulb,
+  Building2,
   Lock,
 } from "lucide-react";
 import Image from "next/image";
@@ -20,94 +20,94 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
-  title: "Wholesale Face Lit Channel Letters — Trade Pricing | Sunlite Signs",
+  title: "Wholesale Stainless Steel Standoff Halo Letters — EdgeLuxe LP 3.1 | Sunlite Signs",
   description:
-    "Wholesale face lit channel letters for sign shops only. Forward-facing LED illumination, UL listed, German-engineered. Trade pricing direct from manufacturer. We never sell retail.",
+    "Wholesale fabricated stainless steel halo-lit letters with standoff mount. LEDs arranged to avoid reflection. German-engineered. Trade pricing for sign shops only.",
   keywords: [
-    "face lit channel letters",
-    "face lit channel letters wholesale",
-    "illuminated channel letters",
-    "LED channel letters",
-    "wholesale channel letter manufacturer",
-    "front face illuminated signs",
-    "trade pricing channel letters",
+    "stainless steel halo letters",
+    "standoff mount letters",
+    "fabricated metal letters",
+    "halo lit signs wholesale",
+    "stainless steel channel letters",
+    "wholesale letters",
+    "trade pricing",
     "sign shop supplier",
   ],
 };
 
 const features = [
   {
-    icon: Sun,
-    title: "Maximum Face Illumination",
+    icon: Moon,
+    title: "Clean Halo Effect",
     description:
-      "Forward-facing LEDs illuminate the full letter face for excellent readability day and night, even in direct sunlight.",
+      "LEDs specifically arranged to avoid diode reflection on the mounting surface. Creates a smooth, even halo glow behind each letter.",
   },
   {
-    icon: Eye,
-    title: "Superior Visibility",
+    icon: Building2,
+    title: "Standoff Mounting",
     description:
-      "The brightest channel letter option available. Ideal for high-traffic locations where visibility is the top priority.",
-  },
-  {
-    icon: Palette,
-    title: "Full Color Range",
-    description:
-      "Available with any Pantone-matched acrylic face color. White, colored, and even day/night color-changing faces available.",
+      "Raised off the mounting surface with precision standoff spacers. The gap between letter and wall creates the signature halo illumination.",
   },
   {
     icon: Shield,
     title: "UL Listed",
     description:
-      "Every face lit channel letter set ships with UL listing labels and documentation for fast, compliant permitting.",
+      "Every illuminated letter set ships with UL listing labels and documentation for fast, compliant permitting.",
+  },
+  {
+    icon: Palette,
+    title: "Full Customization",
+    description:
+      "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colorful halo effects.",
   },
   {
     icon: Ruler,
-    title: "Custom Sizing",
+    title: "Multiple Depth Options",
     description:
-      "Manufactured from 4 inches up to 72+ inches tall. We accommodate any font, logo, or custom shape.",
+      "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired halo spread.",
   },
   {
-    icon: Lightbulb,
-    title: "Samsung LEDs",
+    icon: Wrench,
+    title: "Serviceable LEDs",
     description:
-      "Premium Samsung LED modules with 50,000+ hour rated life, consistent color output, and industry-leading warranty.",
+      "Unlike sealed block acrylic, fabricated stainless steel construction allows LED modules to be serviced and replaced in the field.",
   },
 ];
 
-const product = getProduct("LP 11-F");
-
 const useCases = [
-  "Retail storefronts and shopping centers",
-  "Restaurants and food service brands",
-  "Healthcare and medical facilities",
-  "Hospitality and hotel signage",
   "Corporate office buildings",
-  "Gas stations and convenience stores",
-  "Automotive dealerships",
-  "Multi-tenant commercial buildings",
+  "Luxury retail storefronts",
+  "High-end restaurants",
+  "Hotels and hospitality",
+  "Medical and dental offices",
+  "Banks and financial institutions",
+  "Architectural building signage",
+  "Premium multi-tenant directories",
 ];
 
-export default function FrontLitPage() {
+export default function StainlessStandoffPage() {
+  const product = getProduct("LP 3.1");
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Wholesale Face Lit Channel Letters",
+    name: "Wholesale Stainless Steel Standoff Halo Letters — EdgeLuxe LP 3.1",
     description:
-      "Wholesale face lit channel letters with forward-facing LED illumination. German-engineered, UL listed. Trade pricing for sign shops only.",
+      "Wholesale fabricated stainless steel halo-lit letters with standoff mount. LEDs arranged to avoid reflection. German-engineered. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
       name: "Sunlite Signs — EdgeLuxe",
-    },
-    additionalProperty: {
-      "@type": "PropertyValue",
-      name: "Model",
-      value: "EdgeLuxe LP 11-F",
     },
     manufacturer: {
       "@type": "Organization",
       name: "Sunlite Signs LLC",
     },
     category: "Channel Letters",
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: "Model",
+      value: "EdgeLuxe LP 3.1",
+    },
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -115,7 +115,8 @@ export default function FrontLitPage() {
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "USD",
-        description: "Wholesale trade pricing available upon request — sign shops only",
+        description:
+          "Wholesale trade pricing available upon request — sign shops only",
       },
     },
   };
@@ -136,7 +137,7 @@ export default function FrontLitPage() {
               { name: "Home", href: "/" },
               { name: "Products", href: "/products" },
               { name: "Channel Letters", href: "/products/channel-letters" },
-              { name: "Face Lit" },
+              { name: "Stainless Steel Standoff" },
             ]}
           />
           <AnimatedSection>
@@ -148,18 +149,18 @@ export default function FrontLitPage() {
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
-                  Wholesale Face Lit{" "}
-                  <span className="text-brand-gold">Channel Letters</span>
+                  Wholesale Stainless Steel{" "}
+                  <span className="text-brand-gold">Standoff Halo Letters</span>
                 </h1>
                 <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
-                  The industry standard for illuminated signage. Forward-facing
-                  LEDs shine through a translucent acrylic face, delivering
-                  maximum brightness and readability for any commercial
-                  application. Available exclusively to trade accounts.
+                  Fabricated stainless steel letters with precision standoff
+                  mounting create a clean, sophisticated halo glow. The EdgeLuxe
+                  LP 3.1 features LEDs arranged to eliminate diode reflection on
+                  the mounting surface — delivering a smooth, even backlight.
                 </p>
                 <p className="text-text-light/50 mb-8">
                   German-engineered precision. UL listed. Wholesale direct to
-                  sign shops across the USA and Canada. We never sell retail — your clients stay yours.
+                  sign shops across the USA and Canada.
                 </p>
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing
@@ -167,9 +168,9 @@ export default function FrontLitPage() {
                 </Link>
               </div>
               <BeforeAfterSlider
-                daySrc="/products/front-lit-day.jpg"
-                nightSrc="/products/front-lit-night.jpg"
-                alt="Face lit channel letters — illuminated storefront, night shot"
+                daySrc="/products/stainless-standoff-day.jpg"
+                nightSrc="/products/stainless-standoff-night.jpg"
+                alt="Stainless steel standoff halo letters — clean halo glow on facade, night"
               />
             </div>
           </AnimatedSection>
@@ -186,8 +187,9 @@ export default function FrontLitPage() {
                 Trade Specifications & Benefits
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
-                Every face lit channel letter set is manufactured to the same
-                exacting standards that define the Sunlite brand. Wholesale direct to your shop.
+                Every stainless steel standoff halo letter set is manufactured
+                to the same exacting standards that define the Sunlite brand.
+                Wholesale direct to your shop.
               </p>
             </div>
           </AnimatedSection>
@@ -222,10 +224,11 @@ export default function FrontLitPage() {
               </h2>
               <p className="text-text-light/60 mb-8">
                 Built to meet and exceed industry standards. Every specification
-                reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.
+                reflects our commitment to quality and longevity. Available
+                exclusively at wholesale trade pricing.
               </p>
               <PlaceholderImage
-                label="Face lit channel letter — cross-section detail showing LED placement"
+                label="Stainless steel standoff halo — cross-section detail showing LED placement and standoff spacer"
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -248,9 +251,10 @@ export default function FrontLitPage() {
                   Common Applications
                 </h2>
                 <p className="text-text-light/60 mb-8">
-                  Face lit channel letters are the most versatile illuminated
-                  sign type, suitable for virtually any commercial application
-                  where visibility matters. Wholesale direct to sign shops for all project types.
+                  Stainless steel standoff halo letters deliver a refined,
+                  architectural aesthetic that elevates any brand. Perfect for
+                  premium environments where sophistication is paramount.
+                  Wholesale direct to sign shops for all project types.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {useCases.map((useCase) => (
@@ -266,8 +270,8 @@ export default function FrontLitPage() {
               </div>
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image
-                  src="/products/front-lit-day.jpg"
-                  alt="Face lit channel letters — retail installation, daytime"
+                  src="/products/stainless-standoff-day.jpg"
+                  alt="Stainless steel standoff halo letters — commercial installation, daytime"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -285,19 +289,19 @@ export default function FrontLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Face Lit Projects
+                Stainless Steel Standoff Projects
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "Face lit letters — restaurant facade, night",
-                "Face lit letters — retail shopping center",
-                "Face lit letters — healthcare facility",
-                "Face lit letters — corporate office building",
-                "Face lit letters — hotel entrance",
-                "Face lit letters — multi-tenant commercial",
+                "Stainless steel standoff halo — corporate office building",
+                "Stainless steel standoff halo — luxury retail storefront",
+                "Stainless steel standoff halo — high-end restaurant",
+                "Stainless steel standoff halo — hotel entrance, evening",
+                "Stainless steel standoff halo — medical office facade",
+                "Stainless steel standoff halo — architectural building signage",
               ].map((label, i) => (
                 <PlaceholderImage
                   key={i}
@@ -321,7 +325,7 @@ export default function FrontLitPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Request Trade Pricing for Face Lit Letters
+                Request Trade Pricing for Stainless Steel Halo Letters
               </h2>
               <p className="text-text-dark/60 mb-4">
                 Send your project files and receive a detailed wholesale quote
@@ -329,7 +333,8 @@ export default function FrontLitPage() {
                 sketch.
               </p>
               <p className="text-text-dark/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients.
+                No retail markup. We never sell retail and we never compete with
+                you for your clients.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link

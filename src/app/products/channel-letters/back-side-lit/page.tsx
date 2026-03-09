@@ -3,10 +3,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
-  Sun,
-  Eye,
-  Palette,
+  Moon,
+  Layers,
   Shield,
+  Palette,
   Ruler,
   Lightbulb,
   Lock,
@@ -20,94 +20,95 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 
 export const metadata: Metadata = {
-  title: "Wholesale Face Lit Channel Letters — Trade Pricing | Sunlite Signs",
+  title:
+    "Wholesale Back Side Lit Channel Letters — EdgeLuxe LP 11-BS | Sunlite Signs",
   description:
-    "Wholesale face lit channel letters for sign shops only. Forward-facing LED illumination, UL listed, German-engineered. Trade pricing direct from manufacturer. We never sell retail.",
+    "Wholesale partial back side-lit block acrylic channel letters. Flush-mount halo effect from the back side. IP67, German-engineered. Trade pricing for sign shops only.",
   keywords: [
-    "face lit channel letters",
-    "face lit channel letters wholesale",
-    "illuminated channel letters",
-    "LED channel letters",
-    "wholesale channel letter manufacturer",
-    "front face illuminated signs",
-    "trade pricing channel letters",
+    "back side lit channel letters",
+    "partial side lit signs",
+    "flush mount channel letters",
+    "halo effect letters",
+    "block acrylic letters wholesale",
+    "wholesale channel letters",
+    "trade pricing",
     "sign shop supplier",
   ],
 };
 
 const features = [
   {
-    icon: Sun,
-    title: "Maximum Face Illumination",
+    icon: Moon,
+    title: "Subtle Back Side Glow",
     description:
-      "Forward-facing LEDs illuminate the full letter face for excellent readability day and night, even in direct sunlight.",
+      "Partial back side illumination creates an elegant, understated halo effect when flush-mounted against any surface.",
   },
   {
-    icon: Eye,
-    title: "Superior Visibility",
+    icon: Layers,
+    title: "Flush-Mount Design",
     description:
-      "The brightest channel letter option available. Ideal for high-traffic locations where visibility is the top priority.",
+      "Engineered for direct surface mounting with no standoff spacers required. Clean, minimal installation profile.",
+  },
+  {
+    icon: Shield,
+    title: "IP67 Sealed",
+    description:
+      "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation.",
   },
   {
     icon: Palette,
     title: "Full Color Range",
     description:
-      "Available with any Pantone-matched acrylic face color. White, colored, and even day/night color-changing faces available.",
-  },
-  {
-    icon: Shield,
-    title: "UL Listed",
-    description:
-      "Every face lit channel letter set ships with UL listing labels and documentation for fast, compliant permitting.",
+      "Available with any Pantone-matched color. Pigmented translucent acrylics for colored back-glow effects.",
   },
   {
     icon: Ruler,
-    title: "Custom Sizing",
+    title: "Precision Engineering",
     description:
-      "Manufactured from 4 inches up to 72+ inches tall. We accommodate any font, logo, or custom shape.",
+      "German-engineered to minimum 12mm stroke width with uniform light distribution across every letterform.",
   },
   {
     icon: Lightbulb,
-    title: "Samsung LEDs",
+    title: "Zero Maintenance",
     description:
-      "Premium Samsung LED modules with 50,000+ hour rated life, consistent color output, and industry-leading warranty.",
+      "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance.",
   },
 ];
 
-const product = getProduct("LP 11-F");
-
 const useCases = [
-  "Retail storefronts and shopping centers",
-  "Restaurants and food service brands",
-  "Healthcare and medical facilities",
-  "Hospitality and hotel signage",
-  "Corporate office buildings",
-  "Gas stations and convenience stores",
-  "Automotive dealerships",
-  "Multi-tenant commercial buildings",
+  "Luxury retail storefronts",
+  "Boutique hotels and resorts",
+  "High-end restaurant facades",
+  "Corporate headquarters",
+  "Spa and wellness centers",
+  "Premium office lobbies",
+  "Upscale residential communities",
+  "Art galleries and cultural venues",
 ];
 
-export default function FrontLitPage() {
+export default function BackSideLitPage() {
+  const product = getProduct("LP 11-BS");
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Wholesale Face Lit Channel Letters",
+    name: "Wholesale Back Side Lit Channel Letters — EdgeLuxe LP 11-BS",
     description:
-      "Wholesale face lit channel letters with forward-facing LED illumination. German-engineered, UL listed. Trade pricing for sign shops only.",
+      "Wholesale partial back side-lit block acrylic channel letters with flush-mount halo effect. IP67, German-engineered. Trade pricing for sign shops only.",
     brand: {
       "@type": "Brand",
       name: "Sunlite Signs — EdgeLuxe",
-    },
-    additionalProperty: {
-      "@type": "PropertyValue",
-      name: "Model",
-      value: "EdgeLuxe LP 11-F",
     },
     manufacturer: {
       "@type": "Organization",
       name: "Sunlite Signs LLC",
     },
     category: "Channel Letters",
+    additionalProperty: {
+      "@type": "PropertyValue",
+      name: "model",
+      value: "EdgeLuxe LP 11-BS",
+    },
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
@@ -115,7 +116,8 @@ export default function FrontLitPage() {
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "USD",
-        description: "Wholesale trade pricing available upon request — sign shops only",
+        description:
+          "Wholesale trade pricing available upon request — sign shops only",
       },
     },
   };
@@ -136,7 +138,7 @@ export default function FrontLitPage() {
               { name: "Home", href: "/" },
               { name: "Products", href: "/products" },
               { name: "Channel Letters", href: "/products/channel-letters" },
-              { name: "Face Lit" },
+              { name: "Back Side Lit" },
             ]}
           />
           <AnimatedSection>
@@ -144,22 +146,24 @@ export default function FrontLitPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
+                    Wholesale Only — Trade Pricing
+                  </span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
-                  Wholesale Face Lit{" "}
+                  Wholesale Back Side Lit{" "}
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
                 <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
-                  The industry standard for illuminated signage. Forward-facing
-                  LEDs shine through a translucent acrylic face, delivering
-                  maximum brightness and readability for any commercial
-                  application. Available exclusively to trade accounts.
+                  Partial back side illumination creates a subtle, sophisticated
+                  glow from behind each flush-mounted letterform. The EdgeLuxe
+                  LP 11-BS uses embedded LEDs within 30mm cast block acrylic to
+                  project light from the back edges.
                 </p>
                 <p className="text-text-light/50 mb-8">
-                  German-engineered precision. UL listed. Wholesale direct to
-                  sign shops across the USA and Canada. We never sell retail — your clients stay yours.
+                  German-engineered precision. IP67 sealed. Wholesale direct to
+                  sign shops across the USA and Canada.
                 </p>
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing
@@ -167,9 +171,9 @@ export default function FrontLitPage() {
                 </Link>
               </div>
               <BeforeAfterSlider
-                daySrc="/products/front-lit-day.jpg"
-                nightSrc="/products/front-lit-night.jpg"
-                alt="Face lit channel letters — illuminated storefront, night shot"
+                daySrc="/products/back-side-day.jpg"
+                nightSrc="/products/back-side-night.jpg"
+                alt="Back side lit channel letters — flush-mount halo glow, night shot"
               />
             </div>
           </AnimatedSection>
@@ -186,8 +190,9 @@ export default function FrontLitPage() {
                 Trade Specifications & Benefits
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
-                Every face lit channel letter set is manufactured to the same
-                exacting standards that define the Sunlite brand. Wholesale direct to your shop.
+                Every back side lit channel letter set is manufactured with
+                German-engineered precision and IP67 sealed construction.
+                Wholesale direct to your shop.
               </p>
             </div>
           </AnimatedSection>
@@ -221,17 +226,22 @@ export default function FrontLitPage() {
                 Trade Specifications
               </h2>
               <p className="text-text-light/60 mb-8">
-                Built to meet and exceed industry standards. Every specification
-                reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.
+                Built with IP67 epoxy-sealed block acrylic for zero-maintenance
+                durability. Every specification reflects our commitment to
+                quality and longevity. Available exclusively at wholesale trade
+                pricing.
               </p>
               <PlaceholderImage
-                label="Face lit channel letter — cross-section detail showing LED placement"
+                label="Back side lit channel letter — cross-section detail showing LED placement and flush-mount design"
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <SpecsTable specs={product.specs} modelNumber={product.modelNumber} />
+              <SpecsTable
+                specs={product.specs}
+                modelNumber={product.modelNumber}
+              />
             </AnimatedSection>
           </div>
         </div>
@@ -248,9 +258,10 @@ export default function FrontLitPage() {
                   Common Applications
                 </h2>
                 <p className="text-text-light/60 mb-8">
-                  Face lit channel letters are the most versatile illuminated
-                  sign type, suitable for virtually any commercial application
-                  where visibility matters. Wholesale direct to sign shops for all project types.
+                  Back side lit channel letters deliver a refined, understated
+                  aesthetic ideal for premium environments where subtlety and
+                  sophistication are paramount. Wholesale direct to sign shops
+                  for all project types.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {useCases.map((useCase) => (
@@ -266,8 +277,8 @@ export default function FrontLitPage() {
               </div>
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image
-                  src="/products/front-lit-day.jpg"
-                  alt="Face lit channel letters — retail installation, daytime"
+                  src="/products/back-side-day.jpg"
+                  alt="Back side lit channel letters — luxury installation, daytime"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -285,19 +296,19 @@ export default function FrontLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Face Lit Projects
+                Back Side Lit Projects
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "Face lit letters — restaurant facade, night",
-                "Face lit letters — retail shopping center",
-                "Face lit letters — healthcare facility",
-                "Face lit letters — corporate office building",
-                "Face lit letters — hotel entrance",
-                "Face lit letters — multi-tenant commercial",
+                "Back side lit letters — luxury retail storefront",
+                "Back side lit letters — boutique hotel entrance",
+                "Back side lit letters — high-end restaurant facade",
+                "Back side lit letters — corporate headquarters lobby",
+                "Back side lit letters — spa and wellness center",
+                "Back side lit letters — art gallery signage",
               ].map((label, i) => (
                 <PlaceholderImage
                   key={i}
@@ -318,10 +329,12 @@ export default function FrontLitPage() {
             <div className="text-center max-w-2xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
+                  Trade Accounts Only
+                </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Request Trade Pricing for Face Lit Letters
+                Request Trade Pricing for Back Side Lit Letters
               </h2>
               <p className="text-text-dark/60 mb-4">
                 Send your project files and receive a detailed wholesale quote
@@ -329,7 +342,8 @@ export default function FrontLitPage() {
                 sketch.
               </p>
               <p className="text-text-dark/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients.
+                No retail markup. We never sell retail and we never compete with
+                you for your clients.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
