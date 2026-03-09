@@ -23,24 +23,28 @@ const timelineEntries = [
     title: "The Foundation: LKF Lichtwerbung, Nuremberg",
     text: "The story begins with LKF Lichtwerbung in Nuremberg, Germany — a company built on decades of precision engineering in illuminated signage. European craftsmanship at its finest. The German standard for channel letter manufacturing that would eventually find its way across the Atlantic.",
     imageLabel: "LKF Lichtwerbung facility in Nuremberg, Germany",
+    imageSrc: "/story-01-lkf.png",
   },
   {
     number: "02",
     title: "Father & Son: A Legacy of Precision",
     text: "The growth of LKF under father-son collaboration deepened a heritage of German engineering excellence. Every letterform, every LED integration, every structural calculation refined over generations. A legacy that demanded nothing less than perfection.",
     imageLabel: "Father and son working together at LKF — precision engineering heritage",
+    imageSrc: "/story-02-father-son.jpeg",
   },
   {
     number: "03",
     title: "Kenan Meets Ozan in Germany",
     text: "A chance meeting in Germany between Kenan and Ozan sparked a shared vision. Two minds united by a passion for precision signage and a belief that the American market deserved better — European engineering quality at wholesale prices, delivered direct to sign shops.",
     imageLabel: "Kenan and Ozan — the meeting that started it all",
+    imageSrc: "/story-03-kenan-ozan.jpeg",
   },
   {
     number: "04",
     title: "A Friendship Becomes Something Larger",
     text: "What started as a friendship evolved into a business vision: bring German-engineered signage to the USA, exclusively for the trade. No retail. No competing with customers. A wholesale manufacturing partner that stays in its lane.",
     imageLabel: "Vision taking shape — planning the wholesale signage business",
+    imageSrc: "/story-04-friendship.jpeg",
   },
   {
     number: "05",
@@ -160,11 +164,22 @@ export default function AboutPage() {
                         {entry.number}
                       </span>
                     </div>
-                    <PlaceholderImage
-                      label={entry.imageLabel}
-                      className="rounded-xl"
-                      aspectRatio="aspect-[4/3]"
-                    />
+                    {entry.imageSrc ? (
+                      <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={entry.imageSrc}
+                          alt={entry.imageLabel}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <PlaceholderImage
+                        label={entry.imageLabel}
+                        className="rounded-xl"
+                        aspectRatio="aspect-[4/3]"
+                      />
+                    )}
                   </div>
                 </AnimatedSection>
 

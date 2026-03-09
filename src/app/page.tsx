@@ -154,10 +154,14 @@ export default function Home() {
                   Read Our Story <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="Sunlite Signs team or LKF Lichtwerbung partnership"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/homepage-story.png"
+                  alt="Sunlite Signs team and LKF Lichtwerbung partnership"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -168,7 +172,7 @@ export default function Home() {
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] rounded-sm overflow-hidden">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/homepage-engineering.jpg"
@@ -246,7 +250,7 @@ export default function Home() {
                   View All Channel Letters <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="aspect-[4/3] rounded-sm overflow-hidden">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/homepage-channel-letters.jpg"
@@ -264,10 +268,14 @@ export default function Home() {
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <PlaceholderImage
-                label="Blade sign and cabinet sign installations"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/homepage-blade-cabinet.jpg"
+                  alt="Blade sign and cabinet sign installations"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
@@ -331,10 +339,14 @@ export default function Home() {
                   Explore SEG Light Boxes <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <PlaceholderImage
-                label="SEG Light Box — illuminated fabric display in retail environment"
-                aspectRatio="aspect-[4/3]"
-              />
+              <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/homepage-seg.jpg"
+                  alt="SEG Light Box — illuminated fabric display in retail environment"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </AnimatedSection>
         </div>
