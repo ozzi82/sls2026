@@ -147,48 +147,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMPLIMENTARY ENGINEERING SERVICES */}
-      <section className="section-padding bg-primary-dark">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src="/homepage-engineering.jpg"
-                  alt="Sunlite Signs engineering team designing channel letters with CAD software"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                  Complimentary Engineering Services
-                </h2>
-                <p className="text-text-light/60 leading-relaxed mb-4">
-                  With our German design and engineering roots, we contribute our
-                  complimentary engineering services to your project. From conceptual
-                  integration of structural and material sciences, to manufacturing
-                  engineering and packaging.
-                </p>
-                <p className="text-text-light/60 leading-relaxed mb-6">
-                  Concept &amp; materials. Structural engineering. Electrical layout.
-                  Manufacturing engineering. We are happy to contribute our expertise
-                  at every stage of your project. Wholesale accounts only.
-                </p>
-                <Link
-                  href="/services"
-                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
-                >
-                  Explore Our Services <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* LOW PROFILE CHANNEL LETTERS */}
       <section className="section-padding bg-light-bg">
         <div className="container-max">
@@ -330,6 +288,48 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* COMPLIMENTARY ENGINEERING SERVICES */}
+      <section className="section-padding bg-primary-dark">
+        <div className="container-max">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
+                  src="/homepage-engineering.jpg"
+                  alt="Sunlite Signs engineering team designing channel letters with CAD software"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                  Complimentary Engineering Services
+                </h2>
+                <p className="text-text-light/60 leading-relaxed mb-4">
+                  With our German design and engineering roots, we contribute our
+                  complimentary engineering services to your project. From conceptual
+                  integration of structural and material sciences, to manufacturing
+                  engineering and packaging.
+                </p>
+                <p className="text-text-light/60 leading-relaxed mb-6">
+                  Concept &amp; materials. Structural engineering. Electrical layout.
+                  Manufacturing engineering. We are happy to contribute our expertise
+                  at every stage of your project. Wholesale accounts only.
+                </p>
+                <Link
+                  href="/services"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Explore Our Services <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </AnimatedSection>
