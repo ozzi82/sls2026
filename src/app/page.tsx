@@ -11,31 +11,22 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
     <>
 
-      {/* HERO — Full image background, compact text block on left */}
-      <section className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-bg.webp"
-            alt="Illuminated channel letters manufactured by Sunlite Signs"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
+      {/* HERO — Sliding image background, compact text block on left */}
+      <section className="relative min-h-[70vh] lg:min-h-screen overflow-hidden">
+        <HeroSlider />
 
         {/* Desktop: horizontal strip flowing from right */}
         <div className="relative z-10 hidden lg:flex items-end min-h-screen pb-28">
           <HeroContent className="ml-auto w-[75%] bg-primary-dark/80 backdrop-blur-sm rounded-l-md flex flex-row items-center gap-6 pl-10 pr-10 py-4">
             <div className="min-w-0 flex-1">
               <h1 className="text-[1.7rem] xl:text-[2rem] font-heading font-bold text-white leading-[1.15]">
-                Wholesale Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
+                Wholesale Trimless Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
               </h1>
               <p className="text-xs text-white/50 mt-1">
                 German-engineered. UL listed. Built for sign shops.
@@ -57,10 +48,10 @@ export default function Home() {
         </div>
 
         {/* Mobile: clean image, bold CTAs at bottom */}
-        <div className="relative z-10 flex lg:hidden flex-col justify-end min-h-screen pb-20">
+        <div className="relative z-10 flex lg:hidden flex-col justify-end min-h-[70vh] pb-20">
           <div className="bg-primary-dark/90 backdrop-blur-sm px-5 py-6">
             <h1 className="text-xl sm:text-2xl font-heading font-bold text-white leading-[1.15] mb-1">
-              Wholesale Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
+              Wholesale Trimless Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
             </h1>
             <p className="text-xs text-white/50 mb-5">
               German-engineered. UL listed. Built for sign shops.
