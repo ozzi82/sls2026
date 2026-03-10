@@ -57,6 +57,42 @@ export const metadata: Metadata = {
   },
 };
 
+const globalJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sunlitesigns.com/#organization",
+      name: "Sunlite Signs LLC",
+      url: "https://sunlitesigns.com",
+      description:
+        "German-engineered wholesale channel letters and illuminated signs for sign shops across the USA and Canada. Trade accounts only.",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+1-689-294-0912",
+        email: "hello@sunlitesigns.com",
+        contactType: "sales",
+      },
+      areaServed: [
+        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "Canada" },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sunlitesigns.com/#website",
+      url: "https://sunlitesigns.com",
+      name: "Sunlite Signs",
+      publisher: { "@id": "https://sunlitesigns.com/#organization" },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,6 +101,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

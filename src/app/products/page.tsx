@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "sign shop supplier",
     "wholesale only sign manufacturer",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/wholesale-sign-products",
+  },
 };
 
 const productCategories = [

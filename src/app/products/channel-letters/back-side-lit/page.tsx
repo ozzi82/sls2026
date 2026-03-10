@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "trade pricing",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/back-side-lit-channel-letters",
+  },
 };
 
 const features = [

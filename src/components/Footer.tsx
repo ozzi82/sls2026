@@ -110,6 +110,7 @@ export default function Footer() {
           <p className="text-text-light/30 text-xs">
             &copy; {new Date().getFullYear()} Sunlite Signs LLC. All rights reserved. Wholesale only.
           </p>
+          <p className="text-text-light/20 text-[10px] mt-1">v0.2.0</p>
         </div>
       </div>
     </footer>

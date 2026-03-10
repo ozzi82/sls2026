@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "trade pricing flat cut letters",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/flat-cut-letters",
+  },
 };
 
 const materials = [

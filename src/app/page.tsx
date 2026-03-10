@@ -13,31 +13,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
 
 export default function Home() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Sunlite Signs LLC",
-    url: "https://sunlitesigns.com",
-    description:
-      "German-engineered wholesale channel letters and illuminated signs for sign shops across the USA and Canada. Trade accounts only.",
-    address: {
-      "@type": "PostalAddress",
-      addressRegion: "FL",
-      addressCountry: "US",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1-234-567-890",
-      contactType: "sales",
-    },
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
       {/* HERO — Full image background, compact text block on left */}
       <section className="relative min-h-screen overflow-hidden">

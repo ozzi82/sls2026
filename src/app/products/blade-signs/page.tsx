@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "trade pricing blade signs",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/wholesale-blade-signs",
+  },
 };
 
 const features = [

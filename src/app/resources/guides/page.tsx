@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Lightbulb, Wrench, Lock } from "lucide-react";
+import { ArrowRight, BookOpen, Gem, Lightbulb, Wrench, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -52,6 +52,15 @@ const guides = [
     icon: Lightbulb,
     image: "Guide cover — four illumination types shown at night",
     readTime: "10 min read",
+  },
+  {
+    title: "What Are Trimless Channel Letters?",
+    description:
+      "The definitive guide to trimless channel letters. How they differ from traditional trim cap construction, why architects are specifying them, construction details, and how to order wholesale from Sunlite Signs.",
+    href: "/resources/guides/trimless-channel-letters-guide",
+    icon: Gem,
+    image: "Guide cover — trimless channel letter close-up showing seamless face-to-return joint",
+    readTime: "8 min read",
   },
 ];
 

@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "trade pricing halo letters",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/halo-lit-channel-letters",
+  },
 };
 
 const features = [

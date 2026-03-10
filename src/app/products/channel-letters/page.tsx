@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "trade pricing channel letters",
     "sign shop channel letters",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/wholesale-channel-letters",
+  },
 };
 
 const productFamilies = [

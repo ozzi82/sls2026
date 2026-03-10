@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "trade pricing channel letters",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/non-illuminated-channel-letters",
+  },
 };
 
 const features = [

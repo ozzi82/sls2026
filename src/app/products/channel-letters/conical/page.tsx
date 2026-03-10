@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "trade pricing",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/conical-channel-letters",
+  },
 };
 
 const features = [

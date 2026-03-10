@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "trade pricing",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/stainless-steel-standoff-letters",
+  },
 };
 
 const features = [

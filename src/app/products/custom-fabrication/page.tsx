@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "trade pricing custom signs",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/custom-sign-fabrication",
+  },
 };
 
 const capabilities = [

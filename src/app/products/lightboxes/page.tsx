@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "trade pricing lightboxes",
     "sign shop supplier",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/wholesale-lightbox-signs",
+  },
 };
 
 const lightboxTypes = [

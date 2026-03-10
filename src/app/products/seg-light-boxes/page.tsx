@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "sign shop supplier",
     "custom SEG light box",
   ],
+  alternates: {
+    canonical: "https://sunlitesigns.com/seg-light-boxes",
+  },
 };
 
 const features = [

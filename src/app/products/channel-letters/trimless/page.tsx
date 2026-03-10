@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
+  ChevronDown,
   X,
   Gem,
   Shield,
@@ -40,6 +41,9 @@ export const metadata: Metadata = {
     description:
       "The industry's cleanest channel letter. No trim cap, seamless returns, German-engineered precision. Wholesale trade pricing for sign shops only. We never sell retail.",
     type: "website",
+  },
+  alternates: {
+    canonical: "https://sunlitesigns.com/trimless-channel-letters",
   },
 };
 
@@ -127,6 +131,44 @@ const comparisonRows = [
 
 const product = getProduct("LP 5");
 
+const trimlessFaqs = [
+  {
+    question: "What are trimless channel letters?",
+    answer:
+      "Trimless channel letters are a modern channel letter construction that eliminates the traditional plastic trim cap used to hold the acrylic face in place. Instead, EdgeLuxe uses a proprietary all-aluminum return-to-face connection that creates a seamless, flush joint between the letter face and the return. The result is a cleaner, more architectural appearance with no visible plastic retainer strip.",
+  },
+  {
+    question: "How do trimless channel letters differ from standard channel letters?",
+    answer:
+      "Standard channel letters use a snap-in plastic trim cap around the perimeter of each letter to secure the acrylic face to the aluminum return. This trim cap is visible on the finished letter and can yellow, crack, or detach over time. Trimless letters eliminate this component entirely, using a precision-fit aluminum channel that produces a flush face-to-return joint with no plastic components exposed.",
+  },
+  {
+    question: "Are trimless channel letters more expensive than standard?",
+    answer:
+      "Trimless letters carry a moderate premium over standard trim cap letters due to the tighter manufacturing tolerances and proprietary construction methods required. However, for projects where architects or brand designers specify a clean, modern aesthetic, the premium is justified by the superior visual result and long-term durability of all-aluminum construction.",
+  },
+  {
+    question: "Are EdgeLuxe trimless channel letters UL listed?",
+    answer:
+      "Yes. Every EdgeLuxe trimless channel letter set is fully UL listed and carries the UL label. Achieving UL listing with non-standard construction required additional engineering investment, but it means sign shops can specify trimless letters on any project requiring code compliance — which is virtually all commercial installations in the USA and Canada.",
+  },
+  {
+    question: "What illumination options are available for trimless letters?",
+    answer:
+      "EdgeLuxe trimless letters are available in face lit, halo lit, and front-and-halo combination configurations. The trimless construction works with any LED illumination layout. All configurations use premium Samsung or Nichia LED modules with 50,000+ hour rated life.",
+  },
+  {
+    question: "Why are architects specifying trimless channel letters?",
+    answer:
+      "Architects and brand designers increasingly reject the visual compromise of a plastic trim cap on modern building facades. Trimless letters deliver the clean, uninterrupted geometry that contemporary architectural design demands. They are particularly popular for Class A office buildings, luxury retail, boutique hospitality, and any project where the signage must meet the same design standard as the architecture itself.",
+  },
+  {
+    question: "How do I order wholesale trimless channel letters?",
+    answer:
+      "Submit your project details through our Request Wholesale Pricing form or email us directly. Include letter height, font, color, illumination type, quantity, and any special requirements. We accept AI files, PDFs, or detailed written descriptions. You will receive a detailed wholesale trade quote within 48 hours. We sell exclusively to sign shops and trade professionals.",
+  },
+];
+
 const useCases = [
   "Architect-specified brand signage",
   "Class A commercial office buildings",
@@ -141,6 +183,19 @@ const useCases = [
 ];
 
 export default function TrimlessPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: trimlessFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -190,6 +245,10 @@ export default function TrimlessPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -546,6 +605,53 @@ export default function TrimlessPage() {
                   [Sign Shop Partner]
                 </p>
                 <p className="text-sm text-text-light/50">[City, State]</p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-padding bg-light-bg">
+        <div className="container-max">
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <div className="gold-line mb-6" />
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                Trimless Channel Letters FAQ
+              </h2>
+              <p className="text-text-dark/60 mb-8">
+                Common questions about EdgeLuxe trimless channel letters,
+                answered for sign shop professionals and trade buyers.
+              </p>
+              <div className="space-y-4">
+                {trimlessFaqs.map((faq, index) => (
+                  <AnimatedSection key={index} delay={Math.min(index * 0.05, 0.3)}>
+                    <details className="group bg-white border border-black/5 rounded-xl overflow-hidden hover:border-brand-gold/20 transition-colors">
+                      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h3 className="text-base md:text-lg font-heading font-semibold text-text-dark group-hover:text-brand-gold transition-colors pr-4">
+                          {faq.question}
+                        </h3>
+                        <ChevronDown className="w-5 h-5 text-brand-gold flex-shrink-0 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <div className="px-6 pb-6 pt-0">
+                        <div className="border-t border-black/5 pt-4">
+                          <p className="text-text-dark/60 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    </details>
+                  </AnimatedSection>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/resources/guides/trimless-channel-letters-guide"
+                  className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Read the Full Trimless Guide <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </AnimatedSection>
