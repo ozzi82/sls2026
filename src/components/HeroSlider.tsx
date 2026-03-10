@@ -16,6 +16,10 @@ const slides = [
     src: "/hero-bg3.jpg",
     alt: "Wholesale illuminated signage by Sunlite Signs",
   },
+  {
+    src: "/hero-bg4.jpg",
+    alt: "Premium channel letter manufacturing by Sunlite Signs",
+  },
 ];
 
 export default function HeroSlider() {
