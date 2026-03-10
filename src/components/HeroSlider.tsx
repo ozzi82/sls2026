@@ -51,7 +51,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 bg-black/10" />
 
       {/* Slide indicators */}
-      <div className="absolute bottom-32 lg:bottom-24 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-52 lg:bottom-24 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}

@@ -47,13 +47,13 @@ export default function Home() {
           </HeroContent>
         </div>
 
-        {/* Mobile: clean image, bold CTAs at bottom */}
-        <div className="relative z-10 flex lg:hidden flex-col justify-end min-h-[70vh] pb-20">
-          <div className="bg-primary-dark/90 backdrop-blur-sm px-5 py-6">
+        {/* Mobile: clean image, bold CTAs pinned to bottom */}
+        <div className="relative z-10 flex lg:hidden flex-col justify-end min-h-[70vh]">
+          <div className="bg-primary-dark/90 backdrop-blur-sm px-5 pt-4 pb-5">
             <h1 className="text-xl sm:text-2xl font-heading font-bold text-white leading-[1.15] mb-1">
               Wholesale Trimless Channel Letters <span className="text-brand-gold">&amp; Illuminated Signs</span>
             </h1>
-            <p className="text-xs text-white/50 mb-5">
+            <p className="text-xs text-white/50 mb-4">
               German-engineered. UL listed. Built for sign shops.
             </p>
             <div className="flex gap-3">
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/50 backdrop-blur-sm">
+        <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/50 backdrop-blur-sm hidden lg:block">
           <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs font-heading uppercase tracking-wider text-white/70">
               <span className="flex items-center gap-2">
