@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronDown, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -136,7 +137,7 @@ export default function FAQPage() {
       />
 
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -151,10 +152,10 @@ export default function FAQPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
               Wholesale FAQ
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               Answers to the most common questions about wholesale trade accounts, ordering channel letters, and
               working with Sunlite Signs. We sell exclusively to sign shops and trade professionals — we never sell retail. If you do not find your answer here, contact
               our team directly.
@@ -164,34 +165,10 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ List */}
-      <section className="section-padding bg-primary-dark">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AnimatedSection key={index} delay={Math.min(index * 0.05, 0.4)}>
-                  <details className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-brand-gold/20 transition-colors">
-                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <h2 className="text-base md:text-lg font-heading font-semibold text-text-light group-hover:text-brand-gold transition-colors pr-4">
-                        {faq.question}
-                      </h2>
-                      <ChevronDown className="w-5 h-5 text-brand-gold flex-shrink-0 transition-transform group-open:rotate-180" />
-                    </summary>
-                    <div className="px-6 pb-6 pt-0">
-                      <div className="border-t border-white/10 pt-4">
-                        <p className="text-text-light/60 leading-relaxed">{faq.answer}</p>
-                      </div>
-                    </div>
-                  </details>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQAccordion faqs={faqs} heading="Wholesale FAQ" />
 
       {/* Still Have Questions */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center">

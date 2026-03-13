@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   Handshake,
   ShieldOff,
   Clock,
@@ -15,6 +14,7 @@ import {
   Eye,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -90,8 +90,8 @@ export default function WholesaleOnlyPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      <section className="relative bg-bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -110,11 +110,11 @@ export default function WholesaleOnlyPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-light leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
                 We Sell Wholesale Only.{" "}
                 <span className="text-brand-gold">No Exceptions.</span>
               </h1>
-              <p className="text-lg text-text-light/70 leading-relaxed mb-4">
+              <p className="text-lg text-white/70 leading-relaxed mb-4">
                 This is not a flexible policy. It is a founding principle.
                 Sunlite Signs sells exclusively to sign shops and trade
                 professionals. No retail sales. No direct-to-consumer channels.
@@ -144,11 +144,11 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* MANIFESTO STATEMENT */}
-      <section className="bg-navy border-t border-white/10 border-b border-b-white/10">
+      <section className="bg-bg-navy border-t border-white/10 border-b border-b-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-12">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-2xl md:text-3xl font-heading font-bold text-text-light leading-snug">
+              <p className="text-2xl md:text-3xl font-heading font-bold text-white leading-snug">
                 &ldquo;Every sign we build is sold through a sign shop.{" "}
                 <span className="text-brand-gold">Every single one.</span>{" "}
                 We do not sell to the public. We do not have retail pricing.
@@ -160,7 +160,7 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* MANIFESTO SECTIONS */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -179,7 +179,7 @@ export default function WholesaleOnlyPage() {
           <div className="space-y-8">
             {manifestoSections.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.05}>
-                <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm border border-black/5 hover:border-brand-gold/20 transition-colors">
+                <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm border border-black/[0.04] hover:border-brand-gold/20 transition-colors">
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
                       <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20">
@@ -203,15 +203,15 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* WHAT YOU GET / WHAT WE NEVER DO */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 The Trade Partner Guarantee
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 Crystal clear. No fine print. No loopholes. Here is exactly
                 what you get and exactly what we will never do.
               </p>
@@ -220,10 +220,10 @@ export default function WholesaleOnlyPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <AnimatedSection>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full">
+              <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <CheckCircle2 className="w-6 h-6 text-brand-gold" />
-                  <h3 className="text-xl font-heading font-semibold text-text-light">
+                  <h3 className="text-xl font-heading font-semibold text-white">
                     What You Get as a Trade Partner
                   </h3>
                 </div>
@@ -231,17 +231,17 @@ export default function WholesaleOnlyPage() {
                   {whatYouGet.map((point) => (
                     <div key={point} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-brand-gold flex-shrink-0 mt-1" />
-                      <p className="text-text-light/70 text-sm">{point}</p>
+                      <p className="text-white/70 text-sm">{point}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full">
+              <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <XCircle className="w-6 h-6 text-accent-red" />
-                  <h3 className="text-xl font-heading font-semibold text-text-light">
+                  <h3 className="text-xl font-heading font-semibold text-white">
                     What We Will Never Do — Ever
                   </h3>
                 </div>
@@ -249,7 +249,7 @@ export default function WholesaleOnlyPage() {
                   {whatWeNeverDo.map((point) => (
                     <div key={point} className="flex items-start gap-3">
                       <XCircle className="w-4 h-4 text-accent-red/60 flex-shrink-0 mt-1" />
-                      <p className="text-text-light/70 text-sm">{point}</p>
+                      <p className="text-white/70 text-sm">{point}</p>
                     </div>
                   ))}
                 </div>
@@ -260,7 +260,7 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* HOW THE PARTNERSHIP WORKS */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
@@ -325,15 +325,15 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* TRUST SECTION */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Zero Retail Competition — Guaranteed
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-8">
+              <p className="text-white/60 leading-relaxed mb-8">
                 The wholesale-only model is not just a sales channel decision.
                 It is a trust covenant. When you partner with Sunlite, you
                 know — with absolute certainty — that your manufacturer will
@@ -341,7 +341,7 @@ export default function WholesaleOnlyPage() {
                 Your margins stay your margins. Your market stays your market.
                 That clarity is the foundation of every relationship we build.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-text-light/40">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2">
                   <Lock className="w-4 h-4 text-brand-gold" />
                   Wholesale Only
@@ -367,41 +367,8 @@ export default function WholesaleOnlyPage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Partner with a Manufacturer That Will Never Compete With You?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                No minimum orders. No contracts. No obligations. No retail
-                competition. Just wholesale trade pricing from a dedicated
-                sign shop partner. We manufacture. You sell. Simple.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/products"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Browse Trade Catalog <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

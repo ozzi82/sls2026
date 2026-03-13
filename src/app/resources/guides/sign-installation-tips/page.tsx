@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AlertTriangle, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -29,8 +29,12 @@ export const metadata: Metadata = {
 export default function SignInstallationTipsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"Sign Installation Tips and Best Practices","description":"Professional installation guide for wholesale channel letters covering mounting methods, electrical connections, and field best practices.","step":[{"@type":"HowToStep","position":1,"text":"Review shop drawings and verify all components before site arrival"},{"@type":"HowToStep","position":2,"text":"Prepare the mounting surface and confirm structural support"},{"@type":"HowToStep","position":3,"text":"Position the paper pattern and mark mounting points"},{"@type":"HowToStep","position":4,"text":"Install mounting hardware and studs"},{"@type":"HowToStep","position":5,"text":"Mount the letters and verify alignment"},{"@type":"HowToStep","position":6,"text":"Complete electrical connections per UL requirements"},{"@type":"HowToStep","position":7,"text":"Perform final inspection and burn-in test"}]}) }}
+      />
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -46,10 +50,10 @@ export default function SignInstallationTipsPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               Sign Installation Tips for Channel Letters
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               Practical guidance for sign shop professionals and trade installers to ensure every wholesale channel letter installation goes smoothly. From
               site preparation to final quality checks, these tips help your installation crew
               deliver professional results every time.
@@ -59,35 +63,35 @@ export default function SignInstallationTipsPage() {
       </section>
 
       {/* Guide Content */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             {/* Section 1: Pre-Installation */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Pre-Installation Planning
                 </h2>
                 <div className="gold-line mb-6" />
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-8 mb-3">
                   Site Survey
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   A thorough site survey before the installation date prevents costly surprises. Verify the mounting surface material (brick, EIFS, metal panel, CMU, wood), surface flatness, and structural integrity. Identify the electrical feed location and verify voltage. Photograph the installation area and note any obstacles such as architectural features, downspouts, utility conduits, or overhangs.
                 </p>
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-8 mb-3">
                   Verify Measurements
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   Double-check all field measurements against the approved shop drawings. Verify the overall sign width, letter spacing, mounting height, and alignment with architectural features. It is much easier to catch a measurement error before the crane arrives than during installation.
                 </p>
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-8 mb-3">
                   Permits and Access
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   Confirm that all required sign permits have been issued. Arrange for any necessary road or sidewalk closures, crane access, and building access for electrical connections. Communicate the installation schedule with the building owner or property manager.
                 </p>
 
@@ -102,29 +106,29 @@ export default function SignInstallationTipsPage() {
             {/* Section 2: Mounting */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Mounting Methods
                 </h2>
                 <div className="gold-line mb-6" />
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-6 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-6 mb-3">
                   Direct Stud Mount
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   For direct stud mounting, use the paper pattern provided with your Sunlite Signs wholesale order to mark stud locations on the building surface. Core drill holes at each marked location. Feed the letter studs through the holes, and secure from behind with nuts and washers. Seal all penetrations with high-quality silicone sealant to prevent water infiltration.
                 </p>
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-8 mb-3">
                   Raceway Installation
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   When installing a raceway-mounted letter set, first secure the raceway to the building surface using appropriate fasteners for the wall material. Level the raceway carefully, as any tilt will be visible in the finished installation. After the raceway is secured, mount the pre-wired letters to the raceway and make the single electrical connection.
                 </p>
 
-                <h3 className="text-xl font-heading font-semibold text-text-light mt-8 mb-3">
+                <h3 className="text-xl font-heading font-semibold text-white mt-8 mb-3">
                   Standoff Mounting for Halo-Lit Letters
                 </h3>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   Halo-lit letters require standoffs to create the gap between the letter and the wall that allows the backlight halo to develop. Ensure standoff lengths are consistent across all letters for uniform halo depth. The standoff length should be sufficient to create a visible halo (typically 1&quot; to 2&quot;) without excessive gap that diminishes the effect.
                 </p>
 
@@ -132,10 +136,10 @@ export default function SignInstallationTipsPage() {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-heading font-semibold text-text-light mb-2">
+                      <h4 className="font-heading font-semibold text-white mb-2">
                         Important: Wall Surface Considerations
                       </h4>
-                      <p className="text-sm text-text-light/60">
+                      <p className="text-sm text-white/60">
                         Different wall materials require different fasteners and techniques. EIFS (synthetic stucco) requires special blocking behind the surface for adequate support. Metal panel facades may need structural clips or through-bolting. Always use fasteners rated for the specific wall material and anticipated wind loads.
                       </p>
                     </div>
@@ -147,11 +151,11 @@ export default function SignInstallationTipsPage() {
             {/* Section 3: Electrical */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Electrical Connections
                 </h2>
                 <div className="gold-line mb-6" />
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   All electrical connections for illuminated channel letters must be performed by a licensed electrician in compliance with local building codes and the National Electrical Code (NEC). Key electrical considerations include:
                 </p>
                 <ul className="space-y-3 mb-6">
@@ -163,13 +167,13 @@ export default function SignInstallationTipsPage() {
                     "Verify proper grounding of all metal components per NEC requirements.",
                     "Test all illumination after connection. Check for even illumination across all letters and consistent color temperature.",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-text-light/70">
+                    <li key={i} className="flex items-start gap-3 text-white/70">
                       <span className="text-brand-gold mt-1 font-bold text-sm">&#10003;</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-text-light/70 leading-relaxed">
+                <p className="text-white/70 leading-relaxed">
                   Sunlite Signs provides complete wiring diagrams and electrical specifications with every wholesale order. All illuminated products are UL listed, which means the internal wiring and components have been tested and certified for safety.
                 </p>
               </div>
@@ -178,17 +182,17 @@ export default function SignInstallationTipsPage() {
             {/* Section 4: Weather Sealing */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Weather Sealing and Protection
                 </h2>
                 <div className="gold-line mb-6" />
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   Proper weather sealing during installation protects both the sign and the building from water damage. Seal all wall penetrations with high-quality, exterior-rated silicone sealant. Pay special attention to the top edges of raceways and backer panels where water can pool.
                 </p>
-                <p className="text-text-light/70 leading-relaxed mb-4">
+                <p className="text-white/70 leading-relaxed mb-4">
                   Verify that all channel letter weep holes are positioned at the bottom of each letter to allow condensation drainage. Ensure that no weep holes are blocked by mounting hardware or sealant. In coastal or high-humidity environments, consider applying additional corrosion-resistant coatings to exposed metal components.
                 </p>
-                <p className="text-text-light/70 leading-relaxed">
+                <p className="text-white/70 leading-relaxed">
                   For raceways, ensure the wire entry point into the building is properly sealed and positioned to prevent water from following the wiring into the building interior. Use drip loops in exterior wiring to direct water away from connections.
                 </p>
               </div>
@@ -197,11 +201,11 @@ export default function SignInstallationTipsPage() {
             {/* Section 5: Quality Assurance */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Post-Installation Quality Checklist
                 </h2>
                 <div className="gold-line mb-6" />
-                <p className="text-text-light/70 leading-relaxed mb-6">
+                <p className="text-white/70 leading-relaxed mb-6">
                   Before leaving the job site, run through this quality assurance checklist:
                 </p>
                 <div className="space-y-3">
@@ -220,7 +224,7 @@ export default function SignInstallationTipsPage() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-3 text-text-light/70 bg-white/5 border border-white/10 rounded-lg p-4"
+                      className="flex items-start gap-3 text-white/70 bg-bg-card border border-white/[0.06] rounded-lg p-4"
                     >
                       <div className="w-6 h-6 rounded border-2 border-brand-gold/30 flex-shrink-0 flex items-center justify-center mt-0.5">
                         <span className="text-brand-gold text-xs font-bold">{i + 1}</span>
@@ -235,7 +239,7 @@ export default function SignInstallationTipsPage() {
             {/* Section 6: Common Mistakes */}
             <AnimatedSection>
               <div className="mb-16">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                   Common Installation Mistakes to Avoid
                 </h2>
                 <div className="gold-line mb-6" />
@@ -264,12 +268,12 @@ export default function SignInstallationTipsPage() {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="bg-white/5 border border-white/10 rounded-lg p-5"
+                      className="bg-bg-card border border-white/[0.06] rounded-lg p-5"
                     >
                       <p className="font-heading font-semibold text-accent-red mb-1">
                         Mistake: {item.mistake}
                       </p>
-                      <p className="text-text-light/60 text-sm">{item.fix}</p>
+                      <p className="text-white/60 text-sm">{item.fix}</p>
                     </li>
                   ))}
                 </ul>
@@ -279,34 +283,8 @@ export default function SignInstallationTipsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Need Wholesale Channel Letters for Your Next Install?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Sunlite Signs provides detailed installation patterns, wiring diagrams, and
-                technical support with every wholesale order. We never sell retail — your clients stay your clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary">
-                  Request Wholesale Pricing
-                </Link>
-                <Link href="/resources/guides" className="btn-secondary">
-                  More Guides
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

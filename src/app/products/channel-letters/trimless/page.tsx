@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
@@ -252,7 +253,7 @@ export default function TrimlessPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.1),transparent_50%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -273,17 +274,17 @@ export default function TrimlessPage() {
                 <span className="inline-block text-xs font-heading font-semibold uppercase tracking-widest text-brand-gold bg-brand-gold/10 px-4 py-1.5 rounded-full mb-6">
                   Flagship Innovation
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
                   Wholesale EdgeLuxe{" "}
                   <span className="text-brand-gold">Trimless</span>{" "}
                   Channel Letters
                 </h1>
-                <p className="text-xl text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-xl text-white/70 mb-4 leading-relaxed">
                   No trim cap. No compromise. The cleanest channel letter on the
                   market, built with German-engineered precision that eliminates
                   the plastic trim cap entirely. Available exclusively to trade accounts.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   Developed with LKF Lichtwerbung in Nuremberg. UL listed.
                   Available in face lit, halo lit, and combination
                   configurations. Wholesale direct to sign shops — we never sell retail.
@@ -304,7 +305,7 @@ export default function TrimlessPage() {
                   nightSrc="/products/trimless-night.jpg"
                   alt="EdgeLuxe trimless channel letters — seamless face-to-return joint, no trim cap"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-brand-gold text-primary-dark px-6 py-3 rounded-lg font-heading font-bold text-sm uppercase tracking-wider shadow-lg">
+                <div className="absolute -bottom-4 -right-4 bg-brand-gold text-bg-primary px-6 py-3 rounded-lg font-heading font-bold text-sm uppercase tracking-wider shadow-lg">
                   Zero Trim Cap
                 </div>
               </div>
@@ -314,16 +315,16 @@ export default function TrimlessPage() {
       </section>
 
       {/* The Problem with Trim Caps */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                   Why Trimless Matters
                 </h2>
-                <p className="text-text-light/60 mb-6 leading-relaxed">
+                <p className="text-white/60 mb-6 leading-relaxed">
                   Every traditional channel letter has a visible plastic trim
                   cap — a retainer strip that holds the acrylic face in place.
                   It is a functional necessity that has been an aesthetic
@@ -338,14 +339,14 @@ export default function TrimlessPage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-text-light/70"
+                      className="flex items-start gap-3 text-white/70"
                     >
                       <X className="w-5 h-5 text-accent-red flex-shrink-0 mt-0.5" />
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-text-light/60 mt-6 leading-relaxed">
+                <p className="text-white/60 mt-6 leading-relaxed">
                   EdgeLuxe eliminates every one of these issues with a
                   proprietary all-aluminum construction that requires no plastic
                   trim cap. Available exclusively at wholesale trade pricing for sign shops.
@@ -357,7 +358,7 @@ export default function TrimlessPage() {
                   className="rounded-xl"
                   aspectRatio="aspect-video"
                 />
-                <p className="text-center text-xs text-text-light/40 font-heading uppercase tracking-wider">
+                <p className="text-center text-xs text-white/40 font-heading uppercase tracking-wider">
                   Traditional trim cap construction (competitor reference)
                 </p>
               </div>
@@ -367,7 +368,7 @@ export default function TrimlessPage() {
       </section>
 
       {/* Key Differentiators */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -385,7 +386,7 @@ export default function TrimlessPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {keyDifferentiators.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/5 h-full">
+                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
                     <item.icon className="w-6 h-6 text-brand-gold" />
                   </div>
@@ -403,15 +404,15 @@ export default function TrimlessPage() {
       </section>
 
       {/* Side-by-Side Comparison */}
-      <section id="comparison" className="section-padding bg-primary-dark scroll-mt-20">
+      <section id="comparison" className="section-padding bg-bg-primary scroll-mt-20">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 EdgeLuxe vs. Traditional Trim Cap
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 A direct comparison of trimless EdgeLuxe construction against
                 traditional channel letters with plastic trim caps.
               </p>
@@ -427,7 +428,7 @@ export default function TrimlessPage() {
                   className="rounded-xl mb-4"
                   aspectRatio="aspect-[4/3]"
                 />
-                <h3 className="font-heading font-semibold text-text-light/60">
+                <h3 className="font-heading font-semibold text-white/60">
                   Traditional with Trim Cap
                 </h3>
               </div>
@@ -446,12 +447,12 @@ export default function TrimlessPage() {
 
           {/* Table Comparison */}
           <AnimatedSection delay={0.1}>
-            <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <div className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden">
               <div className="grid grid-cols-3 bg-white/5 border-b border-white/10">
-                <div className="px-6 py-4 font-heading font-semibold text-sm text-text-light/50 uppercase tracking-wider">
+                <div className="px-6 py-4 font-heading font-semibold text-sm text-white/50 uppercase tracking-wider">
                   Feature
                 </div>
-                <div className="px-6 py-4 font-heading font-semibold text-sm text-text-light/50 uppercase tracking-wider">
+                <div className="px-6 py-4 font-heading font-semibold text-sm text-white/50 uppercase tracking-wider">
                   Traditional
                 </div>
                 <div className="px-6 py-4 font-heading font-semibold text-sm text-brand-gold uppercase tracking-wider">
@@ -463,17 +464,17 @@ export default function TrimlessPage() {
                   key={row.feature}
                   className={`grid grid-cols-3 ${
                     index < comparisonRows.length - 1
-                      ? "border-b border-white/5"
+                      ? "border-b border-white/[0.04]"
                       : ""
                   }`}
                 >
-                  <div className="px-6 py-4 text-sm font-heading text-text-light/70">
+                  <div className="px-6 py-4 text-sm font-heading text-white/70">
                     {row.feature}
                   </div>
-                  <div className="px-6 py-4 text-sm text-text-light/50">
+                  <div className="px-6 py-4 text-sm text-white/50">
                     {row.traditional}
                   </div>
-                  <div className="px-6 py-4 text-sm text-text-light font-medium">
+                  <div className="px-6 py-4 text-sm text-white font-medium">
                     {row.edgeLuxe}
                   </div>
                 </div>
@@ -484,15 +485,15 @@ export default function TrimlessPage() {
       </section>
 
       {/* Technical Specifications */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Trade Specifications
               </h2>
-              <p className="text-text-light/60 mb-8">
+              <p className="text-white/60 mb-8">
                 Precision tolerances and premium materials throughout. Every
                 EdgeLuxe letter is a testament to what German engineering
                 brings to the sign industry. Available exclusively at wholesale trade pricing.
@@ -511,7 +512,7 @@ export default function TrimlessPage() {
       </section>
 
       {/* Use Cases */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -548,15 +549,15 @@ export default function TrimlessPage() {
       </section>
 
       {/* Gallery */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 EdgeLuxe Trimless Gallery
               </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto">
+              <p className="text-white/60 max-w-xl mx-auto">
                 See the trimless difference installed. No trim caps. Clean
                 lines. Pure brand expression.
               </p>
@@ -588,23 +589,23 @@ export default function TrimlessPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="text-brand-gold text-6xl font-heading mb-6">
                 &ldquo;
               </div>
-              <p className="text-xl md:text-2xl text-text-light/80 italic leading-relaxed mb-8">
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed mb-8">
                 The EdgeLuxe trimless letters are the cleanest channel letters
                 we have ever installed. Our architects are specifying them on
                 every new project.
               </p>
               <div>
-                <p className="font-heading font-semibold text-text-light">
+                <p className="font-heading font-semibold text-white">
                   [Sign Shop Partner]
                 </p>
-                <p className="text-sm text-text-light/50">[City, State]</p>
+                <p className="text-sm text-white/50">[City, State]</p>
               </div>
             </div>
           </AnimatedSection>
@@ -612,7 +613,7 @@ export default function TrimlessPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl">
@@ -627,7 +628,7 @@ export default function TrimlessPage() {
               <div className="space-y-4">
                 {trimlessFaqs.map((faq, index) => (
                   <AnimatedSection key={index} delay={Math.min(index * 0.05, 0.3)}>
-                    <details className="group bg-white border border-black/5 rounded-xl overflow-hidden hover:border-brand-gold/20 transition-colors">
+                    <details className="group bg-white border border-black/[0.04] rounded-xl overflow-hidden hover:border-brand-gold/20 transition-colors">
                       <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                         <h3 className="text-base md:text-lg font-heading font-semibold text-text-dark group-hover:text-brand-gold transition-colors pr-4">
                           {faq.question}
@@ -658,47 +659,8 @@ export default function TrimlessPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.08),transparent_60%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Request Trade Pricing for Trimless Letters
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send your project files and receive a detailed wholesale quote
-                for EdgeLuxe trimless channel letters within 48 hours. We will
-                show you what clean really looks like.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients. Your margin is protected.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

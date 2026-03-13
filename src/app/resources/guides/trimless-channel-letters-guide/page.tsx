@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, CheckCircle, X, Lock } from "lucide-react";
+import { CheckCircle, X, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -38,8 +38,12 @@ export const metadata: Metadata = {
 export default function TrimlessGuidePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"The Complete Guide to Trimless Channel Letters","description":"Everything sign shop professionals need to know about trimless channel letters including construction, benefits, specifications, and how to sell them to clients.","step":[{"@type":"HowToStep","position":1,"text":"Understand what makes trimless letters different from trim cap"},{"@type":"HowToStep","position":2,"text":"Learn the construction and engineering behind trimless design"},{"@type":"HowToStep","position":3,"text":"Compare trimless vs traditional trim cap specifications"},{"@type":"HowToStep","position":4,"text":"Identify ideal applications for trimless letters"},{"@type":"HowToStep","position":5,"text":"Evaluate cost and value considerations"},{"@type":"HowToStep","position":6,"text":"Present trimless options to your clients effectively"}]}) }}
+      />
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -57,10 +61,10 @@ export default function TrimlessGuidePage() {
               </span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               What Are Trimless Channel Letters?
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               A comprehensive guide for sign shop professionals covering
               trimless construction, how it differs from traditional trim cap
               letters, why architects are specifying trimless, and how to order
@@ -71,7 +75,7 @@ export default function TrimlessGuidePage() {
       </section>
 
       {/* Introduction */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="max-w-3xl">
             <AnimatedSection>
@@ -92,7 +96,7 @@ export default function TrimlessGuidePage() {
                 brand designers working on premium commercial projects, the trim
                 cap has long been an unwelcome visual element.
               </p>
-              <div className="bg-white rounded-xl p-6 border border-black/5 mb-8">
+              <div className="bg-white rounded-xl p-6 border border-black/[0.04] mb-8">
                 <h3 className="font-heading font-semibold text-text-dark mb-3">
                   Common Trim Cap Issues
                 </h3>
@@ -120,21 +124,21 @@ export default function TrimlessGuidePage() {
       </section>
 
       {/* What Makes Trimless Different */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6">
                 How Trimless Construction Works
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-4">
+              <p className="text-white/60 leading-relaxed mb-4">
                 Trimless channel letters replace the plastic trim cap with a
                 proprietary aluminum return-to-face connection. The acrylic face
                 sits flush against the aluminum return with no plastic retainer
                 visible from any viewing angle.
               </p>
-              <p className="text-text-light/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6">
                 This requires significantly tighter manufacturing tolerances
                 than standard channel letters. The return must be fabricated to
                 precise dimensions so that the face fits seamlessly without a
@@ -151,7 +155,7 @@ export default function TrimlessGuidePage() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-text-light/70 text-sm"
+                    className="flex items-start gap-3 text-white/70 text-sm"
                   >
                     <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
                     {item}
@@ -171,14 +175,14 @@ export default function TrimlessGuidePage() {
       </section>
 
       {/* Comparison */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-dark mb-6">
                 Trimless vs. Traditional Trim Cap: Side by Side
               </h2>
-              <div className="bg-white rounded-xl border border-black/5 overflow-hidden">
+              <div className="bg-white rounded-xl border border-black/[0.04] overflow-hidden">
                 <div className="grid grid-cols-3 bg-black/5 border-b border-black/5">
                   <div className="px-4 py-3 font-heading font-semibold text-xs text-text-dark/50 uppercase tracking-wider">
                     Feature
@@ -244,15 +248,15 @@ export default function TrimlessGuidePage() {
       </section>
 
       {/* Why Architects Specify Trimless */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="max-w-3xl">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-6">
                 Why Architects Are Specifying Trimless
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-4">
+              <p className="text-white/60 leading-relaxed mb-4">
                 The trend toward trimless channel letters is being driven
                 primarily by architects and brand designers who want signage
                 that matches the clean lines of modern architecture. Traditional
@@ -260,7 +264,7 @@ export default function TrimlessGuidePage() {
                 utilitarian, but contemporary commercial architecture demands a
                 higher standard.
               </p>
-              <p className="text-text-light/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6">
                 Trimless letters are increasingly specified for Class A office
                 buildings, luxury retail environments, boutique hotels, mixed-use
                 developments, and any project where the signage must meet the
@@ -279,7 +283,7 @@ export default function TrimlessGuidePage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-2 text-sm text-text-light/70"
+                    className="flex items-center gap-2 text-sm text-white/70"
                   >
                     <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
                     {item}
@@ -292,7 +296,7 @@ export default function TrimlessGuidePage() {
       </section>
 
       {/* How to Order */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="max-w-3xl">
             <AnimatedSection>
@@ -329,45 +333,8 @@ export default function TrimlessGuidePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
-                  Trade Accounts Only
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Specify Trimless?
-              </h2>
-              <p className="text-text-light/60 mb-8">
-                Request wholesale trade pricing on EdgeLuxe trimless channel
-                letters. Detailed quotes within 48 hours. We sell exclusively to
-                sign shops — never retail.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/products/channel-letters/trimless"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  View EdgeLuxe Trimless Product
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

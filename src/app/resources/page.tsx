@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, FileText, HelpCircle, Library, ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -60,7 +61,7 @@ export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -74,10 +75,10 @@ export default function ResourcesPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Partner Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
               Trade Resources
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               Everything sign shop professionals and trade buyers need to make informed decisions about wholesale
               channel letters, illumination, and signage manufacturing. We sell exclusively to the trade — never retail.
             </p>
@@ -86,20 +87,20 @@ export default function ResourcesPage() {
       </section>
 
       {/* Resource Cards */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {resourceCards.map((card, index) => (
               <AnimatedSection key={card.title} delay={index * 0.1}>
                 <Link href={card.href} className="group block h-full">
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
+                  <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                       <card.icon className="w-6 h-6 text-brand-gold" />
                     </div>
-                    <h2 className="text-2xl font-heading font-bold text-text-light group-hover:text-brand-gold transition-colors mb-4">
+                    <h2 className="text-2xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors mb-4">
                       {card.title}
                     </h2>
-                    <p className="text-text-light/50 mb-6 leading-relaxed">
+                    <p className="text-white/50 mb-6 leading-relaxed">
                       {card.description}
                     </p>
                     <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
@@ -114,28 +115,8 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Get Trade Pricing?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? We sell exclusively to sign shops and trade professionals — never retail. Get a detailed wholesale quote within 48 hours.
-              </p>
-              <Link href="/get-a-quote" className="btn-primary">
-                Request Wholesale Pricing
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

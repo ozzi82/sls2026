@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   Cog,
   Factory,
   Ruler,
@@ -12,6 +11,7 @@ import {
   Lock,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -77,8 +77,8 @@ export default function GermanEngineeringPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      <section className="relative bg-bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(232,89,12,0.08),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -97,11 +97,11 @@ export default function GermanEngineeringPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-light leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
                 German Engineering.{" "}
                 <span className="text-brand-gold">American Execution.</span>
               </h1>
-              <p className="text-lg text-text-light/70 leading-relaxed mb-8">
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
                 Our partnership with LKF Lichtwerbung in Nuremberg, Germany, is
                 not a marketing story. It is the foundation of how we design,
                 engineer, and manufacture every sign — available exclusively to
@@ -128,7 +128,7 @@ export default function GermanEngineeringPage() {
       </section>
 
       {/* LKF PARTNERSHIP */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -148,7 +148,7 @@ export default function GermanEngineeringPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {heritageTimeline.map((item, index) => (
               <AnimatedSection key={item.label} delay={index * 0.1}>
-                <div className="bg-white rounded-xl p-8 shadow-sm border border-black/5 h-full">
+                <div className="bg-white rounded-xl p-8 shadow-sm border border-black/[0.04] h-full">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center">
                       <span className="text-brand-gold font-heading font-bold text-sm">
@@ -172,15 +172,15 @@ export default function GermanEngineeringPage() {
       </section>
 
       {/* ENGINEERING PRINCIPLES */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Engineering Principles, Not Just a Label
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 When we say German engineering, we mean specific practices that
                 are embedded in our wholesale manufacturing process every day —
                 giving our trade partners a product advantage no retail
@@ -192,14 +192,14 @@ export default function GermanEngineeringPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {engineeringPrinciples.map((principle, index) => (
               <AnimatedSection key={principle.title} delay={index * 0.1}>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full hover:border-brand-gold/20 transition-colors">
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full hover:border-brand-gold/20 transition-colors">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                     <principle.icon className="w-5 h-5 text-brand-gold" />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-text-light mb-3">
+                  <h3 className="text-xl font-heading font-semibold text-white mb-3">
                     {principle.title}
                   </h3>
-                  <p className="text-text-light/60 leading-relaxed text-sm">
+                  <p className="text-white/60 leading-relaxed text-sm">
                     {principle.description}
                   </p>
                 </div>
@@ -210,7 +210,7 @@ export default function GermanEngineeringPage() {
       </section>
 
       {/* WHAT THIS MEANS FOR YOUR SHOP */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
@@ -246,28 +246,28 @@ export default function GermanEngineeringPage() {
       </section>
 
       {/* EDGELUXE SHOWCASE */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Trimless: Engineering in Action
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6">
                 Our trimless channel letter line is the clearest
                 expression of German engineering applied to modern signage.
                 No visible trim cap. Clean, seamless edges. A premium
                 architectural finish — available exclusively through our
                 wholesale trade partners.
               </p>
-              <p className="text-text-light/60 leading-relaxed mb-8">
+              <p className="text-white/60 leading-relaxed mb-8">
                 Trimless exists because of our engineering heritage. The
                 tolerances required for a trimless letter leave no room for
                 approximation. Your clients get a product no competitor can
                 replicate. Your margins reflect the premium.
               </p>
-              <div className="flex flex-wrap gap-4 text-xs font-heading uppercase tracking-wider text-text-light/40">
+              <div className="flex flex-wrap gap-4 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-brand-gold" /> German Engineered
                 </span>
@@ -290,38 +290,8 @@ export default function GermanEngineeringPage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Experience German Engineering at Wholesale Pricing
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Send us your project details and receive trade pricing
-                within 48 hours. No retail markup. No middlemen. Direct from
-                our wholesale facility to your shop.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link href="/why-sunlite/ul-listing" className="btn-secondary text-base px-10 py-5">
-                  UL Listing <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

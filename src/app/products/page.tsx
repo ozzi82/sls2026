@@ -242,7 +242,7 @@ export default function ProductsPage() {
                 .map((cat, index) => (
                   <AnimatedSection key={cat.name} delay={index * 0.1}>
                     <Link href={cat.href} className="group block h-full">
-                      <div className="bg-white border border-black/5 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-400 h-full flex flex-col">
+                      <div className="bg-white border border-black/[0.04] rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-400 h-full flex flex-col">
                         {cat.imageSrc ? (
                           <div className="relative aspect-[16/10]">
                             <Image

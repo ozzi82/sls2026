@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -76,7 +77,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -91,10 +92,10 @@ export default function BlogPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
               Wholesale Industry Blog
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               Industry insights, product spotlights, and expert knowledge written exclusively for sign shop
               professionals and wholesale trade partners. Stay informed on channel letter technology, manufacturing trends, and
               best practices.
@@ -104,13 +105,13 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.map((post, index) => (
               <AnimatedSection key={post.slug} delay={index * 0.1}>
                 <Link href={`/resources/blog/${post.slug}`} className="group block h-full">
-                  <article className="bg-white/5 border border-white/10 rounded-xl overflow-hidden h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
+                  <article className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                     <PlaceholderImage
                       label={post.image}
                       className="rounded-none border-0"
@@ -121,15 +122,15 @@ export default function BlogPage() {
                         <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full">
                           {post.category}
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs text-text-light/40">
+                        <span className="flex items-center gap-1.5 text-xs text-white/40">
                           <Calendar className="w-3 h-3" />
                           {formatDate(post.date)}
                         </span>
                       </div>
-                      <h2 className="text-xl font-heading font-bold text-text-light group-hover:text-brand-gold transition-colors mb-3">
+                      <h2 className="text-xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors mb-3">
                         {post.title}
                       </h2>
-                      <p className="text-text-light/50 text-sm leading-relaxed mb-6">
+                      <p className="text-white/50 text-sm leading-relaxed mb-6">
                         {post.excerpt}
                       </p>
                       <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
@@ -145,28 +146,8 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Get Trade Pricing?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? We never sell retail — only to sign shops and trade professionals. Get a detailed wholesale quote within 48 hours.
-              </p>
-              <Link href="/get-a-quote" className="btn-primary">
-                Request Wholesale Pricing
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

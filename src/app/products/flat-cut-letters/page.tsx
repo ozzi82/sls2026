@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
@@ -163,7 +164,7 @@ export default function FlatCutLettersPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -181,16 +182,16 @@ export default function FlatCutLettersPage() {
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
                 </div>
                 <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
                   Wholesale Flat Cut{" "}
                   <span className="text-brand-gold">Letters</span>
                 </h1>
-                <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-lg text-white/70 mb-4 leading-relaxed">
                   Precision CNC-cut dimensional letters in aluminum, stainless
                   steel, brass, and acrylic. Clean lines, crisp edges, and a
                   professional dimensional look for any commercial application. Available exclusively to trade accounts.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   Wholesale direct to sign shops. Any font, any size, any
                   material. Delivered in 2-3 weeks. We never sell retail — your clients stay yours.
                 </p>
@@ -209,7 +210,7 @@ export default function FlatCutLettersPage() {
       </section>
 
       {/* Materials */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -226,7 +227,7 @@ export default function FlatCutLettersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {materials.map((material, index) => (
               <AnimatedSection key={material.name} delay={index * 0.1}>
-                <div className="bg-white rounded-xl overflow-hidden border border-black/5 h-full">
+                <div className="bg-white rounded-xl overflow-hidden border border-black/[0.04] h-full">
                   <PlaceholderImage
                     label={material.image}
                     className="rounded-none border-0"
@@ -251,12 +252,12 @@ export default function FlatCutLettersPage() {
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Trade Specifications & Benefits
               </h2>
             </div>
@@ -264,14 +265,14 @@ export default function FlatCutLettersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full">
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
                     <feature.icon className="w-6 h-6 text-brand-gold" />
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-text-light mb-2">
+                  <h3 className="text-lg font-heading font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-text-light/50 leading-relaxed">
+                  <p className="text-sm text-white/50 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -282,16 +283,16 @@ export default function FlatCutLettersPage() {
       </section>
 
       {/* Mounting Options */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                   Mounting Methods
                 </h2>
-                <p className="text-text-light/60 mb-6 leading-relaxed">
+                <p className="text-white/60 mb-6 leading-relaxed">
                   The mounting method determines the visual relationship between
                   the letters and the surface. We provide the right mounting
                   hardware and a paper pattern for every project. Wholesale direct to your shop.
@@ -312,10 +313,10 @@ export default function FlatCutLettersPage() {
                     },
                   ].map((method) => (
                     <li key={method.title}>
-                      <h4 className="font-heading font-semibold text-text-light mb-1">
+                      <h4 className="font-heading font-semibold text-white mb-1">
                         {method.title}
                       </h4>
-                      <p className="text-sm text-text-light/50">{method.desc}</p>
+                      <p className="text-sm text-white/50">{method.desc}</p>
                     </li>
                   ))}
                 </ul>
@@ -331,15 +332,15 @@ export default function FlatCutLettersPage() {
       </section>
 
       {/* Specifications */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Trade Specifications
               </h2>
-              <p className="text-text-light/60 mb-8">
+              <p className="text-white/60 mb-8">
                 CNC precision cutting with tight tolerances across all
                 materials. Every letter set ships with a paper pattern and
                 mounting hardware. Available exclusively at wholesale trade pricing.
@@ -358,7 +359,7 @@ export default function FlatCutLettersPage() {
       </section>
 
       {/* Use Cases */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -393,47 +394,8 @@ export default function FlatCutLettersPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Request Trade Pricing for Flat Cut Letters
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send your artwork and specifications. We will return a detailed
-                wholesale quote within 48 hours with material and finish
-                options.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

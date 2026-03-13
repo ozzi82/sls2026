@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   Shield,
   ShieldCheck,
   FileCheck2,
@@ -13,6 +12,7 @@ import {
   Lock,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -91,8 +91,8 @@ export default function ULListingPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      <section className="relative bg-bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(232,89,12,0.08),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -111,11 +111,11 @@ export default function ULListingPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-light leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
                 UL Listed.{" "}
                 <span className="text-brand-gold">Every Sign. Every Time.</span>
               </h1>
-              <p className="text-lg text-text-light/70 leading-relaxed mb-8">
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
                 Safety is not an upgrade or an add-on. Every illuminated sign
                 that leaves our wholesale facility carries UL certification.
                 For your shop, that means code compliance, reduced liability,
@@ -143,7 +143,7 @@ export default function ULListingPage() {
       </section>
 
       {/* WHAT UL LISTING MEANS */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
@@ -178,15 +178,15 @@ export default function ULListingPage() {
       </section>
 
       {/* BENEFITS GRID */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Why UL Listing Matters for Your Trade Business
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 UL certification is not just about the product. It directly
                 impacts your shop&apos;s ability to win bids, reduce liability,
                 and build a reputation as a premium sign shop partner.
@@ -197,14 +197,14 @@ export default function ULListingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ulBenefits.map((benefit, index) => (
               <AnimatedSection key={benefit.title} delay={index * 0.1}>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full hover:border-brand-gold/20 transition-colors">
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full hover:border-brand-gold/20 transition-colors">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                     <benefit.icon className="w-5 h-5 text-brand-gold" />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold text-text-light mb-3">
+                  <h3 className="text-xl font-heading font-semibold text-white mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-text-light/60 leading-relaxed text-sm">
+                  <p className="text-white/60 leading-relaxed text-sm">
                     {benefit.description}
                   </p>
                 </div>
@@ -215,7 +215,7 @@ export default function ULListingPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -232,7 +232,7 @@ export default function ULListingPage() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="bg-white rounded-xl shadow-sm border border-black/5 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-sm border border-black/[0.04] overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-2 border-b border-black/5">
                 <div className="p-6 bg-red-50">
@@ -278,7 +278,7 @@ export default function ULListingPage() {
       </section>
 
       {/* PROCESS OVERVIEW */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
@@ -290,10 +290,10 @@ export default function ULListingPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Our UL Compliance Process
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6">
                 UL listing is built into every stage of our wholesale
                 manufacturing process. From approved component sourcing to
                 final electrical testing, our trade partners receive a fully
@@ -309,7 +309,7 @@ export default function ULListingPage() {
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                    <p className="text-text-light/70 text-sm">{item.text}</p>
+                    <p className="text-white/70 text-sm">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -318,41 +318,8 @@ export default function ULListingPage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Install with Confidence. Sell with Pride.
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Every illuminated sign from Sunlite ships UL listed at
-                wholesale trade pricing. No retail markup. We never compete
-                with you — guaranteed.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Wholesale Only <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

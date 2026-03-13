@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Check, X, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -122,8 +122,12 @@ const illuminationTypes = [
 export default function ChoosingIlluminationTypesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"Choosing the Right Illumination Type for Channel Letters","description":"Guide for sign shop professionals on selecting the optimal channel letter illumination type based on visibility, brand aesthetic, mounting surface, and budget.","step":[{"@type":"HowToStep","position":1,"text":"Assess the primary viewing distance and ambient lighting"},{"@type":"HowToStep","position":2,"text":"Match illumination to the brand identity and aesthetic"},{"@type":"HowToStep","position":3,"text":"Evaluate the mounting surface for halo compatibility"},{"@type":"HowToStep","position":4,"text":"Check local regulations on sign illumination"},{"@type":"HowToStep","position":5,"text":"Compare costs across illumination types"},{"@type":"HowToStep","position":6,"text":"Present options to your client with visual examples"}]}) }}
+      />
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -139,10 +143,10 @@ export default function ChoosingIlluminationTypesPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               Choosing the Right Illumination Type
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               A wholesale guide for sign shop professionals and trade buyers. The illumination style of a channel letter sign defines how it looks at night and
               shapes the impression it makes on customers. This guide compares the four primary
               options to help you recommend the right choice for every project — all available at trade pricing.
@@ -152,7 +156,7 @@ export default function ChoosingIlluminationTypesPage() {
       </section>
 
       {/* Illumination Types */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {illuminationTypes.map((type, index) => (
@@ -171,38 +175,38 @@ export default function ChoosingIlluminationTypesPage() {
                     {/* Content */}
                     <div className="lg:w-3/5">
                       <div className="flex items-baseline gap-3 mb-2">
-                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light">
+                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
                           {type.name}
                         </h2>
-                        <span className="text-sm text-text-light/40 font-heading">
+                        <span className="text-sm text-white/40 font-heading">
                           ({type.aka})
                         </span>
                       </div>
                       <div className="gold-line mb-4" />
-                      <p className="text-text-light/70 leading-relaxed mb-6">
+                      <p className="text-white/70 leading-relaxed mb-6">
                         {type.description}
                       </p>
 
                       {/* Quick Stats */}
                       <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-                          <p className="text-xs text-text-light/40 font-heading uppercase tracking-wider mb-1">
+                        <div className="bg-bg-card border border-white/[0.06] rounded-lg p-3 text-center">
+                          <p className="text-xs text-white/40 font-heading uppercase tracking-wider mb-1">
                             Visibility
                           </p>
-                          <p className="text-sm font-heading font-semibold text-text-light">
+                          <p className="text-sm font-heading font-semibold text-white">
                             {type.visibility}
                           </p>
                         </div>
-                        <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-                          <p className="text-xs text-text-light/40 font-heading uppercase tracking-wider mb-1">
+                        <div className="bg-bg-card border border-white/[0.06] rounded-lg p-3 text-center">
+                          <p className="text-xs text-white/40 font-heading uppercase tracking-wider mb-1">
                             Aesthetic
                           </p>
-                          <p className="text-sm font-heading font-semibold text-text-light">
+                          <p className="text-sm font-heading font-semibold text-white">
                             {type.aesthetic}
                           </p>
                         </div>
-                        <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-                          <p className="text-xs text-text-light/40 font-heading uppercase tracking-wider mb-1">
+                        <div className="bg-bg-card border border-white/[0.06] rounded-lg p-3 text-center">
+                          <p className="text-xs text-white/40 font-heading uppercase tracking-wider mb-1">
                             Cost
                           </p>
                           <p className="text-sm font-heading font-semibold text-brand-gold">
@@ -212,12 +216,12 @@ export default function ChoosingIlluminationTypesPage() {
                       </div>
 
                       {/* Best For */}
-                      <h3 className="text-sm font-heading font-semibold text-text-light uppercase tracking-wider mb-3">
+                      <h3 className="text-sm font-heading font-semibold text-white uppercase tracking-wider mb-3">
                         Best For
                       </h3>
                       <ul className="space-y-2 mb-6">
                         {type.bestFor.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-sm text-text-light/60">
+                          <li key={item} className="flex items-center gap-2 text-sm text-white/60">
                             <Check className="w-4 h-4 text-brand-gold flex-shrink-0" />
                             {item}
                           </li>
@@ -225,13 +229,13 @@ export default function ChoosingIlluminationTypesPage() {
                       </ul>
 
                       {/* Considerations */}
-                      <h3 className="text-sm font-heading font-semibold text-text-light uppercase tracking-wider mb-3">
+                      <h3 className="text-sm font-heading font-semibold text-white uppercase tracking-wider mb-3">
                         Considerations
                       </h3>
                       <ul className="space-y-2">
                         {type.considerations.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-sm text-text-light/40">
-                            <X className="w-4 h-4 text-text-light/30 flex-shrink-0" />
+                          <li key={item} className="flex items-center gap-2 text-sm text-white/40">
+                            <X className="w-4 h-4 text-white/30 flex-shrink-0" />
                             {item}
                           </li>
                         ))}
@@ -254,7 +258,7 @@ export default function ChoosingIlluminationTypesPage() {
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                 Quick Comparison
               </h2>
               <div className="gold-line mx-auto" />
@@ -264,7 +268,7 @@ export default function ChoosingIlluminationTypesPage() {
               <table className="w-full min-w-[640px] text-sm">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="text-left py-4 px-4 font-heading font-semibold text-text-light">
+                    <th className="text-left py-4 px-4 font-heading font-semibold text-white">
                       Factor
                     </th>
                     <th className="text-center py-4 px-4 font-heading font-semibold text-brand-gold">
@@ -281,7 +285,7 @@ export default function ChoosingIlluminationTypesPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="text-text-light/60">
+                <tbody className="text-white/60">
                   {[
                     { factor: "Daytime Visibility", values: ["Excellent", "Good", "Excellent", "Good"] },
                     { factor: "Nighttime Visibility", values: ["Excellent", "Very Good", "Excellent", "Poor"] },
@@ -293,7 +297,7 @@ export default function ChoosingIlluminationTypesPage() {
                     { factor: "Best Brand Fit", values: ["Retail", "Luxury", "Premium", "Interior"] },
                   ].map((row, i) => (
                     <tr key={row.factor} className={i % 2 === 0 ? "bg-white/[0.02]" : ""}>
-                      <td className="py-3 px-4 font-heading font-medium text-text-light">
+                      <td className="py-3 px-4 font-heading font-medium text-white">
                         {row.factor}
                       </td>
                       {row.values.map((val, j) => (
@@ -311,11 +315,11 @@ export default function ChoosingIlluminationTypesPage() {
       </section>
 
       {/* Decision Framework */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">
                 Decision Framework: 5 Questions to Ask Your Client
               </h2>
               <div className="gold-line mb-8" />
@@ -349,13 +353,13 @@ export default function ChoosingIlluminationTypesPage() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white/5 border border-white/10 rounded-xl p-6"
+                    className="bg-bg-card border border-white/[0.06] rounded-xl p-6"
                   >
-                    <h3 className="font-heading font-semibold text-text-light mb-2 flex items-start gap-3">
+                    <h3 className="font-heading font-semibold text-white mb-2 flex items-start gap-3">
                       <span className="text-brand-gold">{i + 1}.</span>
                       {item.question}
                     </h3>
-                    <p className="text-sm text-text-light/60 leading-relaxed pl-7">
+                    <p className="text-sm text-white/60 leading-relaxed pl-7">
                       {item.guidance}
                     </p>
                   </div>
@@ -366,34 +370,8 @@ export default function ChoosingIlluminationTypesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Need Help Choosing? Get Wholesale Pricing.
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Our team can help you select the ideal illumination type. We sell exclusively to sign shops and trade professionals — never retail. Get a
-                detailed wholesale quote with illumination options within 48 hours.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary">
-                  Request Wholesale Pricing
-                </Link>
-                <Link href="/resources/guides" className="btn-secondary">
-                  More Guides
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

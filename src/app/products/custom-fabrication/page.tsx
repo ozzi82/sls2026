@@ -12,6 +12,7 @@ import {
   Lock,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -154,7 +155,7 @@ export default function CustomFabricationPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -172,18 +173,18 @@ export default function CustomFabricationPage() {
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
                 </div>
                 <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
                   Wholesale Custom{" "}
                   <span className="text-brand-gold">Fabrication</span>
                 </h1>
-                <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-lg text-white/70 mb-4 leading-relaxed">
                   When your project goes beyond standard products, our custom
                   fabrication team brings it to life. Complex geometries,
                   mixed materials, specialty illumination, and oversized
                   installations — engineered and built to the same standards as
                   our entire product line. Available exclusively to trade accounts.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   If you can design it, we can engineer it, build it, and ship
                   it. Wholesale direct to sign shops. USA and Canada. We never sell retail — we never compete with you.
                 </p>
@@ -203,7 +204,7 @@ export default function CustomFabricationPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -220,7 +221,7 @@ export default function CustomFabricationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/5 h-full">
+                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
                     <item.icon className="w-6 h-6 text-brand-gold" />
                   </div>
@@ -238,15 +239,15 @@ export default function CustomFabricationPage() {
       </section>
 
       {/* Process */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 The Wholesale Custom Fabrication Process
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 A structured process that takes your concept from idea to
                 installed reality. Clear communication and approval gates at
                 every stage. Trade pricing throughout.
@@ -269,10 +270,10 @@ export default function CustomFabricationPage() {
                     </span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="text-xl font-heading font-semibold text-text-light mb-2">
+                    <h3 className="text-xl font-heading font-semibold text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-text-light/50 leading-relaxed">
+                    <p className="text-sm text-white/50 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -284,16 +285,16 @@ export default function CustomFabricationPage() {
       </section>
 
       {/* Project Types */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                   Project Types We Handle
                 </h2>
-                <p className="text-text-light/60 mb-8">
+                <p className="text-white/60 mb-8">
                   This is a sample of the custom project types our fabrication
                   team handles regularly. If your project is not on this list,
                   reach out — we have likely done something similar. All at wholesale trade pricing for sign shops.
@@ -302,7 +303,7 @@ export default function CustomFabricationPage() {
                   {projectTypes.map((type) => (
                     <li
                       key={type}
-                      className="flex items-center gap-2 text-sm text-text-light/70"
+                      className="flex items-center gap-2 text-sm text-white/70"
                     >
                       <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
                       {type}
@@ -331,15 +332,15 @@ export default function CustomFabricationPage() {
       </section>
 
       {/* Gallery */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Custom Fabrication Projects
               </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto">
+              <p className="text-white/60 max-w-xl mx-auto">
                 A selection of custom projects that showcase the range and
                 capability of our fabrication team.
               </p>
@@ -368,7 +369,7 @@ export default function CustomFabricationPage() {
       </section>
 
       {/* Why Sunlite for Custom */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -420,47 +421,8 @@ export default function CustomFabricationPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Have a Custom Project? Request Trade Pricing.
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send us your concept, drawings, or even a rough idea. Our
-                engineering team will review the feasibility and provide a
-                detailed wholesale quote with fabrication approach.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients. Your margin is protected.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

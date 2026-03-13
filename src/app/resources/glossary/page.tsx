@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -230,7 +230,7 @@ export default function GlossaryPage() {
       />
 
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -245,10 +245,10 @@ export default function GlossaryPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
               Sign Industry Glossary
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               A comprehensive A-Z reference of sign industry terms, channel letter components, and
               commercial signage terminology. Built for sign shop professionals and wholesale trade partners — whether you are a seasoned sign professional or new to
               the trade, this glossary covers the essential vocabulary.
@@ -258,7 +258,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Alphabet Navigation */}
-      <section className="bg-primary-dark border-y border-white/10 sticky top-0 z-30 backdrop-blur-md bg-primary-dark/90">
+      <section className="bg-bg-primary border-y border-white/10 sticky top-0 z-30 backdrop-blur-md bg-bg-primary/90">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
           <nav aria-label="Glossary alphabetical navigation">
             <ul className="flex flex-wrap items-center gap-2">
@@ -266,7 +266,7 @@ export default function GlossaryPage() {
                 <li key={letter}>
                   <a
                     href={`#letter-${letter}`}
-                    className="inline-flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/10 text-sm font-heading font-semibold text-text-light/60 hover:text-brand-gold hover:border-brand-gold/30 transition-colors"
+                    className="inline-flex items-center justify-center w-9 h-9 rounded bg-bg-card border border-white/[0.06] text-sm font-heading font-semibold text-white/60 hover:text-brand-gold hover:border-brand-gold/30 transition-colors"
                   >
                     {letter}
                   </a>
@@ -278,7 +278,7 @@ export default function GlossaryPage() {
       </section>
 
       {/* Glossary Terms */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="max-w-4xl">
             {alphabet.map((letter) => (
@@ -294,10 +294,10 @@ export default function GlossaryPage() {
                         id={item.term.toLowerCase().replace(/[\s()]/g, "-")}
                         className="scroll-mt-24"
                       >
-                        <dt className="text-lg font-heading font-semibold text-text-light mb-2">
+                        <dt className="text-lg font-heading font-semibold text-white mb-2">
                           {item.term}
                         </dt>
-                        <dd className="text-text-light/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20">
+                        <dd className="text-white/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20">
                           {item.definition}
                         </dd>
                       </div>
@@ -310,28 +310,8 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Have Questions About Our Wholesale Products?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Our team speaks the language of signage. We sell exclusively to sign shops and trade professionals — never retail.
-              </p>
-              <Link href="/get-a-quote" className="btn-primary">
-                Request Wholesale Pricing
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

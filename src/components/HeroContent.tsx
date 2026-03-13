@@ -12,9 +12,9 @@ export default function HeroContent({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 80 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
       className={className}
     >
       {children}

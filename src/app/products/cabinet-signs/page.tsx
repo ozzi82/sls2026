@@ -235,7 +235,7 @@ export default function CabinetSignsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {cabinetTypes.map((type, index) => (
                 <AnimatedSection key={type.name} delay={index * 0.1}>
-                  <div className="bg-white rounded-xl overflow-hidden border border-black/5 h-full hover:shadow-md hover:-translate-y-1 transition-all duration-400">
+                  <div className="bg-white rounded-xl overflow-hidden border border-black/[0.04] h-full hover:shadow-md hover:-translate-y-1 transition-all duration-400">
                     <PlaceholderImage
                       label={type.image}
                       className="rounded-none border-0"

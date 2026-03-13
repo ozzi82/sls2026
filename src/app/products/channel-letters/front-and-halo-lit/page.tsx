@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
@@ -131,7 +132,7 @@ export default function FrontAndHaloLitPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -150,16 +151,16 @@ export default function FrontAndHaloLitPage() {
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
                 </div>
                 <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
                   Wholesale Front & Halo Lit{" "}
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
-                <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-lg text-white/70 mb-4 leading-relaxed">
                   The best of both worlds. Dual LED circuits combine bright
                   front-face illumination with an elegant rear halo glow,
                   delivering maximum visual impact for premium installations. Available exclusively to trade accounts.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   Two lighting effects. One letter. German-engineered precision
                   with UL listing. Wholesale direct to sign shops — we never sell retail.
                 </p>
@@ -179,15 +180,15 @@ export default function FrontAndHaloLitPage() {
       </section>
 
       {/* Visual Comparison */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Two Effects, One Letter
               </h2>
-              <p className="text-text-light/60 max-w-2xl mx-auto">
+              <p className="text-white/60 max-w-2xl mx-auto">
                 Front and halo lit channel letters combine the visibility of
                 face illumination with the sophistication of a rear halo glow.
                 The result is a sign that commands attention from every angle. Wholesale direct to sign shops.
@@ -206,10 +207,10 @@ export default function FrontAndHaloLitPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-heading font-semibold text-text-light mb-1">
+                <h3 className="font-heading font-semibold text-white mb-1">
                   Face Lit Effect
                 </h3>
-                <p className="text-sm text-text-light/50">
+                <p className="text-sm text-white/50">
                   Bright face illumination for readability
                 </p>
               </div>
@@ -223,10 +224,10 @@ export default function FrontAndHaloLitPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-heading font-semibold text-text-light mb-1">
+                <h3 className="font-heading font-semibold text-white mb-1">
                   Halo Lit Effect
                 </h3>
-                <p className="text-sm text-text-light/50">
+                <p className="text-sm text-white/50">
                   Elegant backlit glow for ambiance
                 </p>
               </div>
@@ -243,7 +244,7 @@ export default function FrontAndHaloLitPage() {
                 <h3 className="font-heading font-semibold text-brand-gold mb-1">
                   Combined Effect
                 </h3>
-                <p className="text-sm text-text-light/50">
+                <p className="text-sm text-white/50">
                   Maximum impact from both effects
                 </p>
               </div>
@@ -253,7 +254,7 @@ export default function FrontAndHaloLitPage() {
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -266,7 +267,7 @@ export default function FrontAndHaloLitPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/5 h-full">
+                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
                     <feature.icon className="w-6 h-6 text-brand-gold" />
                   </div>
@@ -284,15 +285,15 @@ export default function FrontAndHaloLitPage() {
       </section>
 
       {/* Specifications */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Trade Specifications
               </h2>
-              <p className="text-text-light/60 mb-8">
+              <p className="text-white/60 mb-8">
                 Dual-circuit engineering with optimized return depth for both
                 front face illumination and rear halo spread. Available exclusively at wholesale trade pricing.
               </p>
@@ -310,7 +311,7 @@ export default function FrontAndHaloLitPage() {
       </section>
 
       {/* Use Cases */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -346,47 +347,8 @@ export default function FrontAndHaloLitPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Request Trade Pricing for Dual-Lit Letters
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send your project details and get a comprehensive wholesale
-                quote within 48 hours. Includes both LED circuit specifications
-                and trade pricing.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                No retail markup. We never sell retail and we never compete with you for your clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

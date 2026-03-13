@@ -13,6 +13,7 @@ import {
   Download,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -141,7 +142,7 @@ export default function SEGLightBoxesPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(232,89,12,0.08),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -159,12 +160,12 @@ export default function SEGLightBoxesPage() {
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
                 </div>
                 <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
                   Custom{" "}
                   <span className="text-brand-gold">SEG Light Boxes</span>{" "}
                   and Prints in 3 Weeks
                 </h1>
-                <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-lg text-white/70 mb-4 leading-relaxed">
                   From experiential retail experiences to advertising and
                   wayfinding content, Sunlite Signs custom-sized
                   Silicone-edged Graphic (SEG) Light Box solutions are like
@@ -172,7 +173,7 @@ export default function SEGLightBoxesPage() {
                   factors down to 1&quot; deep, high-resolution printed and
                   illuminated light box signage.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   UL listed. German-engineered LED layouts. Wholesale direct to
                   sign companies only. Delivered in 3 weeks door to door. We never sell retail — your clients stay yours.
                 </p>
@@ -197,34 +198,34 @@ export default function SEGLightBoxesPage() {
                   aspectRatio="aspect-[4/3]"
                 />
                 {/* Specs sidebar overlay */}
-                <div className="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+                <div className="mt-6 bg-bg-card border border-white/[0.06] rounded-xl p-6">
                   <h3 className="text-sm font-heading font-semibold text-brand-gold uppercase tracking-widest mb-4">
                     Quick Specs
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Profile Depth</span>
-                      <p className="text-sm text-text-light font-medium">From 1&quot; to 4&quot;</p>
+                      <span className="text-xs text-white/40 font-heading">Profile Depth</span>
+                      <p className="text-sm text-white font-medium">From 1&quot; to 4&quot;</p>
                     </div>
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Frame</span>
-                      <p className="text-sm text-text-light font-medium">Extruded Aluminum</p>
+                      <span className="text-xs text-white/40 font-heading">Frame</span>
+                      <p className="text-sm text-white font-medium">Extruded Aluminum</p>
                     </div>
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Face</span>
-                      <p className="text-sm text-text-light font-medium">Fabric + Silicone Gasket</p>
+                      <span className="text-xs text-white/40 font-heading">Face</span>
+                      <p className="text-sm text-white font-medium">Fabric + Silicone Gasket</p>
                     </div>
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Illumination</span>
-                      <p className="text-sm text-text-light font-medium">LED Edge-lit or Backlit</p>
+                      <span className="text-xs text-white/40 font-heading">Illumination</span>
+                      <p className="text-sm text-white font-medium">LED Edge-lit or Backlit</p>
                     </div>
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Sizes</span>
-                      <p className="text-sm text-text-light font-medium">Custom — Any Size</p>
+                      <span className="text-xs text-white/40 font-heading">Sizes</span>
+                      <p className="text-sm text-white font-medium">Custom — Any Size</p>
                     </div>
                     <div>
-                      <span className="text-xs text-text-light/40 font-heading">Orientation</span>
-                      <p className="text-sm text-text-light font-medium">Single or Double-Sided</p>
+                      <span className="text-xs text-white/40 font-heading">Orientation</span>
+                      <p className="text-sm text-white font-medium">Single or Double-Sided</p>
                     </div>
                   </div>
                 </div>
@@ -235,7 +236,7 @@ export default function SEGLightBoxesPage() {
       </section>
 
       {/* Features / Benefits */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -253,7 +254,7 @@ export default function SEGLightBoxesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white border border-black/5 rounded-xl p-8 h-full">
+                <div className="bg-white border border-black/[0.04] rounded-xl p-8 h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
                     <feature.icon className="w-6 h-6 text-brand-gold" />
                   </div>
@@ -271,7 +272,7 @@ export default function SEGLightBoxesPage() {
       </section>
 
       {/* How SEG Works Spotlight */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -282,10 +283,10 @@ export default function SEGLightBoxesPage() {
               />
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                   How the SEG System Works
                 </h2>
-                <p className="text-text-light/60 mb-6 leading-relaxed">
+                <p className="text-white/60 mb-6 leading-relaxed">
                   The silicone-edged graphic system is the modern standard for
                   changeable illuminated displays. A precision-sewn silicone
                   gasket around the fabric print presses into a recessed channel
@@ -303,7 +304,7 @@ export default function SEGLightBoxesPage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-sm text-text-light/70"
+                      className="flex items-start gap-3 text-sm text-white/70"
                     >
                       <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
                       {item}
@@ -317,15 +318,15 @@ export default function SEGLightBoxesPage() {
       </section>
 
       {/* Specifications */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
                 Trade Specifications
               </h2>
-              <p className="text-text-light/60 mb-8">
+              <p className="text-white/60 mb-8">
                 Every SEG light box is engineered for uniform illumination,
                 structural integrity, and effortless graphic changes. Ships
                 ready to install with frame, print, and LED system complete.
@@ -338,18 +339,18 @@ export default function SEGLightBoxesPage() {
               />
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <div className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden">
                 {specs.map((spec, index) => (
                   <div
                     key={spec.label}
                     className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/5" : ""
+                      index < specs.length - 1 ? "border-b border-white/[0.04]" : ""
                     }`}
                   >
-                    <span className="text-sm text-text-light/50 font-heading">
+                    <span className="text-sm text-white/50 font-heading">
                       {spec.label}
                     </span>
-                    <span className="text-sm text-text-light font-medium text-right ml-4">
+                    <span className="text-sm text-white font-medium text-right ml-4">
                       {spec.value}
                     </span>
                   </div>
@@ -361,7 +362,7 @@ export default function SEGLightBoxesPage() {
       </section>
 
       {/* Applications */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -398,48 +399,8 @@ export default function SEGLightBoxesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Get Your Product Started
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send your SEG light box specifications or project drawings and
-                receive a detailed wholesale quote within 48 hours.
-                Custom sizes, prints, and configurations available.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                Wholesale to sign companies only. We never sell retail and we never compete with you for your clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Get Your Product Started
-                </Link>
-                <Link
-                  href="#"
-                  className="btn-secondary text-base px-10 py-5 inline-flex items-center"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Catalog
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

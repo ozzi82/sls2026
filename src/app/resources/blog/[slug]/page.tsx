@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, ArrowLeft, ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -377,7 +378,7 @@ export default function BlogPostPage({
       />
 
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -397,12 +398,12 @@ export default function BlogPostPage({
                 <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full">
                   {post.category}
                 </span>
-                <span className="flex items-center gap-1.5 text-sm text-text-light/40">
+                <span className="flex items-center gap-1.5 text-sm text-white/40">
                   <Calendar className="w-4 h-4" />
                   {formatDate(post.date)}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-light leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
                 {post.title}
               </h1>
             </div>
@@ -411,7 +412,7 @@ export default function BlogPostPage({
       </section>
 
       {/* Featured Image */}
-      <section className="bg-primary-dark pb-8">
+      <section className="bg-bg-primary pb-8">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <PlaceholderImage
@@ -424,10 +425,10 @@ export default function BlogPostPage({
       </section>
 
       {/* Article Content */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <article className="prose prose-invert prose-lg max-w-3xl prose-headings:font-heading prose-headings:text-text-light prose-p:text-text-light/70 prose-strong:text-text-light prose-a:text-brand-gold prose-a:no-underline hover:prose-a:underline prose-li:text-text-light/70 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3">
+            <article className="prose prose-invert prose-lg max-w-3xl prose-headings:font-heading prose-headings:text-white prose-p:text-white/70 prose-strong:text-white prose-a:text-brand-gold prose-a:no-underline hover:prose-a:underline prose-li:text-white/70 prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3">
               <div dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }} />
             </article>
           </AnimatedSection>
@@ -435,13 +436,13 @@ export default function BlogPostPage({
       </section>
 
       {/* Post Navigation */}
-      <section className="bg-primary-dark border-t border-white/10">
+      <section className="bg-bg-primary border-t border-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex justify-between items-center">
             {prevSlug ? (
               <Link
                 href={`/resources/blog/${prevSlug}`}
-                className="flex items-center gap-2 text-sm text-text-light/50 hover:text-brand-gold transition-colors font-heading"
+                className="flex items-center gap-2 text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Previous Article
@@ -451,14 +452,14 @@ export default function BlogPostPage({
             )}
             <Link
               href="/resources/blog"
-              className="text-sm text-text-light/50 hover:text-brand-gold transition-colors font-heading"
+              className="text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
             >
               All Articles
             </Link>
             {nextSlug ? (
               <Link
                 href={`/resources/blog/${nextSlug}`}
-                className="flex items-center gap-2 text-sm text-text-light/50 hover:text-brand-gold transition-colors font-heading"
+                className="flex items-center gap-2 text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
               >
                 Next Article
                 <ArrowRight className="w-4 h-4" />
@@ -470,29 +471,8 @@ export default function BlogPostPage({
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Get Wholesale Pricing?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Whether you need face-lit, halo-lit, or trimless channel letters, Sunlite Signs
-                delivers German-engineered quality at wholesale pricing. We never sell retail.
-              </p>
-              <Link href="/get-a-quote" className="btn-primary">
-                Request Wholesale Pricing
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

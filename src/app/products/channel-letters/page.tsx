@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, Zap, Layers, Lock } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -115,7 +116,7 @@ export default function ChannelLettersPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
           <Breadcrumbs
@@ -133,16 +134,16 @@ export default function ChannelLettersPage() {
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
                 </div>
                 <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
                   Wholesale{" "}
                   <span className="text-brand-gold">Channel Letters</span>
                 </h1>
-                <p className="text-lg text-text-light/70 mb-4 leading-relaxed">
+                <p className="text-lg text-white/70 mb-4 leading-relaxed">
                   The EdgeLuxe product line — 12 channel letter styles across 4
                   product families. From IP67-sealed block acrylic to fabricated
                   stainless steel, every style manufactured in-house. Wholesale direct to sign shops.
                 </p>
-                <p className="text-text-light/50 mb-8">
+                <p className="text-white/50 mb-8">
                   German-engineered precision. UL listed. Delivered within 3 weeks
                   door to door. Trade pricing with no retail markup. Your clients stay yours.
                 </p>
@@ -175,7 +176,7 @@ export default function ChannelLettersPage() {
       </section>
 
       {/* Advantages Bar */}
-      <section className="bg-navy/80 border-y border-white/10">
+      <section className="bg-bg-bg-navy/80 border-y border-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {advantages.map((adv, index) => (
@@ -185,10 +186,10 @@ export default function ChannelLettersPage() {
                     <adv.icon className="w-6 h-6 text-brand-gold" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-text-light mb-1">
+                    <h3 className="font-heading font-semibold text-white mb-1">
                       {adv.title}
                     </h3>
-                    <p className="text-sm text-text-light/50">{adv.description}</p>
+                    <p className="text-sm text-white/50">{adv.description}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -201,16 +202,16 @@ export default function ChannelLettersPage() {
       {productFamilies.map((family, familyIndex) => (
         <section
           key={family.familyName}
-          className={`section-padding ${familyIndex % 2 === 0 ? "bg-light-bg" : "bg-primary-dark"}`}
+          className={`section-padding ${familyIndex % 2 === 0 ? "bg-bg-light" : "bg-bg-primary"}`}
         >
           <div className="container-max">
             <AnimatedSection>
               <div className="mb-12">
                 <div className="gold-line mb-6" />
-                <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${familyIndex % 2 === 0 ? "text-text-dark" : "text-text-light"}`}>
+                <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${familyIndex % 2 === 0 ? "text-text-dark" : "text-white"}`}>
                   {family.familyName}
                 </h2>
-                <p className={`max-w-2xl ${familyIndex % 2 === 0 ? "text-text-dark/60" : "text-text-light/60"}`}>
+                <p className={`max-w-2xl ${familyIndex % 2 === 0 ? "text-text-dark/60" : "text-white/60"}`}>
                   {family.familyDescription}
                 </p>
               </div>
@@ -224,8 +225,8 @@ export default function ChannelLettersPage() {
                   >
                     <div className={`rounded-xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg ${
                       familyIndex % 2 === 0
-                        ? "bg-white border border-black/5 hover:border-brand-gold/30"
-                        : "bg-white/5 border border-white/10 hover:border-brand-gold/30"
+                        ? "bg-white border border-black/[0.04] hover:border-brand-gold/30"
+                        : "bg-bg-card border border-white/[0.06] hover:border-brand-gold/30"
                     }`}>
                       <ProductImageHover
                         daySrc={product.dayImg}
@@ -234,12 +235,12 @@ export default function ChannelLettersPage() {
                       />
                       <div className="p-5">
                         <span className={`text-xs font-heading font-semibold uppercase tracking-widest ${
-                          familyIndex % 2 === 0 ? "text-text-dark/40" : "text-text-light/40"
+                          familyIndex % 2 === 0 ? "text-text-dark/40" : "text-white/40"
                         }`}>
                           {product.model}
                         </span>
                         <h3 className={`text-lg font-heading font-bold mt-1 mb-2 group-hover:text-brand-gold transition-colors ${
-                          familyIndex % 2 === 0 ? "text-text-dark" : "text-text-light"
+                          familyIndex % 2 === 0 ? "text-text-dark" : "text-white"
                         }`}>
                           {product.name}
                         </h3>
@@ -257,44 +258,8 @@ export default function ChannelLettersPage() {
         </section>
       ))}
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Order Wholesale Channel Letters?
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send us your project files and receive a detailed wholesale
-                quote within 48 hours. We work from AI files, PDFs, or even
-                napkin sketches.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                No retail markup. No middlemen. We never compete with our sign shop partners for their clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

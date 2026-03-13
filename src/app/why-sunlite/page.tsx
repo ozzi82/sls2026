@@ -13,6 +13,7 @@ import {
   Lock,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -74,8 +75,8 @@ export default function WhySunlitePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      <section className="relative bg-bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -93,11 +94,11 @@ export default function WhySunlitePage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-light leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
                 Why Sign Shops{" "}
                 <span className="text-brand-gold">Choose Sunlite</span>
               </h1>
-              <p className="text-lg sm:text-xl text-text-light/70 max-w-2xl font-body leading-relaxed">
+              <p className="text-lg sm:text-xl text-white/70 max-w-2xl font-body leading-relaxed">
                 We manufacture. You sell. Simple. German engineering heritage,
                 UL listed certification, a quality process built on precision,
                 and a wholesale-only model that guarantees we never compete with
@@ -109,7 +110,7 @@ export default function WhySunlitePage() {
       </section>
 
       {/* TRUST STATS BAR */}
-      <section className="bg-navy border-t border-white/10 border-b border-b-white/10">
+      <section className="bg-bg-navy border-t border-white/10 border-b border-b-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {trustStats.map((stat, index) => (
@@ -118,7 +119,7 @@ export default function WhySunlitePage() {
                   <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-text-light/50 font-heading uppercase tracking-wider">
+                  <div className="text-sm text-white/50 font-heading uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -129,7 +130,7 @@ export default function WhySunlitePage() {
       </section>
 
       {/* PILLAR CARDS */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -185,15 +186,15 @@ export default function WhySunlitePage() {
       </section>
 
       {/* OVERVIEW SECTION */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Built for Sign Shops. Nobody Else.
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-8">
+              <p className="text-white/60 leading-relaxed mb-8">
                 Sunlite Signs LLC is a Florida-based wholesale-only manufacturer
                 of illuminated signage. We partner with LKF Lichtwerbung in
                 Nuremberg, Germany, to bring European engineering precision
@@ -202,7 +203,7 @@ export default function WhySunlitePage() {
                 relationship is built on one guarantee: we will never compete
                 with you for retail business.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-text-light/40">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-brand-gold" />
                   German Engineering
@@ -233,38 +234,8 @@ export default function WhySunlitePage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="section-padding bg-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to See the Wholesale Difference?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Get trade pricing within 48 hours. No retail markup, no
-                obligation — just wholesale precision pricing from a
-                manufacturer that will never compete with you.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link href="/products" className="btn-secondary text-base px-10 py-5">
-                  Browse Trade Catalog
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }

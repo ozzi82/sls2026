@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Gem, Lightbulb, Wrench, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -68,7 +69,7 @@ export default function GuidesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-primary-dark pt-32 pb-16">
+      <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -83,10 +84,10 @@ export default function GuidesPage() {
               <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Resources</span>
             </div>
             <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
               Wholesale Guides
             </h1>
-            <p className="text-lg text-text-light/60 max-w-2xl">
+            <p className="text-lg text-white/60 max-w-2xl">
               In-depth resources written for sign shop professionals and trade buyers. Make informed decisions about
               wholesale channel letters, illumination, installation, and ordering from a manufacturer that sells exclusively to the trade.
             </p>
@@ -95,13 +96,13 @@ export default function GuidesPage() {
       </section>
 
       {/* Guides Grid */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="space-y-8">
             {guides.map((guide, index) => (
               <AnimatedSection key={guide.href} delay={index * 0.1}>
                 <Link href={guide.href} className="group block">
-                  <article className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
+                  <article className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-2/5 lg:w-1/3">
                         <PlaceholderImage
@@ -115,14 +116,14 @@ export default function GuidesPage() {
                           <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20">
                             <guide.icon className="w-5 h-5 text-brand-gold" />
                           </div>
-                          <span className="text-xs font-heading font-medium text-text-light/40 uppercase tracking-wider">
+                          <span className="text-xs font-heading font-medium text-white/40 uppercase tracking-wider">
                             {guide.readTime}
                           </span>
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-heading font-bold text-text-light group-hover:text-brand-gold transition-colors mb-4">
+                        <h2 className="text-2xl lg:text-3xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors mb-4">
                           {guide.title}
                         </h2>
-                        <p className="text-text-light/50 leading-relaxed mb-6">
+                        <p className="text-white/50 leading-relaxed mb-6">
                           {guide.description}
                         </p>
                         <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
@@ -139,28 +140,8 @@ export default function GuidesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Apply What You Have Learned?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to get trade pricing on your next project? Put this knowledge into practice. We sell exclusively to sign shops and trade professionals — never retail. Get a detailed wholesale quote within 48 hours.
-              </p>
-              <Link href="/get-a-quote" className="btn-primary">
-                Request Wholesale Pricing
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+      <CTASection />
     </>
   );
 }

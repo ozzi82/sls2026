@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   Layers,
   ScanSearch,
   Paintbrush,
@@ -13,6 +12,7 @@ import {
   Lock,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -98,8 +98,8 @@ export default function QualityProcessPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      <section className="relative bg-bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(232,89,12,0.08),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -118,11 +118,11 @@ export default function QualityProcessPage() {
                 <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-light leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
                 Quality Is a{" "}
                 <span className="text-brand-gold">Process, Not a Promise.</span>
               </h1>
-              <p className="text-lg text-text-light/70 leading-relaxed mb-8">
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
                 Promises are easy. Processes are what deliver. From material
                 selection to final crating, every wholesale sign passes through
                 seven documented quality checkpoints. We manufacture to the
@@ -144,7 +144,7 @@ export default function QualityProcessPage() {
       </section>
 
       {/* QUALITY METRICS BAR */}
-      <section className="bg-navy border-t border-white/10 border-b border-b-white/10">
+      <section className="bg-bg-navy border-t border-white/10 border-b border-b-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {qualityMetrics.map((metric, index) => (
@@ -153,7 +153,7 @@ export default function QualityProcessPage() {
                   <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-sm text-text-light/50 font-heading uppercase tracking-wider">
+                  <div className="text-sm text-white/50 font-heading uppercase tracking-wider">
                     {metric.label}
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function QualityProcessPage() {
       </section>
 
       {/* PROCESS STEPS */}
-      <section className="section-padding bg-light-bg">
+      <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -219,15 +219,15 @@ export default function QualityProcessPage() {
       </section>
 
       {/* MATERIALS SECTION */}
-      <section className="section-padding bg-primary-dark">
+      <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Materials Matter — Especially at Wholesale
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-6">
+              <p className="text-white/60 leading-relaxed mb-6">
                 Quality starts before fabrication begins. Our material
                 specifications are developed in partnership with LKF
                 Lichtwerbung and reflect decades of field performance data. We
@@ -244,7 +244,7 @@ export default function QualityProcessPage() {
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                    <p className="text-text-light/70 text-sm">{point}</p>
+                    <p className="text-white/70 text-sm">{point}</p>
                   </div>
                 ))}
               </div>
@@ -261,15 +261,15 @@ export default function QualityProcessPage() {
       </section>
 
       {/* WHAT THIS MEANS FOR YOU */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-6">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 What This Means for Your Trade Business
               </h2>
-              <p className="text-text-light/60 leading-relaxed mb-10">
+              <p className="text-white/60 leading-relaxed mb-10">
                 A rigorous quality process does not just produce better signs.
                 It produces better outcomes for your wholesale business. We
                 manufacture. You sell. Your margins grow.
@@ -296,11 +296,11 @@ export default function QualityProcessPage() {
               },
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8 h-full text-center">
-                  <h3 className="text-xl font-heading font-semibold text-text-light mb-3">
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full text-center">
+                  <h3 className="text-xl font-heading font-semibold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-text-light/60 text-sm leading-relaxed">
+                  <p className="text-white/60 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -310,41 +310,8 @@ export default function QualityProcessPage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                See the Wholesale Quality for Yourself
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Request trade pricing and experience what precision wholesale
-                manufacturing looks like. No retail markup. No competition.
-                Just quality product at trade pricing.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/german-engineering"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  German Engineering <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      <div className="h-20 lg:hidden" />
+      <CTASection />
     </>
   );
 }
