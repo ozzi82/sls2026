@@ -9,25 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary-dark": "#0F172A",
-        "brand-gold": "#E8590C",
-        "brand-gold-light": "#F97316",
-        navy: "#1E293B",
-        "navy-light": "#334155",
-        "light-bg": "#F8FAFC",
-        "text-dark": "#0F172A",
-        "text-light": "#F8FAFC",
-        "accent-red": "#DC2626",
-        "accent-teal": "#E8590C",
-        "accent-teal-light": "#F97316",
+        // New design system tokens
+        "bg-primary": "#0A0A0A",
+        "bg-navy": "#0A0A1A",
+        "bg-card": "#111118",
+        "bg-light": "#FAFAFA",
+        "brand-gold": "#C9A96E",
+        "brand-gold-light": "#D4B87A",
+        cta: "#F97316",
+        "cta-hover": "#FB923C",
+        "text-dark": "#0A0A0A",
+
+        // Aliases for old tokens (remove in Phase 6)
+        "primary-dark": "#0A0A0A",
+        navy: "#0A0A1A",
+        "navy-light": "#111118",
+        "light-bg": "#FAFAFA",
+        "text-light": "#FAFAFA",
+        "accent-red": "#F97316",
+        "accent-teal": "#C9A96E",
+        "accent-teal-light": "#D4B87A",
       },
       fontFamily: {
-        heading: ["var(--font-outfit)", "sans-serif"],
-        body: ["var(--font-dm-sans)", "sans-serif"],
+        display: ["var(--font-space-grotesk)", "sans-serif"],
+        heading: ["var(--font-space-grotesk)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "slide-up": "slideUp 0.6s ease-out forwards",
+        marquee: "marquee 40s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -37,6 +48,10 @@ const config: Config = {
         slideUp: {
           "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },
