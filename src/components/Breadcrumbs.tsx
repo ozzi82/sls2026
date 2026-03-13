@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 interface BreadcrumbItem {
-  name: string;
+  /** Display text — use `label` or `name` (both supported for backwards compatibility) */
+  label?: string;
+  name?: string;
   href?: string;
 }
 
@@ -17,10 +18,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: item.name,
+      name: item.label || item.name,
       ...(item.href && { item: `https://sunlitesigns.com${item.href}` }),
     })),
   };
+
+  const isLast = (index: number) => index === items.length - 1;
 
   return (
     <>
@@ -29,19 +32,24 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <nav aria-label="Breadcrumb" className="py-4">
-        <ol className="flex items-center gap-2 text-sm text-text-light/50">
-          {items.map((item, index) => (
-            <li key={item.name} className="flex items-center gap-2">
-              {index > 0 && <ChevronRight className="w-3 h-3" />}
-              {item.href ? (
-                <Link href={item.href} className="hover:text-brand-gold transition-colors">
-                  {item.name}
-                </Link>
-              ) : (
-                <span className="text-text-light/80">{item.name}</span>
-              )}
-            </li>
-          ))}
+        <ol className="flex items-center gap-2 font-heading font-semibold text-[11px] uppercase tracking-[0.15em]">
+          {items.map((item, index) => {
+            const text = item.label || item.name;
+            return (
+              <li key={text} className="flex items-center gap-2">
+                {index > 0 && (
+                  <span className="text-brand-gold">/</span>
+                )}
+                {item.href && !isLast(index) ? (
+                  <Link href={item.href} className="text-white/60 hover:text-brand-gold transition-colors">
+                    {text}
+                  </Link>
+                ) : (
+                  <span className="text-white/40">{text}</span>
+                )}
+              </li>
+            );
+          })}
         </ol>
       </nav>
     </>
