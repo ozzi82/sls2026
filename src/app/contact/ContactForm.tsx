@@ -20,12 +20,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-white/5 border border-brand-gold/20 rounded-xl p-12 text-center">
+      <div className="bg-bg-card border border-brand-gold/20 rounded-xl p-12 text-center">
         <CheckCircle className="w-16 h-16 text-brand-gold mx-auto mb-6" />
-        <h3 className="text-2xl font-heading font-bold text-text-light mb-3">
+        <h3 className="text-2xl font-heading font-bold text-white mb-3">
           Message Sent
         </h3>
-        <p className="text-text-light/60 max-w-md mx-auto">
+        <p className="text-white/60 max-w-md mx-auto">
           Thank you for reaching out. Our team will get back to you within one
           business day.
         </p>
@@ -44,7 +44,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="contact-name"
-            className="block text-sm font-heading font-medium text-text-light/70 mb-2"
+            className="block text-sm font-heading font-medium text-white/60 mb-2"
           >
             Full Name *
           </label>
@@ -53,14 +53,14 @@ export default function ContactForm() {
             id="contact-name"
             name="name"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-text-light placeholder:text-text-light/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+            className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
             placeholder="John Smith"
           />
         </div>
         <div>
           <label
             htmlFor="contact-email"
-            className="block text-sm font-heading font-medium text-text-light/70 mb-2"
+            className="block text-sm font-heading font-medium text-white/60 mb-2"
           >
             Email *
           </label>
@@ -69,7 +69,7 @@ export default function ContactForm() {
             id="contact-email"
             name="email"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-text-light placeholder:text-text-light/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+            className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
             placeholder="john@abcsignco.com"
           />
         </div>
@@ -78,7 +78,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-subject"
-          className="block text-sm font-heading font-medium text-text-light/70 mb-2"
+          className="block text-sm font-heading font-medium text-white/60 mb-2"
         >
           Subject
         </label>
@@ -86,7 +86,7 @@ export default function ContactForm() {
           type="text"
           id="contact-subject"
           name="subject"
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-text-light placeholder:text-text-light/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+          className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
           placeholder="General inquiry, partnership, technical question..."
         />
       </div>
@@ -94,7 +94,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-message"
-          className="block text-sm font-heading font-medium text-text-light/70 mb-2"
+          className="block text-sm font-heading font-medium text-white/60 mb-2"
         >
           Message *
         </label>
@@ -103,7 +103,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={6}
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-text-light placeholder:text-text-light/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors resize-none"
+          className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors resize-none"
           placeholder="How can we help you?"
         />
       </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
         Send Message
       </button>
 
-      <p className="text-text-light/30 text-xs">
+      <p className="text-white/30 text-xs">
         Your information is kept confidential. We typically respond within one
         business day.
       </p>

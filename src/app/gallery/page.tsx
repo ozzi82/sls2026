@@ -1,9 +1,8 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GalleryFilter from "./GalleryFilter";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Wholesale Sign Gallery — Trade Partner Installations | Sunlite Signs",
@@ -20,13 +19,14 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      {/* ═══════════════════════════════════════════
+          HERO
+          ═══════════════════════════════════════════ */}
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
 
         <div className="relative z-10 pt-20">
-          <div className="container-max px-4 sm:px-6 lg:px-8">
+          <div className="container-max px-6 sm:px-10 lg:px-16">
             <Breadcrumbs
               items={[
                 { name: "Home", href: "/" },
@@ -36,18 +36,17 @@ export default function GalleryPage() {
           </div>
 
           <div className="section-padding pb-12">
-            <div className="container-max text-center">
+            <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
-                <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
-                </div>
-                <div className="gold-line mx-auto mb-6" />
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+                <p className="micro-label mb-6">
+                  Wholesale Only
+                </p>
+                <div className="gold-line mx-auto mb-8" />
+                <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
                   Manufactured by Sunlite.{" "}
                   <span className="text-brand-gold">Installed by Our Trade Partners.</span>
                 </h1>
-                <p className="text-lg text-text-light/60 max-w-2xl mx-auto">
+                <p className="text-lg text-white/60 max-w-2xl mx-auto">
                   Every project below was manufactured at our wholesale facility
                   and installed by sign shop partners across North America. These
                   are trade-exclusive products built with German engineering
@@ -60,47 +59,29 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* GALLERY GRID */}
-      <section className="section-padding bg-primary-dark">
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-12 mx-6 sm:mx-10 lg:mx-16" />
+
+      {/* ═══════════════════════════════════════════
+          GALLERY GRID
+          ═══════════════════════════════════════════ */}
+      <section className="px-6 sm:px-10 lg:px-16 pb-16">
         <div className="container-max">
           <GalleryFilter />
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Ready to Manufacture Something Like This for Your Clients?
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Send us your project details and get wholesale trade pricing
-                within 48 hours. No retail markup. No competition. We
-                manufacture, you sell — and your clients never know we exist.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary gap-2">
-                  Request Wholesale Pricing <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/products" className="btn-secondary">
-                  Browse Trade Catalog
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-16 mx-6 sm:mx-10 lg:mx-16" />
 
-      {/* Bottom spacer for mobile CTA bar */}
-      <div className="h-20 lg:hidden" />
+      {/* ═══════════════════════════════════════════
+          CTA
+          ═══════════════════════════════════════════ */}
+      <CTASection
+        heading="Ready to Manufacture Something"
+        highlight="Like This?"
+        description="Send us your project details and get wholesale trade pricing within 48 hours. No retail markup. No competition. We manufacture, you sell."
+      />
     </>
   );
 }

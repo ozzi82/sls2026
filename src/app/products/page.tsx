@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Shield, Clock, Wrench, Lock } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Shield, Clock, Wrench } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Wholesale Sign Products — Trade Pricing for Sign Shops | Sunlite Signs",
@@ -112,10 +113,12 @@ export default function ProductsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-primary-dark overflow-hidden">
+      {/* ═══════════════════════════════════════════
+          HERO
+          ═══════════════════════════════════════════ */}
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
-        <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
+        <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
           <Breadcrumbs
             items={[
               { name: "Home", href: "/" },
@@ -124,28 +127,27 @@ export default function ProductsPage() {
           />
           <AnimatedSection>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
-              </div>
-              <div className="gold-line mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+              <p className="micro-label mb-6">
+                Wholesale Only — Trade Pricing
+              </p>
+              <div className="gold-line mb-8" />
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
                 Wholesale Product{" "}
                 <span className="text-brand-gold">Catalog</span>
               </h1>
-              <p className="text-lg text-text-light/70 max-w-2xl mb-4">
+              <p className="text-lg text-white/60 max-w-2xl mb-4">
                 German-engineered illuminated signage, wholesale direct to sign
                 shops across the USA and Canada. Every product is UL listed,
                 precision built, and delivered within 3 weeks door to door.
               </p>
-              <p className="text-text-light/50 mb-8">
+              <p className="text-white/60 mb-8">
                 We never sell retail. Your clients stay yours. No retail markup, no middlemen — just trade pricing direct from the manufacturer.
               </p>
               <div className="flex flex-wrap gap-6">
                 {trustPoints.map((point) => (
                   <span
                     key={point.label}
-                    className="flex items-center gap-2 text-sm text-text-light/50 font-heading uppercase tracking-wider"
+                    className="flex items-center gap-2 text-sm text-white/50 font-heading uppercase tracking-wider"
                   >
                     <point.icon className="w-4 h-4 text-brand-gold" />
                     {point.label}
@@ -157,15 +159,20 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Featured Category: Channel Letters */}
-      <section className="section-padding bg-primary-dark border-t border-white/5">
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
+
+      {/* ═══════════════════════════════════════════
+          FEATURED: Channel Letters
+          ═══════════════════════════════════════════ */}
+      <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
           {productCategories
             .filter((c) => c.featured)
             .map((cat) => (
               <AnimatedSection key={cat.name}>
                 <Link href={cat.href} className="group block">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold/30 transition-all duration-300">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center bg-bg-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-400">
                     {cat.imageSrc ? (
                       <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
                         <Image
@@ -185,13 +192,13 @@ export default function ProductsPage() {
                       />
                     )}
                     <div className="p-8 lg:p-12 lg:pr-16">
-                      <span className="text-brand-gold text-xs font-heading uppercase tracking-widest">
+                      <p className="micro-label mb-4">
                         Flagship Product Line — Wholesale Direct
-                      </span>
-                      <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mt-3 mb-4 group-hover:text-brand-gold transition-colors">
+                      </p>
+                      <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-[1.1] mt-3 mb-4 group-hover:text-brand-gold transition-colors tracking-[-0.02em]">
                         Wholesale {cat.name}
                       </h2>
-                      <p className="text-text-light/60 leading-relaxed mb-6">
+                      <p className="text-white/60 leading-relaxed mb-6">
                         {cat.description}
                       </p>
                       <span className="btn-primary">
@@ -206,104 +213,85 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Other Product Categories */}
-      <section className="section-padding bg-light-bg">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                More Wholesale Product Lines
-              </h2>
-              <p className="text-text-dark/60 max-w-xl mx-auto">
-                Beyond channel letters, we manufacture a full range of premium
-                signage solutions — all available exclusively at trade pricing
-                for sign shops.
-              </p>
-            </div>
-          </AnimatedSection>
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {productCategories
-              .filter((c) => !c.featured)
-              .map((cat, index) => (
-                <AnimatedSection key={cat.name} delay={index * 0.1}>
-                  <Link href={cat.href} className="group block h-full">
-                    <div className="bg-white border border-black/5 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 transition-all duration-300 h-full flex flex-col">
-                      {cat.imageSrc ? (
-                        <div className="relative aspect-[16/10]">
-                          <Image
-                            src={cat.imageSrc}
-                            alt={cat.image}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover"
+      {/* ═══════════════════════════════════════════
+          MORE PRODUCT LINES — Light section
+          ═══════════════════════════════════════════ */}
+      <section className="mx-6 sm:mx-10 lg:mx-16">
+        <div className="bg-bg-light rounded-2xl overflow-hidden">
+          <div className="container-max px-8 sm:px-12 lg:px-16 py-20 lg:py-28">
+            <AnimatedSection>
+              <div className="text-center mb-16">
+                <div className="gold-line mx-auto mb-6" />
+                <h2 className="text-3xl md:text-4xl lg:text-[56px] font-display font-bold text-text-dark mb-5 leading-[1.05] tracking-[-0.02em]">
+                  More Wholesale <span className="text-brand-gold">Product Lines</span>
+                </h2>
+                <p className="text-text-dark/60 max-w-xl mx-auto text-[15px]">
+                  Beyond channel letters, we manufacture a full range of premium
+                  signage solutions — all available exclusively at trade pricing
+                  for sign shops.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {productCategories
+                .filter((c) => !c.featured)
+                .map((cat, index) => (
+                  <AnimatedSection key={cat.name} delay={index * 0.1}>
+                    <Link href={cat.href} className="group block h-full">
+                      <div className="bg-white border border-black/5 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-400 h-full flex flex-col">
+                        {cat.imageSrc ? (
+                          <div className="relative aspect-[16/10]">
+                            <Image
+                              src={cat.imageSrc}
+                              alt={cat.image}
+                              fill
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              className="object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <PlaceholderImage
+                            label={cat.image}
+                            className="rounded-none border-0"
+                            aspectRatio="aspect-[16/10]"
                           />
+                        )}
+                        <div className="p-6 flex-1 flex flex-col">
+                          <h3 className="text-xl font-heading font-bold text-text-dark group-hover:text-brand-gold transition-colors mb-3">
+                            Wholesale {cat.name}
+                          </h3>
+                          <p className="text-text-dark/60 text-sm leading-relaxed mb-4 flex-1">
+                            {cat.description}
+                          </p>
+                          <span className="btn-text-link group/link">
+                            Get Trade Pricing
+                            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                          </span>
                         </div>
-                      ) : (
-                        <PlaceholderImage
-                          label={cat.image}
-                          className="rounded-none border-0"
-                          aspectRatio="aspect-[16/10]"
-                        />
-                      )}
-                      <div className="p-6 flex-1 flex flex-col">
-                        <h3 className="text-xl font-heading font-bold text-text-dark group-hover:text-brand-gold transition-colors mb-3">
-                          Wholesale {cat.name}
-                        </h3>
-                        <p className="text-text-dark/60 text-sm leading-relaxed mb-4 flex-1">
-                          {cat.description}
-                        </p>
-                        <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
-                          Get Trade Pricing
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </span>
                       </div>
-                    </div>
-                  </Link>
-                </AnimatedSection>
-              ))}
+                    </Link>
+                  </AnimatedSection>
+                ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Need a Custom Solution?
-              </h2>
-              <p className="text-text-light/60 mb-4">
-                Send us your project details and receive a detailed wholesale
-                quote within 48 hours. No minimum order. No obligation.
-              </p>
-              <p className="text-text-light/40 text-sm mb-8">
-                We never sell retail. No retail markup — just direct trade pricing. We never compete with you for your clients.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/get-a-quote" className="btn-primary text-base px-10 py-5">
-                  Request Wholesale Pricing
-                </Link>
-                <Link
-                  href="/why-sunlite/wholesale-only"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Why We Sell Wholesale Only
-                </Link>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
 
-      <div className="h-20 lg:hidden" />
+      {/* ═══════════════════════════════════════════
+          CTA
+          ═══════════════════════════════════════════ */}
+      <CTASection
+        heading="Need a Custom"
+        highlight="Solution?"
+        description="Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      />
     </>
   );
 }

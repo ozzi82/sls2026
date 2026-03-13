@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Lock, Phone, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Our Story — Sunlite Signs",
@@ -103,13 +102,14 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* HERO */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      {/* ═══════════════════════════════════════════
+          HERO
+          ═══════════════════════════════════════════ */}
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
 
         <div className="relative z-10 pt-20">
-          <div className="container-max px-4 sm:px-6 lg:px-8">
+          <div className="container-max px-6 sm:px-10 lg:px-16">
             <Breadcrumbs
               items={[
                 { name: "Home", href: "/" },
@@ -119,19 +119,16 @@ export default function AboutPage() {
           </div>
 
           <div className="section-padding pb-12">
-            <div className="container-max text-center">
+            <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
-                <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
-                    Wholesale Only
-                  </span>
-                </div>
-                <div className="gold-line mx-auto mb-6" />
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
-                  Our Story
+                <p className="micro-label mb-6">
+                  Wholesale Only
+                </p>
+                <div className="gold-line mx-auto mb-8" />
+                <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
+                  Our <span className="text-brand-gold">Story</span>
                 </h1>
-                <p className="text-lg text-text-light/60 max-w-2xl mx-auto">
+                <p className="text-lg text-white/60 max-w-2xl mx-auto">
                   What makes us passionate about signage and experience.
                 </p>
               </AnimatedSection>
@@ -140,33 +137,91 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TIMELINE */}
+      {/* ═══════════════════════════════════════════
+          TIMELINE
+          ═══════════════════════════════════════════ */}
       {timelineEntries.map((entry, index) => {
         const isEven = index % 2 === 0;
-        const bgClass = isEven ? "bg-light-bg" : "bg-primary-dark";
-        const titleColor = isEven ? "text-text-dark" : "text-text-light";
-        const textColor = isEven ? "text-text-dark/70" : "text-text-light/60";
         const imageFirst = isEven;
 
+        if (isEven) {
+          // Light section
+          return (
+            <section key={entry.number}>
+              <div className="gradient-divider my-16 mx-6 sm:mx-10 lg:mx-16" />
+              <div className="mx-6 sm:mx-10 lg:mx-16">
+                <div className="bg-bg-light rounded-2xl overflow-hidden">
+                  <div className="container-max px-8 sm:px-12 lg:px-16 py-16 lg:py-24">
+                    <div
+                      className={`flex flex-col ${
+                        imageFirst ? "md:flex-row" : "md:flex-row-reverse"
+                      } items-center gap-12 md:gap-16`}
+                    >
+                      {/* Image side */}
+                      <AnimatedSection className="flex-1 w-full">
+                        <div className="relative">
+                          <div className="absolute -top-4 -left-4 z-10 w-14 h-14 rounded-full bg-brand-gold flex items-center justify-center shadow-lg">
+                            <span className="text-white font-heading font-bold text-lg">
+                              {entry.number}
+                            </span>
+                          </div>
+                          {entry.imageSrc ? (
+                            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                              <Image
+                                src={entry.imageSrc}
+                                alt={entry.imageLabel}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover"
+                              />
+                            </div>
+                          ) : (
+                            <PlaceholderImage
+                              label={entry.imageLabel}
+                              className="rounded-lg"
+                              aspectRatio="aspect-[4/3]"
+                            />
+                          )}
+                          {/* Decorative corner accent */}
+                          <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-brand-gold/40 rounded-br-lg hidden lg:block" />
+                        </div>
+                      </AnimatedSection>
+
+                      {/* Text side */}
+                      <AnimatedSection className="flex-1" delay={0.1}>
+                        <div className="gold-line mb-6" />
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-text-dark mb-6 leading-[1.1] tracking-[-0.02em]">
+                          {entry.title}
+                        </h2>
+                        <p className="text-text-dark/60 leading-relaxed text-lg">
+                          {entry.text}
+                        </p>
+                      </AnimatedSection>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // Dark section
         return (
-          <section key={entry.number} className={`section-padding ${bgClass}`}>
+          <section key={entry.number} className="px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
             <div className="container-max">
               <div
-                className={`flex flex-col ${
-                  imageFirst ? "md:flex-row" : "md:flex-row-reverse"
-                } items-center gap-12 md:gap-16`}
+                className={`flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16`}
               >
                 {/* Image side */}
                 <AnimatedSection className="flex-1 w-full">
                   <div className="relative">
-                    {/* Numbered accent circle */}
                     <div className="absolute -top-4 -left-4 z-10 w-14 h-14 rounded-full bg-brand-gold flex items-center justify-center shadow-lg">
                       <span className="text-white font-heading font-bold text-lg">
                         {entry.number}
                       </span>
                     </div>
                     {entry.imageSrc ? (
-                      <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                         <Image
                           src={entry.imageSrc}
                           alt={entry.imageLabel}
@@ -178,22 +233,22 @@ export default function AboutPage() {
                     ) : (
                       <PlaceholderImage
                         label={entry.imageLabel}
-                        className="rounded-xl"
+                        className="rounded-lg"
                         aspectRatio="aspect-[4/3]"
                       />
                     )}
+                    {/* Decorative corner accent */}
+                    <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-brand-gold/40 rounded-tl-lg hidden lg:block" />
                   </div>
                 </AnimatedSection>
 
                 {/* Text side */}
                 <AnimatedSection className="flex-1" delay={0.1}>
                   <div className="gold-line mb-6" />
-                  <h2
-                    className={`text-3xl md:text-4xl font-heading font-bold ${titleColor} mb-6`}
-                  >
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 leading-[1.1] tracking-[-0.02em]">
                     {entry.title}
                   </h2>
-                  <p className={`${textColor} leading-relaxed text-lg`}>
+                  <p className="text-white/60 leading-relaxed text-lg">
                     {entry.text}
                   </p>
                 </AnimatedSection>
@@ -203,59 +258,13 @@ export default function AboutPage() {
         );
       })}
 
-      {/* CTA */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
-                  Trade Accounts Only
-                </span>
-              </div>
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Get Your Product Started
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to work with a wholesale partner that holds itself to the
-                highest standards — and stays out of your market? Get trade
-                pricing today.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <Link href="/get-a-quote" className="btn-primary gap-2">
-                  Request Wholesale Pricing{" "}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/products" className="btn-secondary">
-                  View Products
-                </Link>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-text-light/50 text-sm">
-                <a
-                  href="tel:+6892940912"
-                  className="inline-flex items-center gap-2 hover:text-brand-gold transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  (689) 294-0912
-                </a>
-                <a
-                  href="mailto:hello@sunlitesigns.com"
-                  className="inline-flex items-center gap-2 hover:text-brand-gold transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  hello@sunlitesigns.com
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
 
-      {/* Bottom spacer for mobile CTA bar */}
-      <div className="h-20 lg:hidden" />
+      {/* ═══════════════════════════════════════════
+          CTA
+          ═══════════════════════════════════════════ */}
+      <CTASection />
     </>
   );
 }

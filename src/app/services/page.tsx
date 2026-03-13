@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Lock,
   Layers,
   HardHat,
   Zap,
   Factory,
-  Phone,
-  Mail,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title:
@@ -102,12 +100,13 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-primary-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-navy/20 to-primary-dark" />
+      {/* ═══════════════════════════════════════════
+          HERO
+          ═══════════════════════════════════════════ */}
+      <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,89,12,0.08),transparent_60%)]" />
 
-        <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
+        <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
           <Breadcrumbs
             items={[
               { name: "Home", href: "/" },
@@ -116,18 +115,15 @@ export default function ServicesPage() {
           />
           <AnimatedSection>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
-                  Wholesale Only
-                </span>
-              </div>
-              <div className="gold-line mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-light mb-6">
+              <p className="micro-label mb-6">
+                Wholesale Only
+              </p>
+              <div className="gold-line mb-8" />
+              <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
                 Complimentary Engineering{" "}
                 <span className="text-brand-gold">Services</span>
               </h1>
-              <p className="text-lg text-text-light/70 max-w-2xl leading-relaxed">
+              <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
                 With our German design and engineering roots, we&apos;re happy to
                 contribute our complimentary engineering services to your project.
                 From conceptual integration of structural and material sciences
@@ -142,26 +138,112 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Sections — Alternating Layout and Background */}
+      {/* ═══════════════════════════════════════════
+          SERVICE CARDS — 4-card grid
+          ═══════════════════════════════════════════ */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
+
+      <section className="px-6 sm:px-10 lg:px-16">
+        <div className="container-max">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <div className="gold-line mx-auto mb-8" />
+              <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
+                Our <span className="text-brand-gold">Services</span>
+              </h2>
+              <p className="text-white/60 max-w-md mx-auto text-[15px]">
+                Included with every project — German-engineered expertise from concept to delivery.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <AnimatedSection key={service.title} delay={index * 0.1}>
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 lg:p-10 h-full hover:border-brand-gold/30 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-400">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
+                    <service.icon className="w-6 h-6 text-brand-gold" />
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-6 text-[15px]">
+                    {service.description}
+                  </p>
+                  <Link
+                    href="/get-a-quote"
+                    className="btn-text-link group"
+                  >
+                    {service.learnMoreLabel}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          ALTERNATING DETAIL SECTIONS
+          ═══════════════════════════════════════════ */}
       {services.map((service, index) => {
         const isEven = index % 2 === 0;
-        const bgClass = isEven ? "bg-light-bg" : "bg-primary-dark";
-        const titleColor = isEven ? "text-text-dark" : "text-text-light";
-        const descColor = isEven ? "text-text-dark/70" : "text-text-light/60";
 
+        if (isEven) {
+          // Light section
+          return (
+            <section key={`detail-${service.title}`}>
+              <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
+              <div className="mx-6 sm:mx-10 lg:mx-16">
+                <div className="bg-bg-light rounded-2xl overflow-hidden">
+                  <div className="container-max px-8 sm:px-12 lg:px-16 py-16 lg:py-24">
+                    <AnimatedSection>
+                      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+                        <div className="flex-1 w-full">
+                          <PlaceholderImage
+                            label={service.image}
+                            className="rounded-lg"
+                            aspectRatio="aspect-[4/3]"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
+                            <service.icon className="w-6 h-6 text-brand-gold" />
+                          </div>
+                          <h2 className="text-2xl md:text-3xl font-display font-bold text-text-dark mb-4 tracking-[-0.02em]">
+                            {service.title}
+                          </h2>
+                          <p className="text-text-dark/60 leading-relaxed mb-6">
+                            {service.description}
+                          </p>
+                          <Link
+                            href="/get-a-quote"
+                            className="btn-text-link group"
+                          >
+                            {service.learnMoreLabel}
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </Link>
+                        </div>
+                      </div>
+                    </AnimatedSection>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        }
+
+        // Dark section
         return (
-          <section key={service.title} className={`section-padding ${bgClass}`}>
+          <section key={`detail-${service.title}`} className="px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
             <div className="container-max">
               <AnimatedSection>
-                <div
-                  className={`flex flex-col ${
-                    isEven ? "md:flex-row" : "md:flex-row-reverse"
-                  } items-center gap-8 md:gap-16`}
-                >
+                <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
                   <div className="flex-1 w-full">
                     <PlaceholderImage
                       label={service.image}
-                      className="rounded-xl"
+                      className="rounded-lg"
                       aspectRatio="aspect-[4/3]"
                     />
                   </div>
@@ -169,20 +251,18 @@ export default function ServicesPage() {
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                       <service.icon className="w-6 h-6 text-brand-gold" />
                     </div>
-                    <h2
-                      className={`text-2xl md:text-3xl font-heading font-bold ${titleColor} mb-4`}
-                    >
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
                       {service.title}
                     </h2>
-                    <p className={`${descColor} leading-relaxed mb-6`}>
+                    <p className="text-white/60 leading-relaxed mb-6">
                       {service.description}
                     </p>
                     <Link
                       href="/get-a-quote"
-                      className="inline-flex items-center gap-2 text-brand-gold font-heading font-medium text-sm uppercase tracking-wider hover:gap-3 transition-all"
+                      className="btn-text-link group"
                     >
-                      {service.learnMoreLabel}{" "}
-                      <ArrowRight className="w-4 h-4" />
+                      {service.learnMoreLabel}
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </div>
@@ -192,63 +272,17 @@ export default function ServicesPage() {
         );
       })}
 
-      {/* CTA Section */}
-      <section className="section-padding bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
-        <div className="container-max relative z-10">
-          <AnimatedSection>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6">
-                <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">
-                  Trade Accounts Only
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4">
-                Get Your Product Started
-              </h2>
-              <p className="text-text-light/60 max-w-xl mx-auto mb-8">
-                Ready to put our complimentary engineering services to work on
-                your next project? Send us your details and receive a detailed
-                wholesale quote within 48 hours. No obligation.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <Link
-                  href="/get-a-quote"
-                  className="btn-primary text-base px-10 py-5"
-                >
-                  Get Your Product Started
-                </Link>
-                <Link
-                  href="/contact"
-                  className="btn-secondary text-base px-10 py-5"
-                >
-                  Contact Us
-                </Link>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-text-light/50">
-                <a
-                  href="tel:+6892940912"
-                  className="flex items-center gap-2 hover:text-brand-gold transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  (689) 294-0912
-                </a>
-                <a
-                  href="mailto:hello@sunlitesigns.com"
-                  className="flex items-center gap-2 hover:text-brand-gold transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  hello@sunlitesigns.com
-                </a>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Gradient Divider */}
+      <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
 
-      {/* Bottom spacer for mobile CTA bar */}
-      <div className="h-20 lg:hidden" />
+      {/* ═══════════════════════════════════════════
+          CTA
+          ═══════════════════════════════════════════ */}
+      <CTASection
+        heading="Get Your Product"
+        highlight="Started."
+        description="Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      />
     </>
   );
 }

@@ -99,10 +99,10 @@ export default function GalleryFilter() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-5 py-2.5 rounded text-sm font-heading font-medium uppercase tracking-wider transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-lg text-sm font-heading font-medium uppercase tracking-wider transition-all duration-300 ${
               active === cat
-                ? "bg-brand-gold text-primary-dark"
-                : "bg-white/5 border border-white/10 text-text-light/60 hover:border-brand-gold/30 hover:text-brand-gold"
+                ? "bg-brand-gold text-bg-primary"
+                : "bg-bg-card border border-white/[0.06] text-white/60 hover:border-brand-gold/30 hover:text-brand-gold"
             }`}
           >
             {cat}
@@ -111,22 +111,22 @@ export default function GalleryFilter() {
       </div>
 
       {/* Masonry Grid */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
         {filtered.map((item, index) => (
           <AnimatedSection key={item.label} delay={index * 0.05}>
             <div className="break-inside-avoid group cursor-pointer">
-              <div className="relative overflow-hidden rounded-xl">
+              <div className="relative overflow-hidden rounded-xl bg-bg-card border border-white/[0.06] hover:border-brand-gold/30 transition-all duration-400">
                 <PlaceholderImage
                   label={item.label}
                   className="rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
                   aspectRatio={item.aspectRatio}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end">
                   <div className="p-4">
                     <span className="text-xs font-heading uppercase tracking-wider text-brand-gold">
                       {item.category}
                     </span>
-                    <p className="text-sm text-text-light/90 mt-1">
+                    <p className="text-sm text-white/80 mt-1">
                       {item.label.split(" — ")[1] || item.label}
                     </p>
                   </div>
@@ -140,7 +140,7 @@ export default function GalleryFilter() {
       {/* Empty State */}
       {filtered.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-text-light/50 font-body">
+          <p className="text-white/60 font-body">
             No projects found in this category.
           </p>
         </div>
