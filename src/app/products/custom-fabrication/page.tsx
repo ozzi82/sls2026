@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
+import RelatedPages from "@/components/RelatedPages";
+import { getLandingPagesByHub } from "@/lib/landing-pages";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -123,6 +125,13 @@ const projectTypes = [
 ];
 
 export default function CustomFabricationPage() {
+  const spokes = getLandingPagesByHub("custom-fabrication").slice(0, 6);
+  const relatedArticles = spokes.map((p) => ({
+    title: p.h1 + " " + p.h1Highlight,
+    description: p.heroSubtitle,
+    href: `/signs/${p.slug}`,
+  }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -422,6 +431,7 @@ export default function CustomFabricationPage() {
       </section>
 
 
+      {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
       <CTASection />
     </>
   );

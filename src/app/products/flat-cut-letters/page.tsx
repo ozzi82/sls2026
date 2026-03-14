@@ -14,6 +14,8 @@ import {
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
+import RelatedPages from "@/components/RelatedPages";
+import { getLandingPagesByHub } from "@/lib/landing-pages";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
@@ -124,6 +126,13 @@ const useCases = [
 ];
 
 export default function FlatCutLettersPage() {
+  const spokes = getLandingPagesByHub("flat-cut-letters").slice(0, 6);
+  const relatedArticles = spokes.map((p) => ({
+    title: p.h1 + " " + p.h1Highlight,
+    description: p.heroSubtitle,
+    href: `/signs/${p.slug}`,
+  }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -395,6 +404,7 @@ export default function FlatCutLettersPage() {
       </section>
 
 
+      {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
       <CTASection />
     </>
   );

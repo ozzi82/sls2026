@@ -24,6 +24,14 @@ const footerLinks = {
     { name: "Guides", href: "/resources/guides" },
     { name: "FAQ", href: "/resources/faq" },
   ],
+  "Popular Topics": [
+    { name: "Trimless vs Trimcap", href: "/signs/trimless-vs-trimcap-channel-letters" },
+    { name: "Front Lit Channel Letters", href: "/signs/front-lit-channel-letters" },
+    { name: "UL Listed Signs", href: "/signs/ul-listed-signs-explained" },
+    { name: "LED Illumination Types", href: "/signs/led-illumination-types-for-signs" },
+    { name: "Wholesale Sign Manufacturer", href: "/signs/wholesale-sign-manufacturer" },
+    { name: "Channel Letter Installation", href: "/signs/channel-letter-installation-guide" },
+  ],
 };
 
 export default function Footer() {
@@ -46,7 +54,7 @@ export default function Footer() {
       </div>
 
       <div className="container-max section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-6">

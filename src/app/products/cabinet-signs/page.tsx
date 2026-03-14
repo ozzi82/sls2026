@@ -14,6 +14,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
+import RelatedPages from "@/components/RelatedPages";
+import { getLandingPagesByHub } from "@/lib/landing-pages";
 
 export const metadata: Metadata = {
   title: "Wholesale Cabinet Signs — Trade Pricing for Sign Shops | Sunlite Signs",
@@ -129,6 +131,13 @@ const useCases = [
 ];
 
 export default function CabinetSignsPage() {
+  const spokes = getLandingPagesByHub("cabinet-signs").slice(0, 6);
+  const relatedArticles = spokes.map((p) => ({
+    title: p.h1 + " " + p.h1Highlight,
+    description: p.heroSubtitle,
+    href: `/signs/${p.slug}`,
+  }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -429,6 +438,7 @@ export default function CabinetSignsPage() {
       {/* ═══════════════════════════════════════════
           CTA
           ═══════════════════════════════════════════ */}
+      {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
       <CTASection
         heading="Request Trade Pricing for"
         highlight="Cabinet Signs."

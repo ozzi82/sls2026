@@ -4,6 +4,8 @@ import { ArrowRight, Shield, Zap, Layers, Lock } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
+import RelatedPages from "@/components/RelatedPages";
+import { getLandingPagesByHub } from "@/lib/landing-pages";
 import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -93,6 +95,13 @@ const advantages = [
 ];
 
 export default function ChannelLettersPage() {
+  const spokes = getLandingPagesByHub("channel-letters").slice(0, 6);
+  const relatedArticles = spokes.map((p) => ({
+    title: p.h1 + " " + p.h1Highlight,
+    description: p.heroSubtitle,
+    href: `/signs/${p.slug}`,
+  }));
+
   const allProducts = productFamilies.flatMap((f) => f.products);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -259,6 +268,7 @@ export default function ChannelLettersPage() {
       ))}
 
 
+      {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
       <CTASection />
     </>
   );
