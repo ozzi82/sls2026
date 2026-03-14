@@ -32,7 +32,7 @@ export default function CTASection({
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                 <Link href="/get-a-quote" className="btn-primary w-full sm:w-auto">
-                  Request Trade Pricing
+                  Request Wholesale Pricing
                 </Link>
                 <a href="tel:+6892940912" className="btn-secondary gap-2 w-full sm:w-auto justify-center">
                   <Phone className="w-4 h-4" />

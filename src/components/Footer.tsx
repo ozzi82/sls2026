@@ -79,7 +79,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 border border-brand-gold/30 text-brand-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-sm px-5 py-2.5 hover:bg-brand-gold/5 hover:border-brand-gold/50 transition-all"
             >
               <Lock className="w-3 h-3" />
-              Request Trade Pricing
+              Request Wholesale Pricing
             </Link>
           </div>
 

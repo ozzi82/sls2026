@@ -169,7 +169,7 @@ export default function Header() {
                   className="btn-primary w-full text-center text-xs"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Request Trade Pricing
+                  Request Wholesale Pricing
                 </Link>
               </div>
             </div>

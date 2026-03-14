@@ -120,7 +120,7 @@ export default function Home() {
                 href="/get-a-quote"
                 className="btn-primary"
               >
-                Request Trade Pricing
+                Request Wholesale Pricing
               </Link>
               <Link
                 href="/products"

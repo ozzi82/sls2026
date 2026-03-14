@@ -282,7 +282,7 @@ export default function ProductsPage() {
                             {cat.description}
                           </p>
                           <span className="btn-text-link group/link">
-                            Get Trade Pricing
+                            Get Wholesale Pricing
                             <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                           </span>
                         </div>

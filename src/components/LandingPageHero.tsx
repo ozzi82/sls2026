@@ -34,7 +34,7 @@ export default function LandingPageHero({ title, highlight, subtitle, breadcrumb
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4">
             <Link href="/get-a-quote" className="btn-primary">
-              Request Trade Pricing
+              Request Wholesale Pricing
             </Link>
             <Link href="/products" className="btn-secondary gap-2">
               View Products <ArrowRight className="w-4 h-4" />

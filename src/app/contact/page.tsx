@@ -291,7 +291,7 @@ export default function ContactPage() {
                       href="/get-a-quote"
                       className="btn-text-link group"
                     >
-                      Get Trade Pricing
+                      Get Wholesale Pricing
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>

@@ -440,7 +440,7 @@ export default function CabinetSignsPage() {
           ═══════════════════════════════════════════ */}
       {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
       <CTASection
-        heading="Request Trade Pricing for"
+        heading="Request Wholesale Pricing for"
         highlight="Cabinet Signs."
         description="Send your cabinet sign specs, drawings, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
       />
