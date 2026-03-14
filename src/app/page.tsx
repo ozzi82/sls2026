@@ -102,7 +102,7 @@ export default function Home() {
               Wholesale Only · Trade Accounts
             </p>
 
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-[88px] text-white leading-[1.02] mb-8 tracking-[-0.03em] font-bold">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-6 tracking-[-0.02em] font-bold">
               Precision Signage,
               <br />
               <span className="text-brand-gold">
@@ -110,7 +110,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-base lg:text-lg text-white/60 max-w-lg font-body leading-relaxed mb-10">
+            <p className="text-sm lg:text-base text-white/60 max-w-md font-body leading-relaxed mb-8">
               German-engineered channel letters, blade signs &amp; illuminated
               signage — built for sign shops, never sold retail.
             </p>
