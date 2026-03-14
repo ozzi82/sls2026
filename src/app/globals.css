@@ -7,21 +7,65 @@
   100% { width: 3rem; }
 }
 
+/* ── Theme CSS Variables ── */
+:root {
+  --accent: 56 189 248;          /* blue default */
+  --accent-hex: #38BDF8;
+  --accent-dark: #0284C7;
+  --bg-light: #F0F9FF;
+  --selection-bg: rgba(56, 189, 248, 0.3);
+  --hero-glow: rgba(56, 189, 248, 0.08);
+  --font-display-family: var(--font-space-grotesk), sans-serif;
+  --font-heading-family: var(--font-space-grotesk), sans-serif;
+  --font-body-family: var(--font-inter), sans-serif;
+}
+
+.theme-gold {
+  --accent: 201 169 110;
+  --accent-hex: #C9A96E;
+  --accent-dark: #D4B87A;
+  --bg-light: #FAFAFA;
+  --selection-bg: rgba(201, 169, 110, 0.3);
+  --hero-glow: rgba(232, 89, 12, 0.08);
+}
+
+.theme-blue {
+  --accent: 56 189 248;
+  --accent-hex: #38BDF8;
+  --accent-dark: #0284C7;
+  --bg-light: #F0F9FF;
+  --selection-bg: rgba(56, 189, 248, 0.3);
+  --hero-glow: rgba(56, 189, 248, 0.08);
+}
+
+.theme-modern {
+  --accent: 56 189 248;
+  --accent-hex: #38BDF8;
+  --accent-dark: #0284C7;
+  --bg-light: #F0F9FF;
+  --selection-bg: rgba(56, 189, 248, 0.3);
+  --hero-glow: rgba(56, 189, 248, 0.08);
+  --font-display-family: var(--font-outfit), sans-serif;
+  --font-heading-family: var(--font-outfit), sans-serif;
+  --font-body-family: var(--font-dm-sans), sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-bg-primary text-white font-body;
+    @apply bg-bg-primary text-white;
+    font-family: var(--font-body-family);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    font-family: var(--font-heading-family);
   }
 
   ::selection {
-    background: rgba(201, 169, 110, 0.3);
+    background: var(--selection-bg);
     color: #FAFAFA;
   }
 }

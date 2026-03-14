@@ -17,7 +17,7 @@ export default function CTASection({
     <section className="section-padding">
       <div className="container-max relative">
         <div className="bg-gradient-to-br from-bg-card to-[#0F0F2D] rounded-2xl border border-white/[0.06] overflow-hidden relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,rgba(249,115,22,0.06),transparent_70%)]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,var(--hero-glow),transparent_70%)]" />
           <div className="relative z-10 text-center px-8 py-20 lg:py-28">
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 border border-brand-gold/20 rounded-full px-5 py-2 mb-10">

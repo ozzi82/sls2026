@@ -3,6 +3,7 @@ import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter } from "next/fo
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 
 const instrumentSerif = Instrument_Serif({
@@ -121,13 +122,18 @@ export default function RootLayout({
     <html lang="en" className={`${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="antialiased">
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('sunlite-theme');if(t)document.documentElement.classList.add('theme-'+t)}catch(e){}})()`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
         <Header />
         <main>{children}</main>
         <Footer />
-        {/* MobileCTABar removed — CTAs now inline in hero on mobile */}
+        <ThemeSwitcher />
       </body>
     </html>
   );

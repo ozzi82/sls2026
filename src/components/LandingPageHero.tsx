@@ -16,7 +16,7 @@ export default function LandingPageHero({ title, highlight, subtitle, breadcrumb
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-navy to-[#0F0F2D]" />
-      <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(249,115,22,0.06),transparent_70%)]" />
+      <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[radial-gradient(circle,var(--hero-glow),transparent_70%)]" />
       <div className="relative z-10 container-max section-padding !py-0">
         <Breadcrumbs items={breadcrumbs} />
         <motion.div
