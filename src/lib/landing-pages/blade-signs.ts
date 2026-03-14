@@ -1,0 +1,668 @@
+import { LandingPage } from "./types";
+
+export const bladeSignsPages: LandingPage[] = [
+  {
+    slug: "illuminated-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "illuminated blade signs",
+    secondaryKeywords: [
+      "lit projecting signs",
+      "LED blade signs wholesale",
+      "illuminated projecting signs",
+      "backlit blade signs",
+    ],
+    title: "Illuminated Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale illuminated blade signs with LED modules and UL 48 certification. German-engineered, 3-week lead times. Built for sign trade professionals only.",
+    h1: "Wholesale Illuminated Blade Signs",
+    h1Highlight: "Illuminated Blade Signs",
+    heroSubtitle:
+      "LED-powered projecting signs engineered for maximum street-level visibility. UL 48 listed, built to order, and shipped in three weeks or less.",
+    sections: [
+      {
+        heading: "Why Illuminated Blade Signs Drive Foot Traffic",
+        content:
+          "<p>Illuminated blade signs are one of the most effective tools for capturing pedestrian and vehicular attention in dense commercial corridors. Unlike flat wall-mounted signage, a projecting blade sign extends perpendicular to the building facade, making your client's brand visible from both directions of foot traffic. When you add internal LED illumination, that visibility extends well into evening hours — a critical advantage for restaurants, bars, boutiques, and hotels.</p><p>At Sunlite Signs, every illuminated blade sign we manufacture is engineered in-house with German precision. Our LED modules are selected for longevity and color consistency, delivering <strong>50,000+ hours of rated life</strong> with minimal lumen depreciation. Because we sell exclusively to the sign trade, you get wholesale pricing without the markup — and your clients get a premium product that performs year after year.</p><p>Our illuminated blade signs feature fully welded aluminum housings, high-output Samsung or Nichia LEDs, and UL 48 certification for electrical safety compliance. Whether your client needs a simple rectangular projecting sign or a custom-shaped blade with dimensional lettering, our engineering team will work with you from concept through production.</p>",
+      },
+      {
+        heading: "Engineering & Construction Details",
+        content:
+          "<p>Every Sunlite illuminated blade sign starts with a <strong>precision-welded aluminum cabinet</strong> that resists corrosion and keeps weight manageable for wall-mount installations. We offer single-face and double-face configurations, with push-through acrylic faces, routed aluminum with backer panel illumination, or full flex-face options depending on the design.</p><ul><li><strong>LED System:</strong> High-efficiency modules rated at 160+ lumens per watt, available in 6500K, 5000K, or custom color temperatures</li><li><strong>Power Supply:</strong> UL-recognized Mean Well drivers, accessible from a bottom or rear service panel</li><li><strong>Mounting:</strong> Heavy-gauge steel mounting brackets engineered for wind-load compliance, with concealed conduit routing</li><li><strong>Finish:</strong> Automotive-grade polyurethane paint in any custom PMS or RAL color</li></ul><p>All illuminated blade signs ship fully assembled and tested. We include wiring diagrams, mounting templates, and hardware so your install crew can get the sign on the wall efficiently. Our standard lead time is <strong>three weeks from approved artwork</strong>, with rush options available for time-sensitive projects.</p>",
+      },
+      {
+        heading: "Applications & Custom Options",
+        content:
+          "<p>Illuminated blade signs are versatile enough for nearly any commercial application. Restaurant owners love them because they announce the brand from a block away. Retail shops in walkable districts rely on projecting signs to stand out among neighboring storefronts. Hotels and boutique lodging use illuminated blades to create an upscale arrival experience after dark.</p><p>Sunlite Signs offers a range of customization options to help you deliver exactly what your client envisions:</p><ul><li>Custom shapes — arched, circular, shield, or fully bespoke silhouettes</li><li>Dimensional push-through lettering for added depth</li><li>RGB or tunable-white LED systems for dynamic color-changing effects</li><li>Integrated gooseneck or arm-mount lighting for a vintage aesthetic</li></ul><p>Because we manufacture everything under one roof, we maintain tight quality control across every step — from CNC routing and welding to painting and LED installation. That means fewer headaches for your shop and a finished product that reflects the quality your clients expect.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "What LED modules do you use in illuminated blade signs?",
+        answer:
+          "We use high-efficiency Samsung or Nichia LED modules rated at 160+ lumens per watt with a 50,000-hour rated lifespan. All modules are UL recognized and paired with Mean Well drivers for reliable long-term performance.",
+      },
+      {
+        question: "Are your illuminated blade signs UL listed?",
+        answer:
+          "Yes. Every illuminated blade sign we produce carries UL 48 certification, which covers the complete sign assembly including the electrical system. This is essential for code compliance in most U.S. jurisdictions.",
+      },
+      {
+        question: "What is the typical lead time for an illuminated blade sign?",
+        answer:
+          "Our standard production time is three weeks from approved artwork and engineering sign-off. Rush production is available for projects with tight deadlines — contact us for scheduling availability.",
+      },
+      {
+        question: "Can I order single-face illuminated blade signs?",
+        answer:
+          "Absolutely. We manufacture both single-face and double-face illuminated blade signs. Single-face units are ideal for corner installations or locations where visibility from one direction is sufficient.",
+      },
+      {
+        question: "Do you sell illuminated blade signs directly to businesses?",
+        answer:
+          "No. Sunlite Signs is a wholesale-only manufacturer. We sell exclusively to licensed sign companies, resellers, and trade professionals. This allows us to keep pricing competitive and maintain the quality our trade partners expect.",
+      },
+    ],
+    relatedSlugs: [
+      "double-sided-blade-signs",
+      "led-blade-signs",
+      "aluminum-blade-signs",
+      "front-lit-channel-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "non-illuminated-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "non-illuminated blade signs",
+    secondaryKeywords: [
+      "flat blade signs",
+      "non-lit projecting signs",
+      "aluminum projecting blade signs",
+      "unlit blade signs wholesale",
+    ],
+    title: "Non-Illuminated Blade Signs | Wholesale | Sunlite",
+    metaDescription:
+      "Wholesale non-illuminated blade signs in aluminum and steel. German-engineered construction, durable powder-coat finishes, and 3-week delivery for sign shops.",
+    h1: "Wholesale Non-Illuminated Blade Signs",
+    h1Highlight: "Non-Illuminated Blade Signs",
+    heroSubtitle:
+      "Durable, elegant projecting signs built without internal lighting. Perfect for historic districts, daytime retail, and budget-conscious projects.",
+    sections: [
+      {
+        heading: "When Non-Illuminated Blade Signs Are the Right Choice",
+        content:
+          "<p>Not every location requires — or even allows — illuminated signage. Historic districts frequently impose restrictions on internally lit signs, and many daytime-only businesses simply don't need evening visibility. In these cases, a well-crafted non-illuminated blade sign delivers outstanding curb appeal at a lower cost than its lit counterpart.</p><p>Non-illuminated blade signs from Sunlite Signs are built with the same German engineering standards we apply to every product. That means precision-welded aluminum or steel construction, flawless paint finishes, and mounting hardware designed to handle real-world wind loads. We don't cut corners on structural integrity just because there's no electrical system inside.</p><p>For sign shops, non-illuminated blades represent a strong margin opportunity. They're faster to produce, easier to install (no electrical permit required in most cases), and appeal to a wide range of commercial clients — from coffee shops and bookstores to law offices and boutique hotels.</p>",
+      },
+      {
+        heading: "Materials & Finishing Options",
+        content:
+          "<p>Sunlite Signs manufactures non-illuminated blade signs from two primary materials:</p><ul><li><strong>Aluminum:</strong> Lightweight, corrosion-resistant, and ideal for coastal or high-humidity environments. Available in thicknesses from 0.080\" to 0.125\" flat panel or welded cabinet construction.</li><li><strong>Steel:</strong> Heavier gauge for a more substantial feel. Hot-dip galvanized or powder-coated for long-term rust protection.</li></ul><p>Every sign receives a <strong>multi-stage finishing process</strong> that includes primer, base coat, and clear coat for UV resistance. We match any PMS, RAL, or custom color, and can apply brushed metal, patina, or faux-rust effects for clients seeking a specific aesthetic.</p><p>Dimensional elements like raised lettering, routed graphics, and applied vinyl are available to add depth and visual interest. We also offer interchangeable panel systems for businesses that rotate their messaging seasonally — a popular option for retail and food-and-beverage clients.</p>",
+      },
+      {
+        heading: "Installation & Structural Engineering",
+        content:
+          "<p>Every non-illuminated blade sign ships with a <strong>pre-engineered mounting bracket system</strong> designed for the specific installation scenario. We account for substrate type (masonry, steel, wood frame), sign weight, and local wind-load requirements to ensure a safe, code-compliant installation.</p><p>Our standard bracket options include:</p><ul><li>Wall-mount brackets with concealed fasteners for a clean look</li><li>Under-canopy hanging brackets for covered walkways</li><li>Post-mount options for freestanding projecting sign applications</li></ul><p>Sunlite Signs provides full shop drawings and mounting templates with every order, so your install team has everything they need to hang the sign correctly the first time. We also offer optional stamped engineering drawings for jurisdictions that require them during the permitting process.</p><p>Because there's no electrical component, installation is straightforward — typically a two-person job that takes under an hour. That means lower labor costs for your crew and faster project turnaround for your client.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can non-illuminated blade signs be externally lit?",
+        answer:
+          "Yes. Many clients pair non-illuminated blade signs with external gooseneck lights or spotlights for nighttime visibility. We can pre-drill mounting holes for popular gooseneck fixtures upon request.",
+      },
+      {
+        question: "What materials are available for non-illuminated blades?",
+        answer:
+          "We offer aluminum and steel construction. Aluminum is lighter and corrosion-resistant, ideal for coastal areas. Steel provides a heavier, more substantial feel and is available with hot-dip galvanized or powder-coat finishes.",
+      },
+      {
+        question: "Do non-illuminated signs require a permit?",
+        answer:
+          "Permitting requirements vary by jurisdiction, but non-illuminated blade signs typically have a simpler approval process since there's no electrical component. Check your local sign code for specific requirements.",
+      },
+      {
+        question: "What is the weight capacity of your mounting brackets?",
+        answer:
+          "Our standard brackets support signs up to 75 lbs. For larger or heavier installations, we engineer custom heavy-duty brackets rated for the specific sign weight and local wind-load requirements.",
+      },
+    ],
+    relatedSlugs: [
+      "aluminum-blade-signs",
+      "steel-blade-signs",
+      "double-sided-blade-signs",
+      "aluminum-flat-cut-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "double-sided-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "double-sided blade signs",
+    secondaryKeywords: [
+      "two-sided projecting signs",
+      "dual-face blade signs",
+      "double-sided projecting signs wholesale",
+    ],
+    title: "Double-Sided Blade Signs | Wholesale | Sunlite",
+    metaDescription:
+      "Wholesale double-sided blade signs for maximum two-way visibility. German-engineered aluminum cabinets, UL 48 listed, delivered in 3 weeks to sign trade partners.",
+    h1: "Wholesale Double-Sided Blade Signs",
+    h1Highlight: "Double-Sided Blade Signs",
+    heroSubtitle:
+      "Capture foot traffic from both directions with dual-face projecting signage. Built for durability, engineered for impact.",
+    sections: [
+      {
+        heading: "Maximize Visibility with Double-Sided Blade Signs",
+        content:
+          "<p>In busy commercial districts, pedestrians approach from both directions. A single-sided sign misses half your client's potential audience. Double-sided blade signs solve this problem by presenting the brand identity to traffic flowing in both directions — effectively doubling the sign's reach without doubling the footprint.</p><p>Sunlite Signs manufactures double-sided blade signs in both illuminated and non-illuminated configurations. Our illuminated models use a shared LED system that evenly lights both faces, eliminating hot spots and ensuring consistent brightness from either viewing angle. The result is a clean, professional appearance that commands attention day and night.</p><p>Our German-engineered construction process produces double-sided cabinets with tight seams, uniform face tension, and perfect graphic registration on both sides. We understand that a double-sided sign is only as good as its worst face — so we hold both sides to the same exacting standard.</p>",
+      },
+      {
+        heading: "Construction & Engineering Standards",
+        content:
+          "<p>Double-sided blade signs require careful engineering to manage weight, wind load, and thermal expansion. At Sunlite Signs, our structural approach accounts for all three factors:</p><ul><li><strong>Weight Management:</strong> Welded aluminum cabinets keep total sign weight under control while maintaining rigidity. Our 6063-T5 aluminum alloy delivers excellent strength-to-weight ratio.</li><li><strong>Wind Load:</strong> Double-sided signs present more surface area to wind than single-face units. We engineer brackets and internal reinforcement ribs to handle wind loads up to 110 mph based on ASCE 7 standards.</li><li><strong>Thermal Expansion:</strong> Our cabinet design accommodates thermal cycling without warping, popping rivets, or distorting the sign face.</li></ul><p>For illuminated double-sided models, the LED system is center-mounted between the two faces to provide even light distribution. Power supplies are accessible through a <strong>bottom-access service panel</strong>, making maintenance straightforward for your client's facilities team.</p><p>All illuminated double-sided blade signs carry <strong>UL 48 certification</strong> and ship with complete wiring documentation for code-compliant installation.</p>",
+      },
+      {
+        heading: "Popular Applications for Dual-Face Projecting Signs",
+        content:
+          "<p>Double-sided blade signs are a staple of pedestrian-friendly commercial environments. Here are the applications where they deliver the most value:</p><ul><li><strong>Main street retail:</strong> Sidewalk shoppers see the sign from either approach direction</li><li><strong>Corner buildings:</strong> Project from the corner to address two street frontages simultaneously</li><li><strong>Mixed-use developments:</strong> Ground-floor tenants in multi-story buildings gain prominent street-level branding</li><li><strong>Food and beverage:</strong> Restaurants, cafes, and bars use projecting signs to pull in walk-by traffic</li></ul><p>Sunlite Signs offers these double-sided configurations in rectangular, oval, shield, and custom die-cut shapes. Graphics can be applied as vinyl, routed aluminum with push-through acrylic, or full flex-face panels for maximum illumination uniformity. We work with your design files or can adapt client logos to fit the blade sign format — just send us the artwork and we'll handle the engineering.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are both sides of the sign illuminated evenly?",
+        answer:
+          "Yes. Our center-mounted LED array distributes light equally to both sign faces. We test every unit for brightness uniformity before it ships, ensuring both sides meet our luminance specifications.",
+      },
+      {
+        question: "How much do double-sided blade signs weigh?",
+        answer:
+          "Weight depends on size and material. A typical 24\" x 36\" double-sided aluminum blade sign weighs approximately 18-25 lbs without the mounting bracket. We provide exact weights with every shop drawing for structural planning.",
+      },
+      {
+        question: "Can each side of the sign display a different graphic?",
+        answer:
+          "Absolutely. Many clients use different messaging on each face — for example, the business name on one side and a directional message or secondary brand on the other.",
+      },
+      {
+        question: "What wind loads are your double-sided blade signs rated for?",
+        answer:
+          "Our standard engineering covers wind loads up to 90 mph. For coastal or high-wind zones, we engineer reinforced brackets and cabinet structures rated up to 110 mph per ASCE 7 standards.",
+      },
+    ],
+    relatedSlugs: [
+      "illuminated-blade-signs",
+      "aluminum-blade-signs",
+      "double-sided-light-boxes",
+      "restaurant-blade-signs",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "aluminum-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "aluminum blade signs",
+    secondaryKeywords: [
+      "aluminum projecting signs",
+      "lightweight blade signs",
+      "corrosion-resistant blade signs",
+      "aluminum sign cabinets",
+    ],
+    title: "Aluminum Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale aluminum blade signs built with 6063-T5 alloy for strength and corrosion resistance. German-engineered, UL 48 listed, 3-week lead time for sign shops.",
+    h1: "Wholesale Aluminum Blade Signs",
+    h1Highlight: "Aluminum Blade Signs",
+    heroSubtitle:
+      "Lightweight, corrosion-resistant projecting signs engineered from premium 6063-T5 aluminum alloy. The professional's choice for durability and ease of installation.",
+    sections: [
+      {
+        heading: "Why Aluminum Is the Preferred Material for Blade Signs",
+        content:
+          "<p>Aluminum has become the dominant material for projecting blade signs, and for good reason. It offers an unbeatable combination of <strong>light weight, structural strength, and natural corrosion resistance</strong> that makes it ideal for exterior signage applications. Compared to steel, aluminum blade signs weigh roughly 60% less — which translates directly to easier installation, lower shipping costs, and reduced structural load on the building facade.</p><p>At Sunlite Signs, we fabricate our aluminum blade signs from 6063-T5 alloy, the same grade used in architectural curtain wall systems. This alloy provides excellent formability for custom shapes while maintaining the rigidity needed to resist wind deflection over the life of the sign.</p><p>For sign shops, specifying aluminum means fewer headaches in the field. Your install crew can handle the sign with a smaller team, mounting hardware can be lighter duty, and you won't get callbacks about rust staining on the building facade years down the road. It's a better product that's easier to sell and easier to install.</p>",
+      },
+      {
+        heading: "Fabrication Process & Quality Control",
+        content:
+          "<p>Our aluminum blade sign fabrication process follows a disciplined German engineering methodology that prioritizes precision and repeatability:</p><ul><li><strong>CNC Routing:</strong> All aluminum panels and face components are CNC-routed to tolerances of ±0.005\" for perfect graphic registration</li><li><strong>TIG Welding:</strong> Cabinet seams are TIG-welded by certified welders for clean, strong joints with no visible distortion</li><li><strong>Surface Prep:</strong> Welded cabinets go through a chromate conversion process before painting, ensuring maximum paint adhesion and corrosion protection</li><li><strong>Finishing:</strong> Multi-coat automotive-grade urethane paint system with UV-stable clear coat, available in any PMS or RAL color</li></ul><p>Every aluminum blade sign undergoes a <strong>multi-point quality inspection</strong> before it leaves our facility. We check dimensional accuracy, weld integrity, paint finish quality, and — for illuminated models — LED brightness and color consistency. Signs that don't meet our standards get reworked, not shipped.</p>",
+      },
+      {
+        heading: "Aluminum vs. Steel: Helping Clients Choose",
+        content:
+          "<p>One of the most common questions sign shops field from end clients is whether to go with aluminum or steel for their blade sign. Here's a quick reference to help you guide that conversation:</p><ul><li><strong>Weight:</strong> Aluminum is roughly 60% lighter than steel at equivalent thickness, making it easier and less expensive to install</li><li><strong>Corrosion:</strong> Aluminum naturally forms a protective oxide layer and won't rust. Steel requires galvanizing or ongoing maintenance to prevent corrosion</li><li><strong>Cost:</strong> Aluminum typically costs 10-15% more in raw material but saves on shipping, mounting hardware, and installation labor</li><li><strong>Appearance:</strong> Both materials accept paint equally well. For natural metal finishes, aluminum offers a cleaner, more consistent look</li></ul><p>For the majority of blade sign applications, aluminum is the superior choice. Steel makes sense primarily for very large signs where maximum rigidity is essential, or for projects where the client specifically wants a heavier, more industrial feel. Sunlite Signs manufactures blade signs in both materials, so we can support whichever direction your project requires.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "What aluminum alloy do you use for blade signs?",
+        answer:
+          "We use 6063-T5 aluminum alloy, which provides an excellent balance of formability, strength, and corrosion resistance. It's the same alloy used in high-end architectural applications.",
+      },
+      {
+        question: "How do aluminum blade signs hold up in coastal environments?",
+        answer:
+          "Aluminum is naturally resistant to salt air corrosion, making it an ideal choice for coastal installations. Combined with our chromate conversion pre-treatment and marine-grade paint system, our aluminum blade signs are built to last in harsh environments.",
+      },
+      {
+        question: "Can aluminum blade signs be powder-coated instead of wet-painted?",
+        answer:
+          "Yes. We offer both wet-spray urethane and powder-coat finishing. Powder coat is especially popular for textured finishes and provides excellent durability. Note that powder coat has slightly more limited color-matching capability than wet paint for precise PMS matching.",
+      },
+      {
+        question: "What is the maximum size for an aluminum blade sign?",
+        answer:
+          "Our standard production handles aluminum blade signs up to 48\" x 72\". Larger sizes are possible with internal reinforcement ribs and engineered mounting systems. Contact us with your project dimensions for a custom quote.",
+      },
+    ],
+    relatedSlugs: [
+      "steel-blade-signs",
+      "illuminated-blade-signs",
+      "weather-resistant-blade-signs",
+      "aluminum-flat-cut-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "steel-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "steel blade signs",
+    secondaryKeywords: [
+      "metal projecting signs",
+      "heavy-duty blade signs",
+      "steel projecting signs wholesale",
+      "galvanized blade signs",
+    ],
+    title: "Steel Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale steel blade signs with hot-dip galvanized or powder-coat finishes. Heavy-duty construction for large-format projecting signage. 3-week trade delivery.",
+    h1: "Wholesale Steel Blade Signs",
+    h1Highlight: "Steel Blade Signs",
+    heroSubtitle:
+      "Heavy-duty projecting signage built from welded steel for maximum rigidity and a commanding street presence. Galvanized or powder-coated for lasting durability.",
+    sections: [
+      {
+        heading: "When Steel Is the Right Choice for Blade Signs",
+        content:
+          "<p>Steel blade signs deliver a level of structural rigidity and visual substance that lighter materials simply cannot match. For large-format projecting signs, industrial-themed designs, or installations where the sign must project significant distance from the building face, steel provides the backbone needed to maintain flatness and resist wind-induced vibration.</p><p>Sunlite Signs fabricates steel blade signs using 16-gauge and 14-gauge mild steel, depending on the application. Every cabinet is MIG or TIG welded, ground smooth, and treated with a corrosion-protection system appropriate for the installation environment. For standard exterior applications, we apply a <strong>zinc-rich primer followed by a polyurethane topcoat</strong>. For coastal or industrial environments, we offer hot-dip galvanizing before paint for maximum corrosion resistance.</p><p>Our German engineering approach means that every steel blade sign is structurally analyzed before production. We calculate wind loads, bracket stress, and fastener pull-out values to ensure the sign performs safely for its rated lifespan. This level of engineering diligence separates Sunlite from commodity sign manufacturers.</p>",
+      },
+      {
+        heading: "Corrosion Protection & Finishing Systems",
+        content:
+          "<p>The primary concern with steel signage is corrosion, and we address it aggressively through our multi-layer protection system:</p><ul><li><strong>Standard Protection:</strong> Zinc-rich epoxy primer + polyurethane topcoat with UV stabilizers. Suitable for most inland installations with a 10+ year expected finish life.</li><li><strong>Enhanced Protection:</strong> Hot-dip galvanizing per ASTM A123, followed by a vinyl wash primer and polyurethane topcoat. Recommended for coastal zones, industrial areas, or regions with heavy road-salt use.</li><li><strong>Powder Coat Option:</strong> Electrostatically applied thermoset powder coat over zinc-rich primer for a thick, durable, low-VOC finish.</li></ul><p>All cut edges, drill holes, and weld areas receive additional primer treatment before topcoat application to eliminate potential corrosion initiation points. We don't rely on the topcoat alone to protect vulnerable areas — every surface gets proper preparation and priming.</p><p>Color options are virtually unlimited. We match PMS, RAL, and custom color specifications with consistent batch-to-batch accuracy. Textured finishes, including hammered, wrinkled, and sand textures, are available through our powder-coat process.</p>",
+      },
+      {
+        heading: "Structural Advantages for Large-Format Signs",
+        content:
+          "<p>Steel excels in applications where the blade sign needs to be physically large or project far from the building face. Here's why structural performance matters in those scenarios:</p><p>A blade sign acts as a cantilever — it's supported at the wall and unsupported at the free end. As the sign gets longer or projects farther, the bending moment at the wall connection increases dramatically. Steel's higher modulus of elasticity (roughly three times that of aluminum) means it <strong>deflects less under wind load</strong>, keeping the sign rigid and visually stable even in gusty conditions.</p><ul><li>Signs projecting 36\" or more from the building face benefit significantly from steel construction</li><li>Large signs (over 36\" x 48\") maintain better flatness with steel panels</li><li>Steel brackets provide higher pull-out resistance in masonry connections</li></ul><p>Sunlite Signs provides stamped structural engineering for steel blade sign installations upon request. This documentation is often required by local building departments for signs of significant size or projection distance, and we include it as part of our engineering support for trade partners.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "Will steel blade signs rust over time?",
+        answer:
+          "Not with proper finishing. Our multi-layer corrosion protection system — zinc-rich primer plus polyurethane topcoat — provides 10+ years of finish life. For extreme environments, we offer hot-dip galvanizing for additional protection.",
+      },
+      {
+        question: "How heavy is a typical steel blade sign?",
+        answer:
+          "A 24\" x 36\" double-sided steel blade sign weighs approximately 35-45 lbs depending on gauge and construction details. We always provide exact weights with our shop drawings so your install crew can plan accordingly.",
+      },
+      {
+        question: "Do you provide engineering stamps for steel blade sign installations?",
+        answer:
+          "Yes. We offer stamped structural engineering drawings for steel blade sign installations. This documentation is commonly required by building departments for larger projecting signs and is available as an add-on service.",
+      },
+      {
+        question: "Can steel blade signs be fabricated in custom shapes?",
+        answer:
+          "Absolutely. We use CNC plasma and laser cutting to produce custom silhouettes in steel. Complex curves, die-cut lettering, and ornamental scrollwork are all possible with our fabrication capabilities.",
+      },
+      {
+        question: "What gauge steel do you use?",
+        answer:
+          "We typically use 16-gauge steel for standard blade signs and 14-gauge for larger or heavier-duty applications. Gauge selection is based on sign size, projection distance, and wind-load requirements for the installation location.",
+      },
+    ],
+    relatedSlugs: [
+      "aluminum-blade-signs",
+      "weather-resistant-blade-signs",
+      "double-sided-blade-signs",
+      "stainless-steel-flat-cut-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "restaurant-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "restaurant blade signs",
+    secondaryKeywords: [
+      "restaurant projecting signs",
+      "cafe blade signs",
+      "food and beverage signage",
+      "hospitality blade signs wholesale",
+    ],
+    title: "Restaurant Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale restaurant blade signs designed to drive foot traffic. Custom shapes, illuminated or non-lit options, UL 48 listed. 3-week delivery for sign trade partners.",
+    h1: "Wholesale Restaurant Blade Signs",
+    h1Highlight: "Restaurant Blade Signs",
+    heroSubtitle:
+      "Custom projecting signs designed to pull hungry customers through the door. Illuminated or non-lit, built to last, and shipped in three weeks.",
+    sections: [
+      {
+        heading: "Why Restaurants Need Great Blade Signs",
+        content:
+          "<p>In the food and beverage industry, first impressions happen at the sidewalk. A compelling blade sign can be the difference between a full dining room and an empty one, especially in competitive restaurant corridors where a dozen options line the same block. Blade signs project perpendicular to the building, making them visible to pedestrians approaching from either direction — a critical advantage over flat wall signs that are only visible head-on.</p><p>Sunlite Signs has manufactured blade signs for thousands of restaurant projects through our sign shop partners. We understand the unique requirements of food-and-beverage signage: the need for warm, inviting illumination; shapes and materials that convey the restaurant's brand personality; and construction that stands up to grease, heat, and the general wear that comes with busy commercial kitchen environments.</p><p>Our wholesale-only model means your sign shop gets competitive pricing on a <strong>German-engineered product</strong> that you can confidently stand behind. No dealing with consumer-grade materials or questionable electrical work — every Sunlite restaurant blade sign meets professional standards from cabinet to power supply.</p>",
+      },
+      {
+        heading: "Design Options for Food & Beverage Clients",
+        content:
+          "<p>Restaurant branding is deeply personal, and the blade sign needs to capture the establishment's personality in a single glance. Sunlite Signs offers extensive design flexibility:</p><ul><li><strong>Custom Shapes:</strong> Die-cut silhouettes — coffee cups, wine bottles, chef hats, animal mascots, or any custom outline your client envisions</li><li><strong>Material Mix:</strong> Combine aluminum panels with real wood accents, wrought iron scrollwork, or dimensional acrylic elements</li><li><strong>Illumination Styles:</strong> Internal LED, halo-lit, edge-lit, or external gooseneck lighting to match the restaurant's ambiance</li><li><strong>Vintage Aesthetic:</strong> Aged metal finishes, exposed Edison-style bulb surrounds, and ornamental bracket designs for rustic or retro concepts</li></ul><p>We work from your design files or client-provided concepts. Our engineering team translates creative ideas into manufacturable reality, providing shop drawings for your approval before production begins. This collaborative process ensures the finished sign matches the client's vision while meeting all structural and electrical requirements.</p>",
+      },
+      {
+        heading: "Durability for High-Traffic Commercial Environments",
+        content:
+          "<p>Restaurant signage operates in demanding conditions. Blade signs mounted near kitchen exhaust vents are exposed to grease-laden air. Signs above busy sidewalks face accidental impacts from delivery trucks and pedestrians. Coastal seafood restaurants deal with salt spray and high humidity. Sunlite Signs builds restaurant blade signs to handle all of these challenges.</p><p>Our standard construction features include:</p><ul><li>Fully sealed cabinet construction to prevent moisture and pest intrusion</li><li>Grease-resistant clear-coat finish option for signs near kitchen exhaust areas</li><li>Impact-resistant polycarbonate face option for high-traffic pedestrian zones</li><li>Marine-grade hardware and fasteners for coastal installations</li></ul><p>Every restaurant blade sign ships with a <strong>5-year warranty on structural components</strong> and a 3-year warranty on the LED system and electrical components. We also include replacement face panels in our catalog, so if a sign face is damaged years later, your shop can order an exact replacement without re-engineering the entire sign.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you create custom-shaped blade signs for restaurant brands?",
+        answer:
+          "Yes. We specialize in custom die-cut blade sign shapes. Send us your concept and we'll engineer a manufacturable design. Common restaurant shapes include food items, utensils, animals, and custom brand silhouettes.",
+      },
+      {
+        question: "What illumination options work best for restaurants?",
+        answer:
+          "It depends on the brand. Upscale restaurants often prefer halo-lit or edge-lit options for a subtle glow. Casual dining and fast-casual brands typically benefit from bright internal LED illumination for maximum visibility. We can recommend options based on the concept.",
+      },
+      {
+        question: "Are restaurant blade signs easy to clean?",
+        answer:
+          "Yes. Our standard paint finish is smooth and non-porous, making it easy to wipe down. For signs near kitchen exhaust, we offer a grease-resistant clear-coat upgrade that simplifies cleaning and protects the paint from oil buildup.",
+      },
+      {
+        question: "How quickly can you produce a restaurant blade sign?",
+        answer:
+          "Standard lead time is three weeks from approved artwork. For restaurant openings with fixed deadlines, we offer rush production options. Contact us early in the project to secure scheduling.",
+      },
+    ],
+    relatedSlugs: [
+      "illuminated-blade-signs",
+      "hotel-blade-signs",
+      "menu-board-light-boxes",
+      "retail-projecting-signs",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "retail-projecting-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "retail projecting signs",
+    secondaryKeywords: [
+      "retail blade signs",
+      "storefront projecting signs",
+      "shop projecting signs wholesale",
+      "commercial projecting signage",
+    ],
+    title: "Retail Projecting Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale retail projecting signs for storefronts and shopping districts. Custom blade signs with LED illumination, UL 48 listed. 3-week trade-only delivery.",
+    h1: "Wholesale Retail Projecting Signs",
+    h1Highlight: "Retail Projecting Signs",
+    heroSubtitle:
+      "Help your retail clients stand out in busy shopping districts with custom projecting signage that captures foot traffic from both directions.",
+    sections: [
+      {
+        heading: "Projecting Signs Drive Retail Foot Traffic",
+        content:
+          "<p>Retail success depends on visibility, and in walkable shopping districts, projecting signs are the most effective tool for catching the eyes of passing pedestrians. Unlike flush-mounted signs that require a direct line of sight, projecting blade signs extend outward from the storefront, presenting the brand to foot traffic approaching from either direction along the sidewalk.</p><p>Studies consistently show that <strong>effective signage is the single most cost-efficient form of advertising</strong> for retail businesses. A well-designed projecting sign delivers impressions 24 hours a day, 365 days a year, without recurring media costs. For your sign shop clients in the retail sector, this makes projecting signage an easy sell with measurable ROI.</p><p>Sunlite Signs manufactures retail projecting signs in virtually any size, shape, and finish to match the unique branding of each storefront. Our wholesale pricing allows your shop to offer premium, German-engineered signage while maintaining healthy margins on every project.</p>",
+      },
+      {
+        heading: "Retail-Specific Design Considerations",
+        content:
+          "<p>Retail projecting signs have design requirements that differ from other commercial applications. Sunlite Signs incorporates these considerations into every retail blade sign project:</p><ul><li><strong>Brand Compliance:</strong> National and regional retailers have strict brand standards. We work from brand guideline documents to ensure exact color matching, logo proportions, and font specifications.</li><li><strong>Landlord & Lease Requirements:</strong> Shopping centers and mixed-use developments often have sign criteria that dictate size, projection distance, and mounting methods. We review these documents and design within the constraints.</li><li><strong>ADA Clearance:</strong> Projecting signs over pedestrian walkways must maintain minimum 80\" clearance above the walking surface per ADA guidelines. We verify clearance in our shop drawings.</li><li><strong>Multi-Tenant Considerations:</strong> In multi-tenant buildings, projecting signs must be consistent in size and mounting height. We produce matching sign systems for entire tenant rosters.</li></ul><p>Our engineering team has experience with major landlords and property management companies nationwide. We understand the approval process and produce shop drawings that meet the level of detail these entities require.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you produce matching projecting signs for an entire shopping center?",
+        answer:
+          "Yes. We regularly produce multi-tenant sign programs with consistent cabinet sizes, mounting heights, and bracket styles. Each sign features the individual tenant's branding while maintaining visual cohesion across the property.",
+      },
+      {
+        question: "What ADA requirements apply to retail projecting signs?",
+        answer:
+          "Projecting signs over pedestrian walkways must maintain a minimum 80-inch clearance from the bottom of the sign to the walking surface. Signs projecting more than 4 inches from the wall into a pedestrian path must meet this clearance requirement per ADA guidelines.",
+      },
+      {
+        question: "Do you work with national retail brand standards?",
+        answer:
+          "Absolutely. We routinely manufacture signs to national brand specifications, matching exact PMS colors, logo proportions, and material requirements. Send us the brand guidelines and we'll ensure full compliance.",
+      },
+      {
+        question: "What sizes are most common for retail projecting signs?",
+        answer:
+          "The most popular sizes for retail blade signs range from 18\" x 24\" to 30\" x 42\". Shopping center sign criteria often dictate maximum dimensions. We can produce any size up to 48\" x 72\" in standard production.",
+      },
+      {
+        question: "Can retail blade signs include interchangeable graphics?",
+        answer:
+          "Yes. We offer slide-in panel systems that allow tenants to update their graphics without replacing the entire sign. This is popular for seasonal promotions and tenant changeovers in multi-tenant properties.",
+      },
+    ],
+    relatedSlugs: [
+      "illuminated-blade-signs",
+      "double-sided-blade-signs",
+      "retail-light-box-displays",
+      "front-lit-channel-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "hotel-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "hotel blade signs",
+    secondaryKeywords: [
+      "hospitality projecting signs",
+      "hotel projecting signage",
+      "boutique hotel blade signs",
+      "hotel wayfinding signs",
+    ],
+    title: "Hotel Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale hotel blade signs with premium finishes and LED illumination. German-engineered for the hospitality industry. UL 48 listed, 3-week sign trade delivery.",
+    h1: "Wholesale Hotel Blade Signs",
+    h1Highlight: "Hotel Blade Signs",
+    heroSubtitle:
+      "Premium projecting signage that elevates your hospitality client's brand from the street. Refined finishes, warm illumination, and lasting durability.",
+    sections: [
+      {
+        heading: "Creating Arrival Moments with Hotel Blade Signs",
+        content:
+          "<p>The guest experience begins at the curb. Before they step through the front door, hotel guests form their first impression based on the property's exterior signage. A thoughtfully designed blade sign projects the brand's personality into the streetscape, creating a sense of arrival and anticipation that sets the tone for the entire stay.</p><p>Hotel blade signs serve a dual purpose: they function as wayfinding elements for guests navigating unfamiliar streets, and they act as brand ambassadors that communicate the property's market position. A sleek, halo-lit blade sign signals modern luxury. A hand-painted look with wrought-iron brackets suggests boutique charm. The design language of the sign tells guests what kind of experience awaits inside.</p><p>Sunlite Signs understands hospitality signage at a level that commodity manufacturers simply don't. Our German engineering standards ensure that every blade sign we produce meets the <strong>elevated quality expectations of hotel brands</strong>, from boutique independents to global chains. Materials, finishes, and illumination are selected to create a lasting impression — not just adequate identification.</p>",
+      },
+      {
+        heading: "Premium Materials & Finishes for Hospitality",
+        content:
+          "<p>Hotels demand a higher level of material quality and finish refinement than typical commercial signage. Sunlite Signs meets this standard with our hospitality-grade options:</p><ul><li><strong>Brushed Stainless Steel:</strong> Real stainless faces with directional brush patterns for a modern, upscale appearance that ages gracefully</li><li><strong>Patinated Bronze:</strong> Applied patina finishes on aluminum substrates that replicate the look of aged bronze at a fraction of the weight and cost</li><li><strong>Architectural Aluminum:</strong> Anodized or PVDF-coated aluminum in metallic and specialty colors from major architectural coating manufacturers</li><li><strong>Mixed Media:</strong> Combinations of metal, wood, glass, and dimensional lettering for one-of-a-kind designs</li></ul><p>Illumination for hotel blade signs typically leans toward warmth and subtlety. We offer 2700K and 3000K LED options that produce a warm, inviting glow rather than the harsh brightness of standard commercial signage. Halo-lit and edge-lit configurations are popular for hotel applications, creating a sophisticated lighting effect that enhances rather than overwhelms the architecture.</p>",
+      },
+      {
+        heading: "Brand Compliance & Franchise Standards",
+        content:
+          "<p>For branded hotel properties, blade signs must comply with franchisor sign standards that dictate everything from cabinet dimensions to font sizes and illumination levels. Sunlite Signs has experience manufacturing to the standards of major hospitality brands and understands the approval process involved.</p><p>Our engineering team reviews the brand's sign criteria package, produces compliant shop drawings, and submits them for franchisor approval before production begins. This prevents costly revisions and ensures the finished sign passes brand inspection on the first attempt.</p><p>For independent and boutique hotel projects, we collaborate directly with the property's architect or interior designer to ensure the blade sign integrates seamlessly with the building's overall design language. We provide material samples, finish mockups, and detailed renderings so all stakeholders can approve the design with confidence before we begin fabrication.</p><p>Whether the project is a <strong>150-room branded property</strong> or a 12-room boutique inn, Sunlite Signs delivers the same level of engineering precision, material quality, and service attention. Our wholesale model ensures your sign shop can deliver hospitality-grade signage at competitive pricing.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "What LED color temperature do you recommend for hotel blade signs?",
+        answer:
+          "We typically recommend 2700K to 3000K for hospitality applications. These warm color temperatures create an inviting, upscale ambiance that aligns with most hotel brand aesthetics. We can provide sample illumination photos to help your client decide.",
+      },
+      {
+        question: "Can you work with hotel brand standard documents?",
+        answer:
+          "Yes. We routinely manufacture blade signs to major hotel brand specifications. Send us the brand's sign criteria package and we'll produce compliant shop drawings for franchisor approval before production begins.",
+      },
+      {
+        question: "Do you offer real metal finishes or just paint simulations?",
+        answer:
+          "We offer both. Real brushed stainless steel and bronze-clad faces are available for clients who want authentic metal. We also offer high-quality simulated metal finishes on aluminum substrates for projects where weight or budget is a concern.",
+      },
+      {
+        question: "How do hotel blade signs hold up in humid or coastal climates?",
+        answer:
+          "Our hospitality-grade blade signs use marine-quality materials and fasteners rated for coastal environments. Stainless steel faces and anodized aluminum components are inherently corrosion-resistant, and our sealed cabinet construction prevents moisture intrusion.",
+      },
+    ],
+    relatedSlugs: [
+      "illuminated-blade-signs",
+      "restaurant-blade-signs",
+      "aluminum-blade-signs",
+      "lobby-sign-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "led-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "LED blade signs",
+    secondaryKeywords: [
+      "LED projecting signs",
+      "LED-lit blade signs wholesale",
+      "energy-efficient blade signs",
+      "LED sign cabinets",
+    ],
+    title: "LED Blade Signs | Wholesale | Sunlite Signs",
+    metaDescription:
+      "Wholesale LED blade signs with high-efficiency modules and UL 48 certification. Energy-efficient, long-lasting illumination. German-engineered, 3-week trade delivery.",
+    h1: "Wholesale LED Blade Signs",
+    h1Highlight: "LED Blade Signs",
+    heroSubtitle:
+      "High-efficiency LED illumination in a German-engineered blade sign package. 50,000+ hour rated life, low energy consumption, and UL 48 certification.",
+    sections: [
+      {
+        heading: "The LED Advantage in Blade Sign Illumination",
+        content:
+          "<p>LED technology has fundamentally transformed the economics and performance of illuminated blade signs. Compared to legacy fluorescent systems, LED modules deliver <strong>significantly lower energy consumption, dramatically longer service life, and superior light uniformity</strong> across the sign face. For sign shops, this means fewer warranty calls, happier clients, and a product you can sell with confidence.</p><p>Sunlite Signs has been at the forefront of LED integration in projecting signage since the technology matured for commercial applications. Every LED blade sign we manufacture uses current-generation modules from Samsung or Nichia — the two most reliable LED chipmakers in the industry. We don't use off-brand modules to save a few dollars per sign, because we know that reliability is what your reputation depends on.</p><p>Our LED systems are designed as integrated components of the sign, not afterthoughts. Module spacing, driver sizing, and thermal management are all engineered to work together as a system. The result is even illumination, efficient power consumption, and a sign that performs consistently from day one through year ten and beyond.</p>",
+      },
+      {
+        heading: "LED Specifications & Performance Data",
+        content:
+          "<p>We believe in transparency when it comes to LED specifications. Here's what you get in every Sunlite LED blade sign:</p><ul><li><strong>LED Modules:</strong> Samsung 2835 or Nichia 757 series, 160+ lumens per watt efficacy</li><li><strong>Rated Life:</strong> 50,000 hours to L70 (70% of original brightness) — roughly 11 years of dusk-to-dawn operation</li><li><strong>Color Temperature:</strong> Available in 3000K, 4000K, 5000K, and 6500K standard options, plus custom CCT on request</li><li><strong>Color Rendering:</strong> CRI 80+ standard, CRI 90+ available for hospitality and retail applications</li><li><strong>Power Supplies:</strong> UL-recognized Mean Well HLG or LPV series drivers with 5-year manufacturer warranty</li></ul><p>Every LED blade sign is bench-tested for a minimum of 4 hours before shipping. We measure brightness at multiple points across the sign face to verify uniformity, and we document the test results for our quality records. If a sign doesn't meet our performance threshold, it gets reworked before it ships.</p><p>For your clients who track energy costs, LED blade signs typically consume <strong>60-70% less electricity</strong> than equivalent fluorescent signs. On a sign that runs 12 hours per day, that can amount to $150-300 in annual energy savings depending on local utility rates.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "How long do the LEDs last in your blade signs?",
+        answer:
+          "Our LED modules are rated for 50,000 hours to L70, which means they retain at least 70% of their original brightness at that point. For a sign running dusk-to-dawn (roughly 12 hours per day), that translates to approximately 11 years of service life.",
+      },
+      {
+        question: "What happens if an LED module fails?",
+        answer:
+          "Our LED systems use parallel circuit wiring, so a single module failure won't affect the rest of the sign. The failed module can be replaced individually through the service access panel. We stock replacement modules and can ship them to your shop quickly.",
+      },
+      {
+        question: "Do you offer RGB or color-changing LED blade signs?",
+        answer:
+          "Yes. We offer RGB and RGBW LED systems for blade signs that need color-changing capabilities. These systems include a DMX or wireless controller for programming color sequences, static colors, or dynamic effects.",
+      },
+      {
+        question: "Are your LED blade signs dimmable?",
+        answer:
+          "Yes. We can equip LED blade signs with 0-10V dimming drivers, allowing brightness adjustment via a compatible dimmer or building management system. This is popular for signs in residential-adjacent areas that need to reduce brightness during late-night hours.",
+      },
+      {
+        question: "What LED brands do you use?",
+        answer:
+          "We exclusively use Samsung and Nichia LED modules. These are the two most reliable and well-documented LED manufacturers in the industry, and we've verified their long-term performance through years of field data.",
+      },
+    ],
+    relatedSlugs: [
+      "illuminated-blade-signs",
+      "double-sided-blade-signs",
+      "led-light-box-signs",
+      "front-lit-channel-letters",
+    ],
+    schemaType: "Product",
+  },
+  {
+    slug: "weather-resistant-blade-signs",
+    hubSlug: "blade-signs",
+    hubName: "Blade Signs",
+    primaryKeyword: "weather-resistant blade signs",
+    secondaryKeywords: [
+      "outdoor blade signs",
+      "weatherproof projecting signs",
+      "durable exterior blade signs",
+      "all-weather blade signs wholesale",
+    ],
+    title: "Weather-Resistant Blade Signs | Wholesale | Sunlite",
+    metaDescription:
+      "Wholesale weather-resistant blade signs engineered for harsh climates. Sealed cabinets, marine-grade hardware, corrosion-proof finishes. 3-week sign trade delivery.",
+    h1: "Wholesale Weather-Resistant Blade Signs",
+    h1Highlight: "Weather-Resistant Blade Signs",
+    heroSubtitle:
+      "Engineered to perform in rain, snow, salt air, extreme heat, and high winds. Sealed construction and marine-grade materials ensure lasting performance.",
+    sections: [
+      {
+        heading: "Built to Withstand the Elements",
+        content:
+          "<p>Every exterior sign faces environmental challenges, but blade signs are particularly exposed. Projecting from the building face, they take the full force of wind, rain, snow, and UV radiation without the sheltering effect of a wall or canopy. In coastal areas, add salt spray to that list. In desert climates, add extreme thermal cycling. A blade sign that isn't engineered for these conditions will fail prematurely — and that failure reflects on your sign shop.</p><p>Sunlite Signs takes a <strong>German engineering approach to weather resistance</strong>, treating environmental durability as a core design parameter rather than an afterthought. Our weather-resistant blade signs are built from the inside out to handle the specific environmental stresses of the installation location. We don't offer a one-size-fits-all weatherproofing — we engineer the right protection for each project's climate zone.</p><p>The result is a blade sign that maintains its structural integrity, finish quality, and electrical reliability for years, regardless of the conditions it faces. That means fewer warranty claims for your shop and a product that reinforces your reputation for quality with every installation.</p>",
+      },
+      {
+        heading: "Environmental Protection Systems",
+        content:
+          "<p>Our weather-resistant blade signs incorporate multiple layers of environmental protection:</p><ul><li><strong>Sealed Cabinet Construction:</strong> Continuous TIG-welded seams with silicone gaskets at all access panels. Cabinet integrity is tested to IP65 standards, preventing water and dust intrusion.</li><li><strong>Corrosion-Resistant Materials:</strong> 6063-T5 aluminum with chromate conversion coating, or hot-dip galvanized steel depending on the application. All internal hardware is stainless steel grade 316 for maximum corrosion resistance.</li><li><strong>UV-Stable Finishes:</strong> Automotive-grade polyurethane paint with UV inhibitors, or PVDF (Kynar) coatings for locations with extreme solar exposure. Our finishes resist chalking, fading, and gloss loss for 10+ years.</li><li><strong>Thermal Management:</strong> Ventilated cabinet design with filtered breather vents that equalize internal pressure without admitting moisture. This prevents condensation buildup during temperature swings.</li><li><strong>Wind-Load Engineering:</strong> Structural analysis per ASCE 7 standards for the specific installation location. We account for exposure category, wind speed zone, and sign height above grade.</li></ul><p>For illuminated models, all electrical connections use marine-grade waterproof connectors, and LED modules are rated IP67 or higher. Power supplies are potted or housed in NEMA 4X enclosures to prevent moisture damage.</p>",
+      },
+      {
+        heading: "Climate-Specific Recommendations",
+        content:
+          "<p>Not all weather is created equal, and the ideal blade sign specification varies by climate. Here's how Sunlite Signs tailors our weather-resistant blade signs for different environments:</p><ul><li><strong>Coastal:</strong> Marine-grade 316 stainless hardware, hot-dip galvanized steel or anodized aluminum cabinet, PVDF finish, sealed silicone gasketing throughout</li><li><strong>Northern/Snow Belt:</strong> Reinforced top panel to handle snow and ice loading, heated drain channels to prevent ice damming, enhanced structural brackets for combined wind and ice loads</li><li><strong>Desert/Southwest:</strong> High-UV-resistance PVDF coatings, thermal break construction to reduce heat transfer to electronics, oversized ventilation for LED thermal management</li><li><strong>Hurricane Zone:</strong> Wind-load engineering to 150+ mph, reinforced bracket connections, impact-resistant polycarbonate faces instead of acrylic</li></ul><p>When you submit a project, tell us the installation city and we'll specify the appropriate weather-resistance package automatically. Our engineering team maintains a database of climate data for every U.S. zip code, so we can make informed material and construction recommendations without guesswork.</p>",
+      },
+    ],
+    faqs: [
+      {
+        question: "What IP rating do your weather-resistant blade signs carry?",
+        answer:
+          "Our standard sealed cabinets are tested to IP65, which provides complete protection against dust and water jets from any direction. For illuminated models, LED modules are IP67 rated for additional protection.",
+      },
+      {
+        question: "How do you prevent condensation inside illuminated blade signs?",
+        answer:
+          "We use filtered breather vents that equalize air pressure between the cabinet interior and the ambient environment. This allows moisture vapor to escape while preventing liquid water and dust from entering. The system eliminates the condensation that causes LED and driver failures.",
+      },
+      {
+        question: "Are weather-resistant blade signs more expensive?",
+        answer:
+          "Weather-resistant construction adds approximately 10-20% to the base cost depending on the level of protection required. This is a modest investment compared to the cost of premature sign failure and replacement in harsh environments.",
+      },
+      {
+        question: "Do you engineer for hurricane wind loads?",
+        answer:
+          "Yes. For installations in hurricane-prone areas, we engineer blade signs and mounting systems to withstand wind loads of 150+ mph per local building code requirements. This includes reinforced brackets, impact-resistant face materials, and enhanced fastener specifications.",
+      },
+      {
+        question: "What warranty do weather-resistant blade signs carry?",
+        answer:
+          "Our weather-resistant blade signs carry a 5-year warranty on structural components and finishes, and a 3-year warranty on LED systems and electrical components. Extended warranty options are available for projects that require them.",
+      },
+    ],
+    relatedSlugs: [
+      "aluminum-blade-signs",
+      "steel-blade-signs",
+      "illuminated-blade-signs",
+      "wholesale-sign-manufacturer",
+    ],
+    schemaType: "Product",
+  },
+];

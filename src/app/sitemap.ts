@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { allLandingPages } from "@/lib/landing-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sunlitesigns.com";
@@ -24,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/products/lightboxes",
     "/products/seg-light-boxes",
     "/products/custom-fabrication",
+    "/products/cabinet-signs",
     "/services",
     "/why-sunlite",
     "/why-sunlite/german-engineering",
@@ -65,5 +67,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pages, ...blogPages];
+  const landingPageEntries: MetadataRoute.Sitemap = allLandingPages.map((page) => ({
+    url: `${baseUrl}/signs/${page.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...pages, ...blogPages, ...landingPageEntries];
 }
