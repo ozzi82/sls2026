@@ -29,6 +29,40 @@ const config: Config = {
         "accent-red": "#F97316",
         "accent-teal": "rgb(var(--accent) / <alpha-value>)",
         "accent-teal-light": "var(--accent-dark)",
+
+        // shadcn UI semantic tokens
+        background: "var(--ui-background)",
+        foreground: "var(--ui-foreground)",
+        card: {
+          DEFAULT: "var(--ui-card)",
+          foreground: "var(--ui-card-foreground)",
+        },
+        popover: {
+          DEFAULT: "var(--ui-popover)",
+          foreground: "var(--ui-popover-foreground)",
+        },
+        primary: {
+          DEFAULT: "var(--ui-primary)",
+          foreground: "var(--ui-primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--ui-secondary)",
+          foreground: "var(--ui-secondary-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--ui-muted)",
+          foreground: "var(--ui-muted-foreground)",
+        },
+        accent: {
+          DEFAULT: "var(--ui-accent-ui)",
+          foreground: "var(--ui-accent-foreground)",
+        },
+        destructive: {
+          DEFAULT: "var(--ui-destructive)",
+        },
+        border: "var(--ui-border)",
+        input: "var(--ui-input)",
+        ring: "var(--ui-ring)",
       },
       fontFamily: {
         display: ["var(--font-display-family)"],

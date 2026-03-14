@@ -24,6 +24,26 @@
   --font-display-family: var(--font-space-grotesk), sans-serif;
   --font-heading-family: var(--font-space-grotesk), sans-serif;
   --font-body-family: var(--font-inter), sans-serif;
+
+  /* UI component tokens (shadcn) */
+  --ui-background: #ffffff;
+  --ui-foreground: #0a0a0a;
+  --ui-card: #ffffff;
+  --ui-card-foreground: #0a0a0a;
+  --ui-popover: #ffffff;
+  --ui-popover-foreground: #0a0a0a;
+  --ui-primary: #18181b;
+  --ui-primary-foreground: #fafafa;
+  --ui-secondary: #f4f4f5;
+  --ui-secondary-foreground: #18181b;
+  --ui-muted: #f4f4f5;
+  --ui-muted-foreground: #71717a;
+  --ui-accent-ui: #f4f4f5;
+  --ui-accent-foreground: #18181b;
+  --ui-destructive: #ef4444;
+  --ui-border: #e4e4e7;
+  --ui-input: #e4e4e7;
+  --ui-ring: #18181b;
 }
 
 .theme-gold {

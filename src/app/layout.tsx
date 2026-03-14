@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter, Bebas_Neue, Source_Sans_3, Geist } from "next/font/google";
+import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter, Bebas_Neue, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -134,21 +128,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(instrumentSerif.variable, outfit.variable, dmSans.variable, spaceGrotesk.variable, inter.variable, bebasNeue.variable, sourceSans.variable, "font-sans", geist.variable)}>
+    <html lang="en" className={`${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable} ${bebasNeue.variable} ${sourceSans.variable}`}>
       <body className="antialiased">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('sunlite-theme');if(t)document.documentElement.classList.add('theme-'+t)}catch(e){}})()`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <ThemeSwitcher />
+        {children}
       </body>
     </html>
   );
