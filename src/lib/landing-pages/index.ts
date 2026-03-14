@@ -6,6 +6,8 @@ import { cabinetSignsPages } from "./cabinet-signs";
 import { generalPages } from "./general";
 import { engineeringPages } from "./engineering";
 import { illuminationPages } from "./illumination";
+import { logoBoxesPages } from "./logo-boxes";
+import { pushThroughSignsPages } from "./push-through-signs";
 import { LandingPage } from "./types";
 
 export type { LandingPage };
@@ -19,6 +21,8 @@ export const allLandingPages: LandingPage[] = [
   ...generalPages,
   ...engineeringPages,
   ...illuminationPages,
+  ...logoBoxesPages,
+  ...pushThroughSignsPages,
 ];
 
 export function getLandingPage(slug: string): LandingPage | undefined {

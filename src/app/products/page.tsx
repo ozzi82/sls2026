@@ -68,6 +68,20 @@ const productCategories = [
     image: "SEG Light Box — illuminated fabric sign display",
   },
   {
+    name: "Logo Boxes",
+    description:
+      "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Full-color digital print on translucent faces for brand-perfect reproduction. Wholesale trade pricing for sign shops.",
+    href: "/products/logo-boxes",
+    image: "Contour logo box — custom-shaped illuminated logo sign",
+  },
+  {
+    name: "Push-Through Signs",
+    description:
+      "Dimensional acrylic letters pushed through precision-routed aluminum panels with LED backlighting. The premium alternative to flat-face cabinet signs. Wholesale only.",
+    href: "/products/push-through-signs",
+    image: "Push-through sign — illuminated dimensional acrylic letters",
+  },
+  {
     name: "Custom Fabrication",
     description:
       "Bespoke signage solutions at trade pricing for projects that require something beyond standard products. Wholesale only — we never compete with our sign shop partners.",
