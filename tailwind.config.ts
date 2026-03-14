@@ -10,20 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         // New design system tokens
-        "bg-primary": "#0A0A0A",
-        "bg-navy": "#0A0A1A",
-        "bg-card": "#111118",
+        "bg-primary": "var(--bg-deep)",
+        "bg-navy": "var(--bg-deep)",
+        "bg-card": "var(--bg-card-val)",
         "bg-light": "var(--bg-light)",
         "brand-gold": "rgb(var(--accent) / <alpha-value>)",
         "brand-gold-light": "var(--accent-dark)",
-        cta: "#F97316",
-        "cta-hover": "#FB923C",
+        cta: "rgb(var(--cta-val))",
+        "cta-hover": "rgb(var(--cta-hover-val))",
         "text-dark": "#0A0A0A",
 
         // Aliases for old tokens (remove in Phase 6)
-        "primary-dark": "#0A0A0A",
-        navy: "#0A0A1A",
-        "navy-light": "#111118",
+        "primary-dark": "var(--bg-deep)",
+        navy: "var(--bg-deep)",
+        "navy-light": "var(--bg-card-val)",
         "light-bg": "var(--bg-light)",
         "text-light": "#FAFAFA",
         "accent-red": "#F97316",

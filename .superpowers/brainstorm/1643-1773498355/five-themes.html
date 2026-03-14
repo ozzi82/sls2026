@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunlite Signs — 5 Design Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #080810; color: #fff; font-family: 'Inter', sans-serif; padding: 40px 24px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+  .subtitle { text-align: center; color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .card { background: #111118; border: 2px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; cursor: pointer; transition: all 0.3s; }
+  .card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .card.selected { border-color: #F97316; box-shadow: 0 0 30px rgba(249,115,22,0.2); }
+  .card:nth-child(5) { grid-column: 1 / -1; max-width: 588px; justify-self: center; }
+  .hero-mock { padding: 32px 24px; position: relative; overflow: hidden; min-height: 220px; }
+  .hero-mock .glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 400px; height: 200px; border-radius: 50%; filter: blur(60px); opacity: 0.12; }
+  .hero-mock .label { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; opacity: 0.5; margin-bottom: 12px; }
+  .hero-mock .line { width: 40px; height: 2px; margin-bottom: 14px; }
+  .hero-mock h2 { font-size: 20px; font-weight: 700; line-height: 1.15; margin-bottom: 10px; }
+  .hero-mock p { font-size: 11px; opacity: 0.5; line-height: 1.5; margin-bottom: 16px; max-width: 300px; }
+  .hero-mock .cta { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 10px 20px; border-radius: 4px; color: white; }
+  .features { padding: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .feat-card { border-radius: 8px; padding: 10px; border: 1px solid rgba(255,255,255,0.05); }
+  .feat-icon { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; margin-bottom: 6px; }
+  .feat-card span { font-size: 9px; font-weight: 600; }
+  .feat-card small { font-size: 8px; opacity: 0.4; display: block; margin-top: 2px; }
+  .light-section { padding: 16px; }
+  .light-section .line { width: 32px; height: 2px; margin-bottom: 6px; }
+  .light-section h3 { font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+  .light-section .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .light-section .step { background: white; border-radius: 6px; padding: 8px; border: 1px solid rgba(0,0,0,0.04); }
+  .light-section .step-num { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 7px; font-weight: 700; margin-bottom: 4px; }
+  .light-section .step span { font-size: 8px; font-weight: 600; }
+  .card-info { padding: 16px; background: #111118; border-top: 1px solid rgba(255,255,255,0.04); }
+  .card-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .card-info .desc { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 10px; }
+  .swatches { display: flex; gap: 4px; }
+  .swatch { width: 28px; height: 16px; border-radius: 4px; }
+  .swatch-border { border: 1px solid rgba(255,255,255,0.1); }
+  .tag { display: inline-block; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .fonts { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 6px; }
+</style>
+<script>
+function toggleSelect(el) {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const choice = el.dataset.choice;
+  if (window.__helperReady) { window.recordChoice(choice, el.querySelector('h3')?.textContent || choice); }
+}
+</script>
+</head>
+<body>
+
+<h1>5 Design Templates for Sunlite Signs</h1>
+<p class="subtitle">Click the one that speaks to you — or tell me in terminal what you'd change</p>
+
+<div class="grid">
+
+  <!-- 1. WARM GOLD (Current) -->
+  <div class="card" data-choice="1-warm-gold" onclick="toggleSelect(this)">
+    <div class="hero-mock" style="background:#0A0A0A;">
+      <div class="glow" style="background:#C9A96E;"></div>
+      <div class="label" style="font-family:'Space Grotesk',sans-serif; color:#C9A96E;">Wholesale Only</div>
+      <div class="line" style="background:linear-gradient(90deg,#C9A96E,transparent);"></div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; color:white;">Precision Signage,<br><span style="color:#C9A96E;">Wholesale Direct.</span></h2>
+      <p style="font-family:'Inter',sans-serif;">German-engineered channel letters, blade signs & illuminated signage.</p>
+      <div class="cta" style="background:#F97316;">Request Wholesale Pricing</div>
+    </div>
+    <div class="features" style="background:#0A0A0A;">
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.2); color:#C9A96E;">★</div>
+        <span style="color:white; font-family:'Space Grotesk';">UL 48 Listed</span>
+        <small>Code compliant</small>
+      </div>
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.2); color:#C9A96E;">⚡</div>
+        <span style="color:white; font-family:'Space Grotesk';">3-Week Delivery</span>
+        <small>Door to door</small>
+      </div>
+    </div>
+    <div class="light-section" style="background:#FAFAFA;">
+      <div class="line" style="background:linear-gradient(90deg,#C9A96E,transparent);"></div>
+      <h3 style="color:#0A0A0A; font-family:'Space Grotesk';">How It's <span style="color:#C9A96E;">Made</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.2); color:#C9A96E;">1</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Engineering</span>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.2); color:#C9A96E;">2</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Fabrication</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <span class="tag" style="background:rgba(201,169,110,0.1); color:#C9A96E;">Current</span>
+      <h3>1 — Warm Gold</h3>
+      <p class="desc">Classic premium. Gold accent (#C9A96E) with neutral light sections. Feels high-end and established.</p>
+      <div class="swatches">
+        <div class="swatch" style="background:#0A0A0A;" class="swatch-border"></div>
+        <div class="swatch" style="background:#111118;"></div>
+        <div class="swatch" style="background:#C9A96E;"></div>
+        <div class="swatch" style="background:#D4B87A;"></div>
+        <div class="swatch" style="background:#F97316;"></div>
+        <div class="swatch swatch-border" style="background:#FAFAFA;"></div>
+      </div>
+      <p class="fonts">Space Grotesk + Inter</p>
+    </div>
+  </div>
+
+  <!-- 2. ELECTRIC BLUE -->
+  <div class="card" data-choice="2-electric-blue" onclick="toggleSelect(this)">
+    <div class="hero-mock" style="background:#0A0A0A;">
+      <div class="glow" style="background:#38BDF8;"></div>
+      <div class="label" style="font-family:'Space Grotesk',sans-serif; color:#38BDF8;">Wholesale Only</div>
+      <div class="line" style="background:linear-gradient(90deg,#38BDF8,transparent);"></div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; color:white;">Precision Signage,<br><span style="color:#38BDF8;">Wholesale Direct.</span></h2>
+      <p style="font-family:'Inter',sans-serif;">German-engineered channel letters, blade signs & illuminated signage.</p>
+      <div class="cta" style="background:#F97316;">Request Wholesale Pricing</div>
+    </div>
+    <div class="features" style="background:#0A0A0A;">
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.2); color:#38BDF8;">★</div>
+        <span style="color:white; font-family:'Space Grotesk';">UL 48 Listed</span>
+        <small>Code compliant</small>
+      </div>
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.2); color:#38BDF8;">⚡</div>
+        <span style="color:white; font-family:'Space Grotesk';">3-Week Delivery</span>
+        <small>Door to door</small>
+      </div>
+    </div>
+    <div class="light-section" style="background:#F0F9FF;">
+      <div class="line" style="background:linear-gradient(90deg,#0284C7,transparent);"></div>
+      <h3 style="color:#0A0A0A; font-family:'Space Grotesk';">How It's <span style="color:#0284C7;">Made</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:rgba(2,132,199,0.1); border:1px solid rgba(2,132,199,0.2); color:#0284C7;">1</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Engineering</span>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:rgba(2,132,199,0.1); border:1px solid rgba(2,132,199,0.2); color:#0284C7;">2</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Fabrication</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <span class="tag" style="background:rgba(56,189,248,0.1); color:#38BDF8;">Implemented</span>
+      <h3>2 — Electric Blue</h3>
+      <p class="desc">Modern, technical, LED-inspired. Sky blue (#38BDF8) with ice-blue light sections. Feels like precision engineering.</p>
+      <div class="swatches">
+        <div class="swatch swatch-border" style="background:#0A0A0A;"></div>
+        <div class="swatch" style="background:#111118;"></div>
+        <div class="swatch" style="background:#38BDF8;"></div>
+        <div class="swatch" style="background:#0284C7;"></div>
+        <div class="swatch" style="background:#F97316;"></div>
+        <div class="swatch swatch-border" style="background:#F0F9FF;"></div>
+      </div>
+      <p class="fonts">Space Grotesk + Inter</p>
+    </div>
+  </div>
+
+  <!-- 3. INDUSTRIAL RED -->
+  <div class="card" data-choice="3-industrial-red" onclick="toggleSelect(this)">
+    <div class="hero-mock" style="background:#0A0A0A;">
+      <div class="glow" style="background:#DC2626;"></div>
+      <div class="label" style="font-family:'Outfit',sans-serif; color:#EF4444;">Wholesale Only</div>
+      <div class="line" style="background:linear-gradient(90deg,#DC2626,transparent);"></div>
+      <h2 style="font-family:'Outfit',sans-serif; color:white;">Precision Signage,<br><span style="color:#EF4444;">Wholesale Direct.</span></h2>
+      <p style="font-family:'DM Sans',sans-serif;">German-engineered channel letters, blade signs & illuminated signage.</p>
+      <div class="cta" style="background:#DC2626;">Request Wholesale Pricing</div>
+    </div>
+    <div class="features" style="background:#0A0A0A;">
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(220,38,38,0.1); border:1px solid rgba(220,38,38,0.2); color:#EF4444;">★</div>
+        <span style="color:white; font-family:'Outfit';">UL 48 Listed</span>
+        <small>Code compliant</small>
+      </div>
+      <div class="feat-card" style="background:#111118;">
+        <div class="feat-icon" style="background:rgba(220,38,38,0.1); border:1px solid rgba(220,38,38,0.2); color:#EF4444;">⚡</div>
+        <span style="color:white; font-family:'Outfit';">3-Week Delivery</span>
+        <small>Door to door</small>
+      </div>
+    </div>
+    <div class="light-section" style="background:#FFF5F5;">
+      <div class="line" style="background:linear-gradient(90deg,#B91C1C,transparent);"></div>
+      <h3 style="color:#0A0A0A; font-family:'Outfit';">How It's <span style="color:#B91C1C;">Made</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:rgba(185,28,28,0.1); border:1px solid rgba(185,28,28,0.2); color:#B91C1C;">1</div>
+          <span style="color:#0A0A0A; font-family:'Outfit';">Engineering</span>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:rgba(185,28,28,0.1); border:1px solid rgba(185,28,28,0.2); color:#B91C1C;">2</div>
+          <span style="color:#0A0A0A; font-family:'Outfit';">Fabrication</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <span class="tag" style="background:rgba(220,38,38,0.1); color:#EF4444;">New</span>
+      <h3>3 — Industrial Red</h3>
+      <p class="desc">Bold, automotive-grade. Safety red (#DC2626) with warm light sections. Feels like industrial manufacturing power. CTA is red too — unified and aggressive.</p>
+      <div class="swatches">
+        <div class="swatch swatch-border" style="background:#0A0A0A;"></div>
+        <div class="swatch" style="background:#111118;"></div>
+        <div class="swatch" style="background:#DC2626;"></div>
+        <div class="swatch" style="background:#B91C1C;"></div>
+        <div class="swatch" style="background:#EF4444;"></div>
+        <div class="swatch swatch-border" style="background:#FFF5F5;"></div>
+      </div>
+      <p class="fonts">Outfit + DM Sans</p>
+    </div>
+  </div>
+
+  <!-- 4. MIDNIGHT EMERALD -->
+  <div class="card" data-choice="4-midnight-emerald" onclick="toggleSelect(this)">
+    <div class="hero-mock" style="background:#060D0A;">
+      <div class="glow" style="background:#10B981;"></div>
+      <div class="label" style="font-family:'Space Grotesk',sans-serif; color:#34D399;">Wholesale Only</div>
+      <div class="line" style="background:linear-gradient(90deg,#10B981,transparent);"></div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; color:white;">Precision Signage,<br><span style="color:#34D399;">Wholesale Direct.</span></h2>
+      <p style="font-family:'Inter',sans-serif;">German-engineered channel letters, blade signs & illuminated signage.</p>
+      <div class="cta" style="background:#F97316;">Request Wholesale Pricing</div>
+    </div>
+    <div class="features" style="background:#060D0A;">
+      <div class="feat-card" style="background:#0D1912;">
+        <div class="feat-icon" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.2); color:#34D399;">★</div>
+        <span style="color:white; font-family:'Space Grotesk';">UL 48 Listed</span>
+        <small>Code compliant</small>
+      </div>
+      <div class="feat-card" style="background:#0D1912;">
+        <div class="feat-icon" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.2); color:#34D399;">⚡</div>
+        <span style="color:white; font-family:'Space Grotesk';">3-Week Delivery</span>
+        <small>Door to door</small>
+      </div>
+    </div>
+    <div class="light-section" style="background:#ECFDF5;">
+      <div class="line" style="background:linear-gradient(90deg,#059669,transparent);"></div>
+      <h3 style="color:#0A0A0A; font-family:'Space Grotesk';">How It's <span style="color:#059669;">Made</span></h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:rgba(5,150,105,0.1); border:1px solid rgba(5,150,105,0.2); color:#059669;">1</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Engineering</span>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:rgba(5,150,105,0.1); border:1px solid rgba(5,150,105,0.2); color:#059669;">2</div>
+          <span style="color:#0A0A0A; font-family:'Space Grotesk';">Fabrication</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <span class="tag" style="background:rgba(16,185,129,0.1); color:#34D399;">New</span>
+      <h3>4 — Midnight Emerald</h3>
+      <p class="desc">Rich, sophisticated. Emerald green (#10B981) on dark forest background. Feels premium, exclusive, and modern. Orange CTA pops hard against green.</p>
+      <div class="swatches">
+        <div class="swatch swatch-border" style="background:#060D0A;"></div>
+        <div class="swatch" style="background:#0D1912;"></div>
+        <div class="swatch" style="background:#10B981;"></div>
+        <div class="swatch" style="background:#059669;"></div>
+        <div class="swatch" style="background:#F97316;"></div>
+        <div class="swatch swatch-border" style="background:#ECFDF5;"></div>
+      </div>
+      <p class="fonts">Space Grotesk + Inter</p>
+    </div>
+  </div>
+
+  <!-- 5. BOLD STATEMENT -->
+  <div class="card" data-choice="5-bold-statement" onclick="toggleSelect(this)">
+    <div class="hero-mock" style="background:#000000;">
+      <div class="glow" style="background:#F97316; opacity:0.08;"></div>
+      <div class="label" style="font-family:'Bebas Neue',sans-serif; color:#F97316; font-size:11px; letter-spacing:5px;">Wholesale Only</div>
+      <div class="line" style="background:#F97316; height:3px; width:50px;"></div>
+      <h2 style="font-family:'Bebas Neue',sans-serif; color:white; font-size:32px; letter-spacing:2px; line-height:1;">PRECISION SIGNAGE,<br><span style="color:#F97316;">WHOLESALE DIRECT.</span></h2>
+      <p style="font-family:'Source Sans 3','Inter',sans-serif; font-size:12px;">German-engineered channel letters, blade signs & illuminated signage.</p>
+      <div class="cta" style="background:#F97316; font-family:'Bebas Neue',sans-serif; font-size:12px; letter-spacing:2px; padding:12px 24px;">REQUEST WHOLESALE PRICING</div>
+    </div>
+    <div class="features" style="background:#000000;">
+      <div class="feat-card" style="background:#0A0A0A; border-color:rgba(249,115,22,0.1);">
+        <div class="feat-icon" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.2); color:#F97316;">★</div>
+        <span style="color:white; font-family:'Bebas Neue'; letter-spacing:1px;">UL 48 LISTED</span>
+        <small style="font-family:'Source Sans 3','Inter';">Code compliant</small>
+      </div>
+      <div class="feat-card" style="background:#0A0A0A; border-color:rgba(249,115,22,0.1);">
+        <div class="feat-icon" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.2); color:#F97316;">⚡</div>
+        <span style="color:white; font-family:'Bebas Neue'; letter-spacing:1px;">3-WEEK DELIVERY</span>
+        <small style="font-family:'Source Sans 3','Inter';">Door to door</small>
+      </div>
+    </div>
+    <div class="light-section" style="background:#FFFFFF;">
+      <div class="line" style="background:#F97316; height:3px; width:32px;"></div>
+      <h3 style="color:#000; font-family:'Bebas Neue'; font-size:14px; letter-spacing:2px;">HOW IT'S <span style="color:#F97316;">MADE</span></h3>
+      <div class="steps">
+        <div class="step" style="border:1px solid #eee;">
+          <div class="step-num" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.2); color:#F97316; font-family:'Bebas Neue';">1</div>
+          <span style="color:#000; font-family:'Bebas Neue'; letter-spacing:1px;">ENGINEERING</span>
+        </div>
+        <div class="step" style="border:1px solid #eee;">
+          <div class="step-num" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.2); color:#F97316; font-family:'Bebas Neue';">2</div>
+          <span style="color:#000; font-family:'Bebas Neue'; letter-spacing:1px;">FABRICATION</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <span class="tag" style="background:rgba(249,115,22,0.1); color:#F97316;">New</span>
+      <h3>5 — Bold Statement</h3>
+      <p class="desc">Dramatic, all-caps display font. Bebas Neue headings on pure black. Orange is the only color. Feels like a high-end industrial brand manifesto. Polarizing but unforgettable.</p>
+      <div class="swatches">
+        <div class="swatch swatch-border" style="background:#000000;"></div>
+        <div class="swatch" style="background:#0A0A0A;"></div>
+        <div class="swatch" style="background:#F97316;"></div>
+        <div class="swatch" style="background:#FB923C;"></div>
+        <div class="swatch swatch-border" style="background:#FFFFFF;"></div>
+        <div class="swatch swatch-border" style="background:#1E293B;"></div>
+      </div>
+      <p class="fonts">Bebas Neue + Source Sans 3</p>
+    </div>
+  </div>
+
+</div>
+
+<div style="max-width:1200px; margin:32px auto 0; padding:16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:8px;">
+  <p style="color:rgba(255,255,255,0.4); font-size:12px; line-height:1.6; text-align:center;">
+    Click one to select — or tell me in the terminal if you want to mix elements (e.g. "emerald colors with Bebas Neue font")
+  </p>
+</div>
+
+</body>
+</html>

@@ -39,7 +39,9 @@
       "Bash(node:*)",
       "Bash(npx tsc:*)",
       "Bash(bash \"C:\\\\Users\\\\ozany\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.2\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\SLS\\\\sunlite-wholesale\")",
-      "Bash(find src:*)"
+      "Bash(find src:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
     ]
   }
 }

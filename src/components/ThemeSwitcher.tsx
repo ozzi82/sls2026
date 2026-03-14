@@ -5,21 +5,37 @@ import { useState, useEffect } from "react";
 const themes = [
   {
     id: "gold",
-    label: "Gold",
+    label: "Warm Gold",
     swatch: "#C9A96E",
+    sub: "Space Grotesk + Inter",
   },
   {
     id: "blue",
-    label: "Blue",
+    label: "Electric Blue",
     swatch: "#38BDF8",
+    sub: "Space Grotesk + Inter",
   },
   {
-    id: "modern",
-    label: "Modern",
-    swatch: "#38BDF8",
-    font: true,
+    id: "red",
+    label: "Industrial Red",
+    swatch: "#DC2626",
+    sub: "Outfit + DM Sans",
+  },
+  {
+    id: "emerald",
+    label: "Midnight Emerald",
+    swatch: "#10B981",
+    sub: "Space Grotesk + Inter",
+  },
+  {
+    id: "bold",
+    label: "Bold Statement",
+    swatch: "#F97316",
+    sub: "Bebas Neue + Source Sans",
   },
 ];
+
+const themeClasses = themes.map((t) => `theme-${t.id}`);
 
 export default function ThemeSwitcher() {
   const [active, setActive] = useState("blue");
@@ -35,9 +51,7 @@ export default function ThemeSwitcher() {
 
   function applyTheme(id: string) {
     const root = document.documentElement;
-
-    // Reset
-    root.classList.remove("theme-gold", "theme-blue", "theme-modern");
+    root.classList.remove(...themeClasses);
     root.classList.add(`theme-${id}`);
     localStorage.setItem("sunlite-theme", id);
   }
@@ -50,13 +64,12 @@ export default function ThemeSwitcher() {
 
   return (
     <div className="fixed bottom-6 right-6 z-[9999]">
-      {/* Expanded panel */}
       {open && (
-        <div className="mb-3 bg-[#111118] border border-white/10 rounded-xl p-4 shadow-2xl shadow-black/50 min-w-[200px]">
+        <div className="mb-3 bg-[#111118] border border-white/10 rounded-xl p-4 shadow-2xl shadow-black/50 min-w-[220px]">
           <p className="text-[10px] font-heading font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
-            Color Scheme
+            Design Template
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5">
             {themes.map((theme) => (
               <button
                 key={theme.id}
@@ -81,11 +94,9 @@ export default function ThemeSwitcher() {
                   <span className="text-sm text-white font-medium block leading-tight">
                     {theme.label}
                   </span>
-                  {theme.font && (
-                    <span className="text-[10px] text-white/40 leading-tight">
-                      Outfit + DM Sans
-                    </span>
-                  )}
+                  <span className="text-[10px] text-white/40 leading-tight">
+                    {theme.sub}
+                  </span>
                 </div>
               </button>
             ))}
@@ -93,7 +104,6 @@ export default function ThemeSwitcher() {
         </div>
       )}
 
-      {/* Toggle button */}
       <button
         onClick={() => setOpen(!open)}
         className="w-12 h-12 rounded-full bg-[#111118] border border-white/10 shadow-lg shadow-black/30 flex items-center justify-center hover:border-white/20 transition-all group"
