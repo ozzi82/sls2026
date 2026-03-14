@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunlite Signs — Homepage Redesign Sample</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #38BDF8;
+    --accent-dark: #0284C7;
+    --cta: #F97316;
+    --cta-hover: #FB923C;
+    --bg: #0A0A0A;
+    --card: #111118;
+    --light: #F0F9FF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+  .heading { font-family: 'Space Grotesk', sans-serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: rgba(10,10,10,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 0 64px; height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-family: 'Space Grotesk'; font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.5); font-size: 13px; text-decoration: none; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: white; }
+  .nav-cta { background: var(--cta); color: white; padding: 10px 24px; border-radius: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: all 0.2s; }
+  .nav-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 64px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0A0A0A 0%, #0A0A1A 50%, #0A0A0A 100%);
+  }
+  .hero-glow-1 { position: absolute; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(56,189,248,0.06), transparent 60%); }
+  .hero-glow-2 { position: absolute; bottom: -200px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(249,115,22,0.04), transparent 60%); }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.15);
+    border-radius: 100px; padding: 6px 16px 6px 8px; margin-bottom: 24px;
+  }
+  .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .hero-badge span { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; }
+  .hero h1 { font-family: 'Space Grotesk'; font-size: 56px; font-weight: 700; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 20px; }
+  .hero h1 .highlight { color: var(--accent); }
+  .hero .subtitle { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
+  .hero-buttons { display: flex; gap: 16px; align-items: center; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--cta), var(--cta-hover));
+    color: white; padding: 16px 36px; border-radius: 8px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 0 40px rgba(249,115,22,0.2);
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(249,115,22,0.35); }
+  .btn-secondary {
+    color: rgba(255,255,255,0.6); padding: 16px 36px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none; border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Hero right: Product showcase */
+  .hero-visual { position: relative; }
+  .hero-card-main {
+    background: var(--card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .hero-card-image { height: 260px; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-card-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--card), transparent 50%); }
+  .hero-card-image-text { color: rgba(255,255,255,0.15); font-size: 14px; font-family: 'Space Grotesk'; text-transform: uppercase; letter-spacing: 4px; }
+  .hero-card-body { padding: 24px; }
+  .hero-card-tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 10px; border-radius: 4px; background: rgba(56,189,248,0.1); color: var(--accent); border: 1px solid rgba(56,189,248,0.15); margin-bottom: 12px; }
+  .hero-card-title { font-family: 'Space Grotesk'; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .hero-card-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+  .hero-card-float {
+    position: absolute; top: -20px; right: -30px;
+    background: var(--card); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 16px 20px; min-width: 180px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+  }
+  .hero-card-float-label { font-size: 9px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
+  .hero-card-float-value { font-family: 'Space Grotesk'; font-size: 28px; font-weight: 700; color: var(--accent); }
+  .hero-card-float-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .hero-card-float-2 {
+    position: absolute; bottom: 40px; left: -40px;
+    background: var(--card); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 14px 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .float-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.15); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 16px; }
+  .float-text span { display: block; font-size: 12px; font-weight: 600; }
+  .float-text small { font-size: 10px; color: rgba(255,255,255,0.3); }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    padding: 0 64px;
+    margin-top: -1px;
+  }
+  .trust-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; overflow: hidden;
+  }
+  .trust-item {
+    padding: 32px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.3s;
+  }
+  .trust-item:last-child { border-right: none; }
+  .trust-item:hover { background: rgba(255,255,255,0.02); }
+  .trust-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--accent); font-size: 18px; }
+  .trust-value { font-family: 'Space Grotesk'; font-size: 32px; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+  .trust-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.3); font-weight: 600; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(56,189,248,0.2), transparent); margin: 80px 64px; }
+
+  /* ── PRODUCTS ── */
+  .products { padding: 0 64px; max-width: 1528px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 64px; }
+  .section-line { width: 48px; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); margin: 0 auto 24px; }
+  .section-header h2 { font-family: 'Space Grotesk'; font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; }
+  .section-header h2 .hl { color: var(--accent); }
+  .section-header p { color: rgba(255,255,255,0.4); font-size: 15px; max-width: 420px; margin: 0 auto; }
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .product-card {
+    position: relative; background: var(--card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; overflow: hidden; cursor: pointer;
+    transition: all 0.4s;
+  }
+  .product-card:hover { border-color: rgba(56,189,248,0.2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .product-image { height: 200px; background: linear-gradient(135deg, #141428, #1a1a2e); display: flex; align-items: center; justify-content: center; position: relative; }
+  .product-image span { color: rgba(255,255,255,0.08); font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-family: 'Space Grotesk'; }
+  .product-image::after { content:''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, var(--card), transparent); }
+  .product-tag { position: absolute; top: 12px; right: 12px; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; background: rgba(249,115,22,0.15); color: var(--cta); border: 1px solid rgba(249,115,22,0.2); z-index: 2; }
+  .product-body { padding: 20px; }
+  .product-name { font-family: 'Space Grotesk'; font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .product-desc { font-size: 12px; color: rgba(255,255,255,0.35); }
+  .product-arrow { position: absolute; bottom: 20px; right: 20px; width: 28px; height: 28px; border-radius: 6px; background: rgba(56,189,248,0.08); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 14px; opacity: 0; transition: opacity 0.3s; }
+  .product-card:hover .product-arrow { opacity: 1; }
+
+  /* ── STORY / LIGHT SECTION ── */
+  .story { padding: 0 64px; }
+  .story-inner {
+    max-width: 1400px; margin: 0 auto;
+    background: var(--light); border-radius: 24px; overflow: hidden;
+    padding: 80px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center;
+  }
+  .story-image { aspect-ratio: 4/3; border-radius: 12px; background: linear-gradient(135deg, #d1d5db, #e5e7eb); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .story-image span { color: rgba(0,0,0,0.15); font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-family: 'Space Grotesk'; }
+  .story-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent-dark); margin-bottom: 16px; }
+  .story h2 { font-family: 'Space Grotesk'; font-size: 38px; font-weight: 700; color: #0A0A0A; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+  .story h2 .hl { color: var(--accent-dark); }
+  .story p { color: rgba(10,10,10,0.5); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+  .story-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-dark); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; margin-top: 12px; }
+
+  /* ── ENGINEERING ── */
+  .engineering { padding: 0 64px; max-width: 1528px; margin: 0 auto; }
+  .eng-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+  .eng-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 16px; }
+  .eng-grid h2 { font-family: 'Space Grotesk'; font-size: 42px; font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+  .eng-grid h2 .hl { color: var(--accent); }
+  .eng-grid > div > p { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+  .eng-services { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .eng-service { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.45); }
+  .eng-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border: 1px solid rgba(56,189,248,0.3);
+    border-radius: 8px; color: var(--accent); font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(56,189,248,0.08); border-color: var(--accent); }
+  .eng-image { aspect-ratio: 4/3; border-radius: 12px; background: linear-gradient(135deg, #141428, #1a1a2e); display: flex; align-items: center; justify-content: center; position: relative; }
+  .eng-image span { color: rgba(255,255,255,0.08); font-size: 12px; text-transform: uppercase; letter-spacing: 3px; font-family: 'Space Grotesk'; }
+  .eng-corner { position: absolute; top: -12px; left: -12px; width: 60px; height: 60px; border-top: 2px solid rgba(56,189,248,0.3); border-left: 2px solid rgba(56,189,248,0.3); border-top-left-radius: 12px; }
+
+  /* ── CTA ── */
+  .cta-section { padding: 80px 64px; }
+  .cta-inner {
+    max-width: 1400px; margin: 0 auto;
+    background: linear-gradient(135deg, var(--card), #0F0F2D);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 24px; text-align: center; padding: 80px 40px;
+    position: relative; overflow: hidden;
+  }
+  .cta-glow { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(56,189,248,0.06), transparent 70%); }
+  .cta-inner > * { position: relative; z-index: 1; }
+  .cta-badge { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(56,189,248,0.2); border-radius: 100px; padding: 6px 16px; margin-bottom: 32px; }
+  .cta-badge span { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 600; }
+  .cta-inner h2 { font-family: 'Space Grotesk'; font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+  .cta-inner h2 .hl { color: var(--accent); }
+  .cta-inner > p { color: rgba(255,255,255,0.4); max-width: 420px; margin: 0 auto 40px; font-size: 15px; line-height: 1.6; }
+  .cta-buttons { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; }
+  .cta-info { display: flex; justify-content: center; gap: 24px; font-size: 12px; color: rgba(255,255,255,0.2); }
+  .cta-info span { display: flex; align-items: center; gap: 4px; }
+
+  /* ── FOOTER NOTE ── */
+  .sample-note {
+    position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 999;
+    background: var(--cta); color: white; font-size: 12px; font-weight: 700;
+    padding: 8px 24px; border-radius: 100px; letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(249,115,22,0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-note">DESIGN SAMPLE — Not Live</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo heading">SUNLITE <span>SIGNS</span></div>
+  <div class="nav-links">
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Wholesale Only — Trade Accounts</span>
+      </div>
+      <h1 class="heading">Precision Signage,<br><span class="highlight">Exclusively Wholesale.</span></h1>
+      <p class="subtitle">German-engineered channel letters, blade signs & illuminated signage — built for sign shops across the USA and Canada. We never sell retail.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Request Wholesale Pricing →</a>
+        <a href="#" class="btn-secondary">View Products</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <div class="hero-card-image">
+          <span class="hero-card-image-text">Product Photo</span>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-card-tag">Most Popular</div>
+          <div class="hero-card-title heading">EdgeLuxe Channel Letters</div>
+          <div class="hero-card-desc">12 styles across 4 families. Face-lit, halo-lit, trimless & stainless steel.</div>
+        </div>
+      </div>
+      <div class="hero-card-float">
+        <div class="hero-card-float-label">Delivery</div>
+        <div class="hero-card-float-value heading">3 Wk</div>
+        <div class="hero-card-float-sub">Door to door, USA & Canada</div>
+      </div>
+      <div class="hero-card-float-2">
+        <div class="float-icon">✓</div>
+        <div class="float-text">
+          <span>UL 48 Listed</span>
+          <small>Every product certified</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">🛡</div>
+      <div class="trust-value heading">UL 48</div>
+      <div class="trust-label">Listed & Certified</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      <div class="trust-value heading">24h</div>
+      <div class="trust-label">Quote Turnaround</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚛</div>
+      <div class="trust-value heading">3 Wk</div>
+      <div class="trust-label">Door-to-Door</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🌎</div>
+      <div class="trust-value heading">US/CA</div>
+      <div class="trust-label">Nationwide Shipping</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="section-header">
+    <div class="section-line"></div>
+    <h2 class="heading">What We <span class="hl">Build</span></h2>
+    <p>Precision-engineered signage solutions, manufactured exclusively for the trade.</p>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image"><span>Channel Letters</span><div class="product-tag">Most Popular</div></div>
+      <div class="product-body">
+        <div class="product-name heading">Channel Letters</div>
+        <div class="product-desc">Face lit, halo lit & combination LED illumination</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><span>Trimless</span><div class="product-tag">Premium</div></div>
+      <div class="product-body">
+        <div class="product-name heading">EdgeLuxe Trimless</div>
+        <div class="product-desc">1.2" profile, embedded LEDs, no trim cap</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><span>Flat Cut</span></div>
+      <div class="product-body">
+        <div class="product-name heading">Flat Cut Letters</div>
+        <div class="product-desc">Precision-cut aluminum & stainless steel</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><span>Blade Signs</span></div>
+      <div class="product-body">
+        <div class="product-name heading">Blade Signs</div>
+        <div class="product-desc">Projecting signs for maximum visibility</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><span>Cabinet Signs</span></div>
+      <div class="product-body">
+        <div class="product-name heading">Cabinet Signs</div>
+        <div class="product-desc">Illuminated cabinet & push-through signage</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><span>SEG Light Boxes</span><div class="product-tag">New</div></div>
+      <div class="product-body">
+        <div class="product-name heading">SEG Light Boxes</div>
+        <div class="product-desc">Silicone-edged graphic displays from 1" deep</div>
+      </div>
+      <div class="product-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-image"><span>Team Photo</span></div>
+    <div>
+      <div class="story-label">Our Story</div>
+      <h2 class="heading">Custom European Signage, <span class="hl">Wholesale.</span></h2>
+      <p>The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering — and a commitment to never compete with our customers.</p>
+      <p>From LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.</p>
+      <a href="#" class="story-link">Read Our Story →</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ENGINEERING -->
+<section class="engineering">
+  <div class="eng-grid">
+    <div>
+      <div class="eng-label">Included with Every Project</div>
+      <h2 class="heading">Complimentary <span class="hl">Engineering.</span></h2>
+      <p>With our German design and engineering roots, we contribute complimentary engineering services to every project — from structural and material sciences to manufacturing engineering.</p>
+      <div class="eng-services">
+        <div class="eng-service"><div class="eng-dot"></div> Concept & Materials</div>
+        <div class="eng-service"><div class="eng-dot"></div> Structural Engineering</div>
+        <div class="eng-service"><div class="eng-dot"></div> Electrical Layout</div>
+        <div class="eng-service"><div class="eng-dot"></div> Manufacturing Engineering</div>
+      </div>
+      <a href="#" class="btn-outline">Explore Services →</a>
+    </div>
+    <div style="position:relative;">
+      <div class="eng-corner"></div>
+      <div class="eng-image"><span>Engineering Photo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-glow"></div>
+    <div class="cta-badge">
+      <span>🔒 Trade Accounts Only</span>
+    </div>
+    <h2 class="heading">Get Your Product <span class="hl">Started.</span></h2>
+    <p>Request wholesale pricing for your next project. Detailed quotes within 24 hours. Delivered in 3 weeks door to door.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">Request Wholesale Pricing →</a>
+      <a href="#" class="btn-secondary">📞 (689) 294-0912</a>
+    </div>
+    <div class="cta-info">
+      <span>(689) 294-0912</span>
+      <span>|</span>
+      <span>hello@sunlitesigns.com</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

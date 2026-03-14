@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunlite Signs — Homepage Redesign V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #38BDF8;
+    --accent-dark: #0284C7;
+    --accent-glow: rgba(56,189,248,0.08);
+    --cta: #F97316;
+    --cta-hover: #FB923C;
+    --bg: #06060A;
+    --card: #0E0E16;
+    --card-border: rgba(255,255,255,0.05);
+    --light: #F0F9FF;
+    --text-muted: rgba(255,255,255,0.45);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:#fff; font-family:'Inter',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  .h { font-family:'Space Grotesk',sans-serif; }
+  img { display:block; width:100%; height:100%; object-fit:cover; }
+
+  /* ─── SAMPLE BANNER ─── */
+  .banner { position:fixed; top:12px; left:50%; transform:translateX(-50%); z-index:9999; background:var(--cta); color:#fff; font-size:11px; font-weight:700; padding:7px 20px; border-radius:100px; letter-spacing:0.5px; box-shadow:0 4px 20px rgba(249,115,22,0.3); }
+
+  /* ─── NAV ─── */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 48px; background:rgba(6,6,10,0.8); backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,0.04); }
+  .logo { font-family:'Space Grotesk'; font-weight:700; font-size:18px; letter-spacing:-0.3px; display:flex; align-items:center; gap:8px; }
+  .logo-mark { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg, var(--accent), var(--accent-dark)); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; }
+  .nav-links { display:flex; gap:28px; align-items:center; }
+  .nav-links a { color:rgba(255,255,255,0.45); font-size:13px; font-weight:500; text-decoration:none; transition:color 0.2s; }
+  .nav-links a:hover { color:#fff; }
+  .nav-cta { background:var(--cta)!important; color:#fff!important; padding:9px 22px; border-radius:6px; font-size:11px!important; font-weight:700!important; text-transform:uppercase; letter-spacing:0.8px; }
+
+  /* ─── HERO ─── */
+  .hero { position:relative; min-height:100vh; display:flex; align-items:flex-end; overflow:hidden; }
+  .hero-img { position:absolute; inset:0; }
+  .hero-img img { width:100%; height:100%; object-fit:cover; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(6,6,10,0.95) 0%, rgba(6,6,10,0.6) 40%, rgba(6,6,10,0.3) 70%, rgba(6,6,10,0.4) 100%); }
+  .hero-overlay-r { position:absolute; inset:0; background:linear-gradient(to right, rgba(6,6,10,0.7) 0%, transparent 60%); }
+  .hero-content { position:relative; z-index:2; width:100%; max-width:1400px; margin:0 auto; padding:0 48px 100px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; }
+  .hero-left {}
+  .hero-pill { display:inline-flex; align-items:center; gap:8px; background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.12); border-radius:100px; padding:6px 16px 6px 10px; margin-bottom:28px; }
+  .hero-pill-dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent); animation:blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+  .hero-pill span { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--accent); }
+  .hero h1 { font-family:'Space Grotesk'; font-size:52px; font-weight:700; line-height:1.05; letter-spacing:-2px; margin-bottom:20px; }
+  .hero h1 em { font-style:normal; color:var(--accent); }
+  .hero-sub { font-size:15px; color:var(--text-muted); line-height:1.7; max-width:440px; margin-bottom:32px; }
+  .hero-btns { display:flex; gap:14px; }
+  .btn-p { background:linear-gradient(135deg,var(--cta),var(--cta-hover)); color:#fff; padding:15px 32px; border-radius:8px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; text-decoration:none; box-shadow:0 0 30px rgba(249,115,22,0.2); transition:all 0.3s; display:inline-flex; align-items:center; gap:8px; }
+  .btn-p:hover { transform:translateY(-2px); box-shadow:0 0 50px rgba(249,115,22,0.35); }
+  .btn-s { padding:15px 32px; border-radius:8px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.8px; text-decoration:none; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.12); transition:all 0.3s; }
+  .btn-s:hover { border-color:var(--accent); color:var(--accent); }
+
+  /* Hero right: stats cards */
+  .hero-right { display:flex; flex-direction:column; gap:12px; }
+  .hero-stat { display:flex; align-items:center; gap:16px; background:rgba(14,14,22,0.85); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:20px 24px; transition:all 0.3s; }
+  .hero-stat:hover { border-color:rgba(56,189,248,0.15); background:rgba(14,14,22,0.95); }
+  .stat-icon { width:44px; height:44px; border-radius:10px; background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .stat-icon svg { width:20px; height:20px; color:var(--accent); stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .stat-val { font-family:'Space Grotesk'; font-size:24px; font-weight:700; color:var(--accent); }
+  .stat-lbl { font-size:11px; color:rgba(255,255,255,0.35); margin-top:2px; }
+
+  /* ─── MARQUEE ─── */
+  .marquee { overflow:hidden; border-top:1px solid rgba(56,189,248,0.06); border-bottom:1px solid rgba(56,189,248,0.06); padding:14px 0; background:var(--bg); }
+  .marquee-track { display:flex; animation:scroll 30s linear infinite; }
+  @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee-item { display:flex; align-items:center; white-space:nowrap; margin:0 24px; }
+  .marquee-item span { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:2.5px; color:rgba(56,189,248,0.35); }
+  .marquee-item::after { content:'◆'; margin-left:24px; font-size:6px; color:rgba(56,189,248,0.15); }
+
+  /* ─── PRODUCTS ─── */
+  .products { padding:100px 48px; max-width:1496px; margin:0 auto; }
+  .sec-head { text-align:center; margin-bottom:56px; }
+  .sec-line { width:48px; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent-dark)); margin:0 auto 20px; border-radius:2px; }
+  .sec-head h2 { font-family:'Space Grotesk'; font-size:44px; font-weight:700; letter-spacing:-1px; margin-bottom:10px; }
+  .sec-head h2 em { font-style:normal; color:var(--accent); }
+  .sec-head p { color:var(--text-muted); font-size:15px; }
+  .pgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .pcard { position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--card-border); background:var(--card); cursor:pointer; transition:all 0.4s; }
+  .pcard:hover { border-color:rgba(56,189,248,0.15); transform:translateY(-4px); box-shadow:0 24px 64px rgba(0,0,0,0.5); }
+  .pcard-img { position:relative; height:220px; overflow:hidden; }
+  .pcard-img img { transition:transform 0.7s; }
+  .pcard:hover .pcard-img img { transform:scale(1.06); }
+  .pcard-img::after { content:''; position:absolute; bottom:0; left:0; right:0; height:60%; background:linear-gradient(to top, var(--card), transparent); }
+  .pcard-tag { position:absolute; top:12px; right:12px; z-index:2; font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:4px 10px; border-radius:4px; background:rgba(249,115,22,0.12); color:var(--cta); border:1px solid rgba(249,115,22,0.2); }
+  .pcard-body { padding:20px; }
+  .pcard-name { font-family:'Space Grotesk'; font-size:17px; font-weight:700; margin-bottom:4px; }
+  .pcard-desc { font-size:12px; color:rgba(255,255,255,0.3); }
+  .pcard-arrow { position:absolute; bottom:18px; right:18px; width:28px; height:28px; border-radius:7px; background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.1); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; color:var(--accent); font-size:13px; }
+  .pcard:hover .pcard-arrow { opacity:1; }
+
+  /* ─── DIVIDER ─── */
+  .div { height:1px; background:linear-gradient(to right,transparent,rgba(56,189,248,0.15),transparent); margin:0 48px; }
+
+  /* ─── STORY ─── */
+  .story { padding:100px 48px; }
+  .story-box { max-width:1400px; margin:0 auto; background:var(--light); border-radius:24px; overflow:hidden; display:grid; grid-template-columns:1.2fr 0.8fr; }
+  .story-img { position:relative; min-height:440px; }
+  .story-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .story-text { padding:64px 56px; display:flex; flex-direction:column; justify-content:center; }
+  .story-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; color:var(--accent-dark); margin-bottom:16px; }
+  .story-text h2 { font-family:'Space Grotesk'; font-size:36px; font-weight:700; color:#0A0A0A; line-height:1.1; letter-spacing:-0.5px; margin-bottom:16px; }
+  .story-text h2 em { font-style:normal; color:var(--accent-dark); }
+  .story-text p { font-size:14px; color:rgba(10,10,10,0.5); line-height:1.7; margin-bottom:8px; }
+  .story-link { display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--accent-dark); text-decoration:none; }
+
+  /* ─── ENGINEERING ─── */
+  .eng { padding:100px 48px; max-width:1496px; margin:0 auto; }
+  .eng-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center; }
+  .eng-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; color:var(--accent); margin-bottom:16px; }
+  .eng h2 { font-family:'Space Grotesk'; font-size:40px; font-weight:700; line-height:1.1; letter-spacing:-0.5px; margin-bottom:16px; }
+  .eng h2 em { font-style:normal; color:var(--accent); }
+  .eng-p { color:var(--text-muted); font-size:14px; line-height:1.7; margin-bottom:24px; }
+  .eng-list { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:28px; }
+  .eng-item { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-muted); }
+  .eng-item::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+  .btn-o { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border:1px solid rgba(56,189,248,0.25); border-radius:8px; color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; text-decoration:none; transition:all 0.3s; }
+  .btn-o:hover { background:rgba(56,189,248,0.06); border-color:var(--accent); }
+  .eng-img-wrap { position:relative; }
+  .eng-img { border-radius:14px; overflow:hidden; aspect-ratio:4/3; }
+  .eng-corner { position:absolute; top:-10px; left:-10px; width:50px; height:50px; border-top:2px solid rgba(56,189,248,0.25); border-left:2px solid rgba(56,189,248,0.25); border-top-left-radius:10px; }
+
+  /* ─── CTA ─── */
+  .cta { padding:40px 48px 100px; }
+  .cta-box { max-width:1400px; margin:0 auto; background:linear-gradient(135deg, var(--card) 0%, #0F0F28 100%); border:1px solid var(--card-border); border-radius:24px; text-align:center; padding:80px 48px; position:relative; overflow:hidden; }
+  .cta-glow { position:absolute; top:-80px; left:50%; transform:translateX(-50%); width:500px; height:250px; background:radial-gradient(ellipse, var(--accent-glow), transparent 70%); }
+  .cta-box > * { position:relative; z-index:1; }
+  .cta-pill { display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(56,189,248,0.15); border-radius:100px; padding:6px 16px; margin-bottom:28px; }
+  .cta-pill span { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--accent); font-weight:600; }
+  .cta-box h2 { font-family:'Space Grotesk'; font-size:44px; font-weight:700; letter-spacing:-1px; margin-bottom:14px; }
+  .cta-box h2 em { font-style:normal; color:var(--accent); }
+  .cta-box > p { color:var(--text-muted); max-width:400px; margin:0 auto 36px; font-size:14px; line-height:1.7; }
+  .cta-btns { display:flex; justify-content:center; gap:14px; margin-bottom:32px; }
+  .cta-contact { display:flex; justify-content:center; gap:20px; font-size:12px; color:rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+
+<div class="banner">DESIGN SAMPLE — Preview Only</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><div class="logo-mark h">S</div> SUNLITE <span style="color:var(--accent)">SIGNS</span></div>
+  <div class="nav-links">
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"><img src="/hero-bg1.jpg" alt="Channel letters"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-r"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>
+        <span>Wholesale Only — Trade Accounts</span>
+      </div>
+      <h1 class="h">Precision Signage,<br><em>Exclusively Wholesale.</em></h1>
+      <p class="hero-sub">German-engineered channel letters, blade signs & illuminated signage — built for sign shops across the USA and Canada. We never sell retail.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-p">Request Wholesale Pricing <span>→</span></a>
+        <a href="#" class="btn-s">View Products</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="stat-val h">UL 48</div><div class="stat-lbl">Listed & Certified</div></div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><div class="stat-val h">24h</div><div class="stat-lbl">Quote Turnaround</div></div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div><div class="stat-val h">3 Wk</div><div class="stat-lbl">Door-to-Door Delivery</div></div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div><div class="stat-val h">US/CA</div><div class="stat-lbl">Nationwide Shipping</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Wholesale Only</span></div>
+    <div class="marquee-item"><span>UL 48 Listed</span></div>
+    <div class="marquee-item"><span>24-Hour Quotes</span></div>
+    <div class="marquee-item"><span>3-Week Delivery</span></div>
+    <div class="marquee-item"><span>USA & Canada</span></div>
+    <div class="marquee-item"><span>German Engineering</span></div>
+    <div class="marquee-item"><span>Trade Accounts</span></div>
+    <div class="marquee-item"><span>No Retail Sales</span></div>
+    <div class="marquee-item"><span>Wholesale Only</span></div>
+    <div class="marquee-item"><span>UL 48 Listed</span></div>
+    <div class="marquee-item"><span>24-Hour Quotes</span></div>
+    <div class="marquee-item"><span>3-Week Delivery</span></div>
+    <div class="marquee-item"><span>USA & Canada</span></div>
+    <div class="marquee-item"><span>German Engineering</span></div>
+    <div class="marquee-item"><span>Trade Accounts</span></div>
+    <div class="marquee-item"><span>No Retail Sales</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="sec-head">
+    <div class="sec-line"></div>
+    <h2 class="h">What We <em>Build</em></h2>
+    <p>Precision-engineered signage solutions, manufactured exclusively for the trade.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="pcard-img"><img src="/homepage-channel-letters.jpg" alt="Channel Letters"><div class="pcard-tag">Most Popular</div></div>
+      <div class="pcard-body"><div class="pcard-name h">Channel Letters</div><div class="pcard-desc">Face lit, halo lit & combination LED illumination</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-img"><img src="/hero-bg1.jpg" alt="EdgeLuxe Trimless"><div class="pcard-tag">Premium</div></div>
+      <div class="pcard-body"><div class="pcard-name h">EdgeLuxe Trimless</div><div class="pcard-desc">1.2" profile, embedded LEDs, no trim cap</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-img"><img src="/hero-bg4.jpg" alt="Flat Cut Letters"></div>
+      <div class="pcard-body"><div class="pcard-name h">Flat Cut Letters</div><div class="pcard-desc">Precision-cut aluminum & stainless steel letterforms</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-img"><img src="/homepage-blade-cabinet.jpg" alt="Blade Signs"></div>
+      <div class="pcard-body"><div class="pcard-name h">Blade Signs</div><div class="pcard-desc">Projecting signs for maximum storefront visibility</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-img"><img src="/hero-bg3.jpg" alt="Cabinet Signs"></div>
+      <div class="pcard-body"><div class="pcard-name h">Cabinet Signs</div><div class="pcard-desc">Illuminated cabinet & push-through signage</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-img"><img src="/homepage-seg.jpg" alt="SEG Light Boxes"><div class="pcard-tag">New</div></div>
+      <div class="pcard-body"><div class="pcard-name h">SEG Light Boxes</div><div class="pcard-desc">Silicone-edged graphic displays from 1" deep</div></div>
+      <div class="pcard-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-box">
+    <div class="story-img"><img src="/homepage-story.png" alt="Sunlite Signs team and LKF partnership"></div>
+    <div class="story-text">
+      <div class="story-label">Our Story</div>
+      <h2 class="h">Custom European Signage, <em>Wholesale.</em></h2>
+      <p>The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering — and a commitment to never compete with our customers.</p>
+      <p>From LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.</p>
+      <a href="#" class="story-link">Read Our Story →</a>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ENGINEERING -->
+<section class="eng">
+  <div class="eng-grid">
+    <div>
+      <div class="eng-label">Included with Every Project</div>
+      <h2 class="h">Complimentary <em>Engineering.</em></h2>
+      <p class="eng-p">With our German design and engineering roots, we contribute complimentary engineering services to every project — from conceptual integration of structural and material sciences, to manufacturing engineering and packaging.</p>
+      <div class="eng-list">
+        <div class="eng-item">Concept & Materials</div>
+        <div class="eng-item">Structural Engineering</div>
+        <div class="eng-item">Electrical Layout</div>
+        <div class="eng-item">Manufacturing Engineering</div>
+      </div>
+      <a href="#" class="btn-o">Explore Services →</a>
+    </div>
+    <div class="eng-img-wrap">
+      <div class="eng-corner"></div>
+      <div class="eng-img"><img src="/homepage-engineering.jpg" alt="Sunlite Signs engineering team"></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-box">
+    <div class="cta-glow"></div>
+    <div class="cta-pill"><span>Trade Accounts Only</span></div>
+    <h2 class="h">Get Your Product <em>Started.</em></h2>
+    <p>Request wholesale pricing for your next project. Detailed quotes within 24 hours. Delivered in 3 weeks door to door.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-p">Request Wholesale Pricing →</a>
+      <a href="#" class="btn-s">☎ (689) 294-0912</a>
+    </div>
+    <div class="cta-contact">
+      <span>(689) 294-0912</span>
+      <span>|</span>
+      <span>hello@sunlitesigns.com</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

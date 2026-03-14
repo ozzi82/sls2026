@@ -41,7 +41,14 @@
       "Bash(bash \"C:\\\\Users\\\\ozany\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.2\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\SLS\\\\sunlite-wholesale\")",
       "Bash(find src:*)",
       "Bash(python3:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(cd:*)",
+      "Bash(for f:*)",
+      "Bash(taskkill:*)",
+      "Bash(for dir:*)",
+      "Read(//c/SLS/sunlite-wholesale/$dir/**)",
+      "Bash(done)"
     ]
   }
 }
