@@ -26,5 +26,5 @@ export default function StaticPageEditor() {
   if (loading) return <p className="text-gray-500 p-8">Loading...</p>;
   if (error || !config) return <p className="text-red-500 p-8">Error: {error || "Config not found"}</p>;
 
-  return <BlockEditor config={config} apiBase="/api/admin/static-pages" backHref="/admin" />;
+  return <BlockEditor config={config} fileSlug={slug} apiBase="/api/admin/static-pages" backHref="/admin" />;
 }

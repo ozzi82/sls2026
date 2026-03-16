@@ -41,12 +41,16 @@ export function loadStaticPageConfig(fileSlug: string): PageConfig {
 }
 
 // Product page configs
-export function getAllProductConfigs(): PageConfig[] {
+export function getAllProductConfigs(): (PageConfig & { fileSlug: string })[] {
   ensureDir(PRODUCTS_DIR);
   const files = fs.readdirSync(PRODUCTS_DIR).filter((f) => f.endsWith(".json"));
   return files
-    .map((f) => readConfigFile(path.join(PRODUCTS_DIR, f)))
-    .filter((c): c is PageConfig => c !== null);
+    .map((f) => {
+      const config = readConfigFile(path.join(PRODUCTS_DIR, f));
+      if (!config) return null;
+      return { ...config, fileSlug: f.replace(".json", "") };
+    })
+    .filter((c): c is PageConfig & { fileSlug: string } => c !== null);
 }
 
 export function getProductConfig(fileSlug: string): PageConfig | null {
@@ -63,12 +67,16 @@ export function updateProductConfig(fileSlug: string, config: PageConfig): { suc
 }
 
 // Static page configs
-export function getAllStaticConfigs(): PageConfig[] {
+export function getAllStaticConfigs(): (PageConfig & { fileSlug: string })[] {
   ensureDir(PAGES_DIR);
   const files = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".json"));
   return files
-    .map((f) => readConfigFile(path.join(PAGES_DIR, f)))
-    .filter((c): c is PageConfig => c !== null);
+    .map((f) => {
+      const config = readConfigFile(path.join(PAGES_DIR, f));
+      if (!config) return null;
+      return { ...config, fileSlug: f.replace(".json", "") };
+    })
+    .filter((c): c is PageConfig & { fileSlug: string } => c !== null);
 }
 
 export function getStaticConfig(fileSlug: string): PageConfig | null {

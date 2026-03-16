@@ -7,6 +7,7 @@ export async function GET() {
   const configs = getAllProductConfigs();
   const pages = configs.map((c) => ({
     slug: c.slug,
+    fileSlug: c.fileSlug,
     label: c.label,
     route: c.slug.startsWith("/") ? c.slug : `/${c.slug}`,
     blockCount: c.blocks.length,

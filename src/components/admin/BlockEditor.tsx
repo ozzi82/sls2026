@@ -13,11 +13,12 @@ import { PageConfig, Block } from "@/lib/admin/page-config-types";
 
 interface BlockEditorProps {
   config: PageConfig;
+  fileSlug: string;
   apiBase: string;
   backHref: string;
 }
 
-export default function BlockEditor({ config: initial, apiBase, backHref }: BlockEditorProps) {
+export default function BlockEditor({ config: initial, fileSlug, apiBase, backHref }: BlockEditorProps) {
   const router = useRouter();
   const [config, setConfig] = useState<PageConfig>(initial);
   const [seoOpen, setSeoOpen] = useState(false);
@@ -41,8 +42,6 @@ export default function BlockEditor({ config: initial, apiBase, backHref }: Bloc
     setSaving(true);
     setMessage(null);
     try {
-      // Derive fileSlug from the config slug for the API call
-      const fileSlug = config.slug.replace(/^\//, "").replace(/\//g, "--");
       const res = await fetch(`${apiBase}/${fileSlug}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

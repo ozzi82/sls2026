@@ -40,6 +40,7 @@ interface Hub {
 // Product/static page types (new)
 interface PageConfigSummary {
   slug: string;
+  fileSlug: string;
   label: string;
   route: string;
   blockCount: number;
@@ -187,10 +188,7 @@ export default function AdminDashboard() {
                     <TableRow
                       key={page.slug}
                       className="cursor-pointer hover:bg-gray-50"
-                      onClick={() => {
-                        const fileSlug = page.slug.replace(/^\//, "").replace(/\//g, "--");
-                        router.push(`/admin/products/${fileSlug}`);
-                      }}
+                      onClick={() => router.push(`/admin/products/${page.fileSlug}`)}
                     >
                       <TableCell className="font-medium">{page.label}</TableCell>
                       <TableCell className="text-gray-500 font-mono text-sm">{page.route}</TableCell>
@@ -343,10 +341,7 @@ export default function AdminDashboard() {
                     <TableRow
                       key={page.slug}
                       className="cursor-pointer hover:bg-gray-50"
-                      onClick={() => {
-                        const fileSlug = page.slug.replace(/^\//, "").replace(/\//g, "--");
-                        router.push(`/admin/static/${fileSlug}`);
-                      }}
+                      onClick={() => router.push(`/admin/static/${page.fileSlug}`)}
                     >
                       <TableCell className="font-medium">{page.label}</TableCell>
                       <TableCell className="text-gray-500 font-mono text-sm">{page.route}</TableCell>
