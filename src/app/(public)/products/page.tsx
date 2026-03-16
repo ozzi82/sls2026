@@ -27,16 +27,16 @@ export default function ProductsPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; ctas: { label: string; href: string; variant: string }[] };
-  const statsBlock = getBlock("stats_strip")!;
-  const statsData = statsBlock.data as { items: { icon: string; label: string }[] };
-  const productTypesBlock = getBlock("product_types")!;
-  const productTypesData = productTypesBlock.data as { heading: string; items: { name: string; description: string; href?: string; image?: string }[] };
-  const ctaBlock = getBlock("cta")!;
-  const ctaData = ctaBlock.data as { heading: string; headingHighlight?: string; description: string };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; ctas: { label: string; href: string; variant: string }[] };
+  const statsBlock = getBlock("stats_strip");
+  const statsData = statsBlock?.data as { items: { icon: string; label: string }[] };
+  const productTypesBlock = getBlock("product_types");
+  const productTypesData = productTypesBlock?.data as { heading: string; items: { name: string; description: string; href?: string; image?: string }[] };
+  const ctaBlock = getBlock("cta");
+  const ctaData = ctaBlock?.data as { heading: string; headingHighlight?: string; description: string };
 
-  const productCategories = productTypesData.items.map((item) => ({
+  const productCategories = (productTypesData?.items || []).map((item) => ({
     name: item.name,
     description: item.description,
     href: item.href || "#",
@@ -68,6 +68,7 @@ export default function ProductsPage() {
       {/* ═══════════════════════════════════════════
           HERO
           ═══════════════════════════════════════════ */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
@@ -93,7 +94,7 @@ export default function ProductsPage() {
                 </p>
               ))}
               <div className="flex flex-wrap gap-6">
-                {statsData.items.map((point) => {
+                {statsBlock?.visible && statsData?.items.map((point) => {
                   const Icon = getIconComponent(point.icon);
                   return (
                     <span
@@ -110,6 +111,7 @@ export default function ProductsPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -117,6 +119,7 @@ export default function ProductsPage() {
       {/* ═══════════════════════════════════════════
           FEATURED: Channel Letters
           ═══════════════════════════════════════════ */}
+      {productTypesBlock?.visible && (
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
           {productCategories
@@ -164,6 +167,7 @@ export default function ProductsPage() {
             ))}
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -171,6 +175,7 @@ export default function ProductsPage() {
       {/* ═══════════════════════════════════════════
           MORE PRODUCT LINES — Light section
           ═══════════════════════════════════════════ */}
+      {productTypesBlock?.visible && (
       <section className="mx-6 sm:mx-10 lg:mx-16">
         <div className="bg-bg-light rounded-2xl overflow-hidden">
           <div className="container-max px-8 sm:px-12 lg:px-16 py-20 lg:py-28">
@@ -232,6 +237,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -239,11 +245,13 @@ export default function ProductsPage() {
       {/* ═══════════════════════════════════════════
           CTA
           ═══════════════════════════════════════════ */}
-      <CTASection
-        heading={ctaData.heading}
-        highlight={ctaData.headingHighlight}
-        description={ctaData.description}
-      />
+      {ctaBlock?.visible && (
+        <CTASection
+          heading={ctaData.heading}
+          highlight={ctaData.headingHighlight}
+          description={ctaData.description}
+        />
+      )}
     </>
   );
 }

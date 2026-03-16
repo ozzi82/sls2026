@@ -48,23 +48,23 @@ export default function TrimlessPage() {
   const config = loadProductConfig("channel-letters--trimless");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-  const textBlock = getBlock("text_section")!;
-  const textData = textBlock.data as { heading: string; content: string; image?: string };
-  const featuresBlock = getBlock("features_grid")!;
-  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-  const specsBlock = getBlock("specs")!;
-  const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
-  const useCasesBlock = getBlock("use_cases")!;
-  const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
-  const galleryBlock = getBlock("gallery")!;
-  const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
-  const faqBlock = getBlock("faq")!;
-  const faqData = faqBlock.data as { heading: string; items: { question: string; answer: string }[] };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const textBlock = getBlock("text_section");
+  const textData = textBlock?.data as { heading: string; content: string; image?: string };
+  const featuresBlock = getBlock("features_grid");
+  const featuresData = featuresBlock?.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const specsBlock = getBlock("specs");
+  const specsData = specsBlock?.data as { heading: string; description?: string; image?: string };
+  const useCasesBlock = getBlock("use_cases");
+  const useCasesData = useCasesBlock?.data as { heading: string; description?: string; items: string[] };
+  const galleryBlock = getBlock("gallery");
+  const galleryData = galleryBlock?.data as { heading: string; images: { src: string; alt: string }[] };
+  const faqBlock = getBlock("faq");
+  const faqData = faqBlock?.data as { heading: string; items: { question: string; answer: string }[] };
   const product = getProduct("LP 5");
 
-  const faqJsonLd = {
+  const faqJsonLd = faqData ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqData.items.map((faq) => ({
@@ -72,7 +72,7 @@ export default function TrimlessPage() {
       name: faq.question,
       acceptedAnswer: { "@type": "Answer", text: faq.answer },
     })),
-  };
+  } : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -94,9 +94,10 @@ export default function TrimlessPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
 
       {/* Hero */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.1),transparent_50%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
@@ -136,8 +137,10 @@ export default function TrimlessPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* The Problem with Trim Caps */}
+      {textBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
@@ -170,8 +173,10 @@ export default function TrimlessPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Key Differentiators */}
+      {featuresBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
@@ -197,6 +202,7 @@ export default function TrimlessPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Side-by-Side Comparison */}
       <section id="comparison" className="section-padding bg-bg-primary scroll-mt-20">
@@ -240,6 +246,7 @@ export default function TrimlessPage() {
       </section>
 
       {/* Technical Specifications */}
+      {specsBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -253,8 +260,10 @@ export default function TrimlessPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Use Cases */}
+      {useCasesBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
@@ -274,8 +283,10 @@ export default function TrimlessPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gallery */}
+      {galleryBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
@@ -292,6 +303,7 @@ export default function TrimlessPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Testimonial */}
       <section className="section-padding bg-bg-navy">
@@ -310,6 +322,7 @@ export default function TrimlessPage() {
       </section>
 
       {/* FAQ */}
+      {faqBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
@@ -343,6 +356,7 @@ export default function TrimlessPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

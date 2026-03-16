@@ -27,16 +27,16 @@ export default function NonIlluminatedPage() {
   const config = loadProductConfig("channel-letters--non-illuminated");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-  const featuresBlock = getBlock("features_grid")!;
-  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-  const textBlock = getBlock("text_section")!;
-  const textData = textBlock.data as { heading: string; content: string };
-  const specsBlock = getBlock("specs")!;
-  const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
-  const useCasesBlock = getBlock("use_cases")!;
-  const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const featuresBlock = getBlock("features_grid");
+  const featuresData = featuresBlock?.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const textBlock = getBlock("text_section");
+  const textData = textBlock?.data as { heading: string; content: string };
+  const specsBlock = getBlock("specs");
+  const specsData = specsBlock?.data as { heading: string; description?: string; image?: string };
+  const useCasesBlock = getBlock("use_cases");
+  const useCasesData = useCasesBlock?.data as { heading: string; description?: string; items: string[] };
   const product = getProduct("LP 1");
 
   const jsonLd = {
@@ -57,6 +57,7 @@ export default function NonIlluminatedPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(232,89,12,0.06),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
@@ -78,8 +79,10 @@ export default function NonIlluminatedPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Features */}
+      {featuresBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection><div className="text-center mb-16"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{featuresData.heading}</h2><p className="text-text-dark/60 max-w-xl mx-auto">The same precision manufacturing that defines our illuminated products, applied to a simpler, more cost-effective format. Wholesale direct to your shop.</p></div></AnimatedSection>
@@ -90,8 +93,10 @@ export default function NonIlluminatedPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Finish Options */}
+      {textBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
@@ -127,8 +132,10 @@ export default function NonIlluminatedPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Specifications */}
+      {specsBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -137,8 +144,10 @@ export default function NonIlluminatedPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Use Cases */}
+      {useCasesBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
@@ -152,6 +161,7 @@ export default function NonIlluminatedPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

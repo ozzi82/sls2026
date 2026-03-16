@@ -105,8 +105,10 @@ export default function StainlessFlushPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Use Cases */}
+      {useCasesBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
@@ -120,14 +122,17 @@ export default function StainlessFlushPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gallery */}
+      {galleryBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection><div className="text-center mb-12"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{galleryData.heading}</h2></div></AnimatedSection>
           <AnimatedSection><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">{galleryData.images.map((img, i) => (<PlaceholderImage key={i} label={img.alt} className="rounded-xl" aspectRatio="aspect-[4/3]" />))}</div></AnimatedSection>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

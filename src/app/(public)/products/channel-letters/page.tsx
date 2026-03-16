@@ -29,27 +29,33 @@ export default function ChannelLettersPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-  const featuresBlock = getBlock("features_grid")!;
-  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const featuresBlock = getBlock("features_grid");
+  const featuresData = featuresBlock?.data as { heading: string; items: { icon: string; title: string; description: string }[] };
 
   // Product grid blocks
-  const productGridBlock = getBlock("product_grid")!;
-  const productGridData = productGridBlock.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-  const productGrid2Block = getBlock("product_grid_2")!;
-  const productGrid2Data = productGrid2Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-  const productGrid3Block = getBlock("product_grid_3")!;
-  const productGrid3Data = productGrid3Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-  const productGrid4Block = getBlock("product_grid_4")!;
-  const productGrid4Data = productGrid4Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGridBlock = getBlock("product_grid");
+  const productGridData = productGridBlock?.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid2Block = getBlock("product_grid_2");
+  const productGrid2Data = productGrid2Block?.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid3Block = getBlock("product_grid_3");
+  const productGrid3Data = productGrid3Block?.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid4Block = getBlock("product_grid_4");
+  const productGrid4Data = productGrid4Block?.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
 
-  const productFamilies = [
-    { ...productGridData, products: productGridData.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-    { ...productGrid2Data, products: productGrid2Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-    { ...productGrid3Data, products: productGrid3Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-    { ...productGrid4Data, products: productGrid4Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
+  const productFamilyBlocks = [
+    { block: productGridBlock, data: productGridData },
+    { block: productGrid2Block, data: productGrid2Data },
+    { block: productGrid3Block, data: productGrid3Data },
+    { block: productGrid4Block, data: productGrid4Data },
   ];
+  const productFamilies = productFamilyBlocks
+    .filter(f => f.block?.visible && f.data)
+    .map(f => ({
+      ...f.data!,
+      products: f.data!.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })),
+    }));
   const spokes = getLandingPagesByHub("channel-letters").slice(0, 6);
   const relatedArticles = spokes.map((p) => ({
     title: p.h1 + " " + p.h1Highlight,
@@ -80,6 +86,7 @@ export default function ChannelLettersPage() {
       />
 
       {/* Hero */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
@@ -132,8 +139,10 @@ export default function ChannelLettersPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Advantages Bar */}
+      {featuresBlock?.visible && (
       <section className="bg-bg-bg-navy/80 border-y border-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -158,6 +167,7 @@ export default function ChannelLettersPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Product Families */}
       {productFamilies.map((family, familyIndex) => (
