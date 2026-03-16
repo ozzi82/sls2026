@@ -42,15 +42,16 @@ export default function WholesaleOnlyPage() {
   const config = loadStaticPageConfig("why-sunlite--wholesale-only");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroData = getBlock("hero")!.data as any;
-  const manifestoQuoteData = getBlock("manifesto-quote")!.data as any;
-  const manifestoData = getBlock("manifesto")!.data as any;
-  const partnershipData = getBlock("partnership-how")!.data as any;
-  const trustData = getBlock("trust")!.data as any;
+  const hero = getBlock("hero");
+  const manifestoQuote = getBlock("manifesto-quote");
+  const manifesto = getBlock("manifesto");
+  const partnership = getBlock("partnership-how");
+  const trust = getBlock("trust");
 
   return (
     <>
       {/* HERO */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
@@ -60,52 +61,56 @@ export default function WholesaleOnlyPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span>
+                {(hero.data as any).h1}{" "}<span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-4">{heroData.subtitle}</p>
-              <p className="text-xl text-brand-gold font-heading font-semibold mb-8">{heroData.subtitleHighlight}</p>
+              <p className="text-lg text-white/70 leading-relaxed mb-4">{(hero.data as any).subtitle}</p>
+              <p className="text-xl text-brand-gold font-heading font-semibold mb-8">{(hero.data as any).subtitleHighlight}</p>
               <div className="flex flex-wrap gap-4">
-                {heroData.ctas.map((cta: any) => (
+                {(hero.data as any).ctas.map((cta: any) => (
                   <Link key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</Link>
                 ))}
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <PlaceholderImage label={heroData.image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
+              <PlaceholderImage label={(hero.data as any).image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
           </div>
         </div>
       </section>
+      )}
 
       {/* MANIFESTO STATEMENT */}
+      {manifestoQuote?.visible && (
       <section className="bg-bg-navy border-t border-white/10 border-b border-b-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-12">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-2xl md:text-3xl font-heading font-bold text-white leading-snug">
-                &ldquo;{manifestoQuoteData.content.split(". Every single one.")[0]}. <span className="text-brand-gold">Every single one.</span>{manifestoQuoteData.content.split("Every single one.")[1]}&rdquo;
+                &ldquo;{(manifestoQuote.data as any).content.split(". Every single one.")[0]}. <span className="text-brand-gold">Every single one.</span>{(manifestoQuote.data as any).content.split("Every single one.")[1]}&rdquo;
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* MANIFESTO SECTIONS */}
+      {manifesto?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{manifestoData.heading}</h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">{manifestoData.description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{(manifesto.data as any).heading}</h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto">{(manifesto.data as any).description}</p>
             </div>
           </AnimatedSection>
           <div className="space-y-8">
-            {manifestoData.items.map((item: any, index: number) => {
+            {(manifesto.data as any).items.map((item: any, index: number) => {
               const Icon = getIconComponent(item.icon);
               return (
                 <AnimatedSection key={item.title} delay={index * 0.05}>
@@ -128,6 +133,7 @@ export default function WholesaleOnlyPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* WHAT YOU GET / WHAT WE NEVER DO */}
       <section className="section-padding bg-bg-primary">
@@ -177,6 +183,7 @@ export default function WholesaleOnlyPage() {
       </section>
 
       {/* HOW THE PARTNERSHIP WORKS */}
+      {partnership?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -185,10 +192,10 @@ export default function WholesaleOnlyPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{partnershipData.heading}</h2>
-              <p className="text-text-dark/60 leading-relaxed mb-6">{partnershipData.description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{(partnership.data as any).heading}</h2>
+              <p className="text-text-dark/60 leading-relaxed mb-6">{(partnership.data as any).description}</p>
               <div className="space-y-6">
-                {partnershipData.steps.map((item: any) => (
+                {(partnership.data as any).steps.map((item: any) => (
                   <div key={item.step} className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center">
                       <span className="text-brand-gold font-heading font-bold text-xs">{item.step}</span>
@@ -204,15 +211,17 @@ export default function WholesaleOnlyPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* TRUST SECTION */}
+      {trust?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{trustData.heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-8">{trustData.content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(trust.data as any).heading}</h2>
+              <p className="text-white/60 leading-relaxed mb-8">{(trust.data as any).content}</p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-gold" />Wholesale Only</span>
                 <span className="hidden sm:inline text-white/20">|</span>
@@ -226,6 +235,7 @@ export default function WholesaleOnlyPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

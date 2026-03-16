@@ -30,16 +30,16 @@ export default function FrontLitPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-  const featuresBlock = getBlock("features_grid")!;
-  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-  const specsBlock = getBlock("specs")!;
-  const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
-  const useCasesBlock = getBlock("use_cases")!;
-  const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
-  const galleryBlock = getBlock("gallery")!;
-  const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const featuresBlock = getBlock("features_grid");
+  const featuresData = featuresBlock?.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const specsBlock = getBlock("specs");
+  const specsData = specsBlock?.data as { heading: string; description?: string; image?: string };
+  const useCasesBlock = getBlock("use_cases");
+  const useCasesData = useCasesBlock?.data as { heading: string; description?: string; items: string[] };
+  const galleryBlock = getBlock("gallery");
+  const galleryData = galleryBlock?.data as { heading: string; images: { src: string; alt: string }[] };
   const product = getProduct("LP 11-F");
   const jsonLd = {
     "@context": "https://schema.org",
@@ -81,6 +81,7 @@ export default function FrontLitPage() {
       />
 
       {/* Hero */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
@@ -123,8 +124,10 @@ export default function FrontLitPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Features */}
+      {featuresBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
@@ -161,8 +164,10 @@ export default function FrontLitPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Specifications */}
+      {specsBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -186,8 +191,10 @@ export default function FrontLitPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Use Cases */}
+      {useCasesBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
@@ -225,8 +232,10 @@ export default function FrontLitPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gallery */}
+      {galleryBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
@@ -251,7 +260,7 @@ export default function FrontLitPage() {
           </AnimatedSection>
         </div>
       </section>
-
+      )}
 
       <CTASection />
     </>

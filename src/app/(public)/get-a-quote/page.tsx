@@ -25,8 +25,8 @@ export default function GetAQuotePage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroData = getBlock("hero")!.data as any;
-  const formData = getBlock("form")!.data as any;
+  const hero = getBlock("hero");
+  const form = getBlock("form");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -45,6 +45,7 @@ export default function GetAQuotePage() {
       {/* ═══════════════════════════════════════════
           HERO
           ═══════════════════════════════════════════ */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 pt-20">
@@ -62,15 +63,15 @@ export default function GetAQuotePage() {
               <AnimatedSection>
                 <div className="max-w-3xl">
                   <p className="micro-label mb-6">
-                    {heroData.badge}
+                    {(hero.data as any).badge}
                   </p>
                   <div className="gold-line mb-8" />
                   <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                    {heroData.h1}{" "}
-                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                    {(hero.data as any).h1}{" "}
+                    <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
                   </h1>
                   <p className="text-lg text-white/60 max-w-2xl">
-                    {heroData.subtitle}
+                    {(hero.data as any).subtitle}
                   </p>
                 </div>
               </AnimatedSection>
@@ -78,6 +79,7 @@ export default function GetAQuotePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-12 mx-6 sm:mx-10 lg:mx-16" />
@@ -85,6 +87,7 @@ export default function GetAQuotePage() {
       {/* ═══════════════════════════════════════════
           FORM + SIDEBAR
           ═══════════════════════════════════════════ */}
+      {form?.visible && (
       <section className="px-6 sm:px-10 lg:px-16 pb-16">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -106,18 +109,18 @@ export default function GetAQuotePage() {
                     </h3>
                     <div className="space-y-4">
                       <a
-                        href={`tel:+${formData.sidebar.contactPhone?.replace(/\D/g, "")}`}
+                        href={`tel:+${(form.data as any).sidebar.contactPhone?.replace(/\D/g, "")}`}
                         className="flex items-center gap-3 text-white/60 hover:text-brand-gold transition-colors"
                       >
                         {(() => { const I = getIconComponent("Phone"); return I ? <I className="w-5 h-5 text-brand-gold" /> : null; })()}
-                        {formData.sidebar.contactPhone}
+                        {(form.data as any).sidebar.contactPhone}
                       </a>
                       <a
-                        href={`mailto:${formData.sidebar.contactEmail}`}
+                        href={`mailto:${(form.data as any).sidebar.contactEmail}`}
                         className="flex items-center gap-3 text-white/60 hover:text-brand-gold transition-colors"
                       >
                         {(() => { const I = getIconComponent("Mail"); return I ? <I className="w-5 h-5 text-brand-gold" /> : null; })()}
-                        {formData.sidebar.contactEmail}
+                        {(form.data as any).sidebar.contactEmail}
                       </a>
                     </div>
                   </div>
@@ -128,7 +131,7 @@ export default function GetAQuotePage() {
                       Why Partner With Sunlite?
                     </h3>
                     <ul className="space-y-4">
-                      {formData.sidebar.differentiators.map((item: any) => {
+                      {(form.data as any).sidebar.differentiators.map((item: any) => {
                         const Icon = getIconComponent(item.icon);
                         return (
                           <li key={item.text} className="flex items-center gap-3 text-white/60">
@@ -147,7 +150,7 @@ export default function GetAQuotePage() {
                       Wholesale Only
                     </p>
                     <p className="text-white/60 text-xs">
-                      {formData.sidebar.notices[0]}
+                      {(form.data as any).sidebar.notices[0]}
                     </p>
                   </div>
                 </div>
@@ -156,6 +159,7 @@ export default function GetAQuotePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-16 mx-6 sm:mx-10 lg:mx-16" />

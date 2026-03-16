@@ -26,10 +26,10 @@ export default function ServicesPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroData = getBlock("hero")!.data as any;
-  const servicesGridData = getBlock("services-grid")!.data as any;
-  const ctaData = getBlock("cta")!.data as any;
-  const services = servicesGridData.items;
+  const hero = getBlock("hero");
+  const servicesGrid = getBlock("services-grid");
+  const cta = getBlock("cta");
+  const services = servicesGrid ? (servicesGrid.data as any).items : [];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,6 +72,7 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           HERO
           ═══════════════════════════════════════════ */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
 
@@ -85,36 +86,39 @@ export default function ServicesPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="micro-label mb-6">
-                {heroData.badge}
+                {(hero.data as any).badge}
               </p>
               <div className="gold-line mb-8" />
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                {heroData.h1}{" "}
-                <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                {(hero.data as any).h1}{" "}
+                <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                {heroData.subtitle}
+                {(hero.data as any).subtitle}
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* ═══════════════════════════════════════════
           SERVICE CARDS — 4-card grid
           ═══════════════════════════════════════════ */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
 
+      {servicesGrid?.visible && (
+      <>
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-8" />
               <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
-                Our <span className="text-brand-gold">{servicesGridData.headingHighlight}</span>
+                Our <span className="text-brand-gold">{(servicesGrid.data as any).headingHighlight}</span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto text-[15px]">
-                {servicesGridData.description}
+                {(servicesGrid.data as any).description}
               </p>
             </div>
           </AnimatedSection>
@@ -237,6 +241,8 @@ export default function ServicesPage() {
           </section>
         );
       })}
+      </>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -244,11 +250,13 @@ export default function ServicesPage() {
       {/* ═══════════════════════════════════════════
           CTA
           ═══════════════════════════════════════════ */}
+      {cta?.visible && (
       <CTASection
-        heading={ctaData.heading}
-        highlight={ctaData.headingHighlight}
-        description={ctaData.description}
+        heading={(cta.data as any).heading}
+        highlight={(cta.data as any).headingHighlight}
+        description={(cta.data as any).description}
       />
+      )}
     </>
   );
 }

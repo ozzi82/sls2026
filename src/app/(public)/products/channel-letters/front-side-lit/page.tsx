@@ -28,16 +28,16 @@ export default function FrontSideLitPage() {
   const config = loadProductConfig("channel-letters--front-side-lit");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-  const featuresBlock = getBlock("features_grid")!;
-  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-  const specsBlock = getBlock("specs")!;
-  const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
-  const useCasesBlock = getBlock("use_cases")!;
-  const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
-  const galleryBlock = getBlock("gallery")!;
-  const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const featuresBlock = getBlock("features_grid");
+  const featuresData = featuresBlock?.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const specsBlock = getBlock("specs");
+  const specsData = specsBlock?.data as { heading: string; description?: string; image?: string };
+  const useCasesBlock = getBlock("use_cases");
+  const useCasesData = useCasesBlock?.data as { heading: string; description?: string; items: string[] };
+  const galleryBlock = getBlock("gallery");
+  const galleryData = galleryBlock?.data as { heading: string; images: { src: string; alt: string }[] };
   const product = getProduct("LP 11-FS");
 
   const jsonLd = {
@@ -57,6 +57,7 @@ export default function FrontSideLitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
+      {heroBlock?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
@@ -78,8 +79,10 @@ export default function FrontSideLitPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Features */}
+      {featuresBlock?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection><div className="text-center mb-16"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{featuresData.heading}</h2><p className="text-text-dark/60 max-w-xl mx-auto">Every front side lit channel letter set is manufactured to the same exacting standards that define the Sunlite brand. Wholesale direct to your shop.</p></div></AnimatedSection>
@@ -90,8 +93,10 @@ export default function FrontSideLitPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Specifications */}
+      {specsBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -100,8 +105,10 @@ export default function FrontSideLitPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Use Cases */}
+      {useCasesBlock?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <AnimatedSection>
@@ -115,14 +122,17 @@ export default function FrontSideLitPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gallery */}
+      {galleryBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection><div className="text-center mb-12"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{galleryData.heading}</h2></div></AnimatedSection>
           <AnimatedSection><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">{galleryData.images.map((img, i) => (<PlaceholderImage key={i} label={img.alt} className="rounded-xl" aspectRatio="aspect-[4/3]" />))}</div></AnimatedSection>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

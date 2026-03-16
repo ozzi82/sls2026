@@ -19,25 +19,19 @@ export default function Home() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroBlock = getBlock("hero")!;
-  const heroData = heroBlock.data as any;
-  const marqueeBlock = getBlock("marquee")!;
-  const marqueeData = marqueeBlock.data as any;
-  const statsBlock = getBlock("stats")!;
-  const statsData = statsBlock.data as any;
-  const storyBlock = getBlock("story")!;
-  const storyData = storyBlock.data as any;
-  const productsBlock = getBlock("products")!;
-  const productsData = productsBlock.data as any;
-  const engineeringBlock = getBlock("engineering")!;
-  const engineeringData = engineeringBlock.data as any;
-  const ctaBlock = getBlock("cta")!;
-  const ctaData = ctaBlock.data as any;
+  const hero = getBlock("hero");
+  const marquee = getBlock("marquee");
+  const stats = getBlock("stats");
+  const story = getBlock("story");
+  const products = getBlock("products");
+  const engineering = getBlock("engineering");
+  const cta = getBlock("cta");
   return (
     <>
       {/* ═══════════════════════════════════════════
           HERO — Cinematic full-screen
           ═══════════════════════════════════════════ */}
+      {hero?.visible && (
       <section className="relative h-screen overflow-hidden">
         <HeroSlider />
 
@@ -55,23 +49,23 @@ export default function Home() {
             />
 
             <p className="micro-label mb-6">
-              {heroData.badge}
+              {(hero.data as any).badge}
             </p>
 
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-6 tracking-[-0.02em] font-bold">
-              {heroData.h1}
+              {(hero.data as any).h1}
               <br />
               <span className="text-brand-gold">
-                {heroData.h1Highlight}
+                {(hero.data as any).h1Highlight}
               </span>
             </h1>
 
             <p className="text-sm lg:text-base text-white/60 max-w-md font-body leading-relaxed mb-8">
-              {heroData.subtitle}
+              {(hero.data as any).subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              {heroData.ctas.map((cta: any) => (
+              {(hero.data as any).ctas.map((cta: any) => (
                 <Link
                   key={cta.href}
                   href={cta.href}
@@ -92,15 +86,17 @@ export default function Home() {
           <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
         </div>
       </section>
+      )}
 
       {/* ═══════════════════════════════════════════
           MARQUEE — Infinite scrolling trade messaging
           ═══════════════════════════════════════════ */}
+      {marquee?.visible && (
       <div className="overflow-hidden border-y border-brand-gold/10 bg-bg-primary py-4">
         <div className="flex animate-marquee">
           {[0, 1].map((set) => (
             <div key={set} className="flex shrink-0 items-center">
-              {marqueeData.messages.map((item: string, i: number) => (
+              {(marquee.data as any).messages.map((item: string, i: number) => (
                 <span
                   key={`${set}-${i}`}
                   className="flex items-center mx-6 sm:mx-8"
@@ -117,14 +113,16 @@ export default function Home() {
           ))}
         </div>
       </div>
+      )}
 
       {/* ═══════════════════════════════════════════
           STATS — Key differentiators strip
           ═══════════════════════════════════════════ */}
+      {stats?.visible && (
       <section className="px-6 sm:px-10 lg:px-16 -mt-2">
         <div className="container-max">
           <div className="grid grid-cols-2 lg:grid-cols-4 bg-bg-card rounded-xl border border-white/[0.06] overflow-hidden">
-            {statsData.items.map((stat: any, i: number) => {
+            {(stats.data as any).items.map((stat: any, i: number) => {
               const Icon = getIconComponent(stat.icon);
               return (
                 <AnimatedSection key={i} delay={i * 0.1}>
@@ -143,6 +141,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -150,6 +149,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           STORY — Editorial brand introduction
           ═══════════════════════════════════════════ */}
+      {story?.visible && (
       <section className="mx-6 sm:mx-10 lg:mx-16">
         <div className="bg-bg-light rounded-2xl overflow-hidden">
           <div className="container-max px-8 sm:px-12 lg:px-16 py-20 lg:py-28">
@@ -158,8 +158,8 @@ export default function Home() {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden">
                     <Image
-                      src={storyData.image}
-                      alt={storyData.imageAlt}
+                      src={(story.data as any).image}
+                      alt={(story.data as any).imageAlt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
@@ -171,22 +171,22 @@ export default function Home() {
 
                 <div>
                   <p className="micro-label mb-5">
-                    {storyData.badge}
+                    {(story.data as any).badge}
                   </p>
                   <h2 className="text-3xl lg:text-[42px] font-display text-text-dark leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                    {storyData.heading}{" "}
-                    <span className="text-brand-gold">{storyData.headingHighlight}</span>
+                    {(story.data as any).heading}{" "}
+                    <span className="text-brand-gold">{(story.data as any).headingHighlight}</span>
                   </h2>
-                  {storyData.content.split("\n\n").map((p: string, i: number) => (
+                  {(story.data as any).content.split("\n\n").map((p: string, i: number) => (
                     <p key={i} className="text-text-dark/60 leading-relaxed mb-4 text-[15px]">
                       {p}
                     </p>
                   ))}
                   <Link
-                    href={storyData.linkHref}
+                    href={(story.data as any).linkHref}
                     className="btn-text-link group"
                   >
-                    {storyData.linkText}
+                    {(story.data as any).linkText}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -195,6 +195,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -202,22 +203,23 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           PRODUCTS — What We Build grid
           ═══════════════════════════════════════════ */}
+      {products?.visible && (
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-8" />
               <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
-                What We <span className="text-brand-gold">{productsData.headingHighlight}</span>
+                What We <span className="text-brand-gold">{(products.data as any).headingHighlight}</span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto text-[15px]">
-                {productsData.description}
+                {(products.data as any).description}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {productsData.items.map((product: any, i: number) => (
+            {(products.data as any).items.map((product: any, i: number) => (
               <AnimatedSection key={product.name} delay={i * 0.08}>
                 <Link
                   href={product.href}
@@ -251,6 +253,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -258,23 +261,24 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           ENGINEERING — Complimentary services
           ═══════════════════════════════════════════ */}
+      {engineering?.visible && (
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-center">
               <div>
                 <p className="micro-label mb-5">
-                  {engineeringData.badge}
+                  {(engineering.data as any).badge}
                 </p>
                 <h2 className="text-3xl lg:text-[42px] font-display text-white leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                  {engineeringData.heading}{" "}
-                  <span className="text-brand-gold">{engineeringData.headingHighlight}</span>
+                  {(engineering.data as any).heading}{" "}
+                  <span className="text-brand-gold">{(engineering.data as any).headingHighlight}</span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-8 text-[15px]">
-                  {engineeringData.content}
+                  {(engineering.data as any).content}
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-10">
-                  {engineeringData.bulletPoints.map((service: string) => (
+                  {(engineering.data as any).bulletPoints.map((service: string) => (
                     <div
                       key={service}
                       className="flex items-center gap-3 text-white/50 text-sm"
@@ -285,18 +289,18 @@ export default function Home() {
                   ))}
                 </div>
                 <Link
-                  href={engineeringData.linkHref}
+                  href={(engineering.data as any).linkHref}
                   className="btn-ghost group"
                 >
-                  {engineeringData.linkText}
+                  {(engineering.data as any).linkText}
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-lg overflow-hidden">
                   <Image
-                    src={engineeringData.image}
-                    alt={engineeringData.imageAlt}
+                    src={(engineering.data as any).image}
+                    alt={(engineering.data as any).imageAlt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -309,6 +313,7 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-20 mx-6 sm:mx-10 lg:mx-16" />
@@ -316,7 +321,9 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           CTA — Get Your Product Started
           ═══════════════════════════════════════════ */}
+      {cta?.visible && (
       <CTASection />
+      )}
     </>
   );
 }

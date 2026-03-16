@@ -24,8 +24,8 @@ export default function AboutPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroData = getBlock("hero")!.data as any;
-  const timelineData = getBlock("timeline")!.data as any;
+  const hero = getBlock("hero");
+  const timeline = getBlock("timeline");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -60,13 +60,13 @@ export default function AboutPage() {
     ],
   };
 
-  const timelineEntries = timelineData.entries.map((entry: any) => ({
+  const timelineEntries = timeline ? (timeline.data as any).entries.map((entry: any) => ({
     number: String(entry.step).padStart(2, "0"),
     title: entry.title,
     text: entry.text,
     imageLabel: entry.title,
     imageSrc: entry.image,
-  }));
+  })) : [];
 
   return (
     <>
@@ -78,6 +78,7 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════
           HERO
           ═══════════════════════════════════════════ */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
 
@@ -95,25 +96,26 @@ export default function AboutPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  {heroData.badge}
+                  {(hero.data as any).badge}
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  {heroData.h1} <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  {(hero.data as any).h1} <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  {heroData.subtitle}
+                  {(hero.data as any).subtitle}
                 </p>
               </AnimatedSection>
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* ═══════════════════════════════════════════
           TIMELINE
           ═══════════════════════════════════════════ */}
-      {timelineEntries.map((entry: any, index: number) => {
+      {timeline?.visible && timelineEntries.map((entry: any, index: number) => {
         const isEven = index % 2 === 0;
 
         if (isEven) {

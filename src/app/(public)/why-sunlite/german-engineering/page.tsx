@@ -31,14 +31,15 @@ export default function GermanEngineeringPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroData = getBlock("hero")!.data as any;
-  const lkfData = getBlock("lkf-partnership")!.data as any;
-  const principlesData = getBlock("principles")!.data as any;
-  const whatItMeansData = getBlock("what-it-means")!.data as any;
-  const edgeluxeData = getBlock("edgeluxe")!.data as any;
+  const hero = getBlock("hero");
+  const lkf = getBlock("lkf-partnership");
+  const principles = getBlock("principles");
+  const whatItMeans = getBlock("what-it-means");
+  const edgeluxe = getBlock("edgeluxe");
   return (
     <>
       {/* HERO */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--hero-glow),transparent_60%)]" />
@@ -56,18 +57,18 @@ export default function GermanEngineeringPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {heroData.h1}{" "}
-                <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                {(hero.data as any).h1}{" "}
+                <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
               </h1>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
-                {heroData.subtitle}
+                {(hero.data as any).subtitle}
               </p>
               <div className="flex flex-wrap gap-4">
-                {heroData.ctas.map((cta: any) => (
+                {(hero.data as any).ctas.map((cta: any) => (
                   <Link key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
                     {cta.label}
                   </Link>
@@ -76,7 +77,7 @@ export default function GermanEngineeringPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <PlaceholderImage
-                label={heroData.image}
+                label={(hero.data as any).image}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -84,24 +85,26 @@ export default function GermanEngineeringPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* LKF PARTNERSHIP */}
+      {lkf?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                {lkfData.heading}
+                {(lkf.data as any).heading}
               </h2>
               <p className="text-text-dark/60 max-w-2xl mx-auto">
-                {lkfData.description}
+                {(lkf.data as any).description}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {lkfData.items.map((item: any, index: number) => (
+            {(lkf.data as any).items.map((item: any, index: number) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
                 <div className="bg-white rounded-xl p-8 shadow-sm border border-black/[0.04] h-full">
                   <div className="flex items-start gap-4">
@@ -125,24 +128,26 @@ export default function GermanEngineeringPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ENGINEERING PRINCIPLES */}
+      {principles?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                {principlesData.heading}
+                {(principles.data as any).heading}
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
-                {principlesData.description}
+                {(principles.data as any).description}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {principlesData.items.map((principle: any, index: number) => {
+            {(principles.data as any).items.map((principle: any, index: number) => {
               const Icon = getIconComponent(principle.icon);
               return (
                 <AnimatedSection key={principle.title} delay={index * 0.1}>
@@ -163,14 +168,16 @@ export default function GermanEngineeringPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* WHAT THIS MEANS FOR YOUR SHOP */}
+      {whatItMeans?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <PlaceholderImage
-                label={whatItMeansData.image}
+                label={(whatItMeans.data as any).image}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -178,10 +185,10 @@ export default function GermanEngineeringPage() {
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">
-                {whatItMeansData.heading}
+                {(whatItMeans.data as any).heading}
               </h2>
               <div className="space-y-4">
-                {whatItMeansData.content.split("\n").map((point: string) => (
+                {(whatItMeans.data as any).content.split("\n").map((point: string) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
                     <p className="text-text-dark/70">{point}</p>
@@ -192,17 +199,19 @@ export default function GermanEngineeringPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* EDGELUXE SHOWCASE */}
+      {edgeluxe?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-                {edgeluxeData.heading}
+                {(edgeluxe.data as any).heading}
               </h2>
-              {edgeluxeData.content.split("\n\n").map((p: string, i: number) => (
+              {(edgeluxe.data as any).content.split("\n\n").map((p: string, i: number) => (
                 <p key={i} className="text-white/60 leading-relaxed mb-6">
                   {p}
                 </p>
@@ -221,7 +230,7 @@ export default function GermanEngineeringPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <PlaceholderImage
-                label={edgeluxeData.image}
+                label={(edgeluxe.data as any).image}
                 className="rounded-xl"
                 aspectRatio="aspect-square"
               />
@@ -229,6 +238,7 @@ export default function GermanEngineeringPage() {
           </div>
         </div>
       </section>
+      )}
 
 
       <CTASection />

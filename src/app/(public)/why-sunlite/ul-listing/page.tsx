@@ -36,15 +36,16 @@ export default function ULListingPage() {
   const config = loadStaticPageConfig("why-sunlite--ul-listing");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroData = getBlock("hero")!.data as any;
-  const whatULData = getBlock("what-ul-means")!.data as any;
-  const benefitsData = getBlock("ul-benefits")!.data as any;
-  const comparisonData = getBlock("comparison")!.data as any;
-  const processData = getBlock("compliance-process")!.data as any;
+  const hero = getBlock("hero");
+  const whatUL = getBlock("what-ul-means");
+  const ulBenefits = getBlock("ul-benefits");
+  const comparison = getBlock("comparison");
+  const process = getBlock("compliance-process");
 
   return (
     <>
       {/* HERO */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--hero-glow),transparent_60%)]" />
@@ -54,34 +55,36 @@ export default function ULListingPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span>
+                {(hero.data as any).h1}{" "}<span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-8">{heroData.subtitle}</p>
+              <p className="text-lg text-white/70 leading-relaxed mb-8">{(hero.data as any).subtitle}</p>
               <div className="flex flex-wrap gap-4">
-                {heroData.ctas.map((cta: any) => (
+                {(hero.data as any).ctas.map((cta: any) => (
                   <Link key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</Link>
                 ))}
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <PlaceholderImage label={heroData.image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
+              <PlaceholderImage label={(hero.data as any).image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
           </div>
         </div>
       </section>
+      )}
 
       {/* WHAT UL LISTING MEANS */}
+      {whatUL?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{whatULData.heading}</h2>
-              <p className="text-text-dark/60 leading-relaxed mb-8">{whatULData.content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{(whatUL.data as any).heading}</h2>
+              <p className="text-text-dark/60 leading-relaxed mb-8">{(whatUL.data as any).content}</p>
               <div className="space-y-4">
                 {whatULMeans.map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -92,24 +95,26 @@ export default function ULListingPage() {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
-              <PlaceholderImage label={whatULData.image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
+              <PlaceholderImage label={(whatUL.data as any).image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
           </div>
         </div>
       </section>
+      )}
 
       {/* BENEFITS GRID */}
+      {ulBenefits?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{benefitsData.heading}</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">{benefitsData.description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{(ulBenefits.data as any).heading}</h2>
+              <p className="text-white/60 max-w-2xl mx-auto">{(ulBenefits.data as any).description}</p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefitsData.items.map((benefit: any, index: number) => {
+            {(ulBenefits.data as any).items.map((benefit: any, index: number) => {
               const Icon = getIconComponent(benefit.icon);
               return (
                 <AnimatedSection key={benefit.title} delay={index * 0.1}>
@@ -126,15 +131,17 @@ export default function ULListingPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* COMPARISON TABLE */}
+      {comparison?.visible && (
       <section className="section-padding bg-bg-light">
         <div className="container-max">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{comparisonData.heading}</h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">{comparisonData.content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{(comparison.data as any).heading}</h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto">{(comparison.data as any).content}</p>
             </div>
           </AnimatedSection>
           <AnimatedSection>
@@ -163,18 +170,20 @@ export default function ULListingPage() {
           </AnimatedSection>
         </div>
       </section>
+      )}
 
       {/* PROCESS OVERVIEW */}
+      {process?.visible && (
       <section className="section-padding bg-bg-navy">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
-              <PlaceholderImage label={processData.image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
+              <PlaceholderImage label={(process.data as any).image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{processData.heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-6">{processData.content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(process.data as any).heading}</h2>
+              <p className="text-white/60 leading-relaxed mb-6">{(process.data as any).content}</p>
               <div className="space-y-4">
                 {[
                   { icon: ClipboardCheck, text: "Component sourcing from UL-recognized suppliers" },
@@ -192,6 +201,7 @@ export default function ULListingPage() {
           </div>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

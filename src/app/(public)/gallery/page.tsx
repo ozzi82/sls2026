@@ -23,13 +23,14 @@ export default function GalleryPage() {
     return config.blocks.find(b => b.id === id);
   }
 
-  const heroData = getBlock("hero")!.data as any;
-  const ctaData = getBlock("cta")!.data as any;
+  const hero = getBlock("hero");
+  const cta = getBlock("cta");
   return (
     <>
       {/* ═══════════════════════════════════════════
           HERO
           ═══════════════════════════════════════════ */}
+      {hero?.visible && (
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.06),transparent_70%)]" />
 
@@ -47,21 +48,22 @@ export default function GalleryPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  {heroData.badge}
+                  {(hero.data as any).badge}
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  {heroData.h1}{" "}
-                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  {(hero.data as any).h1}{" "}
+                  <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  {heroData.subtitle}
+                  {(hero.data as any).subtitle}
                 </p>
               </AnimatedSection>
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* Gradient Divider */}
       <div className="gradient-divider my-12 mx-6 sm:mx-10 lg:mx-16" />
@@ -81,11 +83,13 @@ export default function GalleryPage() {
       {/* ═══════════════════════════════════════════
           CTA
           ═══════════════════════════════════════════ */}
+      {cta?.visible && (
       <CTASection
-        heading={ctaData.heading}
-        highlight={ctaData.headingHighlight}
-        description={ctaData.description}
+        heading={(cta.data as any).heading}
+        highlight={(cta.data as any).headingHighlight}
+        description={(cta.data as any).description}
       />
+      )}
     </>
   );
 }
