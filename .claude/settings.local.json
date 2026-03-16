@@ -48,7 +48,10 @@
       "Bash(taskkill:*)",
       "Bash(for dir:*)",
       "Read(//c/SLS/sunlite-wholesale/$dir/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)"
     ]
   }
 }

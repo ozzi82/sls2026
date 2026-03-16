@@ -124,12 +124,12 @@ export interface ProductGridData {
 
 export interface ResourceCardsData {
   heading?: string;
-  items: { icon: string; title: string; description: string; href: string }[];
+  items: { icon: string; title: string; description: string; href: string; date?: string; category?: string }[];
 }
 
 export interface GuidesListData {
   heading?: string;
-  items: { title: string; description: string; readTime: string; href: string; image?: string }[];
+  items: { title: string; description: string; readTime: string; href: string; image?: string; icon?: string }[];
 }
 
 export type BlockDataMap = {

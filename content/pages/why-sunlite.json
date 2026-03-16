@@ -17,7 +17,7 @@
       "id": "hero",
       "type": "hero",
       "label": "Hero",
-      "visible": false,
+      "visible": true,
       "data": {
         "badge": "Wholesale Only",
         "h1": "Why Sign Shops",
@@ -30,7 +30,7 @@
       "id": "trust-stats",
       "type": "stats_strip",
       "label": "Trust Stats",
-      "visible": false,
+      "visible": true,
       "data": {
         "items": [
           {
@@ -60,7 +60,7 @@
       "id": "pillars",
       "type": "features_grid",
       "label": "Four Pillars",
-      "visible": false,
+      "visible": true,
       "data": {
         "heading": "Four Pillars of the Sunlite Wholesale Advantage",
         "description": "Every decision we make is guided by one principle: empower our trade partners to win more business. These are not aspirational — they are operational.",
@@ -100,7 +100,7 @@
       "id": "overview",
       "type": "text_section",
       "label": "Overview",
-      "visible": false,
+      "visible": true,
       "data": {
         "heading": "Built for Sign Shops. Nobody Else.",
         "content": "Sunlite Signs LLC is a Florida-based wholesale-only manufacturer of illuminated signage. We partner with LKF Lichtwerbung in Nuremberg, Germany, to bring European engineering precision exclusively to trade accounts in North America. Every product is UL listed. Every order ships within four weeks. And every relationship is built on one guarantee: we will never compete with you for retail business.",
@@ -111,7 +111,7 @@
       "id": "cta",
       "type": "cta",
       "label": "CTA",
-      "visible": false,
+      "visible": true,
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",

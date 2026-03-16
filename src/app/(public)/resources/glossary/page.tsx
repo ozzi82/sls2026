@@ -4,12 +4,17 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import type { HeroData, FAQData } from "@/lib/admin/page-config-types";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = loadStaticPageConfig("resources--glossary");
-  return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+  };
 }
 
 interface GlossaryTerm {
@@ -31,12 +36,17 @@ function groupByLetter(terms: GlossaryTerm[]): Record<string, GlossaryTerm[]> {
 
 export default function GlossaryPage() {
   const config = loadStaticPageConfig("resources--glossary");
-  function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
-  const heroData = getBlock("hero")!.data as any;
-  const glossaryData = getBlock("glossary")!.data as any;
+  function getBlock<T>(id: string) {
+    return config.blocks.find((b) => b.id === id) as
+      | { visible: boolean; data: T }
+      | undefined;
+  }
 
-  const glossaryTerms = glossaryData.items;
+  const hero = getBlock<HeroData>("hero");
+  const glossary = getBlock<FAQData>("glossary");
+
+  const glossaryTerms = glossary?.data.items ?? [];
   const grouped = groupByLetter(glossaryTerms);
   const alphabet = Object.keys(grouped).sort();
 
@@ -79,60 +89,66 @@ export default function GlossaryPage() {
       />
 
       {/* Hero */}
-      <section className="bg-bg-primary pt-32 pb-16">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Sign Industry Glossary" }]} />
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-              <Lock className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
-            </div>
-            <div className="gold-line mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">{heroData.h1}</h1>
-            <p className="text-lg text-white/60 max-w-2xl">{heroData.subtitle}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {hero?.visible && (
+        <section className="bg-bg-primary pt-32 pb-16">
+          <div className="container-max px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Sign Industry Glossary" }]} />
+            <AnimatedSection>
+              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
+                <Lock className="w-3.5 h-3.5 text-brand-gold" />
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+              </div>
+              <div className="gold-line mb-6" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
+              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       {/* Alphabet Navigation */}
-      <section className="bg-bg-primary border-y border-white/10 sticky top-0 z-30 backdrop-blur-md bg-bg-primary/90">
-        <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
-          <nav aria-label="Glossary alphabetical navigation">
-            <ul className="flex flex-wrap items-center gap-2">
-              {alphabet.map((letter) => (
-                <li key={letter}>
-                  <a href={`#letter-${letter}`} className="inline-flex items-center justify-center w-9 h-9 rounded bg-bg-card border border-white/[0.06] text-sm font-heading font-semibold text-white/60 hover:text-brand-gold hover:border-brand-gold/30 transition-colors">
-                    {letter}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </section>
+      {glossary?.visible && (
+        <section className="bg-bg-primary border-y border-white/10 sticky top-0 z-30 backdrop-blur-md bg-bg-primary/90">
+          <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
+            <nav aria-label="Glossary alphabetical navigation">
+              <ul className="flex flex-wrap items-center gap-2">
+                {alphabet.map((letter) => (
+                  <li key={letter}>
+                    <a href={`#letter-${letter}`} className="inline-flex items-center justify-center w-9 h-9 rounded bg-bg-card border border-white/[0.06] text-sm font-heading font-semibold text-white/60 hover:text-brand-gold hover:border-brand-gold/30 transition-colors">
+                      {letter}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </section>
+      )}
 
       {/* Glossary Terms */}
-      <section className="section-padding bg-bg-primary">
-        <div className="container-max">
-          <div className="max-w-4xl">
-            {alphabet.map((letter) => (
-              <AnimatedSection key={letter} className="mb-12">
-                <div id={`letter-${letter}`} className="scroll-mt-24">
-                  <h2 className="text-3xl font-heading font-bold text-brand-gold mb-6 pb-3 border-b border-white/10">{letter}</h2>
-                  <dl className="space-y-6">
-                    {grouped[letter].map((item) => (
-                      <div key={item.question} id={item.question.toLowerCase().replace(/[\s()]/g, "-")} className="scroll-mt-24">
-                        <dt className="text-lg font-heading font-semibold text-white mb-2">{item.question}</dt>
-                        <dd className="text-white/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20">{item.answer}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </AnimatedSection>
-            ))}
+      {glossary?.visible && (
+        <section className="section-padding bg-bg-primary">
+          <div className="container-max">
+            <div className="max-w-4xl">
+              {alphabet.map((letter) => (
+                <AnimatedSection key={letter} className="mb-12">
+                  <div id={`letter-${letter}`} className="scroll-mt-24">
+                    <h2 className="text-3xl font-heading font-bold text-brand-gold mb-6 pb-3 border-b border-white/10">{letter}</h2>
+                    <dl className="space-y-6">
+                      {grouped[letter].map((item) => (
+                        <div key={item.question} id={item.question.toLowerCase().replace(/[\s()]/g, "-")} className="scroll-mt-24">
+                          <dt className="text-lg font-heading font-semibold text-white mb-2">{item.question}</dt>
+                          <dd className="text-white/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20">{item.answer}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CTASection />
     </>
