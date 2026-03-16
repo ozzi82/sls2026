@@ -25,7 +25,7 @@ export default function AdminLayout({
 
   const navItems = [
     { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/admin/pages/new", label: "New Page", icon: FilePlus },
+    { href: "/admin/pages/new", label: "New Landing Page", icon: FilePlus },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function AdminLayout({
             {navItems.map((item) => {
               const isActive =
                 item.href === "/admin"
-                  ? pathname === "/admin"
+                  ? pathname === "/admin" || pathname.startsWith("/admin/products") || pathname.startsWith("/admin/static")
                   : pathname.startsWith(item.href);
               return (
                 <Link

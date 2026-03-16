@@ -1,0 +1,60 @@
+"use client";
+
+import type { ProductTypesData } from "@/lib/admin/page-config-types";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import ListEditor from "./ListEditor";
+
+interface ProductTypesEditorProps {
+  data: ProductTypesData;
+  onChange: (data: ProductTypesData) => void;
+}
+
+export default function ProductTypesEditor({ data, onChange }: ProductTypesEditorProps) {
+  return (
+    <div className="space-y-4">
+      <div>
+        <Label>Heading</Label>
+        <Input
+          value={data.heading}
+          onChange={(e) => onChange({ ...data, heading: e.target.value })}
+          placeholder="Section heading"
+        />
+      </div>
+      <div>
+        <Label>Product Types</Label>
+        <ListEditor
+          items={data.items}
+          onChange={(items) => onChange({ ...data, items })}
+          createItem={() => ({ name: "", description: "", image: "", href: "" })}
+          label="Product Type"
+          renderItem={(item, _index, update) => (
+            <div className="space-y-2">
+              <Input
+                value={item.name}
+                onChange={(e) => update({ ...item, name: e.target.value })}
+                placeholder="Name"
+              />
+              <Textarea
+                value={item.description}
+                onChange={(e) => update({ ...item, description: e.target.value })}
+                placeholder="Description"
+              />
+              <Input
+                value={item.image ?? ""}
+                onChange={(e) => update({ ...item, image: e.target.value })}
+                placeholder="Image URL"
+              />
+              <Input
+                value={item.href ?? ""}
+                onChange={(e) => update({ ...item, href: e.target.value })}
+                placeholder="Link href"
+              />
+            </div>
+          )}
+        />
+      </div>
+    </div>
+  );
+}
