@@ -55,7 +55,7 @@ export default function ChoosingIlluminationTypesPage() {
             </AnimatedSection>
           </div>
         </section>
-      )
+      )}
 
       <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">

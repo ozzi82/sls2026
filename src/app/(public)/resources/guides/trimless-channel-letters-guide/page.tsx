@@ -5,36 +5,51 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import type { HeroData } from "@/lib/admin/page-config-types";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
-  return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords, alternates: { canonical: "https://sunlitesigns.com/resources/guides/trimless-channel-letters-guide" } };
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: "https://sunlitesigns.com/resources/guides/trimless-channel-letters-guide" },
+  };
 }
 
 export default function TrimlessGuidePage() {
   const config = loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
-  function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
-  const heroData = getBlock("hero")!.data as any;
+
+  function getBlock<T>(id: string) {
+    return config.blocks.find((b) => b.id === id) as
+      | { visible: boolean; data: T }
+      | undefined;
+  }
+
+  const hero = getBlock<HeroData>("hero");
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"The Complete Guide to Trimless Channel Letters","description":"Everything sign shop professionals need to know about trimless channel letters including construction, benefits, specifications, and how to sell them to clients.","step":[{"@type":"HowToStep","position":1,"text":"Understand what makes trimless letters different from trim cap"},{"@type":"HowToStep","position":2,"text":"Learn the construction and engineering behind trimless design"},{"@type":"HowToStep","position":3,"text":"Compare trimless vs traditional trim cap specifications"},{"@type":"HowToStep","position":4,"text":"Identify ideal applications for trimless letters"},{"@type":"HowToStep","position":5,"text":"Evaluate cost and value considerations"},{"@type":"HowToStep","position":6,"text":"Present trimless options to your clients effectively"}]}) }} />
-      <section className="bg-bg-primary pt-32 pb-16">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Trimless Channel Letters Guide" }]} />
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-              <Lock className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
-            </div>
-            <div className="gold-line mb-6" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{heroData.h1}</h1>
-            <p className="text-lg text-white/60 max-w-2xl">{heroData.subtitle}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Hero */}
+      {hero?.visible && (
+        <section className="bg-bg-primary pt-32 pb-16">
+          <div className="container-max px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Trimless Channel Letters Guide" }]} />
+            <AnimatedSection>
+              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
+                <Lock className="w-3.5 h-3.5 text-brand-gold" />
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+              </div>
+              <div className="gold-line mb-6" />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
+              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       <section className="section-padding bg-bg-light">
         <div className="container-max"><div className="max-w-3xl"><AnimatedSection>

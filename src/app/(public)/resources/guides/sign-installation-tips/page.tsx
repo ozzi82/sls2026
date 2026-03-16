@@ -5,36 +5,50 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import type { HeroData } from "@/lib/admin/page-config-types";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = loadStaticPageConfig("resources--guides--sign-installation-tips");
-  return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+  };
 }
 
 export default function SignInstallationTipsPage() {
   const config = loadStaticPageConfig("resources--guides--sign-installation-tips");
-  function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
-  const heroData = getBlock("hero")!.data as any;
+
+  function getBlock<T>(id: string) {
+    return config.blocks.find((b) => b.id === id) as
+      | { visible: boolean; data: T }
+      | undefined;
+  }
+
+  const hero = getBlock<HeroData>("hero");
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"Sign Installation Tips and Best Practices","description":"Professional installation guide for wholesale channel letters covering mounting methods, electrical connections, and field best practices.","step":[{"@type":"HowToStep","position":1,"text":"Review shop drawings and verify all components before site arrival"},{"@type":"HowToStep","position":2,"text":"Prepare the mounting surface and confirm structural support"},{"@type":"HowToStep","position":3,"text":"Position the paper pattern and mark mounting points"},{"@type":"HowToStep","position":4,"text":"Install mounting hardware and studs"},{"@type":"HowToStep","position":5,"text":"Mount the letters and verify alignment"},{"@type":"HowToStep","position":6,"text":"Complete electrical connections per UL requirements"},{"@type":"HowToStep","position":7,"text":"Perform final inspection and burn-in test"}]}) }} />
-      <section className="bg-bg-primary pt-32 pb-16">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Sign Installation Tips" }]} />
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-              <Lock className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
-            </div>
-            <div className="gold-line mb-6" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{heroData.h1}</h1>
-            <p className="text-lg text-white/60 max-w-2xl">{heroData.subtitle}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Hero */}
+      {hero?.visible && (
+        <section className="bg-bg-primary pt-32 pb-16">
+          <div className="container-max px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Sign Installation Tips" }]} />
+            <AnimatedSection>
+              <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
+                <Lock className="w-3.5 h-3.5 text-brand-gold" />
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+              </div>
+              <div className="gold-line mb-6" />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
+              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       <section className="section-padding bg-bg-primary">
         <div className="container-max px-4 sm:px-6 lg:px-8">
