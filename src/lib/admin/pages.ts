@@ -100,3 +100,13 @@ export function createPage(
   writeJsonFile(targetFile, pages);
   return { success: true };
 }
+
+export function deletePage(slug: string): { success: boolean; error?: string } {
+  const result = getPageBySlug(slug);
+  if (!result) return { success: false, error: "Page not found" };
+
+  const pages = readJsonFile(result.file);
+  const filtered = pages.filter((p) => p.slug !== slug);
+  writeJsonFile(result.file, filtered);
+  return { success: true };
+}

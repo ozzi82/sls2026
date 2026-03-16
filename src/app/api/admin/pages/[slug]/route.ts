@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPageBySlug, updatePage } from "@/lib/admin/pages";
+import { getPageBySlug, updatePage, deletePage } from "@/lib/admin/pages";
 import { landingPageSchema } from "@/lib/admin/validation";
 
 export const dynamic = "force-dynamic";
@@ -35,4 +35,15 @@ export async function PUT(
   }
 
   return NextResponse.json({ success: true, page: parsed.data });
+}
+
+export async function DELETE(
+  _request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
+  const result = deletePage(params.slug);
+  if (!result.success) {
+    return NextResponse.json({ error: result.error }, { status: 404 });
+  }
+  return NextResponse.json({ success: true });
 }
