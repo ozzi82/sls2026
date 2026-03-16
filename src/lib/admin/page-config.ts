@@ -27,6 +27,19 @@ function fileSlugToFilename(fileSlug: string): string {
   return fileSlug + ".json";
 }
 
+// Public-facing helpers (read configs for rendering pages)
+export function loadProductConfig(fileSlug: string): PageConfig {
+  const config = readConfigFile(path.join(PRODUCTS_DIR, fileSlugToFilename(fileSlug)));
+  if (!config) throw new Error(`Product config not found: ${fileSlug}`);
+  return config;
+}
+
+export function loadStaticPageConfig(fileSlug: string): PageConfig {
+  const config = readConfigFile(path.join(PAGES_DIR, fileSlugToFilename(fileSlug)));
+  if (!config) throw new Error(`Static page config not found: ${fileSlug}`);
+  return config;
+}
+
 // Product page configs
 export function getAllProductConfigs(): PageConfig[] {
   ensureDir(PRODUCTS_DIR);
