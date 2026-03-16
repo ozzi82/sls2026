@@ -1,0 +1,110 @@
+{
+  "slug": "/products/channel-letters/non-illuminated",
+  "pageType": "product",
+  "label": "Non-Illuminated Channel Letters",
+  "seo": {
+    "title": "Wholesale Non-Illuminated Channel Letters — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale non-illuminated channel letters for sign shops only. Dimensional aluminum letters without lighting, same precision fabrication. Trade pricing, 2-3 week delivery. We never sell retail.",
+    "keywords": [
+      "non-illuminated channel letters",
+      "non-illuminated channel letters wholesale",
+      "unlit channel letters",
+      "dimensional channel letters",
+      "aluminum channel letters no lights",
+      "wholesale channel letters",
+      "metal dimensional letters",
+      "trade pricing channel letters",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/non-illuminated-channel-letters"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Non-Illuminated",
+        "h1Highlight": "Channel Letters",
+        "subtitle": "Dimensional impact without illumination. Built with the same precision aluminum fabrication as our illuminated lines, non-lit channel letters deliver professional brand presence at a more accessible price point. Available exclusively to trade accounts.\n\nIdeal for code-restricted areas, interior signage, and budget-conscious projects. Available with trimless construction. Wholesale direct to sign shops — we never sell retail.",
+        "image": "/products/flat-cut-day.jpg",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "features_grid",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          { "icon": "DollarSign", "title": "Cost-Effective", "description": "No LEDs, no power supplies, no electrical components. Non-illuminated channel letters deliver dimensional impact at a significantly lower price point." },
+          { "icon": "Paintbrush", "title": "Full Color & Finish Range", "description": "Any Pantone color with automotive-grade paint. Also available in brushed aluminum, oxidized copper, rusted steel, and specialty finishes." },
+          { "icon": "Building2", "title": "Code-Friendly", "description": "Ideal for locations where illuminated signage is restricted by zoning codes, historical district regulations, or landlord requirements." },
+          { "icon": "Ruler", "title": "Same Precision Build", "description": "Manufactured on the same CNC equipment with the same quality standards as our illuminated products. No shortcuts on non-lit fabrication." },
+          { "icon": "Weight", "title": "Lightweight Construction", "description": "Without internal LED modules and power components, non-illuminated letters are lighter and simpler to install, reducing labor time on site." },
+          { "icon": "Layers", "title": "Versatile Mounting", "description": "Stud mount, flush mount, or raceway mount. Deeper returns for shadow effects or shallow returns for a subtle dimensional profile." }
+        ]
+      }
+    },
+    {
+      "id": "text_section",
+      "type": "text_section",
+      "label": "Finish Options",
+      "visible": true,
+      "data": {
+        "heading": "Finish Options",
+        "content": "Non-illuminated channel letters offer the broadest range of finish options, since the face does not need to transmit light. Solid aluminum faces open up finishes that are not possible with illuminated letters. All finishes available at wholesale trade pricing.",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Simpler construction, same quality standards. Faster production times due to the absence of electrical components. Available exclusively at wholesale trade pricing.",
+        "image": "Non-illuminated channel letter — cross-section showing aluminum return and face construction",
+        "specs": []
+      }
+    },
+    {
+      "id": "use_cases",
+      "type": "use_cases",
+      "label": "Applications",
+      "visible": true,
+      "data": {
+        "heading": "Ideal Applications",
+        "description": "Non-illuminated channel letters are the right choice when illumination is not needed, not permitted, or not in the budget. Available at wholesale trade pricing for all project types.",
+        "items": [
+          "Historical districts with lighting restrictions",
+          "Interior lobby and wayfinding signage",
+          "Budget-conscious storefronts",
+          "Secondary and directional signage",
+          "Zoning-restricted locations",
+          "Daytime-only businesses",
+          "Landlord-restricted tenant signage",
+          "Decorative and architectural applications"
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Order",
+        "headingHighlight": "Non-Illuminated Letters?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

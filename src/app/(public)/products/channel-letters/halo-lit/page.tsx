@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  Sparkles,
-  Moon,
-  Building2,
-  Shield,
-  Ruler,
-  Lightbulb,
-  Lock,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -18,78 +8,38 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import configData from "../../../../../content/products/channel-letters--halo-lit.json";
+import { PageConfig } from "@/lib/admin/page-config-types";
+
+const config = configData as unknown as PageConfig;
+function getBlock(id: string) {
+  return config.blocks.find(b => b.id === id);
+}
+
+const heroBlock = getBlock("hero")!;
+const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+const featuresBlock = getBlock("features_grid")!;
+const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+const textBlock = getBlock("text_section")!;
+const textData = textBlock.data as { heading: string; content: string; image?: string };
+const specsBlock = getBlock("specs")!;
+const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
+const useCasesBlock = getBlock("use_cases")!;
+const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
+const galleryBlock = getBlock("gallery")!;
+const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
 
 export const metadata: Metadata = {
-  title: "Wholesale Halo Lit Channel Letters — Trade Pricing | Sunlite Signs",
-  description:
-    "Wholesale halo lit channel letters for sign shops only. Elegant backlit glow, rear-mounted LED illumination. Trade pricing, UL listed, German-engineered. We never sell retail.",
-  keywords: [
-    "halo lit channel letters",
-    "halo lit channel letters wholesale",
-    "backlit channel letters",
-    "reverse channel letters",
-    "halo illuminated signs",
-    "LED halo letters wholesale",
-    "architectural channel letters",
-    "trade pricing halo letters",
-    "sign shop supplier",
-  ],
+  title: config.seo.title,
+  description: config.seo.metaDescription,
+  keywords: config.seo.keywords,
   alternates: {
-    canonical: "https://sunlitesigns.com/halo-lit-channel-letters",
+    canonical: config.seo.canonical,
   },
 };
 
-const features = [
-  {
-    icon: Moon,
-    title: "Elegant Halo Glow",
-    description:
-      "Rear-mounted LEDs create a soft, diffused halo of light around each letter, producing a sophisticated and upscale appearance on any facade.",
-  },
-  {
-    icon: Sparkles,
-    title: "Premium Brand Perception",
-    description:
-      "Halo lit letters are the preferred choice for luxury retail, hospitality, and architectural signage where brand perception matters.",
-  },
-  {
-    icon: Building2,
-    title: "Facade Enhancement",
-    description:
-      "The backlit glow highlights the texture and material of the mounting surface, turning the building itself into part of the sign design.",
-  },
-  {
-    icon: Shield,
-    title: "UL Listed",
-    description:
-      "Fully UL listed with all required labels and documentation. Smooth permitting and code compliance for every project.",
-  },
-  {
-    icon: Ruler,
-    title: "Precision Returns",
-    description:
-      "Deep aluminum returns provide the standoff needed for optimal halo spread. Return depth is customizable based on wall color and effect desired.",
-  },
-  {
-    icon: Lightbulb,
-    title: "LED Color Options",
-    description:
-      "Standard white halo with warm white (3000K), neutral (4000K), and cool white (6500K) options. RGB color-changing available for dynamic installations.",
-  },
-];
-
 const product = getProduct("LP 11-B");
-
-const useCases = [
-  "Luxury retail and boutiques",
-  "Hotels, resorts, and hospitality",
-  "Fine dining restaurants",
-  "Corporate headquarters",
-  "Medical and professional offices",
-  "Multifamily residential lobbies",
-  "Mixed-use developments",
-  "Museums and cultural institutions",
-];
 
 export default function HaloLitPage() {
   const jsonLd = {
@@ -147,23 +97,19 @@ export default function HaloLitPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
+                  {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  Wholesale Halo Lit{" "}
-                  <span className="text-brand-gold">Channel Letters</span>
+                  {heroData.h1}{" "}
+                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
-                <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                  A soft, diffused glow radiates behind each letter, creating an
-                  elegant halo effect that transforms any facade into a premium
-                  brand statement. The choice of architects and luxury brands. Available exclusively to trade accounts.
-                </p>
-                <p className="text-white/50 mb-8">
-                  Rear-mounted LEDs. Aluminum construction. UL listed. Wholesale
-                  direct to sign shops — we never sell retail. Your clients stay yours.
-                </p>
+                {heroData.subtitle.split("\n\n").map((para, i) => (
+                  <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>
+                    {para}
+                  </p>
+                ))}
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -186,7 +132,7 @@ export default function HaloLitPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Trade Specifications & Benefits
+                {featuresData.heading}
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
                 Halo lit channel letters deliver a refined aesthetic that
@@ -196,21 +142,24 @@ export default function HaloLitPage() {
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
-                  <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
-                    <feature.icon className="w-6 h-6 text-brand-gold" />
+            {featuresData.items.map((feature, index) => {
+              const Icon = getIconComponent(feature.icon);
+              return (
+                <AnimatedSection key={feature.title} delay={index * 0.08}>
+                  <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
+                    <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
+                      {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-text-dark/60 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-text-dark/60 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -221,20 +170,17 @@ export default function HaloLitPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <PlaceholderImage
-                label="Halo lit channel letter — cross-section diagram showing rear LED placement and halo spread"
+                label={textData.image || ""}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  How Halo Lit Works
+                  {textData.heading}
                 </h2>
                 <p className="text-white/60 mb-6 leading-relaxed">
-                  LEDs are mounted facing the rear of the letter, directing
-                  light outward through the back. Standoff spacers hold each
-                  letter away from the wall, allowing the light to diffuse and
-                  create the characteristic halo effect.
+                  {textData.content}
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -265,14 +211,13 @@ export default function HaloLitPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Trade Specifications
+                {specsData.heading}
               </h2>
               <p className="text-white/60 mb-8">
-                Engineered for optimal halo spread, durability, and ease of
-                installation. Every detail is considered. Available exclusively at wholesale trade pricing.
+                {specsData.description}
               </p>
               <PlaceholderImage
-                label="Halo lit channel letter — detail of aluminum return and LED module placement"
+                label={specsData.image || ""}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -292,14 +237,13 @@ export default function HaloLitPage() {
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  Ideal Applications
+                  {useCasesData.heading}
                 </h2>
                 <p className="text-text-dark/60 mb-8">
-                  Halo lit channel letters are the go-to choice for projects
-                  where elegance and brand sophistication are paramount. Available at wholesale trade pricing for all project types.
+                  {useCasesData.description}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {useCases.map((useCase) => (
+                  {useCasesData.items.map((useCase) => (
                     <li
                       key={useCase}
                       className="flex items-center gap-2 text-sm text-text-dark/70"
@@ -327,23 +271,16 @@ export default function HaloLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Halo Lit Projects
+                {galleryData.heading}
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Halo lit letters — boutique retail, dark brick",
-                "Halo lit letters — corporate office tower",
-                "Halo lit letters — fine dining restaurant",
-                "Halo lit letters — luxury hotel, stone facade",
-                "Halo lit letters — medical center entrance",
-                "Halo lit letters — mixed-use residential lobby",
-              ].map((label, i) => (
+              {galleryData.images.map((img, i) => (
                 <PlaceholderImage
                   key={i}
-                  label={label}
+                  label={img.alt}
                   className="rounded-xl"
                   aspectRatio="aspect-[4/3]"
                 />

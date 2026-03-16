@@ -1,0 +1,189 @@
+{
+  "slug": "/products/custom-fabrication",
+  "pageType": "product",
+  "label": "Custom Fabrication",
+  "seo": {
+    "title": "Wholesale Custom Sign Fabrication — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale custom sign fabrication for sign shops only. Bespoke illuminated signage, specialty materials, complex geometries. Trade pricing, we never sell retail. We never compete with you.",
+    "keywords": [
+      "custom sign fabrication wholesale",
+      "custom sign manufacturer",
+      "bespoke signage fabrication",
+      "specialty sign fabrication",
+      "custom illuminated signs",
+      "architectural sign fabrication",
+      "wholesale custom signs",
+      "sign fabrication USA",
+      "trade pricing custom signs",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/custom-sign-fabrication"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Custom",
+        "h1Highlight": "Fabrication",
+        "subtitle": "When your project goes beyond standard products, our custom fabrication team brings it to life. Complex geometries, mixed materials, specialty illumination, and oversized installations — engineered and built to the same standards as our entire product line. Available exclusively to trade accounts.",
+        "image": "Custom fabrication — large-scale bespoke illuminated sign in fabrication shop",
+        "ctas": [
+          { "label": "Request Trade Quote", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Wholesale Custom Capabilities",
+      "visible": true,
+      "data": {
+        "heading": "Wholesale Custom Capabilities",
+        "items": [
+          {
+            "icon": "Wrench",
+            "title": "Complex Geometries",
+            "description": "Multi-plane letters, curved returns, tapered profiles, and three-dimensional sculptural forms. If your design challenges standard fabrication, we welcome it."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Specialty Illumination",
+            "description": "Neon-look LED flex, RGB color-changing, programmable DMX control, edge-lit panels, backlit murals, and custom LED configurations beyond standard products."
+          },
+          {
+            "icon": "Layers",
+            "title": "Mixed Materials",
+            "description": "Combinations of aluminum, stainless steel, brass, copper, acrylic, wood, stone, and composite materials in a single sign structure."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Oversized Fabrication",
+            "description": "Large-format letters, building-scale installations, and multi-component sign systems that exceed standard product size ranges."
+          },
+          {
+            "icon": "Shield",
+            "title": "Engineering Support",
+            "description": "Structural calculations, wind load analysis, and mounting engineering for complex installations. We provide the documentation you need for permitting."
+          },
+          {
+            "icon": "MessageSquare",
+            "title": "Collaborative Process",
+            "description": "We work directly with you and your client's design team to translate concepts into buildable, installable signage. From napkin sketch to shop drawings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "process",
+      "type": "process_steps",
+      "label": "The Wholesale Custom Fabrication Process",
+      "visible": true,
+      "data": {
+        "heading": "The Wholesale Custom Fabrication Process",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Submit Your Concept",
+            "description": "Share whatever you have: architectural drawings, brand guidelines, rough sketches, reference photos, or just a description of what you need. We work with it all."
+          },
+          {
+            "step": 2,
+            "title": "Engineering & Trade Estimation",
+            "description": "Our team reviews your concept, identifies the optimal materials and construction methods, and provides a detailed wholesale trade quote with fabrication drawings."
+          },
+          {
+            "step": 3,
+            "title": "Shop Drawing Approval",
+            "description": "We produce detailed shop drawings showing materials, dimensions, illumination, mounting, and electrical specifications. You approve before we cut metal."
+          },
+          {
+            "step": 4,
+            "title": "Fabrication & QC",
+            "description": "Precision fabrication using the same German-engineered processes that define our standard product lines. Every custom project undergoes the same quality control."
+          },
+          {
+            "step": 5,
+            "title": "Crating & Delivery",
+            "description": "Custom crating for safe transit. We ship to your shop or direct to the job site. Installation guides and hardware included."
+          }
+        ]
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Project Types We Handle",
+      "visible": true,
+      "data": {
+        "heading": "Project Types We Handle",
+        "description": "This is a sample of the custom project types our fabrication team handles regularly. If your project is not on this list, reach out — we have likely done something similar. All at wholesale trade pricing for sign shops.",
+        "items": [
+          "Architectural monument signs",
+          "Multi-element building identification systems",
+          "Sculptural and three-dimensional brand elements",
+          "Oversized rooftop or building-mounted letters",
+          "Mixed-material reception and lobby features",
+          "Illuminated murals and graphic walls",
+          "Wayfinding and directional sign systems",
+          "LED-integrated architectural elements",
+          "Historical restoration and replication",
+          "Specialty finish and patina applications"
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Custom Fabrication Projects",
+      "visible": true,
+      "data": {
+        "heading": "Custom Fabrication Projects",
+        "images": [
+          { "src": "", "alt": "Custom project — architectural monument sign, installed" },
+          { "src": "", "alt": "Custom project — illuminated mural wall, restaurant interior" },
+          { "src": "", "alt": "Custom project — oversized dimensional letters, building facade" },
+          { "src": "", "alt": "Custom project — mixed metal and wood reception sign" },
+          { "src": "", "alt": "Custom project — LED-integrated architectural feature" },
+          { "src": "", "alt": "Custom project — historical sign restoration" }
+        ]
+      }
+    },
+    {
+      "id": "text-why-sunlite",
+      "type": "text_section",
+      "label": "Why Sunlite for Wholesale Custom Work",
+      "visible": true,
+      "data": {
+        "heading": "Why Sunlite for Wholesale Custom Work",
+        "content": "Custom fabrication requires a partner who combines engineering capability with manufacturing precision. That is exactly what our German engineering heritage delivers. Wholesale direct to sign shops — we never sell retail.",
+        "image": "Sunlite fabrication shop — CNC equipment, welding stations, paint booth",
+        "imagePosition": "left",
+        "background": "light"
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Get Started?",
+        "description": "Request a wholesale quote for your next project."
+      }
+    }
+  ]
+}

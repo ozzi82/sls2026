@@ -1,0 +1,188 @@
+{
+  "slug": "/products/logo-boxes",
+  "pageType": "product",
+  "label": "Logo Boxes",
+  "seo": {
+    "title": "Contour Logo Boxes | Wholesale Sign Manufacturer | Sunlite Signs",
+    "metaDescription": "Wholesale contour logo boxes and cloud logo signs. Custom-shaped illuminated enclosures for full-color logo reproduction. UL 48 listed, 3-week delivery for sign shops.",
+    "keywords": [
+      "contour logo boxes wholesale",
+      "cloud logo signs",
+      "logo cabinet signs",
+      "illuminated logo boxes",
+      "custom logo sign manufacturer",
+      "franchise logo signs",
+      "contour cut sign cabinets",
+      "logo shaped light box",
+      "wholesale logo signage",
+      "face-lit logo signs"
+    ],
+    "canonical": "https://sunlitesigns.com/products/logo-boxes"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Contour",
+        "h1Highlight": "Logo Boxes",
+        "subtitle": "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Combine the dimensional impact of channel letters with full-color logo reproduction for unmistakable brand presence.",
+        "image": "Contour logo box — custom-shaped illuminated logo sign on building facade",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Features & Benefits",
+        "items": [
+          {
+            "icon": "Eye",
+            "title": "Brand-Perfect Shape",
+            "description": "Every contour logo box is custom-shaped to follow the exact outline of your client's logo. The result is a three-dimensional sign that reinforces brand identity with unmistakable recognition from any distance."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Face-Lit & Halo-Lit Options",
+            "description": "Choose from face-lit illumination for vibrant, full-color logo reproduction or halo-lit for a dramatic silhouette glow. Combination configurations are also available for maximum visual impact."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Full-Color Reproduction",
+            "description": "High-resolution digital printing on translucent polycarbonate faces captures every gradient, color, and detail of the original logo artwork. PMS color matching ensures brand accuracy."
+          },
+          {
+            "icon": "Layers",
+            "title": "Dimensional Impact",
+            "description": "Contour logo boxes combine the dimensional presence of channel letters with the full-color capability of cabinet signs. The custom-shaped enclosure creates a bold, sculptural presence on any facade."
+          },
+          {
+            "icon": "Palette",
+            "title": "Custom Finishes",
+            "description": "Cabinet returns and trim are available in any standard or custom paint color, powder coat, or vinyl wrap finish. Match corporate brand standards with precision on every project."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL 48 Listed",
+            "description": "All illuminated contour logo boxes are UL 48 listed with proper labeling and documentation. Welded aluminum construction meets structural and electrical code requirements for commercial installations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "process",
+      "type": "process_steps",
+      "label": "How Logo Boxes Are Made",
+      "visible": true,
+      "data": {
+        "heading": "How Logo Boxes Are Made",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Logo Artwork & Engineering",
+            "description": "Submit your client's logo artwork and our engineering team creates detailed CAD drawings of the custom-shaped cabinet, including structural calculations and electrical layouts — all at no extra cost."
+          },
+          {
+            "step": 2,
+            "title": "Custom Cabinet Fabrication",
+            "description": "CNC-cut aluminum panels are formed and welded to follow the exact contour of the logo. Returns are fabricated to the specified depth, creating a seamless three-dimensional enclosure."
+          },
+          {
+            "step": 3,
+            "title": "Face & Graphics Application",
+            "description": "Translucent polycarbonate or acrylic faces are contour-cut and fitted to the cabinet. Full-color digital graphics are applied for accurate logo reproduction with LED-friendly translucency."
+          },
+          {
+            "step": 4,
+            "title": "LED Installation & QC",
+            "description": "LED modules are installed for uniform face illumination or halo glow. Every unit undergoes powered illumination testing and full quality inspection before shipping fully assembled."
+          }
+        ]
+      }
+    },
+    {
+      "id": "text-overview",
+      "type": "text_section",
+      "label": "Why Choose Contour Logo Boxes?",
+      "visible": true,
+      "data": {
+        "heading": "Why Choose Contour Logo Boxes?",
+        "content": "Contour logo boxes — also called cloud logos or logo cabinets — are the ideal solution for businesses with recognizable logo marks that need dimensional, illuminated signage. Unlike channel letters, which represent individual characters, logo boxes reproduce the entire logo as a single illuminated unit.\n\nThis makes them especially popular for franchise signage, where brand consistency across multiple locations is critical. The custom-shaped cabinet follows every curve and angle of the logo, creating a sign that is instantly recognizable and impossible to replicate with standard sign products.",
+        "image": "Contour logo box — detail of custom-shaped aluminum cabinet with full-color face",
+        "imagePosition": "left",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Specifications",
+        "specs": [
+          { "label": "Construction", "value": "Welded aluminum, contour-shaped" },
+          { "label": "Face Material", "value": "Polycarbonate or acrylic, contour-cut" },
+          { "label": "Graphics", "value": "Full-color digital print, PMS matched" },
+          { "label": "Cabinet Depth", "value": "3.5\" to 8\" (custom available)" },
+          { "label": "Illumination", "value": "Face-lit, halo-lit, or combination" },
+          { "label": "LED System", "value": "Internal LED modules, UL listed" },
+          { "label": "Finish", "value": "Painted, powder coat, vinyl wrap" },
+          { "label": "Mounting", "value": "Wall mount, raceway, pole mount, monument" },
+          { "label": "Certifications", "value": "UL 48 Listed" },
+          { "label": "Warranty", "value": "5-year LED, 3-year construction" },
+          { "label": "Lead Time", "value": "3 weeks door to door" }
+        ]
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Common Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "Contour logo boxes are ideal for any business with a recognizable logo mark that needs consistent, dimensional brand representation. From single locations to nationwide franchise rollouts, logo boxes deliver brand impact at scale.",
+        "items": [
+          "Franchise and multi-location branding",
+          "Corporate headquarters and campuses",
+          "Retail storefronts with iconic logos",
+          "Hotels and resort properties",
+          "Restaurants and fast-casual chains",
+          "Auto dealerships and service centers",
+          "Healthcare systems and hospitals",
+          "Entertainment venues and stadiums"
+        ]
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Request Wholesale Pricing for",
+        "headingHighlight": "Logo Boxes.",
+        "description": "Send your logo artwork, dimensions, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
+      }
+    }
+  ]
+}

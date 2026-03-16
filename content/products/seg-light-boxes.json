@@ -1,0 +1,163 @@
+{
+  "slug": "/products/seg-light-boxes",
+  "pageType": "product",
+  "label": "SEG Light Boxes",
+  "seo": {
+    "title": "Wholesale SEG Light Boxes — Custom Silicone-Edged Graphic Light Boxes | Sunlite Signs",
+    "metaDescription": "Custom SEG light boxes and silicone-edged graphic prints for sign shops only. Ultra-thin profiles down to 1\" deep, dye-sublimation fabric printing, tool-free graphic changes. Trade pricing, UL listed. 3-week lead time. We never sell retail.",
+    "keywords": [
+      "SEG light box wholesale",
+      "silicone edge graphic light box",
+      "SEG frame wholesale",
+      "fabric light box wholesale",
+      "dye sublimation light box",
+      "tool-free graphic change lightbox",
+      "ultra-thin light box",
+      "SEG print wholesale",
+      "wholesale SEG manufacturer",
+      "trade pricing SEG light box",
+      "sign shop supplier",
+      "custom SEG light box"
+    ],
+    "canonical": "https://sunlitesigns.com/seg-light-boxes"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Custom",
+        "h1Highlight": "SEG Light Boxes",
+        "subtitle": "From experiential retail experiences to advertising and wayfinding content, Sunlite Signs custom-sized Silicone-edged Graphic (SEG) Light Box solutions are like no other the USA industry has experienced — low form factors down to 1\" deep, high-resolution printed and illuminated light box signage.",
+        "image": "SEG light box — silicone-edged graphic display, illuminated fabric face, retail environment",
+        "ctas": [
+          { "label": "Get Your Product Started", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "Download Catalog", "href": "#", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Why SEG Light Boxes from Sunlite",
+      "visible": true,
+      "data": {
+        "heading": "Why SEG Light Boxes from Sunlite",
+        "items": [
+          {
+            "icon": "Layers",
+            "title": "Silicone Edge Gasket System",
+            "description": "Precision-sewn silicone gasket around the perimeter of each fabric print locks into the aluminum frame channel for a taut, wrinkle-free illuminated face every time."
+          },
+          {
+            "icon": "Sun",
+            "title": "High-Resolution Dye-Sublimation Printing",
+            "description": "Vivid, full-color graphics printed directly into the fabric weave. Dye-sublimation delivers photographic quality that won't crack, peel, or fade like vinyl."
+          },
+          {
+            "icon": "RefreshCw",
+            "title": "Tool-Free Graphic Changes",
+            "description": "Swap graphics in minutes with no tools required. Simply pull the silicone gasket from the channel, insert the new print, and push back in. Ideal for seasonal or rotating messaging."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Ultra-Thin Profiles Down to 1\" Deep",
+            "description": "Low-profile aluminum frames as thin as 1\" deep. Clean, modern aesthetic that sits nearly flush against walls for sleek interior and exterior installations."
+          },
+          {
+            "icon": "Maximize",
+            "title": "Fully Custom Sizes",
+            "description": "Every SEG light box is built to your exact dimensions. No standard-size constraints — specify any width and height for a perfect fit in any application."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed & LED Illuminated",
+            "description": "All illuminated SEG light boxes are UL listed with complete documentation for code compliance and permitting. Edge-lit or backlit LED configurations available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "text-how-seg-works",
+      "type": "text_section",
+      "label": "How the SEG System Works",
+      "visible": true,
+      "data": {
+        "heading": "How the SEG System Works",
+        "content": "The silicone-edged graphic system is the modern standard for changeable illuminated displays. A precision-sewn silicone gasket around the fabric print presses into a recessed channel in the aluminum frame, creating a perfectly tensioned face with no visible hardware. Wholesale to sign companies only.",
+        "image": "SEG light box — close-up of silicone gasket being inserted into aluminum frame channel",
+        "imagePosition": "left",
+        "background": "navy"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Trade Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Every SEG light box is engineered for uniform illumination, structural integrity, and effortless graphic changes. Ships ready to install with frame, print, and LED system complete. Available exclusively at wholesale trade pricing.",
+        "image": "SEG light box — aluminum frame detail with LED modules visible, production facility",
+        "specs": [
+          { "label": "Frame Material", "value": "Extruded aluminum" },
+          { "label": "Profile Depth", "value": "1\", 2\", 3\", 4\" (application-dependent)" },
+          { "label": "Face Material", "value": "Dye-sublimation printed fabric with silicone gasket" },
+          { "label": "Illumination", "value": "LED edge-lit or LED backlit" },
+          { "label": "Graphic Resolution", "value": "High-resolution dye-sublimation printing" },
+          { "label": "Sizes", "value": "Custom sizes — any width and height" },
+          { "label": "Orientation", "value": "Single-sided or double-sided" },
+          { "label": "Frame Finish", "value": "Anodized aluminum, silver or black standard" },
+          { "label": "Mounting", "value": "Wall-mount, freestanding, ceiling-hung, or recessed" },
+          { "label": "Graphic Change", "value": "Tool-free — silicone gasket push-in system" },
+          { "label": "Certifications", "value": "UL Listed" },
+          { "label": "Warranty", "value": "5-year LED, 3-year frame and finish" },
+          { "label": "Lead Time", "value": "3 weeks door to door" }
+        ]
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Common Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "SEG light boxes bring high-impact illuminated graphics to every environment — from retail storefronts to corporate interiors and trade show floors. Wholesale direct to sign companies for all project types.",
+        "items": [
+          "Retail displays and experiential environments",
+          "Wayfinding and directory signage",
+          "Advertising and promotional displays",
+          "Trade show exhibits and booths",
+          "Hospitality and hotel lobbies",
+          "Corporate lobbies and reception areas",
+          "Quick-service restaurant menu boards",
+          "Airport and transit signage"
+        ]
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Get Started?",
+        "description": "Request a wholesale quote for your next project."
+      }
+    }
+  ]
+}

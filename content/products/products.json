@@ -1,0 +1,114 @@
+{
+  "slug": "/products",
+  "pageType": "product",
+  "label": "Wholesale Sign Products",
+  "seo": {
+    "title": "Wholesale Sign Products — Trade Pricing for Sign Shops | Sunlite Signs",
+    "metaDescription": "Wholesale sign products exclusively for trade accounts. Channel letters, flat cut letters, blade signs, lightboxes, and custom fabrication at wholesale pricing. We never sell retail.",
+    "keywords": [
+      "wholesale sign products",
+      "channel letters wholesale",
+      "flat cut letters wholesale",
+      "blade signs wholesale",
+      "lightboxes wholesale",
+      "sign manufacturer USA",
+      "wholesale sign supplier",
+      "trade pricing signs",
+      "sign shop supplier",
+      "wholesale only sign manufacturer"
+    ],
+    "canonical": "https://sunlitesigns.com/wholesale-sign-products"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Product",
+        "h1Highlight": "Catalog",
+        "subtitle": "German-engineered illuminated signage, wholesale direct to sign shops across the USA and Canada. Every product is UL listed, precision built, and delivered within 3 weeks door to door.\n\nWe never sell retail. Your clients stay yours. No retail markup, no middlemen — just trade pricing direct from the manufacturer.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "stats_strip",
+      "type": "stats_strip",
+      "label": "Trust Points",
+      "visible": true,
+      "data": {
+        "items": [
+          { "icon": "Shield", "label": "UL Listed Products" },
+          { "icon": "Clock", "label": "3-Week Door-to-Door Delivery" },
+          { "icon": "Wrench", "label": "German Engineering" }
+        ]
+      }
+    },
+    {
+      "id": "product_types",
+      "type": "product_types",
+      "label": "Product Categories",
+      "visible": true,
+      "data": {
+        "heading": "More Wholesale Product Lines",
+        "items": [
+          {
+            "name": "Channel Letters",
+            "description": "The EdgeLuxe product line — 12 channel letter styles across 4 families: Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. German-engineered, UL listed. Wholesale direct to sign shops.",
+            "href": "/products/channel-letters",
+            "image": "/products/front-halo-night.jpg"
+          },
+          {
+            "name": "Flat Cut Letters",
+            "description": "Precision-cut metal and acrylic dimensional letters at wholesale trade pricing. Clean lines, flush or stud-mounted, available in brushed aluminum, painted steel, and brass finishes.",
+            "href": "/products/flat-cut-letters",
+            "image": "/products/flat-cut-day.jpg"
+          },
+          {
+            "name": "Blade Signs",
+            "description": "Double-sided projecting blade signs at trade pricing. Illuminated and non-illuminated options for storefronts and mixed-use developments. Wholesale direct to sign shops.",
+            "href": "/products/blade-signs"
+          },
+          {
+            "name": "Lightboxes",
+            "description": "Illuminated cabinet signs at wholesale pricing. Edge-lit and backlit LED options with tensioned fabric or polycarbonate faces. Available exclusively to trade accounts.",
+            "href": "/products/lightboxes"
+          },
+          {
+            "name": "SEG Light Boxes",
+            "description": "Custom-sized Silicone-edged Graphic (SEG) light box solutions in low form factors down to 1\" deep. High-resolution printed and illuminated signage. Custom SEG light boxes and prints in 3 weeks. Wholesale only.",
+            "href": "/products/seg-light-boxes"
+          },
+          {
+            "name": "Logo Boxes",
+            "description": "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Full-color digital print on translucent faces for brand-perfect reproduction. Wholesale trade pricing for sign shops.",
+            "href": "/products/logo-boxes"
+          },
+          {
+            "name": "Push-Through Signs",
+            "description": "Dimensional acrylic letters pushed through precision-routed aluminum panels with LED backlighting. The premium alternative to flat-face cabinet signs. Wholesale only.",
+            "href": "/products/push-through-signs"
+          },
+          {
+            "name": "Custom Fabrication",
+            "description": "Bespoke signage solutions at trade pricing for projects that require something beyond standard products. Wholesale only — we never compete with our sign shop partners.",
+            "href": "/products/custom-fabrication"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Need a Custom",
+        "headingHighlight": "Solution?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

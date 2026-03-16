@@ -1,0 +1,191 @@
+{
+  "slug": "/products/lightboxes",
+  "pageType": "product",
+  "label": "Lightboxes",
+  "seo": {
+    "title": "Wholesale Lightboxes — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale lightboxes and illuminated cabinet signs for sign shops only. Edge-lit and backlit LED options, tensioned fabric or polycarbonate faces. Trade pricing, UL listed. We never sell retail.",
+    "keywords": [
+      "lightboxes wholesale",
+      "illuminated cabinet signs",
+      "LED lightbox sign",
+      "backlit sign wholesale",
+      "tensioned fabric lightbox",
+      "sign cabinet wholesale",
+      "illuminated sign cabinet",
+      "wholesale lightbox manufacturer",
+      "trade pricing lightboxes",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/wholesale-lightbox-signs"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale",
+        "h1Highlight": "Lightboxes",
+        "subtitle": "Illuminated cabinet signs engineered for uniform brightness, durability, and ease of maintenance. Standard cabinets, slim profiles, and tensioned fabric systems in any size or shape. Available exclusively to trade accounts.",
+        "image": "Lightbox — illuminated cabinet sign on commercial building, night view",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "product-types",
+      "type": "product_types",
+      "label": "Wholesale Lightbox Types",
+      "visible": true,
+      "data": {
+        "heading": "Wholesale Lightbox Types",
+        "items": [
+          {
+            "name": "Standard Cabinet Lightbox",
+            "description": "Traditional illuminated cabinet sign with internal LED modules and translucent polycarbonate or acrylic face. The workhorse of commercial signage. Wholesale trade pricing for sign shops.",
+            "image": "Standard cabinet lightbox — illuminated commercial sign, storefront"
+          },
+          {
+            "name": "Slim Profile Lightbox",
+            "description": "Ultra-thin cabinet construction with edge-lit LED technology. Modern, sleek profile ideal for contemporary architecture and interior applications. Available exclusively to trade accounts.",
+            "image": "Slim profile lightbox — thin edge-lit sign, modern building"
+          },
+          {
+            "name": "Tensioned Fabric Lightbox",
+            "description": "Aluminum frame with dye-sublimation printed fabric face stretched over a silicone edge system. Easy graphic changes for seasonal or evolving messaging. Wholesale direct to sign shops.",
+            "image": "Tensioned fabric lightbox — vivid print, retail display"
+          },
+          {
+            "name": "Double-Sided Lightbox",
+            "description": "Cabinet with two illuminated faces for freestanding, pylon-mounted, or projecting installations. Maximum visibility from multiple directions. Trade pricing available.",
+            "image": "Double-sided lightbox — freestanding pylon sign"
+          }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Trade Specifications & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          {
+            "icon": "Sun",
+            "title": "Uniform LED Illumination",
+            "description": "Internal LED modules engineered for even light distribution across the entire face. No hot spots, no dark corners, no uneven brightness."
+          },
+          {
+            "icon": "Maximize",
+            "title": "Custom Sizes & Shapes",
+            "description": "From small wayfinding boxes to large building-mounted cabinets. Rectangular, square, round, oval, or fully custom shapes."
+          },
+          {
+            "icon": "Palette",
+            "title": "Multiple Face Options",
+            "description": "Polycarbonate, acrylic, tensioned fabric, or aluminum with routed graphics. Full-color printed, vinyl-applied, or push-through faces."
+          },
+          {
+            "icon": "RefreshCw",
+            "title": "Changeable Graphics",
+            "description": "Tensioned fabric systems allow graphic changes in minutes without tools. Ideal for businesses that update promotions or seasonal messaging."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "All illuminated lightboxes are UL listed with complete documentation and labeling for code compliance and permitting."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Engineered Construction",
+            "description": "Welded aluminum frames with structural integrity for any mounting application. Wind load calculations available for permitting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "text-fabric",
+      "type": "text_section",
+      "label": "Tensioned Fabric Systems",
+      "visible": true,
+      "data": {
+        "heading": "Tensioned Fabric Systems",
+        "content": "The modern alternative to traditional lightbox faces. Dye-sublimation printed fabric stretches over a silicone edge system for a taut, wrinkle-free illuminated face that can be changed in minutes. Wholesale direct to sign shops.",
+        "image": "Tensioned fabric lightbox — graphic change in progress, showing silicone edge system",
+        "imagePosition": "left",
+        "background": "navy"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Trade Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Engineered for uniform illumination, structural integrity, and long service life. Every lightbox ships ready to install. Available exclusively at wholesale trade pricing.",
+        "image": "Lightbox — internal view showing LED module layout and wiring",
+        "specs": [
+          { "label": "Construction", "value": "Welded or extruded aluminum cabinet" },
+          { "label": "Standard Depths", "value": "4\", 5\", 6\", 8\", 10\", 12\" (custom available)" },
+          { "label": "Maximum Size", "value": "Up to 20' x 8' (larger with seams)" },
+          { "label": "Face Options", "value": "Polycarbonate, acrylic, fabric, aluminum" },
+          { "label": "LED Type", "value": "Internal backlit or edge-lit modules" },
+          { "label": "Light Distribution", "value": "Engineered for uniform face illumination" },
+          { "label": "Graphics", "value": "Digital print, vinyl, push-through, routed" },
+          { "label": "Frame Finish", "value": "Painted aluminum, any Pantone color" },
+          { "label": "Mounting", "value": "Wall, pole, pylon, freestanding, or ceiling" },
+          { "label": "Electrical Access", "value": "Hinged door, removable face, or rear access" },
+          { "label": "Certifications", "value": "UL Listed (UL 48)" },
+          { "label": "Warranty", "value": "5-year LED, 3-year cabinet and finish" },
+          { "label": "Lead Time", "value": "3 weeks door to door" }
+        ]
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Common Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "Lightboxes are the most versatile illuminated sign format. From small interior directories to large exterior building signs, the cabinet format handles it all. Wholesale direct to sign shops for all project types.",
+        "items": [
+          "Retail storefronts and shopping centers",
+          "Quick-service restaurants and franchises",
+          "Gas stations and convenience stores",
+          "Multi-tenant commercial buildings",
+          "Pylon and monument sign panels",
+          "Interior directories and wayfinding",
+          "Menu boards and promotional displays",
+          "Real estate and property signage"
+        ]
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Get Started?",
+        "description": "Request a wholesale quote for your next project."
+      }
+    }
+  ]
+}

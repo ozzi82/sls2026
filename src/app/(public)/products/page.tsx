@@ -1,109 +1,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Shield, Clock, Wrench } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import configData from "../../../content/products/products.json";
+import { PageConfig } from "@/lib/admin/page-config-types";
+
+const config = configData as unknown as PageConfig;
+function getBlock(id: string) {
+  return config.blocks.find(b => b.id === id);
+}
+
+const heroBlock = getBlock("hero")!;
+const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; ctas: { label: string; href: string; variant: string }[] };
+const statsBlock = getBlock("stats_strip")!;
+const statsData = statsBlock.data as { items: { icon: string; label: string }[] };
+const productTypesBlock = getBlock("product_types")!;
+const productTypesData = productTypesBlock.data as { heading: string; items: { name: string; description: string; href?: string; image?: string }[] };
+const ctaBlock = getBlock("cta")!;
+const ctaData = ctaBlock.data as { heading: string; headingHighlight?: string; description: string };
 
 export const metadata: Metadata = {
-  title: "Wholesale Sign Products — Trade Pricing for Sign Shops | Sunlite Signs",
-  description:
-    "Wholesale sign products exclusively for trade accounts. Channel letters, flat cut letters, blade signs, lightboxes, and custom fabrication at wholesale pricing. We never sell retail.",
-  keywords: [
-    "wholesale sign products",
-    "channel letters wholesale",
-    "flat cut letters wholesale",
-    "blade signs wholesale",
-    "lightboxes wholesale",
-    "sign manufacturer USA",
-    "wholesale sign supplier",
-    "trade pricing signs",
-    "sign shop supplier",
-    "wholesale only sign manufacturer",
-  ],
+  title: config.seo.title,
+  description: config.seo.metaDescription,
+  keywords: config.seo.keywords,
   alternates: {
-    canonical: "https://sunlitesigns.com/wholesale-sign-products",
+    canonical: config.seo.canonical,
   },
 };
 
-const productCategories = [
-  {
-    name: "Channel Letters",
-    description:
-      "The EdgeLuxe product line — 12 channel letter styles across 4 families: Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. German-engineered, UL listed. Wholesale direct to sign shops.",
-    href: "/products/channel-letters",
-    image: "Channel letters product category — illuminated storefront sign",
-    imageSrc: "/products/front-halo-night.jpg",
-    featured: true,
-  },
-  {
-    name: "Flat Cut Letters",
-    description:
-      "Precision-cut metal and acrylic dimensional letters at wholesale trade pricing. Clean lines, flush or stud-mounted, available in brushed aluminum, painted steel, and brass finishes.",
-    href: "/products/flat-cut-letters",
-    image: "Flat cut metal letters — dimensional signage",
-    imageSrc: "/products/flat-cut-day.jpg",
-  },
-  {
-    name: "Blade Signs",
-    description:
-      "Double-sided projecting blade signs at trade pricing. Illuminated and non-illuminated options for storefronts and mixed-use developments. Wholesale direct to sign shops.",
-    href: "/products/blade-signs",
-    image: "Illuminated blade sign — projecting storefront sign",
-  },
-  {
-    name: "Lightboxes",
-    description:
-      "Illuminated cabinet signs at wholesale pricing. Edge-lit and backlit LED options with tensioned fabric or polycarbonate faces. Available exclusively to trade accounts.",
-    href: "/products/lightboxes",
-    image: "Illuminated lightbox sign — LED cabinet sign",
-  },
-  {
-    name: "SEG Light Boxes",
-    description:
-      "Custom-sized Silicone-edged Graphic (SEG) light box solutions in low form factors down to 1\" deep. High-resolution printed and illuminated signage. Custom SEG light boxes and prints in 3 weeks. Wholesale only.",
-    href: "/products/seg-light-boxes",
-    image: "SEG Light Box — illuminated fabric sign display",
-  },
-  {
-    name: "Logo Boxes",
-    description:
-      "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Full-color digital print on translucent faces for brand-perfect reproduction. Wholesale trade pricing for sign shops.",
-    href: "/products/logo-boxes",
-    image: "Contour logo box — custom-shaped illuminated logo sign",
-  },
-  {
-    name: "Push-Through Signs",
-    description:
-      "Dimensional acrylic letters pushed through precision-routed aluminum panels with LED backlighting. The premium alternative to flat-face cabinet signs. Wholesale only.",
-    href: "/products/push-through-signs",
-    image: "Push-through sign — illuminated dimensional acrylic letters",
-  },
-  {
-    name: "Custom Fabrication",
-    description:
-      "Bespoke signage solutions at trade pricing for projects that require something beyond standard products. Wholesale only — we never compete with our sign shop partners.",
-    href: "/products/custom-fabrication",
-    image: "Custom fabricated sign — specialty project",
-  },
-];
-
-const trustPoints = [
-  {
-    icon: Shield,
-    label: "UL Listed Products",
-  },
-  {
-    icon: Clock,
-    label: "3-Week Door-to-Door Delivery",
-  },
-  {
-    icon: Wrench,
-    label: "German Engineering",
-  },
-];
+const productCategories = productTypesData.items.map((item) => ({
+  name: item.name,
+  description: item.description,
+  href: item.href || "#",
+  image: item.name === "Channel Letters" ? "Channel letters product category — illuminated storefront sign" : `${item.name} — dimensional signage`,
+  imageSrc: item.image,
+  featured: item.name === "Channel Letters",
+}));
 
 export default function ProductsPage() {
   const jsonLd = {
@@ -142,31 +79,31 @@ export default function ProductsPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="micro-label mb-6">
-                Wholesale Only — Trade Pricing
+                {heroData.badge}
               </p>
               <div className="gold-line mb-8" />
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                Wholesale Product{" "}
-                <span className="text-brand-gold">Catalog</span>
+                {heroData.h1}{" "}
+                <span className="text-brand-gold">{heroData.h1Highlight}</span>
               </h1>
-              <p className="text-lg text-white/60 max-w-2xl mb-4">
-                German-engineered illuminated signage, wholesale direct to sign
-                shops across the USA and Canada. Every product is UL listed,
-                precision built, and delivered within 3 weeks door to door.
-              </p>
-              <p className="text-white/60 mb-8">
-                We never sell retail. Your clients stay yours. No retail markup, no middlemen — just trade pricing direct from the manufacturer.
-              </p>
+              {heroData.subtitle.split("\n\n").map((para, i) => (
+                <p key={i} className={i === 0 ? "text-lg text-white/60 max-w-2xl mb-4" : "text-white/60 mb-8"}>
+                  {para}
+                </p>
+              ))}
               <div className="flex flex-wrap gap-6">
-                {trustPoints.map((point) => (
-                  <span
-                    key={point.label}
-                    className="flex items-center gap-2 text-sm text-white/50 font-heading uppercase tracking-wider"
-                  >
-                    <point.icon className="w-4 h-4 text-brand-gold" />
-                    {point.label}
-                  </span>
-                ))}
+                {statsData.items.map((point) => {
+                  const Icon = getIconComponent(point.icon);
+                  return (
+                    <span
+                      key={point.label}
+                      className="flex items-center gap-2 text-sm text-white/50 font-heading uppercase tracking-wider"
+                    >
+                      {Icon && <Icon className="w-4 h-4 text-brand-gold" />}
+                      {point.label}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </AnimatedSection>
@@ -302,9 +239,9 @@ export default function ProductsPage() {
           CTA
           ═══════════════════════════════════════════ */}
       <CTASection
-        heading="Need a Custom"
-        highlight="Solution?"
-        description="Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        heading={ctaData.heading}
+        highlight={ctaData.headingHighlight}
+        description={ctaData.description}
       />
     </>
   );

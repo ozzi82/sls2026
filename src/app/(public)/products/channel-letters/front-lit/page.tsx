@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  Sun,
-  Eye,
-  Palette,
-  Shield,
-  Ruler,
-  Lightbulb,
-  Lock,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -19,77 +9,36 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import configData from "../../../../../content/products/channel-letters--front-lit.json";
+import { PageConfig } from "@/lib/admin/page-config-types";
+
+const config = configData as unknown as PageConfig;
+function getBlock(id: string) {
+  return config.blocks.find(b => b.id === id);
+}
+
+const heroBlock = getBlock("hero")!;
+const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+const featuresBlock = getBlock("features_grid")!;
+const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+const specsBlock = getBlock("specs")!;
+const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
+const useCasesBlock = getBlock("use_cases")!;
+const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
+const galleryBlock = getBlock("gallery")!;
+const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
 
 export const metadata: Metadata = {
-  title: "Wholesale Face Lit Channel Letters — Trade Pricing | Sunlite Signs",
-  description:
-    "Wholesale face lit channel letters for sign shops only. Forward-facing LED illumination, UL listed, German-engineered. Trade pricing direct from manufacturer. We never sell retail.",
-  keywords: [
-    "face lit channel letters",
-    "face lit channel letters wholesale",
-    "illuminated channel letters",
-    "LED channel letters",
-    "wholesale channel letter manufacturer",
-    "front face illuminated signs",
-    "trade pricing channel letters",
-    "sign shop supplier",
-  ],
+  title: config.seo.title,
+  description: config.seo.metaDescription,
+  keywords: config.seo.keywords,
   alternates: {
-    canonical: "https://sunlitesigns.com/face-lit-channel-letters",
+    canonical: config.seo.canonical,
   },
 };
 
-const features = [
-  {
-    icon: Sun,
-    title: "Maximum Face Illumination",
-    description:
-      "Forward-facing LEDs illuminate the full letter face for excellent readability day and night, even in direct sunlight.",
-  },
-  {
-    icon: Eye,
-    title: "Superior Visibility",
-    description:
-      "The brightest channel letter option available. Ideal for high-traffic locations where visibility is the top priority.",
-  },
-  {
-    icon: Palette,
-    title: "Full Color Range",
-    description:
-      "Available with any Pantone-matched acrylic face color. White, colored, and even day/night color-changing faces available.",
-  },
-  {
-    icon: Shield,
-    title: "UL Listed",
-    description:
-      "Every face lit channel letter set ships with UL listing labels and documentation for fast, compliant permitting.",
-  },
-  {
-    icon: Ruler,
-    title: "Custom Sizing",
-    description:
-      "Manufactured from 4 inches up to 72+ inches tall. We accommodate any font, logo, or custom shape.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Samsung LEDs",
-    description:
-      "Premium Samsung LED modules with 50,000+ hour rated life, consistent color output, and industry-leading warranty.",
-  },
-];
-
 const product = getProduct("LP 11-F");
-
-const useCases = [
-  "Retail storefronts and shopping centers",
-  "Restaurants and food service brands",
-  "Healthcare and medical facilities",
-  "Hospitality and hotel signage",
-  "Corporate office buildings",
-  "Gas stations and convenience stores",
-  "Automotive dealerships",
-  "Multi-tenant commercial buildings",
-];
 
 export default function FrontLitPage() {
   const jsonLd = {
@@ -147,24 +96,19 @@ export default function FrontLitPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
+                  {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  Wholesale Face Lit{" "}
-                  <span className="text-brand-gold">Channel Letters</span>
+                  {heroData.h1}{" "}
+                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
-                <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                  The industry standard for illuminated signage. Forward-facing
-                  LEDs shine through a translucent acrylic face, delivering
-                  maximum brightness and readability for any commercial
-                  application. Available exclusively to trade accounts.
-                </p>
-                <p className="text-white/50 mb-8">
-                  German-engineered precision. UL listed. Wholesale direct to
-                  sign shops across the USA and Canada. We never sell retail — your clients stay yours.
-                </p>
+                {heroData.subtitle.split("\n\n").map((para, i) => (
+                  <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>
+                    {para}
+                  </p>
+                ))}
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -187,7 +131,7 @@ export default function FrontLitPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Trade Specifications & Benefits
+                {featuresData.heading}
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
                 Every face lit channel letter set is manufactured to the same
@@ -196,21 +140,24 @@ export default function FrontLitPage() {
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
-                  <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
-                    <feature.icon className="w-6 h-6 text-brand-gold" />
+            {featuresData.items.map((feature, index) => {
+              const Icon = getIconComponent(feature.icon);
+              return (
+                <AnimatedSection key={feature.title} delay={index * 0.08}>
+                  <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
+                    <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
+                      {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-text-dark/60 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-text-dark/60 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -222,14 +169,13 @@ export default function FrontLitPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Trade Specifications
+                {specsData.heading}
               </h2>
               <p className="text-white/60 mb-8">
-                Built to meet and exceed industry standards. Every specification
-                reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.
+                {specsData.description}
               </p>
               <PlaceholderImage
-                label="Face lit channel letter — cross-section detail showing LED placement"
+                label={specsData.image || ""}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -249,15 +195,13 @@ export default function FrontLitPage() {
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  Common Applications
+                  {useCasesData.heading}
                 </h2>
                 <p className="text-white/60 mb-8">
-                  Face lit channel letters are the most versatile illuminated
-                  sign type, suitable for virtually any commercial application
-                  where visibility matters. Wholesale direct to sign shops for all project types.
+                  {useCasesData.description}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {useCases.map((useCase) => (
+                  {useCasesData.items.map((useCase) => (
                     <li
                       key={useCase}
                       className="flex items-center gap-2 text-sm text-white/70"
@@ -289,23 +233,16 @@ export default function FrontLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Face Lit Projects
+                {galleryData.heading}
               </h2>
             </div>
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Face lit letters — restaurant facade, night",
-                "Face lit letters — retail shopping center",
-                "Face lit letters — healthcare facility",
-                "Face lit letters — corporate office building",
-                "Face lit letters — hotel entrance",
-                "Face lit letters — multi-tenant commercial",
-              ].map((label, i) => (
+              {galleryData.images.map((img, i) => (
                 <PlaceholderImage
                   key={i}
-                  label={label}
+                  label={img.alt}
                   className="rounded-xl"
                   aspectRatio="aspect-[4/3]"
                 />

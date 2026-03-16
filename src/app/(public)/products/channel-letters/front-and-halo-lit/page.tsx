@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  Layers,
-  Sun,
-  Moon,
-  Shield,
-  Ruler,
-  Zap,
-  Lock,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -19,77 +9,36 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import configData from "../../../../../content/products/channel-letters--front-and-halo-lit.json";
+import { PageConfig } from "@/lib/admin/page-config-types";
+
+const config = configData as unknown as PageConfig;
+function getBlock(id: string) {
+  return config.blocks.find(b => b.id === id);
+}
+
+const heroBlock = getBlock("hero")!;
+const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+const galleryBlock = getBlock("gallery")!;
+const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
+const featuresBlock = getBlock("features_grid")!;
+const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+const specsBlock = getBlock("specs")!;
+const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
+const useCasesBlock = getBlock("use_cases")!;
+const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
 
 export const metadata: Metadata = {
-  title: "Wholesale Front & Halo Lit Channel Letters — Trade Pricing | Sunlite Signs",
-  description:
-    "Wholesale front and halo lit combination channel letters for sign shops only. Dual LED illumination, trade pricing, UL listed, German-engineered. We never sell retail.",
-  keywords: [
-    "front and halo lit channel letters",
-    "combination channel letters wholesale",
-    "dual illuminated channel letters",
-    "front and back lit channel letters",
-    "wholesale LED channel letters",
-    "illuminated sign manufacturer",
-    "trade pricing channel letters",
-    "sign shop supplier",
-  ],
+  title: config.seo.title,
+  description: config.seo.metaDescription,
+  keywords: config.seo.keywords,
   alternates: {
-    canonical: "https://sunlitesigns.com/face-and-halo-channel-letters",
+    canonical: config.seo.canonical,
   },
 };
 
-const features = [
-  {
-    icon: Layers,
-    title: "Dual Illumination",
-    description:
-      "Two independent LED circuits — one illuminating the translucent acrylic face, another projecting a halo glow behind the letter. Maximum visual impact.",
-  },
-  {
-    icon: Sun,
-    title: "Front Face Brightness",
-    description:
-      "Forward-facing LEDs deliver the same high-visibility face illumination as our standard face lit letters, ensuring excellent daytime and nighttime readability.",
-  },
-  {
-    icon: Moon,
-    title: "Rear Halo Effect",
-    description:
-      "Rear-mounted LEDs create the same elegant backlit glow as our dedicated halo lit product, adding depth and dimension to the overall sign presentation.",
-  },
-  {
-    icon: Shield,
-    title: "UL Listed",
-    description:
-      "Both LED circuits are fully UL listed. Complete documentation and labeling included for seamless permitting.",
-  },
-  {
-    icon: Zap,
-    title: "Independent Control",
-    description:
-      "Front and rear LED circuits can be wired independently, allowing different on/off schedules or dimming configurations for each lighting effect.",
-  },
-  {
-    icon: Ruler,
-    title: "Optimized Depth",
-    description:
-      "Return depth is engineered to accommodate both LED sets while maintaining a proportional letter profile. Typical depth ranges from 3.5 to 5 inches.",
-  },
-];
-
 const product = getProduct("LP 11-FB");
-
-const useCases = [
-  "High-end retail flagships",
-  "Entertainment venues and theaters",
-  "Hotels and resort properties",
-  "Upscale restaurants and bars",
-  "Corporate campus signage",
-  "Mixed-use lifestyle centers",
-  "Casino and gaming properties",
-  "Landmark building identification",
-];
 
 export default function FrontAndHaloLitPage() {
   const jsonLd = {
@@ -147,23 +96,19 @@ export default function FrontAndHaloLitPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
+                  {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  Wholesale Front & Halo Lit{" "}
-                  <span className="text-brand-gold">Channel Letters</span>
+                  {heroData.h1}{" "}
+                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
-                <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                  The best of both worlds. Dual LED circuits combine bright
-                  front-face illumination with an elegant rear halo glow,
-                  delivering maximum visual impact for premium installations. Available exclusively to trade accounts.
-                </p>
-                <p className="text-white/50 mb-8">
-                  Two lighting effects. One letter. German-engineered precision
-                  with UL listing. Wholesale direct to sign shops — we never sell retail.
-                </p>
+                {heroData.subtitle.split("\n\n").map((para, i) => (
+                  <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>
+                    {para}
+                  </p>
+                ))}
                 <Link href="/get-a-quote" className="btn-primary">
                   Request Wholesale Pricing
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -186,7 +131,7 @@ export default function FrontAndHaloLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Two Effects, One Letter
+                {galleryData.heading}
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
                 Front and halo lit channel letters combine the visibility of
@@ -197,57 +142,29 @@ export default function FrontAndHaloLitPage() {
           </AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="relative aspect-square rounded-xl overflow-hidden mb-4">
-                  <Image
-                    src="/products/front-lit-night.jpg"
-                    alt="Face lit only — face illumination view"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
+              {galleryData.images.map((img, i) => (
+                <div key={i} className="text-center">
+                  <div className={`relative aspect-square rounded-xl overflow-hidden mb-4 ${i === 2 ? "ring-2 ring-brand-gold/30" : ""}`}>
+                    {img.src ? (
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <PlaceholderImage label={img.alt} className="rounded-none" aspectRatio="aspect-square" />
+                    )}
+                  </div>
+                  <h3 className={`font-heading font-semibold mb-1 ${i === 2 ? "text-brand-gold" : "text-white"}`}>
+                    {i === 0 ? "Face Lit Effect" : i === 1 ? "Halo Lit Effect" : "Combined Effect"}
+                  </h3>
+                  <p className="text-sm text-white/50">
+                    {i === 0 ? "Bright face illumination for readability" : i === 1 ? "Elegant backlit glow for ambiance" : "Maximum impact from both effects"}
+                  </p>
                 </div>
-                <h3 className="font-heading font-semibold text-white mb-1">
-                  Face Lit Effect
-                </h3>
-                <p className="text-sm text-white/50">
-                  Bright face illumination for readability
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="relative aspect-square rounded-xl overflow-hidden mb-4">
-                  <Image
-                    src="/products/halo-lit-night.jpg"
-                    alt="Halo lit only — rear glow view"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-                <h3 className="font-heading font-semibold text-white mb-1">
-                  Halo Lit Effect
-                </h3>
-                <p className="text-sm text-white/50">
-                  Elegant backlit glow for ambiance
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="relative aspect-square rounded-xl overflow-hidden mb-4 ring-2 ring-brand-gold/30">
-                  <Image
-                    src="/products/front-halo-night.jpg"
-                    alt="Front and halo combined — full dual illumination"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-                <h3 className="font-heading font-semibold text-brand-gold mb-1">
-                  Combined Effect
-                </h3>
-                <p className="text-sm text-white/50">
-                  Maximum impact from both effects
-                </p>
-              </div>
+              ))}
             </div>
           </AnimatedSection>
         </div>
@@ -260,26 +177,29 @@ export default function FrontAndHaloLitPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Trade Specifications & Benefits
+                {featuresData.heading}
               </h2>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
-                  <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
-                    <feature.icon className="w-6 h-6 text-brand-gold" />
+            {featuresData.items.map((feature, index) => {
+              const Icon = getIconComponent(feature.icon);
+              return (
+                <AnimatedSection key={feature.title} delay={index * 0.08}>
+                  <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
+                    <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
+                      {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-text-dark/60 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-text-dark/60 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -291,14 +211,13 @@ export default function FrontAndHaloLitPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Trade Specifications
+                {specsData.heading}
               </h2>
               <p className="text-white/60 mb-8">
-                Dual-circuit engineering with optimized return depth for both
-                front face illumination and rear halo spread. Available exclusively at wholesale trade pricing.
+                {specsData.description}
               </p>
               <PlaceholderImage
-                label="Front and halo lit channel letter — cross-section showing dual LED placement"
+                label={specsData.image || ""}
                 className="rounded-xl"
                 aspectRatio="aspect-[4/3]"
               />
@@ -323,15 +242,13 @@ export default function FrontAndHaloLitPage() {
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  Ideal Applications
+                  {useCasesData.heading}
                 </h2>
                 <p className="text-text-dark/60 mb-8">
-                  Front and halo lit letters are the premium choice for
-                  high-visibility, high-impact installations where making a
-                  statement is essential. Wholesale direct to sign shops for all project types.
+                  {useCasesData.description}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {useCases.map((useCase) => (
+                  {useCasesData.items.map((useCase) => (
                     <li
                       key={useCase}
                       className="flex items-center gap-2 text-sm text-text-dark/70"

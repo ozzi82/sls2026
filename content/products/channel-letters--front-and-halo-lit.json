@@ -1,0 +1,136 @@
+{
+  "slug": "/products/channel-letters/front-and-halo-lit",
+  "pageType": "product",
+  "label": "Front & Halo Lit Channel Letters",
+  "seo": {
+    "title": "Wholesale Front & Halo Lit Channel Letters — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale front and halo lit combination channel letters for sign shops only. Dual LED illumination, trade pricing, UL listed, German-engineered. We never sell retail.",
+    "keywords": [
+      "front and halo lit channel letters",
+      "combination channel letters wholesale",
+      "dual illuminated channel letters",
+      "front and back lit channel letters",
+      "wholesale LED channel letters",
+      "illuminated sign manufacturer",
+      "trade pricing channel letters",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/face-and-halo-channel-letters"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Front & Halo Lit",
+        "h1Highlight": "Channel Letters",
+        "subtitle": "The best of both worlds. Dual LED circuits combine bright front-face illumination with an elegant rear halo glow, delivering maximum visual impact for premium installations. Available exclusively to trade accounts.\n\nTwo lighting effects. One letter. German-engineered precision with UL listing. Wholesale direct to sign shops — we never sell retail.",
+        "image": "/products/front-halo-day.jpg",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Visual Comparison",
+      "visible": true,
+      "data": {
+        "heading": "Two Effects, One Letter",
+        "images": [
+          { "src": "/products/front-lit-night.jpg", "alt": "Face lit only — face illumination view" },
+          { "src": "/products/halo-lit-night.jpg", "alt": "Halo lit only — rear glow view" },
+          { "src": "/products/front-halo-night.jpg", "alt": "Front and halo combined — full dual illumination" }
+        ]
+      }
+    },
+    {
+      "id": "features_grid",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          {
+            "icon": "Layers",
+            "title": "Dual Illumination",
+            "description": "Two independent LED circuits — one illuminating the translucent acrylic face, another projecting a halo glow behind the letter. Maximum visual impact."
+          },
+          {
+            "icon": "Sun",
+            "title": "Front Face Brightness",
+            "description": "Forward-facing LEDs deliver the same high-visibility face illumination as our standard face lit letters, ensuring excellent daytime and nighttime readability."
+          },
+          {
+            "icon": "Moon",
+            "title": "Rear Halo Effect",
+            "description": "Rear-mounted LEDs create the same elegant backlit glow as our dedicated halo lit product, adding depth and dimension to the overall sign presentation."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "Both LED circuits are fully UL listed. Complete documentation and labeling included for seamless permitting."
+          },
+          {
+            "icon": "Zap",
+            "title": "Independent Control",
+            "description": "Front and rear LED circuits can be wired independently, allowing different on/off schedules or dimming configurations for each lighting effect."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Optimized Depth",
+            "description": "Return depth is engineered to accommodate both LED sets while maintaining a proportional letter profile. Typical depth ranges from 3.5 to 5 inches."
+          }
+        ]
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Dual-circuit engineering with optimized return depth for both front face illumination and rear halo spread. Available exclusively at wholesale trade pricing.",
+        "image": "Front and halo lit channel letter — cross-section showing dual LED placement",
+        "specs": []
+      }
+    },
+    {
+      "id": "use_cases",
+      "type": "use_cases",
+      "label": "Applications",
+      "visible": true,
+      "data": {
+        "heading": "Ideal Applications",
+        "description": "Front and halo lit letters are the premium choice for high-visibility, high-impact installations where making a statement is essential. Wholesale direct to sign shops for all project types.",
+        "items": [
+          "High-end retail flagships",
+          "Entertainment venues and theaters",
+          "Hotels and resort properties",
+          "Upscale restaurants and bars",
+          "Corporate campus signage",
+          "Mixed-use lifestyle centers",
+          "Casino and gaming properties",
+          "Landmark building identification"
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Order",
+        "headingHighlight": "Front & Halo Letters?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

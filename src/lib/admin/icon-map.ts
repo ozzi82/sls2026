@@ -5,6 +5,13 @@ import {
   Package, Sparkles, Maximize, Target, Award,
   FileText, BookOpen, HelpCircle, Newspaper,
   PenTool, Cpu, Cable, Factory, Building2,
+  Wind, Scissors, Mountain, Sun, RefreshCw, Download, MessageSquare,
+  Moon, Triangle, Type, DollarSign, Paintbrush, Weight, Gem, X,
+  Library, Handshake, SearchCheck, Globe, Cog, Microscope,
+  CheckCircle2, ClipboardList, ScanSearch, ThermometerSun,
+  PackageCheck, ShieldCheck, FileCheck2, AlertTriangle,
+  ClipboardCheck, ShieldOff, Store, Ban, XCircle,
+  HardHat, Check, Calendar,
   type LucideIcon,
 } from "lucide-react";
 
@@ -15,6 +22,13 @@ const iconMap: Record<string, LucideIcon> = {
   Package, Sparkles, Maximize, Target, Award,
   FileText, BookOpen, HelpCircle, Newspaper,
   PenTool, Cpu, Cable, Factory, Building2,
+  Wind, Scissors, Mountain, Sun, RefreshCw, Download, MessageSquare,
+  Moon, Triangle, Type, DollarSign, Paintbrush, Weight, Gem, X,
+  Library, Handshake, SearchCheck, Globe, Cog, Microscope,
+  CheckCircle2, ClipboardList, ScanSearch, ThermometerSun,
+  PackageCheck, ShieldCheck, FileCheck2, AlertTriangle,
+  ClipboardCheck, ShieldOff, Store, Ban, XCircle,
+  HardHat, Check, Calendar,
 };
 
 export function getIconComponent(name: string): LucideIcon | null {

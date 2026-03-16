@@ -1,0 +1,148 @@
+{
+  "slug": "/products/channel-letters",
+  "pageType": "product",
+  "label": "Wholesale Channel Letters",
+  "seo": {
+    "title": "Wholesale Channel Letters — EdgeLuxe Product Families | Sunlite Signs",
+    "metaDescription": "Wholesale channel letters for sign shops only. 12 EdgeLuxe products across 4 families: Block Acrylic, Trimless, Fabricated Stainless Steel, and Flat Cut. Trade pricing, UL listed, German-engineered.",
+    "keywords": [
+      "wholesale channel letters",
+      "EdgeLuxe channel letters",
+      "channel letters manufacturer",
+      "block acrylic channel letters",
+      "trimless channel letters wholesale",
+      "stainless steel letters",
+      "UL listed channel letters",
+      "channel letter supplier USA",
+      "trade pricing channel letters",
+      "sign shop channel letters"
+    ],
+    "canonical": "https://sunlitesigns.com/wholesale-channel-letters"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale",
+        "h1Highlight": "Channel Letters",
+        "subtitle": "The EdgeLuxe product line — 12 channel letter styles across 4 product families. From IP67-sealed block acrylic to fabricated stainless steel, every style manufactured in-house. Wholesale direct to sign shops.\n\nGerman-engineered precision. UL listed. Delivered within 3 weeks door to door. Trade pricing with no retail markup. Your clients stay yours.",
+        "image": "/products/front-halo-night.jpg",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "Explore Trimless", "href": "/products/channel-letters/trimless", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "features_grid",
+      "type": "features_grid",
+      "label": "Advantages",
+      "visible": true,
+      "data": {
+        "heading": "Why EdgeLuxe",
+        "items": [
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "Every illuminated channel letter set is UL listed and ships with proper labeling for code compliance."
+          },
+          {
+            "icon": "Zap",
+            "title": "Premium LEDs",
+            "description": "Samsung and Nichia LED modules with 50,000+ hour rated life. Consistent color temperature across every letter."
+          },
+          {
+            "icon": "Layers",
+            "title": "German Engineering",
+            "description": "Manufacturing processes developed in partnership with LKF Lichtwerbung in Nuremberg, Germany."
+          }
+        ]
+      }
+    },
+    {
+      "id": "product_grid",
+      "type": "product_grid",
+      "label": "Block Acrylic Series",
+      "visible": true,
+      "data": {
+        "heading": "EdgeLuxe LP 11 — Block Acrylic Series",
+        "description": "30mm cast block acrylic, IP67 epoxy-sealed, zero maintenance. Eight illumination styles from the same rugged, waterproof platform.",
+        "items": [
+          { "name": "Face Lit", "model": "LP 11-F", "image": "/products/front-lit-day.jpg", "href": "/products/channel-letters/front-lit" },
+          { "name": "Halo Lit", "model": "LP 11-B", "image": "/products/halo-lit-day.jpg", "href": "/products/channel-letters/halo-lit" },
+          { "name": "Face & Halo Combo", "model": "LP 11-FB", "image": "/products/front-halo-day.jpg", "href": "/products/channel-letters/front-and-halo-lit" },
+          { "name": "Full Side Lit", "model": "LP 11-S", "image": "/products/side-lit-day.jpg", "href": "/products/channel-letters/side-lit" },
+          { "name": "Back Side Lit", "model": "LP 11-BS", "image": "/products/back-side-day.jpg", "href": "/products/channel-letters/back-side-lit" },
+          { "name": "Front Side Lit", "model": "LP 11-FS", "image": "/products/face-side-day.jpg", "href": "/products/channel-letters/front-side-lit" },
+          { "name": "Faux Neon", "model": "LP 11-N", "image": "/products/faux-neon-day.jpg", "href": "/products/channel-letters/faux-neon" },
+          { "name": "Conical Profile", "model": "LP 11-C", "image": "/products/conical-day.jpg", "href": "/products/channel-letters/conical" }
+        ]
+      }
+    },
+    {
+      "id": "product_grid_2",
+      "type": "product_grid",
+      "label": "Trimless Stainless Steel",
+      "visible": true,
+      "data": {
+        "heading": "EdgeLuxe LP 5 — Trimless Stainless Steel",
+        "description": "Fabricated stainless steel with step-router acrylic face. No visible trim cap. The cleanest channel letter on the market.",
+        "items": [
+          { "name": "Trimless Face Lit", "model": "LP 5", "image": "/products/trimless-day.jpg", "href": "/products/channel-letters/trimless" }
+        ]
+      }
+    },
+    {
+      "id": "product_grid_3",
+      "type": "product_grid",
+      "label": "Fabricated Stainless Steel",
+      "visible": true,
+      "data": {
+        "heading": "EdgeLuxe LP 3 — Fabricated Stainless Steel",
+        "description": "Fabricated stainless steel with serviceable LEDs. Available in standoff halo and flush-mount configurations.",
+        "items": [
+          { "name": "Standoff Halo", "model": "LP 3.1", "image": "/products/stainless-standoff-day.jpg", "href": "/products/channel-letters/stainless-standoff" },
+          { "name": "Flush-Mount Halo", "model": "LP 3.2", "image": "/products/stainless-flush-day.jpg", "href": "/products/channel-letters/stainless-flush" }
+        ]
+      }
+    },
+    {
+      "id": "product_grid_4",
+      "type": "product_grid",
+      "label": "Flat Cutout Letters",
+      "visible": true,
+      "data": {
+        "heading": "EdgeLuxe LP 1 — Flat Cutout Letters",
+        "description": "Non-illuminated flat cutout letters in wood, aluminum, stainless steel, and acrylic. Same precision, no LEDs.",
+        "items": [
+          { "name": "Flat Cut (Non-Illuminated)", "model": "LP 1", "image": "/products/flat-cut-day.jpg", "href": "/products/channel-letters/non-illuminated" }
+        ]
+      }
+    },
+    {
+      "id": "related_pages",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Order",
+        "headingHighlight": "Channel Letters?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

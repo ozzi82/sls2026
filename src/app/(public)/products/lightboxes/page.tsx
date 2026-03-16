@@ -1,138 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  Sun,
-  Maximize,
-  Palette,
-  Shield,
-  Ruler,
-  RefreshCw,
-  Lock,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import RelatedPages from "@/components/RelatedPages";
 import { getLandingPagesByHub } from "@/lib/landing-pages";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { loadProductConfig } from "@/lib/admin/page-config";
+import { getIconComponent } from "@/lib/admin/icon-map";
 
-export const metadata: Metadata = {
-  title: "Wholesale Lightboxes — Trade Pricing | Sunlite Signs",
-  description:
-    "Wholesale lightboxes and illuminated cabinet signs for sign shops only. Edge-lit and backlit LED options, tensioned fabric or polycarbonate faces. Trade pricing, UL listed. We never sell retail.",
-  keywords: [
-    "lightboxes wholesale",
-    "illuminated cabinet signs",
-    "LED lightbox sign",
-    "backlit sign wholesale",
-    "tensioned fabric lightbox",
-    "sign cabinet wholesale",
-    "illuminated sign cabinet",
-    "wholesale lightbox manufacturer",
-    "trade pricing lightboxes",
-    "sign shop supplier",
-  ],
-  alternates: {
-    canonical: "https://sunlitesigns.com/wholesale-lightbox-signs",
-  },
-};
+export const dynamic = "force-dynamic";
 
-const lightboxTypes = [
-  {
-    name: "Standard Cabinet Lightbox",
-    description:
-      "Traditional illuminated cabinet sign with internal LED modules and translucent polycarbonate or acrylic face. The workhorse of commercial signage. Wholesale trade pricing for sign shops.",
-    image: "Standard cabinet lightbox — illuminated commercial sign, storefront",
-  },
-  {
-    name: "Slim Profile Lightbox",
-    description:
-      "Ultra-thin cabinet construction with edge-lit LED technology. Modern, sleek profile ideal for contemporary architecture and interior applications. Available exclusively to trade accounts.",
-    image: "Slim profile lightbox — thin edge-lit sign, modern building",
-  },
-  {
-    name: "Tensioned Fabric Lightbox",
-    description:
-      "Aluminum frame with dye-sublimation printed fabric face stretched over a silicone edge system. Easy graphic changes for seasonal or evolving messaging. Wholesale direct to sign shops.",
-    image: "Tensioned fabric lightbox — vivid print, retail display",
-  },
-  {
-    name: "Double-Sided Lightbox",
-    description:
-      "Cabinet with two illuminated faces for freestanding, pylon-mounted, or projecting installations. Maximum visibility from multiple directions. Trade pricing available.",
-    image: "Double-sided lightbox — freestanding pylon sign",
-  },
-];
-
-const features = [
-  {
-    icon: Sun,
-    title: "Uniform LED Illumination",
-    description:
-      "Internal LED modules engineered for even light distribution across the entire face. No hot spots, no dark corners, no uneven brightness.",
-  },
-  {
-    icon: Maximize,
-    title: "Custom Sizes & Shapes",
-    description:
-      "From small wayfinding boxes to large building-mounted cabinets. Rectangular, square, round, oval, or fully custom shapes.",
-  },
-  {
-    icon: Palette,
-    title: "Multiple Face Options",
-    description:
-      "Polycarbonate, acrylic, tensioned fabric, or aluminum with routed graphics. Full-color printed, vinyl-applied, or push-through faces.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Changeable Graphics",
-    description:
-      "Tensioned fabric systems allow graphic changes in minutes without tools. Ideal for businesses that update promotions or seasonal messaging.",
-  },
-  {
-    icon: Shield,
-    title: "UL Listed",
-    description:
-      "All illuminated lightboxes are UL listed with complete documentation and labeling for code compliance and permitting.",
-  },
-  {
-    icon: Ruler,
-    title: "Engineered Construction",
-    description:
-      "Welded aluminum frames with structural integrity for any mounting application. Wind load calculations available for permitting.",
-  },
-];
-
-const specs = [
-  { label: "Construction", value: "Welded or extruded aluminum cabinet" },
-  { label: "Standard Depths", value: '4", 5", 6", 8", 10", 12" (custom available)' },
-  { label: "Maximum Size", value: "Up to 20' x 8' (larger with seams)" },
-  { label: "Face Options", value: "Polycarbonate, acrylic, fabric, aluminum" },
-  { label: "LED Type", value: "Internal backlit or edge-lit modules" },
-  { label: "Light Distribution", value: "Engineered for uniform face illumination" },
-  { label: "Graphics", value: "Digital print, vinyl, push-through, routed" },
-  { label: "Frame Finish", value: "Painted aluminum, any Pantone color" },
-  { label: "Mounting", value: "Wall, pole, pylon, freestanding, or ceiling" },
-  { label: "Electrical Access", value: "Hinged door, removable face, or rear access" },
-  { label: "Certifications", value: "UL Listed (UL 48)" },
-  { label: "Warranty", value: "5-year LED, 3-year cabinet and finish" },
-  { label: "Lead Time", value: "3 weeks door to door" },
-];
-
-const useCases = [
-  "Retail storefronts and shopping centers",
-  "Quick-service restaurants and franchises",
-  "Gas stations and convenience stores",
-  "Multi-tenant commercial buildings",
-  "Pylon and monument sign panels",
-  "Interior directories and wayfinding",
-  "Menu boards and promotional displays",
-  "Real estate and property signage",
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadProductConfig("lightboxes");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
+}
 
 export default function LightboxesPage() {
+  const config = loadProductConfig("lightboxes");
+
+  function getBlock(id: string) {
+    return config.blocks.find((b) => b.id === id);
+  }
   const spokes = getLandingPagesByHub("lightboxes").slice(0, 6);
   const relatedArticles = spokes.map((p) => ({
     title: p.h1 + " " + p.h1Highlight,
@@ -167,6 +62,19 @@ export default function LightboxesPage() {
     },
   };
 
+  const heroBlock = getBlock("hero");
+  const heroData = heroBlock?.data as any;
+  const productTypesBlock = getBlock("product-types");
+  const productTypesData = productTypesBlock?.data as any;
+  const featuresBlock = getBlock("features");
+  const featuresData = featuresBlock?.data as any;
+  const textFabricBlock = getBlock("text-fabric");
+  const textFabricData = textFabricBlock?.data as any;
+  const specsBlock = getBlock("specs");
+  const specsData = specsBlock?.data as any;
+  const useCasesBlock = getBlock("use-cases");
+  const useCasesData = useCasesBlock?.data as any;
+
   return (
     <>
       <script
@@ -175,244 +83,253 @@ export default function LightboxesPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--hero-glow),transparent_60%)]" />
-        <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
-          <Breadcrumbs
-            items={[
-              { name: "Home", href: "/" },
-              { name: "Products", href: "/products" },
-              { name: "Lightboxes" },
-            ]}
-          />
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
-                  <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only — Trade Pricing</span>
+      {heroBlock?.visible && (
+        <section className="relative bg-bg-primary overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--hero-glow),transparent_60%)]" />
+          <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
+            <Breadcrumbs
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Products", href: "/products" },
+                { name: "Lightboxes" },
+              ]}
+            />
+            <AnimatedSection>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
+                    <Lock className="w-3.5 h-3.5 text-brand-gold" />
+                    <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                  </div>
+                  <div className="gold-line mb-6" />
+                  <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+                    {heroData.h1}{" "}
+                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  </h1>
+                  <p className="text-lg text-white/70 mb-4 leading-relaxed">
+                    {heroData.subtitle}
+                  </p>
+                  <p className="text-white/50 mb-8">
+                    UL listed. German-engineered LED layouts. Wholesale direct to
+                    sign shops. Delivered in 3 weeks door to door. We never sell retail — your clients stay yours.
+                  </p>
+                  {heroData.ctas.map((cta: any) => (
+                    <Link key={cta.label} href={cta.href} className="btn-primary">
+                      {cta.label}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  ))}
                 </div>
-                <div className="gold-line mb-6" />
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  Wholesale{" "}
-                  <span className="text-brand-gold">Lightboxes</span>
-                </h1>
-                <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                  Illuminated cabinet signs engineered for uniform brightness,
-                  durability, and ease of maintenance. Standard cabinets, slim
-                  profiles, and tensioned fabric systems in any size or shape. Available exclusively to trade accounts.
-                </p>
-                <p className="text-white/50 mb-8">
-                  UL listed. German-engineered LED layouts. Wholesale direct to
-                  sign shops. Delivered in 3 weeks door to door. We never sell retail — your clients stay yours.
-                </p>
-                <Link href="/get-a-quote" className="btn-primary">
-                  Request Wholesale Pricing
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+                <PlaceholderImage
+                  label={heroData.image}
+                  className="rounded-xl"
+                  aspectRatio="aspect-[4/3]"
+                />
               </div>
-              <PlaceholderImage
-                label="Lightbox — illuminated cabinet sign on commercial building, night view"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       {/* Lightbox Types */}
-      <section className="section-padding bg-bg-light">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Wholesale Lightbox Types
-              </h2>
-              <p className="text-text-dark/60 max-w-xl mx-auto">
-                Four configurations to match every application, from traditional
-                commercial signage to modern architectural installations. All at trade pricing for sign shops.
-              </p>
-            </div>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {lightboxTypes.map((type, index) => (
-              <AnimatedSection key={type.name} delay={index * 0.1}>
-                <div className="bg-white rounded-xl overflow-hidden border border-black/[0.04] h-full">
-                  <PlaceholderImage
-                    label={type.image}
-                    className="rounded-none border-0"
-                    aspectRatio="aspect-[16/10]"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
-                      {type.name}
-                    </h3>
-                    <p className="text-sm text-text-dark/60 leading-relaxed">
-                      {type.description}
-                    </p>
+      {productTypesBlock?.visible && (
+        <section className="section-padding bg-bg-light">
+          <div className="container-max">
+            <AnimatedSection>
+              <div className="text-center mb-16">
+                <div className="gold-line mx-auto mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                  {productTypesData.heading}
+                </h2>
+                <p className="text-text-dark/60 max-w-xl mx-auto">
+                  Four configurations to match every application, from traditional
+                  commercial signage to modern architectural installations. All at trade pricing for sign shops.
+                </p>
+              </div>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {productTypesData.items.map((type: any, index: number) => (
+                <AnimatedSection key={type.name} delay={index * 0.1}>
+                  <div className="bg-white rounded-xl overflow-hidden border border-black/[0.04] h-full">
+                    <PlaceholderImage
+                      label={type.image}
+                      className="rounded-none border-0"
+                      aspectRatio="aspect-[16/10]"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
+                        {type.name}
+                      </h3>
+                      <p className="text-sm text-text-dark/60 leading-relaxed">
+                        {type.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Features */}
-      <section className="section-padding bg-bg-primary">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Trade Specifications & Benefits
-              </h2>
+      {featuresBlock?.visible && (
+        <section className="section-padding bg-bg-primary">
+          <div className="container-max">
+            <AnimatedSection>
+              <div className="text-center mb-16">
+                <div className="gold-line mx-auto mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+                  {featuresData.heading}
+                </h2>
+              </div>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuresData.items.map((feature: any, index: number) => {
+                const Icon = getIconComponent(feature.icon);
+                return (
+                  <AnimatedSection key={feature.title} delay={index * 0.08}>
+                    <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
+                      <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
+                        {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                      </div>
+                      <h3 className="text-lg font-heading font-semibold text-white mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-white/50 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                );
+              })}
             </div>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.08}>
-                <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
-                  <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">
-                    <feature.icon className="w-6 h-6 text-brand-gold" />
-                  </div>
-                  <h3 className="text-lg font-heading font-semibold text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-white/50 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Tensioned Fabric Spotlight */}
-      <section className="section-padding bg-bg-navy">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <PlaceholderImage
-                label="Tensioned fabric lightbox — graphic change in progress, showing silicone edge system"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-              <div>
-                <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  Tensioned Fabric Systems
-                </h2>
-                <p className="text-white/60 mb-6 leading-relaxed">
-                  The modern alternative to traditional lightbox faces.
-                  Dye-sublimation printed fabric stretches over a silicone edge
-                  system for a taut, wrinkle-free illuminated face that can be
-                  changed in minutes. Wholesale direct to sign shops.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Tool-free graphic changes for seasonal promotions",
-                    "Dye-sublimation print for vibrant, full-color graphics",
-                    "Silicone edge gasket system for uniform tension",
-                    "Lightweight fabric reduces cabinet structural load",
-                    "Replacement graphics ship flat — no rigid panels to freight",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm text-white/70"
-                    >
-                      <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Specifications */}
-      <section className="section-padding bg-bg-primary">
-        <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      {textFabricBlock?.visible && (
+        <section className="section-padding bg-bg-navy">
+          <div className="container-max">
             <AnimatedSection>
-              <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                Trade Specifications
-              </h2>
-              <p className="text-white/60 mb-8">
-                Engineered for uniform illumination, structural integrity, and
-                long service life. Every lightbox ships ready to install. Available exclusively at wholesale trade pricing.
-              </p>
-              <PlaceholderImage
-                label="Lightbox — internal view showing LED module layout and wiring"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
-              <div className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden">
-                {specs.map((spec, index) => (
-                  <div
-                    key={spec.label}
-                    className={`flex justify-between items-start px-6 py-4 ${
-                      index < specs.length - 1 ? "border-b border-white/[0.04]" : ""
-                    }`}
-                  >
-                    <span className="text-sm text-white/50 font-heading">
-                      {spec.label}
-                    </span>
-                    <span className="text-sm text-white font-medium text-right ml-4">
-                      {spec.value}
-                    </span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <PlaceholderImage
+                  label={textFabricData.image}
+                  className="rounded-xl"
+                  aspectRatio="aspect-[4/3]"
+                />
+                <div>
+                  <div className="gold-line mb-6" />
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+                    {textFabricData.heading}
+                  </h2>
+                  <p className="text-white/60 mb-6 leading-relaxed">
+                    {textFabricData.content}
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Tool-free graphic changes for seasonal promotions",
+                      "Dye-sublimation print for vibrant, full-color graphics",
+                      "Silicone edge gasket system for uniform tension",
+                      "Lightweight fabric reduces cabinet structural load",
+                      "Replacement graphics ship flat — no rigid panels to freight",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm text-white/70"
+                      >
+                        <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Specifications */}
+      {specsBlock?.visible && (
+        <section className="section-padding bg-bg-primary">
+          <div className="container-max">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+              <AnimatedSection>
+                <div className="gold-line mb-6" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+                  {specsData.heading}
+                </h2>
+                <p className="text-white/60 mb-8">
+                  {specsData.description}
+                </p>
+                <PlaceholderImage
+                  label={specsData.image}
+                  className="rounded-xl"
+                  aspectRatio="aspect-[4/3]"
+                />
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <div className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden">
+                  {specsData.specs.map((spec: any, index: number) => (
+                    <div
+                      key={spec.label}
+                      className={`flex justify-between items-start px-6 py-4 ${
+                        index < specsData.specs.length - 1 ? "border-b border-white/[0.04]" : ""
+                      }`}
+                    >
+                      <span className="text-sm text-white/50 font-heading">
+                        {spec.label}
+                      </span>
+                      <span className="text-sm text-white font-medium text-right ml-4">
+                        {spec.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Use Cases */}
-      <section className="section-padding bg-bg-light">
-        <div className="container-max">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  Common Applications
-                </h2>
-                <p className="text-text-dark/60 mb-8">
-                  Lightboxes are the most versatile illuminated sign format. From
-                  small interior directories to large exterior building signs,
-                  the cabinet format handles it all. Wholesale direct to sign shops for all project types.
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {useCases.map((useCase) => (
-                    <li
-                      key={useCase}
-                      className="flex items-center gap-2 text-sm text-text-dark/70"
-                    >
-                      <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                      {useCase}
-                    </li>
-                  ))}
-                </ul>
+      {useCasesBlock?.visible && (
+        <section className="section-padding bg-bg-light">
+          <div className="container-max">
+            <AnimatedSection>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="gold-line mb-6" />
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
+                    {useCasesData.heading}
+                  </h2>
+                  <p className="text-text-dark/60 mb-8">
+                    {useCasesData.description}
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {useCasesData.items.map((useCase: string) => (
+                      <li
+                        key={useCase}
+                        className="flex items-center gap-2 text-sm text-text-dark/70"
+                      >
+                        <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
+                        {useCase}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <PlaceholderImage
+                  label="Lightbox installation — multi-tenant building with individual illuminated cabinets"
+                  className="rounded-xl"
+                  aspectRatio="aspect-[4/3]"
+                />
               </div>
-              <PlaceholderImage
-                label="Lightbox installation — multi-tenant building with individual illuminated cabinets"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
 
       {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}

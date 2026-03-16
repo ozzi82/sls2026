@@ -1,0 +1,177 @@
+{
+  "slug": "/products/flat-cut-letters",
+  "pageType": "product",
+  "label": "Flat Cut Letters",
+  "seo": {
+    "title": "Wholesale Flat Cut Letters — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale flat cut letters for sign shops only. Aluminum, stainless steel, brass, and acrylic. CNC precision-cut, trade pricing, multiple finishes. We never sell retail.",
+    "keywords": [
+      "flat cut letters wholesale",
+      "flat cut metal letters",
+      "dimensional letters wholesale",
+      "aluminum cut letters",
+      "stainless steel letters",
+      "CNC cut letters wholesale",
+      "metal sign letters manufacturer",
+      "flat cut acrylic letters",
+      "trade pricing flat cut letters",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/flat-cut-letters"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Flat Cut",
+        "h1Highlight": "Letters",
+        "subtitle": "Precision CNC-cut dimensional letters in aluminum, stainless steel, brass, and acrylic. Clean lines, crisp edges, and a professional dimensional look for any commercial application. Available exclusively to trade accounts.",
+        "image": "",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "product-types",
+      "type": "product_types",
+      "label": "Wholesale Material Options",
+      "visible": true,
+      "data": {
+        "heading": "Wholesale Material Options",
+        "items": [
+          {
+            "name": "Aluminum",
+            "description": "Lightweight and versatile. Available in painted, brushed, anodized, or powder-coated finishes. The most popular flat cut material. Wholesale trade pricing for sign shops.",
+            "image": "Flat cut aluminum letters — brushed finish detail"
+          },
+          {
+            "name": "Stainless Steel",
+            "description": "Premium look with exceptional durability. Available in brushed, mirror-polished, and PVD-coated finishes including gold, rose gold, and black. Trade pricing available.",
+            "image": "Flat cut stainless steel letters — mirror polished finish"
+          },
+          {
+            "name": "Brass",
+            "description": "Classic warmth and richness. Available in polished, brushed, antiqued, or lacquered finishes. Develops natural patina over time. Wholesale direct to sign shops.",
+            "image": "Flat cut brass letters — polished warm gold tone"
+          },
+          {
+            "name": "Acrylic",
+            "description": "Cost-effective with vibrant color options. Available in opaque, translucent, and frosted finishes. Can be edge-lit for subtle illumination. Available exclusively at trade pricing.",
+            "image": "Flat cut acrylic letters — matte black on white wall"
+          }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Trade Specifications & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          {
+            "icon": "Scissors",
+            "title": "CNC Precision Cutting",
+            "description": "Laser and waterjet CNC cutting delivers crisp edges and precise geometry on every letter, logo, and custom shape. Tolerances within 0.005 inches."
+          },
+          {
+            "icon": "Palette",
+            "title": "Extensive Finish Options",
+            "description": "Painted, brushed, polished, anodized, powder-coated, or raw. Custom finishes including oxidized, rusted, and specialty treatments available."
+          },
+          {
+            "icon": "Layers",
+            "title": "Multiple Mounting Methods",
+            "description": "Stud-mounted with standoffs for a floating effect, flush-mounted directly to the surface, or pin-mounted with hidden hardware."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Any Size or Font",
+            "description": "From 1-inch desk nameplates to 6-foot building identification. Any font, any logo, any custom shape. We cut what you design."
+          },
+          {
+            "icon": "Mountain",
+            "title": "Interior & Exterior Grade",
+            "description": "Material selection and finish treatment optimized for the intended environment. UV-stable finishes for exterior applications."
+          },
+          {
+            "icon": "Shield",
+            "title": "Wholesale Direct Pricing",
+            "description": "Trade-only pricing for sign shops. No retail markup. Same quality standards as our illuminated product lines. We never compete with our sign shop partners."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mounting",
+      "type": "text_section",
+      "label": "Mounting Methods",
+      "visible": true,
+      "data": {
+        "heading": "Mounting Methods",
+        "content": "The mounting method determines the visual relationship between the letters and the surface. We provide the right mounting hardware and a paper pattern for every project. Wholesale direct to your shop.",
+        "image": "Flat cut letters mounting — stud mount with standoffs showing shadow effect",
+        "imagePosition": "right",
+        "background": "navy"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Trade Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "CNC precision cutting with tight tolerances across all materials. Every letter set ships with a paper pattern and mounting hardware. Available exclusively at wholesale trade pricing.",
+        "image": "Flat cut letters — CNC laser cutting process, precision detail",
+        "specs": []
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Common Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "Flat cut letters are the most versatile dimensional signage format, suitable for both interior and exterior installations. Wholesale direct to sign shops for all project types.",
+        "items": [
+          "Corporate lobby and reception signage",
+          "Retail storefront identification",
+          "Restaurant and hospitality branding",
+          "Office suite and tenant identification",
+          "Wayfinding and directional signage",
+          "Monument and pylon letter sets",
+          "Interior feature walls and branding",
+          "ADA-compliant dimensional signage"
+        ]
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Get Started?",
+        "description": "Request a wholesale quote for your next project."
+      }
+    }
+  ]
+}

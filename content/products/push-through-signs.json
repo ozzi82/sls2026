@@ -1,0 +1,188 @@
+{
+  "slug": "/products/push-through-signs",
+  "pageType": "product",
+  "label": "Push-Through Signs",
+  "seo": {
+    "title": "Push-Through Signs | Wholesale Sign Manufacturer | Sunlite Signs",
+    "metaDescription": "Wholesale push-through signs with dimensional acrylic letters and LED backlighting. German-engineered, UL 48 listed, 3-week delivery. Trade pricing for sign shops only.",
+    "keywords": [
+      "push-through signs wholesale",
+      "push-through letter signs",
+      "backlit push-through signs",
+      "push-through acrylic signs",
+      "wholesale sign manufacturer",
+      "illuminated push-through signage",
+      "custom push-through signs",
+      "routed aluminum panel signs",
+      "LED push-through signs",
+      "dimensional letter signs"
+    ],
+    "canonical": "https://sunlitesigns.com/products/push-through-signs"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Push-Through",
+        "h1Highlight": "Signs",
+        "subtitle": "Dimensional acrylic letters pushed through precision-routed aluminum panels, creating elegant illuminated signage with soft, even backlighting. The premium alternative to flat-face cabinet signs.",
+        "image": "Push-through sign — illuminated dimensional acrylic letters on routed aluminum panel",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Features & Benefits",
+        "items": [
+          {
+            "icon": "Eye",
+            "title": "Elegant Illumination",
+            "description": "Dimensional acrylic letters glow with soft, even illumination when backlit by LEDs, while the aluminum face panel remains opaque. A premium look that commands attention day and night."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Energy-Efficient LEDs",
+            "description": "High-output LED modules rated at 50,000+ hours deliver uniform backlighting across every letter. Low energy consumption and maintenance-free operation reduce total cost of ownership."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Precision CNC Routing",
+            "description": "Each aluminum face panel is CNC-routed with tolerances of +/- 0.010 inches, ensuring perfectly fitted letterforms and clean edges on every character for a flawless finished product."
+          },
+          {
+            "icon": "Layers",
+            "title": "Dimensional Impact",
+            "description": "Push-through letters project from the sign face, creating a three-dimensional appearance that flat-face cabinet signs cannot match. Visible depth adds a premium, tactile quality to any storefront."
+          },
+          {
+            "icon": "Palette",
+            "title": "Unlimited Customization",
+            "description": "Any font, any color, any panel finish. Choose from translucent and opaque acrylics, painted or powder-coated aluminum faces, and a full range of standard or custom finishes to match any brand."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL 48 Listed",
+            "description": "All illuminated push-through signs are UL 48 listed with proper labeling and documentation for code compliance, permitting, and inspection. Built to last with welded aluminum construction."
+          }
+        ]
+      }
+    },
+    {
+      "id": "process",
+      "type": "process_steps",
+      "label": "How Push-Through Signs Work",
+      "visible": true,
+      "data": {
+        "heading": "How Push-Through Signs Work",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Aluminum Panel Routing",
+            "description": "A CNC router precisely cuts each letterform into a heavy-gauge aluminum face panel. Tight tolerances ensure every character is dimensionally accurate to the approved artwork."
+          },
+          {
+            "step": 2,
+            "title": "Acrylic Letter Fabrication",
+            "description": "Cast acrylic letters are cut to match each routed opening. Available in translucent or opaque colors, the acrylic pieces are sized for a friction-fit push through the aluminum face."
+          },
+          {
+            "step": 3,
+            "title": "Assembly & LED Installation",
+            "description": "Letters are pressed through the panel from behind, projecting outward to create dimensional depth. LED modules are installed inside the cabinet for uniform backlighting of each character."
+          },
+          {
+            "step": 4,
+            "title": "Quality Inspection & Shipping",
+            "description": "Every sign undergoes a powered illumination test and full quality inspection before shipping. Units ship fully assembled and wired, ready for straightforward field installation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "text-overview",
+      "type": "text_section",
+      "label": "Why Choose Push-Through Signs?",
+      "visible": true,
+      "data": {
+        "heading": "Why Choose Push-Through Signs?",
+        "content": "Push-through signs bridge the gap between standard cabinet signs and individual channel letters. They deliver a dimensional, illuminated look at a competitive price point, making them one of the most effective upsell opportunities for sign shops.\n\nWhen backlit by LEDs, the acrylic letters glow with a soft, even illumination while the aluminum face panel remains opaque, creating a striking contrast that draws attention. The result is signage that looks custom and high-end without the complexity or cost of individual channel letters.",
+        "image": "Push-through sign — detail of acrylic letters projecting through routed aluminum",
+        "imagePosition": "left",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Specifications",
+        "specs": [
+          { "label": "Construction", "value": "Welded aluminum cabinet" },
+          { "label": "Face Panel", "value": "CNC-routed aluminum composite" },
+          { "label": "Letters", "value": "Cast acrylic, push-through mounted" },
+          { "label": "Letter Depth", "value": "3/8\" to 1\" projection" },
+          { "label": "LED System", "value": "Internal LED modules, UL listed" },
+          { "label": "Colors", "value": "Any font, any acrylic color, any panel finish" },
+          { "label": "Panel Finish", "value": "Painted, powder coat, brushed, or wrapped" },
+          { "label": "Mounting", "value": "Wall mount, raceway, pole mount, monument" },
+          { "label": "Certifications", "value": "UL 48 Listed" },
+          { "label": "Warranty", "value": "5-year LED, 3-year construction" },
+          { "label": "Lead Time", "value": "3 weeks door to door" }
+        ]
+      }
+    },
+    {
+      "id": "use-cases",
+      "type": "use_cases",
+      "label": "Common Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "Push-through signs are popular across retail, hospitality, corporate, and healthcare sectors. Their dimensional elegance and soft illumination make them ideal for businesses that want premium-looking signage without the cost of channel letters.",
+        "items": [
+          "Retail storefronts and shopping centers",
+          "Corporate lobbies and office buildings",
+          "Hotels and hospitality properties",
+          "Restaurants and bars",
+          "Medical offices and healthcare facilities",
+          "Banks and financial institutions",
+          "Auto dealerships and showrooms",
+          "Franchise and multi-location brands"
+        ]
+      }
+    },
+    {
+      "id": "related",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA Section",
+      "visible": true,
+      "data": {
+        "heading": "Request Wholesale Pricing for",
+        "headingHighlight": "Push-Through Signs.",
+        "description": "Send your push-through sign specs, artwork, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
+      }
+    }
+  ]
+}

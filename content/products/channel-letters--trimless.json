@@ -1,0 +1,177 @@
+{
+  "slug": "/products/channel-letters/trimless",
+  "pageType": "product",
+  "label": "EdgeLuxe Trimless Channel Letters",
+  "seo": {
+    "title": "Wholesale EdgeLuxe Trimless Channel Letters — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale EdgeLuxe trimless channel letters for sign shops only. No visible trim cap, seamless aluminum returns, modern architectural aesthetic. Trade pricing, UL listed, German-engineered. We never sell retail.",
+    "keywords": [
+      "trimless channel letters wholesale",
+      "trimless channel letters",
+      "EdgeLuxe trimless letters",
+      "seamless channel letters",
+      "no trim cap channel letters",
+      "modern channel letters wholesale",
+      "architectural channel letters",
+      "trimless LED channel letters",
+      "wholesale trimless sign manufacturer",
+      "trade pricing trimless letters"
+    ],
+    "canonical": "https://sunlitesigns.com/trimless-channel-letters",
+    "ogTitle": "Wholesale EdgeLuxe Trimless Channel Letters — Trade Pricing | Sunlite Signs",
+    "ogDescription": "The industry's cleanest channel letter. No trim cap, seamless returns, German-engineered precision. Wholesale trade pricing for sign shops only. We never sell retail."
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale EdgeLuxe Trimless",
+        "h1Highlight": "Channel Letters",
+        "subtitle": "No trim cap. No compromise. The cleanest channel letter on the market, built with German-engineered precision that eliminates the plastic trim cap entirely. Available exclusively to trade accounts.\n\nDeveloped with LKF Lichtwerbung in Nuremberg. UL listed. Available in face lit, halo lit, and combination configurations. Wholesale direct to sign shops — we never sell retail.",
+        "image": "/products/trimless-day.jpg",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "See the Difference", "href": "#comparison", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "text_section",
+      "type": "text_section",
+      "label": "Why Trimless Matters",
+      "visible": true,
+      "data": {
+        "heading": "Why Trimless Matters",
+        "content": "Every traditional channel letter has a visible plastic trim cap — a retainer strip that holds the acrylic face in place. It is a functional necessity that has been an aesthetic compromise for decades.\n\nEdgeLuxe eliminates every one of these issues with a proprietary all-aluminum construction that requires no plastic trim cap. Available exclusively at wholesale trade pricing for sign shops.",
+        "image": "Traditional channel letter with visible trim cap — close-up showing plastic retainer",
+        "imagePosition": "right",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "features_grid",
+      "type": "features_grid",
+      "label": "Key Differentiators",
+      "visible": true,
+      "data": {
+        "heading": "The EdgeLuxe Wholesale Advantage",
+        "items": [
+          { "icon": "Gem", "title": "Zero Visible Trim Cap", "description": "The defining feature. Where traditional channel letters require a plastic trim cap to secure the face, EdgeLuxe uses a proprietary aluminum return-to-face connection that eliminates the trim cap entirely." },
+          { "icon": "Eye", "title": "Seamless Aesthetic", "description": "Clean, uninterrupted lines from every viewing angle. The face meets the return in a flush, seamless joint that architects and designers demand for modern brand environments." },
+          { "icon": "Award", "title": "German-Engineered Precision", "description": "Developed in partnership with LKF Lichtwerbung in Nuremberg, Germany. The EdgeLuxe manufacturing process requires tighter tolerances than standard channel letters — tolerances we achieve consistently." },
+          { "icon": "Shield", "title": "UL Listed", "description": "Full UL listing despite the non-standard construction. We invested in the engineering required to meet UL 48 standards without a traditional trim cap assembly." },
+          { "icon": "Building2", "title": "Architect Specified", "description": "Increasingly specified by architects and brand designers who reject the visual compromise of a trim cap. EdgeLuxe is becoming the standard for high-end commercial projects." },
+          { "icon": "Lightbulb", "title": "All Illumination Styles", "description": "Available in face lit, halo lit, and front-and-halo lit configurations. The trimless construction works with any LED configuration." }
+        ]
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Precision tolerances and premium materials throughout. Every EdgeLuxe letter is a testament to what German engineering brings to the sign industry. Available exclusively at wholesale trade pricing.",
+        "image": "EdgeLuxe trimless channel letter — exploded view showing proprietary face-to-return connection",
+        "specs": []
+      }
+    },
+    {
+      "id": "use_cases",
+      "type": "use_cases",
+      "label": "Applications",
+      "visible": true,
+      "data": {
+        "heading": "Where EdgeLuxe Excels",
+        "description": "EdgeLuxe trimless channel letters are the standard for projects where the architect or brand designer will not accept the visual compromise of a plastic trim cap. Wholesale direct to sign shops for all project types.",
+        "items": [
+          "Architect-specified brand signage",
+          "Class A commercial office buildings",
+          "Luxury retail and flagship stores",
+          "Boutique hotels and hospitality",
+          "High-end residential developments",
+          "Museums, galleries, and cultural spaces",
+          "Financial institutions and banks",
+          "Technology company campuses",
+          "Healthcare and wellness facilities",
+          "Mixed-use lifestyle developments"
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Gallery",
+      "visible": true,
+      "data": {
+        "heading": "EdgeLuxe Trimless Gallery",
+        "images": [
+          { "src": "", "alt": "EdgeLuxe trimless — luxury retail facade, face lit, night" },
+          { "src": "", "alt": "EdgeLuxe trimless — corporate headquarters, halo lit" },
+          { "src": "", "alt": "EdgeLuxe trimless — boutique hotel entrance, warm white" },
+          { "src": "", "alt": "EdgeLuxe trimless — tech campus, large scale letters" },
+          { "src": "", "alt": "EdgeLuxe trimless — close-up detail of seamless joint" },
+          { "src": "", "alt": "EdgeLuxe trimless — mixed-use development, front and halo lit" },
+          { "src": "", "alt": "EdgeLuxe trimless — healthcare facility, daytime view" },
+          { "src": "", "alt": "EdgeLuxe trimless — restaurant signage, brushed aluminum finish" },
+          { "src": "", "alt": "EdgeLuxe trimless — bank branch, professional facade" }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "label": "FAQ",
+      "visible": true,
+      "data": {
+        "heading": "Trimless Channel Letters FAQ",
+        "items": [
+          {
+            "question": "What are trimless channel letters?",
+            "answer": "Trimless channel letters are a modern channel letter construction that eliminates the traditional plastic trim cap used to hold the acrylic face in place. Instead, EdgeLuxe uses a proprietary all-aluminum return-to-face connection that creates a seamless, flush joint between the letter face and the return. The result is a cleaner, more architectural appearance with no visible plastic retainer strip."
+          },
+          {
+            "question": "How do trimless channel letters differ from standard channel letters?",
+            "answer": "Standard channel letters use a snap-in plastic trim cap around the perimeter of each letter to secure the acrylic face to the aluminum return. This trim cap is visible on the finished letter and can yellow, crack, or detach over time. Trimless letters eliminate this component entirely, using a precision-fit aluminum channel that produces a flush face-to-return joint with no plastic components exposed."
+          },
+          {
+            "question": "Are trimless channel letters more expensive than standard?",
+            "answer": "Trimless letters carry a moderate premium over standard trim cap letters due to the tighter manufacturing tolerances and proprietary construction methods required. However, for projects where architects or brand designers specify a clean, modern aesthetic, the premium is justified by the superior visual result and long-term durability of all-aluminum construction."
+          },
+          {
+            "question": "Are EdgeLuxe trimless channel letters UL listed?",
+            "answer": "Yes. Every EdgeLuxe trimless channel letter set is fully UL listed and carries the UL label. Achieving UL listing with non-standard construction required additional engineering investment, but it means sign shops can specify trimless letters on any project requiring code compliance — which is virtually all commercial installations in the USA and Canada."
+          },
+          {
+            "question": "What illumination options are available for trimless letters?",
+            "answer": "EdgeLuxe trimless letters are available in face lit, halo lit, and front-and-halo combination configurations. The trimless construction works with any LED illumination layout. All configurations use premium Samsung or Nichia LED modules with 50,000+ hour rated life."
+          },
+          {
+            "question": "Why are architects specifying trimless channel letters?",
+            "answer": "Architects and brand designers increasingly reject the visual compromise of a plastic trim cap on modern building facades. Trimless letters deliver the clean, uninterrupted geometry that contemporary architectural design demands. They are particularly popular for Class A office buildings, luxury retail, boutique hospitality, and any project where the signage must meet the same design standard as the architecture itself."
+          },
+          {
+            "question": "How do I order wholesale trimless channel letters?",
+            "answer": "Submit your project details through our Request Wholesale Pricing form or email us directly. Include letter height, font, color, illumination type, quantity, and any special requirements. We accept AI files, PDFs, or detailed written descriptions. You will receive a detailed wholesale trade quote within 48 hours. We sell exclusively to sign shops and trade professionals."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Order",
+        "headingHighlight": "Trimless Letters?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

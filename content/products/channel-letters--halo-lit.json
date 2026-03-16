@@ -1,0 +1,153 @@
+{
+  "slug": "/products/channel-letters/halo-lit",
+  "pageType": "product",
+  "label": "Halo Lit Channel Letters",
+  "seo": {
+    "title": "Wholesale Halo Lit Channel Letters — Trade Pricing | Sunlite Signs",
+    "metaDescription": "Wholesale halo lit channel letters for sign shops only. Elegant backlit glow, rear-mounted LED illumination. Trade pricing, UL listed, German-engineered. We never sell retail.",
+    "keywords": [
+      "halo lit channel letters",
+      "halo lit channel letters wholesale",
+      "backlit channel letters",
+      "reverse channel letters",
+      "halo illuminated signs",
+      "LED halo letters wholesale",
+      "architectural channel letters",
+      "trade pricing halo letters",
+      "sign shop supplier"
+    ],
+    "canonical": "https://sunlitesigns.com/halo-lit-channel-letters"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Halo Lit",
+        "h1Highlight": "Channel Letters",
+        "subtitle": "A soft, diffused glow radiates behind each letter, creating an elegant halo effect that transforms any facade into a premium brand statement. The choice of architects and luxury brands. Available exclusively to trade accounts.\n\nRear-mounted LEDs. Aluminum construction. UL listed. Wholesale direct to sign shops — we never sell retail. Your clients stay yours.",
+        "image": "/products/halo-lit-day.jpg",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "features_grid",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          {
+            "icon": "Moon",
+            "title": "Elegant Halo Glow",
+            "description": "Rear-mounted LEDs create a soft, diffused halo of light around each letter, producing a sophisticated and upscale appearance on any facade."
+          },
+          {
+            "icon": "Sparkles",
+            "title": "Premium Brand Perception",
+            "description": "Halo lit letters are the preferred choice for luxury retail, hospitality, and architectural signage where brand perception matters."
+          },
+          {
+            "icon": "Building2",
+            "title": "Facade Enhancement",
+            "description": "The backlit glow highlights the texture and material of the mounting surface, turning the building itself into part of the sign design."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "Fully UL listed with all required labels and documentation. Smooth permitting and code compliance for every project."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Precision Returns",
+            "description": "Deep aluminum returns provide the standoff needed for optimal halo spread. Return depth is customizable based on wall color and effect desired."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "LED Color Options",
+            "description": "Standard white halo with warm white (3000K), neutral (4000K), and cool white (6500K) options. RGB color-changing available for dynamic installations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "text_section",
+      "type": "text_section",
+      "label": "How It Works",
+      "visible": true,
+      "data": {
+        "heading": "How Halo Lit Works",
+        "content": "LEDs are mounted facing the rear of the letter, directing light outward through the back. Standoff spacers hold each letter away from the wall, allowing the light to diffuse and create the characteristic halo effect.",
+        "image": "Halo lit channel letter — cross-section diagram showing rear LED placement and halo spread",
+        "imagePosition": "left",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Engineered for optimal halo spread, durability, and ease of installation. Every detail is considered. Available exclusively at wholesale trade pricing.",
+        "image": "Halo lit channel letter — detail of aluminum return and LED module placement",
+        "specs": []
+      }
+    },
+    {
+      "id": "use_cases",
+      "type": "use_cases",
+      "label": "Applications",
+      "visible": true,
+      "data": {
+        "heading": "Ideal Applications",
+        "description": "Halo lit channel letters are the go-to choice for projects where elegance and brand sophistication are paramount. Available at wholesale trade pricing for all project types.",
+        "items": [
+          "Luxury retail and boutiques",
+          "Hotels, resorts, and hospitality",
+          "Fine dining restaurants",
+          "Corporate headquarters",
+          "Medical and professional offices",
+          "Multifamily residential lobbies",
+          "Mixed-use developments",
+          "Museums and cultural institutions"
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Gallery",
+      "visible": true,
+      "data": {
+        "heading": "Halo Lit Projects",
+        "images": [
+          { "src": "", "alt": "Halo lit letters — boutique retail, dark brick" },
+          { "src": "", "alt": "Halo lit letters — corporate office tower" },
+          { "src": "", "alt": "Halo lit letters — fine dining restaurant" },
+          { "src": "", "alt": "Halo lit letters — luxury hotel, stone facade" },
+          { "src": "", "alt": "Halo lit letters — medical center entrance" },
+          { "src": "", "alt": "Halo lit letters — mixed-use residential lobby" }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Order",
+        "headingHighlight": "Halo Lit Letters?",
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+      }
+    }
+  ]
+}

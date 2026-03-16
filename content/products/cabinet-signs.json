@@ -1,0 +1,197 @@
+{
+  "slug": "/products/cabinet-signs",
+  "pageType": "product",
+  "label": "Cabinet Signs",
+  "seo": {
+    "title": "Wholesale Cabinet Signs — Trade Pricing for Sign Shops | Sunlite Signs",
+    "metaDescription": "Wholesale cabinet signs for sign shops only. Illuminated cabinet signs, push-through letters, and flex-face options. Trade pricing, German-engineered, UL listed. We never sell retail.",
+    "keywords": [
+      "cabinet signs wholesale",
+      "illuminated cabinet signs",
+      "push-through letter signs",
+      "flex-face cabinet signs",
+      "wholesale sign manufacturer",
+      "cabinet sign fabrication",
+      "trade pricing cabinet signs",
+      "sign shop supplier",
+      "LED cabinet signs",
+      "lightbox signs wholesale"
+    ],
+    "canonical": "https://sunlitesigns.com/wholesale-cabinet-signs"
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero Section",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only — Trade Pricing",
+        "h1": "Wholesale Cabinet",
+        "h1Highlight": "Signs",
+        "subtitle": "Illuminated cabinet signs, push-through letter cabinets, and flex-face options for every commercial application. Large-format signage engineered for maximum visibility. Available exclusively to trade accounts. UL listed. German-engineered. Wholesale direct to sign shops across the USA and Canada. We never sell retail — your clients stay yours.",
+        "image": "Cabinet sign — illuminated storefront cabinet sign at night",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "product_types",
+      "type": "product_types",
+      "label": "Cabinet Sign Types",
+      "visible": true,
+      "data": {
+        "heading": "Wholesale Cabinet Sign Types",
+        "description": "From standard illuminated cabinets to premium push-through and flex-face configurations. All available at trade pricing.",
+        "items": [
+          {
+            "name": "Standard Illuminated Cabinet",
+            "description": "Internal LED cabinet with translucent polycarbonate or acrylic face. Uniform illumination for maximum visibility day and night. Welded aluminum construction with painted finish. Wholesale trade pricing for sign shops.",
+            "image": "Illuminated cabinet sign — standard box sign, night view"
+          },
+          {
+            "name": "Push-Through Letter Cabinet",
+            "description": "Routed aluminum face with push-through acrylic letters. Dimensional daytime appearance with selective letter illumination at night. Premium aesthetic for retail and hospitality. Available exclusively to trade accounts.",
+            "image": "Push-through letter cabinet sign — dimensional routed face with LED"
+          },
+          {
+            "name": "Flex-Face Cabinet",
+            "description": "Tensioned translucent vinyl face for full-color illuminated graphics. Easy face replacement for tenant changes. Ideal for multi-tenant retail and franchise applications. Wholesale direct to sign shops.",
+            "image": "Flex-face cabinet sign — tensioned vinyl illuminated graphics"
+          },
+          {
+            "name": "Double-Sided Cabinet",
+            "description": "Illuminated on both sides for maximum exposure. Ideal for monument signs, pole signs, and median-facing applications. Engineered for wind load requirements. Trade pricing available.",
+            "image": "Double-sided cabinet sign — illuminated monument sign"
+          }
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "type": "features_grid",
+      "label": "Features & Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications & Benefits",
+        "items": [
+          {
+            "icon": "Eye",
+            "title": "Maximum Visibility",
+            "description": "Large-format illuminated cabinet signs deliver high-impact brand presence visible from hundreds of feet away, day and night. Ideal for storefronts, shopping centers, and commercial buildings."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "LED Illumination",
+            "description": "High-efficiency LED modules provide uniform illumination across the entire face. Energy-efficient operation with 50,000+ hour rated life. Internal or edge-lit configurations available."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Custom Sizes & Shapes",
+            "description": "Rectangular, curved, shaped, or fully custom cabinet profiles. From compact wall-mounted units to large freestanding monument signs. Sized to your project specifications."
+          },
+          {
+            "icon": "Layers",
+            "title": "Push-Through Letters",
+            "description": "Routed aluminum faces with dimensional push-through acrylic letters. Combines daytime dimensional appearance with selective night illumination for a premium look."
+          },
+          {
+            "icon": "Palette",
+            "title": "Flex-Face Options",
+            "description": "Tensioned translucent vinyl faces for full-color, edge-to-edge graphics. Easily replaceable faces for multi-tenant or seasonal branding applications."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "All illuminated cabinet signs are UL listed with proper labeling and documentation for code compliance and permitting. Built to last with welded aluminum construction."
+          }
+        ]
+      }
+    },
+    {
+      "id": "specs",
+      "type": "specs_table",
+      "label": "Specifications",
+      "visible": true,
+      "data": {
+        "heading": "Trade Specifications",
+        "description": "Engineered for durability, visibility, and code compliance. Every cabinet sign includes complete electrical documentation and installation details. Available exclusively at wholesale trade pricing.",
+        "image": "Cabinet sign — detail of welded aluminum cabinet construction",
+        "specs": [
+          { "label": "Construction", "value": "Welded aluminum cabinet" },
+          { "label": "Cabinet Depth", "value": "4\" to 12\" (custom available)" },
+          { "label": "Standard Sizes", "value": "24x48, 36x72, 48x96, 48x120, custom" },
+          { "label": "Face Material", "value": "Polycarbonate, acrylic, flex-face vinyl, or aluminum (push-through)" },
+          { "label": "LED System", "value": "Internal LED modules, edge-lit, or backlit" },
+          { "label": "Graphics", "value": "Vinyl, digital print, push-through acrylic, flex-face" },
+          { "label": "Finish", "value": "Painted aluminum, powder coat, or anodized" },
+          { "label": "Mounting", "value": "Wall mount, raceway, pole mount, monument base" },
+          { "label": "Electrical", "value": "Remote or integrated power supply, UL listed" },
+          { "label": "Certifications", "value": "UL Listed (all illuminated models)" },
+          { "label": "Warranty", "value": "5-year LED, 3-year construction" },
+          { "label": "Lead Time", "value": "3 weeks door to door" }
+        ]
+      }
+    },
+    {
+      "id": "use_cases",
+      "type": "use_cases",
+      "label": "Applications",
+      "visible": true,
+      "data": {
+        "heading": "Common Applications",
+        "description": "Cabinet signs are the workhorses of commercial signage. From retail storefronts to monument signs, they deliver reliable illuminated identification for every application. Wholesale direct to sign shops for all project types.",
+        "image": "Cabinet signs — row of illuminated cabinet signs at shopping center",
+        "items": [
+          "Retail storefronts and shopping centers",
+          "Gas stations and convenience stores",
+          "Quick-service restaurants and franchises",
+          "Multi-tenant commercial buildings",
+          "Monument and pylon sign cabinets",
+          "Parking garages and wayfinding",
+          "Auto dealerships and service centers",
+          "Healthcare and medical facilities"
+        ]
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Gallery",
+      "visible": true,
+      "data": {
+        "heading": "Cabinet Sign Projects",
+        "images": [
+          { "src": "", "alt": "Cabinet sign — illuminated retail storefront, night" },
+          { "src": "", "alt": "Cabinet sign — push-through letters, restaurant" },
+          { "src": "", "alt": "Cabinet sign — flex-face, gas station canopy" },
+          { "src": "", "alt": "Cabinet sign — double-sided monument, shopping center" },
+          { "src": "", "alt": "Cabinet sign — multi-tenant commercial building" },
+          { "src": "", "alt": "Cabinet sign — custom shape, auto dealership" }
+        ]
+      }
+    },
+    {
+      "id": "related_pages",
+      "type": "related_pages",
+      "label": "Related Pages",
+      "visible": true,
+      "data": {
+        "heading": "Learn More",
+        "slugs": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "Call to Action",
+      "visible": true,
+      "data": {
+        "heading": "Request Wholesale Pricing for",
+        "headingHighlight": "Cabinet Signs.",
+        "description": "Send your cabinet sign specs, drawings, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
+      }
+    }
+  ]
+}
