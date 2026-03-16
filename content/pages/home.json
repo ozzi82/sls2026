@@ -1,0 +1,132 @@
+{
+  "slug": "/",
+  "pageType": "static",
+  "label": "Homepage",
+  "seo": {
+    "title": "Sunlite Signs — Wholesale Channel Letters & LED Signage Manufacturer",
+    "metaDescription": "German-engineered wholesale channel letters, blade signs & illuminated signage — built for sign shops, never sold retail. UL listed. 3-week delivery.",
+    "keywords": ["wholesale channel letters", "wholesale sign manufacturer", "LED signage wholesale", "sign shop supplier"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only \u00b7 Trade Accounts",
+        "h1": "Precision Signage,",
+        "h1Highlight": "Exclusively Wholesale.",
+        "subtitle": "German-engineered channel letters, blade signs & illuminated signage \u2014 built for sign shops, never sold retail.",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "View Products", "href": "/products", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "marquee",
+      "type": "marquee",
+      "label": "Marquee",
+      "visible": true,
+      "data": {
+        "messages": [
+          "WHOLESALE ONLY",
+          "UL 48 LISTED",
+          "24-HOUR QUOTES",
+          "3-WEEK DELIVERY",
+          "USA & CANADA",
+          "GERMAN ENGINEERING",
+          "TRADE ACCOUNTS",
+          "NO RETAIL SALES"
+        ]
+      }
+    },
+    {
+      "id": "stats",
+      "type": "stats_strip",
+      "label": "Stats Strip",
+      "visible": true,
+      "data": {
+        "items": [
+          { "icon": "Shield", "label": "Listed & Certified", "sublabel": "UL 48" },
+          { "icon": "Clock", "label": "Quote Turnaround", "sublabel": "24h" },
+          { "icon": "Truck", "label": "Door-to-Door", "sublabel": "3 Wk" },
+          { "icon": "Zap", "label": "Nationwide Shipping", "sublabel": "US/CA" }
+        ]
+      }
+    },
+    {
+      "id": "story",
+      "type": "text_section",
+      "label": "Our Story",
+      "visible": true,
+      "data": {
+        "heading": "Custom European Signage,",
+        "headingHighlight": "Wholesale.",
+        "badge": "Our Story",
+        "content": "The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering \u2014 and a commitment to never compete with our customers.\n\nFrom LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.",
+        "image": "/homepage-story.png",
+        "imageAlt": "Sunlite Signs team and LKF Lichtwerbung partnership",
+        "imagePosition": "left",
+        "background": "light",
+        "linkText": "Read Our Story",
+        "linkHref": "/about"
+      }
+    },
+    {
+      "id": "products",
+      "type": "product_types",
+      "label": "What We Build",
+      "visible": true,
+      "data": {
+        "heading": "What We Build",
+        "headingHighlight": "Build",
+        "description": "Precision-engineered signage solutions, manufactured exclusively for the trade.",
+        "items": [
+          { "name": "Channel Letters", "description": "Face lit, halo lit & combination LED illumination", "image": "/homepage-channel-letters.jpg", "href": "/products/channel-letters", "tag": "Most Popular" },
+          { "name": "EdgeLuxe Trimless", "description": "1.2\" profile, embedded LEDs, no trim cap", "image": "/hero-bg1.jpg", "href": "/products/channel-letters/trimless", "tag": "Premium" },
+          { "name": "FCO Flat Cut", "description": "Precision-cut aluminum & stainless steel letterforms", "image": "/hero-bg4.jpg", "href": "/products/flat-cut-letters", "tag": null },
+          { "name": "Blade Signs", "description": "Projecting signs for maximum storefront visibility", "image": "/homepage-blade-cabinet.jpg", "href": "/products/blade-signs", "tag": null },
+          { "name": "Cabinet Signs", "description": "Illuminated cabinet & push-through signage", "image": "/hero-bg3.jpg", "href": "/products/lightboxes", "tag": null },
+          { "name": "SEG Light Boxes", "description": "Silicone-edged graphic displays from 1\" deep", "image": "/homepage-seg.jpg", "href": "/products/seg-light-boxes", "tag": "New" }
+        ]
+      }
+    },
+    {
+      "id": "engineering",
+      "type": "text_section",
+      "label": "Complimentary Engineering",
+      "visible": true,
+      "data": {
+        "heading": "Complimentary",
+        "headingHighlight": "Engineering.",
+        "badge": "Included with Every Project",
+        "content": "With our German design and engineering roots, we contribute complimentary engineering services to every project \u2014 from conceptual integration of structural and material sciences, to manufacturing engineering and packaging.",
+        "image": "/homepage-engineering.jpg",
+        "imageAlt": "Sunlite Signs engineering team designing channel letters",
+        "imagePosition": "right",
+        "background": "dark",
+        "linkText": "Explore Services",
+        "linkHref": "/services",
+        "bulletPoints": [
+          "Concept & Materials",
+          "Structural Engineering",
+          "Electrical Layout",
+          "Manufacturing Engineering"
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

@@ -10,37 +10,37 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
-import configData from "../../../../../content/products/channel-letters--front-and-halo-lit.json";
-import { PageConfig } from "@/lib/admin/page-config-types";
+import { loadProductConfig } from "@/lib/admin/page-config";
 
-const config = configData as unknown as PageConfig;
-function getBlock(id: string) {
-  return config.blocks.find(b => b.id === id);
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadProductConfig("channel-letters--front-and-halo-lit");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
 }
 
-const heroBlock = getBlock("hero")!;
-const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-const galleryBlock = getBlock("gallery")!;
-const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
-const featuresBlock = getBlock("features_grid")!;
-const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-const specsBlock = getBlock("specs")!;
-const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
-const useCasesBlock = getBlock("use_cases")!;
-const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
-
-export const metadata: Metadata = {
-  title: config.seo.title,
-  description: config.seo.metaDescription,
-  keywords: config.seo.keywords,
-  alternates: {
-    canonical: config.seo.canonical,
-  },
-};
-
-const product = getProduct("LP 11-FB");
-
 export default function FrontAndHaloLitPage() {
+  const config = loadProductConfig("channel-letters--front-and-halo-lit");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroBlock = getBlock("hero")!;
+  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const galleryBlock = getBlock("gallery")!;
+  const galleryData = galleryBlock.data as { heading: string; images: { src: string; alt: string }[] };
+  const featuresBlock = getBlock("features_grid")!;
+  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+  const specsBlock = getBlock("specs")!;
+  const specsData = specsBlock.data as { heading: string; description?: string; image?: string };
+  const useCasesBlock = getBlock("use_cases")!;
+  const useCasesData = useCasesBlock.data as { heading: string; description?: string; items: string[] };
+  const product = getProduct("LP 11-FB");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",

@@ -9,46 +9,47 @@ import { getLandingPagesByHub } from "@/lib/landing-pages";
 import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
-import configData from "../../../../content/products/channel-letters.json";
-import { PageConfig } from "@/lib/admin/page-config-types";
+import { loadProductConfig } from "@/lib/admin/page-config";
 
-const config = configData as unknown as PageConfig;
-function getBlock(id: string) {
-  return config.blocks.find(b => b.id === id);
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadProductConfig("channel-letters");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
 }
 
-const heroBlock = getBlock("hero")!;
-const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
-const featuresBlock = getBlock("features_grid")!;
-const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
-
-// Product grid blocks
-const productGridBlock = getBlock("product_grid")!;
-const productGridData = productGridBlock.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-const productGrid2Block = getBlock("product_grid_2")!;
-const productGrid2Data = productGrid2Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-const productGrid3Block = getBlock("product_grid_3")!;
-const productGrid3Data = productGrid3Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-const productGrid4Block = getBlock("product_grid_4")!;
-const productGrid4Data = productGrid4Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
-
-const productFamilies = [
-  { ...productGridData, products: productGridData.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-  { ...productGrid2Data, products: productGrid2Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-  { ...productGrid3Data, products: productGrid3Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-  { ...productGrid4Data, products: productGrid4Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
-];
-
-export const metadata: Metadata = {
-  title: config.seo.title,
-  description: config.seo.metaDescription,
-  keywords: config.seo.keywords,
-  alternates: {
-    canonical: config.seo.canonical,
-  },
-};
-
 export default function ChannelLettersPage() {
+  const config = loadProductConfig("channel-letters");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroBlock = getBlock("hero")!;
+  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; image?: string; ctas: { label: string; href: string; variant: string }[] };
+  const featuresBlock = getBlock("features_grid")!;
+  const featuresData = featuresBlock.data as { heading: string; items: { icon: string; title: string; description: string }[] };
+
+  // Product grid blocks
+  const productGridBlock = getBlock("product_grid")!;
+  const productGridData = productGridBlock.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid2Block = getBlock("product_grid_2")!;
+  const productGrid2Data = productGrid2Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid3Block = getBlock("product_grid_3")!;
+  const productGrid3Data = productGrid3Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+  const productGrid4Block = getBlock("product_grid_4")!;
+  const productGrid4Data = productGrid4Block.data as { heading: string; description?: string; items: { name: string; model?: string; image?: string; href?: string }[] };
+
+  const productFamilies = [
+    { ...productGridData, products: productGridData.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
+    { ...productGrid2Data, products: productGrid2Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
+    { ...productGrid3Data, products: productGrid3Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
+    { ...productGrid4Data, products: productGrid4Data.items.map(p => ({ ...p, slug: p.href?.split("/").pop() || "", dayImg: p.image || "" })) },
+  ];
   const spokes = getLandingPagesByHub("channel-letters").slice(0, 6);
   const relatedArticles = spokes.map((p) => ({
     title: p.h1 + " " + p.h1Highlight,

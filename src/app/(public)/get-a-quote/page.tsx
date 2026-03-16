@@ -1,25 +1,32 @@
 import { Metadata } from "next";
-import { Phone, Mail, Shield, Clock, Truck, Award, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AnimatedSection from "@/components/AnimatedSection";
 import QuoteForm from "./QuoteForm";
 import CTASection from "@/components/CTASection";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-export const metadata: Metadata = {
-  title: "Request Wholesale Pricing — Trade Accounts Only",
-  description:
-    "Request wholesale trade pricing for channel letters, blade signs, flat cut letters, and custom signage. Detailed wholesale quotes within 48 hours. Sign shops and trade professionals only.",
-};
+export const dynamic = "force-dynamic";
 
-const differentiators = [
-  { icon: Lock, text: "Wholesale only — no retail sales" },
-  { icon: Clock, text: "Trade quotes within 48 hours" },
-  { icon: Shield, text: "Every sign UL listed" },
-  { icon: Truck, text: "3-week door-to-door delivery, crated & shipped" },
-  { icon: Award, text: "German-engineered with LKF" },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadStaticPageConfig("get-a-quote");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
+}
 
 export default function GetAQuotePage() {
+  const config = loadStaticPageConfig("get-a-quote");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroData = getBlock("hero")!.data as any;
+  const formData = getBlock("form")!.data as any;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -55,16 +62,15 @@ export default function GetAQuotePage() {
               <AnimatedSection>
                 <div className="max-w-3xl">
                   <p className="micro-label mb-6">
-                    Trade Accounts Only
+                    {heroData.badge}
                   </p>
                   <div className="gold-line mb-8" />
                   <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                    Request Wholesale{" "}
-                    <span className="text-brand-gold">Pricing</span>
+                    {heroData.h1}{" "}
+                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
                   </h1>
                   <p className="text-lg text-white/60 max-w-2xl">
-                    Tell us about your project and we will send detailed trade pricing with full material
-                    specs within 48 hours. No retail markup. No obligation.
+                    {heroData.subtitle}
                   </p>
                 </div>
               </AnimatedSection>
@@ -100,18 +106,18 @@ export default function GetAQuotePage() {
                     </h3>
                     <div className="space-y-4">
                       <a
-                        href="tel:+6892940912"
+                        href={`tel:+${formData.sidebar.contactPhone?.replace(/\D/g, "")}`}
                         className="flex items-center gap-3 text-white/60 hover:text-brand-gold transition-colors"
                       >
-                        <Phone className="w-5 h-5 text-brand-gold" />
-                        (689) 294-0912
+                        {(() => { const I = getIconComponent("Phone"); return I ? <I className="w-5 h-5 text-brand-gold" /> : null; })()}
+                        {formData.sidebar.contactPhone}
                       </a>
                       <a
-                        href="mailto:hello@sunlitesigns.com"
+                        href={`mailto:${formData.sidebar.contactEmail}`}
                         className="flex items-center gap-3 text-white/60 hover:text-brand-gold transition-colors"
                       >
-                        <Mail className="w-5 h-5 text-brand-gold" />
-                        hello@sunlitesigns.com
+                        {(() => { const I = getIconComponent("Mail"); return I ? <I className="w-5 h-5 text-brand-gold" /> : null; })()}
+                        {formData.sidebar.contactEmail}
                       </a>
                     </div>
                   </div>
@@ -122,12 +128,15 @@ export default function GetAQuotePage() {
                       Why Partner With Sunlite?
                     </h3>
                     <ul className="space-y-4">
-                      {differentiators.map((item) => (
-                        <li key={item.text} className="flex items-center gap-3 text-white/60">
-                          <item.icon className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                          <span className="text-sm">{item.text}</span>
-                        </li>
-                      ))}
+                      {formData.sidebar.differentiators.map((item: any) => {
+                        const Icon = getIconComponent(item.icon);
+                        return (
+                          <li key={item.text} className="flex items-center gap-3 text-white/60">
+                            {Icon && <Icon className="w-5 h-5 text-brand-gold flex-shrink-0" />}
+                            <span className="text-sm">{item.text}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
 
@@ -138,7 +147,7 @@ export default function GetAQuotePage() {
                       Wholesale Only
                     </p>
                     <p className="text-white/60 text-xs">
-                      We sell exclusively to sign companies, sign shops, and trade professionals. We do not sell to the general public.
+                      {formData.sidebar.notices[0]}
                     </p>
                   </div>
                 </div>

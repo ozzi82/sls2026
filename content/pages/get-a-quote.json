@@ -1,0 +1,79 @@
+{
+  "slug": "/get-a-quote",
+  "pageType": "static",
+  "label": "Get a Quote",
+  "seo": {
+    "title": "Request Wholesale Pricing — Trade Accounts Only",
+    "metaDescription": "Request wholesale trade pricing for channel letters, blade signs, flat cut letters, and custom signage. Detailed wholesale quotes within 48 hours. Sign shops and trade professionals only.",
+    "keywords": [
+      "wholesale sign pricing",
+      "trade sign quote",
+      "channel letter wholesale quote"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Accounts Only",
+        "h1": "Request Wholesale",
+        "h1Highlight": "Pricing",
+        "subtitle": "Tell us about your project and we will send detailed trade pricing with full material specs within 48 hours. No retail markup. No obligation.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "form",
+      "type": "form_section",
+      "label": "Quote Form",
+      "visible": true,
+      "data": {
+        "heading": "Request Wholesale Pricing",
+        "formType": "quote",
+        "sidebar": {
+          "contactPhone": "(689) 294-0912",
+          "contactEmail": "hello@sunlitesigns.com",
+          "differentiators": [
+            {
+              "icon": "Lock",
+              "text": "Wholesale only — no retail sales"
+            },
+            {
+              "icon": "Clock",
+              "text": "Trade quotes within 48 hours"
+            },
+            {
+              "icon": "Shield",
+              "text": "Every sign UL listed"
+            },
+            {
+              "icon": "Truck",
+              "text": "3-week door-to-door delivery, crated & shipped"
+            },
+            {
+              "icon": "Award",
+              "text": "German-engineered with LKF"
+            }
+          ],
+          "notices": [
+            "We sell exclusively to sign companies, sign shops, and trade professionals. We do not sell to the general public."
+          ]
+        }
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

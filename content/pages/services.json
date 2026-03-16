@@ -1,0 +1,53 @@
+{
+  "slug": "/services",
+  "pageType": "static",
+  "label": "Services",
+  "seo": {
+    "title": "Complimentary Engineering Services \u2014 Wholesale Sign Manufacturer | Sunlite Signs",
+    "metaDescription": "Complimentary engineering services for wholesale sign shop partners. Concept & materials, structural engineering, electrical layout, and manufacturing engineering. German-engineered precision \u2014 trade accounts only.",
+    "keywords": ["sign engineering services", "wholesale sign manufacturing", "complimentary engineering", "sign shop services"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Complimentary Engineering",
+        "h1Highlight": "Services",
+        "subtitle": "With our German design and engineering roots, we're happy to contribute our complimentary engineering services to your project. From conceptual integration of structural and material sciences co-development, translating that to illuminated signage in the most common European channel letter form factors, to manufacturing engineering and packaging. We're happy to contribute our expertise at every stage of your project, with the flexibility to accommodate your needs all along the way.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "services-grid",
+      "type": "features_grid",
+      "label": "Services Grid",
+      "visible": true,
+      "data": {
+        "heading": "Our Services",
+        "headingHighlight": "Services",
+        "description": "Included with every project \u2014 German-engineered expertise from concept to delivery.",
+        "items": [
+          { "icon": "Layers", "title": "Concept & Materials", "description": "Conceptual integration of structural and material sciences co-development for illuminated signage projects. We work with you from the earliest stages to select the right materials, evaluate structural requirements, and develop a cohesive concept that translates your client's vision into a buildable, durable, and visually compelling sign.", "image": "Concept and materials co-development \u2014 material samples and design sketches", "learnMoreLabel": "Learn About Our Materials Process" },
+          { "icon": "HardHat", "title": "Structural Engineering", "description": "Translating conceptual designs to production-ready illuminated signage in the most common European channel letter form factors. Our structural engineering ensures every sign meets wind load requirements, mounting specifications, and code compliance \u2014 while maintaining the sleek, low-profile aesthetics that define German-engineered signage.", "image": "Structural engineering \u2014 CAD drawings and channel letter cross-sections", "learnMoreLabel": "Explore Structural Engineering" },
+          { "icon": "Zap", "title": "Electrical Layout", "description": "LED integration, electrical engineering, and UL compliance for all illuminated signage products. We design optimized LED layouts for uniform illumination, calculate power requirements, specify UL-recognized components, and provide complete electrical documentation for permitting and inspection.", "image": "Electrical layout \u2014 LED module placement and wiring diagram", "learnMoreLabel": "View Electrical Engineering Details" },
+          { "icon": "Factory", "title": "Manufacturing Engineering", "description": "Manufacturing engineering and packaging optimization for wholesale production and shipping. From CNC programming and material nesting to paint specifications and crating design, we engineer the entire manufacturing process to deliver consistent quality, minimize waste, and ensure your signs arrive undamaged \u2014 every time.", "image": "Manufacturing engineering \u2014 CNC production and packaging crates", "learnMoreLabel": "Discover Our Manufacturing Process" }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "/resources/guides/trimless-channel-letters-guide",
+  "pageType": "static",
+  "label": "Trimless Channel Letters Guide",
+  "seo": {
+    "title": "What Are Trimless Channel Letters? \u2014 Complete Wholesale Guide | Sunlite Signs",
+    "metaDescription": "Everything sign shops need to know about trimless channel letters. How they differ from trim cap letters, why architects specify them, construction details, and how to order wholesale. Trade professionals only.",
+    "keywords": ["trimless channel letters", "what are trimless channel letters", "trimless vs trim cap", "no trim cap channel letters", "trimless channel letters wholesale", "EdgeLuxe trimless", "architectural channel letters", "modern channel letters", "trimless channel letter guide", "sign shop trimless guide"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Resources",
+        "h1": "What Are Trimless Channel Letters?",
+        "subtitle": "A comprehensive guide for sign shop professionals covering trimless construction, how it differs from traditional trim cap letters, why architects are specifying trimless, and how to order wholesale from Sunlite Signs.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

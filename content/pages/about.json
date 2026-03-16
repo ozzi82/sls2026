@@ -1,0 +1,87 @@
+{
+  "slug": "/about",
+  "pageType": "static",
+  "label": "Our Story",
+  "seo": {
+    "title": "Our Story — Sunlite Signs",
+    "metaDescription": "The story of Sunlite Signs LLC — from German engineering roots in Nuremberg to a wholesale-only LED signage manufacturer in Florida. Built exclusively for sign shops across the USA and Canada.",
+    "keywords": [
+      "sunlite signs story",
+      "wholesale sign manufacturer",
+      "german engineering signs",
+      "LKF Lichtwerbung"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Our",
+        "h1Highlight": "Story",
+        "subtitle": "What makes us passionate about signage and experience.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "timeline",
+      "type": "timeline",
+      "label": "Timeline",
+      "visible": true,
+      "data": {
+        "entries": [
+          {
+            "step": 1,
+            "title": "The Foundation: LKF Lichtwerbung, Nuremberg",
+            "text": "The story begins with LKF Lichtwerbung in Nuremberg, Germany — a company built on decades of precision engineering in illuminated signage. European craftsmanship at its finest. The German standard for channel letter manufacturing that would eventually find its way across the Atlantic.",
+            "image": "/story-01-lkf.png"
+          },
+          {
+            "step": 2,
+            "title": "Father & Son: A Legacy of Precision",
+            "text": "The growth of LKF under father-son collaboration deepened a heritage of German engineering excellence. Every letterform, every LED integration, every structural calculation refined over generations. A legacy that demanded nothing less than perfection.",
+            "image": "/story-02-father-son.jpeg"
+          },
+          {
+            "step": 3,
+            "title": "Kenan Meets Ozan in Germany",
+            "text": "A chance meeting in Germany between Kenan and Ozan sparked a shared vision. Two minds united by a passion for precision signage and a belief that the American market deserved better — European engineering quality at wholesale prices, delivered direct to sign shops.",
+            "image": "/story-03-kenan-ozan.jpeg"
+          },
+          {
+            "step": 4,
+            "title": "A Friendship Becomes Something Larger",
+            "text": "What started as a friendship evolved into a business vision: bring German-engineered signage to the USA, exclusively for the trade. No retail. No competing with customers. A wholesale manufacturing partner that stays in its lane.",
+            "image": "/story-04-friendship.jpeg"
+          },
+          {
+            "step": 5,
+            "title": "Ozan & Ayla Move to Florida",
+            "text": "Ozan and Ayla, together with their family, made the move to Florida — establishing the American base for what would become Sunlite Signs. The sunshine state became home to a new kind of signage manufacturer: one that would never sell retail.",
+            "image": null
+          },
+          {
+            "step": 6,
+            "title": "Sunlite Signs Is Born",
+            "text": "Sunlite Signs LLC — founded on one unbreakable principle: we manufacture, you sell. German-engineered, UL-listed channel letters and illuminated signs, delivered in 3 weeks door to door, exclusively to sign shops across the USA and Canada. The beginning of something larger.",
+            "image": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

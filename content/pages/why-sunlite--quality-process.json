@@ -1,0 +1,100 @@
+{
+  "slug": "/why-sunlite/quality-process",
+  "pageType": "static",
+  "label": "Quality Process",
+  "seo": {
+    "title": "Wholesale Quality Process \u2014 Trade-Grade Sign Manufacturing | Sunlite Signs",
+    "metaDescription": "Explore Sunlite Signs' wholesale quality process from raw materials to final inspection. Multi-point quality checks, UL compliance, and German engineering precision \u2014 available exclusively to trade accounts.",
+    "keywords": ["wholesale sign quality", "sign manufacturing process", "quality control signs", "UL compliance process"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Quality Is a",
+        "h1Highlight": "Process, Not a Promise.",
+        "subtitle": "Promises are easy. Processes are what deliver. From material selection to final crating, every wholesale sign passes through seven documented quality checkpoints. We manufacture to the highest standards \u2014 so you can sell with total confidence.",
+        "image": "Quality control inspector examining finished channel letters",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
+        ]
+      }
+    },
+    {
+      "id": "quality-metrics",
+      "type": "stats_strip",
+      "label": "Quality Metrics",
+      "visible": true,
+      "data": {
+        "items": [
+          { "icon": "CheckCircle", "label": "Quality checkpoints per sign", "sublabel": "7" },
+          { "icon": "Shield", "label": "Burn-in tested", "sublabel": "100%" },
+          { "icon": "Zap", "label": "Electrical standard", "sublabel": "UL 48" },
+          { "icon": "Lock", "label": "Accounts exclusively", "sublabel": "Trade" }
+        ]
+      }
+    },
+    {
+      "id": "process-steps",
+      "type": "process_steps",
+      "label": "Process Steps",
+      "visible": true,
+      "data": {
+        "heading": "Seven Steps to a Perfect Wholesale Sign",
+        "description": "Our quality process is not a checklist taped to the wall. It is a documented, enforced workflow that every product follows \u2014 because our trade partners deserve nothing less.",
+        "steps": [
+          { "step": 1, "title": "Design and Engineering Review", "description": "Every trade partner project begins with a thorough review of specifications, dimensions, and installation requirements. Our engineering team verifies structural integrity, electrical layout, and LED configuration before fabrication starts.", "image": "Engineering team reviewing sign specifications on screen", "icon": "ClipboardList" },
+          { "step": 2, "title": "Material Selection and Inspection", "description": "We source aluminum, acrylic, polycarbonate, and LED modules from qualified suppliers. Incoming materials are inspected for dimensional accuracy, surface quality, and compliance. Nothing enters our wholesale production line without verification.", "image": "Raw material inspection \u2014 aluminum coils and acrylic sheets", "icon": "Layers" },
+          { "step": 3, "title": "Precision Fabrication", "description": "CNC routing, laser cutting, and precision bending create each component to exact tolerances. Channel letter returns are formed, faces are cut, and backs are prepared. Every piece is checked against the engineering drawings before moving forward.", "image": "CNC router cutting channel letter components", "icon": "Paintbrush" },
+          { "step": 4, "title": "LED Integration and Wiring", "description": "LED modules are positioned for optimal illumination uniformity. Wiring follows UL 48 standards. Electrical connections are soldered and insulated. Power supplies are matched to the LED load \u2014 so your trade clients get a sign that performs flawlessly.", "image": "LED module installation inside channel letters", "icon": "Lightbulb" },
+          { "step": 5, "title": "In-Process Inspection", "description": "Quality checkpoints are embedded throughout production, not just at the end. Dimensional checks, surface inspections, and electrical continuity tests happen at every critical stage. Issues are caught and corrected before they reach your shop.", "image": "Quality inspector measuring channel letter dimensions", "icon": "ScanSearch" },
+          { "step": 6, "title": "Burn-In and Electrical Testing", "description": "Every completed sign undergoes a burn-in period to verify LED performance, power supply stability, and thermal behavior. We test for consistent illumination, color temperature accuracy, and current draw \u2014 so you never get a callback.", "image": "Illuminated channel letters during burn-in testing", "icon": "ThermometerSun" },
+          { "step": 7, "title": "Final Inspection and Wholesale Packaging", "description": "A comprehensive final inspection verifies every aspect of the finished sign: dimensions, finish quality, illumination, electrical safety, and UL label application. Signs are then custom-crated for safe transit to your shop or job site.", "image": "Final packed and crated channel letters ready for shipment", "icon": "PackageCheck" }
+        ]
+      }
+    },
+    {
+      "id": "materials",
+      "type": "text_section",
+      "label": "Materials Matter",
+      "visible": true,
+      "data": {
+        "heading": "Materials Matter \u2014 Especially at Wholesale",
+        "content": "Quality starts before fabrication begins. Our material specifications are developed in partnership with LKF Lichtwerbung and reflect decades of field performance data. We select for longevity, not just cost \u2014 because your trade reputation depends on every sign we ship.",
+        "image": "Raw materials \u2014 aluminum, acrylic, and LED modules close-up",
+        "imagePosition": "right",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "trade-benefits",
+      "type": "features_grid",
+      "label": "Trade Benefits",
+      "visible": true,
+      "data": {
+        "heading": "What This Means for Your Trade Business",
+        "description": "A rigorous quality process does not just produce better signs. It produces better outcomes for your wholesale business. We manufacture. You sell. Your margins grow.",
+        "items": [
+          { "icon": "CheckCircle", "title": "Fewer Callbacks", "description": "Signs built right the first time mean fewer warranty claims, fewer site visits, and more profit on every wholesale job you sell." },
+          { "icon": "Truck", "title": "Faster Installations", "description": "When letters fit, hardware aligns, and wiring is clean, your install crew spends less time in the field \u2014 increasing your throughput and revenue." },
+          { "icon": "Award", "title": "Stronger Trade Reputation", "description": "Consistently delivering premium quality builds your brand in the market. Your clients notice the difference \u2014 and that is how trade partners grow." }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

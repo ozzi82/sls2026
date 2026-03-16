@@ -7,42 +7,43 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
-import configData from "../../../content/products/products.json";
-import { PageConfig } from "@/lib/admin/page-config-types";
+import { loadProductConfig } from "@/lib/admin/page-config";
 
-const config = configData as unknown as PageConfig;
-function getBlock(id: string) {
-  return config.blocks.find(b => b.id === id);
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadProductConfig("products");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
 }
 
-const heroBlock = getBlock("hero")!;
-const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; ctas: { label: string; href: string; variant: string }[] };
-const statsBlock = getBlock("stats_strip")!;
-const statsData = statsBlock.data as { items: { icon: string; label: string }[] };
-const productTypesBlock = getBlock("product_types")!;
-const productTypesData = productTypesBlock.data as { heading: string; items: { name: string; description: string; href?: string; image?: string }[] };
-const ctaBlock = getBlock("cta")!;
-const ctaData = ctaBlock.data as { heading: string; headingHighlight?: string; description: string };
-
-export const metadata: Metadata = {
-  title: config.seo.title,
-  description: config.seo.metaDescription,
-  keywords: config.seo.keywords,
-  alternates: {
-    canonical: config.seo.canonical,
-  },
-};
-
-const productCategories = productTypesData.items.map((item) => ({
-  name: item.name,
-  description: item.description,
-  href: item.href || "#",
-  image: item.name === "Channel Letters" ? "Channel letters product category — illuminated storefront sign" : `${item.name} — dimensional signage`,
-  imageSrc: item.image,
-  featured: item.name === "Channel Letters",
-}));
-
 export default function ProductsPage() {
+  const config = loadProductConfig("products");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroBlock = getBlock("hero")!;
+  const heroData = heroBlock.data as { badge?: string; h1: string; h1Highlight?: string; subtitle: string; ctas: { label: string; href: string; variant: string }[] };
+  const statsBlock = getBlock("stats_strip")!;
+  const statsData = statsBlock.data as { items: { icon: string; label: string }[] };
+  const productTypesBlock = getBlock("product_types")!;
+  const productTypesData = productTypesBlock.data as { heading: string; items: { name: string; description: string; href?: string; image?: string }[] };
+  const ctaBlock = getBlock("cta")!;
+  const ctaData = ctaBlock.data as { heading: string; headingHighlight?: string; description: string };
+
+  const productCategories = productTypesData.items.map((item) => ({
+    name: item.name,
+    description: item.description,
+    href: item.href || "#",
+    image: item.name === "Channel Letters" ? "Channel letters product category — illuminated storefront sign" : `${item.name} — dimensional signage`,
+    imageSrc: item.image,
+    featured: item.name === "Channel Letters",
+  }));
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",

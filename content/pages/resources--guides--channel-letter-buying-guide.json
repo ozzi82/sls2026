@@ -1,0 +1,35 @@
+{
+  "slug": "/resources/guides/channel-letter-buying-guide",
+  "pageType": "static",
+  "label": "Channel Letter Buying Guide",
+  "seo": {
+    "title": "Channel Letter Buying Guide for Sign Shops \u2014 Wholesale | Sunlite Signs",
+    "metaDescription": "Everything sign shop professionals and trade buyers need to know about specifying and ordering wholesale channel letters. Covers types, illumination, materials, sizing, mounting options, and choosing a wholesale-only manufacturer.",
+    "keywords": ["wholesale channel letter buying guide", "how to order wholesale channel letters", "wholesale channel letter specification", "channel letter materials trade", "channel letter sizing guide", "channel letter mounting options", "sign shop wholesale ordering guide"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Resources",
+        "h1": "The Complete Channel Letter Buying Guide",
+        "subtitle": "A comprehensive wholesale guide for sign shop professionals and trade buyers covering every aspect of specifying, ordering, and evaluating wholesale channel letters from a manufacturer that sells exclusively to the trade.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

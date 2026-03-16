@@ -1,0 +1,35 @@
+{
+  "slug": "/resources/guides/sign-installation-tips",
+  "pageType": "static",
+  "label": "Sign Installation Tips",
+  "seo": {
+    "title": "Sign Installation Tips \u2014 Wholesale Channel Letter Mounting & Best Practices | Sunlite Signs",
+    "metaDescription": "Practical wholesale channel letter installation guidance for sign shop professionals and trade buyers. Covers site preparation, mounting methods, electrical requirements, weather sealing, and quality assurance.",
+    "keywords": ["wholesale channel letter installation", "sign installation tips trade", "how to install channel letters", "channel letter mounting guide wholesale", "sign installation best practices", "raceway installation trade", "channel letter wiring"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Resources",
+        "h1": "Sign Installation Tips for Channel Letters",
+        "subtitle": "Practical guidance for sign shop professionals and trade installers to ensure every wholesale channel letter installation goes smoothly. From site preparation to final quality checks, these tips help your installation crew deliver professional results every time.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

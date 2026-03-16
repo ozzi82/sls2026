@@ -1,67 +1,19 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  Handshake,
-  ShieldOff,
-  Clock,
-  Phone,
-  CheckCircle2,
-  XCircle,
-  Lock,
-  Store,
-  Ban,
-  DollarSign,
-  Eye,
-} from "lucide-react";
+import { CheckCircle2, XCircle, Handshake, Clock, Phone, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-export const metadata: Metadata = {
-  title: "We Sell Wholesale Only. No Exceptions. — Sunlite Signs",
-  description:
-    "Sunlite Signs is 100% wholesale only. No retail storefront. No direct-to-consumer sales. No exceptions. Trade pricing for sign shops only — we never compete with you. Your margin is our priority.",
-  openGraph: {
-    title: "We Sell Wholesale Only. No Exceptions. — Sunlite Signs",
-    description:
-      "100% wholesale only. No retail. No direct sales. No exceptions. Trade pricing exclusively for sign shops — we manufacture, you sell, your margins are protected.",
-    url: "https://sunlitesigns.com/why-sunlite/wholesale-only",
-  },
-};
+export const dynamic = "force-dynamic";
 
-const manifestoSections = [
-  {
-    icon: ShieldOff,
-    title: "We Never Compete With You",
-    description:
-      "This is not a suggestion. It is a rule. We do not bid on projects. We do not quote end users. We do not have a sales team calling on your clients. When a property owner, business, or contractor contacts us directly, we send them to a sign shop. Period. Your market is yours. We stay in our lane — manufacturing — and we stay there permanently.",
-  },
-  {
-    icon: Eye,
-    title: "Your Clients Stay Yours",
-    description:
-      "We will never know who your end clients are unless you tell us. We do not ask. We do not track. We do not market to them. Your client relationships are your most valuable asset, and we will never interfere with them. Not today. Not ever. Your business intelligence stays your business intelligence.",
-  },
-  {
-    icon: Store,
-    title: "No Retail Storefront",
-    description:
-      "We do not have a showroom. We do not have a consumer website. We do not have a retail price list. There is no way for a member of the public to buy a sign from us. We are invisible to your end customers by design. When someone finds us online, the only path forward is through a sign shop partner like you.",
-  },
-  {
-    icon: Ban,
-    title: "No Direct-to-Consumer Sales",
-    description:
-      "Not through our website. Not through a third party. Not through a marketplace. Not through a back channel. We have zero direct-to-consumer sales channels and we never will. This is not a policy we are testing — it is a founding principle of our company. We manufacture. You sell. That line does not blur.",
-  },
-  {
-    icon: DollarSign,
-    title: "Your Margin Is Our Priority",
-    description:
-      "Our wholesale pricing is structured to protect your margins. We do not publish retail pricing. We do not undercut your quotes. We do not offer volume discounts to end users who try to go around you. Your ability to mark up our products and run a profitable sign shop is the entire reason we exist. When your margins are healthy, you order more. When you order more, we grow. The math is simple.",
-  },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadStaticPageConfig("why-sunlite--wholesale-only");
+  return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
+}
 
 const whatYouGet = [
   "Wholesale trade pricing with healthy margins for your business",
@@ -87,57 +39,43 @@ const whatWeNeverDo = [
 ];
 
 export default function WholesaleOnlyPage() {
+  const config = loadStaticPageConfig("why-sunlite--wholesale-only");
+  function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
+
+  const heroData = getBlock("hero")!.data as any;
+  const manifestoQuoteData = getBlock("manifesto-quote")!.data as any;
+  const manifestoData = getBlock("manifesto")!.data as any;
+  const partnershipData = getBlock("partnership-how")!.data as any;
+  const trustData = getBlock("trust")!.data as any;
+
   return (
     <>
       {/* HERO */}
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
-
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
-          <Breadcrumbs
-            items={[
-              { name: "Home", href: "/" },
-              { name: "Why Sunlite", href: "/why-sunlite" },
-              { name: "Wholesale Only" },
-            ]}
-          />
-
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Why Sunlite", href: "/why-sunlite" }, { name: "Wholesale Only" }]} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Wholesale Only</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                We Sell Wholesale Only.{" "}
-                <span className="text-brand-gold">No Exceptions.</span>
+                {heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-4">
-                This is not a flexible policy. It is a founding principle.
-                Sunlite Signs sells exclusively to sign shops and trade
-                professionals. No retail sales. No direct-to-consumer channels.
-                No competing with your business. Not now. Not ever.
-              </p>
-              <p className="text-xl text-brand-gold font-heading font-semibold mb-8">
-                We manufacture. You sell. Simple.
-              </p>
+              <p className="text-lg text-white/70 leading-relaxed mb-4">{heroData.subtitle}</p>
+              <p className="text-xl text-brand-gold font-heading font-semibold mb-8">{heroData.subtitleHighlight}</p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/get-a-quote" className="btn-primary">
-                  Request Wholesale Pricing
-                </Link>
-                <Link href="/products" className="btn-secondary">
-                  Browse Trade Catalog
-                </Link>
+                {heroData.ctas.map((cta: any) => (
+                  <Link key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</Link>
+                ))}
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <PlaceholderImage
-                label="Sunlite team member shaking hands with sign shop partner"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <PlaceholderImage label={heroData.image} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
           </div>
         </div>
@@ -149,10 +87,7 @@ export default function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-2xl md:text-3xl font-heading font-bold text-white leading-snug">
-                &ldquo;Every sign we build is sold through a sign shop.{" "}
-                <span className="text-brand-gold">Every single one.</span>{" "}
-                We do not sell to the public. We do not have retail pricing.
-                We do not compete with our partners. This is not negotiable.&rdquo;
+                &ldquo;{manifestoQuoteData.content.split(". Every single one.")[0]}. <span className="text-brand-gold">Every single one.</span>{manifestoQuoteData.content.split("Every single one.")[1]}&rdquo;
               </p>
             </div>
           </AnimatedSection>
@@ -165,39 +100,31 @@ export default function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                Our Wholesale Commitment — In Black and White
-              </h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">
-                These are not marketing statements. They are operational
-                commitments that govern how we run our business every single day.
-                Read them carefully. We mean every word.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{manifestoData.heading}</h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto">{manifestoData.description}</p>
             </div>
           </AnimatedSection>
-
           <div className="space-y-8">
-            {manifestoSections.map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.05}>
-                <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm border border-black/[0.04] hover:border-brand-gold/20 transition-colors">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20">
-                        <item.icon className="w-6 h-6 text-brand-gold" />
+            {manifestoData.items.map((item: any, index: number) => {
+              const Icon = getIconComponent(item.icon);
+              return (
+                <AnimatedSection key={item.title} delay={index * 0.05}>
+                  <div className="bg-white rounded-xl p-8 md:p-10 shadow-sm border border-black/[0.04] hover:border-brand-gold/20 transition-colors">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20">
+                          {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-text-dark mb-3">{item.title}</h3>
+                        <p className="text-text-dark/70 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-heading font-bold text-text-dark mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="text-text-dark/70 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
                   </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -208,24 +135,16 @@ export default function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                The Trade Partner Guarantee
-              </h2>
-              <p className="text-white/60 max-w-2xl mx-auto">
-                Crystal clear. No fine print. No loopholes. Here is exactly
-                what you get and exactly what we will never do.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">The Trade Partner Guarantee</h2>
+              <p className="text-white/60 max-w-2xl mx-auto">Crystal clear. No fine print. No loopholes. Here is exactly what you get and exactly what we will never do.</p>
             </div>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <AnimatedSection>
               <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <CheckCircle2 className="w-6 h-6 text-brand-gold" />
-                  <h3 className="text-xl font-heading font-semibold text-white">
-                    What You Get as a Trade Partner
-                  </h3>
+                  <h3 className="text-xl font-heading font-semibold text-white">What You Get as a Trade Partner</h3>
                 </div>
                 <div className="space-y-4">
                   {whatYouGet.map((point) => (
@@ -241,9 +160,7 @@ export default function WholesaleOnlyPage() {
               <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <XCircle className="w-6 h-6 text-accent-red" />
-                  <h3 className="text-xl font-heading font-semibold text-white">
-                    What We Will Never Do — Ever
-                  </h3>
+                  <h3 className="text-xl font-heading font-semibold text-white">What We Will Never Do — Ever</h3>
                 </div>
                 <div className="space-y-4">
                   {whatWeNeverDo.map((point) => (
@@ -264,57 +181,21 @@ export default function WholesaleOnlyPage() {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
-              <PlaceholderImage
-                label="Sign shop receiving custom-crated wholesale shipment"
-                className="rounded-xl"
-                aspectRatio="aspect-[4/3]"
-              />
+              <PlaceholderImage label="Sign shop receiving custom-crated wholesale shipment" className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">
-                How the Wholesale Partnership Works
-              </h2>
-              <p className="text-text-dark/60 leading-relaxed mb-6">
-                Working with Sunlite is straightforward. No complicated
-                onboarding, no volume commitments, no long-term contracts.
-                Just a wholesale partner that stays in its lane and delivers
-                product you can sell at a healthy margin.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{partnershipData.heading}</h2>
+              <p className="text-text-dark/60 leading-relaxed mb-6">{partnershipData.description}</p>
               <div className="space-y-6">
-                {[
-                  {
-                    step: "1",
-                    title: "Send us your project",
-                    detail: "Share drawings, specs, or even a napkin sketch. We work with what you have. Your client never knows we exist.",
-                  },
-                  {
-                    step: "2",
-                    title: "Get trade pricing in 48 hours",
-                    detail: "You receive wholesale pricing with material specs. No retail markup. No obligation. Just transparent trade pricing.",
-                  },
-                  {
-                    step: "3",
-                    title: "We build, you sell and install",
-                    detail: "Your signs are fabricated, UL listed, and shipped to your door in about 3 weeks door to door. Your brand. Your client. Your margin.",
-                  },
-                  {
-                    step: "4",
-                    title: "Repeat and grow your business",
-                    detail: "As you send more projects, we learn your preferences. The process gets smoother. Your throughput increases. Your profits grow.",
-                  },
-                ].map((item) => (
+                {partnershipData.steps.map((item: any) => (
                   <div key={item.step} className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center">
-                      <span className="text-brand-gold font-heading font-bold text-xs">
-                        {item.step}
-                      </span>
+                      <span className="text-brand-gold font-heading font-bold text-xs">{item.step}</span>
                     </div>
                     <div>
-                      <h4 className="font-heading font-semibold text-text-dark mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-text-dark/60 text-sm">{item.detail}</p>
+                      <h4 className="font-heading font-semibold text-text-dark mb-1">{item.title}</h4>
+                      <p className="text-text-dark/60 text-sm">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -330,43 +211,21 @@ export default function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-                Zero Retail Competition — Guaranteed
-              </h2>
-              <p className="text-white/60 leading-relaxed mb-8">
-                The wholesale-only model is not just a sales channel decision.
-                It is a trust covenant. When you partner with Sunlite, you
-                know — with absolute certainty — that your manufacturer will
-                never become your competitor. Your clients stay your clients.
-                Your margins stay your margins. Your market stays your market.
-                That clarity is the foundation of every relationship we build.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{trustData.heading}</h2>
+              <p className="text-white/60 leading-relaxed mb-8">{trustData.content}</p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
-                <span className="flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-brand-gold" />
-                  Wholesale Only
-                </span>
+                <span className="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-gold" />Wholesale Only</span>
                 <span className="hidden sm:inline text-white/20">|</span>
-                <span className="flex items-center gap-2">
-                  <Handshake className="w-4 h-4 text-brand-gold" />
-                  Trade Accounts Only
-                </span>
+                <span className="flex items-center gap-2"><Handshake className="w-4 h-4 text-brand-gold" />Trade Accounts Only</span>
                 <span className="hidden sm:inline text-white/20">|</span>
-                <span className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-brand-gold" />
-                  48-Hour Trade Quotes
-                </span>
+                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-gold" />48-Hour Trade Quotes</span>
                 <span className="hidden sm:inline text-white/20">|</span>
-                <span className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-brand-gold" />
-                  Dedicated Trade Support
-                </span>
+                <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-brand-gold" />Dedicated Trade Support</span>
               </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
-
 
       <CTASection />
     </>

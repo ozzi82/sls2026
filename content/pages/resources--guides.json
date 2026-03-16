@@ -1,0 +1,49 @@
+{
+  "slug": "/resources/guides",
+  "pageType": "static",
+  "label": "Guides",
+  "seo": {
+    "title": "Wholesale Guides \u2014 Channel Letter Buying Guides for Sign Shops | Sunlite Signs",
+    "metaDescription": "In-depth wholesale guides for sign shop professionals and trade buyers. Channel letter selection, illumination types, installation best practices, and ordering from a wholesale-only manufacturer.",
+    "keywords": ["wholesale channel letter buying guide", "sign illumination guide trade", "sign installation guide wholesale", "wholesale sign ordering guide", "channel letter specification guide", "sign shop wholesale guides"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Resources",
+        "h1": "Wholesale Guides",
+        "subtitle": "In-depth resources written for sign shop professionals and trade buyers. Make informed decisions about wholesale channel letters, illumination, installation, and ordering from a manufacturer that sells exclusively to the trade.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "guides-list",
+      "type": "guides_list",
+      "label": "Guides List",
+      "visible": true,
+      "data": {
+        "items": [
+          { "title": "The Complete Channel Letter Buying Guide", "description": "Everything sign shop professionals need to know about specifying and ordering wholesale channel letters. Covers letter types, illumination options, materials, sizing, mounting, and what to look for in a wholesale-only manufacturer.", "href": "/resources/guides/channel-letter-buying-guide", "readTime": "12 min read", "image": "Guide cover \u2014 channel letter manufacturing process", "icon": "BookOpen" },
+          { "title": "Sign Installation Tips for Channel Letters", "description": "Practical installation guidance for trade professionals covering site preparation, mounting methods, electrical requirements, and quality assurance. Ensure every wholesale channel letter install goes smoothly.", "href": "/resources/guides/sign-installation-tips", "readTime": "8 min read", "image": "Guide cover \u2014 installer mounting channel letters on building", "icon": "Wrench" },
+          { "title": "Choosing the Right Illumination Type", "description": "A detailed comparison of face-lit, halo-lit, front-and-halo, and non-illuminated channel letters for trade buyers. Learn when to specify each type based on visibility, brand, and budget.", "href": "/resources/guides/choosing-illumination-types", "readTime": "10 min read", "image": "Guide cover \u2014 four illumination types shown at night", "icon": "Lightbulb" },
+          { "title": "What Are Trimless Channel Letters?", "description": "The definitive guide to trimless channel letters. How they differ from traditional trim cap construction, why architects are specifying them, construction details, and how to order wholesale from Sunlite Signs.", "href": "/resources/guides/trimless-channel-letters-guide", "readTime": "8 min read", "image": "Guide cover \u2014 trimless channel letter close-up showing seamless face-to-return joint", "icon": "Gem" }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "/why-sunlite/ul-listing",
+  "pageType": "static",
+  "label": "UL Listing",
+  "seo": {
+    "title": "UL Listed Wholesale Signs \u2014 Trade Pricing, Safety Certified | Sunlite Signs",
+    "metaDescription": "Every illuminated sign from Sunlite Ships UL listed \u2014 available exclusively to wholesale trade accounts. Sign shops get certified products at trade pricing with zero retail competition.",
+    "keywords": ["UL listed signs", "UL 48 channel letters", "certified wholesale signs", "safety certified signs"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "UL Listed.",
+        "h1Highlight": "Every Sign. Every Time.",
+        "subtitle": "Safety is not an upgrade or an add-on. Every illuminated sign that leaves our wholesale facility carries UL certification. For your shop, that means code compliance, reduced liability, and a certified product at trade pricing that you can install with confidence and mark up with pride.",
+        "image": "UL certification label on Sunlite channel letter",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "Our Quality Process", "href": "/why-sunlite/quality-process", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "what-ul-means",
+      "type": "text_section",
+      "label": "What UL Listing Means",
+      "visible": true,
+      "data": {
+        "heading": "What UL Listing Actually Means",
+        "content": "UL listing is not a self-certification or a paper exercise. It involves rigorous third-party testing by Underwriters Laboratories. As your wholesale sign partner, we handle the entire certification process \u2014 you just install and sell.",
+        "image": "UL testing laboratory and inspection process",
+        "imagePosition": "right",
+        "background": "light"
+      }
+    },
+    {
+      "id": "ul-benefits",
+      "type": "features_grid",
+      "label": "UL Benefits",
+      "visible": true,
+      "data": {
+        "heading": "Why UL Listing Matters for Your Trade Business",
+        "description": "UL certification is not just about the product. It directly impacts your shop's ability to win bids, reduce liability, and build a reputation as a premium sign shop partner.",
+        "items": [
+          { "icon": "ShieldCheck", "title": "Code Compliance for Your Clients", "description": "Most municipalities require UL listed electrical signage. As your wholesale partner, our certification means your installations meet code requirements from day one \u2014 helping you win bids and avoid costly rejections." },
+          { "icon": "FileCheck2", "title": "Reduced Liability for Your Shop", "description": "UL listing provides documented third-party verification of product safety. When you source wholesale from Sunlite, you have independent certification backing every product you install." },
+          { "icon": "Building2", "title": "Win Bigger Projects", "description": "Property managers, franchise owners, and corporate clients demand UL listed signage. Our wholesale trade pricing on certified products positions your shop to compete for \u2014 and win \u2014 premium contracts." },
+          { "icon": "Zap", "title": "Electrical Safety Guaranteed", "description": "UL testing verifies that electrical components, wiring, and connections meet strict safety standards. Every sign we ship to our trade partners has been validated for proper grounding, insulation, and thermal management." }
+        ]
+      }
+    },
+    {
+      "id": "comparison",
+      "type": "text_section",
+      "label": "UL vs Non-Certified Comparison",
+      "visible": true,
+      "data": {
+        "heading": "UL Listed vs. Non-Certified Signs",
+        "content": "The difference between certified and non-certified products is not abstract. For your trade business, it has real consequences on every installation.",
+        "background": "light"
+      }
+    },
+    {
+      "id": "compliance-process",
+      "type": "text_section",
+      "label": "UL Compliance Process",
+      "visible": true,
+      "data": {
+        "heading": "Our UL Compliance Process",
+        "content": "UL listing is built into every stage of our wholesale manufacturing process. From approved component sourcing to final electrical testing, our trade partners receive a fully certified product every time. We handle the certification \u2014 you handle the client relationship.",
+        "image": "Electrical testing and safety verification at Sunlite facility",
+        "imagePosition": "left",
+        "background": "navy"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "/why-sunlite/german-engineering",
+  "pageType": "static",
+  "label": "German Engineering",
+  "seo": {
+    "title": "German Engineering Heritage \u2014 Wholesale Sign Manufacturer | Sunlite Signs",
+    "metaDescription": "Sunlite Signs partners with LKF Lichtwerbung in Nuremberg, Germany, bringing decades of European precision engineering exclusively to wholesale trade accounts. Sign shops only \u2014 trade pricing available.",
+    "keywords": ["german engineering signs", "LKF Lichtwerbung", "precision sign manufacturing", "wholesale sign engineering"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "German Engineering.",
+        "h1Highlight": "American Execution.",
+        "subtitle": "Our partnership with LKF Lichtwerbung in Nuremberg, Germany, is not a marketing story. It is the foundation of how we design, engineer, and manufacture every sign \u2014 available exclusively to our wholesale trade partners. We manufacture. You sell.",
+        "image": "LKF Lichtwerbung facility in Nuremberg, Germany",
+        "ctas": [
+          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
+          { "label": "See Our Quality Process", "href": "/why-sunlite/quality-process", "variant": "secondary" }
+        ]
+      }
+    },
+    {
+      "id": "lkf-partnership",
+      "type": "features_grid",
+      "label": "LKF Partnership",
+      "visible": true,
+      "data": {
+        "heading": "The LKF Lichtwerbung Partnership",
+        "description": "Nuremberg has been a center of German craftsmanship for centuries. LKF Lichtwerbung continues that tradition in the illuminated signage industry \u2014 and our trade partners get exclusive access to this engineering heritage.",
+        "items": [
+          { "icon": "MapPin", "title": "Nuremberg, Germany", "description": "Home of LKF Lichtwerbung \u2014 a name synonymous with precision signage manufacturing in the European market." },
+          { "icon": "Clock", "title": "Decades of Expertise", "description": "LKF has spent decades refining the craft of illuminated signage, from materials research to production engineering." },
+          { "icon": "Globe", "title": "Transatlantic Partnership", "description": "Sunlite Signs brings LKF's engineering DNA exclusively to North American trade accounts, adapting European precision for wholesale sign shop partners." },
+          { "icon": "Factory", "title": "Florida Manufacturing", "description": "Our Florida-based wholesale facility combines German methodology with American efficiency, delivering exclusively to sign shops across the continent." }
+        ]
+      }
+    },
+    {
+      "id": "principles",
+      "type": "features_grid",
+      "label": "Engineering Principles",
+      "visible": true,
+      "data": {
+        "heading": "Engineering Principles, Not Just a Label",
+        "description": "When we say German engineering, we mean specific practices that are embedded in our wholesale manufacturing process every day \u2014 giving our trade partners a product advantage no retail competitor can match.",
+        "items": [
+          { "icon": "Ruler", "title": "Precision Tolerances", "description": "Every component is manufactured to tight dimensional tolerances. Letters fit flush. Returns align. Faces sit true. As your wholesale partner, we deliver the details that let you charge premium prices." },
+          { "icon": "Factory", "title": "Process-Driven Manufacturing", "description": "German manufacturing culture is rooted in repeatable processes. We do not rely on individual skill alone \u2014 we rely on systems that produce consistent results for our trade partners, order after order." },
+          { "icon": "Microscope", "title": "Material Science Expertise", "description": "Decades of research into substrates, adhesives, LED modules, and finishes. LKF's material knowledge means every component is selected for longevity \u2014 giving your clients signs that last and protecting your reputation." },
+          { "icon": "Cog", "title": "Continuous Improvement", "description": "The German engineering mindset does not stop at good enough. Every production cycle feeds data back into the process. Our trade partners benefit from manufacturing that gets better with every run." }
+        ]
+      }
+    },
+    {
+      "id": "what-it-means",
+      "type": "text_section",
+      "label": "What This Means for Your Shop",
+      "visible": true,
+      "data": {
+        "heading": "What This Means for Your Sign Shop",
+        "content": "Letters that fit perfectly on first install \u2014 fewer callbacks, more profit per job\nConsistent wholesale quality across every order, whether 10 letters or 200\nMaterials selected for 10+ year outdoor performance \u2014 your reputation stays strong\nLED systems engineered for uniform illumination and energy efficiency\nPackaging designed to survive transit without damage to your door\nA wholesale product you can confidently mark up and put your name behind",
+        "image": "Precision CNC cutting of channel letter components",
+        "imagePosition": "left",
+        "background": "light"
+      }
+    },
+    {
+      "id": "edgeluxe",
+      "type": "text_section",
+      "label": "Trimless Showcase",
+      "visible": true,
+      "data": {
+        "heading": "Trimless: Engineering in Action",
+        "content": "Our trimless channel letter line is the clearest expression of German engineering applied to modern signage. No visible trim cap. Clean, seamless edges. A premium architectural finish \u2014 available exclusively through our wholesale trade partners.\n\nTrimless exists because of our engineering heritage. The tolerances required for a trimless letter leave no room for approximation. Your clients get a product no competitor can replicate. Your margins reflect the premium.",
+        "image": "Trimless channel letter close-up detail",
+        "imagePosition": "right",
+        "background": "navy"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

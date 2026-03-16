@@ -1,0 +1,49 @@
+{
+  "slug": "/resources/blog",
+  "pageType": "static",
+  "label": "Blog",
+  "seo": {
+    "title": "Wholesale Sign Industry Blog \u2014 Channel Letter Expertise for Trade Professionals",
+    "metaDescription": "Expert wholesale articles on channel letters, sign illumination, manufacturing processes, and trade signage industry trends from Sunlite Signs \u2014 written for sign shop professionals.",
+    "keywords": ["wholesale channel letter blog", "sign industry articles trade", "LED sign manufacturing blog", "wholesale sign industry insights", "illuminated sign technology", "sign shop trade blog"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Trade Resources",
+        "h1": "Wholesale Industry Blog",
+        "subtitle": "Industry insights, product spotlights, and expert knowledge written exclusively for sign shop professionals and wholesale trade partners. Stay informed on channel letter technology, manufacturing trends, and best practices.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "blog-posts",
+      "type": "resource_cards",
+      "label": "Blog Posts",
+      "visible": true,
+      "data": {
+        "items": [
+          { "icon": "FileText", "title": "Channel Letter Types Explained: A Complete Guide for Sign Shops", "description": "From face-lit to halo-lit, trimless to reverse channel letters, learn about every channel letter type available and when to recommend each to your clients. Written for wholesale trade buyers.", "href": "/resources/blog/channel-letter-types-explained", "date": "2025-12-15", "category": "Education" },
+          { "icon": "FileText", "title": "Trimless vs. Trim Cap Channel Letters: Which Should You Specify?", "description": "The architectural trend toward trimless channel letters is growing fast. Compare trimless and trim cap options to help your sign shop clients choose the right look at wholesale pricing.", "href": "/resources/blog/trimless-vs-trimcap-channel-letters", "date": "2025-11-28", "category": "Product Spotlight" },
+          { "icon": "FileText", "title": "How to Choose the Right Sign Illumination for Any Project", "description": "Face-lit, halo-lit, front-and-halo, or non-illuminated? Walk through the decision factors including visibility, brand aesthetic, building facade, and budget \u2014 a guide for trade professionals.", "href": "/resources/blog/how-to-choose-sign-illumination", "date": "2025-11-10", "category": "Guides" },
+          { "icon": "FileText", "title": "UL Listing for Channel Letters: Why It Matters for Your Sign Business", "description": "UL listing is more than a safety checkbox. Learn how UL-listed wholesale signage protects your clients, reduces your liability, and differentiates your sign shop from competitors.", "href": "/resources/blog/ul-listing-why-it-matters", "date": "2025-10-22", "category": "Industry" }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

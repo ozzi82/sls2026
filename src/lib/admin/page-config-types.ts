@@ -35,6 +35,7 @@ export interface FeaturesGridData {
 
 export interface ProductTypesData {
   heading: string;
+  description?: string;
   items: { name: string; description: string; image?: string; href?: string }[];
 }
 
@@ -48,6 +49,7 @@ export interface SpecsTableData {
 export interface UseCasesData {
   heading: string;
   description?: string;
+  image?: string;
   items: string[];
 }
 

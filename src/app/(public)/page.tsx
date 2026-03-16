@@ -3,80 +3,36 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  Shield,
-  Clock,
-  Truck,
-  Zap,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
 import HeroSlider from "@/components/HeroSlider";
 import CTASection from "@/components/CTASection";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-const products = [
-  {
-    name: "Channel Letters",
-    description: "Face lit, halo lit & combination LED illumination",
-    image: "/homepage-channel-letters.jpg",
-    href: "/products/channel-letters",
-    tag: "Most Popular" as string | null,
-  },
-  {
-    name: "EdgeLuxe Trimless",
-    description: '1.2" profile, embedded LEDs, no trim cap',
-    image: "/hero-bg1.jpg",
-    href: "/products/channel-letters/trimless",
-    tag: "Premium" as string | null,
-  },
-  {
-    name: "FCO Flat Cut",
-    description: "Precision-cut aluminum & stainless steel letterforms",
-    image: "/hero-bg4.jpg",
-    href: "/products/flat-cut-letters",
-    tag: null as string | null,
-  },
-  {
-    name: "Blade Signs",
-    description: "Projecting signs for maximum storefront visibility",
-    image: "/homepage-blade-cabinet.jpg",
-    href: "/products/blade-signs",
-    tag: null as string | null,
-  },
-  {
-    name: "Cabinet Signs",
-    description: "Illuminated cabinet & push-through signage",
-    image: "/hero-bg3.jpg",
-    href: "/products/lightboxes",
-    tag: null as string | null,
-  },
-  {
-    name: "SEG Light Boxes",
-    description: 'Silicone-edged graphic displays from 1" deep',
-    image: "/homepage-seg.jpg",
-    href: "/products/seg-light-boxes",
-    tag: "New" as string | null,
-  },
-];
-
-const stats = [
-  { value: "UL 48", label: "Listed & Certified", icon: Shield },
-  { value: "24h", label: "Quote Turnaround", icon: Clock },
-  { value: "3 Wk", label: "Door-to-Door", icon: Truck },
-  { value: "US/CA", label: "Nationwide Shipping", icon: Zap },
-];
-
-const marqueeItems = [
-  "WHOLESALE ONLY",
-  "UL 48 LISTED",
-  "24-HOUR QUOTES",
-  "3-WEEK DELIVERY",
-  "USA & CANADA",
-  "GERMAN ENGINEERING",
-  "TRADE ACCOUNTS",
-  "NO RETAIL SALES",
-];
+export const dynamic = "force-dynamic";
 
 export default function Home() {
+  const config = loadStaticPageConfig("home");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroBlock = getBlock("hero")!;
+  const heroData = heroBlock.data as any;
+  const marqueeBlock = getBlock("marquee")!;
+  const marqueeData = marqueeBlock.data as any;
+  const statsBlock = getBlock("stats")!;
+  const statsData = statsBlock.data as any;
+  const storyBlock = getBlock("story")!;
+  const storyData = storyBlock.data as any;
+  const productsBlock = getBlock("products")!;
+  const productsData = productsBlock.data as any;
+  const engineeringBlock = getBlock("engineering")!;
+  const engineeringData = engineeringBlock.data as any;
+  const ctaBlock = getBlock("cta")!;
+  const ctaData = ctaBlock.data as any;
   return (
     <>
       {/* ═══════════════════════════════════════════
@@ -99,35 +55,31 @@ export default function Home() {
             />
 
             <p className="micro-label mb-6">
-              Wholesale Only · Trade Accounts
+              {heroData.badge}
             </p>
 
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-6 tracking-[-0.02em] font-bold">
-              Precision Signage,
+              {heroData.h1}
               <br />
               <span className="text-brand-gold">
-                Exclusively Wholesale.
+                {heroData.h1Highlight}
               </span>
             </h1>
 
             <p className="text-sm lg:text-base text-white/60 max-w-md font-body leading-relaxed mb-8">
-              German-engineered channel letters, blade signs &amp; illuminated
-              signage — built for sign shops, never sold retail.
+              {heroData.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Link
-                href="/get-a-quote"
-                className="btn-primary"
-              >
-                Request Wholesale Pricing
-              </Link>
-              <Link
-                href="/products"
-                className="btn-secondary"
-              >
-                View Products
-              </Link>
+              {heroData.ctas.map((cta: any) => (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}
+                >
+                  {cta.label}
+                </Link>
+              ))}
             </div>
           </HeroContent>
         </div>
@@ -148,7 +100,7 @@ export default function Home() {
         <div className="flex animate-marquee">
           {[0, 1].map((set) => (
             <div key={set} className="flex shrink-0 items-center">
-              {marqueeItems.map((item, i) => (
+              {marqueeData.messages.map((item: string, i: number) => (
                 <span
                   key={`${set}-${i}`}
                   className="flex items-center mx-6 sm:mx-8"
@@ -172,19 +124,22 @@ export default function Home() {
       <section className="px-6 sm:px-10 lg:px-16 -mt-2">
         <div className="container-max">
           <div className="grid grid-cols-2 lg:grid-cols-4 bg-bg-card rounded-xl border border-white/[0.06] overflow-hidden">
-            {stats.map((stat, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="px-6 py-10 lg:py-14 text-center border-r border-white/[0.04] last:border-r-0">
-                  <stat.icon className="w-5 h-5 text-brand-gold/40 mx-auto mb-4" />
-                  <div className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold bg-gradient-to-r from-brand-gold to-brand-gold-light bg-clip-text text-transparent mb-2">
-                    {stat.value}
+            {statsData.items.map((stat: any, i: number) => {
+              const Icon = getIconComponent(stat.icon);
+              return (
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  <div className="px-6 py-10 lg:py-14 text-center border-r border-white/[0.04] last:border-r-0">
+                    {Icon && <Icon className="w-5 h-5 text-brand-gold/40 mx-auto mb-4" />}
+                    <div className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold bg-gradient-to-r from-brand-gold to-brand-gold-light bg-clip-text text-transparent mb-2">
+                      {stat.sublabel}
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-white/30">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-[10px] sm:text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-white/30">
-                    {stat.label}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -203,8 +158,8 @@ export default function Home() {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden">
                     <Image
-                      src="/homepage-story.png"
-                      alt="Sunlite Signs team and LKF Lichtwerbung partnership"
+                      src={storyData.image}
+                      alt={storyData.imageAlt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
@@ -216,27 +171,22 @@ export default function Home() {
 
                 <div>
                   <p className="micro-label mb-5">
-                    Our Story
+                    {storyData.badge}
                   </p>
                   <h2 className="text-3xl lg:text-[42px] font-display text-text-dark leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                    Custom European Signage,{" "}
-                    <span className="text-brand-gold">Wholesale.</span>
+                    {storyData.heading}{" "}
+                    <span className="text-brand-gold">{storyData.headingHighlight}</span>
                   </h2>
-                  <p className="text-text-dark/60 leading-relaxed mb-4 text-[15px]">
-                    The foundation of Sunlite Signs begins with a partnership
-                    rooted in German precision engineering — and a commitment to
-                    never compete with our customers.
-                  </p>
-                  <p className="text-text-dark/60 leading-relaxed mb-8 text-[15px]">
-                    From LKF Lichtwerbung in Nuremberg to Florida, we bring
-                    decades of European signage expertise exclusively to the
-                    trade.
-                  </p>
+                  {storyData.content.split("\n\n").map((p: string, i: number) => (
+                    <p key={i} className="text-text-dark/60 leading-relaxed mb-4 text-[15px]">
+                      {p}
+                    </p>
+                  ))}
                   <Link
-                    href="/about"
+                    href={storyData.linkHref}
                     className="btn-text-link group"
                   >
-                    Read Our Story
+                    {storyData.linkText}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -258,17 +208,16 @@ export default function Home() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-8" />
               <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
-                What We <span className="text-brand-gold">Build</span>
+                What We <span className="text-brand-gold">{productsData.headingHighlight}</span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto text-[15px]">
-                Precision-engineered signage solutions, manufactured exclusively
-                for the trade.
+                {productsData.description}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {products.map((product, i) => (
+            {productsData.items.map((product: any, i: number) => (
               <AnimatedSection key={product.name} delay={i * 0.08}>
                 <Link
                   href={product.href}
@@ -315,25 +264,17 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-center">
               <div>
                 <p className="micro-label mb-5">
-                  Included with Every Project
+                  {engineeringData.badge}
                 </p>
                 <h2 className="text-3xl lg:text-[42px] font-display text-white leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                  Complimentary{" "}
-                  <span className="text-brand-gold">Engineering.</span>
+                  {engineeringData.heading}{" "}
+                  <span className="text-brand-gold">{engineeringData.headingHighlight}</span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-8 text-[15px]">
-                  With our German design and engineering roots, we contribute
-                  complimentary engineering services to every project — from
-                  conceptual integration of structural and material sciences, to
-                  manufacturing engineering and packaging.
+                  {engineeringData.content}
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-10">
-                  {[
-                    "Concept & Materials",
-                    "Structural Engineering",
-                    "Electrical Layout",
-                    "Manufacturing Engineering",
-                  ].map((service) => (
+                  {engineeringData.bulletPoints.map((service: string) => (
                     <div
                       key={service}
                       className="flex items-center gap-3 text-white/50 text-sm"
@@ -344,18 +285,18 @@ export default function Home() {
                   ))}
                 </div>
                 <Link
-                  href="/services"
+                  href={engineeringData.linkHref}
                   className="btn-ghost group"
                 >
-                  Explore Services
+                  {engineeringData.linkText}
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-lg overflow-hidden">
                   <Image
-                    src="/homepage-engineering.jpg"
-                    alt="Sunlite Signs engineering team designing channel letters"
+                    src={engineeringData.image}
+                    alt={engineeringData.imageAlt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"

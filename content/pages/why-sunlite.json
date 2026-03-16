@@ -1,0 +1,122 @@
+{
+  "slug": "/why-sunlite",
+  "pageType": "static",
+  "label": "Why Sunlite",
+  "seo": {
+    "title": "Why Sign Shops Choose Sunlite — Wholesale Sign Manufacturer",
+    "metaDescription": "Discover why sign shops across the USA and Canada choose Sunlite Signs as their wholesale partner. German engineering, UL listed products, trade pricing, and a wholesale-only model — we never compete with you.",
+    "keywords": [
+      "why choose sunlite signs",
+      "wholesale sign partner",
+      "german engineering signs",
+      "UL listed wholesale"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": false,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Why Sign Shops",
+        "h1Highlight": "Choose Sunlite",
+        "subtitle": "We manufacture. You sell. Simple. German engineering heritage, UL listed certification, a quality process built on precision, and a wholesale-only model that guarantees we never compete with you. Available exclusively to the trade.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "trust-stats",
+      "type": "stats_strip",
+      "label": "Trust Stats",
+      "visible": false,
+      "data": {
+        "items": [
+          {
+            "icon": "Clock",
+            "label": "Quote turnaround",
+            "sublabel": "48 hrs"
+          },
+          {
+            "icon": "Truck",
+            "label": "Door-to-door delivery",
+            "sublabel": "3 weeks"
+          },
+          {
+            "icon": "Lock",
+            "label": "Wholesale only",
+            "sublabel": "100%"
+          },
+          {
+            "icon": "Globe",
+            "label": "Trade accounts served",
+            "sublabel": "USA & CA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pillars",
+      "type": "features_grid",
+      "label": "Four Pillars",
+      "visible": false,
+      "data": {
+        "heading": "Four Pillars of the Sunlite Wholesale Advantage",
+        "description": "Every decision we make is guided by one principle: empower our trade partners to win more business. These are not aspirational — they are operational.",
+        "items": [
+          {
+            "icon": "Wrench",
+            "title": "German Engineering Heritage",
+            "description": "Our partnership with LKF Lichtwerbung in Nuremberg infuses decades of German precision into every sign we build. Available exclusively to the trade — this engineering advantage is yours to sell.",
+            "href": "/why-sunlite/german-engineering",
+            "image": "LKF Lichtwerbung Nuremberg facility exterior"
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed and Certified",
+            "description": "Every illuminated sign ships with UL certification. Your clients get safety assurance and code compliance. As our wholesale partner, you get peace of mind and a competitive edge in every bid.",
+            "href": "/why-sunlite/ul-listing",
+            "image": "UL certification badge and testing equipment"
+          },
+          {
+            "icon": "SearchCheck",
+            "title": "Rigorous Quality Process",
+            "description": "From raw material selection to final inspection, every step is documented and controlled. Multi-point quality checks ensure zero defects reach your shop. We manufacture. You sell with confidence.",
+            "href": "/why-sunlite/quality-process",
+            "image": "Quality inspection of channel letters in production"
+          },
+          {
+            "icon": "Handshake",
+            "title": "Wholesale Only — We Never Compete With You",
+            "description": "We sell exclusively to the trade. No retail storefront. No direct-to-consumer sales. No exceptions. Your clients stay yours. Your margins stay yours. Zero retail competition — guaranteed.",
+            "href": "/why-sunlite/wholesale-only",
+            "image": "Crated signs ready for wholesale shipment"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "type": "text_section",
+      "label": "Overview",
+      "visible": false,
+      "data": {
+        "heading": "Built for Sign Shops. Nobody Else.",
+        "content": "Sunlite Signs LLC is a Florida-based wholesale-only manufacturer of illuminated signage. We partner with LKF Lichtwerbung in Nuremberg, Germany, to bring European engineering precision exclusively to trade accounts in North America. Every product is UL listed. Every order ships within four weeks. And every relationship is built on one guarantee: we will never compete with you for retail business.",
+        "background": "dark"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": false,
+      "data": {
+        "heading": "Get Your Product",
+        "headingHighlight": "Started.",
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+      }
+    }
+  ]
+}

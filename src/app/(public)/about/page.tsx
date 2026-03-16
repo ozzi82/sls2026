@@ -4,63 +4,28 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-export const metadata: Metadata = {
-  title: "Our Story — Sunlite Signs",
-  description:
-    "The story of Sunlite Signs LLC — from German engineering roots in Nuremberg to a wholesale-only LED signage manufacturer in Florida. Built exclusively for sign shops across the USA and Canada.",
-  openGraph: {
-    title: "Our Story — Sunlite Signs",
-    description:
-      "From Nuremberg to Florida — how German engineering heritage became a wholesale-only signage manufacturer built exclusively for the trade.",
-    url: "https://sunlitesigns.com/about",
-  },
-};
+export const dynamic = "force-dynamic";
 
-const timelineEntries = [
-  {
-    number: "01",
-    title: "The Foundation: LKF Lichtwerbung, Nuremberg",
-    text: "The story begins with LKF Lichtwerbung in Nuremberg, Germany — a company built on decades of precision engineering in illuminated signage. European craftsmanship at its finest. The German standard for channel letter manufacturing that would eventually find its way across the Atlantic.",
-    imageLabel: "LKF Lichtwerbung facility in Nuremberg, Germany",
-    imageSrc: "/story-01-lkf.png",
-  },
-  {
-    number: "02",
-    title: "Father & Son: A Legacy of Precision",
-    text: "The growth of LKF under father-son collaboration deepened a heritage of German engineering excellence. Every letterform, every LED integration, every structural calculation refined over generations. A legacy that demanded nothing less than perfection.",
-    imageLabel: "Father and son working together at LKF — precision engineering heritage",
-    imageSrc: "/story-02-father-son.jpeg",
-  },
-  {
-    number: "03",
-    title: "Kenan Meets Ozan in Germany",
-    text: "A chance meeting in Germany between Kenan and Ozan sparked a shared vision. Two minds united by a passion for precision signage and a belief that the American market deserved better — European engineering quality at wholesale prices, delivered direct to sign shops.",
-    imageLabel: "Kenan and Ozan — the meeting that started it all",
-    imageSrc: "/story-03-kenan-ozan.jpeg",
-  },
-  {
-    number: "04",
-    title: "A Friendship Becomes Something Larger",
-    text: "What started as a friendship evolved into a business vision: bring German-engineered signage to the USA, exclusively for the trade. No retail. No competing with customers. A wholesale manufacturing partner that stays in its lane.",
-    imageLabel: "Vision taking shape — planning the wholesale signage business",
-    imageSrc: "/story-04-friendship.jpeg",
-  },
-  {
-    number: "05",
-    title: "Ozan & Ayla Move to Florida",
-    text: "Ozan and Ayla, together with their family, made the move to Florida — establishing the American base for what would become Sunlite Signs. The sunshine state became home to a new kind of signage manufacturer: one that would never sell retail.",
-    imageLabel: "Ozan and Ayla — building a new home and business in Florida",
-  },
-  {
-    number: "06",
-    title: "Sunlite Signs Is Born",
-    text: "Sunlite Signs LLC — founded on one unbreakable principle: we manufacture, you sell. German-engineered, UL-listed channel letters and illuminated signs, delivered in 3 weeks door to door, exclusively to sign shops across the USA and Canada. The beginning of something larger.",
-    imageLabel: "Sunlite Signs LLC — wholesale signage manufacturer, Florida",
-  },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadStaticPageConfig("about");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
+}
 
 export default function AboutPage() {
+  const config = loadStaticPageConfig("about");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroData = getBlock("hero")!.data as any;
+  const timelineData = getBlock("timeline")!.data as any;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -95,6 +60,14 @@ export default function AboutPage() {
     ],
   };
 
+  const timelineEntries = timelineData.entries.map((entry: any) => ({
+    number: String(entry.step).padStart(2, "0"),
+    title: entry.title,
+    text: entry.text,
+    imageLabel: entry.title,
+    imageSrc: entry.image,
+  }));
+
   return (
     <>
       <script
@@ -122,14 +95,14 @@ export default function AboutPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  Wholesale Only
+                  {heroData.badge}
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  Our <span className="text-brand-gold">Story</span>
+                  {heroData.h1} <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  What makes us passionate about signage and experience.
+                  {heroData.subtitle}
                 </p>
               </AnimatedSection>
             </div>
@@ -140,9 +113,8 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════
           TIMELINE
           ═══════════════════════════════════════════ */}
-      {timelineEntries.map((entry, index) => {
+      {timelineEntries.map((entry: any, index: number) => {
         const isEven = index % 2 === 0;
-        const imageFirst = isEven;
 
         if (isEven) {
           // Light section
@@ -154,7 +126,7 @@ export default function AboutPage() {
                   <div className="container-max px-8 sm:px-12 lg:px-16 py-16 lg:py-24">
                     <div
                       className={`flex flex-col ${
-                        imageFirst ? "md:flex-row" : "md:flex-row-reverse"
+                        isEven ? "md:flex-row" : "md:flex-row-reverse"
                       } items-center gap-12 md:gap-16`}
                     >
                       {/* Image side */}

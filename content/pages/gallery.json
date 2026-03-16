@@ -1,0 +1,46 @@
+{
+  "slug": "/gallery",
+  "pageType": "static",
+  "label": "Gallery",
+  "seo": {
+    "title": "Wholesale Sign Gallery \u2014 Trade Partner Installations | Sunlite Signs",
+    "metaDescription": "Browse completed wholesale sign projects manufactured by Sunlite Signs and installed by our trade partners. Channel letters, halo lit signs, trimless, blade signs \u2014 available exclusively to sign shops at trade pricing.",
+    "keywords": ["wholesale sign gallery", "channel letter installations", "trade partner sign projects"]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Manufactured by Sunlite.",
+        "h1Highlight": "Installed by Our Trade Partners.",
+        "subtitle": "Every project below was manufactured at our wholesale facility and installed by sign shop partners across North America. These are trade-exclusive products built with German engineering precision and UL listed certification. We manufacture. They sell. Their clients are thrilled.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "label": "Gallery Grid",
+      "visible": true,
+      "data": {
+        "heading": "Gallery",
+        "images": []
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Ready to Manufacture Something",
+        "headingHighlight": "Like This?",
+        "description": "Send us your project details and get wholesale trade pricing within 48 hours. No retail markup. No competition. We manufacture, you sell."
+      }
+    }
+  ]
+}

@@ -3,20 +3,28 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GalleryFilter from "./GalleryFilter";
 import CTASection from "@/components/CTASection";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-export const metadata: Metadata = {
-  title: "Wholesale Sign Gallery — Trade Partner Installations | Sunlite Signs",
-  description:
-    "Browse completed wholesale sign projects manufactured by Sunlite Signs and installed by our trade partners. Channel letters, halo lit signs, trimless, blade signs — available exclusively to sign shops at trade pricing.",
-  openGraph: {
-    title: "Wholesale Sign Gallery — Trade Partner Installations",
-    description:
-      "Wholesale signs manufactured by Sunlite, installed by our trade partners across the USA and Canada. Sign shops only — trade pricing available.",
-    url: "https://sunlitesigns.com/gallery",
-  },
-};
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadStaticPageConfig("gallery");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
+}
 
 export default function GalleryPage() {
+  const config = loadStaticPageConfig("gallery");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroData = getBlock("hero")!.data as any;
+  const ctaData = getBlock("cta")!.data as any;
   return (
     <>
       {/* ═══════════════════════════════════════════
@@ -39,19 +47,15 @@ export default function GalleryPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  Wholesale Only
+                  {heroData.badge}
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  Manufactured by Sunlite.{" "}
-                  <span className="text-brand-gold">Installed by Our Trade Partners.</span>
+                  {heroData.h1}{" "}
+                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  Every project below was manufactured at our wholesale facility
-                  and installed by sign shop partners across North America. These
-                  are trade-exclusive products built with German engineering
-                  precision and UL listed certification. We manufacture. They
-                  sell. Their clients are thrilled.
+                  {heroData.subtitle}
                 </p>
               </AnimatedSection>
             </div>
@@ -78,9 +82,9 @@ export default function GalleryPage() {
           CTA
           ═══════════════════════════════════════════ */}
       <CTASection
-        heading="Ready to Manufacture Something"
-        highlight="Like This?"
-        description="Send us your project details and get wholesale trade pricing within 48 hours. No retail markup. No competition. We manufacture, you sell."
+        heading={ctaData.heading}
+        highlight={ctaData.headingHighlight}
+        description={ctaData.description}
       />
     </>
   );

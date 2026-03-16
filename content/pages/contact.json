@@ -1,0 +1,120 @@
+{
+  "slug": "/contact",
+  "pageType": "static",
+  "label": "Contact",
+  "seo": {
+    "title": "Contact Us — Wholesale Trade Inquiries Only | Sunlite Signs",
+    "metaDescription": "Contact Sunlite Signs LLC for wholesale trade inquiries. Sign shops only — trade pricing on channel letters, blade signs, flat cut letters, and custom LED signage. Wholesale accounts welcome.",
+    "keywords": [
+      "contact sunlite signs",
+      "wholesale sign inquiry",
+      "trade sign pricing",
+      "sign shop contact"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "label": "Hero",
+      "visible": true,
+      "data": {
+        "badge": "Wholesale Only",
+        "h1": "Trade Inquiries",
+        "h1Highlight": "Only",
+        "subtitle": "Wholesale accounts welcome. Looking for trade pricing on channel letters, blade signs, or custom LED signage? You are in the right place. We work exclusively with sign shops and trade professionals. We manufacture. You sell.",
+        "ctas": []
+      }
+    },
+    {
+      "id": "contact-info",
+      "type": "contact_info",
+      "label": "Contact Info Cards",
+      "visible": true,
+      "data": {
+        "cards": [
+          {
+            "icon": "Phone",
+            "title": "Phone",
+            "value": "(689) 294-0912",
+            "href": "tel:+6892940912",
+            "description": "Mon-Fri, 8am-5pm EST — Trade inquiries only"
+          },
+          {
+            "icon": "Mail",
+            "title": "Email",
+            "value": "hello@sunlitesigns.com",
+            "href": "mailto:hello@sunlitesigns.com",
+            "description": "Wholesale accounts — response within 1 business day"
+          },
+          {
+            "icon": "MapPin",
+            "title": "Location",
+            "value": "Florida, USA",
+            "description": "Wholesale manufacturing facility — no retail showroom"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form",
+      "type": "form_section",
+      "label": "Contact Form",
+      "visible": true,
+      "data": {
+        "heading": "Send Us a Trade Inquiry",
+        "headingHighlight": "Trade Inquiry",
+        "description": "For wholesale partnerships, trade account setup, or technical questions. Need project-specific trade pricing? Use our dedicated wholesale quote form for faster response.",
+        "formType": "contact",
+        "sidebar": {
+          "businessHours": [
+            {
+              "day": "Monday",
+              "hours": "8:00 AM - 5:00 PM EST"
+            },
+            {
+              "day": "Tuesday",
+              "hours": "8:00 AM - 5:00 PM EST"
+            },
+            {
+              "day": "Wednesday",
+              "hours": "8:00 AM - 5:00 PM EST"
+            },
+            {
+              "day": "Thursday",
+              "hours": "8:00 AM - 5:00 PM EST"
+            },
+            {
+              "day": "Friday",
+              "hours": "8:00 AM - 5:00 PM EST"
+            },
+            {
+              "day": "Saturday",
+              "hours": "Closed"
+            },
+            {
+              "day": "Sunday",
+              "hours": "Closed"
+            }
+          ],
+          "notices": [
+            "Sunlite Signs sells exclusively to sign shops and trade professionals. We do not sell to the general public.",
+            "If you are a business or property owner looking for signage, please contact a sign shop in your area."
+          ],
+          "ctaText": "For project-specific wholesale pricing with material specs and delivery timeline, use our dedicated trade quote form."
+        }
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "label": "CTA",
+      "visible": true,
+      "data": {
+        "heading": "Your Wholesale Partner",
+        "headingHighlight": "Awaits.",
+        "description": "Join sign shops across the USA and Canada who trust Sunlite Signs for German-engineered, UL-listed signage at wholesale trade pricing."
+      }
+    }
+  ]
+}

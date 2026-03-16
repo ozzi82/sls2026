@@ -1,66 +1,41 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
   ArrowRight,
   Lock,
+  Clock,
+  MapPin,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "./ContactForm";
 import CTASection from "@/components/CTASection";
+import { getIconComponent } from "@/lib/admin/icon-map";
+import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
-export const metadata: Metadata = {
-  title: "Contact Us — Wholesale Trade Inquiries Only | Sunlite Signs",
-  description:
-    "Contact Sunlite Signs LLC for wholesale trade inquiries. Sign shops only — trade pricing on channel letters, blade signs, flat cut letters, and custom LED signage. Wholesale accounts welcome.",
-  openGraph: {
-    title: "Contact Sunlite Signs — Wholesale Trade Inquiries Only",
-    description:
-      "Trade inquiries only. Contact Sunlite Signs for wholesale signage pricing. Sign shops across the USA and Canada — wholesale accounts welcome.",
-    url: "https://sunlitesigns.com/contact",
-  },
-};
+export const dynamic = "force-dynamic";
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "(689) 294-0912",
-    href: "tel:+6892940912",
-    description: "Mon-Fri, 8am-5pm EST — Trade inquiries only",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: "hello@sunlitesigns.com",
-    href: "mailto:hello@sunlitesigns.com",
-    description: "Wholesale accounts — response within 1 business day",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    value: "Florida, USA",
-    href: undefined,
-    description: "Wholesale manufacturing facility — no retail showroom",
-  },
-];
-
-const businessHours = [
-  { day: "Monday", hours: "8:00 AM - 5:00 PM EST" },
-  { day: "Tuesday", hours: "8:00 AM - 5:00 PM EST" },
-  { day: "Wednesday", hours: "8:00 AM - 5:00 PM EST" },
-  { day: "Thursday", hours: "8:00 AM - 5:00 PM EST" },
-  { day: "Friday", hours: "8:00 AM - 5:00 PM EST" },
-  { day: "Saturday", hours: "Closed" },
-  { day: "Sunday", hours: "Closed" },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const config = loadStaticPageConfig("contact");
+  return {
+    title: config.seo.title,
+    description: config.seo.metaDescription,
+    keywords: config.seo.keywords,
+    alternates: { canonical: config.seo.canonical },
+  };
+}
 
 export default function ContactPage() {
+  const config = loadStaticPageConfig("contact");
+  function getBlock(id: string) {
+    return config.blocks.find(b => b.id === id);
+  }
+
+  const heroData = getBlock("hero")!.data as any;
+  const contactInfoData = getBlock("contact-info")!.data as any;
+  const formData = getBlock("form")!.data as any;
+  const ctaData = getBlock("cta")!.data as any;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -123,17 +98,14 @@ export default function ContactPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  Wholesale Only
+                  {heroData.badge}
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  Trade Inquiries <span className="text-brand-gold">Only</span>
+                  {heroData.h1} <span className="text-brand-gold">{heroData.h1Highlight}</span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  Wholesale accounts welcome. Looking for trade pricing on
-                  channel letters, blade signs, or custom LED signage? You are
-                  in the right place. We work exclusively with sign shops and
-                  trade professionals. We manufacture. You sell.
+                  {heroData.subtitle}
                 </p>
               </AnimatedSection>
             </div>
@@ -150,31 +122,34 @@ export default function ContactPage() {
         <div className="bg-bg-light rounded-2xl overflow-hidden">
           <div className="container-max px-8 sm:px-12 lg:px-16 py-16 lg:py-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {contactInfo.map((item, index) => (
-                <AnimatedSection key={item.title} delay={index * 0.1}>
-                  <div className="bg-white rounded-xl p-8 border border-black/5 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-400">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-5">
-                      <item.icon className="w-6 h-6 text-brand-gold" />
+              {contactInfoData.cards.map((item: any, index: number) => {
+                const Icon = getIconComponent(item.icon);
+                return (
+                  <AnimatedSection key={item.title} delay={index * 0.1}>
+                    <div className="bg-white rounded-xl p-8 border border-black/5 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-400">
+                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-5">
+                        {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
+                      </div>
+                      <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
+                        {item.title}
+                      </h3>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-brand-gold font-heading font-medium hover:text-brand-gold-light transition-colors block mb-2"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-text-dark font-heading font-medium mb-2">
+                          {item.value}
+                        </p>
+                      )}
+                      <p className="text-text-dark/60 text-sm">{item.description}</p>
                     </div>
-                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                      {item.title}
-                    </h3>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-brand-gold font-heading font-medium hover:text-brand-gold-light transition-colors block mb-2"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-text-dark font-heading font-medium mb-2">
-                        {item.value}
-                      </p>
-                    )}
-                    <p className="text-text-dark/60 text-sm">{item.description}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
+                  </AnimatedSection>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -193,11 +168,10 @@ export default function ContactPage() {
               <AnimatedSection>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
-                  Send Us a <span className="text-brand-gold">Trade Inquiry</span>
+                  Send Us a <span className="text-brand-gold">{formData.headingHighlight}</span>
                 </h2>
                 <p className="text-white/60 mb-8 max-w-lg">
-                  For wholesale partnerships, trade account setup, or technical
-                  questions. Need project-specific trade pricing? Use our{" "}
+                  {formData.description.split("dedicated wholesale quote form")[0]}
                   <Link
                     href="/get-a-quote"
                     className="text-brand-gold hover:text-brand-gold-light underline underline-offset-2 transition-colors"
@@ -224,14 +198,11 @@ export default function ContactPage() {
                         Wholesale Accounts Only
                       </h3>
                     </div>
-                    <p className="text-white/60 text-sm mb-2">
-                      Sunlite Signs sells exclusively to sign shops and trade
-                      professionals. We do not sell to the general public.
-                    </p>
-                    <p className="text-white/60 text-sm">
-                      If you are a business or property owner looking for
-                      signage, please contact a sign shop in your area.
-                    </p>
+                    {formData.sidebar.notices.map((notice: string, i: number) => (
+                      <p key={i} className="text-white/60 text-sm mb-2">
+                        {notice}
+                      </p>
+                    ))}
                   </div>
 
                   {/* Business Hours */}
@@ -243,7 +214,7 @@ export default function ContactPage() {
                       </h3>
                     </div>
                     <ul className="space-y-3">
-                      {businessHours.map((item) => (
+                      {formData.sidebar.businessHours.map((item: any) => (
                         <li
                           key={item.day}
                           className="flex justify-between text-sm"
@@ -284,8 +255,7 @@ export default function ContactPage() {
                       Need Trade Pricing?
                     </h3>
                     <p className="text-white/60 text-sm mb-4">
-                      For project-specific wholesale pricing with material specs
-                      and delivery timeline, use our dedicated trade quote form.
+                      {formData.sidebar.ctaText}
                     </p>
                     <Link
                       href="/get-a-quote"
@@ -309,9 +279,9 @@ export default function ContactPage() {
           CTA
           ═══════════════════════════════════════════ */}
       <CTASection
-        heading="Your Wholesale Partner"
-        highlight="Awaits."
-        description="Join sign shops across the USA and Canada who trust Sunlite Signs for German-engineered, UL-listed signage at wholesale trade pricing."
+        heading={ctaData.heading}
+        highlight={ctaData.headingHighlight}
+        description={ctaData.description}
       />
     </>
   );
