@@ -44,9 +44,9 @@ export default function Header() {
           : "bg-gradient-to-b from-black/40 to-transparent"
       }`}
     >
-      {/* Utility bar — only visible when not scrolled */}
+      {/* Utility bar — always visible, collapses on scroll */}
       <div className={`transition-all duration-500 overflow-hidden ${scrolled ? "max-h-0 opacity-0" : "max-h-8 opacity-100"}`}>
-        <div className="border-b border-white/[0.04] bg-black/20">
+        <div className="border-b border-white/[0.04] bg-[#0A0A0A]">
           <div className="container-max flex items-center justify-center gap-6 px-4 py-1.5">
             {["Wholesale Only", "Trade Accounts", "USA & Canada", "UL 48 Listed"].map((item, i) => (
               <span key={i} className="hidden sm:flex items-center gap-2 text-[10px] font-heading uppercase tracking-[0.15em] text-white/30">
