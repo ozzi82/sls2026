@@ -44,6 +44,22 @@ export default function Header() {
           : "bg-gradient-to-b from-black/40 to-transparent"
       }`}
     >
+      {/* Utility bar — only visible when not scrolled */}
+      <div className={`transition-all duration-500 overflow-hidden ${scrolled ? "max-h-0 opacity-0" : "max-h-8 opacity-100"}`}>
+        <div className="border-b border-white/[0.04] bg-black/20">
+          <div className="container-max flex items-center justify-center gap-6 px-4 py-1.5">
+            {["Wholesale Only", "Trade Accounts", "USA & Canada", "UL 48 Listed"].map((item, i) => (
+              <span key={i} className="hidden sm:flex items-center gap-2 text-[10px] font-heading uppercase tracking-[0.15em] text-white/30">
+                {i > 0 && <span className="text-brand-gold/30 text-[6px]">&#x25C6;</span>}
+                {item}
+              </span>
+            ))}
+            <span className="sm:hidden text-[10px] font-heading uppercase tracking-[0.15em] text-white/30">
+              Wholesale Only &middot; Trade Accounts
+            </span>
+          </div>
+        </div>
+      </div>
       <div className="container-max">
         <div className="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
@@ -107,9 +123,12 @@ export default function Header() {
             </a>
             <Link
               href="/get-a-quote"
-              className="bg-gradient-to-r from-cta to-cta-hover text-white font-heading font-bold text-xs uppercase tracking-wider rounded-md px-6 py-2.5 shadow-[0_0_20px_rgba(249,115,22,0.15)] hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] transition-all"
+              className="bg-gradient-to-r from-cta to-cta-hover text-white font-heading font-bold text-xs uppercase tracking-wider rounded-md px-6 py-2.5 shadow-[0_0_20px_rgba(249,115,22,0.15)] hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] transition-all flex items-center gap-3"
             >
-              Get a Quote
+              Get Trade Quote
+              <span className="text-[9px] font-normal normal-case tracking-normal text-white/60 border-l border-white/20 pl-3">
+                24h response
+              </span>
             </Link>
           </div>
 

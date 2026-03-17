@@ -76,7 +76,7 @@
       "id": "cta",
       "type": "cta",
       "label": "CTA",
-      "visible": false,
+      "visible": true,
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",

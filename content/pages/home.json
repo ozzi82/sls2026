@@ -57,21 +57,20 @@
       }
     },
     {
-      "id": "story",
-      "type": "text_section",
-      "label": "Our Story",
+      "id": "featured_projects",
+      "type": "gallery",
+      "label": "Featured Projects",
       "visible": true,
       "data": {
-        "heading": "Custom European Signage,",
-        "headingHighlight": "Wholesale.",
-        "badge": "Our Story",
-        "content": "The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering \u2014 and a commitment to never compete with our customers.\n\nFrom LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.",
-        "image": "/homepage-story.png",
-        "imageAlt": "Sunlite Signs team and LKF Lichtwerbung partnership",
-        "imagePosition": "left",
-        "background": "light",
-        "linkText": "Read Our Story",
-        "linkHref": "/about"
+        "heading": "Real Projects Delivered to Sign Shops Across North America",
+        "images": [
+          { "src": "", "alt": "Front-lit channel letters — retail storefront, Miami FL", "category": "Channel Letters", "type": "Front-Lit LED", "location": "Miami, FL", "turnaround": "18 days" },
+          { "src": "", "alt": "EdgeLuxe trimless channel letters — corporate office, Dallas TX", "category": "EdgeLuxe Trimless", "type": "Halo-Lit LED", "location": "Dallas, TX", "turnaround": "21 days" },
+          { "src": "", "alt": "Illuminated blade sign — restaurant, Chicago IL", "category": "Blade Signs", "type": "Double-Sided LED", "location": "Chicago, IL", "turnaround": "16 days" },
+          { "src": "", "alt": "Cabinet sign — franchise location, Toronto ON", "category": "Cabinet Signs", "type": "Push-Through LED", "location": "Toronto, ON", "turnaround": "19 days" },
+          { "src": "", "alt": "Halo-lit channel letters — hotel entrance, Las Vegas NV", "category": "Channel Letters", "type": "Halo-Lit LED", "location": "Las Vegas, NV", "turnaround": "20 days" },
+          { "src": "", "alt": "SEG light box — retail interior, New York NY", "category": "SEG Light Boxes", "type": "Backlit Fabric", "location": "New York, NY", "turnaround": "14 days" }
+        ]
       }
     },
     {
@@ -84,12 +83,53 @@
         "headingHighlight": "Build",
         "description": "Precision-engineered signage solutions, manufactured exclusively for the trade.",
         "items": [
-          { "name": "Channel Letters", "description": "Face lit, halo lit & combination LED illumination", "image": "/homepage-channel-letters.jpg", "href": "/products/channel-letters", "tag": "Most Popular" },
-          { "name": "EdgeLuxe Trimless", "description": "1.2\" profile, embedded LEDs, no trim cap", "image": "/hero-bg1.jpg", "href": "/products/channel-letters/trimless", "tag": "Premium" },
-          { "name": "FCO Flat Cut", "description": "Precision-cut aluminum & stainless steel letterforms", "image": "/hero-bg4.jpg", "href": "/products/flat-cut-letters", "tag": null },
-          { "name": "Blade Signs", "description": "Projecting signs for maximum storefront visibility", "image": "/homepage-blade-cabinet.jpg", "href": "/products/blade-signs", "tag": null },
-          { "name": "Cabinet Signs", "description": "Illuminated cabinet & push-through signage", "image": "/hero-bg3.jpg", "href": "/products/lightboxes", "tag": null },
-          { "name": "SEG Light Boxes", "description": "Silicone-edged graphic displays from 1\" deep", "image": "/homepage-seg.jpg", "href": "/products/seg-light-boxes", "tag": "New" }
+          { "name": "Channel Letters", "description": "Front-lit, halo-lit, and combo-lit channel letters for high-visibility retail and franchise signage.", "image": "/homepage-channel-letters.jpg", "href": "/products/channel-letters", "tag": "Most Popular", "chips": ["Front-Lit", "Halo-Lit", "Combo-Lit", "LED Illuminated"], "bestFor": "Retail & Franchise" },
+          { "name": "EdgeLuxe Trimless", "description": "Architectural illuminated letters with a clean trimless profile and premium modern finish.", "image": "/hero-bg1.jpg", "href": "/products/channel-letters/trimless", "tag": "Premium", "chips": ["Trimless", "1.2\" Profile", "Embedded LEDs", "Architectural"], "bestFor": "Premium & Architectural" },
+          { "name": "Flat Cut Letters", "description": "Precision-cut aluminum and stainless steel letterforms for interior and exterior branding.", "image": "/hero-bg4.jpg", "href": "/products/flat-cut-letters", "tag": null, "chips": ["Non-Illuminated", "Aluminum", "Stainless Steel", "Dimensional"], "bestFor": "Interior & Exterior Branding" },
+          { "name": "Blade Signs", "description": "Projecting signs designed for storefront visibility in pedestrian-heavy environments.", "image": "/homepage-blade-cabinet.jpg", "href": "/products/blade-signs", "tag": null, "chips": ["Double-Sided", "Projecting", "Exterior", "Custom Shapes"], "bestFor": "Retail Storefronts" },
+          { "name": "Cabinet Signs", "description": "Illuminated cabinet and push-through signage for high visibility and broad brand presence.", "image": "/hero-bg3.jpg", "href": "/products/cabinet-signs", "tag": null, "chips": ["Illuminated", "Push-Through", "Large Format", "Exterior"], "bestFor": "Retail & Commercial" },
+          { "name": "SEG Light Boxes", "description": "Slim-profile silicone-edge graphic light boxes for modern branded environments.", "image": "/homepage-seg.jpg", "href": "/products/seg-light-boxes", "tag": "New", "chips": ["Backlit", "Fabric Graphic", "Slim Profile", "Interior"], "bestFor": "Interior Display" }
+        ]
+      }
+    },
+    {
+      "id": "why_sunlite",
+      "type": "features_grid",
+      "label": "Why Sign Shops Choose Sunlite",
+      "visible": true,
+      "data": {
+        "heading": "Why Sign Shops Choose Sunlite",
+        "items": [
+          {
+            "icon": "Shield",
+            "title": "We Never Compete With Your Clients",
+            "description": "Sunlite sells exclusively to sign companies and trade professionals. Your customer relationships stay protected."
+          },
+          {
+            "icon": "PenTool",
+            "title": "Complimentary Engineering",
+            "description": "Every project includes engineering support to help move from concept to fabrication with confidence."
+          },
+          {
+            "icon": "Clock",
+            "title": "24-Hour Quote Turnaround",
+            "description": "Fast trade quoting helps you respond quickly and keep projects moving."
+          },
+          {
+            "icon": "Settings",
+            "title": "German-Engineered Precision",
+            "description": "Our fabrication standards are rooted in European signage engineering and premium detailing."
+          },
+          {
+            "icon": "Truck",
+            "title": "Reliable USA & Canada Delivery",
+            "description": "Typical turnaround is fast, predictable, and built around trade schedules."
+          },
+          {
+            "icon": "Lock",
+            "title": "Blind / Silent Fulfillment",
+            "description": "We support your business as a manufacturing partner, not a competing sales channel."
+          }
         ]
       }
     },
@@ -118,14 +158,110 @@
       }
     },
     {
+      "id": "testimonials",
+      "type": "faq",
+      "label": "Testimonials",
+      "visible": true,
+      "data": {
+        "heading": "Trusted by Trade Partners Who Need Reliability",
+        "items": [
+          {
+            "question": "Jake Morrison, Operations Manager — SignCraft Pro, Denver CO",
+            "answer": "We switched to Sunlite for our channel letter projects last year and haven't looked back. The engineering support alone saves us hours per job, and the 3-week turnaround is consistent. They genuinely operate as a silent partner — our clients never know."
+          },
+          {
+            "question": "Maria Chen, Owner — Pacific Sign Works, Vancouver BC",
+            "answer": "What sold us was the no-channel-conflict promise. As a smaller shop, we were tired of manufacturers undercutting us. Sunlite only sells wholesale, period. The quality of their trimless letters is the best we've seen at this price point."
+          },
+          {
+            "question": "David Kowalski, Production Lead — Great Lakes Signage, Detroit MI",
+            "answer": "The quote turnaround is real — we usually get pricing back same day. Their packaging is excellent too, we've had zero damage across dozens of shipments. It's refreshing to work with a manufacturer that actually understands what installers need."
+          },
+          {
+            "question": "Sarah Bennett, VP Sales — Southern Sign Alliance, Atlanta GA",
+            "answer": "Sunlite has become our go-to for anything illuminated. The German engineering shows in the fit and finish. Our franchise clients notice the quality difference, and that makes us look good. The complimentary engineering drawings save us real money."
+          }
+        ]
+      }
+    },
+    {
+      "id": "process",
+      "type": "process_steps",
+      "label": "How It Works",
+      "visible": true,
+      "data": {
+        "heading": "From Artwork to Installation",
+        "steps": [
+          { "step": 1, "title": "Submit Artwork", "description": "Send us your artwork, drawings, or project specs. We accept all standard file formats." },
+          { "step": 2, "title": "Review & Engineering", "description": "Our team reviews your submission and provides complimentary engineering support." },
+          { "step": 3, "title": "Quote Approval", "description": "Receive a detailed wholesale quote within 24 hours. Approve to begin fabrication." },
+          { "step": 4, "title": "Fabrication & QC", "description": "Precision manufacturing with multi-point quality control at every stage." },
+          { "step": 5, "title": "Secure Packaging", "description": "Custom crating and packaging engineered to protect your signs in transit." },
+          { "step": 6, "title": "Delivery", "description": "Door-to-door shipping to your installer or job site across the USA and Canada." }
+        ]
+      }
+    },
+    {
+      "id": "story",
+      "type": "text_section",
+      "label": "Our Story",
+      "visible": true,
+      "data": {
+        "heading": "Custom European Signage,",
+        "headingHighlight": "Wholesale.",
+        "badge": "Our Story",
+        "content": "The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering \u2014 and a commitment to never compete with our customers.\n\nFrom LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.",
+        "image": "/homepage-story.png",
+        "imageAlt": "Sunlite Signs team and LKF Lichtwerbung partnership",
+        "imagePosition": "left",
+        "background": "light",
+        "linkText": "Read Our Story",
+        "linkHref": "/about"
+      }
+    },
+    {
+      "id": "resources",
+      "type": "resource_cards",
+      "label": "Resource Hub",
+      "visible": true,
+      "data": {
+        "heading": "Wholesale Signage Resources for Sign Professionals",
+        "items": [
+          { "icon": "FileText", "title": "Trimless vs Trimcap Channel Letters", "description": "Compare construction methods, aesthetics, and long-term performance for your next project.", "href": "/resources/guides/trimless-channel-letters-guide" },
+          { "icon": "Lightbulb", "title": "Front-Lit vs Halo-Lit Channel Letters", "description": "Understand the illumination options and which works best for different applications.", "href": "/resources/guides/choosing-illumination-types" },
+          { "icon": "Shield", "title": "UL Listed Signs Explained", "description": "What UL 48 listing means for code compliance, permitting, and client confidence.", "href": "/why-sunlite/ul-listing" },
+          { "icon": "Wrench", "title": "Channel Letter Installation Guide", "description": "Practical tips for installers covering mounting, wiring, and common field issues.", "href": "/resources/guides/sign-installation-tips" },
+          { "icon": "Package", "title": "Packaging & Shipping for Illuminated Signs", "description": "How we protect your signs in transit with custom crating across the USA and Canada.", "href": "/resources/guides/channel-letter-buying-guide" },
+          { "icon": "Lock", "title": "How Blind Fulfillment Works for Sign Shops", "description": "Our silent manufacturing model explained — your clients stay yours, always.", "href": "/why-sunlite/wholesale-only" }
+        ]
+      }
+    },
+    {
       "id": "cta",
       "type": "cta",
       "label": "CTA",
       "visible": true,
       "data": {
-        "heading": "Get Your Product",
-        "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "heading": "Start Your Wholesale",
+        "headingHighlight": "Sign Project.",
+        "description": "Send us your artwork, specs, or project details and receive a trade quote fast. Complimentary engineering included with every project."
+      }
+    },
+    {
+      "id": "final_trust",
+      "type": "features_grid",
+      "label": "Final Trust Block",
+      "visible": true,
+      "data": {
+        "heading": "A Manufacturing Partner for Professional Sign Shops",
+        "items": [
+          { "icon": "Shield", "title": "Wholesale Only", "description": "We sell exclusively to sign shops and trade professionals." },
+          { "icon": "Lock", "title": "No Retail Sales", "description": "Your clients are your clients. We never sell direct." },
+          { "icon": "PenTool", "title": "Engineering Included", "description": "Complimentary engineering support on every project." },
+          { "icon": "Clock", "title": "Fast Trade Quotes", "description": "24-hour quote turnaround for trade accounts." },
+          { "icon": "Truck", "title": "USA & Canada Shipping", "description": "Door-to-door delivery across North America." },
+          { "icon": "Eye", "title": "Silent Manufacturing", "description": "We operate as your blind fulfillment partner." }
+        ]
       }
     }
   ]

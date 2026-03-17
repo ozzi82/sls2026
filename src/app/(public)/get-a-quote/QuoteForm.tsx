@@ -131,17 +131,55 @@ export default function QuoteForm() {
         </select>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+          <label htmlFor="dimensions" className="block text-sm font-heading font-medium text-white/60 mb-2">
+            Dimensions
+          </label>
+          <input
+            type="text"
+            id="dimensions"
+            name="dimensions"
+            className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+            placeholder='e.g. 24" tall letters'
+          />
+        </div>
+        <div>
+          <label htmlFor="quantity" className="block text-sm font-heading font-medium text-white/60 mb-2">
+            Quantity
+          </label>
+          <input
+            type="text"
+            id="quantity"
+            name="quantity"
+            className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+            placeholder="e.g. 1 set, 12 letters"
+          />
+        </div>
+        <div>
+          <label htmlFor="deadline" className="block text-sm font-heading font-medium text-white/60 mb-2">
+            Deadline
+          </label>
+          <input
+            type="text"
+            id="deadline"
+            name="deadline"
+            className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors"
+            placeholder="e.g. 4 weeks, ASAP"
+          />
+        </div>
+      </div>
+
       <div>
         <label htmlFor="description" className="block text-sm font-heading font-medium text-white/60 mb-2">
-          Project Description *
+          Project Notes
         </label>
         <textarea
           id="description"
           name="description"
-          required
-          rows={5}
+          rows={4}
           className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-colors resize-none"
-          placeholder="Describe your project — number of letters, size, illumination type, colors, installation location, etc."
+          placeholder="Colors, illumination preferences, installation details, or any other notes..."
         />
       </div>
 
@@ -162,10 +200,16 @@ export default function QuoteForm() {
         </p>
       </div>
 
-      <button type="submit" className="btn-primary w-full sm:w-auto gap-2">
-        <Send className="w-4 h-4" />
-        Request Wholesale Pricing
-      </button>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+        <button type="submit" className="btn-primary w-full sm:w-auto gap-2">
+          <Send className="w-4 h-4" />
+          Request Wholesale Quote
+        </button>
+        <div className="flex items-center gap-2 text-white/40 text-xs">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          Typical response time: within 24 hours
+        </div>
+      </div>
 
       <p className="text-white/30 text-xs">
         Trade accounts only. Your information is kept confidential and used exclusively to prepare your wholesale quote.
