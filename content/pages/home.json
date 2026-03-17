@@ -5,7 +5,12 @@
   "seo": {
     "title": "Sunlite Signs — Wholesale Channel Letters & LED Signage Manufacturer",
     "metaDescription": "German-engineered wholesale channel letters, blade signs & illuminated signage — built for sign shops, never sold retail. UL listed. 3-week delivery.",
-    "keywords": ["wholesale channel letters", "wholesale sign manufacturer", "LED signage wholesale", "sign shop supplier"]
+    "keywords": [
+      "wholesale channel letters",
+      "wholesale sign manufacturer",
+      "LED signage wholesale",
+      "sign shop supplier"
+    ]
   },
   "blocks": [
     {
@@ -14,13 +19,21 @@
       "label": "Hero",
       "visible": true,
       "data": {
-        "badge": "Wholesale Only \u00b7 Trade Accounts",
+        "badge": "Wholesale Only · Trade Accounts",
         "h1": "Precision Signage,",
         "h1Highlight": "Exclusively Wholesale.",
-        "subtitle": "German-engineered channel letters, blade signs & illuminated signage \u2014 built for sign shops, never sold retail.",
+        "subtitle": "German-engineered channel letters, blade signs & illuminated signage — built for sign shops, never sold retail.",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
-          { "label": "View Products", "href": "/products", "variant": "secondary" }
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          },
+          {
+            "label": "View Products",
+            "href": "/products",
+            "variant": "secondary"
+          }
         ]
       }
     },
@@ -46,13 +59,29 @@
       "id": "stats",
       "type": "stats_strip",
       "label": "Stats Strip",
-      "visible": true,
+      "visible": false,
       "data": {
         "items": [
-          { "icon": "Shield", "label": "Listed & Certified", "sublabel": "UL 48" },
-          { "icon": "Clock", "label": "Quote Turnaround", "sublabel": "24h" },
-          { "icon": "Truck", "label": "Door-to-Door", "sublabel": "3 Wk" },
-          { "icon": "Zap", "label": "Nationwide Shipping", "sublabel": "US/CA" }
+          {
+            "icon": "Shield",
+            "label": "Listed & Certified",
+            "sublabel": "UL 48"
+          },
+          {
+            "icon": "Clock",
+            "label": "Quote Turnaround",
+            "sublabel": "24h"
+          },
+          {
+            "icon": "Truck",
+            "label": "Door-to-Door",
+            "sublabel": "3 Wk"
+          },
+          {
+            "icon": "Zap",
+            "label": "Nationwide Shipping",
+            "sublabel": "US/CA"
+          }
         ]
       }
     },
@@ -64,12 +93,54 @@
       "data": {
         "heading": "Real Projects Delivered to Sign Shops Across North America",
         "images": [
-          { "src": "", "alt": "Front-lit channel letters — retail storefront, Miami FL", "category": "Channel Letters", "type": "Front-Lit LED", "location": "Miami, FL", "turnaround": "18 days" },
-          { "src": "", "alt": "EdgeLuxe trimless channel letters — corporate office, Dallas TX", "category": "EdgeLuxe Trimless", "type": "Halo-Lit LED", "location": "Dallas, TX", "turnaround": "21 days" },
-          { "src": "", "alt": "Illuminated blade sign — restaurant, Chicago IL", "category": "Blade Signs", "type": "Double-Sided LED", "location": "Chicago, IL", "turnaround": "16 days" },
-          { "src": "", "alt": "Cabinet sign — franchise location, Toronto ON", "category": "Cabinet Signs", "type": "Push-Through LED", "location": "Toronto, ON", "turnaround": "19 days" },
-          { "src": "", "alt": "Halo-lit channel letters — hotel entrance, Las Vegas NV", "category": "Channel Letters", "type": "Halo-Lit LED", "location": "Las Vegas, NV", "turnaround": "20 days" },
-          { "src": "", "alt": "SEG light box — retail interior, New York NY", "category": "SEG Light Boxes", "type": "Backlit Fabric", "location": "New York, NY", "turnaround": "14 days" }
+          {
+            "src": "",
+            "alt": "Front-lit channel letters — retail storefront, Miami FL",
+            "category": "Channel Letters",
+            "type": "Front-Lit LED",
+            "location": "Miami, FL",
+            "turnaround": "18 days"
+          },
+          {
+            "src": "",
+            "alt": "EdgeLuxe trimless channel letters — corporate office, Dallas TX",
+            "category": "EdgeLuxe Trimless",
+            "type": "Halo-Lit LED",
+            "location": "Dallas, TX",
+            "turnaround": "21 days"
+          },
+          {
+            "src": "",
+            "alt": "Illuminated blade sign — restaurant, Chicago IL",
+            "category": "Blade Signs",
+            "type": "Double-Sided LED",
+            "location": "Chicago, IL",
+            "turnaround": "16 days"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — franchise location, Toronto ON",
+            "category": "Cabinet Signs",
+            "type": "Push-Through LED",
+            "location": "Toronto, ON",
+            "turnaround": "19 days"
+          },
+          {
+            "src": "",
+            "alt": "Halo-lit channel letters — hotel entrance, Las Vegas NV",
+            "category": "Channel Letters",
+            "type": "Halo-Lit LED",
+            "location": "Las Vegas, NV",
+            "turnaround": "20 days"
+          },
+          {
+            "src": "",
+            "alt": "SEG light box — retail interior, New York NY",
+            "category": "SEG Light Boxes",
+            "type": "Backlit Fabric",
+            "location": "New York, NY",
+            "turnaround": "14 days"
+          }
         ]
       }
     },
@@ -83,12 +154,90 @@
         "headingHighlight": "Build",
         "description": "Precision-engineered signage solutions, manufactured exclusively for the trade.",
         "items": [
-          { "name": "Channel Letters", "description": "Front-lit, halo-lit, and combo-lit channel letters for high-visibility retail and franchise signage.", "image": "/homepage-channel-letters.jpg", "href": "/products/channel-letters", "tag": "Most Popular", "chips": ["Front-Lit", "Halo-Lit", "Combo-Lit", "LED Illuminated"], "bestFor": "Retail & Franchise" },
-          { "name": "EdgeLuxe Trimless", "description": "Architectural illuminated letters with a clean trimless profile and premium modern finish.", "image": "/hero-bg1.jpg", "href": "/products/channel-letters/trimless", "tag": "Premium", "chips": ["Trimless", "1.2\" Profile", "Embedded LEDs", "Architectural"], "bestFor": "Premium & Architectural" },
-          { "name": "Flat Cut Letters", "description": "Precision-cut aluminum and stainless steel letterforms for interior and exterior branding.", "image": "/hero-bg4.jpg", "href": "/products/flat-cut-letters", "tag": null, "chips": ["Non-Illuminated", "Aluminum", "Stainless Steel", "Dimensional"], "bestFor": "Interior & Exterior Branding" },
-          { "name": "Blade Signs", "description": "Projecting signs designed for storefront visibility in pedestrian-heavy environments.", "image": "/homepage-blade-cabinet.jpg", "href": "/products/blade-signs", "tag": null, "chips": ["Double-Sided", "Projecting", "Exterior", "Custom Shapes"], "bestFor": "Retail Storefronts" },
-          { "name": "Cabinet Signs", "description": "Illuminated cabinet and push-through signage for high visibility and broad brand presence.", "image": "/hero-bg3.jpg", "href": "/products/cabinet-signs", "tag": null, "chips": ["Illuminated", "Push-Through", "Large Format", "Exterior"], "bestFor": "Retail & Commercial" },
-          { "name": "SEG Light Boxes", "description": "Slim-profile silicone-edge graphic light boxes for modern branded environments.", "image": "/homepage-seg.jpg", "href": "/products/seg-light-boxes", "tag": "New", "chips": ["Backlit", "Fabric Graphic", "Slim Profile", "Interior"], "bestFor": "Interior Display" }
+          {
+            "name": "Channel Letters",
+            "description": "Front-lit, halo-lit, and combo-lit channel letters for high-visibility retail and franchise signage.",
+            "image": "/homepage-channel-letters.jpg",
+            "href": "/products/channel-letters",
+            "tag": "Most Popular",
+            "chips": [
+              "Front-Lit",
+              "Halo-Lit",
+              "Combo-Lit",
+              "LED Illuminated"
+            ],
+            "bestFor": "Retail & Franchise"
+          },
+          {
+            "name": "EdgeLuxe Trimless",
+            "description": "Architectural illuminated letters with a clean trimless profile and premium modern finish.",
+            "image": "/hero-bg1.jpg",
+            "href": "/products/channel-letters/trimless",
+            "tag": "Premium",
+            "chips": [
+              "Trimless",
+              "1.2\" Profile",
+              "Embedded LEDs",
+              "Architectural"
+            ],
+            "bestFor": "Premium & Architectural"
+          },
+          {
+            "name": "Flat Cut Letters",
+            "description": "Precision-cut aluminum and stainless steel letterforms for interior and exterior branding.",
+            "image": "/hero-bg4.jpg",
+            "href": "/products/flat-cut-letters",
+            "tag": null,
+            "chips": [
+              "Non-Illuminated",
+              "Aluminum",
+              "Stainless Steel",
+              "Dimensional"
+            ],
+            "bestFor": "Interior & Exterior Branding"
+          },
+          {
+            "name": "Blade Signs",
+            "description": "Projecting signs designed for storefront visibility in pedestrian-heavy environments.",
+            "image": "/homepage-blade-cabinet.jpg",
+            "href": "/products/blade-signs",
+            "tag": null,
+            "chips": [
+              "Double-Sided",
+              "Projecting",
+              "Exterior",
+              "Custom Shapes"
+            ],
+            "bestFor": "Retail Storefronts"
+          },
+          {
+            "name": "Cabinet Signs",
+            "description": "Illuminated cabinet and push-through signage for high visibility and broad brand presence.",
+            "image": "/hero-bg3.jpg",
+            "href": "/products/cabinet-signs",
+            "tag": null,
+            "chips": [
+              "Illuminated",
+              "Push-Through",
+              "Large Format",
+              "Exterior"
+            ],
+            "bestFor": "Retail & Commercial"
+          },
+          {
+            "name": "SEG Light Boxes",
+            "description": "Slim-profile silicone-edge graphic light boxes for modern branded environments.",
+            "image": "/homepage-seg.jpg",
+            "href": "/products/seg-light-boxes",
+            "tag": "New",
+            "chips": [
+              "Backlit",
+              "Fabric Graphic",
+              "Slim Profile",
+              "Interior"
+            ],
+            "bestFor": "Interior Display"
+          }
         ]
       }
     },
@@ -142,7 +291,7 @@
         "heading": "Complimentary",
         "headingHighlight": "Engineering.",
         "badge": "Included with Every Project",
-        "content": "With our German design and engineering roots, we contribute complimentary engineering services to every project \u2014 from conceptual integration of structural and material sciences, to manufacturing engineering and packaging.",
+        "content": "With our German design and engineering roots, we contribute complimentary engineering services to every project — from conceptual integration of structural and material sciences, to manufacturing engineering and packaging.",
         "image": "/homepage-engineering.jpg",
         "imageAlt": "Sunlite Signs engineering team designing channel letters",
         "imagePosition": "right",
@@ -192,12 +341,36 @@
       "data": {
         "heading": "From Artwork to Installation",
         "steps": [
-          { "step": 1, "title": "Submit Artwork", "description": "Send us your artwork, drawings, or project specs. We accept all standard file formats." },
-          { "step": 2, "title": "Review & Engineering", "description": "Our team reviews your submission and provides complimentary engineering support." },
-          { "step": 3, "title": "Quote Approval", "description": "Receive a detailed wholesale quote within 24 hours. Approve to begin fabrication." },
-          { "step": 4, "title": "Fabrication & QC", "description": "Precision manufacturing with multi-point quality control at every stage." },
-          { "step": 5, "title": "Secure Packaging", "description": "Custom crating and packaging engineered to protect your signs in transit." },
-          { "step": 6, "title": "Delivery", "description": "Door-to-door shipping to your installer or job site across the USA and Canada." }
+          {
+            "step": 1,
+            "title": "Submit Artwork",
+            "description": "Send us your artwork, drawings, or project specs. We accept all standard file formats."
+          },
+          {
+            "step": 2,
+            "title": "Review & Engineering",
+            "description": "Our team reviews your submission and provides complimentary engineering support."
+          },
+          {
+            "step": 3,
+            "title": "Quote Approval",
+            "description": "Receive a detailed wholesale quote within 24 hours. Approve to begin fabrication."
+          },
+          {
+            "step": 4,
+            "title": "Fabrication & QC",
+            "description": "Precision manufacturing with multi-point quality control at every stage."
+          },
+          {
+            "step": 5,
+            "title": "Secure Packaging",
+            "description": "Custom crating and packaging engineered to protect your signs in transit."
+          },
+          {
+            "step": 6,
+            "title": "Delivery",
+            "description": "Door-to-door shipping to your installer or job site across the USA and Canada."
+          }
         ]
       }
     },
@@ -210,7 +383,7 @@
         "heading": "Custom European Signage,",
         "headingHighlight": "Wholesale.",
         "badge": "Our Story",
-        "content": "The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering \u2014 and a commitment to never compete with our customers.\n\nFrom LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.",
+        "content": "The foundation of Sunlite Signs begins with a partnership rooted in German precision engineering — and a commitment to never compete with our customers.\n\nFrom LKF Lichtwerbung in Nuremberg to Florida, we bring decades of European signage expertise exclusively to the trade.",
         "image": "/homepage-story.png",
         "imageAlt": "Sunlite Signs team and LKF Lichtwerbung partnership",
         "imagePosition": "left",
@@ -227,12 +400,42 @@
       "data": {
         "heading": "Wholesale Signage Resources for Sign Professionals",
         "items": [
-          { "icon": "FileText", "title": "Trimless vs Trimcap Channel Letters", "description": "Compare construction methods, aesthetics, and long-term performance for your next project.", "href": "/resources/guides/trimless-channel-letters-guide" },
-          { "icon": "Lightbulb", "title": "Front-Lit vs Halo-Lit Channel Letters", "description": "Understand the illumination options and which works best for different applications.", "href": "/resources/guides/choosing-illumination-types" },
-          { "icon": "Shield", "title": "UL Listed Signs Explained", "description": "What UL 48 listing means for code compliance, permitting, and client confidence.", "href": "/why-sunlite/ul-listing" },
-          { "icon": "Wrench", "title": "Channel Letter Installation Guide", "description": "Practical tips for installers covering mounting, wiring, and common field issues.", "href": "/resources/guides/sign-installation-tips" },
-          { "icon": "Package", "title": "Packaging & Shipping for Illuminated Signs", "description": "How we protect your signs in transit with custom crating across the USA and Canada.", "href": "/resources/guides/channel-letter-buying-guide" },
-          { "icon": "Lock", "title": "How Blind Fulfillment Works for Sign Shops", "description": "Our silent manufacturing model explained — your clients stay yours, always.", "href": "/why-sunlite/wholesale-only" }
+          {
+            "icon": "FileText",
+            "title": "Trimless vs Trimcap Channel Letters",
+            "description": "Compare construction methods, aesthetics, and long-term performance for your next project.",
+            "href": "/resources/guides/trimless-channel-letters-guide"
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Front-Lit vs Halo-Lit Channel Letters",
+            "description": "Understand the illumination options and which works best for different applications.",
+            "href": "/resources/guides/choosing-illumination-types"
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed Signs Explained",
+            "description": "What UL 48 listing means for code compliance, permitting, and client confidence.",
+            "href": "/why-sunlite/ul-listing"
+          },
+          {
+            "icon": "Wrench",
+            "title": "Channel Letter Installation Guide",
+            "description": "Practical tips for installers covering mounting, wiring, and common field issues.",
+            "href": "/resources/guides/sign-installation-tips"
+          },
+          {
+            "icon": "Package",
+            "title": "Packaging & Shipping for Illuminated Signs",
+            "description": "How we protect your signs in transit with custom crating across the USA and Canada.",
+            "href": "/resources/guides/channel-letter-buying-guide"
+          },
+          {
+            "icon": "Lock",
+            "title": "How Blind Fulfillment Works for Sign Shops",
+            "description": "Our silent manufacturing model explained — your clients stay yours, always.",
+            "href": "/why-sunlite/wholesale-only"
+          }
         ]
       }
     },
@@ -255,12 +458,36 @@
       "data": {
         "heading": "A Manufacturing Partner for Professional Sign Shops",
         "items": [
-          { "icon": "Shield", "title": "Wholesale Only", "description": "We sell exclusively to sign shops and trade professionals." },
-          { "icon": "Lock", "title": "No Retail Sales", "description": "Your clients are your clients. We never sell direct." },
-          { "icon": "PenTool", "title": "Engineering Included", "description": "Complimentary engineering support on every project." },
-          { "icon": "Clock", "title": "Fast Trade Quotes", "description": "24-hour quote turnaround for trade accounts." },
-          { "icon": "Truck", "title": "USA & Canada Shipping", "description": "Door-to-door delivery across North America." },
-          { "icon": "Eye", "title": "Silent Manufacturing", "description": "We operate as your blind fulfillment partner." }
+          {
+            "icon": "Shield",
+            "title": "Wholesale Only",
+            "description": "We sell exclusively to sign shops and trade professionals."
+          },
+          {
+            "icon": "Lock",
+            "title": "No Retail Sales",
+            "description": "Your clients are your clients. We never sell direct."
+          },
+          {
+            "icon": "PenTool",
+            "title": "Engineering Included",
+            "description": "Complimentary engineering support on every project."
+          },
+          {
+            "icon": "Clock",
+            "title": "Fast Trade Quotes",
+            "description": "24-hour quote turnaround for trade accounts."
+          },
+          {
+            "icon": "Truck",
+            "title": "USA & Canada Shipping",
+            "description": "Door-to-door delivery across North America."
+          },
+          {
+            "icon": "Eye",
+            "title": "Silent Manufacturing",
+            "description": "We operate as your blind fulfillment partner."
+          }
         ]
       }
     }
