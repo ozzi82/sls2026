@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPageBySlug, updatePage, deletePage } from "@/lib/admin/pages";
 import { landingPageSchema } from "@/lib/admin/validation";
+import { appendEditLog } from "@/lib/admin/site-settings";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +35,7 @@ export async function PUT(
     return NextResponse.json({ error: result.error }, { status: 404 });
   }
 
+  appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
   return NextResponse.json({ success: true, page: parsed.data });
 }
 

@@ -9,7 +9,7 @@ export async function GET() {
     const settings = loadSiteSettings()
     const hasServiceAccount = !!process.env.GOOGLE_SERVICE_ACCOUNT_KEY
     return NextResponse.json({ ...settings, hasServiceAccount })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to load settings" }, { status: 500 })
   }
 }
@@ -28,7 +28,7 @@ export async function PUT(request: Request) {
 
     saveSiteSettings(result.data)
     return NextResponse.json({ success: true })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to save settings" }, { status: 500 })
   }
 }

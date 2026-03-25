@@ -44,7 +44,7 @@ export async function GET() {
       seoIssues,
       recentEdits: editLog.slice(0, 5),
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to load analytics" }, { status: 500 })
   }
 }

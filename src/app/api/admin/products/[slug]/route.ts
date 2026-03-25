@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getProductConfig, updateProductConfig } from "@/lib/admin/page-config";
 import { pageConfigSchema } from "@/lib/admin/validation";
+import { appendEditLog } from "@/lib/admin/site-settings";
 import { revalidatePath } from "next/cache";
 
 export const dynamic = "force-dynamic";
@@ -36,6 +37,7 @@ export async function PUT(
   }
 
   revalidatePath(parsed.data.slug);
+  appendEditLog({ slug: parsed.data.slug, pageType: "product", label: parsed.data.label });
 
   return NextResponse.json({ success: true });
 }
