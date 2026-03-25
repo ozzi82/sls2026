@@ -65,7 +65,8 @@ Each widget is a self-contained card component. Unconfigured services show a "Co
 ### Admin Settings Page (`/admin/integrations/google`)
 
 Fields:
-- GA4 Measurement ID (e.g., `G-XXXXXXXXXX`) + enable toggle
+- GA4 Measurement ID (e.g., `G-XXXXXXXXXX`) + enable toggle — used for client-side tracking script
+- GA4 Property ID (e.g., `123456789`) — numeric ID used for GA4 Data API dashboard queries
 - GTM Container ID (e.g., `GTM-XXXXXXX`) + enable toggle
 - Google Ads Conversion ID (e.g., `AW-XXXXXXXXX`) + enable toggle
 - Google Ads Conversion Label
@@ -168,6 +169,7 @@ Consent config is inlined into the public layout as a server-rendered `<script>`
   "google": {
     "enabled": false,
     "ga4MeasurementId": "",
+    "ga4PropertyId": "",
     "gtmContainerId": "",
     "adsConversionId": "",
     "adsConversionLabel": "",
