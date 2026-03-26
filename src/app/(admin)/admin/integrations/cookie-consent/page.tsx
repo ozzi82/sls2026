@@ -1,24 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Plus, Trash2 } from "lucide-react";
+import ToggleSwitch from "@/components/admin/ToggleSwitch";
+import { useSettingsSection } from "@/hooks/useSettingsSection";
 import type {
-  SiteSettings,
   CookieConsentSettings,
   ConsentCategory,
   ConsentColors,
 } from "@/lib/admin/site-settings-types";
-
-const DEFAULT_CATEGORY: ConsentCategory = {
-  id: "necessary",
-  name: "Necessary",
-  description: "Essential cookies required for the website to function.",
-  required: true,
-  integrations: [],
-};
 
 const INTEGRATION_OPTIONS = [
   { value: "ga4", label: "Google Analytics 4" },
@@ -35,31 +27,7 @@ function nameToId(name: string): string {
 }
 
 export default function CookieConsentSettingsPage() {
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
-  const [fullSettings, setFullSettings] = useState<SiteSettings | null>(null);
-  const [form, setForm] = useState<CookieConsentSettings>({
-    enabled: false,
-    position: "bottom-bar",
-    title: "",
-    description: "",
-    acceptAllText: "Accept All",
-    rejectAllText: "Reject All",
-    manageText: "Manage Preferences",
-    privacyPolicyUrl: "",
-    consentExpiryDays: 365,
-    colors: {
-      bannerBg: "#1f2937",
-      bannerText: "#f9fafb",
-      acceptBg: "#2563eb",
-      acceptText: "#ffffff",
-      rejectBg: "#4b5563",
-      rejectText: "#ffffff",
-      manageBg: "transparent",
-      manageText: "#d1d5db",
-    },
-    categories: [{ ...DEFAULT_CATEGORY }],
-  });
+  const { form, setForm, loading, saving, handleSave } = useSettingsSection("cookieConsent");
 
   // Collapsible sections
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -69,21 +37,6 @@ export default function CookieConsentSettingsPage() {
     categories: false,
   });
 
-  // Track transparent manage bg
-  const [manageBgTransparent, setManageBgTransparent] = useState(false);
-
-  useEffect(() => {
-    fetch("/api/admin/settings")
-      .then((r) => r.json())
-      .then((data: SiteSettings & { hasServiceAccount: boolean }) => {
-        setFullSettings(data);
-        setForm(data.cookieConsent);
-        setManageBgTransparent(data.cookieConsent.colors.manageBg === "transparent");
-      })
-      .catch(() => toast.error("Failed to load settings"))
-      .finally(() => setLoading(false));
-  }, []);
-
   function toggleSection(key: string) {
     setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }));
   }
@@ -92,21 +45,21 @@ export default function CookieConsentSettingsPage() {
     key: K,
     value: CookieConsentSettings[K]
   ) {
-    setForm((prev) => ({ ...prev, [key]: value }));
+    setForm((prev) => prev ? { ...prev, [key]: value } : prev);
   }
 
   function updateColor<K extends keyof ConsentColors>(key: K, value: string) {
-    setForm((prev) => ({
+    setForm((prev) => prev ? ({
       ...prev,
       colors: { ...prev.colors, [key]: value },
-    }));
+    }) : prev);
   }
 
   function updateCategory(index: number, partial: Partial<ConsentCategory>) {
     setForm((prev) => {
+      if (!prev) return prev;
       const cats = [...prev.categories];
       cats[index] = { ...cats[index], ...partial };
-      // Auto-generate ID from name if name changed
       if (partial.name !== undefined && index > 0) {
         cats[index].id = nameToId(partial.name);
       }
@@ -116,6 +69,7 @@ export default function CookieConsentSettingsPage() {
 
   function toggleCategoryIntegration(catIndex: number, integration: string) {
     setForm((prev) => {
+      if (!prev) return prev;
       const cats = [...prev.categories];
       const current = cats[catIndex].integrations;
       cats[catIndex] = {
@@ -129,61 +83,23 @@ export default function CookieConsentSettingsPage() {
   }
 
   function addCategory() {
-    setForm((prev) => ({
+    setForm((prev) => prev ? ({
       ...prev,
       categories: [
         ...prev.categories,
-        {
-          id: "",
-          name: "",
-          description: "",
-          required: false,
-          integrations: [],
-        },
+        { id: "", name: "", description: "", required: false, integrations: [] },
       ],
-    }));
+    }) : prev);
   }
 
   function removeCategory(index: number) {
-    setForm((prev) => ({
+    setForm((prev) => prev ? ({
       ...prev,
       categories: prev.categories.filter((_, i) => i !== index),
-    }));
+    }) : prev);
   }
 
-  async function handleSave() {
-    if (!fullSettings) return;
-    setSaving(true);
-    try {
-      // Apply transparent override
-      const finalForm = {
-        ...form,
-        colors: {
-          ...form.colors,
-          manageBg: manageBgTransparent ? "transparent" : form.colors.manageBg,
-        },
-      };
-      const body: SiteSettings = {
-        ...fullSettings,
-        cookieConsent: finalForm,
-      };
-      const res = await fetch("/api/admin/settings", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      if (!res.ok) throw new Error("Save failed");
-      setFullSettings(body);
-      setForm(finalForm);
-      toast.success("Settings saved");
-    } catch {
-      toast.error("Failed to save settings");
-    } finally {
-      setSaving(false);
-    }
-  }
-
-  if (loading) {
+  if (loading || !form) {
     return (
       <div className="flex items-center justify-center h-64">
         <p className="text-gray-500">Loading settings...</p>
@@ -191,7 +107,8 @@ export default function CookieConsentSettingsPage() {
     );
   }
 
-  const effectiveManageBg = manageBgTransparent ? "transparent" : form.colors.manageBg;
+  // Derive transparent state from form data (no redundant state)
+  const manageBgTransparent = form.colors.manageBg === "transparent";
 
   return (
     <div className="max-w-3xl">
@@ -208,15 +125,11 @@ export default function CookieConsentSettingsPage() {
           onToggle={() => toggleSection("general")}
         >
           <div className="space-y-5">
-            <label className="flex items-center gap-3 cursor-pointer">
-              <Toggle
-                checked={form.enabled}
-                onChange={(v) => updateForm("enabled", v)}
-              />
-              <span className="text-sm font-medium text-gray-900">
-                Enable Cookie Consent Banner
-              </span>
-            </label>
+            <ToggleSwitch
+              checked={form.enabled}
+              onChange={(v) => updateForm("enabled", v)}
+              label="Enable Cookie Consent Banner"
+            />
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -380,10 +293,7 @@ export default function CookieConsentSettingsPage() {
                   type="checkbox"
                   checked={manageBgTransparent}
                   onChange={(e) => {
-                    setManageBgTransparent(e.target.checked);
-                    if (e.target.checked) {
-                      updateColor("manageBg", "transparent");
-                    }
+                    updateColor("manageBg", e.target.checked ? "transparent" : "#000000");
                   }}
                   className="rounded border-gray-300"
                 />
@@ -538,10 +448,10 @@ export default function CookieConsentSettingsPage() {
               <span
                 className="inline-block rounded px-3 py-1.5 text-xs font-medium"
                 style={{
-                  backgroundColor: effectiveManageBg,
+                  backgroundColor: form.colors.manageBg,
                   color: form.colors.manageText,
                   border:
-                    effectiveManageBg === "transparent"
+                    form.colors.manageBg === "transparent"
                       ? `1px solid ${form.colors.manageText}`
                       : "none",
                 }}
@@ -554,7 +464,7 @@ export default function CookieConsentSettingsPage() {
 
         {/* Save */}
         <div className="pt-4 pb-8">
-          <Button onClick={handleSave} disabled={saving}>
+          <Button onClick={() => handleSave(form)} disabled={saving}>
             {saving ? "Saving..." : "Save Settings"}
           </Button>
         </div>
@@ -598,32 +508,6 @@ function Section({
         <div className="px-4 pb-4 pt-1">{children}</div>
       </div>
     </div>
-  );
-}
-
-function Toggle({
-  checked,
-  onChange,
-}: {
-  checked: boolean;
-  onChange: (v: boolean) => void;
-}) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={checked}
-      onClick={() => onChange(!checked)}
-      className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors ${
-        checked ? "bg-blue-600" : "bg-gray-200"
-      }`}
-    >
-      <span
-        className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow ring-0 transition-transform ${
-          checked ? "translate-x-5" : "translate-x-0"
-        }`}
-      />
-    </button>
   );
 }
 

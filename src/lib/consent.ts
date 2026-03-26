@@ -51,26 +51,23 @@ export function revokeConsentCookies(revokedCategories: string[], categories: Co
     openreplay: ["__openreplay_*"],
   }
 
+  const hostname = window.location.hostname
+  const allCookieNames = document.cookie.split("; ").map((c) => c.split("=")[0])
+
+  const deleteCookie = (cookieName: string) => {
+    const domains = [hostname, `.${hostname}`, ""]
+    for (const domain of domains) {
+      const domainStr = domain ? `;domain=${domain}` : ""
+      document.cookie = `${cookieName}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/${domainStr}`
+    }
+  }
+
   for (const integration of revokedIntegrations) {
     const cookies = cookiesToDelete[integration] || []
     for (const name of cookies) {
-      const deleteCookie = (cookieName: string) => {
-        const hostname = window.location.hostname
-        const domains = [hostname, `.${hostname}`, ""]
-        for (const domain of domains) {
-          const domainStr = domain ? `;domain=${domain}` : ""
-          document.cookie = `${cookieName}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/${domainStr}`
-        }
-      }
-
       if (name.includes("*")) {
         const prefix = name.replace("*", "")
-        document.cookie.split("; ").forEach((c) => {
-          const cookieName = c.split("=")[0]
-          if (cookieName.startsWith(prefix)) {
-            deleteCookie(cookieName)
-          }
-        })
+        allCookieNames.filter((n) => n.startsWith(prefix)).forEach(deleteCookie)
       } else {
         deleteCookie(name)
       }

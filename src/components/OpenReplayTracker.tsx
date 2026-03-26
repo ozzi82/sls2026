@@ -42,7 +42,11 @@ export default function OpenReplayTracker({ openreplay, consentCategories }: Pro
       }
     }
     window.addEventListener("consent-updated", onConsentChange)
-    return () => window.removeEventListener("consent-updated", onConsentChange)
+    return () => {
+      window.removeEventListener("consent-updated", onConsentChange)
+      trackerRef.current?.stop()
+      trackerRef.current = null
+    }
   }, [openreplay, consentCategories])
 
   return null

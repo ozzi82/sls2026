@@ -1,10 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { Monitor, Play } from "lucide-react"
 import DashboardWidget from "./DashboardWidget"
 
-interface ORData {
+export interface ORData {
   configured: boolean
   message?: string
   error?: string
@@ -17,23 +16,10 @@ interface ORData {
   }[]
 }
 
-function useOpenReplay() {
-  const [data, setData] = useState<ORData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch("/api/admin/analytics/openreplay")
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to fetch")
-        return r.json()
-      })
-      .then(setData)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false))
-  }, [])
-
-  return { data, loading, error }
+interface WidgetProps {
+  data: ORData | null
+  loading: boolean
+  error: string | null
 }
 
 function formatDuration(ms: number): string {
@@ -44,9 +30,7 @@ function formatDuration(ms: number): string {
   return `${minutes}m ${remaining}s`
 }
 
-export function ActiveSessionsWidget() {
-  const { data, loading, error } = useOpenReplay()
-
+export function ActiveSessionsWidget({ data, loading, error }: WidgetProps) {
   if (!loading && !error && data && !data.configured) {
     return (
       <DashboardWidget
@@ -79,9 +63,7 @@ export function ActiveSessionsWidget() {
   )
 }
 
-export function RecentRecordingsWidget() {
-  const { data, loading, error } = useOpenReplay()
-
+export function RecentRecordingsWidget({ data, loading, error }: WidgetProps) {
   if (!loading && !error && data && !data.configured) {
     return (
       <DashboardWidget

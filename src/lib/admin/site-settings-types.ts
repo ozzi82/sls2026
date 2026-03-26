@@ -60,17 +60,6 @@ export interface EditLogEntry {
   timestamp: string
 }
 
-// Public consent config (no secrets) — inlined into layout
-export interface PublicConsentConfig {
-  enabled: boolean
-  position: "bottom-bar" | "bottom-left" | "bottom-right"
-  title: string
-  description: string
-  acceptAllText: string
-  rejectAllText: string
-  manageText: string
-  privacyPolicyUrl: string
-  consentExpiryDays: number
-  colors: ConsentColors
-  categories: ConsentCategory[]
-}
+// Public consent config (no secrets) — currently identical to CookieConsentSettings
+// Kept as separate type alias in case the public shape diverges in the future
+export type PublicConsentConfig = CookieConsentSettings

@@ -6,10 +6,19 @@ const SETTINGS_PATH = path.join(process.cwd(), "content/settings/site-settings.j
 const EDIT_LOG_PATH = path.join(process.cwd(), "content/settings/edit-log.json")
 const MAX_EDIT_LOG_ENTRIES = 50
 
+// Module-level cache to avoid re-reading file on every request
+let settingsCache: { data: SiteSettings; ts: number } | null = null
+const SETTINGS_CACHE_TTL = 5000 // 5 seconds
+
 export function loadSiteSettings(): SiteSettings {
+  if (settingsCache && Date.now() - settingsCache.ts < SETTINGS_CACHE_TTL) {
+    return settingsCache.data
+  }
   try {
     const raw = fs.readFileSync(SETTINGS_PATH, "utf-8")
-    return JSON.parse(raw)
+    const data = JSON.parse(raw)
+    settingsCache = { data, ts: Date.now() }
+    return data
   } catch {
     return getDefaultSettings()
   }
@@ -17,27 +26,14 @@ export function loadSiteSettings(): SiteSettings {
 
 export function saveSiteSettings(settings: SiteSettings): void {
   const dir = path.dirname(SETTINGS_PATH)
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true })
-  }
+  fs.mkdirSync(dir, { recursive: true })
   fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2), "utf-8")
+  // Invalidate cache on write
+  settingsCache = { data: settings, ts: Date.now() }
 }
 
 export function getPublicConsentConfig(settings: SiteSettings): PublicConsentConfig {
-  const { cookieConsent } = settings
-  return {
-    enabled: cookieConsent.enabled,
-    position: cookieConsent.position,
-    title: cookieConsent.title,
-    description: cookieConsent.description,
-    acceptAllText: cookieConsent.acceptAllText,
-    rejectAllText: cookieConsent.rejectAllText,
-    manageText: cookieConsent.manageText,
-    privacyPolicyUrl: cookieConsent.privacyPolicyUrl,
-    consentExpiryDays: cookieConsent.consentExpiryDays,
-    colors: cookieConsent.colors,
-    categories: cookieConsent.categories,
-  }
+  return settings.cookieConsent
 }
 
 export function loadEditLog(): EditLogEntry[] {

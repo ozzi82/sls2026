@@ -1,10 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { BarChart3, TrendingUp, Globe } from "lucide-react"
 import DashboardWidget from "./DashboardWidget"
 
-interface GAData {
+export interface GAData {
   configured: boolean
   message?: string
   error?: string
@@ -14,28 +13,13 @@ interface GAData {
   trafficSources?: { source: string; sessions: string }[]
 }
 
-function useGoogleAnalytics() {
-  const [data, setData] = useState<GAData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch("/api/admin/analytics/google")
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to fetch")
-        return r.json()
-      })
-      .then(setData)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false))
-  }, [])
-
-  return { data, loading, error }
+interface WidgetProps {
+  data: GAData | null
+  loading: boolean
+  error: string | null
 }
 
-export function VisitorsWidget() {
-  const { data, loading, error } = useGoogleAnalytics()
-
+export function VisitorsWidget({ data, loading, error }: WidgetProps) {
   if (!loading && !error && data && !data.configured) {
     return (
       <DashboardWidget
@@ -76,9 +60,7 @@ export function VisitorsWidget() {
   )
 }
 
-export function TopPagesWidget() {
-  const { data, loading, error } = useGoogleAnalytics()
-
+export function TopPagesWidget({ data, loading, error }: WidgetProps) {
   if (!loading && !error && data && !data.configured) {
     return (
       <DashboardWidget
@@ -121,9 +103,7 @@ export function TopPagesWidget() {
   )
 }
 
-export function TrafficSourcesWidget() {
-  const { data, loading, error } = useGoogleAnalytics()
-
+export function TrafficSourcesWidget({ data, loading, error }: WidgetProps) {
   if (!loading && !error && data && !data.configured) {
     return (
       <DashboardWidget

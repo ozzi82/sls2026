@@ -1,74 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import type { SiteSettings, GoogleSettings } from "@/lib/admin/site-settings-types";
+import ToggleSwitch from "@/components/admin/ToggleSwitch";
+import { useSettingsSection } from "@/hooks/useSettingsSection";
+import type { GoogleSettings } from "@/lib/admin/site-settings-types";
 
 export default function GoogleSettingsPage() {
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
-  const [fullSettings, setFullSettings] = useState<SiteSettings | null>(null);
-  const [hasServiceAccount, setHasServiceAccount] = useState(false);
-  const [form, setForm] = useState<GoogleSettings>({
-    enabled: false,
-    ga4MeasurementId: "",
-    ga4PropertyId: "",
-    gtmContainerId: "",
-    adsConversionId: "",
-    adsConversionLabel: "",
-  });
+  const { form, setForm, loading, saving, handleSave, hasServiceAccount } =
+    useSettingsSection("google");
 
-  useEffect(() => {
-    fetch("/api/admin/settings")
-      .then((r) => r.json())
-      .then((data: SiteSettings & { hasServiceAccount: boolean }) => {
-        setFullSettings(data);
-        setHasServiceAccount(data.hasServiceAccount);
-        setForm(data.google);
-      })
-      .catch(() => toast.error("Failed to load settings"))
-      .finally(() => setLoading(false));
-  }, []);
-
-  function update<K extends keyof GoogleSettings>(key: K, value: GoogleSettings[K]) {
-    setForm((prev) => ({ ...prev, [key]: value }));
-  }
-
-  async function handleSave() {
-    if (!fullSettings) return;
-    setSaving(true);
-    try {
-      const body: SiteSettings = {
-        ...fullSettings,
-        google: form,
-      };
-      const res = await fetch("/api/admin/settings", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      if (!res.ok) throw new Error("Save failed");
-      setFullSettings(body);
-      toast.success("Settings saved");
-    } catch {
-      toast.error("Failed to save settings");
-    } finally {
-      setSaving(false);
-    }
-  }
-
-  const showDoubleTrackingWarning =
-    form.ga4MeasurementId.trim() !== "" && form.gtmContainerId.trim() !== "";
-
-  if (loading) {
+  if (loading || !form) {
     return (
       <div className="flex items-center justify-center h-64">
         <p className="text-gray-500">Loading settings...</p>
       </div>
     );
   }
+
+  function update<K extends keyof GoogleSettings>(key: K, value: GoogleSettings[K]) {
+    setForm((prev) => prev ? { ...prev, [key]: value } : prev);
+  }
+
+  const showDoubleTrackingWarning =
+    form.ga4MeasurementId.trim() !== "" && form.gtmContainerId.trim() !== "";
 
   return (
     <div className="max-w-2xl">
@@ -78,27 +33,12 @@ export default function GoogleSettingsPage() {
       </p>
 
       <div className="space-y-6">
-        {/* Enable toggle */}
-        <label className="flex items-center gap-3 cursor-pointer">
-          <button
-            type="button"
-            role="switch"
-            aria-checked={form.enabled}
-            onClick={() => update("enabled", !form.enabled)}
-            className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors ${
-              form.enabled ? "bg-blue-600" : "bg-gray-200"
-            }`}
-          >
-            <span
-              className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow ring-0 transition-transform ${
-                form.enabled ? "translate-x-5" : "translate-x-0"
-              }`}
-            />
-          </button>
-          <span className="text-sm font-medium text-gray-900">Enable Google Integration</span>
-        </label>
+        <ToggleSwitch
+          checked={form.enabled}
+          onChange={(v) => update("enabled", v)}
+          label="Enable Google Integration"
+        />
 
-        {/* GA4 Measurement ID */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             GA4 Measurement ID
@@ -113,7 +53,6 @@ export default function GoogleSettingsPage() {
           </p>
         </div>
 
-        {/* GA4 Property ID */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             GA4 Property ID
@@ -129,7 +68,6 @@ export default function GoogleSettingsPage() {
           </p>
         </div>
 
-        {/* GTM Container ID */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             GTM Container ID
@@ -142,7 +80,6 @@ export default function GoogleSettingsPage() {
           <p className="mt-1 text-xs text-gray-400">Found in GTM workspace header</p>
         </div>
 
-        {/* Double-tracking warning */}
         {showDoubleTrackingWarning && (
           <div className="rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800">
             When GTM is enabled, GA4 is typically managed through GTM. The direct GA4 script will
@@ -150,7 +87,6 @@ export default function GoogleSettingsPage() {
           </div>
         )}
 
-        {/* Google Ads Conversion ID */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Google Ads Conversion ID
@@ -162,7 +98,6 @@ export default function GoogleSettingsPage() {
           />
         </div>
 
-        {/* Google Ads Conversion Label */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Google Ads Conversion Label
@@ -173,7 +108,6 @@ export default function GoogleSettingsPage() {
           />
         </div>
 
-        {/* Service Account status */}
         <div className="rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
           <span className="font-medium">Service Account:</span>{" "}
           {hasServiceAccount ? (
@@ -189,9 +123,8 @@ export default function GoogleSettingsPage() {
           )}
         </div>
 
-        {/* Save */}
         <div className="pt-4">
-          <Button onClick={handleSave} disabled={saving}>
+          <Button onClick={() => handleSave(form)} disabled={saving}>
             {saving ? "Saving..." : "Save Settings"}
           </Button>
         </div>

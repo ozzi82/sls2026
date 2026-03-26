@@ -13,10 +13,7 @@ export async function GET() {
     const landingPages = getAllPages()
     const editLog = loadEditLog()
 
-    const allConfigs: PageConfig[] = [
-      ...products.map((p) => p),
-      ...statics.map((s) => s),
-    ]
+    const allConfigs: PageConfig[] = [...products, ...statics]
 
     const seoIssues = allConfigs
       .filter((c) => {
