@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
       : blob.pathname;
 
     return NextResponse.json({
-      url: `/api/admin/upload/${proxyPath}`,
+      url: `/api/images/${proxyPath}`,
       width,
       height,
     });
