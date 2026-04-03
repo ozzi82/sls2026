@@ -202,6 +202,7 @@ export default async function Home() {
                       alt={project.alt || ""}
                       width={project.width}
                       height={project.height}
+
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
                     />
@@ -212,6 +213,7 @@ export default async function Home() {
                           src={project.src.startsWith("/") ? project.src : `/${project.src}`}
                           alt={project.alt || ""}
                           fill
+    
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
