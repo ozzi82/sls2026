@@ -9,43 +9,64 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const result = await getPageBySlug(params.slug);
-  if (!result) {
-    return NextResponse.json({ error: "Page not found" }, { status: 404 });
+  try {
+    const result = await getPageBySlug(params.slug);
+    if (!result) {
+      return NextResponse.json({ error: "Page not found" }, { status: 404 });
+    }
+    return NextResponse.json(result.page);
+  } catch (error: unknown) {
+    console.error("GET page error:", error);
+    return NextResponse.json({ error: "Failed to load page" }, { status: 500 });
   }
-  return NextResponse.json(result.page);
 }
 
 export async function PUT(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const body = await request.json();
-  const parsed = landingPageSchema.safeParse(body);
+  try {
+    const body = await request.json();
+    const parsed = landingPageSchema.safeParse(body);
 
-  if (!parsed.success) {
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: "Validation failed", details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
+
+    const result = await updatePage(params.slug, parsed.data);
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 404 });
+    }
+
+    await appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
+    return NextResponse.json({ success: true, page: parsed.data });
+  } catch (error: unknown) {
+    console.error("PUT page error:", error);
     return NextResponse.json(
-      { error: "Validation failed", details: parsed.error.flatten() },
-      { status: 400 }
+      { error: error instanceof Error ? error.message : "Failed to save" },
+      { status: 500 }
     );
   }
-
-  const result = await updatePage(params.slug, parsed.data);
-  if (!result.success) {
-    return NextResponse.json({ error: result.error }, { status: 404 });
-  }
-
-  await appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
-  return NextResponse.json({ success: true, page: parsed.data });
 }
 
 export async function DELETE(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const result = await deletePage(params.slug);
-  if (!result.success) {
-    return NextResponse.json({ error: result.error }, { status: 404 });
+  try {
+    const result = await deletePage(params.slug);
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 404 });
+    }
+    return NextResponse.json({ success: true });
+  } catch (error: unknown) {
+    console.error("DELETE page error:", error);
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to delete" },
+      { status: 500 }
+    );
   }
-  return NextResponse.json({ success: true });
 }

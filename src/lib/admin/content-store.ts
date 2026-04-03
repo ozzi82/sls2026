@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import { list, put, del } from "@vercel/blob";
 
 const IS_BLOB = !!process.env.BLOB_READ_WRITE_TOKEN;
 const CONTENT_ROOT = path.join(process.cwd(), "content");
@@ -13,6 +12,7 @@ const CONTENT_ROOT = path.join(process.cwd(), "content");
 export async function readJson<T = unknown>(relativePath: string): Promise<T | null> {
   if (IS_BLOB) {
     try {
+      const { list } = await import("@vercel/blob");
       const blobPath = `content/${relativePath}`;
       const { blobs } = await list({ prefix: blobPath, limit: 1 });
       const match = blobs.find((b) => b.pathname === blobPath);
@@ -20,7 +20,8 @@ export async function readJson<T = unknown>(relativePath: string): Promise<T | n
         const res = await fetch(match.url);
         if (res.ok) return (await res.json()) as T;
       }
-    } catch {
+    } catch (err) {
+      console.error(`[content-store] readJson blob error for ${relativePath}:`, err);
       // Fall through to filesystem
     }
   }
@@ -42,13 +43,19 @@ export async function writeJson<T = unknown>(relativePath: string, data: T): Pro
   const json = JSON.stringify(data, null, 2) + "\n";
 
   if (IS_BLOB) {
-    const blobPath = `content/${relativePath}`;
-    await put(blobPath, json, {
-      access: "public",
-      contentType: "application/json",
-      addRandomSuffix: false,
-    });
-    return;
+    try {
+      const { put } = await import("@vercel/blob");
+      const blobPath = `content/${relativePath}`;
+      await put(blobPath, json, {
+        access: "public",
+        contentType: "application/json",
+        addRandomSuffix: false,
+      });
+      return;
+    } catch (err) {
+      console.error(`[content-store] writeJson blob error for ${relativePath}:`, err);
+      throw err;
+    }
   }
 
   // Local filesystem fallback
@@ -66,6 +73,7 @@ export async function writeJson<T = unknown>(relativePath: string, data: T): Pro
 export async function jsonExists(relativePath: string): Promise<boolean> {
   if (IS_BLOB) {
     try {
+      const { list } = await import("@vercel/blob");
       const blobPath = `content/${relativePath}`;
       const { blobs } = await list({ prefix: blobPath, limit: 1 });
       if (blobs.some((b) => b.pathname === blobPath)) return true;
@@ -96,6 +104,7 @@ export async function listJsonFiles(relativeDir: string): Promise<string[]> {
 
   // In Blob mode, also check for Blob-only files and merge
   try {
+    const { list } = await import("@vercel/blob");
     const prefix = `content/${relativeDir}/`;
     const { blobs } = await list({ prefix });
     const blobFiles = blobs
@@ -117,6 +126,7 @@ export async function listJsonFiles(relativeDir: string): Promise<string[]> {
 export async function deleteJson(relativePath: string): Promise<void> {
   if (IS_BLOB) {
     try {
+      const { list, del } = await import("@vercel/blob");
       const blobPath = `content/${relativePath}`;
       const { blobs } = await list({ prefix: blobPath, limit: 1 });
       const match = blobs.find((b) => b.pathname === blobPath);

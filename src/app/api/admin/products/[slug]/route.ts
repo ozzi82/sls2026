@@ -10,34 +10,47 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const config = await getProductConfig(params.slug);
-  if (!config) {
-    return NextResponse.json({ error: "Product config not found" }, { status: 404 });
+  try {
+    const config = await getProductConfig(params.slug);
+    if (!config) {
+      return NextResponse.json({ error: "Product config not found" }, { status: 404 });
+    }
+    return NextResponse.json(config);
+  } catch (error: unknown) {
+    console.error("GET product error:", error);
+    return NextResponse.json({ error: "Failed to load product config" }, { status: 500 });
   }
-  return NextResponse.json(config);
 }
 
 export async function PUT(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const body = await request.json();
-  const parsed = pageConfigSchema.safeParse(body);
+  try {
+    const body = await request.json();
+    const parsed = pageConfigSchema.safeParse(body);
 
-  if (!parsed.success) {
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: "Validation failed", details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
+
+    const result = await updateProductConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 404 });
+    }
+
+    revalidatePath(parsed.data.slug);
+    await appendEditLog({ slug: parsed.data.slug, pageType: "product", label: parsed.data.label });
+
+    return NextResponse.json({ success: true });
+  } catch (error: unknown) {
+    console.error("PUT product error:", error);
     return NextResponse.json(
-      { error: "Validation failed", details: parsed.error.flatten() },
-      { status: 400 }
+      { error: error instanceof Error ? error.message : "Failed to save" },
+      { status: 500 }
     );
   }
-
-  const result = await updateProductConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
-  if (!result.success) {
-    return NextResponse.json({ error: result.error }, { status: 404 });
-  }
-
-  revalidatePath(parsed.data.slug);
-  await appendEditLog({ slug: parsed.data.slug, pageType: "product", label: parsed.data.label });
-
-  return NextResponse.json({ success: true });
 }

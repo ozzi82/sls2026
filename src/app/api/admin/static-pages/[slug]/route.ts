@@ -10,34 +10,47 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const config = await getStaticConfig(params.slug);
-  if (!config) {
-    return NextResponse.json({ error: "Static page config not found" }, { status: 404 });
+  try {
+    const config = await getStaticConfig(params.slug);
+    if (!config) {
+      return NextResponse.json({ error: "Static page config not found" }, { status: 404 });
+    }
+    return NextResponse.json(config);
+  } catch (error: unknown) {
+    console.error("GET static page error:", error);
+    return NextResponse.json({ error: "Failed to load static page config" }, { status: 500 });
   }
-  return NextResponse.json(config);
 }
 
 export async function PUT(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const body = await request.json();
-  const parsed = pageConfigSchema.safeParse(body);
+  try {
+    const body = await request.json();
+    const parsed = pageConfigSchema.safeParse(body);
 
-  if (!parsed.success) {
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: "Validation failed", details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
+
+    const result = await updateStaticConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
+    if (!result.success) {
+      return NextResponse.json({ error: result.error }, { status: 404 });
+    }
+
+    revalidatePath(parsed.data.slug);
+    await appendEditLog({ slug: parsed.data.slug, pageType: "static", label: parsed.data.label });
+
+    return NextResponse.json({ success: true });
+  } catch (error: unknown) {
+    console.error("PUT static page error:", error);
     return NextResponse.json(
-      { error: "Validation failed", details: parsed.error.flatten() },
-      { status: 400 }
+      { error: error instanceof Error ? error.message : "Failed to save" },
+      { status: 500 }
     );
   }
-
-  const result = await updateStaticConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
-  if (!result.success) {
-    return NextResponse.json({ error: result.error }, { status: 404 });
-  }
-
-  revalidatePath(parsed.data.slug);
-  await appendEditLog({ slug: parsed.data.slug, pageType: "static", label: parsed.data.label });
-
-  return NextResponse.json({ success: true });
 }
