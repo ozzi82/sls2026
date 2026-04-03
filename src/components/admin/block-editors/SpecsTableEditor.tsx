@@ -4,6 +4,7 @@ import type { SpecsTableData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
 
 interface SpecsTableEditorProps {
@@ -32,9 +33,9 @@ export default function SpecsTableEditor({ data, onChange }: SpecsTableEditorPro
       </div>
       <div>
         <Label>Image URL</Label>
-        <Input
+        <ImageUpload
           value={data.image ?? ""}
-          onChange={(e) => onChange({ ...data, image: e.target.value })}
+          onChange={(result) => onChange({ ...data, image: typeof result === "string" ? result : result.url })}
           placeholder="/images/specs.jpg"
         />
       </div>

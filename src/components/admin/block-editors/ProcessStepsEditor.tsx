@@ -4,6 +4,7 @@ import type { ProcessStepsData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
 
 interface ProcessStepsEditorProps {
@@ -47,9 +48,9 @@ export default function ProcessStepsEditor({ data, onChange }: ProcessStepsEdito
                 onChange={(e) => update({ ...item, description: e.target.value })}
                 placeholder="Description"
               />
-              <Input
+              <ImageUpload
                 value={item.image ?? ""}
-                onChange={(e) => update({ ...item, image: e.target.value })}
+                onChange={(result) => update({ ...item, image: typeof result === "string" ? result : result.url })}
                 placeholder="Image URL"
               />
             </div>

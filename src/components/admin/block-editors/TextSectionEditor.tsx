@@ -3,6 +3,7 @@
 import type { TextSectionData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import ImageUpload from "@/components/admin/ImageUpload";
 import {
   Select,
   SelectContent,
@@ -37,9 +38,9 @@ export default function TextSectionEditor({ data, onChange }: TextSectionEditorP
       </div>
       <div>
         <Label>Image URL</Label>
-        <Input
+        <ImageUpload
           value={data.image ?? ""}
-          onChange={(e) => onChange({ ...data, image: e.target.value })}
+          onChange={(result) => onChange({ ...data, image: typeof result === "string" ? result : result.url })}
           placeholder="/images/section.jpg"
         />
       </div>

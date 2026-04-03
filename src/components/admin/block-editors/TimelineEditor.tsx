@@ -4,6 +4,7 @@ import type { TimelineData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
 
 interface TimelineEditorProps {
@@ -47,9 +48,9 @@ export default function TimelineEditor({ data, onChange }: TimelineEditorProps) 
                 onChange={(e) => update({ ...item, text: e.target.value })}
                 placeholder="Text"
               />
-              <Input
+              <ImageUpload
                 value={item.image ?? ""}
-                onChange={(e) => update({ ...item, image: e.target.value })}
+                onChange={(result) => update({ ...item, image: typeof result === "string" ? result : result.url })}
                 placeholder="Image URL"
               />
             </div>
