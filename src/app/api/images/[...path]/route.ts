@@ -8,9 +8,6 @@ export async function GET(
 ) {
   try {
     const filePath = params.path.join("/");
-    const { head } = await import("@vercel/blob");
-
-    // List blobs matching this path to find the URL
     const { list } = await import("@vercel/blob");
     const blobPath = `uploads/${filePath}`;
     const { blobs } = await list({ prefix: blobPath, limit: 1 });
