@@ -51,6 +51,7 @@ export async function writeJson<T = unknown>(relativePath: string, data: T): Pro
         access: "private",
         contentType: "application/json",
         addRandomSuffix: false,
+        allowOverwrite: true,
       });
       return;
     } catch (err) {

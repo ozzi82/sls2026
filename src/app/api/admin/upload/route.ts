@@ -66,13 +66,19 @@ export async function POST(request: NextRequest) {
       uploadData = Buffer.from(await file.arrayBuffer());
     }
 
-    await put(`uploads/${safeName}`, uploadData, {
+    const blob = await put(`uploads/${safeName}`, uploadData, {
       access: "private",
       contentType,
+      addRandomSuffix: true,
     });
 
+    // blob.pathname includes the random suffix, e.g. "uploads/image-123-abc123.webp"
+    const proxyPath = blob.pathname.startsWith("uploads/")
+      ? blob.pathname.slice("uploads/".length)
+      : blob.pathname;
+
     return NextResponse.json({
-      url: `/api/admin/upload/${safeName}`,
+      url: `/api/admin/upload/${proxyPath}`,
       width,
       height,
     });
