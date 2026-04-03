@@ -22,7 +22,8 @@
         "badge": "Wholesale Only · Trade Accounts",
         "h1": "Precision Signage,",
         "h1Highlight": "Exclusively Wholesale.",
-        "subtitle": "German-engineered channel letters, blade signs & illuminated signage — built for sign shops, never sold retail.",
+        "subtitle": "German-engineered channel letters, blade signs & illuminated signage — built for sign professionals.",
+        "overlayOpacity": 35,
         "ctas": [
           {
             "label": "Request Wholesale Pricing",
@@ -32,7 +33,7 @@
           {
             "label": "View Products",
             "href": "/products",
-            "variant": "secondary"
+            "variant": "primary"
           }
         ]
       }
@@ -92,9 +93,10 @@
       "visible": true,
       "data": {
         "heading": "Real Projects Delivered to Sign Shops Across North America",
+        "categories": ["Channel Letters", "EdgeLuxe Trimless", "Blade Signs", "Cabinet Signs", "SEG Light Boxes"],
         "images": [
           {
-            "src": "",
+            "src": "/uploads/03cd546f-355c-48d3-bfce-19ce71d8bdc8-1773859439322.jpg",
             "alt": "Front-lit channel letters — retail storefront, Miami FL",
             "category": "Channel Letters",
             "type": "Front-Lit LED",
@@ -102,7 +104,7 @@
             "turnaround": "18 days"
           },
           {
-            "src": "",
+            "src": "/uploads/077bd314-857e-4913-be53-86de09f30647-1773860149030.jpg",
             "alt": "EdgeLuxe trimless channel letters — corporate office, Dallas TX",
             "category": "EdgeLuxe Trimless",
             "type": "Halo-Lit LED",
@@ -110,7 +112,7 @@
             "turnaround": "21 days"
           },
           {
-            "src": "",
+            "src": "/uploads/img5116jpeg-1773860174367.jpeg",
             "alt": "Illuminated blade sign — restaurant, Chicago IL",
             "category": "Blade Signs",
             "type": "Double-Sided LED",
@@ -118,7 +120,7 @@
             "turnaround": "16 days"
           },
           {
-            "src": "",
+            "src": "/hero-bg1.jpg",
             "alt": "Cabinet sign — franchise location, Toronto ON",
             "category": "Cabinet Signs",
             "type": "Push-Through LED",

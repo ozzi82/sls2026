@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
 
 interface HeroEditorProps {
@@ -54,12 +55,31 @@ export default function HeroEditor({ data, onChange }: HeroEditorProps) {
         />
       </div>
       <div>
-        <Label>Image URL</Label>
-        <Input
+        <Label>Image</Label>
+        <ImageUpload
           value={data.image ?? ""}
-          onChange={(e) => onChange({ ...data, image: e.target.value })}
-          placeholder="/images/hero.jpg"
+          onChange={(result) => onChange({ ...data, image: typeof result === "string" ? result : result.url })}
+          placeholder="/uploads/hero.jpg"
         />
+      </div>
+      <div>
+        <Label>
+          Overlay Opacity — {data.overlayOpacity ?? 60}%
+        </Label>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          step={5}
+          value={data.overlayOpacity ?? 60}
+          onChange={(e) =>
+            onChange({ ...data, overlayOpacity: Number(e.target.value) })
+          }
+          className="w-full accent-brand-gold"
+        />
+        <p className="text-xs text-muted-foreground mt-1">
+          Controls how dark the overlay is on top of the hero background images. 0% = no overlay, 100% = fully dark.
+        </p>
       </div>
       <div>
         <Label>CTAs</Label>

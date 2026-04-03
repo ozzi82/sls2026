@@ -24,6 +24,8 @@ export default function GalleryPage() {
   }
 
   const hero = getBlock("hero");
+  const gallery = getBlock("gallery");
+  const galleryData = gallery?.data as any;
   const cta = getBlock("cta");
   return (
     <>
@@ -73,7 +75,10 @@ export default function GalleryPage() {
           ═══════════════════════════════════════════ */}
       <section className="px-6 sm:px-10 lg:px-16 pb-16">
         <div className="container-max">
-          <GalleryFilter />
+          <GalleryFilter
+            categories={galleryData?.categories ?? []}
+            images={galleryData?.images ?? []}
+          />
         </div>
       </section>
 

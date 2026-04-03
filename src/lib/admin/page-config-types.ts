@@ -25,6 +25,7 @@ export interface HeroData {
   h1Highlight?: string;
   subtitle: string;
   image?: string;
+  overlayOpacity?: number; // 0-100, controls hero image overlay darkness
   ctas: { label: string; href: string; variant: "primary" | "secondary" }[];
 }
 
@@ -53,9 +54,21 @@ export interface UseCasesData {
   items: string[];
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  category: string;
+  width?: number;
+  height?: number;
+  type?: string;
+  location?: string;
+  turnaround?: string;
+}
+
 export interface GalleryData {
   heading: string;
-  images: { src: string; alt: string }[];
+  categories: string[];
+  images: GalleryImage[];
 }
 
 export interface FAQData {

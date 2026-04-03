@@ -37,13 +37,25 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           HERO — Cinematic full-screen
           ═══════════════════════════════════════════ */}
-      {hero?.visible && (
+      {hero?.visible && (() => {
+        const ov = ((hero.data as any).overlayOpacity ?? 60) / 100;
+        return (
       <section className="relative h-screen overflow-hidden">
         <HeroSlider />
 
-        {/* Layered gradient overlays for depth */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 to-transparent" />
+        {/* Layered gradient overlays for depth — scaled by admin overlay opacity */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background: `linear-gradient(to top, rgba(0,0,0,${(0.9 * ov).toFixed(2)}), rgba(0,0,0,${(0.4 * ov).toFixed(2)}), rgba(0,0,0,${(0.2 * ov).toFixed(2)}))`
+          }}
+        />
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background: `linear-gradient(to right, rgba(0,0,0,${(0.6 * ov).toFixed(2)}), transparent)`
+          }}
+        />
 
         {/* Hero content — bottom-left */}
         <div className="relative z-10 flex flex-col justify-end h-full px-6 sm:px-10 lg:px-16 pb-28 lg:pb-36">
@@ -92,7 +104,8 @@ export default function Home() {
           <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
         </div>
       </section>
-      )}
+        );
+      })()}
 
       {/* ═══════════════════════════════════════════
           MARQUEE — Infinite scrolling trade messaging
@@ -159,7 +172,7 @@ export default function Home() {
         const projects = (featuredProjects.data as any).images;
         // Asymmetric masonry: row 1 = 1 large + 1 tall, row 2 = 3 equal
         const sizes = ["lg:col-span-7 lg:row-span-2", "lg:col-span-5 lg:row-span-2", "lg:col-span-4", "lg:col-span-4", "lg:col-span-4"];
-        const aspects = ["aspect-[16/10]", "aspect-[3/4]", "aspect-[4/3]", "aspect-[4/3]", "aspect-[4/3]"];
+        const fallbackAspects = ["aspect-[16/10]", "aspect-[3/4]", "aspect-[4/3]", "aspect-[4/3]", "aspect-[4/3]"];
         return (
       <section className="px-6 sm:px-10 lg:px-16">
         <div className="container-max">
@@ -182,10 +195,31 @@ export default function Home() {
             {projects.slice(0, 5).map((project: any, i: number) => (
               <AnimatedSection key={i} delay={i * 0.1} className={`${sizes[i] || "lg:col-span-4"}`}>
                 <div className="group relative h-full rounded-xl overflow-hidden cursor-pointer">
-                  {/* Image placeholder — TODO: replace with real photos */}
-                  <div className={`${aspects[i] || "aspect-[4/3]"} h-full min-h-[240px] bg-gradient-to-br from-white/[0.04] via-white/[0.02] to-transparent`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(232,89,12,0.06),transparent_70%)]" />
-                  </div>
+                  {project.src && project.width && project.height ? (
+                    /* Natural aspect ratio from upload dimensions */
+                    <Image
+                      src={project.src.startsWith("/") ? project.src : `/${project.src}`}
+                      alt={project.alt || ""}
+                      width={project.width}
+                      height={project.height}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className={`${fallbackAspects[i] || "aspect-[4/3]"} h-full min-h-[240px] ${project.src ? "" : "bg-gradient-to-br from-white/[0.04] via-white/[0.02] to-transparent"}`}>
+                      {project.src ? (
+                        <Image
+                          src={project.src.startsWith("/") ? project.src : `/${project.src}`}
+                          alt={project.alt || ""}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(232,89,12,0.06),transparent_70%)]" />
+                      )}
+                    </div>
+                  )}
 
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
