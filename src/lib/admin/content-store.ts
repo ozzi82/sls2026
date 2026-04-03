@@ -12,12 +12,13 @@ const CONTENT_ROOT = path.join(process.cwd(), "content");
 export async function readJson<T = unknown>(relativePath: string): Promise<T | null> {
   if (IS_BLOB) {
     try {
-      const { list } = await import("@vercel/blob");
+      const { list, getDownloadUrl } = await import("@vercel/blob");
       const blobPath = `content/${relativePath}`;
       const { blobs } = await list({ prefix: blobPath, limit: 1 });
       const match = blobs.find((b) => b.pathname === blobPath);
       if (match) {
-        const res = await fetch(match.url);
+        const downloadUrl = await getDownloadUrl(match.url);
+        const res = await fetch(downloadUrl);
         if (res.ok) return (await res.json()) as T;
       }
     } catch (err) {
@@ -47,7 +48,7 @@ export async function writeJson<T = unknown>(relativePath: string, data: T): Pro
       const { put } = await import("@vercel/blob");
       const blobPath = `content/${relativePath}`;
       await put(blobPath, json, {
-        access: "public",
+        access: "private",
         contentType: "application/json",
         addRandomSuffix: false,
       });

@@ -66,13 +66,13 @@ export async function POST(request: NextRequest) {
       uploadData = Buffer.from(await file.arrayBuffer());
     }
 
-    const blob = await put(`uploads/${safeName}`, uploadData, {
-      access: "public",
+    await put(`uploads/${safeName}`, uploadData, {
+      access: "private",
       contentType,
     });
 
     return NextResponse.json({
-      url: blob.url,
+      url: `/api/admin/upload/${safeName}`,
       width,
       height,
     });
