@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic"
 
 export async function GET() {
   try {
-    const settings = loadSiteSettings()
+    const settings = await loadSiteSettings()
     const hasServiceAccount = !!process.env.GOOGLE_SERVICE_ACCOUNT_KEY
     return NextResponse.json({ ...settings, hasServiceAccount })
   } catch {
@@ -26,7 +26,7 @@ export async function PUT(request: Request) {
       )
     }
 
-    saveSiteSettings(result.data)
+    await saveSiteSettings(result.data)
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: "Failed to save settings" }, { status: 500 })

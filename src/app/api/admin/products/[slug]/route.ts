@@ -10,7 +10,7 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const config = getProductConfig(params.slug);
+  const config = await getProductConfig(params.slug);
   if (!config) {
     return NextResponse.json({ error: "Product config not found" }, { status: 404 });
   }
@@ -31,13 +31,13 @@ export async function PUT(
     );
   }
 
-  const result = updateProductConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
+  const result = await updateProductConfig(params.slug, parsed.data as unknown as import("@/lib/admin/page-config-types").PageConfig);
   if (!result.success) {
     return NextResponse.json({ error: result.error }, { status: 404 });
   }
 
   revalidatePath(parsed.data.slug);
-  appendEditLog({ slug: parsed.data.slug, pageType: "product", label: parsed.data.label });
+  await appendEditLog({ slug: parsed.data.slug, pageType: "product", label: parsed.data.label });
 
   return NextResponse.json({ success: true });
 }

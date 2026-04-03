@@ -11,7 +11,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("why-sunlite--wholesale-only");
+  const config = await loadStaticPageConfig("why-sunlite--wholesale-only");
   return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
 }
 
@@ -38,8 +38,8 @@ const whatWeNeverDo = [
   "Offer direct-to-consumer sales through any channel",
 ];
 
-export default function WholesaleOnlyPage() {
-  const config = loadStaticPageConfig("why-sunlite--wholesale-only");
+export default async function WholesaleOnlyPage() {
+  const config = await loadStaticPageConfig("why-sunlite--wholesale-only");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const hero = getBlock("hero");

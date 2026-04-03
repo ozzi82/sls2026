@@ -8,7 +8,7 @@ const CACHE_KEY = "openreplay-analytics"
 
 export async function GET() {
   try {
-    const settings = loadSiteSettings()
+    const settings = await loadSiteSettings()
 
     if (!settings.openreplay.enabled || !settings.openreplay.serverUrl || !settings.openreplay.projectKey) {
       return NextResponse.json({

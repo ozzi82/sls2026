@@ -10,7 +10,7 @@ import type { HeroData } from "@/lib/admin/page-config-types";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--guides--choosing-illumination-types");
+  const config = await loadStaticPageConfig("resources--guides--choosing-illumination-types");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -25,8 +25,8 @@ const illuminationTypes = [
   { name: "Non-Illuminated", aka: "Unlit", description: "Channel letters fabricated without internal lighting. Non-illuminated letters rely on ambient light, external spotlights, or gooseneck fixtures for visibility. They are the most cost-effective option and require no electrical connection.", image: "Non-illuminated dimensional metal letters on office building", bestFor: ["Interior lobby and reception signage","Secondary identification signs","Locations with illumination restrictions","Budget-conscious projects","Daytime-only visibility requirements"], considerations: ["Limited nighttime visibility without supplemental external lighting","External lighting (gooseneck, landscape spots) adds cost and installation complexity","Not suitable as primary identification where nighttime visibility is needed"], visibility: "Dependent on external light", aesthetic: "Clean and architectural", cost: "$" },
 ];
 
-export default function ChoosingIlluminationTypesPage() {
-  const config = loadStaticPageConfig("resources--guides--choosing-illumination-types");
+export default async function ChoosingIlluminationTypesPage() {
+  const config = await loadStaticPageConfig("resources--guides--choosing-illumination-types");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

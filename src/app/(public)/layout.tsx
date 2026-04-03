@@ -7,12 +7,12 @@ import CookieConsent from "@/components/CookieConsent"
 import TrackingScripts from "@/components/TrackingScripts"
 import OpenReplayTracker from "@/components/OpenReplayTracker"
 
-export default function PublicLayout({
+export default async function PublicLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const settings = loadSiteSettings()
+  const settings = await loadSiteSettings()
   const consentConfig = getPublicConsentConfig(settings)
 
   return (

@@ -19,7 +19,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("why-sunlite");
+  const config = await loadStaticPageConfig("why-sunlite");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -28,8 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function WhySunlitePage() {
-  const config = loadStaticPageConfig("why-sunlite");
+export default async function WhySunlitePage() {
+  const config = await loadStaticPageConfig("why-sunlite");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

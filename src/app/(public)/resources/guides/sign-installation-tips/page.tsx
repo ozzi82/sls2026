@@ -10,7 +10,7 @@ import type { HeroData } from "@/lib/admin/page-config-types";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--guides--sign-installation-tips");
+  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function SignInstallationTipsPage() {
-  const config = loadStaticPageConfig("resources--guides--sign-installation-tips");
+export default async function SignInstallationTipsPage() {
+  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

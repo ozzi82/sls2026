@@ -19,7 +19,7 @@ import { loadProductConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("channel-letters--trimless");
+  const config = await loadProductConfig("channel-letters--trimless");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -44,8 +44,8 @@ const comparisonRows = [
   { feature: "Price point", traditional: "Lower", edgeLuxe: "Moderate premium for superior construction" },
 ];
 
-export default function TrimlessPage() {
-  const config = loadProductConfig("channel-letters--trimless");
+export default async function TrimlessPage() {
+  const config = await loadProductConfig("channel-letters--trimless");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const heroBlock = getBlock("hero");

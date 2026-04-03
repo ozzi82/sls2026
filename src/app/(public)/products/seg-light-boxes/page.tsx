@@ -13,7 +13,7 @@ import { getIconComponent } from "@/lib/admin/icon-map";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("seg-light-boxes");
+  const config = await loadProductConfig("seg-light-boxes");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -22,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function SEGLightBoxesPage() {
-  const config = loadProductConfig("seg-light-boxes");
+export default async function SEGLightBoxesPage() {
+  const config = await loadProductConfig("seg-light-boxes");
 
   function getBlock(id: string) {
     return config.blocks.find((b) => b.id === id);

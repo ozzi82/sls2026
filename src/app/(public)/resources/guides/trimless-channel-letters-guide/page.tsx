@@ -10,7 +10,7 @@ import type { HeroData } from "@/lib/admin/page-config-types";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
+  const config = await loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -19,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function TrimlessGuidePage() {
-  const config = loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
+export default async function TrimlessGuidePage() {
+  const config = await loadStaticPageConfig("resources--guides--trimless-channel-letters-guide");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

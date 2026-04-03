@@ -9,7 +9,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("about");
+  const config = await loadStaticPageConfig("about");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function AboutPage() {
-  const config = loadStaticPageConfig("about");
+export default async function AboutPage() {
+  const config = await loadStaticPageConfig("about");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

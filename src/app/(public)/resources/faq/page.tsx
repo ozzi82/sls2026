@@ -10,7 +10,7 @@ import type { HeroData, FAQData, TextSectionData } from "@/lib/admin/page-config
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--faq");
+  const config = await loadStaticPageConfig("resources--faq");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function FAQPage() {
-  const config = loadStaticPageConfig("resources--faq");
+export default async function FAQPage() {
+  const config = await loadStaticPageConfig("resources--faq");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

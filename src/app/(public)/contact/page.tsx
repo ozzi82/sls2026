@@ -17,7 +17,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("contact");
+  const config = await loadStaticPageConfig("contact");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -26,8 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function ContactPage() {
-  const config = loadStaticPageConfig("contact");
+export default async function ContactPage() {
+  const config = await loadStaticPageConfig("contact");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

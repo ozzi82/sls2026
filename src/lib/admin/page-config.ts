@@ -1,93 +1,71 @@
-import fs from "fs";
-import path from "path";
 import { PageConfig } from "./page-config-types";
-
-const PRODUCTS_DIR = path.join(process.cwd(), "content", "products");
-const PAGES_DIR = path.join(process.cwd(), "content", "pages");
-
-function ensureDir(dir: string) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-}
-
-function readConfigFile(filePath: string): PageConfig | null {
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw);
-}
-
-function writeConfigFile(filePath: string, config: PageConfig) {
-  fs.writeFileSync(filePath, JSON.stringify(config, null, 2) + "\n", "utf-8");
-}
+import { readJson, writeJson, listJsonFiles, jsonExists } from "./content-store";
 
 function fileSlugToFilename(fileSlug: string): string {
-  // fileSlug is the config ID / filename stem, e.g., "cabinet-signs" or "channel-letters--front-lit"
-  // This is NOT the PageConfig.slug field (which stores URL paths like "/products/cabinet-signs")
   return fileSlug + ".json";
 }
 
 // Public-facing helpers (read configs for rendering pages)
-export function loadProductConfig(fileSlug: string): PageConfig {
-  const config = readConfigFile(path.join(PRODUCTS_DIR, fileSlugToFilename(fileSlug)));
+export async function loadProductConfig(fileSlug: string): Promise<PageConfig> {
+  const config = await readJson<PageConfig>(`products/${fileSlugToFilename(fileSlug)}`);
   if (!config) throw new Error(`Product config not found: ${fileSlug}`);
   return config;
 }
 
-export function loadStaticPageConfig(fileSlug: string): PageConfig {
-  const config = readConfigFile(path.join(PAGES_DIR, fileSlugToFilename(fileSlug)));
+export async function loadStaticPageConfig(fileSlug: string): Promise<PageConfig> {
+  const config = await readJson<PageConfig>(`pages/${fileSlugToFilename(fileSlug)}`);
   if (!config) throw new Error(`Static page config not found: ${fileSlug}`);
   return config;
 }
 
 // Product page configs
-export function getAllProductConfigs(): (PageConfig & { fileSlug: string })[] {
-  ensureDir(PRODUCTS_DIR);
-  const files = fs.readdirSync(PRODUCTS_DIR).filter((f) => f.endsWith(".json"));
-  return files
-    .map((f) => {
-      const config = readConfigFile(path.join(PRODUCTS_DIR, f));
-      if (!config) return null;
-      return { ...config, fileSlug: f.replace(".json", "") };
-    })
-    .filter((c): c is PageConfig & { fileSlug: string } => c !== null);
+export async function getAllProductConfigs(): Promise<(PageConfig & { fileSlug: string })[]> {
+  const files = await listJsonFiles("products");
+  const results: (PageConfig & { fileSlug: string })[] = [];
+  for (const f of files) {
+    const config = await readJson<PageConfig>(`products/${f}`);
+    if (config) {
+      results.push({ ...config, fileSlug: f.replace(".json", "") });
+    }
+  }
+  return results;
 }
 
-export function getProductConfig(fileSlug: string): PageConfig | null {
-  return readConfigFile(path.join(PRODUCTS_DIR, fileSlugToFilename(fileSlug)));
+export async function getProductConfig(fileSlug: string): Promise<PageConfig | null> {
+  return readJson<PageConfig>(`products/${fileSlugToFilename(fileSlug)}`);
 }
 
-export function updateProductConfig(fileSlug: string, config: PageConfig): { success: boolean; error?: string } {
-  const filePath = path.join(PRODUCTS_DIR, fileSlugToFilename(fileSlug));
-  if (!fs.existsSync(filePath)) {
+export async function updateProductConfig(fileSlug: string, config: PageConfig): Promise<{ success: boolean; error?: string }> {
+  const exists = await jsonExists(`products/${fileSlugToFilename(fileSlug)}`);
+  if (!exists) {
     return { success: false, error: "Product config not found" };
   }
-  writeConfigFile(filePath, config);
+  await writeJson(`products/${fileSlugToFilename(fileSlug)}`, config);
   return { success: true };
 }
 
 // Static page configs
-export function getAllStaticConfigs(): (PageConfig & { fileSlug: string })[] {
-  ensureDir(PAGES_DIR);
-  const files = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".json"));
-  return files
-    .map((f) => {
-      const config = readConfigFile(path.join(PAGES_DIR, f));
-      if (!config) return null;
-      return { ...config, fileSlug: f.replace(".json", "") };
-    })
-    .filter((c): c is PageConfig & { fileSlug: string } => c !== null);
+export async function getAllStaticConfigs(): Promise<(PageConfig & { fileSlug: string })[]> {
+  const files = await listJsonFiles("pages");
+  const results: (PageConfig & { fileSlug: string })[] = [];
+  for (const f of files) {
+    const config = await readJson<PageConfig>(`pages/${f}`);
+    if (config) {
+      results.push({ ...config, fileSlug: f.replace(".json", "") });
+    }
+  }
+  return results;
 }
 
-export function getStaticConfig(fileSlug: string): PageConfig | null {
-  return readConfigFile(path.join(PAGES_DIR, fileSlugToFilename(fileSlug)));
+export async function getStaticConfig(fileSlug: string): Promise<PageConfig | null> {
+  return readJson<PageConfig>(`pages/${fileSlugToFilename(fileSlug)}`);
 }
 
-export function updateStaticConfig(fileSlug: string, config: PageConfig): { success: boolean; error?: string } {
-  const filePath = path.join(PAGES_DIR, fileSlugToFilename(fileSlug));
-  if (!fs.existsSync(filePath)) {
+export async function updateStaticConfig(fileSlug: string, config: PageConfig): Promise<{ success: boolean; error?: string }> {
+  const exists = await jsonExists(`pages/${fileSlugToFilename(fileSlug)}`);
+  if (!exists) {
     return { success: false, error: "Static page config not found" };
   }
-  writeConfigFile(filePath, config);
+  await writeJson(`pages/${fileSlugToFilename(fileSlug)}`, config);
   return { success: true };
 }

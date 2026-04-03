@@ -11,7 +11,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("why-sunlite--ul-listing");
+  const config = await loadStaticPageConfig("why-sunlite--ul-listing");
   return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
 }
 
@@ -32,8 +32,8 @@ const comparisonPoints = [
   { without: "No ongoing factory quality surveillance", with: "Regular UL follow-up inspections of our wholesale facility" },
 ];
 
-export default function ULListingPage() {
-  const config = loadStaticPageConfig("why-sunlite--ul-listing");
+export default async function ULListingPage() {
+  const config = await loadStaticPageConfig("why-sunlite--ul-listing");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const hero = getBlock("hero");

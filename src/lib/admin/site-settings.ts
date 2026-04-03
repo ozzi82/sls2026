@@ -1,34 +1,26 @@
-import fs from "fs"
-import path from "path"
 import type { SiteSettings, EditLogEntry, PublicConsentConfig } from "./site-settings-types"
+import { readJson, writeJson } from "./content-store"
 
-const SETTINGS_PATH = path.join(process.cwd(), "content/settings/site-settings.json")
-const EDIT_LOG_PATH = path.join(process.cwd(), "content/settings/edit-log.json")
 const MAX_EDIT_LOG_ENTRIES = 50
 
-// Module-level cache to avoid re-reading file on every request
+// Module-level cache to avoid re-reading on every request
 let settingsCache: { data: SiteSettings; ts: number } | null = null
 const SETTINGS_CACHE_TTL = 5000 // 5 seconds
 
-export function loadSiteSettings(): SiteSettings {
+export async function loadSiteSettings(): Promise<SiteSettings> {
   if (settingsCache && Date.now() - settingsCache.ts < SETTINGS_CACHE_TTL) {
     return settingsCache.data
   }
-  try {
-    const raw = fs.readFileSync(SETTINGS_PATH, "utf-8")
-    const data = JSON.parse(raw)
+  const data = await readJson<SiteSettings>("settings/site-settings.json")
+  if (data) {
     settingsCache = { data, ts: Date.now() }
     return data
-  } catch {
-    return getDefaultSettings()
   }
+  return getDefaultSettings()
 }
 
-export function saveSiteSettings(settings: SiteSettings): void {
-  const dir = path.dirname(SETTINGS_PATH)
-  fs.mkdirSync(dir, { recursive: true })
-  fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2), "utf-8")
-  // Invalidate cache on write
+export async function saveSiteSettings(settings: SiteSettings): Promise<void> {
+  await writeJson("settings/site-settings.json", settings)
   settingsCache = { data: settings, ts: Date.now() }
 }
 
@@ -36,20 +28,16 @@ export function getPublicConsentConfig(settings: SiteSettings): PublicConsentCon
   return settings.cookieConsent
 }
 
-export function loadEditLog(): EditLogEntry[] {
-  try {
-    const raw = fs.readFileSync(EDIT_LOG_PATH, "utf-8")
-    return JSON.parse(raw)
-  } catch {
-    return []
-  }
+export async function loadEditLog(): Promise<EditLogEntry[]> {
+  const data = await readJson<EditLogEntry[]>("settings/edit-log.json")
+  return data ?? []
 }
 
-export function appendEditLog(entry: Omit<EditLogEntry, "timestamp">): void {
-  const log = loadEditLog()
+export async function appendEditLog(entry: Omit<EditLogEntry, "timestamp">): Promise<void> {
+  const log = await loadEditLog()
   log.unshift({ ...entry, timestamp: new Date().toISOString() })
   const trimmed = log.slice(0, MAX_EDIT_LOG_ENTRIES)
-  fs.writeFileSync(EDIT_LOG_PATH, JSON.stringify(trimmed, null, 2), "utf-8")
+  await writeJson("settings/edit-log.json", trimmed)
 }
 
 function getDefaultSettings(): SiteSettings {

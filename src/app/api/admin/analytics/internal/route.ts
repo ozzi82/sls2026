@@ -8,10 +8,10 @@ export const dynamic = "force-dynamic"
 
 export async function GET() {
   try {
-    const products = getAllProductConfigs()
-    const statics = getAllStaticConfigs()
-    const landingPages = getAllPages()
-    const editLog = loadEditLog()
+    const products = await getAllProductConfigs()
+    const statics = await getAllStaticConfigs()
+    const landingPages = await getAllPages()
+    const editLog = await loadEditLog()
 
     const allConfigs: PageConfig[] = [...products, ...statics]
 

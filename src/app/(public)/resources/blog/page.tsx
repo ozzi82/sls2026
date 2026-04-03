@@ -11,7 +11,7 @@ import type { HeroData, ResourceCardsData } from "@/lib/admin/page-config-types"
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--blog");
+  const config = await loadStaticPageConfig("resources--blog");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -27,8 +27,8 @@ function formatDate(dateString: string) {
   });
 }
 
-export default function BlogPage() {
-  const config = loadStaticPageConfig("resources--blog");
+export default async function BlogPage() {
+  const config = await loadStaticPageConfig("resources--blog");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

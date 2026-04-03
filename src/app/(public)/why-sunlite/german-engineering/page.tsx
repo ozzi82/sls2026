@@ -16,7 +16,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("why-sunlite--german-engineering");
+  const config = await loadStaticPageConfig("why-sunlite--german-engineering");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -25,8 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function GermanEngineeringPage() {
-  const config = loadStaticPageConfig("why-sunlite--german-engineering");
+export default async function GermanEngineeringPage() {
+  const config = await loadStaticPageConfig("why-sunlite--german-engineering");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

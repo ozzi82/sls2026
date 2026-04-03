@@ -8,7 +8,7 @@ const CACHE_KEY = "google-analytics"
 
 export async function GET() {
   try {
-    const settings = loadSiteSettings()
+    const settings = await loadSiteSettings()
 
     if (!settings.google.enabled || !settings.google.ga4MeasurementId) {
       return NextResponse.json({ configured: false, message: "Google Analytics not configured" })

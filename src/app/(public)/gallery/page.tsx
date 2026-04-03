@@ -8,7 +8,7 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("gallery");
+  const config = await loadStaticPageConfig("gallery");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function GalleryPage() {
-  const config = loadStaticPageConfig("gallery");
+export default async function GalleryPage() {
+  const config = await loadStaticPageConfig("gallery");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

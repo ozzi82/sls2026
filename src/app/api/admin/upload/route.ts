@@ -31,7 +31,6 @@ export async function POST(request: NextRequest) {
   }
 
   // Sanitise filename
-  const ext = file.name.split(".").pop() || "img";
   const base = file.name
     .replace(/\.[^.]+$/, "")
     .toLowerCase()

@@ -15,7 +15,7 @@ import { loadProductConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("channel-letters--stainless-flush");
+  const config = await loadProductConfig("channel-letters--stainless-flush");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -24,8 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function StainlessFlushPage() {
-  const config = loadProductConfig("channel-letters--stainless-flush");
+export default async function StainlessFlushPage() {
+  const config = await loadProductConfig("channel-letters--stainless-flush");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const heroBlock = getBlock("hero");

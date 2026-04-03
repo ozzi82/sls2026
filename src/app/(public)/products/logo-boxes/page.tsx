@@ -13,7 +13,7 @@ import { getIconComponent } from "@/lib/admin/icon-map";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("logo-boxes");
+  const config = await loadProductConfig("logo-boxes");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -22,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function LogoBoxesPage() {
-  const config = loadProductConfig("logo-boxes");
+export default async function LogoBoxesPage() {
+  const config = await loadProductConfig("logo-boxes");
 
   function getBlock(id: string) {
     return config.blocks.find((b) => b.id === id);

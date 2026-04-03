@@ -13,8 +13,8 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 
 export const dynamic = "force-dynamic";
 
-export default function Home() {
-  const config = loadStaticPageConfig("home");
+export default async function Home() {
+  const config = await loadStaticPageConfig("home");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

@@ -9,7 +9,7 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const result = getPageBySlug(params.slug);
+  const result = await getPageBySlug(params.slug);
   if (!result) {
     return NextResponse.json({ error: "Page not found" }, { status: 404 });
   }
@@ -30,12 +30,12 @@ export async function PUT(
     );
   }
 
-  const result = updatePage(params.slug, parsed.data);
+  const result = await updatePage(params.slug, parsed.data);
   if (!result.success) {
     return NextResponse.json({ error: result.error }, { status: 404 });
   }
 
-  appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
+  await appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
   return NextResponse.json({ success: true, page: parsed.data });
 }
 
@@ -43,7 +43,7 @@ export async function DELETE(
   _request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const result = deletePage(params.slug);
+  const result = await deletePage(params.slug);
   if (!result.success) {
     return NextResponse.json({ error: result.error }, { status: 404 });
   }

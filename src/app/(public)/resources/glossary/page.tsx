@@ -9,7 +9,7 @@ import type { HeroData, FAQData } from "@/lib/admin/page-config-types";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--glossary");
+  const config = await loadStaticPageConfig("resources--glossary");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -34,8 +34,8 @@ function groupByLetter(terms: GlossaryTerm[]): Record<string, GlossaryTerm[]> {
   return groups;
 }
 
-export default function GlossaryPage() {
-  const config = loadStaticPageConfig("resources--glossary");
+export default async function GlossaryPage() {
+  const config = await loadStaticPageConfig("resources--glossary");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

@@ -15,7 +15,7 @@ import { loadProductConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("channel-letters--front-lit");
+  const config = await loadProductConfig("channel-letters--front-lit");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -24,8 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function FrontLitPage() {
-  const config = loadProductConfig("channel-letters--front-lit");
+export default async function FrontLitPage() {
+  const config = await loadProductConfig("channel-letters--front-lit");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

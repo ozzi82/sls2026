@@ -12,7 +12,7 @@ import { loadProductConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("products");
+  const config = await loadProductConfig("products");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function ProductsPage() {
-  const config = loadProductConfig("products");
+export default async function ProductsPage() {
+  const config = await loadProductConfig("products");
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }

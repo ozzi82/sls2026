@@ -12,7 +12,7 @@ import type { HeroData, GuidesListData } from "@/lib/admin/page-config-types";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("resources--guides");
+  const config = await loadStaticPageConfig("resources--guides");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -20,8 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function GuidesPage() {
-  const config = loadStaticPageConfig("resources--guides");
+export default async function GuidesPage() {
+  const config = await loadStaticPageConfig("resources--guides");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

@@ -11,12 +11,12 @@ import { loadStaticPageConfig } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadStaticPageConfig("why-sunlite--quality-process");
+  const config = await loadStaticPageConfig("why-sunlite--quality-process");
   return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
 }
 
-export default function QualityProcessPage() {
-  const config = loadStaticPageConfig("why-sunlite--quality-process");
+export default async function QualityProcessPage() {
+  const config = await loadStaticPageConfig("why-sunlite--quality-process");
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const hero = getBlock("hero");

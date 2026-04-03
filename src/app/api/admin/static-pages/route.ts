@@ -4,7 +4,7 @@ import { getAllStaticConfigs } from "@/lib/admin/page-config";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const configs = getAllStaticConfigs();
+  const configs = await getAllStaticConfigs();
   const pages = configs.map((c) => ({
     slug: c.slug,
     fileSlug: c.fileSlug,

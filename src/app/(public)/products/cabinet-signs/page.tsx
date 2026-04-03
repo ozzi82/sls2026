@@ -23,7 +23,7 @@ import type {
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = loadProductConfig("cabinet-signs");
+  const config = await loadProductConfig("cabinet-signs");
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function CabinetSignsPage() {
-  const config = loadProductConfig("cabinet-signs");
+export default async function CabinetSignsPage() {
+  const config = await loadProductConfig("cabinet-signs");
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as

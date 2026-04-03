@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   const hub = request.nextUrl.searchParams.get("hub");
-  let pages = getAllPages();
+  let pages = await getAllPages();
 
   if (hub) {
     pages = pages.filter((p) => p.hubSlug === hub);
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const result = createPage(parsed.data);
+  const result = await createPage(parsed.data);
   if (!result.success) {
     return NextResponse.json({ error: result.error }, { status: 409 });
   }

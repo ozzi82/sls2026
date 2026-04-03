@@ -1,8 +1,5 @@
-import fs from "fs";
-import path from "path";
 import { LandingPage } from "@/lib/landing-pages/types";
-
-const CONTENT_DIR = path.join(process.cwd(), "content", "landing-pages");
+import { readJson, writeJson } from "./content-store";
 
 export const hubToFiles: Record<string, string[]> = {
   "cabinet-signs": ["cabinet-signs.json"],
@@ -30,33 +27,32 @@ export const hubNames: Record<string, string> = {
   "illumination": "Illumination",
 };
 
-function readJsonFile(filename: string): LandingPage[] {
-  const filePath = path.join(CONTENT_DIR, filename);
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw);
+async function readJsonFile(filename: string): Promise<LandingPage[]> {
+  const data = await readJson<LandingPage[]>(`landing-pages/${filename}`);
+  return data ?? [];
 }
 
-function writeJsonFile(filename: string, data: LandingPage[]) {
-  const filePath = path.join(CONTENT_DIR, filename);
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
+async function writeJsonFile(filename: string, data: LandingPage[]): Promise<void> {
+  await writeJson(`landing-pages/${filename}`, data);
 }
 
-export function getAllPages(): LandingPage[] {
+export async function getAllPages(): Promise<LandingPage[]> {
   const allPages: LandingPage[] = [];
   for (const files of Object.values(hubToFiles)) {
     for (const file of files) {
-      allPages.push(...readJsonFile(file));
+      const pages = await readJsonFile(file);
+      allPages.push(...pages);
     }
   }
   return allPages;
 }
 
-export function getPageBySlug(
+export async function getPageBySlug(
   slug: string
-): { page: LandingPage; file: string } | null {
+): Promise<{ page: LandingPage; file: string } | null> {
   for (const [, files] of Object.entries(hubToFiles)) {
     for (const file of files) {
-      const pages = readJsonFile(file);
+      const pages = await readJsonFile(file);
       const page = pages.find((p) => p.slug === slug);
       if (page) return { page, file };
     }
@@ -64,49 +60,46 @@ export function getPageBySlug(
   return null;
 }
 
-export function updatePage(
+export async function updatePage(
   slug: string,
   updated: LandingPage
-): { success: boolean; error?: string } {
-  const result = getPageBySlug(slug);
+): Promise<{ success: boolean; error?: string }> {
+  const result = await getPageBySlug(slug);
   if (!result) return { success: false, error: "Page not found" };
 
-  const pages = readJsonFile(result.file);
+  const pages = await readJsonFile(result.file);
   const index = pages.findIndex((p) => p.slug === slug);
   pages[index] = updated;
-  writeJsonFile(result.file, pages);
+  await writeJsonFile(result.file, pages);
   return { success: true };
 }
 
-export function createPage(
+export async function createPage(
   page: LandingPage
-): { success: boolean; error?: string } {
-  // Check slug uniqueness
-  const existing = getPageBySlug(page.slug);
+): Promise<{ success: boolean; error?: string }> {
+  const existing = await getPageBySlug(page.slug);
   if (existing) {
     return { success: false, error: `Slug "${page.slug}" already exists` };
   }
 
-  // Determine target file
   const files = hubToFiles[page.hubSlug];
   if (!files) {
     return { success: false, error: `Unknown hub: ${page.hubSlug}` };
   }
 
-  // For channel-letters, append to the second file
   const targetFile = files.length > 1 ? files[files.length - 1] : files[0];
-  const pages = readJsonFile(targetFile);
+  const pages = await readJsonFile(targetFile);
   pages.push(page);
-  writeJsonFile(targetFile, pages);
+  await writeJsonFile(targetFile, pages);
   return { success: true };
 }
 
-export function deletePage(slug: string): { success: boolean; error?: string } {
-  const result = getPageBySlug(slug);
+export async function deletePage(slug: string): Promise<{ success: boolean; error?: string }> {
+  const result = await getPageBySlug(slug);
   if (!result) return { success: false, error: "Page not found" };
 
-  const pages = readJsonFile(result.file);
+  const pages = await readJsonFile(result.file);
   const filtered = pages.filter((p) => p.slug !== slug);
-  writeJsonFile(result.file, filtered);
+  await writeJsonFile(result.file, filtered);
   return { success: true };
 }
