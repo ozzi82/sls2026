@@ -8,19 +8,28 @@ export async function GET(
 ) {
   try {
     const filePath = params.path.join("/");
-    const { list, getDownloadUrl } = await import("@vercel/blob");
+    const { head } = await import("@vercel/blob");
+
+    // List blobs matching this path to find the URL
+    const { list } = await import("@vercel/blob");
     const blobPath = `uploads/${filePath}`;
     const { blobs } = await list({ prefix: blobPath, limit: 1 });
     const match = blobs.find((b) => b.pathname === blobPath);
 
     if (!match) {
-      return NextResponse.json({ error: "Not found" }, { status: 404 });
+      console.error(`[image-proxy] No blob found for path: ${blobPath}`);
+      return new NextResponse("Not found", { status: 404 });
     }
 
-    const downloadUrl = await getDownloadUrl(match.url);
-    const res = await fetch(downloadUrl);
+    // For private blobs, fetch using the token in Authorization header
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    const res = await fetch(match.url, {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
+
     if (!res.ok) {
-      return NextResponse.json({ error: "Failed to fetch" }, { status: 502 });
+      console.error(`[image-proxy] Fetch failed: ${res.status} ${res.statusText} for ${match.url}`);
+      return new NextResponse("Failed to fetch", { status: 502 });
     }
 
     const body = await res.arrayBuffer();
@@ -32,6 +41,6 @@ export async function GET(
     });
   } catch (error: unknown) {
     console.error("Image proxy error:", error);
-    return NextResponse.json({ error: "Failed to serve image" }, { status: 500 });
+    return new NextResponse("Server error", { status: 500 });
   }
 }
