@@ -11,42 +11,67 @@ Users stored in `content/settings/users.json`:
 ```json
 [
   {
-    "id": "u_abc123",
+    "id": "u_1713380400000_a1b2c3",
     "username": "ozan",
     "displayName": "Ozan",
     "role": "admin",
-    "passwordHash": "scrypt-hashed-value",
+    "passwordHash": "hex-salt:hex-hash",
     "createdAt": "2026-04-17T18:00:00.000Z",
-    "createdBy": "setup"
+    "createdBy": "setup",
+    "updatedAt": "2026-04-17T18:00:00.000Z"
   }
 ]
 ```
 
+- **ID format:** `u_` + timestamp + `_` + 6 random hex chars.
+- **Password hash format:** `hex-salt:hex-hash` — 32-byte random salt, 64-byte scrypt-derived key, both hex-encoded, joined by colon.
 - Passwords hashed with Node.js `crypto.scrypt` (no new dependencies).
-- Session token signing continues using `ADMIN_SECRET` env var and the existing simple hash.
+- Session token format: `username:role:signature` — role encoded in token so middleware can check permissions without file reads.
 - `ADMIN_USERS` env var is removed — users come from the JSON file.
+- `ADMIN_SECRET` env var stays for session token signing.
+- Usernames are case-insensitive (stored lowercase, compared lowercase).
+
+## Migration from ADMIN_USERS
+
+On first startup after upgrade, if `users.json` does not exist but `ADMIN_USERS` env var is set:
+1. Parse existing `ADMIN_USERS` entries.
+2. Create `users.json` with those users as admins, passwords hashed.
+3. Log a message: "Migrated N users from ADMIN_USERS env var."
+4. The env var can then be removed — it is no longer checked after migration.
+
+If neither `users.json` nor `ADMIN_USERS` exists, the setup wizard activates.
 
 ## Setup Wizard
 
-- When `users.json` doesn't exist or is empty, all `/admin` routes redirect to `/admin/setup`.
+- When `users.json` doesn't exist or is empty (and no `ADMIN_USERS` to migrate), all `/admin` routes redirect to `/admin/setup`.
 - `/admin/setup` shows a form: username, display name, password, confirm password.
 - Creates the first user with `role: "admin"` and `createdBy: "setup"`.
 - Once a user exists, `/admin/setup` redirects to `/admin/login`.
+- Setup redirect is handled by the login page (server component checks for users), not middleware (avoids Edge Runtime file read issues).
 
 ## Auth Changes
 
 ### Login (`/api/admin/auth`)
 - Reads users from `users.json` instead of `ADMIN_USERS` env var.
 - Verifies password using `crypto.scrypt` comparison.
-- Session token includes username (role looked up from file on each request).
+- Session token format: `username:role:signature` — role is included so middleware doesn't need file access.
+- Role changes require re-login to take effect (acceptable tradeoff).
 
 ### Middleware (`src/middleware.ts`)
-- Existing token verification stays the same.
-- Add role-based route protection:
+- Runs in Edge Runtime (no file reads).
+- Extracts role from session token (`username:role:signature`).
+- Role-based route protection:
   - `/admin/users` and `/admin/users/*` — admin only.
   - `/admin/integrations/*` — admin only.
   - All other `/admin/*` routes — admin or editor.
 - `/admin/setup` is public (like `/admin/login`).
+
+### Session Invalidation
+- Each user has a `tokenVersion` field (integer, starts at 1).
+- `tokenVersion` is included in the session token signature.
+- Changing a password or being deleted increments/invalidates the version.
+- Middleware verifies signature which includes the version — stale tokens fail verification.
+- Note: since middleware can't read files in Edge, full invalidation happens at the API layer (API routes verify token version against `users.json`). Middleware only checks the cryptographic signature.
 
 ## Roles & Permissions
 
@@ -59,6 +84,10 @@ Users stored in `content/settings/users.json`:
 | View dashboard | Yes | Yes |
 | Change own password/profile | Yes | Yes |
 
+**Guards:**
+- Admin cannot delete their own account (prevents lockout).
+- Cannot change role of the last remaining admin (prevents lockout).
+
 ## New Routes
 
 ### Pages
@@ -67,11 +96,13 @@ Users stored in `content/settings/users.json`:
 - `/admin/profile` — change own display name and password.
 
 ### API
-- `GET /api/admin/users` — list all users (admin only, passwords excluded).
-- `POST /api/admin/users` — create user (admin only). Body: `{ username, displayName, role, password }`.
-- `PUT /api/admin/users/[id]` — update user (admin only). Body: `{ displayName?, role?, password? }`.
-- `DELETE /api/admin/users/[id]` — delete user (admin only, cannot delete self).
-- `PUT /api/admin/profile` — update own displayName and/or password. Body: `{ displayName?, currentPassword?, newPassword? }`.
+- `GET /api/admin/users` — list all users (admin only, passwordHash excluded from response). Returns `{ users: User[] }`.
+- `POST /api/admin/users` — create user (admin only). Body: `{ username, displayName, role, password }`. Returns `{ user: User }`. Returns 409 if username already exists.
+- `PUT /api/admin/users/[id]` — update user (admin only). Body: `{ displayName?, role?, password? }`. Admin can reset another user's password without knowing the old one. Returns `{ user: User }`.
+- `DELETE /api/admin/users/[id]` — delete user (admin only, cannot delete self, cannot delete last admin). Returns `{ success: true }`.
+- `PUT /api/admin/profile` — update own displayName and/or password. Body: `{ displayName?, currentPassword, newPassword? }`. `currentPassword` is **required** when `newPassword` is provided. Returns `{ user: User }`.
+
+All error responses follow existing pattern: `{ error: string }` with appropriate HTTP status.
 
 ## UI Changes
 
@@ -95,19 +126,19 @@ Replace plain "Logout" button with a user avatar/icon showing the current user's
 
 ### Profile Page (`/admin/profile`)
 - Display name field (editable).
-- Password change: current password, new password, confirm new password.
+- Password change: current password (required), new password, confirm new password.
 - Save button.
 
 ## Edit Log Enhancement
 
 ### Data Change
-Add `username` field to edit-log entries:
+Add `username` field to existing edit-log entries (keeping existing field names `pageType`, `slug`, `label`):
 ```json
 {
   "timestamp": "2026-04-17T18:00:00.000Z",
-  "action": "update",
-  "type": "product",
+  "pageType": "product",
   "slug": "blade-signs",
+  "label": "Blade Signs",
   "username": "ozan"
 }
 ```
@@ -125,25 +156,30 @@ All content-saving API routes extract the username from the session cookie and p
 - `src/app/api/admin/users/route.ts`
 - `src/app/api/admin/users/[id]/route.ts`
 - `src/app/api/admin/profile/route.ts`
-- `src/lib/admin/users.ts` — user CRUD, password hashing, validation.
+- `src/lib/admin/users.ts` — user CRUD, password hashing, validation, migration.
 
 ## Files to Modify
-- `src/lib/admin/auth.ts` — read from users.json, scrypt password verification.
-- `src/middleware.ts` — add setup redirect, role-based route protection.
+- `src/lib/admin/auth.ts` — read from users.json, scrypt password verification, new token format with role.
+- `src/middleware.ts` — extract role from token, role-based route protection.
 - `src/app/(admin)/admin/layout.tsx` — add System section, update header with user dropdown.
-- `src/app/api/admin/auth/route.ts` — use new auth functions.
-- All content API routes — pass username to edit-log.
-- `src/components/admin/DashboardWidget.tsx` or `RecentEditsWidget` — show username.
+- `src/app/api/admin/auth/route.ts` — use new auth functions, include role in token.
+- All content API routes (`products/[slug]`, `pages/[slug]`, `static-pages/[slug]`) — pass username to edit-log.
+- `src/lib/admin/site-settings-types.ts` — add `username` to `EditLogEntry` interface.
+- `src/lib/admin/site-settings.ts` — accept username param in `appendEditLog`.
+- `src/components/admin/RecentEditsWidget.tsx` — show username column.
 
 ## Validation (Zod)
-- Username: 3-30 chars, alphanumeric + underscores.
+- Username: 3-30 chars, lowercase alphanumeric + underscores. Case-insensitive (normalized to lowercase).
 - Display name: 1-50 chars.
 - Password: minimum 8 chars.
 - Role: enum `admin` | `editor`.
 
 ## Security Notes
-- Passwords hashed with `crypto.scrypt` (salt per user, stored alongside hash).
+- Passwords hashed with `crypto.scrypt` (32-byte random salt, 64-byte derived key).
 - No plaintext passwords stored anywhere.
 - Admin cannot delete their own account (prevents lockout).
+- Cannot demote the last remaining admin (prevents lockout).
 - Setup wizard only works when no users exist.
 - `ADMIN_SECRET` env var still required for session token signing.
+- Token version invalidates sessions on password change or user deletion.
+- Tech debt: `simpleHash` for session tokens should eventually be replaced with `crypto.createHmac('sha256', secret)`.
