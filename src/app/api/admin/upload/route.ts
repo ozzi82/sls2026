@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
 const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
-const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
+const UPLOADS_DIR = path.join(process.cwd(), "uploads");
 
 export async function POST(request: NextRequest) {
   try {
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
     fs.writeFileSync(filePath, uploadData);
 
     return NextResponse.json({
-      url: `/uploads/${safeName}`,
+      url: `/api/uploads/${safeName}`,
       width,
       height,
     });
