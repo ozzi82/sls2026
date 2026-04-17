@@ -23,8 +23,6 @@ export default function TrackingScripts({ google, consentCategories }: Props) {
     return () => window.removeEventListener("consent-updated", checkConsent)
   }, [])
 
-  if (!google.enabled) return null
-
   const hasAnalyticsConsent = consentCategories.some(
     (cat) => consented.includes(cat.id) && cat.integrations.includes("ga4")
   )
@@ -32,8 +30,8 @@ export default function TrackingScripts({ google, consentCategories }: Props) {
     (cat) => consented.includes(cat.id) && cat.integrations.includes("gtm")
   )
 
-  const useDirectGA4 = google.ga4MeasurementId && !google.gtmContainerId
-  const useGTM = google.gtmContainerId
+  const useDirectGA4 = google.enabled && google.ga4MeasurementId && !google.gtmContainerId
+  const useGTM = google.enabled && google.gtmContainerId
 
   return (
     <>
@@ -68,12 +66,23 @@ gtag('js',new Date());gtag('config','${google.ga4MeasurementId}');`,
         </>
       )}
 
-      {google.adsConversionId && !useGTM && hasMarketingConsent && (
+      {google.enabled && google.adsConversionId && !useGTM && hasMarketingConsent && (
         <Script
           id="gads-config"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `gtag('config','${google.adsConversionId}');`,
+          }}
+        />
+      )}
+
+      {/* Microsoft Clarity — heatmaps & session recordings */}
+      {hasAnalyticsConsent && (
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wdammhaihh");`,
           }}
         />
       )}
