@@ -17,6 +17,8 @@ import {
   Users,
   User,
   ChevronDown,
+  Image,
+  ArrowRightLeft,
 } from "lucide-react";
 
 type NavItem = {
@@ -46,6 +48,7 @@ const navSections: NavSection[] = [
       { href: "/admin/content/landing-pages", label: "Landing Pages", icon: FileText },
       { href: "/admin/content/static-pages", label: "Static Pages", icon: File },
       { href: "/admin/pages/new", label: "New Landing Page", icon: FilePlus },
+      { href: "/admin/media", label: "Media Library", icon: Image },
     ],
   },
   {
@@ -62,6 +65,7 @@ const navSections: NavSection[] = [
     adminOnly: true,
     items: [
       { href: "/admin/users", label: "Users", icon: Users },
+      { href: "/admin/redirects", label: "Redirects", icon: ArrowRightLeft },
     ],
   },
 ];

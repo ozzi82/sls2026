@@ -5,14 +5,51 @@ import { verifyToken, COOKIE_NAME } from "@/lib/admin/auth";
 const ADMIN_ONLY_PATTERNS = [
   /^\/admin\/users/,
   /^\/admin\/integrations/,
+  /^\/admin\/redirects/,
   /^\/api\/admin\/users(?!\/check)/,
   /^\/api\/admin\/settings/,
+  /^\/api\/admin\/redirects/,
 ];
 
-export function middleware(request: NextRequest) {
+// In-memory redirect cache (populated from API, refreshed every 60s)
+let redirectCache: { from: string; to: string; permanent: boolean }[] | null = null;
+let redirectCacheTs = 0;
+const REDIRECT_CACHE_TTL = 60_000;
+
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Allow public routes
+  // --- Public redirects (non-admin, non-api routes) ---
+  if (!pathname.startsWith("/admin") && !pathname.startsWith("/api")) {
+    if (!redirectCache || Date.now() - redirectCacheTs > REDIRECT_CACHE_TTL) {
+      try {
+        const res = await fetch(`${request.nextUrl.origin}/api/public/redirects`);
+        if (res.ok) {
+          const data = await res.json();
+          redirectCache = data.redirects || [];
+          redirectCacheTs = Date.now();
+        }
+      } catch {
+        // Don't block on errors
+      }
+    }
+
+    if (redirectCache) {
+      const match = redirectCache.find((r) => r.from === pathname);
+      if (match) {
+        const dest = match.to.startsWith("http")
+          ? match.to
+          : `${request.nextUrl.origin}${match.to}`;
+        return NextResponse.redirect(dest, match.permanent ? 308 : 307);
+      }
+    }
+
+    return NextResponse.next();
+  }
+
+  // --- Admin routes below ---
+
+  // Allow public admin routes
   if (
     pathname === "/admin/login" ||
     pathname === "/admin/setup" ||
@@ -54,5 +91,10 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: [
+    "/admin/:path*",
+    "/api/admin/:path*",
+    // Public pages for redirects (exclude static assets)
+    "/((?!_next|api|favicon|uploads|.*\\.).*)",
+  ],
 };
