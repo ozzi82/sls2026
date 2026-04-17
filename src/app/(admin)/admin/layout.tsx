@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import { Toaster } from "sonner";
 import {
   LayoutDashboard,
   Package,
@@ -193,6 +194,7 @@ export default function AdminLayout({
         {/* Main content */}
         <main className="flex-1 p-6">{children}</main>
       </div>
+      <Toaster position="top-right" richColors />
     </div>
   );
 }
