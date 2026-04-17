@@ -58,6 +58,7 @@ export interface EditLogEntry {
   pageType: "product" | "landing" | "static"
   label: string
   timestamp: string
+  username?: string
 }
 
 // Public consent config (no secrets) — currently identical to CookieConsentSettings

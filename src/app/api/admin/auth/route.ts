@@ -16,22 +16,28 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (!validateCredentials(username, password)) {
+  const user = await validateCredentials(username, password);
+  if (!user) {
     return NextResponse.json(
       { error: "Invalid credentials" },
       { status: 401 }
     );
   }
 
-  const token = createSessionToken(username);
-  const response = NextResponse.json({ success: true, username });
+  const token = createSessionToken(user.username, user.role, user.tokenVersion);
+  const response = NextResponse.json({
+    success: true,
+    username: user.username,
+    role: user.role,
+    displayName: user.displayName,
+  });
 
   response.cookies.set(COOKIE_NAME, token, {
     httpOnly: true,
     secure: process.env.FORCE_HTTPS === "true",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 24 * 7,
   });
 
   return response;

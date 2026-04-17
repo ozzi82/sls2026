@@ -43,7 +43,8 @@ export async function PUT(
     }
 
     revalidatePath(parsed.data.slug);
-    await appendEditLog({ slug: parsed.data.slug, pageType: "static", label: parsed.data.label });
+    const username = request.headers.get("x-admin-username") || undefined;
+    await appendEditLog({ slug: parsed.data.slug, pageType: "static", label: parsed.data.label, username });
 
     return NextResponse.json({ success: true });
   } catch (error: unknown) {

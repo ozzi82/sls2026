@@ -8,6 +8,7 @@ interface EditEntry {
   pageType: "product" | "landing" | "static"
   label: string
   timestamp: string
+  username?: string
 }
 
 interface RecentEditsProps {
@@ -57,6 +58,11 @@ export default function RecentEditsWidget({ data, loading, error }: RecentEditsP
                     <span className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${typeColors[edit.pageType] || "bg-gray-100 text-gray-600"}`}>
                       {edit.pageType}
                     </span>
+                    {edit.username && (
+                      <span className="text-xs text-gray-400 flex-shrink-0">
+                        by {edit.username}
+                      </span>
+                    )}
                   </div>
                   <span className="text-xs text-gray-400 flex-shrink-0 ml-2">
                     {relativeTime(edit.timestamp)}

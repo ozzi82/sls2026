@@ -41,7 +41,8 @@ export async function PUT(
       return NextResponse.json({ error: result.error }, { status: 404 });
     }
 
-    await appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug });
+    const username = request.headers.get("x-admin-username") || undefined;
+    await appendEditLog({ slug: params.slug, pageType: "landing", label: parsed.data.h1 || params.slug, username });
     return NextResponse.json({ success: true, page: parsed.data });
   } catch (error: unknown) {
     console.error("PUT page error:", error);

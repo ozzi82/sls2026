@@ -1,20 +1,7 @@
-const COOKIE_NAME = "admin_session";
+// Edge-compatible module — no Node.js imports at top level.
+// Node.js-only functions use dynamic imports.
 
-interface AdminUser {
-  username: string;
-  password: string;
-}
-
-function getAdminUsers(): AdminUser[] {
-  const raw = process.env.ADMIN_USERS || "";
-  return raw
-    .split(",")
-    .filter(Boolean)
-    .map((pair) => {
-      const [username, password] = pair.split(":");
-      return { username, password };
-    });
-}
+export const COOKIE_NAME = "admin_session";
 
 function getSecret(): string {
   const secret = process.env.ADMIN_SECRET;
@@ -22,9 +9,8 @@ function getSecret(): string {
   return secret;
 }
 
+// Edge-compatible hash for session token signing
 function simpleHash(str: string): string {
-  // Simple HMAC-like hash using string operations
-  // Compatible with both Node.js and Edge Runtime
   const secret = getSecret();
   let hash = 0;
   const combined = secret + ":" + str + ":" + secret;
@@ -32,7 +18,6 @@ function simpleHash(str: string): string {
     const char = combined.charCodeAt(i);
     hash = ((hash << 5) - hash + char) | 0;
   }
-  // Create a longer hash by repeating with different seeds
   let hash2 = 0;
   const combined2 = str + ":" + secret + ":" + str;
   for (let i = 0; i < combined2.length; i++) {
@@ -42,31 +27,56 @@ function simpleHash(str: string): string {
   return Math.abs(hash).toString(36) + Math.abs(hash2).toString(36);
 }
 
-function sign(username: string): string {
-  const signature = simpleHash(username);
-  return `${username}:${signature}`;
+// Token format: username:role:tokenVersion:signature
+export function createSessionToken(username: string, role: string, tokenVersion: number): string {
+  const payload = `${username}:${role}:${tokenVersion}`;
+  const signature = simpleHash(payload);
+  return `${payload}:${signature}`;
 }
 
-export function verifyToken(token: string): string | null {
-  const colonIndex = token.indexOf(":");
-  if (colonIndex === -1) return null;
-  const username = token.substring(0, colonIndex);
-  if (!username) return null;
-  const expected = sign(username);
-  if (token === expected) return username;
-  return null;
+// Edge-compatible: extracts username and role from token without file reads
+export function verifyToken(token: string): { username: string; role: string; tokenVersion: number } | null {
+  const parts = token.split(":");
+  if (parts.length !== 4) return null;
+  const [username, role, versionStr] = parts;
+  if (!username || !role || !versionStr) return null;
+  const tokenVersion = parseInt(versionStr, 10);
+  if (isNaN(tokenVersion)) return null;
+
+  const payload = `${username}:${role}:${tokenVersion}`;
+  const expectedSignature = simpleHash(payload);
+  if (parts[3] !== expectedSignature) return null;
+
+  return { username, role, tokenVersion };
 }
 
-export function validateCredentials(
+// Node.js only: validates credentials against users.json
+export async function validateCredentials(
   username: string,
   password: string
-): boolean {
-  const users = getAdminUsers();
-  return users.some((u) => u.username === username && u.password === password);
+) {
+  const { getUserByUsername, verifyPassword, hasAnyUsers, migrateFromEnvVar } = await import("./users");
+
+  const hasUsers = await hasAnyUsers();
+  if (!hasUsers) {
+    const migrated = await migrateFromEnvVar();
+    if (migrated === 0) return null;
+  }
+
+  const user = await getUserByUsername(username);
+  if (!user) return null;
+
+  const valid = await verifyPassword(password, user.passwordHash);
+  if (!valid) return null;
+
+  return user;
 }
 
-export function createSessionToken(username: string): string {
-  return sign(username);
+// Node.js only: verify token version is still valid
+export async function verifyTokenVersion(username: string, tokenVersion: number): Promise<boolean> {
+  const { loadUsers } = await import("./users");
+  const users = await loadUsers();
+  const user = users.find((u: { username: string }) => u.username === username);
+  if (!user) return false;
+  return user.tokenVersion === tokenVersion;
 }
-
-export { COOKIE_NAME };
