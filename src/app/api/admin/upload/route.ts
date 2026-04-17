@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = "force-dynamic";
 
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
 const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
+const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
 
 export async function POST(request: NextRequest) {
   try {
@@ -41,7 +43,6 @@ export async function POST(request: NextRequest) {
     let uploadData: Buffer;
     let width: number | undefined;
     let height: number | undefined;
-    const contentType = "image/webp";
 
     try {
       // Try sharp for optimization (resize + WebP conversion)
@@ -66,19 +67,17 @@ export async function POST(request: NextRequest) {
       uploadData = Buffer.from(await file.arrayBuffer());
     }
 
-    const blob = await put(`uploads/${safeName}`, uploadData, {
-      access: "private",
-      contentType,
-      addRandomSuffix: true,
-    });
+    // Ensure uploads directory exists
+    if (!fs.existsSync(UPLOADS_DIR)) {
+      fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+    }
 
-    // blob.pathname includes the random suffix, e.g. "uploads/image-123-abc123.webp"
-    const proxyPath = blob.pathname.startsWith("uploads/")
-      ? blob.pathname.slice("uploads/".length)
-      : blob.pathname;
+    // Write file to public/uploads/
+    const filePath = path.join(UPLOADS_DIR, safeName);
+    fs.writeFileSync(filePath, uploadData);
 
     return NextResponse.json({
-      url: `/api/images/${proxyPath}`,
+      url: `/uploads/${safeName}`,
       width,
       height,
     });
