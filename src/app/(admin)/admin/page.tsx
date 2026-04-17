@@ -5,7 +5,7 @@ import ContentOverviewWidget from "@/components/admin/dashboard/ContentOverviewW
 import SeoHealthWidget from "@/components/admin/dashboard/SeoHealthWidget"
 import RecentEditsWidget from "@/components/admin/dashboard/RecentEditsWidget"
 import { VisitorsWidget, TopPagesWidget, TrafficSourcesWidget, type GAData } from "@/components/admin/dashboard/GoogleAnalyticsWidgets"
-import { ActiveSessionsWidget, RecentRecordingsWidget, type ORData } from "@/components/admin/dashboard/OpenReplayWidgets"
+import { ClarityTrafficWidget, ClarityInsightsWidget, type ClarityData } from "@/components/admin/dashboard/ClarityWidgets"
 
 interface InternalData {
   counts: {
@@ -50,7 +50,7 @@ function useAdminFetch<T>(url: string) {
 export default function AdminDashboard() {
   const internal = useAdminFetch<InternalData>("/api/admin/analytics/internal")
   const ga = useAdminFetch<GAData>("/api/admin/analytics/google")
-  const or = useAdminFetch<ORData>("/api/admin/analytics/openreplay")
+  const clarity = useAdminFetch<ClarityData>("/api/admin/analytics/clarity")
 
   return (
     <div>
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
         {/* Row 1 */}
         <ContentOverviewWidget data={internal.data} loading={internal.loading} error={internal.error} />
         <VisitorsWidget data={ga.data} loading={ga.loading} error={ga.error} />
-        <ActiveSessionsWidget data={or.data} loading={or.loading} error={or.error} />
+        <ClarityTrafficWidget data={clarity.data} loading={clarity.loading} error={clarity.error} />
 
         {/* Row 2 */}
         <TopPagesWidget data={ga.data} loading={ga.loading} error={ga.error} />
@@ -69,7 +69,7 @@ export default function AdminDashboard() {
 
         {/* Row 3 */}
         <RecentEditsWidget data={internal.data} loading={internal.loading} error={internal.error} />
-        <RecentRecordingsWidget data={or.data} loading={or.loading} error={or.error} />
+        <ClarityInsightsWidget data={clarity.data} loading={clarity.loading} error={clarity.error} />
       </div>
     </div>
   )
