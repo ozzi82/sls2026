@@ -1,11 +1,12 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import ToggleSwitch from "@/components/admin/ToggleSwitch";
 import { useSettingsSection } from "@/hooks/useSettingsSection";
 import type { GoogleSettings } from "@/lib/admin/site-settings-types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, CheckCircle2, XCircle } from "lucide-react";
 
 function StepCard({
   step,
@@ -32,8 +33,40 @@ function StepCard({
 }
 
 export default function GoogleSettingsPage() {
-  const { form, setForm, loading, saving, handleSave, hasServiceAccount } =
+  const { form, setForm, loading, saving, handleSave } =
     useSettingsSection("google");
+  const [googleStatus, setGoogleStatus] = useState<{ connected: boolean; email?: string } | null>(null);
+  const [disconnecting, setDisconnecting] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/admin/google/status")
+      .then((r) => r.json())
+      .then(setGoogleStatus)
+      .catch(() => {});
+  }, []);
+
+  // Check for OAuth callback params
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("connected") === "true") {
+      setGoogleStatus({ connected: true, email: "Connected" });
+      // Refresh status to get email
+      fetch("/api/admin/google/status").then((r) => r.json()).then(setGoogleStatus);
+      // Clean URL
+      window.history.replaceState({}, "", "/admin/integrations/google");
+    }
+    if (params.get("error")) {
+      // Clean URL
+      window.history.replaceState({}, "", "/admin/integrations/google");
+    }
+  }, []);
+
+  async function handleDisconnect() {
+    setDisconnecting(true);
+    await fetch("/api/admin/google/status", { method: "DELETE" });
+    setGoogleStatus({ connected: false });
+    setDisconnecting(false);
+  }
 
   if (loading || !form) {
     return (
@@ -189,22 +222,44 @@ export default function GoogleSettingsPage() {
           </div>
         </StepCard>
 
-        {/* Service Account status */}
-        <div className="rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-          <span className="font-medium">Dashboard Analytics:</span>{" "}
-          {hasServiceAccount ? (
-            <span className="text-green-700">Service account configured &#10003;</span>
+        {/* Connect Google Account for Dashboard */}
+        <StepCard step={5} title="Connect Google Account (for dashboard stats)">
+          <p className="text-sm text-gray-500 mb-3">
+            Connect your Google account so the admin dashboard can show visitor stats, top pages, and traffic sources.
+          </p>
+          {googleStatus?.connected ? (
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm text-green-700">
+                <CheckCircle2 className="h-4 w-4" />
+                <span>Connected as {googleStatus.email}</span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleDisconnect}
+                disabled={disconnecting}
+                className="text-red-600 hover:text-red-700"
+              >
+                <XCircle className="h-3.5 w-3.5 mr-1" />
+                {disconnecting ? "Disconnecting..." : "Disconnect"}
+              </Button>
+            </div>
           ) : (
-            <span>
-              To show Google Analytics data on the dashboard, add the{" "}
-              <code className="rounded bg-gray-200 px-1 py-0.5 text-xs">
-                GOOGLE_SERVICE_ACCOUNT_KEY
-              </code>{" "}
-              environment variable in Coolify. This is a JSON key from a Google Cloud service account
-              with GA4 read access.
-            </span>
+            <div>
+              <Button
+                onClick={() => { window.location.href = "/api/admin/google/auth"; }}
+              >
+                Connect Google Account
+              </Button>
+              {!process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID && (
+                <p className="mt-2 text-xs text-gray-400">
+                  Requires <code className="rounded bg-gray-200 px-1 py-0.5">GOOGLE_CLIENT_ID</code> and{" "}
+                  <code className="rounded bg-gray-200 px-1 py-0.5">GOOGLE_CLIENT_SECRET</code> environment variables.
+                </p>
+              )}
+            </div>
           )}
-        </div>
+        </StepCard>
 
         <div className="pt-4">
           <Button onClick={() => handleSave(form)} disabled={saving}>
