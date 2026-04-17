@@ -10,6 +10,16 @@ interface GoogleTokens {
   email?: string;
 }
 
+function getBaseUrl(request: NextRequest): string {
+  const host = request.headers.get("host") || "localhost:3000";
+  const protocol = process.env.FORCE_HTTPS === "true" ? "https" : "http";
+  return `${protocol}://${host}`;
+}
+
+function redirectTo(request: NextRequest, path: string): NextResponse {
+  return NextResponse.redirect(`${getBaseUrl(request)}${path}`);
+}
+
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
@@ -17,34 +27,27 @@ export async function GET(request: NextRequest) {
   const error = url.searchParams.get("error");
 
   if (error) {
-    return NextResponse.redirect(
-      new URL(`/admin/integrations/google?error=${encodeURIComponent(error)}`, request.url)
-    );
+    return redirectTo(request, `/admin/integrations/google?error=${encodeURIComponent(error)}`);
   }
 
   if (!code) {
-    return NextResponse.redirect(
-      new URL("/admin/integrations/google?error=no_code", request.url)
-    );
+    return redirectTo(request, "/admin/integrations/google?error=no_code");
   }
 
   // Verify CSRF state
   const storedState = request.cookies.get("google_oauth_state")?.value;
   if (!state || state !== storedState) {
-    return NextResponse.redirect(
-      new URL("/admin/integrations/google?error=invalid_state", request.url)
-    );
+    return redirectTo(request, "/admin/integrations/google?error=invalid_state");
   }
 
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
   if (!clientId || !clientSecret) {
-    return NextResponse.redirect(
-      new URL("/admin/integrations/google?error=missing_credentials", request.url)
-    );
+    return redirectTo(request, "/admin/integrations/google?error=missing_credentials");
   }
 
-  const redirectUri = `${url.origin}/api/admin/google/callback`;
+  const baseUrl = getBaseUrl(request);
+  const redirectUri = `${baseUrl}/api/admin/google/callback`;
 
   try {
     // Exchange code for tokens
@@ -63,9 +66,7 @@ export async function GET(request: NextRequest) {
     if (!tokenRes.ok) {
       const err = await tokenRes.text();
       console.error("[google-oauth] Token exchange failed:", err);
-      return NextResponse.redirect(
-        new URL("/admin/integrations/google?error=token_exchange_failed", request.url)
-      );
+      return redirectTo(request, "/admin/integrations/google?error=token_exchange_failed");
     }
 
     const tokenData = await tokenRes.json();
@@ -94,18 +95,11 @@ export async function GET(request: NextRequest) {
 
     await writeJson("settings/google-tokens.json", tokens);
 
-    const response = NextResponse.redirect(
-      new URL("/admin/integrations/google?connected=true", request.url)
-    );
-
-    // Clear the state cookie
+    const response = redirectTo(request, "/admin/integrations/google?connected=true");
     response.cookies.delete("google_oauth_state");
-
     return response;
   } catch (err) {
     console.error("[google-oauth] Callback error:", err);
-    return NextResponse.redirect(
-      new URL("/admin/integrations/google?error=callback_failed", request.url)
-    );
+    return redirectTo(request, "/admin/integrations/google?error=callback_failed");
   }
 }

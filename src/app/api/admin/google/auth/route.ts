@@ -9,9 +9,10 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "GOOGLE_CLIENT_ID not configured" }, { status: 500 });
   }
 
-  // Build the redirect URI from the current request
-  const url = new URL(request.url);
-  const redirectUri = `${url.origin}/api/admin/google/callback`;
+  // Build the redirect URI from the host header (request.url is localhost behind reverse proxy)
+  const host = request.headers.get("host") || "localhost:3000";
+  const protocol = process.env.FORCE_HTTPS === "true" ? "https" : "http";
+  const redirectUri = `${protocol}://${host}/api/admin/google/callback`;
 
   // Generate a state token for CSRF protection
   const state = crypto.randomBytes(16).toString("hex");
