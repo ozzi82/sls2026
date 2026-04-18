@@ -119,7 +119,7 @@ export async function GET() {
     const zip = createZip(allFiles);
     const date = new Date().toISOString().slice(0, 10);
 
-    return new NextResponse(zip, {
+    return new NextResponse(new Uint8Array(zip), {
       headers: {
         "Content-Type": "application/zip",
         "Content-Disposition": `attachment; filename="sunlite-backup-${date}.zip"`,
