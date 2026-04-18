@@ -11,7 +11,6 @@ import {
   File,
   FilePlus,
   BarChart3,
-  MousePointerClick,
   Cookie,
   LogOut,
   Users,
@@ -19,6 +18,7 @@ import {
   ChevronDown,
   Image,
   ArrowRightLeft,
+  Download,
 } from "lucide-react";
 
 type NavItem = {
@@ -56,7 +56,6 @@ const navSections: NavSection[] = [
     adminOnly: true,
     items: [
       { href: "/admin/integrations/google", label: "Google Analytics", icon: BarChart3 },
-      { href: "/admin/integrations/openreplay", label: "Heatmap & Sessions", icon: MousePointerClick },
       { href: "/admin/integrations/cookie-consent", label: "Cookie Consent", icon: Cookie },
     ],
   },
@@ -66,6 +65,7 @@ const navSections: NavSection[] = [
     items: [
       { href: "/admin/users", label: "Users", icon: Users },
       { href: "/admin/redirects", label: "Redirects", icon: ArrowRightLeft },
+      { href: "/admin/backup", label: "Backup", icon: Download },
     ],
   },
 ];
