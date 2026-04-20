@@ -35,6 +35,25 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
+/**
+ * Strip unnecessary <p> wrappers from simple content.
+ * TipTap wraps everything in <p> tags, but for compact fields like
+ * button labels we want plain text unless there's actual rich formatting.
+ */
+function cleanHtml(html: string): string {
+  if (!html) return "";
+  // If it's just <p>text</p> with no inner tags/styles, return plain text
+  const match = html.match(/^<p>([\s\S]*)<\/p>$/);
+  if (match) {
+    const inner = match[1];
+    // If inner content has no HTML tags, return plain text
+    if (!/<[^>]+>/.test(inner) && !inner.includes("&")) {
+      return inner;
+    }
+  }
+  return html;
+}
+
 interface RichTextEditorProps {
   content: string;
   onChange: (html: string) => void;
@@ -80,7 +99,7 @@ export default function RichTextEditor({
       },
     },
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML());
+      onChange(cleanHtml(editor.getHTML()));
     },
   });
 
@@ -361,7 +380,7 @@ export default function RichTextEditor({
         onClick={() => {
           if (sourceMode) {
             editor.commands.setContent(sourceHtml, { emitUpdate: false });
-            onChange(sourceHtml);
+            onChange(cleanHtml(sourceHtml));
           } else {
             setSourceHtml(editor.getHTML());
           }
@@ -439,7 +458,7 @@ export default function RichTextEditor({
         onClick={() => {
           if (sourceMode) {
             editor.commands.setContent(sourceHtml, { emitUpdate: false });
-            onChange(sourceHtml);
+            onChange(cleanHtml(sourceHtml));
           } else {
             setSourceHtml(editor.getHTML());
           }
