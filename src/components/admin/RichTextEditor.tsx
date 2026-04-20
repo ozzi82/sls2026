@@ -74,6 +74,11 @@ export default function RichTextEditor({
     ],
     content,
     immediatelyRender: false,
+    editorProps: {
+      attributes: {
+        ...(placeholder ? { "data-placeholder": placeholder } : {}),
+      },
+    },
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
@@ -459,7 +464,7 @@ export default function RichTextEditor({
     <div className="border rounded-md">
       {/* Toolbar */}
       <div className="flex flex-col gap-1 p-2 border-b bg-gray-50">
-        {variant === "compact" && !expanded ? (
+        {!showFullToolbar ? (
           renderCompactToolbar()
         ) : (
           <>
