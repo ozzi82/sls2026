@@ -51,7 +51,11 @@
       "Bash(done)",
       "Bash(npm run:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(npm install:*)",
+      "Bash(nslookup:*)",
+      "Bash(bash \"C:\\\\Users\\\\ozany\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.2\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\SLS\\\\sunlite-wholesale\")",
+      "Bash(bash \"C:/Users/ozany/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.2/skills/brainstorming/scripts/start-server.sh\" --project-dir \"C:/SLS/sunlite-wholesale\")"
     ]
   }
 }

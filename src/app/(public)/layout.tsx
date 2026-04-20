@@ -6,7 +6,7 @@ import { loadSiteSettings, getPublicConsentConfig } from "@/lib/admin/site-setti
 import CookieConsent from "@/components/CookieConsent"
 import TrackingScripts from "@/components/TrackingScripts"
 import OpenReplayTracker from "@/components/OpenReplayTracker"
-import { getLocale } from "@/lib/i18n/locale"
+import { getLocale } from "@/lib/i18n/get-locale"
 
 export default async function PublicLayout({
   children,

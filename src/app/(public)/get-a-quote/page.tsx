@@ -6,7 +6,8 @@ import QuoteForm from "./QuoteForm";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
-import { getLocale, getAlternates } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";

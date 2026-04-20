@@ -6,7 +6,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, FAQData, TextSectionData } from "@/lib/admin/page-config-types";
-import { getLocale, getAlternates } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";

@@ -10,7 +10,7 @@ import HeroSlider from "@/components/HeroSlider";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
 
 export const dynamic = "force-dynamic";
 

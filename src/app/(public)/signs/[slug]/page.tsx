@@ -6,7 +6,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import RelatedPages from "@/components/RelatedPages";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { getLocale, getAlternates } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export function generateStaticParams() {

@@ -19,7 +19,8 @@ import type {
   RelatedPagesData,
   CTAData,
 } from "@/lib/admin/page-config-types";
-import { getLocale, getAlternates } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";

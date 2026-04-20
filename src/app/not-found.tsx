@@ -1,6 +1,6 @@
 import LocaleLink from "@/components/LocaleLink";
 import { Metadata } from "next";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale } from "@/lib/i18n/get-locale";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
