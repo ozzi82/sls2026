@@ -6,6 +6,7 @@ import { loadSiteSettings, getPublicConsentConfig } from "@/lib/admin/site-setti
 import CookieConsent from "@/components/CookieConsent"
 import TrackingScripts from "@/components/TrackingScripts"
 import OpenReplayTracker from "@/components/OpenReplayTracker"
+import { getLocale } from "@/lib/i18n/locale"
 
 export default async function PublicLayout({
   children,
@@ -14,6 +15,7 @@ export default async function PublicLayout({
 }) {
   const settings = await loadSiteSettings()
   const consentConfig = getPublicConsentConfig(settings)
+  const locale = await getLocale()
 
   return (
     <>
@@ -22,10 +24,10 @@ export default async function PublicLayout({
           __html: `(function(){try{var t=localStorage.getItem('sunlite-theme');if(t)document.documentElement.classList.add('theme-'+t)}catch(e){}})()`,
         }}
       />
-      <Header />
+      <Header locale={locale} />
       <main>{children}</main>
-      <Footer />
-      <MobileCTABar />
+      <Footer locale={locale} />
+      <MobileCTABar locale={locale} />
       <ThemeSwitcher />
 
       {/* Consent config inlined for client components */}

@@ -1,4 +1,6 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
+import { localePath } from "@/lib/i18n/locale";
+import type { Locale } from "@/lib/i18n/locale";
 
 interface BreadcrumbItem {
   /** Display text — use `label` or `name` (both supported for backwards compatibility) */
@@ -9,9 +11,10 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  locale?: string;
 }
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, locale = "en" }: BreadcrumbsProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -19,7 +22,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: index + 1,
       name: item.label || item.name,
-      ...(item.href && { item: `https://sunlitesigns.com${item.href}` }),
+      ...(item.href && { item: `https://sunlitesigns.com${localePath(locale as Locale, item.href)}` }),
     })),
   };
 
@@ -41,9 +44,9 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                   <span className="text-brand-gold">/</span>
                 )}
                 {item.href && !isLast(index) ? (
-                  <Link href={item.href} className="text-white/60 hover:text-brand-gold transition-colors">
+                  <LocaleLink locale={locale} href={item.href} className="text-white/60 hover:text-brand-gold transition-colors">
                     {text}
-                  </Link>
+                  </LocaleLink>
                 ) : (
                   <span className="text-white/40">{text}</span>
                 )}

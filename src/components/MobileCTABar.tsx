@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
+import { t } from "@/lib/i18n/translations";
+import type { Locale } from "@/lib/i18n/locale";
 import { Phone, ArrowRight } from "lucide-react";
 
-export default function MobileCTABar() {
+export default function MobileCTABar({ locale }: { locale: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -25,14 +27,14 @@ export default function MobileCTABar() {
           <a
             href="tel:+6892940912"
             className="flex items-center justify-center w-11 h-11 border border-white/10 rounded-lg text-white/50 hover:text-brand-gold transition-colors shrink-0"
-            aria-label="Call us"
+            aria-label={t(locale as Locale, "cta.callUs")}
           >
             <Phone className="w-4 h-4" />
           </a>
-          <Link href="/get-a-quote" className="btn-primary flex-1 text-center text-xs py-3 flex items-center justify-center gap-2">
-            Get Trade Quote
+          <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary flex-1 text-center text-xs py-3 flex items-center justify-center gap-2">
+            {t(locale as Locale, "cta.getQuote")}
             <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     </div>

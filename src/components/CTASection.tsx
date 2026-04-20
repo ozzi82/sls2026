@@ -1,14 +1,18 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
+import { t } from "@/lib/i18n/translations";
+import type { Locale } from "@/lib/i18n/locale";
 import { Lock, Phone } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 interface CTASectionProps {
+  locale?: string;
   heading?: string;
   highlight?: string;
   description?: string;
 }
 
 export default function CTASection({
+  locale = "en",
   heading = "Get Your Product",
   highlight = "Started.",
   description = "Request wholesale pricing for your next project. Detailed trade quotes within 24 hours. Delivered in 3 weeks door to door.",
@@ -31,9 +35,9 @@ export default function CTASection({
                 {description}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <Link href="/get-a-quote" className="btn-primary w-full sm:w-auto">
-                  Request Wholesale Pricing
-                </Link>
+                <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary w-full sm:w-auto">
+                  {t(locale as Locale, "cta.requestPricing")}
+                </LocaleLink>
                 <a href="tel:+6892940912" className="btn-secondary gap-2 w-full sm:w-auto justify-center">
                   <Phone className="w-4 h-4" />
                   (689) 294-0912
