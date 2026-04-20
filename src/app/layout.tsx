@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter, Bebas_Neue, Source_Sans_3 } from "next/font/google";
+import { getLocale } from "@/lib/i18n/locale";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -46,45 +47,48 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://sunlitesigns.com"),
-  title: {
-    default: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
-    template: "%s | Sunlite Signs",
-  },
-  description:
-    "German-engineered wholesale channel letters, blade signs, and flat cut letters for sign shops across the USA and Canada. UL listed. Precision built. Delivered in 3 weeks door to door.",
-  keywords: [
-    "wholesale channel letters",
-    "trimless channel letters wholesale",
-    "wholesale sign manufacturer USA",
-    "halo lit channel letters",
-    "UL listed channel letters",
-    "wholesale sign supplier Canada",
-    "flat cut letters wholesale",
-    "LED channel letters manufacturer",
-    "German engineered signs",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://sunlitesigns.com",
-    siteName: "Sunlite Signs",
-    title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
+    metadataBase: new URL("https://sunlitesigns.com"),
+    title: {
+      default: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
+      template: "%s | Sunlite Signs",
+    },
     description:
-      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
-    description:
-      "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+      "German-engineered wholesale channel letters, blade signs, and flat cut letters for sign shops across the USA and Canada. UL listed. Precision built. Delivered in 3 weeks door to door.",
+    keywords: [
+      "wholesale channel letters",
+      "trimless channel letters wholesale",
+      "wholesale sign manufacturer USA",
+      "halo lit channel letters",
+      "UL listed channel letters",
+      "wholesale sign supplier Canada",
+      "flat cut letters wholesale",
+      "LED channel letters manufacturer",
+      "German engineered signs",
+    ],
+    openGraph: {
+      type: "website",
+      locale: locale === "de" ? "de_DE" : "en_US",
+      url: "https://sunlitesigns.com",
+      siteName: "Sunlite Signs",
+      title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
+      description:
+        "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Sunlite Signs — Wholesale Channel Letters & Illuminated Signs",
+      description:
+        "German-engineered wholesale channel letters for sign shops. UL listed, precision built, delivered in 3 weeks door to door.",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 const globalJsonLd = {
   "@context": "https://schema.org",
@@ -122,13 +126,14 @@ const globalJsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable} ${bebasNeue.variable} ${sourceSans.variable}`}>
+    <html lang={locale} className={`${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable} ${bebasNeue.variable} ${sourceSans.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
