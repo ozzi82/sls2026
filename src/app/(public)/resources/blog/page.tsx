@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, Calendar, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -7,11 +7,14 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, ResourceCardsData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources--blog");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--blog", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -28,7 +31,8 @@ function formatDate(dateString: string) {
 }
 
 export default async function BlogPage() {
-  const config = await loadStaticPageConfig("resources--blog");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--blog", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -45,7 +49,7 @@ export default async function BlogPage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Blog" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources", href: "/resources" }, { name: "Blog" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -66,7 +70,7 @@ export default async function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {blogPosts.data.items.map((post, index) => (
                 <AnimatedSection key={post.href} delay={index * 0.1}>
-                  <Link href={post.href} className="group block h-full">
+                  <LocaleLink locale={locale} href={post.href} className="group block h-full">
                     <article className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                       <PlaceholderImage label={`Blog hero — ${post.title}`} className="rounded-none border-0" aspectRatio="aspect-[16/9]" />
                       <div className="p-6 lg:p-8">
@@ -90,7 +94,7 @@ export default async function BlogPage() {
                         </span>
                       </div>
                     </article>
-                  </Link>
+                  </LocaleLink>
                 </AnimatedSection>
               ))}
             </div>
@@ -98,7 +102,7 @@ export default async function BlogPage() {
         </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

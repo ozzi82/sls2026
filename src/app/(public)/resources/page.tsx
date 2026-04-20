@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -7,11 +7,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, ResourceCardsData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -20,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ResourcesPage() {
-  const config = await loadStaticPageConfig("resources");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -37,7 +41,7 @@ export default async function ResourcesPage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -60,7 +64,7 @@ export default async function ResourcesPage() {
                 const Icon = getIconComponent(card.icon);
                 return (
                   <AnimatedSection key={card.title} delay={index * 0.1}>
-                    <Link href={card.href} className="group block h-full">
+                    <LocaleLink locale={locale} href={card.href} className="group block h-full">
                       <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                         <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                           {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
@@ -71,7 +75,7 @@ export default async function ResourcesPage() {
                           Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
                       </div>
-                    </Link>
+                    </LocaleLink>
                   </AnimatedSection>
                 );
               })}
@@ -80,7 +84,7 @@ export default async function ResourcesPage() {
         </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

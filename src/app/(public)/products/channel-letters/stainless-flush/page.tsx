@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -11,11 +11,14 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("channel-letters--stainless-flush");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters--stainless-flush", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -25,7 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function StainlessFlushPage() {
-  const config = await loadProductConfig("channel-letters--stainless-flush");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters--stainless-flush", locale);
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const heroBlock = getBlock("hero");
@@ -61,7 +65,7 @@ export default async function StainlessFlushPage() {
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Products", href: "/products" }, { name: "Channel Letters", href: "/products/channel-letters" }, { name: "Stainless Steel Flush Mount" }]} />
+          <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Products", href: "/products" }, { name: "Channel Letters", href: "/products/channel-letters" }, { name: "Stainless Steel Flush Mount" }]} />
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -72,7 +76,7 @@ export default async function StainlessFlushPage() {
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">{heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span></h1>
                 {heroData.subtitle.split("\n\n").map((para, i) => (<p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>{para}</p>))}
-                <Link href="/get-a-quote" className="btn-primary">Request Wholesale Pricing<ArrowRight className="w-4 h-4 ml-2" /></Link>
+                <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">Request Wholesale Pricing<ArrowRight className="w-4 h-4 ml-2" /></LocaleLink>
               </div>
               <BeforeAfterSlider daySrc="/products/stainless-flush-day.jpg" nightSrc="/products/stainless-flush-night.jpg" alt="Stainless steel flush mount letters — partial side-lit halo effect, night" />
             </div>
@@ -134,7 +138,7 @@ export default async function StainlessFlushPage() {
       </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

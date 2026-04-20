@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -7,11 +7,14 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources--guides--channel-letter-buying-guide");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides--channel-letter-buying-guide", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -20,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ChannelLetterBuyingGuidePage() {
-  const config = await loadStaticPageConfig("resources--guides--channel-letter-buying-guide");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides--channel-letter-buying-guide", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -40,7 +44,7 @@ export default async function ChannelLetterBuyingGuidePage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Channel Letter Buying Guide" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Channel Letter Buying Guide" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -128,7 +132,7 @@ export default async function ChannelLetterBuyingGuidePage() {
                 </div>
                 <p className="text-white/70 leading-relaxed">
                   For a deep dive into illumination selection, see our dedicated guide: {" "}
-                  <Link href="/resources/guides/choosing-illumination-types" className="text-brand-gold hover:underline">Choosing the Right Illumination Type</Link>.
+                  <LocaleLink locale={locale} href="/resources/guides/choosing-illumination-types" className="text-brand-gold hover:underline">Choosing the Right Illumination Type</LocaleLink>.
                 </p>
               </div>
             </AnimatedSection>
@@ -233,7 +237,7 @@ export default async function ChannelLetterBuyingGuidePage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -10,11 +10,14 @@ import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("channel-letters");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -24,7 +27,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ChannelLettersPage() {
-  const config = await loadProductConfig("channel-letters");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -90,9 +94,9 @@ export default async function ChannelLettersPage() {
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
-          <Breadcrumbs
+          <Breadcrumbs locale={locale}
             items={[
-              { name: "Home", href: "/" },
+              { name: t(locale, "breadcrumbs.home"), href: "/" },
               { name: "Products", href: "/products" },
               { name: "Channel Letters" },
             ]}
@@ -116,10 +120,10 @@ export default async function ChannelLettersPage() {
                 ))}
                 <div className="flex flex-col sm:flex-row gap-4">
                   {heroData.ctas.map((cta) => (
-                    <Link key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
+                    <LocaleLink locale={locale} key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
                       {cta.label}
                       {cta.variant === "primary" && <ArrowRight className="w-4 h-4 ml-2" />}
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
               </div>
@@ -190,7 +194,7 @@ export default async function ChannelLettersPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {family.products.map((product, productIndex) => (
                 <AnimatedSection key={product.slug} delay={productIndex * 0.05}>
-                  <Link
+                  <LocaleLink locale={locale}
                     href={`/products/channel-letters/${product.slug}`}
                     className="group block h-full"
                   >
@@ -220,7 +224,7 @@ export default async function ChannelLettersPage() {
                         </span>
                       </div>
                     </div>
-                  </Link>
+                  </LocaleLink>
                 </AnimatedSection>
               ))}
             </div>
@@ -230,7 +234,7 @@ export default async function ChannelLettersPage() {
 
 
       {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

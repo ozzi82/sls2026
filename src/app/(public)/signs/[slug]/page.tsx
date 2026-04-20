@@ -6,6 +6,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import RelatedPages from "@/components/RelatedPages";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export function generateStaticParams() {
   return allLandingPages.map((page) => ({ slug: page.slug }));
@@ -26,7 +28,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function LandingPage({ params }: { params: { slug: string } }) {
+export default async function LandingPage({ params }: { params: { slug: string } }) {
+  const locale = await getLocale();
   const page = getLandingPage(params.slug);
   if (!page) notFound();
 
@@ -54,11 +57,12 @@ export default function LandingPage({ params }: { params: { slug: string } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <LandingPageHero
+        locale={locale}
         title={page.h1}
         highlight={page.h1Highlight}
         subtitle={page.heroSubtitle}
         breadcrumbs={[
-          { label: "Home", href: "/" },
+          { label: t(locale, "breadcrumbs.home"), href: "/" },
           { label: "Products", href: "/products" },
           { label: page.hubName, href: `/products/${page.hubSlug}` },
           { label: page.h1 + " " + page.h1Highlight, href: `/signs/${page.slug}` },
@@ -101,8 +105,8 @@ export default function LandingPage({ params }: { params: { slug: string } }) {
       ))}
 
       {page.faqs.length > 0 && <FAQAccordion faqs={page.faqs} />}
-      {relatedPages.length > 0 && <RelatedPages pages={relatedPages} />}
-      <CTASection />
+      {relatedPages.length > 0 && <RelatedPages pages={relatedPages} locale={locale} />}
+      <CTASection locale={locale} />
     </>
   );
 }

@@ -1,11 +1,13 @@
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { Metadata } from "next";
+import { getLocale } from "@/lib/i18n/locale";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
 };
 
-export default function NotFound() {
+export default async function NotFound() {
+  const locale = await getLocale();
   return (
     <div className="min-h-screen flex items-center justify-center bg-bg-primary pt-20 relative overflow-hidden">
       {/* Gradient overlay for depth */}
@@ -23,12 +25,12 @@ export default function NotFound() {
           The page you are looking for does not exist or has been moved.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/" className="btn-primary">
+          <LocaleLink locale={locale} href="/" className="btn-primary">
             Go Home
-          </Link>
-          <Link href="/get-a-quote" className="btn-secondary">
+          </LocaleLink>
+          <LocaleLink locale={locale} href="/get-a-quote" className="btn-secondary">
             Get a Quote
-          </Link>
+          </LocaleLink>
         </div>
       </div>
     </div>

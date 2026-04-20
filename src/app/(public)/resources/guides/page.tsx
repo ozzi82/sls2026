@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -8,11 +8,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, GuidesListData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources--guides");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -21,7 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GuidesPage() {
-  const config = await loadStaticPageConfig("resources--guides");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -38,7 +42,7 @@ export default async function GuidesPage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -61,7 +65,7 @@ export default async function GuidesPage() {
                 const Icon = guide.icon ? getIconComponent(guide.icon) : null;
                 return (
                   <AnimatedSection key={guide.href} delay={index * 0.1}>
-                    <Link href={guide.href} className="group block">
+                    <LocaleLink locale={locale} href={guide.href} className="group block">
                       <article className="bg-bg-card border border-white/[0.06] rounded-xl overflow-hidden hover:border-brand-gold/30 transition-all duration-300 hover:shadow-lg hover:shadow-brand-gold/5">
                         <div className="flex flex-col md:flex-row">
                           <div className="md:w-2/5 lg:w-1/3">
@@ -82,7 +86,7 @@ export default async function GuidesPage() {
                           </div>
                         </div>
                       </article>
-                    </Link>
+                    </LocaleLink>
                   </AnimatedSection>
                 );
               })}
@@ -91,7 +95,7 @@ export default async function GuidesPage() {
         </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

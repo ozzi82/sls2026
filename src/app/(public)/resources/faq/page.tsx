@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, FAQData, TextSectionData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources--faq");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--faq", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -19,7 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function FAQPage() {
-  const config = await loadStaticPageConfig("resources--faq");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--faq", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -59,7 +63,7 @@ export default async function FAQPage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "FAQ" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources", href: "/resources" }, { name: "FAQ" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -91,7 +95,7 @@ export default async function FAQPage() {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{stillQuestions.data.heading}</h2>
                 <p className="text-text-dark/60 max-w-xl mx-auto mb-8">{stillQuestions.data.content}</p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                  <Link href="/get-a-quote" className="btn-primary">Request Wholesale Pricing</Link>
+                  <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">Request Wholesale Pricing</LocaleLink>
                   <a href="mailto:hello@sunlitesigns.com" className="inline-flex items-center justify-center px-8 py-4 border-2 border-text-dark/20 text-text-dark font-heading font-semibold text-sm uppercase tracking-wider rounded hover:border-brand-gold hover:text-brand-gold transition-colors duration-300">Email Us</a>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-text-dark/50">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, CheckCircle, Lock } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -12,11 +12,14 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("flat-cut-letters");
+  const locale = await getLocale();
+  const config = await loadProductConfig("flat-cut-letters", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -26,7 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function FlatCutLettersPage() {
-  const config = await loadProductConfig("flat-cut-letters");
+  const locale = await getLocale();
+  const config = await loadProductConfig("flat-cut-letters", locale);
 
   function getBlock(id: string) {
     return config.blocks.find((b) => b.id === id);
@@ -97,9 +101,9 @@ export default async function FlatCutLettersPage() {
         <section className="relative bg-bg-primary overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
           <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
-            <Breadcrumbs
+            <Breadcrumbs locale={locale}
               items={[
-                { name: "Home", href: "/" },
+                { name: t(locale, "breadcrumbs.home"), href: "/" },
                 { name: "Products", href: "/products" },
                 { name: "Flat Cut Letters" },
               ]}
@@ -124,10 +128,10 @@ export default async function FlatCutLettersPage() {
                     material. Delivered in 2-3 weeks. We never sell retail — your clients stay yours.
                   </p>
                   {heroData.ctas.map((cta: any) => (
-                    <Link key={cta.label} href={cta.href} className="btn-primary">
+                    <LocaleLink locale={locale} key={cta.label} href={cta.href} className="btn-primary">
                       {cta.label}
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
                 <BeforeAfterSlider
@@ -332,7 +336,7 @@ export default async function FlatCutLettersPage() {
 
 
       {relatedArticles.length > 0 && <RelatedPages pages={relatedArticles} heading="Learn More" />}
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

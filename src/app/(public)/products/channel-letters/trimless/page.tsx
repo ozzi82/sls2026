@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import {
   ArrowRight,
   CheckCircle,
@@ -15,11 +15,14 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("channel-letters--trimless");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters--trimless", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -45,7 +48,8 @@ const comparisonRows = [
 ];
 
 export default async function TrimlessPage() {
-  const config = await loadProductConfig("channel-letters--trimless");
+  const locale = await getLocale();
+  const config = await loadProductConfig("channel-letters--trimless", locale);
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const heroBlock = getBlock("hero");
@@ -101,7 +105,7 @@ export default async function TrimlessPage() {
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(232,89,12,0.1),transparent_50%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Products", href: "/products" }, { name: "Channel Letters", href: "/products/channel-letters" }, { name: "EdgeLuxe Trimless" }]} />
+          <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Products", href: "/products" }, { name: "Channel Letters", href: "/products/channel-letters" }, { name: "EdgeLuxe Trimless" }]} />
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -120,10 +124,10 @@ export default async function TrimlessPage() {
                 ))}
                 <div className="flex flex-col sm:flex-row gap-4">
                   {heroData.ctas.map((cta) => (
-                    <Link key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
+                    <LocaleLink locale={locale} key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
                       {cta.label}
                       {cta.variant === "primary" && <ArrowRight className="w-4 h-4 ml-2" />}
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
               </div>
@@ -348,9 +352,9 @@ export default async function TrimlessPage() {
                 ))}
               </div>
               <div className="mt-8">
-                <Link href="/resources/guides/trimless-channel-letters-guide" className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all">
+                <LocaleLink locale={locale} href="/resources/guides/trimless-channel-letters-guide" className="text-brand-gold font-heading font-medium text-sm uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all">
                   Read the Full Trimless Guide <ArrowRight className="w-4 h-4" />
-                </Link>
+                </LocaleLink>
               </div>
             </div>
           </AnimatedSection>
@@ -358,7 +362,7 @@ export default async function TrimlessPage() {
       </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

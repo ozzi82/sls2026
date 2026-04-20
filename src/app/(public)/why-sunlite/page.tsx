@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import {
   ArrowRight,
   Globe,
@@ -15,11 +15,14 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("why-sunlite");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("why-sunlite", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -29,7 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function WhySunlitePage() {
-  const config = await loadStaticPageConfig("why-sunlite");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("why-sunlite", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -46,9 +50,9 @@ export default async function WhySunlitePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
 
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
-          <Breadcrumbs
+          <Breadcrumbs locale={locale}
             items={[
-              { name: "Home", href: "/" },
+              { name: t(locale, "breadcrumbs.home"), href: "/" },
               { name: "Why Sunlite" },
             ]}
           />
@@ -134,12 +138,12 @@ export default async function WhySunlitePage() {
                       <p className="text-text-dark/70 leading-relaxed mb-6">
                         {pillar.description}
                       </p>
-                      <Link
+                      <LocaleLink locale={locale}
                         href={pillar.href}
                         className="inline-flex items-center gap-2 text-brand-gold font-heading font-medium text-sm uppercase tracking-wider hover:gap-3 transition-all"
                       >
                         Learn More <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      </LocaleLink>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -193,7 +197,7 @@ export default async function WhySunlitePage() {
       </section>
 
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

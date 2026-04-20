@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Breadcrumbs from "./Breadcrumbs";
@@ -10,15 +10,16 @@ interface LandingPageHeroProps {
   highlight: string;
   subtitle: string;
   breadcrumbs: { label: string; href: string }[];
+  locale?: string;
 }
 
-export default function LandingPageHero({ title, highlight, subtitle, breadcrumbs }: LandingPageHeroProps) {
+export default function LandingPageHero({ title, highlight, subtitle, breadcrumbs, locale = "en" }: LandingPageHeroProps) {
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-navy to-[#0F0F2D]" />
       <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[radial-gradient(circle,var(--hero-glow),transparent_70%)]" />
       <div className="relative z-10 container-max section-padding !py-0">
-        <Breadcrumbs items={breadcrumbs} />
+        <Breadcrumbs items={breadcrumbs} locale={locale} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,12 +34,12 @@ export default function LandingPageHero({ title, highlight, subtitle, breadcrumb
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Link href="/get-a-quote" className="btn-primary">
+            <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">
               Request Wholesale Pricing
-            </Link>
-            <Link href="/products" className="btn-secondary gap-2">
+            </LocaleLink>
+            <LocaleLink locale={locale} href="/products" className="btn-secondary gap-2">
               View Products <ArrowRight className="w-4 h-4" />
-            </Link>
+            </LocaleLink>
           </div>
         </motion.div>
       </div>

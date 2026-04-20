@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -8,11 +8,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("products");
+  const locale = await getLocale();
+  const config = await loadProductConfig("products", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -22,7 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ProductsPage() {
-  const config = await loadProductConfig("products");
+  const locale = await getLocale();
+  const config = await loadProductConfig("products", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -72,9 +76,9 @@ export default async function ProductsPage() {
       <section className="relative bg-bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
-          <Breadcrumbs
+          <Breadcrumbs locale={locale}
             items={[
-              { name: "Home", href: "/" },
+              { name: t(locale, "breadcrumbs.home"), href: "/" },
               { name: "Products" },
             ]}
           />
@@ -126,7 +130,7 @@ export default async function ProductsPage() {
             .filter((c) => c.featured)
             .map((cat) => (
               <AnimatedSection key={cat.name}>
-                <Link href={cat.href} className="group block">
+                <LocaleLink locale={locale} href={cat.href} className="group block">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center bg-bg-card border border-white/[0.06] rounded-2xl overflow-hidden hover:border-brand-gold/30 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-400">
                     {cat.imageSrc ? (
                       <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
@@ -162,7 +166,7 @@ export default async function ProductsPage() {
                       </span>
                     </div>
                   </div>
-                </Link>
+                </LocaleLink>
               </AnimatedSection>
             ))}
         </div>
@@ -198,7 +202,7 @@ export default async function ProductsPage() {
                 .filter((c) => !c.featured)
                 .map((cat, index) => (
                   <AnimatedSection key={cat.name} delay={index * 0.1}>
-                    <Link href={cat.href} className="group block h-full">
+                    <LocaleLink locale={locale} href={cat.href} className="group block h-full">
                       <div className="bg-white border border-black/[0.04] rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-1 transition-all duration-400 h-full flex flex-col">
                         {cat.imageSrc ? (
                           <div className="relative aspect-[16/10]">
@@ -230,7 +234,7 @@ export default async function ProductsPage() {
                           </span>
                         </div>
                       </div>
-                    </Link>
+                    </LocaleLink>
                   </AnimatedSection>
                 ))}
             </div>
@@ -246,7 +250,7 @@ export default async function ProductsPage() {
           CTA
           ═══════════════════════════════════════════ */}
       {ctaBlock?.visible && (
-        <CTASection
+        <CTASection locale={locale}
           heading={ctaData.heading}
           highlight={ctaData.headingHighlight}
           description={ctaData.description}

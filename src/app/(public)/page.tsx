@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -10,11 +10,13 @@ import HeroSlider from "@/components/HeroSlider";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const config = await loadStaticPageConfig("home");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("home", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -84,13 +86,13 @@ export default async function Home() {
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               {(hero.data as any).ctas.map((cta: any) => (
-                <Link
+                <LocaleLink locale={locale}
                   key={cta.href}
                   href={cta.href}
                   className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}
                 >
                   {cta.label}
-                </Link>
+                </LocaleLink>
               ))}
             </div>
           </HeroContent>
@@ -184,10 +186,10 @@ export default async function Home() {
                   Real Projects <span className="text-brand-gold">Delivered</span>
                 </h2>
               </div>
-              <Link href="/gallery" className="btn-ghost group shrink-0">
+              <LocaleLink locale={locale} href="/gallery" className="btn-ghost group shrink-0">
                 View Full Gallery
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </LocaleLink>
             </div>
           </AnimatedSection>
 
@@ -278,7 +280,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {(products.data as any).items.map((product: any, i: number) => (
               <AnimatedSection key={product.name} delay={i * 0.08}>
-                <Link
+                <LocaleLink locale={locale}
                   href={product.href}
                   className="group relative block overflow-hidden bg-bg-card border border-white/[0.06] rounded-xl hover:border-brand-gold/30 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all duration-400"
                 >
@@ -329,7 +331,7 @@ export default async function Home() {
                       </p>
                     )}
                   </div>
-                </Link>
+                </LocaleLink>
               </AnimatedSection>
             ))}
           </div>
@@ -413,13 +415,13 @@ export default async function Home() {
                     </div>
                   ))}
                 </div>
-                <Link
+                <LocaleLink locale={locale}
                   href={(engineering.data as any).linkHref}
                   className="btn-ghost group"
                 >
                   {(engineering.data as any).linkText}
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </LocaleLink>
               </div>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-lg overflow-hidden">
@@ -551,10 +553,10 @@ export default async function Home() {
 
           <AnimatedSection delay={0.5}>
             <div className="text-center mt-14">
-              <Link href="/get-a-quote" className="btn-primary">
+              <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">
                 Request a Quote
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </LocaleLink>
             </div>
           </AnimatedSection>
         </div>
@@ -599,13 +601,13 @@ export default async function Home() {
                       {p}
                     </p>
                   ))}
-                  <Link
+                  <LocaleLink locale={locale}
                     href={(story.data as any).linkHref}
                     className="btn-text-link group"
                   >
                     {(story.data as any).linkText}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  </LocaleLink>
                 </div>
               </div>
             </AnimatedSection>
@@ -640,7 +642,7 @@ export default async function Home() {
               const Icon = getIconComponent(item.icon);
               return (
                 <AnimatedSection key={i} delay={i * 0.08}>
-                  <Link href={item.href} className="group block bg-bg-card border border-white/[0.06] rounded-xl p-6 h-full hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-400">
+                  <LocaleLink locale={locale} href={item.href} className="group block bg-bg-card border border-white/[0.06] rounded-xl p-6 h-full hover:border-brand-gold/30 hover:-translate-y-1 transition-all duration-400">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center shrink-0 mt-0.5">
                         {Icon && <Icon className="w-5 h-5 text-brand-gold" />}
@@ -658,7 +660,7 @@ export default async function Home() {
                         </span>
                       </div>
                     </div>
-                  </Link>
+                  </LocaleLink>
                 </AnimatedSection>
               );
             })}
@@ -674,7 +676,7 @@ export default async function Home() {
           CTA — Get Your Product Started
           ═══════════════════════════════════════════ */}
       {cta?.visible && (
-      <CTASection />
+      <CTASection locale={locale} />
       )}
 
       {/* ═══════════════════════════════════════════
@@ -705,10 +707,10 @@ export default async function Home() {
                 })}
               </div>
               <div className="text-center mt-10">
-                <Link href="/get-a-quote" className="btn-primary">
+                <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">
                   Get Trade Quote
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+                </LocaleLink>
               </div>
             </div>
           </AnimatedSection>

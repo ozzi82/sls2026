@@ -6,11 +6,14 @@ import QuoteForm from "./QuoteForm";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("get-a-quote");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("get-a-quote", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -20,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GetAQuotePage() {
-  const config = await loadStaticPageConfig("get-a-quote");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("get-a-quote", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -50,9 +54,9 @@ export default async function GetAQuotePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 pt-20">
           <div className="container-max px-6 sm:px-10 lg:px-16">
-            <Breadcrumbs
+            <Breadcrumbs locale={locale}
               items={[
-                { name: "Home", href: "/" },
+                { name: t(locale, "breadcrumbs.home"), href: "/" },
                 { name: "Request Wholesale Pricing" },
               ]}
             />
@@ -167,7 +171,7 @@ export default async function GetAQuotePage() {
       {/* ═══════════════════════════════════════════
           CTA
           ═══════════════════════════════════════════ */}
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

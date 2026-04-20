@@ -4,11 +4,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GalleryFilter from "./GalleryFilter";
 import CTASection from "@/components/CTASection";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("gallery");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("gallery", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -18,7 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function GalleryPage() {
-  const config = await loadStaticPageConfig("gallery");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("gallery", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -38,9 +42,9 @@ export default async function GalleryPage() {
 
         <div className="relative z-10 pt-20">
           <div className="container-max px-6 sm:px-10 lg:px-16">
-            <Breadcrumbs
+            <Breadcrumbs locale={locale}
               items={[
-                { name: "Home", href: "/" },
+                { name: t(locale, "breadcrumbs.home"), href: "/" },
                 { name: "Gallery" },
               ]}
             />
@@ -89,7 +93,7 @@ export default async function GalleryPage() {
           CTA
           ═══════════════════════════════════════════ */}
       {cta?.visible && (
-      <CTASection
+      <CTASection locale={locale}
         heading={(cta.data as any).heading}
         highlight={(cta.data as any).headingHighlight}
         description={(cta.data as any).description}

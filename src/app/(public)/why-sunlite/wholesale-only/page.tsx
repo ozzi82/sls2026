@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { CheckCircle2, XCircle, Handshake, Clock, Phone, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
@@ -7,11 +7,14 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("why-sunlite--wholesale-only");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("why-sunlite--wholesale-only", locale);
   return { title: config.seo.title, description: config.seo.metaDescription, keywords: config.seo.keywords };
 }
 
@@ -39,7 +42,8 @@ const whatWeNeverDo = [
 ];
 
 export default async function WholesaleOnlyPage() {
-  const config = await loadStaticPageConfig("why-sunlite--wholesale-only");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("why-sunlite--wholesale-only", locale);
   function getBlock(id: string) { return config.blocks.find(b => b.id === id); }
 
   const hero = getBlock("hero");
@@ -56,7 +60,7 @@ export default async function WholesaleOnlyPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-navy/20 to-bg-primary" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
         <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 pt-28 pb-16">
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Why Sunlite", href: "/why-sunlite" }, { name: "Wholesale Only" }]} />
+          <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Why Sunlite", href: "/why-sunlite" }, { name: "Wholesale Only" }]} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
@@ -71,7 +75,7 @@ export default async function WholesaleOnlyPage() {
               <p className="text-xl text-brand-gold font-heading font-semibold mb-8">{(hero.data as any).subtitleHighlight}</p>
               <div className="flex flex-wrap gap-4">
                 {(hero.data as any).ctas.map((cta: any) => (
-                  <Link key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</Link>
+                  <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</LocaleLink>
                 ))}
               </div>
             </AnimatedSection>
@@ -237,7 +241,7 @@ export default async function WholesaleOnlyPage() {
       </section>
       )}
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

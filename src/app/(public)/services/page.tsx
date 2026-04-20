@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
@@ -7,11 +7,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("services");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("services", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -21,7 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ServicesPage() {
-  const config = await loadStaticPageConfig("services");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("services", locale);
   function getBlock(id: string) {
     return config.blocks.find(b => b.id === id);
   }
@@ -77,9 +81,9 @@ export default async function ServicesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
 
         <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
-          <Breadcrumbs
+          <Breadcrumbs locale={locale}
             items={[
-              { name: "Home", href: "/" },
+              { name: t(locale, "breadcrumbs.home"), href: "/" },
               { name: "Services" },
             ]}
           />
@@ -138,13 +142,13 @@ export default async function ServicesPage() {
                     <p className="text-white/60 leading-relaxed mb-6 text-[15px]">
                       {service.description}
                     </p>
-                    <Link
+                    <LocaleLink locale={locale}
                       href="/get-a-quote"
                       className="btn-text-link group"
                     >
                       {service.learnMoreLabel}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                    </LocaleLink>
                   </div>
                 </AnimatedSection>
               );
@@ -187,13 +191,13 @@ export default async function ServicesPage() {
                           <p className="text-text-dark/60 leading-relaxed mb-6">
                             {service.description}
                           </p>
-                          <Link
+                          <LocaleLink locale={locale}
                             href="/get-a-quote"
                             className="btn-text-link group"
                           >
                             {service.learnMoreLabel}
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </Link>
+                          </LocaleLink>
                         </div>
                       </div>
                     </AnimatedSection>
@@ -227,13 +231,13 @@ export default async function ServicesPage() {
                     <p className="text-white/60 leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <Link
+                    <LocaleLink locale={locale}
                       href="/get-a-quote"
                       className="btn-text-link group"
                     >
                       {service.learnMoreLabel}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                    </LocaleLink>
                   </div>
                 </div>
               </AnimatedSection>
@@ -251,7 +255,7 @@ export default async function ServicesPage() {
           CTA
           ═══════════════════════════════════════════ */}
       {cta?.visible && (
-      <CTASection
+      <CTASection locale={locale}
         heading={(cta.data as any).heading}
         highlight={(cta.data as any).headingHighlight}
         description={(cta.data as any).description}

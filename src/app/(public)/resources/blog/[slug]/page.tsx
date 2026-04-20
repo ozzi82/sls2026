@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { notFound } from "next/navigation";
 import { Calendar, ArrowLeft, ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 interface BlogPost {
   slug: string;
@@ -331,11 +333,12 @@ export function generateMetadata({
   };
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
   params: { slug: string };
 }) {
+  const locale = await getLocale();
   const post = blogPosts[params.slug];
 
   if (!post) {
@@ -380,9 +383,9 @@ export default function BlogPostPage({
       {/* Hero */}
       <section className="bg-bg-primary pt-32 pb-16">
         <div className="container-max px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
+          <Breadcrumbs locale={locale}
             items={[
-              { name: "Home", href: "/" },
+              { name: t(locale, "breadcrumbs.home"), href: "/" },
               { name: "Resources", href: "/resources" },
               { name: "Blog", href: "/resources/blog" },
               { name: post.title },
@@ -440,30 +443,30 @@ export default function BlogPostPage({
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex justify-between items-center">
             {prevSlug ? (
-              <Link
+              <LocaleLink locale={locale}
                 href={`/resources/blog/${prevSlug}`}
                 className="flex items-center gap-2 text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Previous Article
-              </Link>
+              </LocaleLink>
             ) : (
               <div />
             )}
-            <Link
+            <LocaleLink locale={locale}
               href="/resources/blog"
               className="text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
             >
               All Articles
-            </Link>
+            </LocaleLink>
             {nextSlug ? (
-              <Link
+              <LocaleLink locale={locale}
                 href={`/resources/blog/${nextSlug}`}
                 className="flex items-center gap-2 text-sm text-white/50 hover:text-brand-gold transition-colors font-heading"
               >
                 Next Article
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </LocaleLink>
             ) : (
               <div />
             )}
@@ -472,7 +475,7 @@ export default function BlogPostPage({
       </section>
 
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

@@ -6,11 +6,14 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -19,7 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SignInstallationTipsPage() {
-  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips");
+  const locale = await getLocale();
+  const config = await loadStaticPageConfig("resources--guides--sign-installation-tips", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -36,7 +40,7 @@ export default async function SignInstallationTipsPage() {
       {hero?.visible && (
         <section className="bg-bg-primary pt-32 pb-16">
           <div className="container-max px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Sign Installation Tips" }]} />
+            <Breadcrumbs locale={locale} items={[{ name: t(locale, "breadcrumbs.home"), href: "/" }, { name: "Resources", href: "/resources" }, { name: "Guides", href: "/resources/guides" }, { name: "Sign Installation Tips" }]} />
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
@@ -63,7 +67,7 @@ export default async function SignInstallationTipsPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection locale={locale} />
     </>
   );
 }

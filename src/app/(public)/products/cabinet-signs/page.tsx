@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PlaceholderImage from "@/components/PlaceholderImage";
@@ -19,11 +19,14 @@ import type {
   RelatedPagesData,
   CTAData,
 } from "@/lib/admin/page-config-types";
+import { getLocale } from "@/lib/i18n/locale";
+import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await loadProductConfig("cabinet-signs");
+  const locale = await getLocale();
+  const config = await loadProductConfig("cabinet-signs", locale);
   return {
     title: config.seo.title,
     description: config.seo.metaDescription,
@@ -33,7 +36,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function CabinetSignsPage() {
-  const config = await loadProductConfig("cabinet-signs");
+  const locale = await getLocale();
+  const config = await loadProductConfig("cabinet-signs", locale);
 
   function getBlock<T>(id: string) {
     return config.blocks.find((b) => b.id === id) as
@@ -97,9 +101,9 @@ export default async function CabinetSignsPage() {
         <section className="relative bg-bg-primary overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--hero-glow),transparent_60%)]" />
           <div className="relative z-10 container-max section-padding pt-32 md:pt-36 px-6 sm:px-10 lg:px-16">
-            <Breadcrumbs
+            <Breadcrumbs locale={locale}
               items={[
-                { name: "Home", href: "/" },
+                { name: t(locale, "breadcrumbs.home"), href: "/" },
                 { name: "Products", href: "/products" },
                 { name: config.label },
               ]}
@@ -123,10 +127,10 @@ export default async function CabinetSignsPage() {
                     direct to sign shops across the USA and Canada. We never sell retail — your clients stay yours.
                   </p>
                   {hero.data.ctas.map((ctaItem) => (
-                    <Link key={ctaItem.href} href={ctaItem.href} className="btn-primary">
+                    <LocaleLink locale={locale} key={ctaItem.href} href={ctaItem.href} className="btn-primary">
                       {ctaItem.label}
                       <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
                 <PlaceholderImage
@@ -364,7 +368,7 @@ export default async function CabinetSignsPage() {
         <RelatedPages pages={relatedArticles} heading={relatedPages.data.heading} />
       )}
       {cta?.visible && (
-        <CTASection
+        <CTASection locale={locale}
           heading={cta.data.heading}
           highlight={cta.data.headingHighlight}
           description={cta.data.description}
