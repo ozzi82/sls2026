@@ -53,26 +53,80 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "how-to-choose-sign-illumination",
   ];
 
-  const pages: MetadataRoute.Sitemap = staticPages.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1.0 : path === "/get-a-quote" ? 0.9 : 0.8,
-  }));
+  const pages: MetadataRoute.Sitemap = staticPages.flatMap((path) => [
+    {
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: path === "" ? "weekly" : "monthly",
+      priority: path === "" ? 1.0 : path === "/get-a-quote" ? 0.9 : 0.8,
+      alternates: {
+        languages: {
+          de: `${baseUrl}/de${path}`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/de${path}`,
+      lastModified: new Date(),
+      changeFrequency: path === "" ? "weekly" : "monthly",
+      priority: path === "" ? 0.9 : path === "/get-a-quote" ? 0.8 : 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}${path}`,
+        },
+      },
+    },
+  ]);
 
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/resources/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const blogPages: MetadataRoute.Sitemap = blogSlugs.flatMap((slug) => [
+    {
+      url: `${baseUrl}/resources/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${baseUrl}/de/resources/blog/${slug}`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/de/resources/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/resources/blog/${slug}`,
+        },
+      },
+    },
+  ]);
 
-  const landingPageEntries: MetadataRoute.Sitemap = allLandingPages.map((page) => ({
-    url: `${baseUrl}/signs/${page.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const landingPageEntries: MetadataRoute.Sitemap = allLandingPages.flatMap((page) => [
+    {
+      url: `${baseUrl}/signs/${page.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          de: `${baseUrl}/de/signs/${page.slug}`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/de/signs/${page.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/signs/${page.slug}`,
+        },
+      },
+    },
+  ]);
 
   return [...pages, ...blogPages, ...landingPageEntries];
 }

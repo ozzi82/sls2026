@@ -6,7 +6,7 @@ import QuoteForm from "./QuoteForm";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: config.seo.title,
     description: config.seo.metaDescription,
     keywords: config.seo.keywords,
-    alternates: { canonical: config.seo.canonical },
+    alternates: getAlternates("/get-a-quote"),
   };
 }
 

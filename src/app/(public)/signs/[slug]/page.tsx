@@ -6,7 +6,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import RelatedPages from "@/components/RelatedPages";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export function generateStaticParams() {
@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: page.title,
     description: page.metaDescription,
-    alternates: { canonical: `/signs/${page.slug}` },
+    alternates: getAlternates(`/signs/${page.slug}`),
     openGraph: {
       title: page.title,
       description: page.metaDescription,

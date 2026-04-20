@@ -6,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 interface BlogPost {
@@ -330,6 +330,7 @@ export function generateMetadata({
       title: post.title,
       description: post.excerpt,
     },
+    alternates: getAlternates(`/resources/blog/${post.slug}`),
   };
 }
 

@@ -15,7 +15,7 @@ import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: config.seo.ogDescription || config.seo.metaDescription,
       type: "website",
     },
-    alternates: { canonical: config.seo.canonical },
+    alternates: getAlternates("/products/channel-letters/trimless"),
   };
 }
 

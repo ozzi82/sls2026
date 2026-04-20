@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, GuidesListData } from "@/lib/admin/page-config-types";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
 
 export const dynamic = "force-dynamic";
@@ -20,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: config.seo.title,
     description: config.seo.metaDescription,
     keywords: config.seo.keywords,
+    alternates: getAlternates("/resources/guides"),
   };
 }
 

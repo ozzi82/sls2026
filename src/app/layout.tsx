@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter, Bebas_Neue, Source_Sans_3 } from "next/font/google";
-import { getLocale } from "@/lib/i18n/locale";
+import { getLocale, getAlternates } from "@/lib/i18n/locale";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -87,6 +87,7 @@ export async function generateMetadata(): Promise<Metadata> {
       index: true,
       follow: true,
     },
+    alternates: getAlternates("/"),
   };
 }
 
