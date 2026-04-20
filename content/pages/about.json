@@ -10,7 +10,17 @@
       "wholesale sign manufacturer",
       "german engineering signs",
       "LKF Lichtwerbung"
-    ]
+    ],
+    "de": {
+      "title": "Unsere Geschichte — Sunlite Signs",
+      "metaDescription": "Die Geschichte der Sunlite Signs LLC — von deutschen Ingenieurswurzeln in Nürnberg zu einem reinen Großhandel-LED-Beschilderungshersteller in Florida. Exklusiv für Schilderwerkstätten in den USA und Kanada.",
+      "keywords": [
+        "Sunlite Signs Geschichte",
+        "Schilderhersteller Großhandel",
+        "deutsche Ingenieurskunst Schilder",
+        "LKF Lichtwerbung"
+      ]
+    }
   },
   "blocks": [
     {
@@ -23,7 +33,13 @@
         "h1": "Our",
         "h1Highlight": "Story",
         "subtitle": "What makes us passionate about signage and experience.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Großhandel",
+          "h1": "Unsere",
+          "h1Highlight": "Geschichte",
+          "subtitle": "Was uns an Beschilderung und Erfahrung begeistert."
+        }
       }
     },
     {
@@ -69,7 +85,41 @@
             "text": "Sunlite Signs LLC — founded on one unbreakable principle: we manufacture, you sell. German-engineered, UL-listed channel letters and illuminated signs, delivered in 3 weeks door to door, exclusively to sign shops across the USA and Canada. The beginning of something larger.",
             "image": null
           }
-        ]
+        ],
+        "de": {
+          "entries": [
+            {
+              "step": 1,
+              "title": "Das Fundament: LKF Lichtwerbung, Nürnberg",
+              "text": "Die Geschichte beginnt mit LKF Lichtwerbung in Nürnberg — ein Unternehmen, das auf Jahrzehnte präziser Ingenieursarbeit in der beleuchteten Beschilderung aufgebaut ist. Europäische Handwerkskunst vom Feinsten. Der deutsche Standard für die Leuchtbuchstaben-Fertigung, der schließlich den Weg über den Atlantik finden sollte."
+            },
+            {
+              "step": 2,
+              "title": "Vater & Sohn: Ein Vermächtnis der Präzision",
+              "text": "Das Wachstum von LKF durch die Vater-Sohn-Zusammenarbeit vertiefte ein Erbe deutscher Ingenieursexzellenz. Jede Buchstabenform, jede LED-Integration, jede Strukturberechnung über Generationen verfeinert. Ein Vermächtnis, das nichts weniger als Perfektion verlangte."
+            },
+            {
+              "step": 3,
+              "title": "Kenan trifft Ozan in Deutschland",
+              "text": "Ein zufälliges Treffen in Deutschland zwischen Kenan und Ozan entfachte eine gemeinsame Vision. Zwei Köpfe, vereint durch die Leidenschaft für Präzisionsbeschilderung und den Glauben, dass der amerikanische Markt Besseres verdient — europäische Ingenieursqualität zu Großhandelspreisen, direkt an Schilderwerkstätten geliefert."
+            },
+            {
+              "step": 4,
+              "title": "Aus Freundschaft wird etwas Größeres",
+              "text": "Was als Freundschaft begann, entwickelte sich zu einer Geschäftsvision: Deutsche Ingenieursbeschilderung in die USA bringen, exklusiv für den Fachhandel. Kein Einzelhandel. Kein Wettbewerb mit Kunden. Ein Großhandels-Fertigungspartner, der seiner Linie treu bleibt."
+            },
+            {
+              "step": 5,
+              "title": "Ozan & Ayla ziehen nach Florida",
+              "text": "Ozan und Ayla zogen zusammen mit ihrer Familie nach Florida — und gründeten die amerikanische Basis für das, was Sunlite Signs werden sollte. Der Sunshine State wurde zur Heimat eines neuartigen Schilderherstellers: einem, der niemals an Endkunden verkaufen würde."
+            },
+            {
+              "step": 6,
+              "title": "Sunlite Signs wird geboren",
+              "text": "Sunlite Signs LLC — gegründet auf einem unumstößlichen Prinzip: Wir fertigen, Sie verkaufen. Leuchtbuchstaben und beleuchtete Schilder mit deutscher Ingenieurskunst, UL-zertifiziert, geliefert in 3 Wochen von Tür zu Tür, exklusiv an Schilderwerkstätten in den USA und Kanada. Der Beginn von etwas Größerem."
+            }
+          ]
+        }
       }
     },
     {
@@ -80,7 +130,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

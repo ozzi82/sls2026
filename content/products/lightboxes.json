@@ -17,7 +17,23 @@
       "trade pricing lightboxes",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/wholesale-lightbox-signs"
+    "canonical": "https://sunlitesigns.com/wholesale-lightbox-signs",
+    "de": {
+      "title": "Großhandel Lichtboxen — Trade Pricing | Sunlite Signs",
+      "metaDescription": "Großhandel Lichtboxen and illuminated Leuchtkästen for Schilderwerkstätten only. Edge-lit and backlit LED options, tensioned fabric or polycarbonate faces. Händlerpreise, UL-zertifiziert. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "Lichtboxen Großhandel",
+        "illuminated Leuchtkästen",
+        "LED Lichtbox sign",
+        "backlit sign Großhandel",
+        "tensioned fabric Lichtbox",
+        "sign cabinet Großhandel",
+        "illuminated sign cabinet",
+        "Großhandel Lichtbox manufacturer",
+        "Händlerpreise Lichtboxen",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -32,8 +48,25 @@
         "subtitle": "Illuminated cabinet signs engineered for uniform brightness, durability, and ease of maintenance. Standard cabinets, slim profiles, and tensioned fabric systems in any size or shape. Available exclusively to trade accounts.",
         "image": "Lightbox — illuminated cabinet sign on commercial building, night view",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel",
+          "h1Highlight": "Lichtboxen",
+          "subtitle": "Illuminated Leuchtkästen engineered for uniform brightness, durability, and ease of maintenance. Standard cabinets, slim profiles, and tensioned fabric systems in any size or shape. Exklusiv für Händlerkonten verfügbar.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -64,7 +97,28 @@
             "description": "Cabinet with two illuminated faces for freestanding, pylon-mounted, or projecting installations. Maximum visibility from multiple directions. Trade pricing available.",
             "image": "Double-sided lightbox — freestanding pylon sign"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Großhandel Lichtbox Types",
+          "items": [
+            {
+              "name": "Standard Cabinet Lichtbox",
+              "description": "Traditional illuminated Leuchtkasten with internal LED modules and translucent polycarbonate or acrylic face. The workhorse of commercial signage. Großhandel Händlerpreise for Schilderwerkstätten."
+            },
+            {
+              "name": "Slim Profile Lichtbox",
+              "description": "Ultra-thin cabinet construction with edge-lit LED technology. Modern, sleek profile ideal for contemporary architecture and interior applications. Exklusiv für Händlerkonten verfügbar."
+            },
+            {
+              "name": "Tensioned Fabric Lichtbox",
+              "description": "Aluminum frame with dye-sublimation printed fabric face stretched over a silicone edge system. Easy graphic changes for seasonal or evolving messaging. Großhandel direkt an Schilderwerkstätten."
+            },
+            {
+              "name": "Double-Sided Lichtbox",
+              "description": "Cabinet with two illuminated faces for freestanding, pylon-mounted, or projecting installations. Maximum visibility from multiple directions. Händlerpreise available."
+            }
+          ]
+        }
       }
     },
     {
@@ -105,7 +159,36 @@
             "title": "Engineered Construction",
             "description": "Welded aluminum frames with structural integrity for any mounting application. Wind load calculations available for permitting."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Uniform LED Illumination",
+              "description": "Internal LED modules engineered for even light distribution across the entire face. No hot spots, no dark corners, no uneven brightness."
+            },
+            {
+              "title": "Custom Sizes & Shapes",
+              "description": "From small wayfinding boxes to large building-mounted cabinets. Rectangular, square, round, oval, or fully custom shapes."
+            },
+            {
+              "title": "Multiple Face Options",
+              "description": "Polycarbonate, acrylic, tensioned fabric, or aluminum with routed graphics. Full-color printed, vinyl-applied, or Durchsteck faces."
+            },
+            {
+              "title": "Changeable Graphics",
+              "description": "Tensioned fabric systems allow graphic changes in minutes without tools. Ideal for businesses that update promotions or seasonal messaging."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "All illuminated Lichtboxen are UL-zertifiziert with complete documentation and labeling for code compliance and permitting."
+            },
+            {
+              "title": "Engineered Construction",
+              "description": "Welded aluminum frames with structural integrity for any mounting application. Wind load calculations available for permitting."
+            }
+          ]
+        }
       }
     },
     {
@@ -118,7 +201,11 @@
         "content": "The modern alternative to traditional lightbox faces. Dye-sublimation printed fabric stretches over a silicone edge system for a taut, wrinkle-free illuminated face that can be changed in minutes. Wholesale direct to sign shops.",
         "image": "Tensioned fabric lightbox — graphic change in progress, showing silicone edge system",
         "imagePosition": "left",
-        "background": "navy"
+        "background": "navy",
+        "de": {
+          "heading": "Tensioned Fabric Systems",
+          "content": "The modern alternative to traditional Lichtbox faces. Dye-sublimation printed fabric stretches over a silicone edge system for a taut, wrinkle-free illuminated face that can be changed in minutes. Großhandel direkt an Schilderwerkstätten."
+        }
       }
     },
     {
@@ -131,20 +218,63 @@
         "description": "Engineered for uniform illumination, structural integrity, and long service life. Every lightbox ships ready to install. Available exclusively at wholesale trade pricing.",
         "image": "Lightbox — internal view showing LED module layout and wiring",
         "specs": [
-          { "label": "Construction", "value": "Welded or extruded aluminum cabinet" },
-          { "label": "Standard Depths", "value": "4\", 5\", 6\", 8\", 10\", 12\" (custom available)" },
-          { "label": "Maximum Size", "value": "Up to 20' x 8' (larger with seams)" },
-          { "label": "Face Options", "value": "Polycarbonate, acrylic, fabric, aluminum" },
-          { "label": "LED Type", "value": "Internal backlit or edge-lit modules" },
-          { "label": "Light Distribution", "value": "Engineered for uniform face illumination" },
-          { "label": "Graphics", "value": "Digital print, vinyl, push-through, routed" },
-          { "label": "Frame Finish", "value": "Painted aluminum, any Pantone color" },
-          { "label": "Mounting", "value": "Wall, pole, pylon, freestanding, or ceiling" },
-          { "label": "Electrical Access", "value": "Hinged door, removable face, or rear access" },
-          { "label": "Certifications", "value": "UL Listed (UL 48)" },
-          { "label": "Warranty", "value": "5-year LED, 3-year cabinet and finish" },
-          { "label": "Lead Time", "value": "3 weeks door to door" }
-        ]
+          {
+            "label": "Construction",
+            "value": "Welded or extruded aluminum cabinet"
+          },
+          {
+            "label": "Standard Depths",
+            "value": "4\", 5\", 6\", 8\", 10\", 12\" (custom available)"
+          },
+          {
+            "label": "Maximum Size",
+            "value": "Up to 20' x 8' (larger with seams)"
+          },
+          {
+            "label": "Face Options",
+            "value": "Polycarbonate, acrylic, fabric, aluminum"
+          },
+          {
+            "label": "LED Type",
+            "value": "Internal backlit or edge-lit modules"
+          },
+          {
+            "label": "Light Distribution",
+            "value": "Engineered for uniform face illumination"
+          },
+          {
+            "label": "Graphics",
+            "value": "Digital print, vinyl, push-through, routed"
+          },
+          {
+            "label": "Frame Finish",
+            "value": "Painted aluminum, any Pantone color"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall, pole, pylon, freestanding, or ceiling"
+          },
+          {
+            "label": "Electrical Access",
+            "value": "Hinged door, removable face, or rear access"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL Listed (UL 48)"
+          },
+          {
+            "label": "Warranty",
+            "value": "5-year LED, 3-year cabinet and finish"
+          },
+          {
+            "label": "Lead Time",
+            "value": "3 weeks door to door"
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Engineered for uniform illumination, structural integrity, and long service life. Every Lichtbox ships ready to install. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -164,7 +294,21 @@
           "Interior directories and wayfinding",
           "Menu boards and promotional displays",
           "Real estate and property signage"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Lichtboxen are the most versatile illuminated sign format. From small interior directories to large exterior building signs, the cabinet format handles it all. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Einzelhandelsfassaden und Einkaufszentren",
+            "Quick-service restaurants and franchises",
+            "Tankstellen und Convenience-Stores",
+            "Gewerbliche Mehrmieterobjekte",
+            "Pylon and monument sign panels",
+            "Interior directories and wayfinding",
+            "Menu boards and promotional displays",
+            "Real estate and property signage"
+          ]
+        }
       }
     },
     {
@@ -174,7 +318,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -184,7 +331,11 @@
       "visible": true,
       "data": {
         "heading": "Ready to Get Started?",
-        "description": "Request a wholesale quote for your next project."
+        "description": "Request a wholesale quote for your next project.",
+        "de": {
+          "heading": "Bereit loszulegen?",
+          "description": "Fordern Sie ein Großhandelsangebot für Ihr nächstes Projekt an."
+        }
       }
     }
   ]

@@ -3,9 +3,24 @@
   "pageType": "static",
   "label": "Services",
   "seo": {
-    "title": "Complimentary Engineering Services \u2014 Wholesale Sign Manufacturer | Sunlite Signs",
-    "metaDescription": "Complimentary engineering services for wholesale sign shop partners. Concept & materials, structural engineering, electrical layout, and manufacturing engineering. German-engineered precision \u2014 trade accounts only.",
-    "keywords": ["sign engineering services", "wholesale sign manufacturing", "complimentary engineering", "sign shop services"]
+    "title": "Complimentary Engineering Services — Wholesale Sign Manufacturer | Sunlite Signs",
+    "metaDescription": "Complimentary engineering services for wholesale sign shop partners. Concept & materials, structural engineering, electrical layout, and manufacturing engineering. German-engineered precision — trade accounts only.",
+    "keywords": [
+      "sign engineering services",
+      "wholesale sign manufacturing",
+      "complimentary engineering",
+      "sign shop services"
+    ],
+    "de": {
+      "title": "Kostenlose Konstruktionsleistungen — Großhandel-Schilderhersteller | Sunlite Signs",
+      "metaDescription": "Kostenlose Konstruktionsleistungen für Großhandel-Schilderwerkstatt-Partner. Konzept & Materialien, Konstruktionstechnik, Elektroplanung und Fertigungstechnik. Deutsche Ingenieurs-Präzision — nur Händlerkonten.",
+      "keywords": [
+        "Schilder-Konstruktionsleistungen",
+        "Großhandel-Schilderfertigung",
+        "kostenlose Konstruktion",
+        "Schilderwerkstatt-Leistungen"
+      ]
+    }
   },
   "blocks": [
     {
@@ -18,7 +33,13 @@
         "h1": "Complimentary Engineering",
         "h1Highlight": "Services",
         "subtitle": "With our German design and engineering roots, we're happy to contribute our complimentary engineering services to your project. From conceptual integration of structural and material sciences co-development, translating that to illuminated signage in the most common European channel letter form factors, to manufacturing engineering and packaging. We're happy to contribute our expertise at every stage of your project, with the flexibility to accommodate your needs all along the way.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Großhandel",
+          "h1": "Kostenlose Konstruktion",
+          "h1Highlight": "Leistungen",
+          "subtitle": "Mit unseren deutschen Design- und Ingenieurswurzeln freuen wir uns, unsere kostenlosen Konstruktionsleistungen zu Ihrem Projekt beizusteuern. Von der konzeptionellen Integration von Struktur- und Materialwissenschaften, über die Umsetzung in beleuchtete Beschilderung in den gängigsten europäischen Leuchtbuchstaben-Formaten, bis hin zur Fertigungstechnik und Verpackung. Wir freuen uns, unsere Expertise in jeder Phase Ihres Projekts einzubringen, mit der Flexibilität, Ihren Bedürfnissen jederzeit gerecht zu werden."
+        }
       }
     },
     {
@@ -29,13 +50,64 @@
       "data": {
         "heading": "Our Services",
         "headingHighlight": "Services",
-        "description": "Included with every project \u2014 German-engineered expertise from concept to delivery.",
+        "description": "Included with every project — German-engineered expertise from concept to delivery.",
         "items": [
-          { "icon": "Layers", "title": "Concept & Materials", "description": "Conceptual integration of structural and material sciences co-development for illuminated signage projects. We work with you from the earliest stages to select the right materials, evaluate structural requirements, and develop a cohesive concept that translates your client's vision into a buildable, durable, and visually compelling sign.", "image": "Concept and materials co-development \u2014 material samples and design sketches", "learnMoreLabel": "Learn About Our Materials Process" },
-          { "icon": "HardHat", "title": "Structural Engineering", "description": "Translating conceptual designs to production-ready illuminated signage in the most common European channel letter form factors. Our structural engineering ensures every sign meets wind load requirements, mounting specifications, and code compliance \u2014 while maintaining the sleek, low-profile aesthetics that define German-engineered signage.", "image": "Structural engineering \u2014 CAD drawings and channel letter cross-sections", "learnMoreLabel": "Explore Structural Engineering" },
-          { "icon": "Zap", "title": "Electrical Layout", "description": "LED integration, electrical engineering, and UL compliance for all illuminated signage products. We design optimized LED layouts for uniform illumination, calculate power requirements, specify UL-recognized components, and provide complete electrical documentation for permitting and inspection.", "image": "Electrical layout \u2014 LED module placement and wiring diagram", "learnMoreLabel": "View Electrical Engineering Details" },
-          { "icon": "Factory", "title": "Manufacturing Engineering", "description": "Manufacturing engineering and packaging optimization for wholesale production and shipping. From CNC programming and material nesting to paint specifications and crating design, we engineer the entire manufacturing process to deliver consistent quality, minimize waste, and ensure your signs arrive undamaged \u2014 every time.", "image": "Manufacturing engineering \u2014 CNC production and packaging crates", "learnMoreLabel": "Discover Our Manufacturing Process" }
-        ]
+          {
+            "icon": "Layers",
+            "title": "Concept & Materials",
+            "description": "Conceptual integration of structural and material sciences co-development for illuminated signage projects. We work with you from the earliest stages to select the right materials, evaluate structural requirements, and develop a cohesive concept that translates your client's vision into a buildable, durable, and visually compelling sign.",
+            "image": "Concept and materials co-development — material samples and design sketches",
+            "learnMoreLabel": "Learn About Our Materials Process"
+          },
+          {
+            "icon": "HardHat",
+            "title": "Structural Engineering",
+            "description": "Translating conceptual designs to production-ready illuminated signage in the most common European channel letter form factors. Our structural engineering ensures every sign meets wind load requirements, mounting specifications, and code compliance — while maintaining the sleek, low-profile aesthetics that define German-engineered signage.",
+            "image": "Structural engineering — CAD drawings and channel letter cross-sections",
+            "learnMoreLabel": "Explore Structural Engineering"
+          },
+          {
+            "icon": "Zap",
+            "title": "Electrical Layout",
+            "description": "LED integration, electrical engineering, and UL compliance for all illuminated signage products. We design optimized LED layouts for uniform illumination, calculate power requirements, specify UL-recognized components, and provide complete electrical documentation for permitting and inspection.",
+            "image": "Electrical layout — LED module placement and wiring diagram",
+            "learnMoreLabel": "View Electrical Engineering Details"
+          },
+          {
+            "icon": "Factory",
+            "title": "Manufacturing Engineering",
+            "description": "Manufacturing engineering and packaging optimization for wholesale production and shipping. From CNC programming and material nesting to paint specifications and crating design, we engineer the entire manufacturing process to deliver consistent quality, minimize waste, and ensure your signs arrive undamaged — every time.",
+            "image": "Manufacturing engineering — CNC production and packaging crates",
+            "learnMoreLabel": "Discover Our Manufacturing Process"
+          }
+        ],
+        "de": {
+          "heading": "Unsere Leistungen",
+          "headingHighlight": "Leistungen",
+          "description": "Bei jedem Projekt inklusive — deutsche Ingenieursexpertise vom Konzept bis zur Lieferung.",
+          "items": [
+            {
+              "title": "Konzept & Materialien",
+              "description": "Konzeptionelle Integration von Struktur- und Materialwissenschaften für beleuchtete Beschilderungsprojekte. Wir arbeiten von Anfang an mit Ihnen zusammen, um die richtigen Materialien auszuwählen, strukturelle Anforderungen zu bewerten und ein schlüssiges Konzept zu entwickeln, das die Vision Ihres Kunden in ein baubares, langlebiges und visuell überzeugendes Schild umsetzt.",
+              "learnMoreLabel": "Erfahren Sie mehr über unseren Materialprozess"
+            },
+            {
+              "title": "Konstruktionstechnik",
+              "description": "Umsetzung konzeptioneller Entwürfe in produktionsreife beleuchtete Beschilderung in den gängigsten europäischen Leuchtbuchstaben-Formaten. Unsere Konstruktionstechnik stellt sicher, dass jedes Schild Windlastanforderungen, Montagespezifikationen und Normkonformität erfüllt — bei gleichzeitiger Beibehaltung der schlanken, flachen Ästhetik, die deutsche Ingenieursbeschilderung auszeichnet.",
+              "learnMoreLabel": "Konstruktionstechnik entdecken"
+            },
+            {
+              "title": "Elektroplanung",
+              "description": "LED-Integration, Elektrotechnik und UL-Konformität für alle beleuchteten Beschilderungsprodukte. Wir entwerfen optimierte LED-Layouts für gleichmäßige Ausleuchtung, berechnen Leistungsanforderungen, spezifizieren UL-anerkannte Komponenten und liefern vollständige Elektrodokumentation für Genehmigungen und Prüfungen.",
+              "learnMoreLabel": "Elektrotechnik-Details ansehen"
+            },
+            {
+              "title": "Fertigungstechnik",
+              "description": "Fertigungstechnik und Verpackungsoptimierung für Großhandelsproduktion und Versand. Von der CNC-Programmierung und Materialverschachtelung bis hin zu Lackspezifikationen und Kistendesign — wir entwickeln den gesamten Fertigungsprozess, um gleichbleibende Qualität zu liefern, Verschwendung zu minimieren und sicherzustellen, dass Ihre Schilder unbeschädigt ankommen — jedes Mal.",
+              "learnMoreLabel": "Unseren Fertigungsprozess entdecken"
+            }
+          ]
+        }
       }
     },
     {
@@ -46,7 +118,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

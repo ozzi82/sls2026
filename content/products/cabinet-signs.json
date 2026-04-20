@@ -17,7 +17,23 @@
       "LED cabinet signs",
       "lightbox signs wholesale"
     ],
-    "canonical": "https://sunlitesigns.com/wholesale-cabinet-signs"
+    "canonical": "https://sunlitesigns.com/wholesale-cabinet-signs",
+    "de": {
+      "title": "Großhandel Leuchtkästen — Trade Pricing for Sign Shops | Sunlite Signs",
+      "metaDescription": "Großhandel Leuchtkästen for Schilderwerkstätten only. Illuminated Leuchtkästen, Durchsteck letters, and flex-face options. Händlerpreise, Mit deutscher Ingenieurskunst, UL-zertifiziert. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "Leuchtkästen Großhandel",
+        "illuminated Leuchtkästen",
+        "Durchsteck letter signs",
+        "flex-face Leuchtkästen",
+        "Schilderhersteller Großhandel",
+        "Leuchtkasten fabrication",
+        "Händlerpreise Leuchtkästen",
+        "Zulieferer für Schilderwerkstätten",
+        "LED Leuchtkästen",
+        "Lichtbox signs Großhandel"
+      ]
+    }
   },
   "blocks": [
     {
@@ -32,8 +48,25 @@
         "subtitle": "Illuminated cabinet signs, push-through letter cabinets, and flex-face options for every commercial application. Large-format signage engineered for maximum visibility. Available exclusively to trade accounts. UL listed. German-engineered. Wholesale direct to sign shops across the USA and Canada. We never sell retail — your clients stay yours.",
         "image": "Cabinet sign — illuminated storefront cabinet sign at night",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Cabinet",
+          "h1Highlight": "Signs",
+          "subtitle": "Illuminated Leuchtkästen, Durchsteck letter cabinets, and flex-face options for every commercial application. Large-format signage engineered for maximum visibility. Exklusiv für Händlerkonten verfügbar. UL-zertifiziert. Mit deutscher Ingenieurskunst. Großhandel direkt an Schilderwerkstätten across the USA und Kanada. Wir verkaufen nie an Endkunden — your clients stay yours.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -65,7 +98,29 @@
             "description": "Illuminated on both sides for maximum exposure. Ideal for monument signs, pole signs, and median-facing applications. Engineered for wind load requirements. Trade pricing available.",
             "image": "Double-sided cabinet sign — illuminated monument sign"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Großhandel Cabinet Sign Types",
+          "description": "From standard illuminated cabinets to premium Durchsteck and flex-face configurations. All available at Händlerpreise.",
+          "items": [
+            {
+              "name": "Standard Illuminated Cabinet",
+              "description": "Internal LED cabinet with translucent polycarbonate or acrylic face. Uniform illumination for maximum visibility day and night. Welded aluminum construction with painted finish. Großhandel Händlerpreise for Schilderwerkstätten."
+            },
+            {
+              "name": "Durchsteck Letter Cabinet",
+              "description": "Routed aluminum face with Durchsteck acrylic letters. Dimensional daytime appearance with selective letter illumination at night. Premium aesthetic for retail and hospitality. Exklusiv für Händlerkonten verfügbar."
+            },
+            {
+              "name": "Flex-Face Cabinet",
+              "description": "Tensioned translucent vinyl face for full-color illuminated graphics. Easy face replacement for tenant changes. Ideal for multi-tenant retail and franchise applications. Großhandel direkt an Schilderwerkstätten."
+            },
+            {
+              "name": "Double-Sided Cabinet",
+              "description": "Illuminated on both sides for maximum exposure. Ideal for monument signs, pole signs, and median-facing applications. Engineered for wind load requirements. Händlerpreise available."
+            }
+          ]
+        }
       }
     },
     {
@@ -106,7 +161,36 @@
             "title": "UL Listed",
             "description": "All illuminated cabinet signs are UL listed with proper labeling and documentation for code compliance and permitting. Built to last with welded aluminum construction."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Maximum Visibility",
+              "description": "Large-format illuminated Leuchtkästen deliver high-impact brand presence visible from hundreds of feet away, day and night. Ideal for storefronts, shopping centers, and commercial buildings."
+            },
+            {
+              "title": "LED Illumination",
+              "description": "High-efficiency LED modules provide uniform illumination across the entire face. Energy-efficient operation with 50,000+ hour rated life. Internal or edge-lit configurations available."
+            },
+            {
+              "title": "Custom Sizes & Shapes",
+              "description": "Rectangular, curved, shaped, or fully custom cabinet profiles. From compact wall-mounted units to large freestanding monument signs. Sized to your project specifications."
+            },
+            {
+              "title": "Durchsteck Letters",
+              "description": "Routed aluminum faces with dimensional Durchsteck acrylic letters. Combines daytime dimensional appearance with selective night illumination for a premium look."
+            },
+            {
+              "title": "Flex-Face Options",
+              "description": "Tensioned translucent vinyl faces for full-color, edge-to-edge graphics. Easily replaceable faces for multi-tenant or seasonal branding applications."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "All illuminated Leuchtkästen are UL-zertifiziert with proper labeling and documentation for code compliance and permitting. Built to last with welded aluminum construction."
+            }
+          ]
+        }
       }
     },
     {
@@ -119,19 +203,59 @@
         "description": "Engineered for durability, visibility, and code compliance. Every cabinet sign includes complete electrical documentation and installation details. Available exclusively at wholesale trade pricing.",
         "image": "Cabinet sign — detail of welded aluminum cabinet construction",
         "specs": [
-          { "label": "Construction", "value": "Welded aluminum cabinet" },
-          { "label": "Cabinet Depth", "value": "4\" to 12\" (custom available)" },
-          { "label": "Standard Sizes", "value": "24x48, 36x72, 48x96, 48x120, custom" },
-          { "label": "Face Material", "value": "Polycarbonate, acrylic, flex-face vinyl, or aluminum (push-through)" },
-          { "label": "LED System", "value": "Internal LED modules, edge-lit, or backlit" },
-          { "label": "Graphics", "value": "Vinyl, digital print, push-through acrylic, flex-face" },
-          { "label": "Finish", "value": "Painted aluminum, powder coat, or anodized" },
-          { "label": "Mounting", "value": "Wall mount, raceway, pole mount, monument base" },
-          { "label": "Electrical", "value": "Remote or integrated power supply, UL listed" },
-          { "label": "Certifications", "value": "UL Listed (all illuminated models)" },
-          { "label": "Warranty", "value": "5-year LED, 3-year construction" },
-          { "label": "Lead Time", "value": "3 weeks door to door" }
-        ]
+          {
+            "label": "Construction",
+            "value": "Welded aluminum cabinet"
+          },
+          {
+            "label": "Cabinet Depth",
+            "value": "4\" to 12\" (custom available)"
+          },
+          {
+            "label": "Standard Sizes",
+            "value": "24x48, 36x72, 48x96, 48x120, custom"
+          },
+          {
+            "label": "Face Material",
+            "value": "Polycarbonate, acrylic, flex-face vinyl, or aluminum (push-through)"
+          },
+          {
+            "label": "LED System",
+            "value": "Internal LED modules, edge-lit, or backlit"
+          },
+          {
+            "label": "Graphics",
+            "value": "Vinyl, digital print, push-through acrylic, flex-face"
+          },
+          {
+            "label": "Finish",
+            "value": "Painted aluminum, powder coat, or anodized"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall mount, raceway, pole mount, monument base"
+          },
+          {
+            "label": "Electrical",
+            "value": "Remote or integrated power supply, UL listed"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL Listed (all illuminated models)"
+          },
+          {
+            "label": "Warranty",
+            "value": "5-year LED, 3-year construction"
+          },
+          {
+            "label": "Lead Time",
+            "value": "3 weeks door to door"
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Engineered for durability, visibility, and code compliance. Every Leuchtkasten includes complete electrical documentation and installation details. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -152,7 +276,21 @@
           "Parking garages and wayfinding",
           "Auto dealerships and service centers",
           "Healthcare and medical facilities"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Leuchtkastens are the workhorses of commercial signage. From retail storefronts to monument signs, they deliver reliable illuminated identification for every application. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Einzelhandelsfassaden und Einkaufszentren",
+            "Tankstellen und Convenience-Stores",
+            "Quick-service restaurants and franchises",
+            "Gewerbliche Mehrmieterobjekte",
+            "Monument and pylon sign cabinets",
+            "Parking garages and wayfinding",
+            "Auto dealerships and service centers",
+            "Gesundheits- und Medizineinrichtungen"
+          ]
+        }
       }
     },
     {
@@ -163,13 +301,54 @@
       "data": {
         "heading": "Cabinet Sign Projects",
         "images": [
-          { "src": "", "alt": "Cabinet sign — illuminated retail storefront, night" },
-          { "src": "", "alt": "Cabinet sign — push-through letters, restaurant" },
-          { "src": "", "alt": "Cabinet sign — flex-face, gas station canopy" },
-          { "src": "", "alt": "Cabinet sign — double-sided monument, shopping center" },
-          { "src": "", "alt": "Cabinet sign — multi-tenant commercial building" },
-          { "src": "", "alt": "Cabinet sign — custom shape, auto dealership" }
-        ]
+          {
+            "src": "",
+            "alt": "Cabinet sign — illuminated retail storefront, night"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — push-through letters, restaurant"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — flex-face, gas station canopy"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — double-sided monument, shopping center"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — multi-tenant commercial building"
+          },
+          {
+            "src": "",
+            "alt": "Cabinet sign — custom shape, auto dealership"
+          }
+        ],
+        "de": {
+          "heading": "Cabinet Sign Projects",
+          "images": [
+            {
+              "alt": "Leuchtkasten — illuminated retail storefront, night"
+            },
+            {
+              "alt": "Leuchtkasten — Durchsteck letters, restaurant"
+            },
+            {
+              "alt": "Leuchtkasten — flex-face, gas station canopy"
+            },
+            {
+              "alt": "Leuchtkasten — double-sided monument, shopping center"
+            },
+            {
+              "alt": "Leuchtkasten — multi-tenant commercial building"
+            },
+            {
+              "alt": "Leuchtkasten — custom shape, auto dealership"
+            }
+          ]
+        }
       }
     },
     {
@@ -179,7 +358,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -190,7 +372,12 @@
       "data": {
         "heading": "Request Wholesale Pricing for",
         "headingHighlight": "Cabinet Signs.",
-        "description": "Send your cabinet sign specs, drawings, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
+        "description": "Send your cabinet sign specs, drawings, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing.",
+        "de": {
+          "heading": "Großhandelspreis anfragen for",
+          "headingHighlight": "Leuchtkästen.",
+          "description": "Send your Leuchtkasten specs, drawings, or project details and we will return a Großhandelsangebot within 48 Stunden. Kein Einzelhandelsaufschlag — just direct Händlerpreise."
+        }
       }
     }
   ]

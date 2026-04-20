@@ -16,7 +16,22 @@
       "trade pricing halo letters",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/halo-lit-channel-letters"
+    "canonical": "https://sunlitesigns.com/halo-lit-channel-letters",
+    "de": {
+      "title": "Großhandel Halo-beleuchtete Leuchtbuchstaben — Händlerpreise | Sunlite Signs",
+      "metaDescription": "Großhandel halo-beleuchtet Leuchtbuchstaben for Schilderwerkstätten only. Elegant backlit glow, rear-mounted LED illumination. Händlerpreise, UL-zertifiziert, Mit deutscher Ingenieurskunst. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "halo-beleuchtet Leuchtbuchstaben",
+        "halo-beleuchtet Leuchtbuchstaben Großhandel",
+        "backlit Leuchtbuchstaben",
+        "reverse Leuchtbuchstaben",
+        "halo illuminated signs",
+        "LED halo letters Großhandel",
+        "architectural Leuchtbuchstaben",
+        "Händlerpreise halo letters",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -36,7 +51,20 @@
             "href": "/get-a-quote",
             "variant": "primary"
           }
-        ]
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Halo-beleuchtet",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "Ein sanftes, diffuses Leuchten strahlt hinter jedem Buchstaben und erzeugt einen eleganten Halo-Effekt, der jede Fassade in ein Premium-Markenstatement verwandelt. Die Wahl von Architekten und Luxusmarken. Exklusiv für Händlerkonten verfügbar.\n\nRückseitig montierte LEDs. Aluminiumkonstruktion. UL-zertifiziert. Großhandel direkt an Schilderwerkstätten — wir verkaufen nie an Endkunden. Ihre Kunden bleiben Ihre Kunden.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -77,7 +105,36 @@
             "title": "LED Color Options",
             "description": "Standard white halo with warm white (3000K), neutral (4000K), and cool white (6500K) options. RGB color-changing available for dynamic installations."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Eleganter Halo-Glanz",
+              "description": "Rückseitig montierte LEDs erzeugen einen sanften, diffusen Lichthalo um jeden Buchstaben und schaffen ein anspruchsvolles, gehobenes Erscheinungsbild an jeder Fassade."
+            },
+            {
+              "title": "Premium-Markenwahrnehmung",
+              "description": "Halo-beleuchtete Buchstaben sind die bevorzugte Wahl für Luxus-Einzelhandel, Gastronomie und architektonische Beschilderung, wo Markenwahrnehmung zählt."
+            },
+            {
+              "title": "Fassadenaufwertung",
+              "description": "Das Hinterlicht hebt die Textur und das Material der Montagefläche hervor und macht das Gebäude selbst zum Teil des Schilderdesigns."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "Fully UL-zertifiziert with all required labels and documentation. Smooth permitting and code compliance for every project."
+            },
+            {
+              "title": "Präzise Zargen",
+              "description": "Tiefe Aluminiumzargen bieten den nötigen Abstand für optimale Halo-Streuung. Die Zargentiefe ist je nach Wandfarbe und gewünschtem Effekt anpassbar."
+            },
+            {
+              "title": "LED-Farboptionen",
+              "description": "Standard-Weiß-Halo mit Warmweiß (3000K), Neutral (4000K) und Kaltweiß (6500K) Optionen. RGB-Farbwechsel für dynamische Installationen verfügbar."
+            }
+          ]
+        }
       }
     },
     {
@@ -90,7 +147,11 @@
         "content": "LEDs are mounted facing the rear of the letter, directing light outward through the back. Standoff spacers hold each letter away from the wall, allowing the light to diffuse and create the characteristic halo effect.",
         "image": "Halo lit channel letter — cross-section diagram showing rear LED placement and halo spread",
         "imagePosition": "left",
-        "background": "dark"
+        "background": "dark",
+        "de": {
+          "heading": "Wie Halo-Beleuchtung funktioniert",
+          "content": "LEDs werden nach hinten gerichtet montiert und strahlen das Licht durch die Rückseite nach außen. Abstandshalter halten jeden Buchstaben von der Wand entfernt, sodass das Licht diffundieren und den charakteristischen Halo-Effekt erzeugen kann."
+        }
       }
     },
     {
@@ -102,7 +163,11 @@
         "heading": "Trade Specifications",
         "description": "Engineered for optimal halo spread, durability, and ease of installation. Every detail is considered. Available exclusively at wholesale trade pricing.",
         "image": "Halo lit channel letter — detail of aluminum return and LED module placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Entwickelt für optimale Halo-Streuung, Langlebigkeit und einfache Installation. Jedes Detail ist durchdacht. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -122,7 +187,21 @@
           "Multifamily residential lobbies",
           "Mixed-use developments",
           "Museums and cultural institutions"
-        ]
+        ],
+        "de": {
+          "heading": "Ideale Anwendungen",
+          "description": "Halo-beleuchtete Leuchtbuchstaben sind die erste Wahl für Projekte, bei denen Eleganz und Markensophistikation im Vordergrund stehen. Zu Großhandelspreisen für alle Projekttypen verfügbar.",
+          "items": [
+            "Luxury retail and boutiques",
+            "Hotels, resorts, and hospitality",
+            "Fine dining restaurants",
+            "Corporate headquarters",
+            "Medical and professional offices",
+            "Multifamily residential lobbies",
+            "Mixed-use developments",
+            "Museums and cultural institutions"
+          ]
+        }
       }
     },
     {
@@ -157,7 +236,30 @@
             "src": "",
             "alt": "Halo lit letters — mixed-use residential lobby"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Halo-beleuchtete Projekte",
+          "images": [
+            {
+              "alt": "Halo lit letters — boutique retail, dark brick"
+            },
+            {
+              "alt": "Halo lit letters — corporate office tower"
+            },
+            {
+              "alt": "Halo lit letters — fine dining restaurant"
+            },
+            {
+              "alt": "Halo lit letters — luxury hotel, stone facade"
+            },
+            {
+              "alt": "Halo lit letters — medical center entrance"
+            },
+            {
+              "alt": "Halo lit letters — mixed-use residential lobby"
+            }
+          ]
+        }
       }
     },
     {
@@ -168,7 +270,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Halo Lit Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Halo-beleuchtete Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

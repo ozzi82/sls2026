@@ -9,7 +9,16 @@
       "wholesale sign gallery",
       "channel letter installations",
       "trade partner sign projects"
-    ]
+    ],
+    "de": {
+      "title": "Großhandel-Schildergalerie — Handelspartner-Installationen | Sunlite Signs",
+      "metaDescription": "Durchstöbern Sie abgeschlossene Großhandel-Schilderprojekte, gefertigt von Sunlite Signs und installiert von unseren Handelspartnern. Leuchtbuchstaben, Halo-beleuchtete Schilder, randlose Buchstaben, Ausleger-Schilder — exklusiv für Schilderwerkstätten zu Händlerpreisen.",
+      "keywords": [
+        "Großhandel-Schildergalerie",
+        "Leuchtbuchstaben-Installationen",
+        "Handelspartner-Schilderprojekte"
+      ]
+    }
   },
   "blocks": [
     {
@@ -22,7 +31,13 @@
         "h1": "Manufactured by Sunlite.",
         "h1Highlight": "Installed by Our Trade Partners.",
         "subtitle": "Every project below was manufactured at our wholesale facility and installed by sign shop partners across North America. These are trade-exclusive products built with German engineering precision and UL listed certification. We manufacture. They sell. Their clients are thrilled.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Großhandel",
+          "h1": "Gefertigt von Sunlite.",
+          "h1Highlight": "Installiert von unseren Handelspartnern.",
+          "subtitle": "Jedes Projekt unten wurde in unserer Großhandelsanlage gefertigt und von Schilderwerkstatt-Partnern in ganz Nordamerika installiert. Dies sind Fachhandel-exklusive Produkte, gefertigt mit deutscher Ingenieurs-Präzision und UL-Zertifizierung. Wir fertigen. Sie verkaufen. Ihre Kunden sind begeistert."
+        }
       }
     },
     {
@@ -69,7 +84,31 @@
             "width": 1080,
             "height": 1079
           }
-        ]
+        ],
+        "de": {
+          "heading": "Galerie",
+          "categories": [
+            "Leuchtbuchstaben",
+            "EdgeLuxe Randlos",
+            "Ausleger-Schilder",
+            "Leuchtkästen",
+            "SEG-Lichtboxen",
+            "Flachbuchstaben"
+          ],
+          "images": [
+            {
+              "alt": "11",
+              "category": "EdgeLuxe Randlos",
+              "type": "11"
+            },
+            {
+              "category": "Leuchtbuchstaben"
+            },
+            {
+              "category": "Leuchtbuchstaben"
+            }
+          ]
+        }
       }
     },
     {
@@ -80,7 +119,12 @@
       "data": {
         "heading": "Ready to Manufacture Something",
         "headingHighlight": "Like This?",
-        "description": "Send us your project details and get wholesale trade pricing within 48 hours. No retail markup. No competition. We manufacture, you sell."
+        "description": "Send us your project details and get wholesale trade pricing within 48 hours. No retail markup. No competition. We manufacture, you sell.",
+        "de": {
+          "heading": "Bereit, etwas Ähnliches",
+          "headingHighlight": "Herzustellen?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie Großhandelspreise innerhalb von 48 Stunden. Kein Einzelhandelsaufschlag. Kein Wettbewerb. Wir fertigen, Sie verkaufen."
+        }
       }
     }
   ]

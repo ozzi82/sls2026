@@ -10,7 +10,17 @@
       "wholesale sign manufacturer",
       "LED signage wholesale",
       "sign shop supplier"
-    ]
+    ],
+    "de": {
+      "title": "Sunlite Signs — Leuchtbuchstaben & LED-Beschilderung im Großhandel",
+      "metaDescription": "Deutsche Ingenieurskunst: Leuchtbuchstaben, Ausleger-Schilder & beleuchtete Beschilderung im Großhandel — gefertigt für Schilderwerkstätten, kein Einzelhandel. UL-zertifiziert. 3 Wochen Lieferzeit.",
+      "keywords": [
+        "Leuchtbuchstaben Großhandel",
+        "Schilderhersteller Großhandel",
+        "LED-Beschilderung Großhandel",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -35,7 +45,25 @@
             "href": "/products",
             "variant": "primary"
           }
-        ]
+        ],
+        "de": {
+          "badge": "Nur Großhandel · Händlerkonten",
+          "h1": "Präzisionsbeschilderung,",
+          "h1Highlight": "Exklusiv im Großhandel.",
+          "subtitle": "Leuchtbuchstaben, Ausleger-Schilder & beleuchtete Beschilderung mit deutscher Ingenieurskunst — gefertigt für Schilderfachleute.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            },
+            {
+              "label": "Produkte ansehen",
+              "href": "/products",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -53,7 +81,19 @@
           "GERMAN ENGINEERING",
           "TRADE ACCOUNTS",
           "NO RETAIL SALES"
-        ]
+        ],
+        "de": {
+          "messages": [
+            "NUR GROSSHANDEL",
+            "UL 48 ZERTIFIZIERT",
+            "24-STUNDEN-ANGEBOTE",
+            "3 WOCHEN LIEFERZEIT",
+            "USA & KANADA",
+            "DEUTSCHE INGENIEURSKUNST",
+            "HÄNDLERKONTEN",
+            "KEIN EINZELHANDEL"
+          ]
+        }
       }
     },
     {
@@ -83,7 +123,27 @@
             "label": "Nationwide Shipping",
             "sublabel": "US/CA"
           }
-        ]
+        ],
+        "de": {
+          "items": [
+            {
+              "label": "Gelistet & zertifiziert",
+              "sublabel": "UL 48"
+            },
+            {
+              "label": "Angebotsbearbeitung",
+              "sublabel": "24h"
+            },
+            {
+              "label": "Von Tür zu Tür",
+              "sublabel": "3 Wk"
+            },
+            {
+              "label": "Landesweiter Versand",
+              "sublabel": "US/CA"
+            }
+          ]
+        }
       }
     },
     {
@@ -93,7 +153,13 @@
       "visible": true,
       "data": {
         "heading": "Real Projects Delivered to Sign Shops Across North America",
-        "categories": ["Channel Letters", "EdgeLuxe Trimless", "Blade Signs", "Cabinet Signs", "SEG Light Boxes"],
+        "categories": [
+          "Channel Letters",
+          "EdgeLuxe Trimless",
+          "Blade Signs",
+          "Cabinet Signs",
+          "SEG Light Boxes"
+        ],
         "images": [
           {
             "src": "/uploads/03cd546f-355c-48d3-bfce-19ce71d8bdc8-1773859439322.jpg",
@@ -143,7 +209,49 @@
             "location": "New York, NY",
             "turnaround": "14 days"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Reale Projekte, geliefert an Schilderwerkstätten in ganz Nordamerika",
+          "categories": [
+            "Leuchtbuchstaben",
+            "EdgeLuxe Randlos",
+            "Ausleger-Schilder",
+            "Leuchtkästen",
+            "SEG-Lichtboxen"
+          ],
+          "images": [
+            {
+              "alt": "Front-beleuchtete Leuchtbuchstaben — Einzelhandelsfassade, Miami FL",
+              "category": "Leuchtbuchstaben",
+              "type": "Front-beleuchtete LED"
+            },
+            {
+              "alt": "EdgeLuxe randlose Leuchtbuchstaben — Firmenbüro, Dallas TX",
+              "category": "EdgeLuxe Randlos",
+              "type": "Halo-beleuchtete LED"
+            },
+            {
+              "alt": "Beleuchtetes Ausleger-Schild — Restaurant, Chicago IL",
+              "category": "Ausleger-Schilder",
+              "type": "Doppelseitige LED"
+            },
+            {
+              "alt": "Leuchtkasten — Franchise-Standort, Toronto ON",
+              "category": "Leuchtkästen",
+              "type": "Durchsteck-LED"
+            },
+            {
+              "alt": "Halo-beleuchtete Leuchtbuchstaben — Hoteleingang, Las Vegas NV",
+              "category": "Leuchtbuchstaben",
+              "type": "Halo-beleuchtete LED"
+            },
+            {
+              "alt": "SEG-Lichtbox — Einzelhandelsinterieur, New York NY",
+              "category": "SEG-Lichtboxen",
+              "type": "Hinterleuchteter Stoff"
+            }
+          ]
+        }
       }
     },
     {
@@ -240,7 +348,83 @@
             ],
             "bestFor": "Interior Display"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Was wir fertigen",
+          "headingHighlight": "fertigen",
+          "description": "Präzisionsgefertigte Beschilderungslösungen, exklusiv für den Fachhandel.",
+          "items": [
+            {
+              "name": "Leuchtbuchstaben",
+              "description": "Front-beleuchtete, halo-beleuchtete und kombiniert beleuchtete Leuchtbuchstaben für hochsichtbare Einzelhandels- und Franchise-Beschilderung.",
+              "tag": "Beliebtestes Produkt",
+              "bestFor": "Einzelhandel & Franchise",
+              "chips": [
+                "Front-beleuchtet",
+                "Halo-beleuchtet",
+                "Kombi-beleuchtet",
+                "LED-beleuchtet"
+              ]
+            },
+            {
+              "name": "EdgeLuxe Randlos",
+              "description": "Architektonische Leuchtbuchstaben mit sauberem randlosen Profil und hochwertigem modernen Finish.",
+              "tag": "Premium",
+              "bestFor": "Premium & Architektonisch",
+              "chips": [
+                "Randlos",
+                "1,2\" Profil",
+                "Eingebettete LEDs",
+                "Architektonisch"
+              ]
+            },
+            {
+              "name": "Flachbuchstaben",
+              "description": "Präzisionsgeschnittene Buchstabenformen aus Aluminium und Edelstahl für Innen- und Außenbranding.",
+              "bestFor": "Innen- & Außenbranding",
+              "chips": [
+                "Nicht-beleuchtet",
+                "Aluminium",
+                "Edelstahl",
+                "Dimensional"
+              ]
+            },
+            {
+              "name": "Ausleger-Schilder",
+              "description": "Ausleger-Schilder für maximale Sichtbarkeit an Fassaden in stark frequentierten Fußgängerbereichen.",
+              "bestFor": "Einzelhandelsfassaden",
+              "chips": [
+                "Doppelseitig",
+                "Auskragend",
+                "Außen",
+                "Individuelle Formen"
+              ]
+            },
+            {
+              "name": "Leuchtkästen",
+              "description": "Beleuchtete Leuchtkästen und Durchsteck-Beschilderung für hohe Sichtbarkeit und starke Markenpräsenz.",
+              "bestFor": "Einzelhandel & Gewerbe",
+              "chips": [
+                "Beleuchtet",
+                "Durchsteck",
+                "Großformat",
+                "Außen"
+              ]
+            },
+            {
+              "name": "SEG-Lichtboxen",
+              "description": "Flache SEG-Lichtboxen mit Silikonkante für moderne Markenumgebungen.",
+              "tag": "Neu",
+              "bestFor": "Innenausstattung",
+              "chips": [
+                "Hinterleuchtet",
+                "Stoffgrafik",
+                "Flaches Profil",
+                "Innen"
+              ]
+            }
+          ]
+        }
       }
     },
     {
@@ -281,7 +465,36 @@
             "title": "Blind / Silent Fulfillment",
             "description": "We support your business as a manufacturing partner, not a competing sales channel."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Warum Schilderwerkstätten Sunlite wählen",
+          "items": [
+            {
+              "title": "Wir konkurrieren nie mit Ihren Kunden",
+              "description": "Sunlite verkauft ausschließlich an Schilderunternehmen und Fachhandel. Ihre Kundenbeziehungen bleiben geschützt."
+            },
+            {
+              "title": "Kostenlose Konstruktion",
+              "description": "Jedes Projekt beinhaltet Konstruktionsunterstützung, um sicher vom Konzept zur Fertigung zu gelangen."
+            },
+            {
+              "title": "24-Stunden-Angebotserstellung",
+              "description": "Schnelle Angebotserstellung für den Fachhandel hilft Ihnen, zügig zu reagieren und Projekte voranzutreiben."
+            },
+            {
+              "title": "Deutsche Ingenieurs-Präzision",
+              "description": "Unsere Fertigungsstandards basieren auf europäischer Beschilderungstechnik und Premium-Verarbeitung."
+            },
+            {
+              "title": "Zuverlässige Lieferung in USA & Kanada",
+              "description": "Die typische Bearbeitungszeit ist schnell, planbar und auf den Fachhandel abgestimmt."
+            },
+            {
+              "title": "Stille Auftragsabwicklung",
+              "description": "Wir unterstützen Ihr Unternehmen als Fertigungspartner, nicht als konkurrierender Vertriebskanal."
+            }
+          ]
+        }
       }
     },
     {
@@ -305,7 +518,21 @@
           "Structural Engineering",
           "Electrical Layout",
           "Manufacturing Engineering"
-        ]
+        ],
+        "de": {
+          "badge": "Bei jedem Projekt inklusive",
+          "heading": "Kostenlose",
+          "headingHighlight": "Konstruktion.",
+          "content": "Mit unseren deutschen Design- und Ingenieurswurzeln steuern wir kostenlose Konstruktionsleistungen zu jedem Projekt bei — von der konzeptionellen Integration von Struktur- und Materialwissenschaften bis hin zur Fertigungstechnik und Verpackung.",
+          "linkText": "Leistungen entdecken",
+          "imageAlt": "Sunlite Signs Ingenieursteam beim Entwurf von Leuchtbuchstaben",
+          "bulletPoints": [
+            "Konzept & Materialien",
+            "Konstruktionstechnik",
+            "Elektroplanung",
+            "Fertigungstechnik"
+          ]
+        }
       }
     },
     {
@@ -332,7 +559,28 @@
             "question": "Sarah Bennett, VP Sales — Southern Sign Alliance, Atlanta GA",
             "answer": "Sunlite has become our go-to for anything illuminated. The German engineering shows in the fit and finish. Our franchise clients notice the quality difference, and that makes us look good. The complimentary engineering drawings save us real money."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Vertraut von Handelspartnern, die Zuverlässigkeit brauchen",
+          "items": [
+            {
+              "question": "Jake Morrison, Betriebsleiter — SignCraft Pro, Denver CO",
+              "answer": "Wir haben letztes Jahr für unsere Leuchtbuchstaben-Projekte zu Sunlite gewechselt und es nie bereut. Allein die Konstruktionsunterstützung spart uns Stunden pro Auftrag, und die 3-Wochen-Lieferzeit ist zuverlässig. Sie arbeiten wirklich als stiller Partner — unsere Kunden merken es nie."
+            },
+            {
+              "question": "Maria Chen, Inhaberin — Pacific Sign Works, Vancouver BC",
+              "answer": "Überzeugt hat uns das Versprechen, keinen Kanalkonflikt zu schaffen. Als kleinere Werkstatt hatten wir genug davon, von Herstellern unterboten zu werden. Sunlite verkauft ausschließlich im Großhandel, Punkt. Die Qualität ihrer randlosen Buchstaben ist die beste, die wir in dieser Preisklasse gesehen haben."
+            },
+            {
+              "question": "David Kowalski, Produktionsleiter — Great Lakes Signage, Detroit MI",
+              "answer": "Die schnelle Angebotserstellung stimmt — wir bekommen die Preise meist noch am selben Tag. Auch die Verpackung ist ausgezeichnet, wir hatten bei dutzenden Lieferungen null Schäden. Es ist erfrischend, mit einem Hersteller zu arbeiten, der wirklich versteht, was Installateure brauchen."
+            },
+            {
+              "question": "Sarah Bennett, VP Vertrieb — Southern Sign Alliance, Atlanta GA",
+              "answer": "Sunlite ist unsere erste Wahl für alles Beleuchtete geworden. Die deutsche Ingenieurskunst zeigt sich in Passform und Verarbeitung. Unsere Franchise-Kunden bemerken den Qualitätsunterschied, und das lässt uns gut aussehen. Die kostenlosen Konstruktionszeichnungen sparen uns echtes Geld."
+            }
+          ]
+        }
       }
     },
     {
@@ -373,7 +621,42 @@
             "title": "Delivery",
             "description": "Door-to-door shipping to your installer or job site across the USA and Canada."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Vom Entwurf bis zur Installation",
+          "steps": [
+            {
+              "step": 1,
+              "title": "Artwork einreichen",
+              "description": "Senden Sie uns Ihr Artwork, Zeichnungen oder Projektspezifikationen. Wir akzeptieren alle gängigen Dateiformate."
+            },
+            {
+              "step": 2,
+              "title": "Prüfung & Konstruktion",
+              "description": "Unser Team prüft Ihre Unterlagen und bietet kostenlose Konstruktionsunterstützung."
+            },
+            {
+              "step": 3,
+              "title": "Angebotsfreigabe",
+              "description": "Erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 24 Stunden. Freigabe erteilen, um die Fertigung zu starten."
+            },
+            {
+              "step": 4,
+              "title": "Fertigung & QK",
+              "description": "Präzisionsfertigung mit mehrstufiger Qualitätskontrolle in jeder Phase."
+            },
+            {
+              "step": 5,
+              "title": "Sichere Verpackung",
+              "description": "Individuell konstruierte Kisten und Verpackungen zum Schutz Ihrer Schilder beim Transport."
+            },
+            {
+              "step": 6,
+              "title": "Lieferung",
+              "description": "Lieferung direkt an Ihren Installateur oder die Baustelle in den USA und Kanada."
+            }
+          ]
+        }
       }
     },
     {
@@ -391,7 +674,15 @@
         "imagePosition": "left",
         "background": "light",
         "linkText": "Read Our Story",
-        "linkHref": "/about"
+        "linkHref": "/about",
+        "de": {
+          "badge": "Unsere Geschichte",
+          "heading": "Europäische Maßanfertigung,",
+          "headingHighlight": "Großhandel.",
+          "content": "Die Grundlage von Sunlite Signs basiert auf einer Partnerschaft, die in deutscher Präzisionstechnik verwurzelt ist — und dem Versprechen, nie mit unseren Kunden zu konkurrieren.\n\nVon LKF Lichtwerbung in Nürnberg bis Florida bringen wir jahrzehntelange europäische Beschilderungsexpertise exklusiv in den Fachhandel.",
+          "linkText": "Unsere Geschichte lesen",
+          "imageAlt": "Sunlite Signs Team und LKF Lichtwerbung Partnerschaft"
+        }
       }
     },
     {
@@ -438,7 +729,36 @@
             "description": "Our silent manufacturing model explained — your clients stay yours, always.",
             "href": "/why-sunlite/wholesale-only"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Großhandel-Beschilderungsressourcen für Schilderfachleute",
+          "items": [
+            {
+              "title": "Randlose vs. Zierleisten-Leuchtbuchstaben",
+              "description": "Vergleichen Sie Konstruktionsmethoden, Ästhetik und Langzeitleistung für Ihr nächstes Projekt."
+            },
+            {
+              "title": "Front-beleuchtete vs. Halo-beleuchtete Leuchtbuchstaben",
+              "description": "Verstehen Sie die Beleuchtungsoptionen und welche für verschiedene Anwendungen am besten geeignet ist."
+            },
+            {
+              "title": "UL-zertifizierte Schilder erklärt",
+              "description": "Was die UL 48-Zertifizierung für Normkonformität, Genehmigungen und Kundenvertrauen bedeutet."
+            },
+            {
+              "title": "Leuchtbuchstaben-Installationsanleitung",
+              "description": "Praktische Tipps für Installateure zu Montage, Verkabelung und häufigen Problemen vor Ort."
+            },
+            {
+              "title": "Verpackung & Versand beleuchteter Schilder",
+              "description": "Wie wir Ihre Schilder beim Transport mit individuellen Kisten in den USA und Kanada schützen."
+            },
+            {
+              "title": "So funktioniert die stille Auftragsabwicklung für Schilderwerkstätten",
+              "description": "Unser stilles Fertigungsmodell erklärt — Ihre Kunden bleiben immer Ihre Kunden."
+            }
+          ]
+        }
       }
     },
     {
@@ -449,7 +769,12 @@
       "data": {
         "heading": "Start Your Wholesale",
         "headingHighlight": "Sign Project.",
-        "description": "Send us your artwork, specs, or project details and receive a trade quote fast. Complimentary engineering included with every project."
+        "description": "Send us your artwork, specs, or project details and receive a trade quote fast. Complimentary engineering included with every project.",
+        "de": {
+          "heading": "Starten Sie Ihr Großhandels-",
+          "headingHighlight": "Schilderprojekt.",
+          "description": "Senden Sie uns Ihr Artwork, Spezifikationen oder Projektdetails und erhalten Sie schnell ein Handelsangebot. Kostenlose Konstruktion bei jedem Projekt inklusive."
+        }
       }
     },
     {
@@ -490,7 +815,36 @@
             "title": "Silent Manufacturing",
             "description": "We operate as your blind fulfillment partner."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Ein Fertigungspartner für professionelle Schilderwerkstätten",
+          "items": [
+            {
+              "title": "Nur Großhandel",
+              "description": "Wir verkaufen ausschließlich an Schilderwerkstätten und Fachhandel."
+            },
+            {
+              "title": "Kein Einzelhandel",
+              "description": "Ihre Kunden sind Ihre Kunden. Wir verkaufen nie direkt."
+            },
+            {
+              "title": "Konstruktion inklusive",
+              "description": "Kostenlose Konstruktionsunterstützung bei jedem Projekt."
+            },
+            {
+              "title": "Schnelle Handelsangebote",
+              "description": "24-Stunden-Angebotserstellung für Händlerkonten."
+            },
+            {
+              "title": "Versand USA & Kanada",
+              "description": "Lieferung von Tür zu Tür in ganz Nordamerika."
+            },
+            {
+              "title": "Stille Fertigung",
+              "description": "Wir agieren als Ihr stiller Auftragsabwicklungspartner."
+            }
+          ]
+        }
       }
     }
   ]

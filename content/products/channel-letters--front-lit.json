@@ -15,7 +15,21 @@
       "trade pricing channel letters",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/face-lit-channel-letters"
+    "canonical": "https://sunlitesigns.com/face-lit-channel-letters",
+    "de": {
+      "title": "Großhandel Front-beleuchtete Leuchtbuchstaben — Händlerpreise | Sunlite Signs",
+      "metaDescription": "Großhandel front-beleuchtete Leuchtbuchstaben nur für Schilderwerkstätten. Vorwärts gerichtete LED-Beleuchtung, UL-zertifiziert, deutsche Ingenieurskunst. Händlerpreise direkt vom Hersteller. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "front-beleuchtet Leuchtbuchstaben",
+        "front-beleuchtet Leuchtbuchstaben Großhandel",
+        "illuminated Leuchtbuchstaben",
+        "LED Leuchtbuchstaben",
+        "Großhandel Leuchtbuchstabe manufacturer",
+        "front face illuminated signs",
+        "Händlerpreise Leuchtbuchstaben",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "The industry standard for illuminated signage. Forward-facing LEDs shine through a translucent acrylic face, delivering maximum brightness and readability for any commercial application. Available exclusively to trade accounts.\n\nGerman-engineered precision. UL listed. Wholesale direct to sign shops across the USA and Canada. We never sell retail — your clients stay yours.",
         "image": "/products/front-lit-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Front-beleuchtet",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "Der Branchenstandard für beleuchtete Beschilderung. Vorwärts gerichtete LEDs strahlen durch eine transluzente Acrylfläche und liefern maximale Helligkeit und Lesbarkeit für jede gewerbliche Anwendung. Exklusiv für Händlerkonten verfügbar.\n\nDeutsche Ingenieurs-Präzision. UL-zertifiziert. Großhandel direkt an Schilderwerkstätten in den USA und Kanada. Wir verkaufen nie an Endkunden — Ihre Kunden bleiben Ihre Kunden.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -72,7 +103,36 @@
             "title": "Samsung LEDs",
             "description": "Premium Samsung LED modules with 50,000+ hour rated life, consistent color output, and industry-leading warranty."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Maximale Frontbeleuchtung",
+              "description": "Vorwärts gerichtete LEDs beleuchten die gesamte Buchstabenfläche für ausgezeichnete Lesbarkeit bei Tag und Nacht, selbst bei direkter Sonneneinstrahlung."
+            },
+            {
+              "title": "Überlegene Sichtbarkeit",
+              "description": "Die hellste verfügbare Leuchtbuchstaben-Option. Ideal für stark frequentierte Standorte, an denen Sichtbarkeit höchste Priorität hat."
+            },
+            {
+              "title": "Volle Farbpalette",
+              "description": "Verfügbar in jeder Pantone-abgestimmten Acrylflächen-Farbe. Weiße, farbige und sogar Tag/Nacht-Farbwechsel-Flächen verfügbar."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "Every front-beleuchtet Leuchtbuchstabe set ships with UL-Zertifizierung labels and documentation for fast, compliant permitting."
+            },
+            {
+              "title": "Individuelle Größen",
+              "description": "Gefertigt von 4 Zoll bis über 72 Zoll Höhe. Wir fertigen jede Schriftart, jedes Logo oder jede individuelle Form."
+            },
+            {
+              "title": "Samsung-LEDs",
+              "description": "Premium Samsung-LED-Module mit 50.000+ Stunden Lebensdauer, konstanter Farbausgabe und branchenführender Garantie."
+            }
+          ]
+        }
       }
     },
     {
@@ -84,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Face lit channel letter — cross-section detail showing LED placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -104,7 +168,21 @@
           "Gas stations and convenience stores",
           "Automotive dealerships",
           "Multi-tenant commercial buildings"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Front-beleuchtete Leuchtbuchstaben sind der vielseitigste beleuchtete Schildertyp, geeignet für praktisch jede gewerbliche Anwendung, bei der Sichtbarkeit zählt. Großhandel direkt an Schilderwerkstätten für alle Projekttypen.",
+          "items": [
+            "Einzelhandelsfassaden und Einkaufszentren",
+            "Restaurants und Gastronomie-Marken",
+            "Gesundheits- und Medizineinrichtungen",
+            "Gastronomie- und Hotelbeschilderung",
+            "Firmengebäude",
+            "Tankstellen und Convenience-Stores",
+            "Autohäuser",
+            "Gewerbliche Mehrmieterobjekte"
+          ]
+        }
       }
     },
     {
@@ -115,13 +193,54 @@
       "data": {
         "heading": "Face Lit Projects",
         "images": [
-          { "src": "", "alt": "Face lit letters — restaurant facade, night" },
-          { "src": "", "alt": "Face lit letters — retail shopping center" },
-          { "src": "", "alt": "Face lit letters — healthcare facility" },
-          { "src": "", "alt": "Face lit letters — corporate office building" },
-          { "src": "", "alt": "Face lit letters — hotel entrance" },
-          { "src": "", "alt": "Face lit letters — multi-tenant commercial" }
-        ]
+          {
+            "src": "",
+            "alt": "Face lit letters — restaurant facade, night"
+          },
+          {
+            "src": "",
+            "alt": "Face lit letters — retail shopping center"
+          },
+          {
+            "src": "",
+            "alt": "Face lit letters — healthcare facility"
+          },
+          {
+            "src": "",
+            "alt": "Face lit letters — corporate office building"
+          },
+          {
+            "src": "",
+            "alt": "Face lit letters — hotel entrance"
+          },
+          {
+            "src": "",
+            "alt": "Face lit letters — multi-tenant commercial"
+          }
+        ],
+        "de": {
+          "heading": "Front-beleuchtete Projekte",
+          "images": [
+            {
+              "alt": "Face lit letters — restaurant facade, night"
+            },
+            {
+              "alt": "Face lit letters — retail shopping center"
+            },
+            {
+              "alt": "Face lit letters — healthcare facility"
+            },
+            {
+              "alt": "Face lit letters — corporate office building"
+            },
+            {
+              "alt": "Face lit letters — hotel entrance"
+            },
+            {
+              "alt": "Face lit letters — multi-tenant commercial"
+            }
+          ]
+        }
       }
     },
     {
@@ -132,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Face Lit Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Front-beleuchtete Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

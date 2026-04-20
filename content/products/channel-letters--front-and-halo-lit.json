@@ -15,7 +15,21 @@
       "trade pricing channel letters",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/face-and-halo-channel-letters"
+    "canonical": "https://sunlitesigns.com/face-and-halo-channel-letters",
+    "de": {
+      "title": "Großhandel Front & Halo-beleuchtet Leuchtbuchstaben — Trade Pricing | Sunlite Signs",
+      "metaDescription": "Großhandel front and halo-beleuchtet combination Leuchtbuchstaben for Schilderwerkstätten only. Dual LED illumination, Händlerpreise, UL-zertifiziert, Mit deutscher Ingenieurskunst. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "front and halo-beleuchtet Leuchtbuchstaben",
+        "combination Leuchtbuchstaben Großhandel",
+        "dual illuminated Leuchtbuchstaben",
+        "front and back lit Leuchtbuchstaben",
+        "Großhandel LED Leuchtbuchstaben",
+        "illuminated sign manufacturer",
+        "Händlerpreise Leuchtbuchstaben",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "The best of both worlds. Dual LED circuits combine bright front-face illumination with an elegant rear halo glow, delivering maximum visual impact for premium installations. Available exclusively to trade accounts.\n\nTwo lighting effects. One letter. German-engineered precision with UL listing. Wholesale direct to sign shops — we never sell retail.",
         "image": "/products/front-halo-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Front & Halo-beleuchtet",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "Das Beste aus beiden Welten. Duale LED-Schaltkreise kombinieren helle Frontbeleuchtung mit einem eleganten rückseitigen Halo-Glanz und liefern maximale visuelle Wirkung für Premium-Installationen. Exklusiv für Händlerkonten verfügbar.\n\nZwei Lichteffekte. Ein Buchstabe. Deutsche Ingenieurs-Präzision mit UL-Zertifizierung. Großhandel direkt an Schilderwerkstätten — wir verkaufen nie an Endkunden.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,10 +73,33 @@
       "data": {
         "heading": "Two Effects, One Letter",
         "images": [
-          { "src": "/products/front-lit-night.jpg", "alt": "Face lit only — face illumination view" },
-          { "src": "/products/halo-lit-night.jpg", "alt": "Halo lit only — rear glow view" },
-          { "src": "/products/front-halo-night.jpg", "alt": "Front and halo combined — full dual illumination" }
-        ]
+          {
+            "src": "/products/front-lit-night.jpg",
+            "alt": "Face lit only — face illumination view"
+          },
+          {
+            "src": "/products/halo-lit-night.jpg",
+            "alt": "Halo lit only — rear glow view"
+          },
+          {
+            "src": "/products/front-halo-night.jpg",
+            "alt": "Front and halo combined — full dual illumination"
+          }
+        ],
+        "de": {
+          "heading": "Zwei Effekte, ein Buchstabe",
+          "images": [
+            {
+              "alt": "Face lit only — face illumination view"
+            },
+            {
+              "alt": "Halo lit only — rear glow view"
+            },
+            {
+              "alt": "Front and halo combined — full dual illumination"
+            }
+          ]
+        }
       }
     },
     {
@@ -86,7 +140,36 @@
             "title": "Optimized Depth",
             "description": "Return depth is engineered to accommodate both LED sets while maintaining a proportional letter profile. Typical depth ranges from 3.5 to 5 inches."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Duale Beleuchtung",
+              "description": "Zwei unabhängige LED-Schaltkreise — einer beleuchtet die transluzente Acrylfläche, ein anderer projiziert einen Halo-Glanz hinter den Buchstaben. Maximale visuelle Wirkung."
+            },
+            {
+              "title": "Front-Helligkeit",
+              "description": "Vorwärts gerichtete LEDs liefern die gleiche hochsichtbare Frontbeleuchtung wie unsere Standard-Front-beleuchteten Buchstaben und gewährleisten ausgezeichnete Lesbarkeit bei Tag und Nacht."
+            },
+            {
+              "title": "Rückseitiger Halo-Effekt",
+              "description": "Rückseitig montierte LEDs erzeugen den gleichen eleganten Hinterlicht-Glanz wie unser dediziertes Halo-Produkt und fügen der Gesamtpräsentation Tiefe und Dimension hinzu."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "Both LED circuits are fully UL-zertifiziert. Complete documentation and labeling included for seamless permitting."
+            },
+            {
+              "title": "Unabhängige Steuerung",
+              "description": "Front- und Rück-LED-Schaltkreise können unabhängig verdrahtet werden, was unterschiedliche Ein/Aus-Zeiten oder Dimmkonfigurationen für jeden Lichteffekt ermöglicht."
+            },
+            {
+              "title": "Optimierte Tiefe",
+              "description": "Die Zargentiefe ist so konstruiert, dass beide LED-Sets Platz finden, während ein proportionales Buchstabenprofil beibehalten wird. Typische Tiefe reicht von 3,5 bis 5 Zoll."
+            }
+          ]
+        }
       }
     },
     {
@@ -98,7 +181,11 @@
         "heading": "Trade Specifications",
         "description": "Dual-circuit engineering with optimized return depth for both front face illumination and rear halo spread. Available exclusively at wholesale trade pricing.",
         "image": "Front and halo lit channel letter — cross-section showing dual LED placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Dual-circuit engineering with optimized return depth for both front face illumination and rear halo spread. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -118,7 +205,21 @@
           "Mixed-use lifestyle centers",
           "Casino and gaming properties",
           "Landmark building identification"
-        ]
+        ],
+        "de": {
+          "heading": "Ideale Anwendungen",
+          "description": "Front and halo-beleuchtet letters are the premium choice for high-visibility, high-impact installations where making a statement is essential. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "High-end retail flagships",
+            "Entertainment venues and theaters",
+            "Hotels and resort properties",
+            "Upscale restaurants and bars",
+            "Corporate campus signage",
+            "Mixed-use lifestyle centers",
+            "Casino and gaming properties",
+            "Landmark building identification"
+          ]
+        }
       }
     },
     {
@@ -129,7 +230,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Front & Halo Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Front- & Halo-Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

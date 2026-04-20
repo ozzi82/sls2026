@@ -17,7 +17,23 @@
       "sign shop supplier",
       "wholesale only sign manufacturer"
     ],
-    "canonical": "https://sunlitesigns.com/wholesale-sign-products"
+    "canonical": "https://sunlitesigns.com/wholesale-sign-products",
+    "de": {
+      "title": "Großhandel-Schilderprodukte — Händlerpreise für Schilderwerkstätten | Sunlite Signs",
+      "metaDescription": "Großhandel-Schilderprodukte exklusiv für Händlerkonten. Leuchtbuchstaben, Flachbuchstaben, Ausleger-Schilder, Lichtboxen und individuelle Fertigung zu Großhandelspreisen. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "Großhandel sign products",
+        "Leuchtbuchstaben Großhandel",
+        "Flachbuchstaben Großhandel",
+        "Ausleger-Schilder Großhandel",
+        "Lichtboxen Großhandel",
+        "sign manufacturer USA",
+        "Großhandel sign supplier",
+        "Händlerpreise signs",
+        "Zulieferer für Schilderwerkstätten",
+        "Großhandel only sign manufacturer"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,7 +46,13 @@
         "h1": "Wholesale Product",
         "h1Highlight": "Catalog",
         "subtitle": "German-engineered illuminated signage, wholesale direct to sign shops across the USA and Canada. Every product is UL listed, precision built, and delivered within 3 weeks door to door.\n\nWe never sell retail. Your clients stay yours. No retail markup, no middlemen — just trade pricing direct from the manufacturer.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel-Produkt",
+          "h1Highlight": "Katalog",
+          "subtitle": "Beleuchtete Beschilderung mit deutscher Ingenieurskunst, Großhandel direkt an Schilderwerkstätten in den USA und Kanada. Jedes Produkt ist UL-zertifiziert, präzisionsgefertigt und wird innerhalb von 3 Wochen von Tür zu Tür geliefert.\n\nWir verkaufen nie an Endkunden. Ihre Kunden bleiben Ihre Kunden. Kein Einzelhandelsaufschlag, keine Zwischenhändler — nur Händlerpreise direkt vom Hersteller."
+        }
       }
     },
     {
@@ -40,10 +62,32 @@
       "visible": true,
       "data": {
         "items": [
-          { "icon": "Shield", "label": "UL Listed Products" },
-          { "icon": "Clock", "label": "3-Week Door-to-Door Delivery" },
-          { "icon": "Wrench", "label": "German Engineering" }
-        ]
+          {
+            "icon": "Shield",
+            "label": "UL Listed Products"
+          },
+          {
+            "icon": "Clock",
+            "label": "3-Week Door-to-Door Delivery"
+          },
+          {
+            "icon": "Wrench",
+            "label": "German Engineering"
+          }
+        ],
+        "de": {
+          "items": [
+            {
+              "label": "UL-zertifizierte Produkte"
+            },
+            {
+              "label": "3 Wochen Lieferung von Tür zu Tür"
+            },
+            {
+              "label": "Deutsche Ingenieurskunst"
+            }
+          ]
+        }
       }
     },
     {
@@ -96,7 +140,44 @@
             "description": "Bespoke signage solutions at trade pricing for projects that require something beyond standard products. Wholesale only — we never compete with our sign shop partners.",
             "href": "/products/custom-fabrication"
           }
-        ]
+        ],
+        "de": {
+          "heading": "Weitere Großhandel-Produktlinien",
+          "items": [
+            {
+              "name": "Leuchtbuchstaben",
+              "description": "Die EdgeLuxe Produktlinie — 12 Leuchtbuchstaben-Stile in 4 Familien: Block-Acryl, Randlos, Gefertigter Edelstahl und Flachschnitt. Deutsche Ingenieurskunst, UL-zertifiziert. Großhandel direkt an Schilderwerkstätten."
+            },
+            {
+              "name": "Flachbuchstaben",
+              "description": "Präzisionsgeschnittene dimensionale Buchstaben aus Metall und Acryl zu Großhandelspreisen. Klare Linien, flächenbündig oder mit Gewindebolzen montiert, verfügbar in gebürstetem Aluminium, lackiertem Stahl und Messing."
+            },
+            {
+              "name": "Ausleger-Schilder",
+              "description": "Doppelseitige Ausleger-Schilder zu Händlerpreisen. Beleuchtete und nicht-beleuchtete Optionen für Ladenfronten und gemischt genutzte Gebäude. Großhandel direkt an Schilderwerkstätten."
+            },
+            {
+              "name": "Lichtboxen",
+              "description": "Beleuchtete Leuchtkästen zu Großhandelspreisen. Kantenbeleuchtete und hinterleuchtete LED-Optionen mit gespanntem Stoff oder Polycarbonat-Flächen. Exklusiv für Händlerkonten verfügbar."
+            },
+            {
+              "name": "SEG-Lichtboxen",
+              "description": "Maßgefertigte SEG-Lichtbox-Lösungen (Silikondichtungs-Grafik) in flachen Formfaktoren ab 1\" Tiefe. Hochauflösend bedruckte und beleuchtete Beschilderung. Individuelle SEG-Lichtboxen und Drucke in 3 Wochen. Nur Großhandel."
+            },
+            {
+              "name": "Logo-Boxen",
+              "description": "Individuell geformte beleuchtete Gehäuse, die der exakten Kontur jedes Logos folgen. Vollfarbiger Digitaldruck auf transluzenten Flächen für markengetreue Wiedergabe. Großhandelspreise für Schilderwerkstätten."
+            },
+            {
+              "name": "Durchsteck Signs",
+              "description": "Dimensionale Acrylbuchstaben, die durch präzisionsgefräste Aluminiumpaneele gesteckt werden, mit LED-Hintergrundbeleuchtung. Die Premium-Alternative zu Leuchtkästen mit flacher Front. Nur Großhandel."
+            },
+            {
+              "name": "Individuelle Fertigung",
+              "description": "Maßgeschneiderte Beschilderungslösungen zu Händlerpreisen für Projekte, die etwas jenseits von Standardprodukten erfordern. Nur Großhandel — wir konkurrieren nie mit unseren Schilderwerkstatt-Partnern."
+            }
+          ]
+        }
       }
     },
     {
@@ -107,7 +188,12 @@
       "data": {
         "heading": "Need a Custom",
         "headingHighlight": "Solution?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Brauchen Sie eine individuelle",
+          "headingHighlight": "Lösung?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

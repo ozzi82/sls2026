@@ -3,9 +3,30 @@
   "pageType": "static",
   "label": "Choosing Illumination Types",
   "seo": {
-    "title": "Choosing the Right Illumination Type \u2014 Wholesale Guide for Sign Shops | Sunlite Signs",
+    "title": "Choosing the Right Illumination Type — Wholesale Guide for Sign Shops | Sunlite Signs",
     "metaDescription": "Compare face-lit, halo-lit, front-and-halo, and non-illuminated channel letters at wholesale trade pricing. Learn when to specify each illumination type for your sign shop clients.",
-    "keywords": ["wholesale channel letter illumination types", "face lit vs halo lit trade", "backlit channel letters wholesale", "LED sign illumination guide", "halo lit channel letters wholesale", "front and halo lit signs trade", "sign illumination comparison wholesale"]
+    "keywords": [
+      "wholesale channel letter illumination types",
+      "face lit vs halo lit trade",
+      "backlit channel letters wholesale",
+      "LED sign illumination guide",
+      "halo lit channel letters wholesale",
+      "front and halo lit signs trade",
+      "sign illumination comparison wholesale"
+    ],
+    "de": {
+      "title": "Choosing the Right Illumination Type — Großhandel Guide for Sign Shops | Sunlite Signs",
+      "metaDescription": "Compare front-beleuchtet, halo-beleuchtet, front-and-halo, and nicht-beleuchtet Leuchtbuchstaben at Großhandel Händlerpreise. Learn when to specify each illumination type for your Schilderwerkstatt clients.",
+      "keywords": [
+        "Großhandel Leuchtbuchstabe illumination types",
+        "front-beleuchtet vs halo-beleuchtet trade",
+        "backlit Leuchtbuchstaben Großhandel",
+        "LED sign illumination guide",
+        "halo-beleuchtet Leuchtbuchstaben Großhandel",
+        "front and halo-beleuchtet signs trade",
+        "sign illumination comparison Großhandel"
+      ]
+    }
   },
   "blocks": [
     {
@@ -16,8 +37,13 @@
       "data": {
         "badge": "Trade Resources",
         "h1": "Choosing the Right Illumination Type",
-        "subtitle": "A wholesale guide for sign shop professionals and trade buyers. The illumination style of a channel letter sign defines how it looks at night and shapes the impression it makes on customers. This guide compares the four primary options to help you recommend the right choice for every project \u2014 all available at trade pricing.",
-        "ctas": []
+        "subtitle": "A wholesale guide for sign shop professionals and trade buyers. The illumination style of a channel letter sign defines how it looks at night and shapes the impression it makes on customers. This guide compares the four primary options to help you recommend the right choice for every project — all available at trade pricing.",
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "Choosing the Right Illumination Type",
+          "subtitle": "A Großhandel guide for Schilderwerkstatt professionals and Fachhändler. The illumination style of a Leuchtbuchstabe sign defines how it looks at night and shapes the impression it makes on customers. This guide compares the four primary options to help you recommend the right choice for every project — all available at Händlerpreise."
+        }
       }
     },
     {
@@ -28,7 +54,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

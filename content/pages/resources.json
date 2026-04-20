@@ -3,9 +3,30 @@
   "pageType": "static",
   "label": "Resources",
   "seo": {
-    "title": "Wholesale Sign Industry Resources \u2014 Sunlite Signs",
-    "metaDescription": "Trade resources for sign shop professionals. Wholesale channel letter guides, sign industry glossary, blog articles, and FAQ from Sunlite Signs \u2014 your wholesale-only sign manufacturer.",
-    "keywords": ["wholesale sign resources", "trade sign industry resources", "channel letter guides wholesale", "sign industry glossary", "wholesale sign FAQ", "sign shop trade resources", "LED sign guides wholesale"]
+    "title": "Wholesale Sign Industry Resources — Sunlite Signs",
+    "metaDescription": "Trade resources for sign shop professionals. Wholesale channel letter guides, sign industry glossary, blog articles, and FAQ from Sunlite Signs — your wholesale-only sign manufacturer.",
+    "keywords": [
+      "wholesale sign resources",
+      "trade sign industry resources",
+      "channel letter guides wholesale",
+      "sign industry glossary",
+      "wholesale sign FAQ",
+      "sign shop trade resources",
+      "LED sign guides wholesale"
+    ],
+    "de": {
+      "title": "Großhandel Sign Industry Resources — Sunlite Signs",
+      "metaDescription": "Trade resources for Schilderwerkstatt professionals. Großhandel Leuchtbuchstabe guides, sign industry glossary, blog articles, and FAQ from Sunlite Signs — your Großhandel-only sign manufacturer.",
+      "keywords": [
+        "Großhandel sign resources",
+        "trade sign industry resources",
+        "Leuchtbuchstabe guides Großhandel",
+        "sign industry glossary",
+        "Großhandel sign FAQ",
+        "Schilderwerkstatt trade resources",
+        "LED sign guides Großhandel"
+      ]
+    }
   },
   "blocks": [
     {
@@ -16,8 +37,13 @@
       "data": {
         "badge": "Wholesale Partner Resources",
         "h1": "Trade Resources",
-        "subtitle": "Everything sign shop professionals and trade buyers need to make informed decisions about wholesale channel letters, illumination, and signage manufacturing. We sell exclusively to the trade \u2014 never retail.",
-        "ctas": []
+        "subtitle": "Everything sign shop professionals and trade buyers need to make informed decisions about wholesale channel letters, illumination, and signage manufacturing. We sell exclusively to the trade — never retail.",
+        "ctas": [],
+        "de": {
+          "badge": "Großhandel-Partnerressourcen",
+          "h1": "Fachhandel-Ressourcen",
+          "subtitle": "Everything Schilderwerkstatt professionals and Fachhändler need to make informed decisions about Großhandel Leuchtbuchstaben, illumination, and signage manufacturing. We sell exclusively to the trade — never retail."
+        }
       }
     },
     {
@@ -27,11 +53,51 @@
       "visible": true,
       "data": {
         "items": [
-          { "icon": "FileText", "title": "Blog", "description": "Wholesale industry insights, product spotlights, and expert articles on channel letters, illumination technology, and sign manufacturing trends for trade professionals.", "href": "/resources/blog" },
-          { "icon": "Library", "title": "Sign Industry Glossary", "description": "A comprehensive A-Z glossary of sign industry terms. From acrylic faces to vinyl wraps, learn the language of professional signage \u2014 built for trade buyers.", "href": "/resources/glossary" },
-          { "icon": "BookOpen", "title": "Guides", "description": "In-depth wholesale guides on channel letter selection, sign illumination options, installation best practices, and ordering from a wholesale-only manufacturer.", "href": "/resources/guides" },
-          { "icon": "HelpCircle", "title": "FAQ", "description": "Answers to the most common questions about wholesale trade accounts, sign ordering, turnaround times, shipping, UL listing, and working with Sunlite Signs.", "href": "/resources/faq" }
-        ]
+          {
+            "icon": "FileText",
+            "title": "Blog",
+            "description": "Wholesale industry insights, product spotlights, and expert articles on channel letters, illumination technology, and sign manufacturing trends for trade professionals.",
+            "href": "/resources/blog"
+          },
+          {
+            "icon": "Library",
+            "title": "Sign Industry Glossary",
+            "description": "A comprehensive A-Z glossary of sign industry terms. From acrylic faces to vinyl wraps, learn the language of professional signage — built for trade buyers.",
+            "href": "/resources/glossary"
+          },
+          {
+            "icon": "BookOpen",
+            "title": "Guides",
+            "description": "In-depth wholesale guides on channel letter selection, sign illumination options, installation best practices, and ordering from a wholesale-only manufacturer.",
+            "href": "/resources/guides"
+          },
+          {
+            "icon": "HelpCircle",
+            "title": "FAQ",
+            "description": "Answers to the most common questions about wholesale trade accounts, sign ordering, turnaround times, shipping, UL listing, and working with Sunlite Signs.",
+            "href": "/resources/faq"
+          }
+        ],
+        "de": {
+          "items": [
+            {
+              "title": "Blog",
+              "description": "Großhandel industry insights, product spotlights, and expert articles on Leuchtbuchstaben, illumination technology, and sign manufacturing trends for Fachhandel."
+            },
+            {
+              "title": "Sign Industry Glossary",
+              "description": "A comprehensive A-Z glossary of sign industry terms. From acrylic faces to vinyl wraps, learn the language of professional signage — built for Fachhändler."
+            },
+            {
+              "title": "Guides",
+              "description": "In-depth Großhandel guides on Leuchtbuchstabe selection, sign illumination options, installation best practices, and ordering from a Großhandel-only manufacturer."
+            },
+            {
+              "title": "FAQ",
+              "description": "Answers to the most common questions about Großhandel Händlerkonten, sign ordering, turnaround times, shipping, UL-Zertifizierung, and working with Sunlite Signs."
+            }
+          ]
+        }
       }
     },
     {
@@ -42,7 +108,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

@@ -15,7 +15,21 @@
       "trade pricing",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/stainless-steel-standoff-letters"
+    "canonical": "https://sunlitesigns.com/stainless-steel-standoff-letters",
+    "de": {
+      "title": "Großhandel Edelstahl Abstandshalter Halo Letters — EdgeLuxe LP 3.1 | Sunlite Signs",
+      "metaDescription": "Großhandel fabricated Edelstahl halo-beleuchtet letters with Abstandshalter mount. LEDs arranged to avoid reflection. Mit deutscher Ingenieurskunst. Händlerpreise for Schilderwerkstätten only.",
+      "keywords": [
+        "Edelstahl halo letters",
+        "Abstandshalter mount letters",
+        "fabricated metal letters",
+        "halo-beleuchtet signs Großhandel",
+        "Edelstahl Leuchtbuchstaben",
+        "Großhandel letters",
+        "Händlerpreise",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "Fabricated stainless steel letters with precision standoff mounting create a clean, sophisticated halo glow. The EdgeLuxe LP 3.1 features LEDs arranged to eliminate diode reflection on the mounting surface — delivering a smooth, even backlight.\n\nGerman-engineered precision. UL listed. Wholesale direct to sign shops across the USA and Canada.",
         "image": "/products/stainless-standoff-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Edelstahl",
+          "h1Highlight": "Abstandshalter Halo Letters",
+          "subtitle": "Fabricated Edelstahl letters with precision Abstandshalter mounting create a clean, sophisticated halo glow. The EdgeLuxe LP 3.1 features LEDs arranged to eliminate diode reflection on the mounting surface — delivering a smooth, even backlight.\n\nDeutsche Ingenieurs-Präzision. UL-zertifiziert. Großhandel direkt an Schilderwerkstätten across the USA und Kanada.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,13 +73,66 @@
       "data": {
         "heading": "Trade Specifications & Benefits",
         "items": [
-          { "icon": "Moon", "title": "Clean Halo Effect", "description": "LEDs specifically arranged to avoid diode reflection on the mounting surface. Creates a smooth, even halo glow behind each letter." },
-          { "icon": "Building2", "title": "Standoff Mounting", "description": "Raised off the mounting surface with precision standoff spacers. The gap between letter and wall creates the signature halo illumination." },
-          { "icon": "Shield", "title": "UL Listed", "description": "Every illuminated letter set ships with UL listing labels and documentation for fast, compliant permitting." },
-          { "icon": "Palette", "title": "Full Customization", "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colorful halo effects." },
-          { "icon": "Ruler", "title": "Multiple Depth Options", "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired halo spread." },
-          { "icon": "Wrench", "title": "Serviceable LEDs", "description": "Unlike sealed block acrylic, fabricated stainless steel construction allows LED modules to be serviced and replaced in the field." }
-        ]
+          {
+            "icon": "Moon",
+            "title": "Clean Halo Effect",
+            "description": "LEDs specifically arranged to avoid diode reflection on the mounting surface. Creates a smooth, even halo glow behind each letter."
+          },
+          {
+            "icon": "Building2",
+            "title": "Standoff Mounting",
+            "description": "Raised off the mounting surface with precision standoff spacers. The gap between letter and wall creates the signature halo illumination."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "Every illuminated letter set ships with UL listing labels and documentation for fast, compliant permitting."
+          },
+          {
+            "icon": "Palette",
+            "title": "Full Customization",
+            "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colorful halo effects."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Multiple Depth Options",
+            "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired halo spread."
+          },
+          {
+            "icon": "Wrench",
+            "title": "Serviceable LEDs",
+            "description": "Unlike sealed block acrylic, fabricated stainless steel construction allows LED modules to be serviced and replaced in the field."
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Clean Halo Effect",
+              "description": "LEDs specifically arranged to avoid diode reflection on the mounting surface. Creates a smooth, even halo glow behind each letter."
+            },
+            {
+              "title": "Abstandshalter Mounting",
+              "description": "Raised off the mounting surface with precision Abstandshalter spacers. The gap between letter and wall creates the signature halo illumination."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "Every illuminated letter set ships with UL-Zertifizierung labels and documentation for fast, compliant permitting."
+            },
+            {
+              "title": "Full Customization",
+              "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colorful halo effects."
+            },
+            {
+              "title": "Multiple Depth Options",
+              "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired halo spread."
+            },
+            {
+              "title": "Serviceable LEDs",
+              "description": "Unlike sealed block acrylic, fabricated Edelstahl construction allows LED modules to be serviced and replaced in the field."
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Stainless steel standoff halo — cross-section detail showing LED placement and standoff spacer",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -80,7 +168,21 @@
           "Banks and financial institutions",
           "Architectural building signage",
           "Premium multi-tenant directories"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Stainless steel Abstandshalter halo letters deliver a refined, architectural aesthetic that elevates any brand. Perfect for premium environments where sophistication is paramount. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Firmengebäude",
+            "Luxury retail storefronts",
+            "High-end restaurants",
+            "Hotels and hospitality",
+            "Medical and dental offices",
+            "Banks and financial institutions",
+            "Architectural building signage",
+            "Premium multi-tenant directories"
+          ]
+        }
       }
     },
     {
@@ -91,13 +193,54 @@
       "data": {
         "heading": "Stainless Steel Standoff Projects",
         "images": [
-          { "src": "", "alt": "Stainless steel standoff halo — corporate office building" },
-          { "src": "", "alt": "Stainless steel standoff halo — luxury retail storefront" },
-          { "src": "", "alt": "Stainless steel standoff halo — high-end restaurant" },
-          { "src": "", "alt": "Stainless steel standoff halo — hotel entrance, evening" },
-          { "src": "", "alt": "Stainless steel standoff halo — medical office facade" },
-          { "src": "", "alt": "Stainless steel standoff halo — architectural building signage" }
-        ]
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — corporate office building"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — luxury retail storefront"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — high-end restaurant"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — hotel entrance, evening"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — medical office facade"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel standoff halo — architectural building signage"
+          }
+        ],
+        "de": {
+          "heading": "Edelstahl Abstandshalter Projects",
+          "images": [
+            {
+              "alt": "Stainless steel Abstandshalter halo — corporate office building"
+            },
+            {
+              "alt": "Stainless steel Abstandshalter halo — luxury retail storefront"
+            },
+            {
+              "alt": "Stainless steel Abstandshalter halo — high-end restaurant"
+            },
+            {
+              "alt": "Stainless steel Abstandshalter halo — hotel entrance, evening"
+            },
+            {
+              "alt": "Stainless steel Abstandshalter halo — medical office facade"
+            },
+            {
+              "alt": "Stainless steel Abstandshalter halo — architectural building signage"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Standoff Halo Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Abstandshalter-Halo-Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

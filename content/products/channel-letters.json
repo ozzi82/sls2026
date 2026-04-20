@@ -17,7 +17,23 @@
       "trade pricing channel letters",
       "sign shop channel letters"
     ],
-    "canonical": "https://sunlitesigns.com/wholesale-channel-letters"
+    "canonical": "https://sunlitesigns.com/wholesale-channel-letters",
+    "de": {
+      "title": "Großhandel Leuchtbuchstaben — EdgeLuxe Produktfamilien | Sunlite Signs",
+      "metaDescription": "Großhandel-Leuchtbuchstaben nur für Schilderwerkstätten. 12 EdgeLuxe Produkte in 4 Familien: Block-Acryl, Randlos, Gefertigter Edelstahl und Flachschnitt. Händlerpreise, UL-zertifiziert, Deutsche Ingenieurskunst.",
+      "keywords": [
+        "Leuchtbuchstaben Großhandel",
+        "EdgeLuxe Leuchtbuchstaben",
+        "Leuchtbuchstaben manufacturer",
+        "block acrylic Leuchtbuchstaben",
+        "randlos Leuchtbuchstaben Großhandel",
+        "Edelstahl letters",
+        "UL-zertifiziert Leuchtbuchstaben",
+        "Leuchtbuchstabe supplier USA",
+        "Händlerpreise Leuchtbuchstaben",
+        "Schilderwerkstatt Leuchtbuchstaben"
+      ]
+    }
   },
   "blocks": [
     {
@@ -32,9 +48,35 @@
         "subtitle": "The EdgeLuxe product line — 12 channel letter styles across 4 product families. From IP67-sealed block acrylic to fabricated stainless steel, every style manufactured in-house. Wholesale direct to sign shops.\n\nGerman-engineered precision. UL listed. Delivered within 3 weeks door to door. Trade pricing with no retail markup. Your clients stay yours.",
         "image": "/products/front-halo-night.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" },
-          { "label": "Explore Trimless", "href": "/products/channel-letters/trimless", "variant": "secondary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          },
+          {
+            "label": "Explore Trimless",
+            "href": "/products/channel-letters/trimless",
+            "variant": "secondary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "Die EdgeLuxe Produktlinie — 12 Leuchtbuchstaben-Stile in 4 Produktfamilien. Von IP67-versiegeltem Block-Acryl bis zu gefertigtem Edelstahl, jeder Stil wird intern gefertigt. Großhandel direkt an Schilderwerkstätten.\n\nDeutsche Ingenieurs-Präzision. UL-zertifiziert. Lieferung innerhalb von 3 Wochen von Tür zu Tür. Händlerpreise ohne Einzelhandelsaufschlag. Ihre Kunden bleiben Ihre Kunden.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            },
+            {
+              "label": "Randlos entdecken",
+              "href": "/products/channel-letters/trimless",
+              "variant": "secondary"
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +102,24 @@
             "title": "German Engineering",
             "description": "Manufacturing processes developed in partnership with LKF Lichtwerbung in Nuremberg, Germany."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Warum EdgeLuxe",
+          "items": [
+            {
+              "title": "UL-zertifiziert",
+              "description": "Jedes beleuchtete Leuchtbuchstaben-Set ist UL-zertifiziert und wird mit korrekter Kennzeichnung für Normkonformität versandt."
+            },
+            {
+              "title": "Premium-LEDs",
+              "description": "Samsung- und Nichia-LED-Module mit 50.000+ Stunden Lebensdauer. Konstante Farbtemperatur bei jedem Buchstaben."
+            },
+            {
+              "title": "Deutsche Ingenieurskunst",
+              "description": "Fertigungsprozesse, entwickelt in Partnerschaft mit LKF Lichtwerbung in Nürnberg."
+            }
+          ]
+        }
       }
     },
     {
@@ -72,15 +131,85 @@
         "heading": "EdgeLuxe LP 11 — Block Acrylic Series",
         "description": "30mm cast block acrylic, IP67 epoxy-sealed, zero maintenance. Eight illumination styles from the same rugged, waterproof platform.",
         "items": [
-          { "name": "Face Lit", "model": "LP 11-F", "image": "/products/front-lit-day.jpg", "href": "/products/channel-letters/front-lit" },
-          { "name": "Halo Lit", "model": "LP 11-B", "image": "/products/halo-lit-day.jpg", "href": "/products/channel-letters/halo-lit" },
-          { "name": "Face & Halo Combo", "model": "LP 11-FB", "image": "/products/front-halo-day.jpg", "href": "/products/channel-letters/front-and-halo-lit" },
-          { "name": "Full Side Lit", "model": "LP 11-S", "image": "/products/side-lit-day.jpg", "href": "/products/channel-letters/side-lit" },
-          { "name": "Back Side Lit", "model": "LP 11-BS", "image": "/products/back-side-day.jpg", "href": "/products/channel-letters/back-side-lit" },
-          { "name": "Front Side Lit", "model": "LP 11-FS", "image": "/products/face-side-day.jpg", "href": "/products/channel-letters/front-side-lit" },
-          { "name": "Faux Neon", "model": "LP 11-N", "image": "/products/faux-neon-day.jpg", "href": "/products/channel-letters/faux-neon" },
-          { "name": "Conical Profile", "model": "LP 11-C", "image": "/products/conical-day.jpg", "href": "/products/channel-letters/conical" }
-        ]
+          {
+            "name": "Face Lit",
+            "model": "LP 11-F",
+            "image": "/products/front-lit-day.jpg",
+            "href": "/products/channel-letters/front-lit"
+          },
+          {
+            "name": "Halo Lit",
+            "model": "LP 11-B",
+            "image": "/products/halo-lit-day.jpg",
+            "href": "/products/channel-letters/halo-lit"
+          },
+          {
+            "name": "Face & Halo Combo",
+            "model": "LP 11-FB",
+            "image": "/products/front-halo-day.jpg",
+            "href": "/products/channel-letters/front-and-halo-lit"
+          },
+          {
+            "name": "Full Side Lit",
+            "model": "LP 11-S",
+            "image": "/products/side-lit-day.jpg",
+            "href": "/products/channel-letters/side-lit"
+          },
+          {
+            "name": "Back Side Lit",
+            "model": "LP 11-BS",
+            "image": "/products/back-side-day.jpg",
+            "href": "/products/channel-letters/back-side-lit"
+          },
+          {
+            "name": "Front Side Lit",
+            "model": "LP 11-FS",
+            "image": "/products/face-side-day.jpg",
+            "href": "/products/channel-letters/front-side-lit"
+          },
+          {
+            "name": "Faux Neon",
+            "model": "LP 11-N",
+            "image": "/products/faux-neon-day.jpg",
+            "href": "/products/channel-letters/faux-neon"
+          },
+          {
+            "name": "Conical Profile",
+            "model": "LP 11-C",
+            "image": "/products/conical-day.jpg",
+            "href": "/products/channel-letters/conical"
+          }
+        ],
+        "de": {
+          "heading": "EdgeLuxe LP 11 — Block-Acryl-Serie",
+          "description": "30mm gegossenes Block-Acryl, IP67 Epoxid-versiegelt, wartungsfrei. Acht Beleuchtungsstile auf derselben robusten, wasserdichten Plattform.",
+          "items": [
+            {
+              "name": "Front-beleuchtet"
+            },
+            {
+              "name": "Halo-beleuchtet"
+            },
+            {
+              "name": "Front- & Halo-Kombi"
+            },
+            {
+              "name": "Voll-Seitenbeleuchtet"
+            },
+            {
+              "name": "Rückseitenbeleuchtet"
+            },
+            {
+              "name": "Vorderseitenbeleuchtet"
+            },
+            {
+              "name": "Faux-Neon"
+            },
+            {
+              "name": "Konisches Profil"
+            }
+          ]
+        }
       }
     },
     {
@@ -92,8 +221,22 @@
         "heading": "EdgeLuxe LP 5 — Trimless Stainless Steel",
         "description": "Fabricated stainless steel with step-router acrylic face. No visible trim cap. The cleanest channel letter on the market.",
         "items": [
-          { "name": "Trimless Face Lit", "model": "LP 5", "image": "/products/trimless-day.jpg", "href": "/products/channel-letters/trimless" }
-        ]
+          {
+            "name": "Trimless Face Lit",
+            "model": "LP 5",
+            "image": "/products/trimless-day.jpg",
+            "href": "/products/channel-letters/trimless"
+          }
+        ],
+        "de": {
+          "heading": "EdgeLuxe LP 5 — Randlos Edelstahl",
+          "description": "Gefertigter Edelstahl mit Stufen-Fräs-Acrylfläche. Keine sichtbare Zierleiste. Der sauberste Leuchtbuchstabe am Markt.",
+          "items": [
+            {
+              "name": "Randlos Front-beleuchtet"
+            }
+          ]
+        }
       }
     },
     {
@@ -105,9 +248,31 @@
         "heading": "EdgeLuxe LP 3 — Fabricated Stainless Steel",
         "description": "Fabricated stainless steel with serviceable LEDs. Available in standoff halo and flush-mount configurations.",
         "items": [
-          { "name": "Standoff Halo", "model": "LP 3.1", "image": "/products/stainless-standoff-day.jpg", "href": "/products/channel-letters/stainless-standoff" },
-          { "name": "Flush-Mount Halo", "model": "LP 3.2", "image": "/products/stainless-flush-day.jpg", "href": "/products/channel-letters/stainless-flush" }
-        ]
+          {
+            "name": "Standoff Halo",
+            "model": "LP 3.1",
+            "image": "/products/stainless-standoff-day.jpg",
+            "href": "/products/channel-letters/stainless-standoff"
+          },
+          {
+            "name": "Flush-Mount Halo",
+            "model": "LP 3.2",
+            "image": "/products/stainless-flush-day.jpg",
+            "href": "/products/channel-letters/stainless-flush"
+          }
+        ],
+        "de": {
+          "heading": "EdgeLuxe LP 3 — Gefertigter Edelstahl",
+          "description": "Gefertigter Edelstahl mit wartbaren LEDs. Verfügbar in Abstandshalter-Halo- und flächenbündigen Konfigurationen.",
+          "items": [
+            {
+              "name": "Abstandshalter-Halo"
+            },
+            {
+              "name": "Flächenbündig-Halo"
+            }
+          ]
+        }
       }
     },
     {
@@ -119,8 +284,22 @@
         "heading": "EdgeLuxe LP 1 — Flat Cutout Letters",
         "description": "Non-illuminated flat cutout letters in wood, aluminum, stainless steel, and acrylic. Same precision, no LEDs.",
         "items": [
-          { "name": "Flat Cut (Non-Illuminated)", "model": "LP 1", "image": "/products/flat-cut-day.jpg", "href": "/products/channel-letters/non-illuminated" }
-        ]
+          {
+            "name": "Flat Cut (Non-Illuminated)",
+            "model": "LP 1",
+            "image": "/products/flat-cut-day.jpg",
+            "href": "/products/channel-letters/non-illuminated"
+          }
+        ],
+        "de": {
+          "heading": "EdgeLuxe LP 1 — Flachschnitt-Buchstaben",
+          "description": "Nicht-beleuchtete Flachschnitt-Buchstaben aus Holz, Aluminium, Edelstahl und Acryl. Gleiche Präzision, keine LEDs.",
+          "items": [
+            {
+              "name": "Flachschnitt (nicht-beleuchtet)"
+            }
+          ]
+        }
       }
     },
     {
@@ -130,7 +309,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -141,7 +323,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Channel Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Leuchtbuchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

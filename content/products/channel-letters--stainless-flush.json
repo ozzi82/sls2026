@@ -15,7 +15,21 @@
       "trade pricing",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/stainless-steel-flush-mount-letters"
+    "canonical": "https://sunlitesigns.com/stainless-steel-flush-mount-letters",
+    "de": {
+      "title": "Großhandel Edelstahl Flush Mount Halo Letters — EdgeLuxe LP 3.2 | Sunlite Signs",
+      "metaDescription": "Großhandel fabricated Edelstahl flächenbündig letters with partial seitenbeleuchtet halo effect. Mit deutscher Ingenieurskunst. Händlerpreise for Schilderwerkstätten only.",
+      "keywords": [
+        "Edelstahl flächenbündige Montage letters",
+        "flächenbündige Montage halo letters",
+        "fabricated metal letters",
+        "seitenbeleuchtet halo signs",
+        "Edelstahl Leuchtbuchstaben Großhandel",
+        "Großhandel letters",
+        "Händlerpreise",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "Fabricated stainless steel letters mounted flush against the surface with a partial side-lit halo effect. The EdgeLuxe LP 3.2 delivers an elegant, understated glow from its edges — perfect for modern architectural applications where a clean profile is essential.\n\nGerman-engineered precision. UL listed. Wholesale direct to sign shops across the USA and Canada.",
         "image": "/products/stainless-flush-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Edelstahl",
+          "h1Highlight": "Flush Mount Letters",
+          "subtitle": "Fabricated Edelstahl letters mounted flush against the surface with a partial seitenbeleuchtet halo effect. The EdgeLuxe LP 3.2 delivers an elegant, understated glow from its edges — perfect for modern architectural applications where a clean profile is essential.\n\nDeutsche Ingenieurs-Präzision. UL-zertifiziert. Großhandel direkt an Schilderwerkstätten across the USA und Kanada.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,13 +73,66 @@
       "data": {
         "heading": "Trade Specifications & Benefits",
         "items": [
-          { "icon": "Sparkles", "title": "Partial Side-Lit Halo", "description": "Flush-mounted design creates an elegant partial side-lit halo effect. Light bleeds around the edges for a sophisticated, modern look." },
-          { "icon": "Layers", "title": "Flush-Mount Installation", "description": "Mounts directly to the surface with no visible standoffs or spacers. Clean, minimal profile that sits tight against any wall or fascia." },
-          { "icon": "Shield", "title": "UL Listed", "description": "Every illuminated letter set ships with UL listing labels and documentation for fast, compliant permitting." },
-          { "icon": "Palette", "title": "Full Customization", "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colored halo effects." },
-          { "icon": "Ruler", "title": "Multiple Depth Options", "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired illumination." },
-          { "icon": "Wrench", "title": "Serviceable LEDs", "description": "Fabricated stainless steel construction allows LED modules to be accessed and replaced in the field for easy long-term maintenance." }
-        ]
+          {
+            "icon": "Sparkles",
+            "title": "Partial Side-Lit Halo",
+            "description": "Flush-mounted design creates an elegant partial side-lit halo effect. Light bleeds around the edges for a sophisticated, modern look."
+          },
+          {
+            "icon": "Layers",
+            "title": "Flush-Mount Installation",
+            "description": "Mounts directly to the surface with no visible standoffs or spacers. Clean, minimal profile that sits tight against any wall or fascia."
+          },
+          {
+            "icon": "Shield",
+            "title": "UL Listed",
+            "description": "Every illuminated letter set ships with UL listing labels and documentation for fast, compliant permitting."
+          },
+          {
+            "icon": "Palette",
+            "title": "Full Customization",
+            "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colored halo effects."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Multiple Depth Options",
+            "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired illumination."
+          },
+          {
+            "icon": "Wrench",
+            "title": "Serviceable LEDs",
+            "description": "Fabricated stainless steel construction allows LED modules to be accessed and replaced in the field for easy long-term maintenance."
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Partial Side-Lit Halo",
+              "description": "Flush-mounted design creates an elegant partial seitenbeleuchtet halo effect. Light bleeds around the edges for a sophisticated, modern look."
+            },
+            {
+              "title": "Flächenbündig Installation",
+              "description": "Mounts directly to the surface with no visible Abstandshalters or spacers. Clean, minimal profile that sits tight against any wall or fascia."
+            },
+            {
+              "title": "UL-zertifiziert",
+              "description": "Every illuminated letter set ships with UL-Zertifizierung labels and documentation for fast, compliant permitting."
+            },
+            {
+              "title": "Full Customization",
+              "description": "Painted in any PMS color. Options for vinyls or pigmented translucent acrylics for colored halo effects."
+            },
+            {
+              "title": "Multiple Depth Options",
+              "description": "Available in 30mm, 50mm, 80mm, and 100mm depths to match any project scale and desired illumination."
+            },
+            {
+              "title": "Serviceable LEDs",
+              "description": "Fabricated Edelstahl construction allows LED modules to be accessed and replaced in the field for easy long-term maintenance."
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Stainless steel flush mount letter — cross-section detail showing LED placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -80,7 +168,21 @@
           "Gallery and museum wayfinding",
           "Premium residential developments",
           "Clean-line commercial facades"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Flush mount Edelstahl letters deliver a clean, architectural look that elevates any brand. Perfect for environments where a minimal profile and sophisticated glow are essential. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Sleek corporate lobbies",
+            "Modern retail storefronts",
+            "Boutique hotels and restaurants",
+            "Medical and professional offices",
+            "Architectural building signage",
+            "Gallery and museum wayfinding",
+            "Premium residential developments",
+            "Clean-line commercial facades"
+          ]
+        }
       }
     },
     {
@@ -91,13 +193,54 @@
       "data": {
         "heading": "Flush Mount Projects",
         "images": [
-          { "src": "", "alt": "Stainless steel flush mount — corporate lobby entrance" },
-          { "src": "", "alt": "Stainless steel flush mount — modern retail storefront" },
-          { "src": "", "alt": "Stainless steel flush mount — boutique hotel facade" },
-          { "src": "", "alt": "Stainless steel flush mount — medical office building" },
-          { "src": "", "alt": "Stainless steel flush mount — architectural signage detail" },
-          { "src": "", "alt": "Stainless steel flush mount — gallery wayfinding" }
-        ]
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — corporate lobby entrance"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — modern retail storefront"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — boutique hotel facade"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — medical office building"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — architectural signage detail"
+          },
+          {
+            "src": "",
+            "alt": "Stainless steel flush mount — gallery wayfinding"
+          }
+        ],
+        "de": {
+          "heading": "Flush Mount Projects",
+          "images": [
+            {
+              "alt": "Stainless steel flächenbündige Montage — corporate lobby entrance"
+            },
+            {
+              "alt": "Stainless steel flächenbündige Montage — modern retail storefront"
+            },
+            {
+              "alt": "Stainless steel flächenbündige Montage — boutique hotel facade"
+            },
+            {
+              "alt": "Stainless steel flächenbündige Montage — medical office building"
+            },
+            {
+              "alt": "Stainless steel flächenbündige Montage — architectural signage detail"
+            },
+            {
+              "alt": "Stainless steel flächenbündige Montage — gallery wayfinding"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Flush Mount Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Flächenbündig montierte Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

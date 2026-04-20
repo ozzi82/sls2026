@@ -10,7 +10,17 @@
       "wholesale sign inquiry",
       "trade sign pricing",
       "sign shop contact"
-    ]
+    ],
+    "de": {
+      "title": "Kontakt — Nur Großhandelsanfragen | Sunlite Signs",
+      "metaDescription": "Kontaktieren Sie Sunlite Signs LLC für Großhandelsanfragen. Nur Schilderwerkstätten — Händlerpreise für Leuchtbuchstaben, Ausleger-Schilder, Flachbuchstaben und individuelle LED-Beschilderung. Händlerkonten willkommen.",
+      "keywords": [
+        "Kontakt Sunlite Signs",
+        "Großhandel-Schilder-Anfrage",
+        "Händlerpreise Schilder",
+        "Schilderwerkstatt Kontakt"
+      ]
+    }
   },
   "blocks": [
     {
@@ -23,7 +33,13 @@
         "h1": "Trade Inquiries",
         "h1Highlight": "Only",
         "subtitle": "Wholesale accounts welcome. Looking for trade pricing on channel letters, blade signs, or custom LED signage? You are in the right place. We work exclusively with sign shops and trade professionals. We manufacture. You sell.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Großhandel",
+          "h1": "Handelsanfragen",
+          "h1Highlight": "Nur",
+          "subtitle": "Händlerkonten willkommen. Sie suchen Händlerpreise für Leuchtbuchstaben, Ausleger-Schilder oder individuelle LED-Beschilderung? Dann sind Sie hier richtig. Wir arbeiten ausschließlich mit Schilderwerkstätten und Fachhandel zusammen. Wir fertigen. Sie verkaufen."
+        }
       }
     },
     {
@@ -53,7 +69,23 @@
             "value": "Florida, USA",
             "description": "Wholesale manufacturing facility — no retail showroom"
           }
-        ]
+        ],
+        "de": {
+          "cards": [
+            {
+              "title": "Telefon",
+              "description": "Mo-Fr, 8-17 Uhr EST — Nur Handelsanfragen"
+            },
+            {
+              "title": "E-Mail",
+              "description": "Händlerkonten — Antwort innerhalb eines Werktags"
+            },
+            {
+              "title": "Standort",
+              "description": "Großhandels-Fertigungsanlage — kein Einzelhandel-Showroom"
+            }
+          ]
+        }
       }
     },
     {
@@ -102,6 +134,48 @@
             "If you are a business or property owner looking for signage, please contact a sign shop in your area."
           ],
           "ctaText": "For project-specific wholesale pricing with material specs and delivery timeline, use our dedicated trade quote form."
+        },
+        "de": {
+          "heading": "Senden Sie uns eine Handelsanfrage",
+          "headingHighlight": "Handelsanfrage",
+          "description": "Für Großhandelspartnerschaften, Einrichtung von Händlerkonten oder technische Fragen. Benötigen Sie projektspezifische Händlerpreise? Nutzen Sie unser spezielles Großhandels-Angebotsformular für eine schnellere Antwort.",
+          "sidebar": {
+            "businessHours": [
+              {
+                "day": "Montag",
+                "hours": "8:00 AM - 5:00 PM EST"
+              },
+              {
+                "day": "Dienstag",
+                "hours": "8:00 AM - 5:00 PM EST"
+              },
+              {
+                "day": "Mittwoch",
+                "hours": "8:00 AM - 5:00 PM EST"
+              },
+              {
+                "day": "Donnerstag",
+                "hours": "8:00 AM - 5:00 PM EST"
+              },
+              {
+                "day": "Freitag",
+                "hours": "8:00 AM - 5:00 PM EST"
+              },
+              {
+                "day": "Samstag",
+                "hours": "Geschlossen"
+              },
+              {
+                "day": "Sonntag",
+                "hours": "Geschlossen"
+              }
+            ],
+            "notices": [
+              "Sunlite Signs verkauft ausschließlich an Schilderwerkstätten und Fachhandel. Wir verkaufen nicht an die Öffentlichkeit.",
+              "Wenn Sie ein Geschäfts- oder Immobilienbesitzer sind und Beschilderung suchen, kontaktieren Sie bitte eine Schilderwerkstatt in Ihrer Nähe."
+            ],
+            "ctaText": "Für projektspezifische Großhandelspreise mit Materialspezifikationen und Lieferzeitplan nutzen Sie unser spezielles Handelsangebotsformular."
+          }
         }
       }
     },
@@ -113,7 +187,12 @@
       "data": {
         "heading": "Your Wholesale Partner",
         "headingHighlight": "Awaits.",
-        "description": "Join sign shops across the USA and Canada who trust Sunlite Signs for German-engineered, UL-listed signage at wholesale trade pricing."
+        "description": "Join sign shops across the USA and Canada who trust Sunlite Signs for German-engineered, UL-listed signage at wholesale trade pricing.",
+        "de": {
+          "heading": "Ihr Großhandelspartner",
+          "headingHighlight": "Erwartet Sie.",
+          "description": "Schließen Sie sich Schilderwerkstätten in den USA und Kanada an, die Sunlite Signs für deutsche Ingenieurskunst und UL-zertifizierte Beschilderung zu Großhandelspreisen vertrauen."
+        }
       }
     }
   ]

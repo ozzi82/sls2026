@@ -17,7 +17,23 @@
       "trade pricing custom signs",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/custom-sign-fabrication"
+    "canonical": "https://sunlitesigns.com/custom-sign-fabrication",
+    "de": {
+      "title": "Großhandel Custom Sign Fabrication — Trade Pricing | Sunlite Signs",
+      "metaDescription": "Großhandel custom sign fabrication for Schilderwerkstätten only. Bespoke illuminated signage, specialty materials, complex geometries. Händlerpreise, wir verkaufen nie an Endkunden. We never compete with you.",
+      "keywords": [
+        "custom sign fabrication Großhandel",
+        "custom sign manufacturer",
+        "bespoke signage fabrication",
+        "specialty sign fabrication",
+        "custom illuminated signs",
+        "architectural sign fabrication",
+        "Großhandel custom signs",
+        "sign fabrication USA",
+        "Händlerpreise custom signs",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -32,8 +48,25 @@
         "subtitle": "When your project goes beyond standard products, our custom fabrication team brings it to life. Complex geometries, mixed materials, specialty illumination, and oversized installations — engineered and built to the same standards as our entire product line. Available exclusively to trade accounts.",
         "image": "Custom fabrication — large-scale bespoke illuminated sign in fabrication shop",
         "ctas": [
-          { "label": "Request Trade Quote", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Trade Quote",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Custom",
+          "h1Highlight": "Fabrication",
+          "subtitle": "When your project goes beyond standard products, our individuelle Fertigung team brings it to life. Complex geometries, mixed materials, specialty illumination, and oversized installations — engineered and built to the same standards as our entire product line. Exklusiv für Händlerkonten verfügbar.",
+          "ctas": [
+            {
+              "label": "Handelsangebot anfordern",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -74,7 +107,36 @@
             "title": "Collaborative Process",
             "description": "We work directly with you and your client's design team to translate concepts into buildable, installable signage. From napkin sketch to shop drawings."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Großhandel Custom Capabilities",
+          "items": [
+            {
+              "title": "Complex Geometries",
+              "description": "Multi-plane letters, curved returns, tapered profiles, and three-dimensional sculptural forms. If your design challenges standard fabrication, we welcome it."
+            },
+            {
+              "title": "Specialty Illumination",
+              "description": "Neon-look LED flex, RGB color-changing, programmable DMX control, edge-lit panels, backlit murals, and custom LED configurations beyond standard products."
+            },
+            {
+              "title": "Mixed Materials",
+              "description": "Combinations of aluminum, Edelstahl, brass, copper, acrylic, wood, stone, and composite materials in a single sign structure."
+            },
+            {
+              "title": "Oversized Fabrication",
+              "description": "Large-format letters, building-scale installations, and multi-component sign systems that exceed standard product size ranges."
+            },
+            {
+              "title": "Engineering Support",
+              "description": "Structural calculations, wind load analysis, and mounting engineering for complex installations. We provide the documentation you need for permitting."
+            },
+            {
+              "title": "Collaborative Process",
+              "description": "We work directly with you and your client's design team to translate concepts into buildable, installable signage. From napkin sketch to shop drawings."
+            }
+          ]
+        }
       }
     },
     {
@@ -110,7 +172,37 @@
             "title": "Crating & Delivery",
             "description": "Custom crating for safe transit. We ship to your shop or direct to the job site. Installation guides and hardware included."
           }
-        ]
+        ],
+        "de": {
+          "heading": "The Großhandel Individuelle Fertigung Process",
+          "steps": [
+            {
+              "step": 1,
+              "title": "Submit Your Concept",
+              "description": "Share whatever you have: architectural drawings, brand guidelines, rough sketches, reference photos, or just a description of what you need. We work with it all."
+            },
+            {
+              "step": 2,
+              "title": "Engineering & Trade Estimation",
+              "description": "Our team reviews your concept, identifies the optimal materials and construction methods, and provides a detailed Großhandels-Fachhandel quote with fabrication drawings."
+            },
+            {
+              "step": 3,
+              "title": "Shop Drawing Approval",
+              "description": "We produce detailed shop drawings showing materials, dimensions, illumination, mounting, and electrical specifications. You approve before we cut metal."
+            },
+            {
+              "step": 4,
+              "title": "Fertigung & QK",
+              "description": "Precision fabrication using the same Mit deutscher Ingenieurskunst processes that define our standard product lines. Every custom project undergoes the same quality control."
+            },
+            {
+              "step": 5,
+              "title": "Crating & Delivery",
+              "description": "Custom crating for safe transit. We ship to your shop or direct to the job site. Installation guides and hardware included."
+            }
+          ]
+        }
       }
     },
     {
@@ -132,7 +224,23 @@
           "LED-integrated architectural elements",
           "Historical restoration and replication",
           "Specialty finish and patina applications"
-        ]
+        ],
+        "de": {
+          "heading": "Project Types We Handle",
+          "description": "This is a sample of the custom project types our fabrication team handles regularly. If your project is not on this list, reach out — we have likely done something similar. All at Großhandel Händlerpreise for Schilderwerkstätten.",
+          "items": [
+            "Architectural monument signs",
+            "Multi-element building identification systems",
+            "Sculptural and three-dimensional brand elements",
+            "Oversized rooftop or building-mounted letters",
+            "Mixed-material reception and lobby features",
+            "Illuminated murals and graphic walls",
+            "Wayfinding and directional sign systems",
+            "LED-integrated architectural elements",
+            "Historical restoration and replication",
+            "Specialty finish and patina applications"
+          ]
+        }
       }
     },
     {
@@ -143,13 +251,54 @@
       "data": {
         "heading": "Custom Fabrication Projects",
         "images": [
-          { "src": "", "alt": "Custom project — architectural monument sign, installed" },
-          { "src": "", "alt": "Custom project — illuminated mural wall, restaurant interior" },
-          { "src": "", "alt": "Custom project — oversized dimensional letters, building facade" },
-          { "src": "", "alt": "Custom project — mixed metal and wood reception sign" },
-          { "src": "", "alt": "Custom project — LED-integrated architectural feature" },
-          { "src": "", "alt": "Custom project — historical sign restoration" }
-        ]
+          {
+            "src": "",
+            "alt": "Custom project — architectural monument sign, installed"
+          },
+          {
+            "src": "",
+            "alt": "Custom project — illuminated mural wall, restaurant interior"
+          },
+          {
+            "src": "",
+            "alt": "Custom project — oversized dimensional letters, building facade"
+          },
+          {
+            "src": "",
+            "alt": "Custom project — mixed metal and wood reception sign"
+          },
+          {
+            "src": "",
+            "alt": "Custom project — LED-integrated architectural feature"
+          },
+          {
+            "src": "",
+            "alt": "Custom project — historical sign restoration"
+          }
+        ],
+        "de": {
+          "heading": "Individuelle Fertigung Projects",
+          "images": [
+            {
+              "alt": "Custom project — architectural monument sign, installed"
+            },
+            {
+              "alt": "Custom project — illuminated mural wall, restaurant interior"
+            },
+            {
+              "alt": "Custom project — oversized dimensional letters, building facade"
+            },
+            {
+              "alt": "Custom project — mixed metal and wood reception sign"
+            },
+            {
+              "alt": "Custom project — LED-integrated architectural feature"
+            },
+            {
+              "alt": "Custom project — historical sign restoration"
+            }
+          ]
+        }
       }
     },
     {
@@ -162,7 +311,11 @@
         "content": "Custom fabrication requires a partner who combines engineering capability with manufacturing precision. That is exactly what our German engineering heritage delivers. Wholesale direct to sign shops — we never sell retail.",
         "image": "Sunlite fabrication shop — CNC equipment, welding stations, paint booth",
         "imagePosition": "left",
-        "background": "light"
+        "background": "light",
+        "de": {
+          "heading": "Why Sunlite for Großhandel Custom Work",
+          "content": "Custom fabrication requires a partner who combines engineering capability with manufacturing precision. That is exactly what our Deutsche Ingenieurskunst heritage delivers. Großhandel direkt an Schilderwerkstätten — wir verkaufen nie an Endkunden."
+        }
       }
     },
     {
@@ -172,7 +325,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -182,7 +338,11 @@
       "visible": true,
       "data": {
         "heading": "Ready to Get Started?",
-        "description": "Request a wholesale quote for your next project."
+        "description": "Request a wholesale quote for your next project.",
+        "de": {
+          "heading": "Bereit loszulegen?",
+          "description": "Fordern Sie ein Großhandelsangebot für Ihr nächstes Projekt an."
+        }
       }
     }
   ]

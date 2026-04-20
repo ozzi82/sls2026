@@ -3,9 +3,32 @@
   "pageType": "static",
   "label": "Glossary",
   "seo": {
-    "title": "Wholesale Sign Industry Glossary \u2014 A-Z Channel Letter & Signage Terms | Sunlite Signs",
+    "title": "Wholesale Sign Industry Glossary — A-Z Channel Letter & Signage Terms | Sunlite Signs",
     "metaDescription": "Comprehensive wholesale sign industry glossary with definitions of channel letter, LED signage, and commercial sign manufacturing terms. Built for sign shops and trade professionals.",
-    "keywords": ["wholesale sign industry glossary", "channel letter terms trade", "sign manufacturing glossary", "signage terminology wholesale", "LED sign definitions", "commercial sign terms", "channel letter glossary trade", "sign industry definitions wholesale"]
+    "keywords": [
+      "wholesale sign industry glossary",
+      "channel letter terms trade",
+      "sign manufacturing glossary",
+      "signage terminology wholesale",
+      "LED sign definitions",
+      "commercial sign terms",
+      "channel letter glossary trade",
+      "sign industry definitions wholesale"
+    ],
+    "de": {
+      "title": "Großhandel Sign Industry Glossary — A-Z Leuchtbuchstabe & Signage Terms | Sunlite Signs",
+      "metaDescription": "Comprehensive Großhandel sign industry glossary with definitions of Leuchtbuchstabe, LED signage, and commercial sign manufacturing terms. Built for Schilderwerkstätten and Fachhandel.",
+      "keywords": [
+        "Großhandel sign industry glossary",
+        "Leuchtbuchstabe terms trade",
+        "sign manufacturing glossary",
+        "signage terminology Großhandel",
+        "LED sign definitions",
+        "commercial sign terms",
+        "Leuchtbuchstabe glossary trade",
+        "sign industry definitions Großhandel"
+      ]
+    }
   },
   "blocks": [
     {
@@ -16,8 +39,13 @@
       "data": {
         "badge": "Trade Resources",
         "h1": "Sign Industry Glossary",
-        "subtitle": "A comprehensive A-Z reference of sign industry terms, channel letter components, and commercial signage terminology. Built for sign shop professionals and wholesale trade partners \u2014 whether you are a seasoned sign professional or new to the trade, this glossary covers the essential vocabulary.",
-        "ctas": []
+        "subtitle": "A comprehensive A-Z reference of sign industry terms, channel letter components, and commercial signage terminology. Built for sign shop professionals and wholesale trade partners — whether you are a seasoned sign professional or new to the trade, this glossary covers the essential vocabulary.",
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "Sign Industry Glossary",
+          "subtitle": "A comprehensive A-Z reference of sign industry terms, Leuchtbuchstabe components, and commercial signage terminology. Built for Schilderwerkstatt professionals and Großhandel Handelspartner — whether you are a seasoned sign professional or new to the trade, this glossary covers the essential vocabulary."
+        }
       }
     },
     {
@@ -28,35 +56,236 @@
       "data": {
         "heading": "Sign Industry Glossary",
         "items": [
-          { "question": "Acrylic", "answer": "A thermoplastic material used for channel letter faces. Acrylic can be translucent (for illuminated letters) or opaque, and is available in a wide range of colors. It offers excellent light transmission, weather resistance, and durability for outdoor signage applications." },
-          { "question": "Aluminum Returns", "answer": "The aluminum side walls (also called returns) that form the depth of a channel letter. Returns are typically made from 0.040\" or 0.063\" aluminum coil, bent to match the letter profile. The return height determines the depth of the channel and affects LED illumination quality." },
-          { "question": "Back Panel", "answer": "The rear surface of a channel letter, typically made from aluminum. In halo-lit letters, the back panel may be clear or translucent polycarbonate to allow light to project backward onto the mounting surface." },
-          { "question": "Blade Sign", "answer": "A projecting sign that extends perpendicular from a building wall, designed to be visible to pedestrian and vehicular traffic approaching from either side along the street. Blade signs can be illuminated or non-illuminated and are common in urban retail and hospitality settings." },
-          { "question": "Channel Letter", "answer": "A three-dimensional, individually fabricated letter or graphic used in commercial signage. Channel letters consist of a face, returns (sides), and back, with internal LED illumination. They are the most popular type of illuminated exterior signage in North America." },
-          { "question": "CNC Router", "answer": "Computer Numerical Control router, a precision cutting machine used in sign manufacturing to cut acrylic faces, aluminum backs, and other materials with high accuracy. CNC routers enable complex letter shapes and tight tolerances essential for quality channel letter production." },
-          { "question": "Dimensional Letter", "answer": "Any letter or graphic that has three-dimensional depth. This includes channel letters, flat cut letters, cast letters, and formed plastic letters. Dimensional letters add visual depth and a premium appearance compared to flat vinyl graphics." },
-          { "question": "Trimless Channel Letter", "answer": "A channel letter construction method that eliminates the traditional trim cap, creating a seamless, modern junction between the acrylic face and aluminum return. Sunlite Signs' trimless system is engineered using German precision manufacturing techniques for a premium aesthetic." },
-          { "question": "Face", "answer": "The front panel of a channel letter, typically made from translucent acrylic for illuminated letters or opaque material for halo-lit or non-illuminated letters. The face displays the color and finish visible to viewers and determines how light is transmitted." },
-          { "question": "Flat Cut Letter", "answer": "A letter or logo cut from a single sheet of material (aluminum, stainless steel, acrylic, or PVC) using a CNC router or laser. Flat cut letters are dimensional but have no internal cavity or illumination, offering a clean, modern look for interior and exterior applications." },
-          { "question": "Front-Lit", "answer": "An illumination style where LED light passes forward through a translucent acrylic face, making the letter glow from the front. Also called face-lit. Face-lit channel letters provide the highest visibility and readability, especially from a distance." },
-          { "question": "Halo-Lit", "answer": "An illumination style where LEDs project light backward from the channel letter onto the mounting surface, creating a soft glow or 'halo' effect around the letter. The letter face is opaque. Also called back-lit. Halo-lit letters produce an elegant, architectural aesthetic." },
-          { "question": "LED Module", "answer": "A small circuit board containing one or more LED chips, designed for installation inside channel letters. LED modules are the standard light source for modern channel letters, replacing older neon and fluorescent technologies. Quality modules offer consistent color, long life, and energy efficiency." },
-          { "question": "Lightbox", "answer": "An illuminated sign cabinet, typically rectangular, with internal LED lighting that illuminates a translucent face panel. Lightboxes can display printed graphics, routed-out lettering, or push-through letters. Also known as a cabinet sign or illuminated sign cabinet." },
-          { "question": "Neon", "answer": "A traditional sign illumination technology using gas-filled glass tubes that glow when electrified. While largely replaced by LEDs for channel letter interiors, neon remains popular for decorative, artistic, and retro-style signage. Some open-face channel letters still use exposed neon for aesthetic effect." },
-          { "question": "Non-Illuminated", "answer": "Signage that contains no internal or external light source. Non-illuminated channel letters and flat cut letters rely on ambient light for visibility. They are more cost-effective, require no electrical connection, and are suitable for interior use or areas with lighting restrictions." },
-          { "question": "Pantone Matching System (PMS)", "answer": "A standardized color matching system used across the sign and printing industries. Sign manufacturers use PMS colors to ensure that acrylic faces, painted returns, and vinyl graphics match the client's brand colors precisely." },
-          { "question": "Power Supply", "answer": "An electrical device that converts AC line voltage (120V or 240V) to the low-voltage DC power (typically 12V or 24V) required by LED modules inside channel letters. UL-listed power supplies are required for safe, code-compliant illuminated signage installations." },
-          { "question": "Push-Through Letter", "answer": "A letter fabricated from translucent acrylic and pushed through a precision-cut hole in a sign panel or cabinet face. Push-through letters create a clean, dimensional look and can be illuminated from behind. They are commonly used in lightbox and monument sign designs." },
-          { "question": "Raceway", "answer": "A rectangular metal enclosure that serves as a mounting structure for channel letters. Raceways house the electrical wiring and power supplies, simplifying installation by allowing the entire letter set to be pre-wired and mounted as a unit. Also called a wireway." },
-          { "question": "Return", "answer": "The side wall of a channel letter that creates its depth. Returns are typically fabricated from aluminum coil and bent to follow the letter's profile. Return depth typically ranges from 3\" to 6\" and affects LED illumination, letter weight, and overall appearance." },
-          { "question": "Reverse Channel Letter", "answer": "A channel letter constructed with the open channel facing the wall rather than forward. The face is opaque metal, and light projects exclusively backward to create a halo effect. Reverse channel letters offer a clean, dimensional front face with no visible trim or fasteners." },
-          { "question": "Sign Cabinet", "answer": "An enclosed box or structure that houses the internal components of a sign, including LED modules, wiring, and structural supports. Sign cabinets can be illuminated (lightboxes) or serve as a framework for mounted channel letters and graphics." },
-          { "question": "Standoff", "answer": "A mounting hardware component that spaces a sign or letter away from the mounting surface. Standoffs are essential for halo-lit channel letters, creating the gap needed for the backlit glow effect. They are available in various lengths and finishes." },
-          { "question": "Trim Cap", "answer": "A plastic retainer strip (typically PVC or polycarbonate) that snaps around the perimeter of a channel letter face, securing the acrylic panel to the aluminum return. Available in various colors, trim cap has been the industry standard for decades. See also: Trimless Channel Letter (trimless alternative)." },
-          { "question": "UL Listed", "answer": "A certification indicating that a product has been tested and meets the safety standards of Underwriters Laboratories (UL). UL listing is required or strongly recommended for illuminated signage in most jurisdictions across the USA and Canada. All Sunlite Signs illuminated products are UL listed." },
-          { "question": "Vinyl", "answer": "A thin, adhesive-backed film used in signage for graphics, lettering, and surface wrapping. In channel letter manufacturing, vinyl is used to apply colors or graphics to letter faces and returns. High-performance vinyl is UV-resistant and rated for multi-year exterior durability." },
-          { "question": "Weep Hole", "answer": "A small drainage opening at the bottom of a channel letter that allows moisture and condensation to escape from inside the letter cavity. Weep holes prevent water buildup that could damage LEDs or cause electrical issues over the life of the sign." }
-        ]
+          {
+            "question": "Acrylic",
+            "answer": "A thermoplastic material used for channel letter faces. Acrylic can be translucent (for illuminated letters) or opaque, and is available in a wide range of colors. It offers excellent light transmission, weather resistance, and durability for outdoor signage applications."
+          },
+          {
+            "question": "Aluminum Returns",
+            "answer": "The aluminum side walls (also called returns) that form the depth of a channel letter. Returns are typically made from 0.040\" or 0.063\" aluminum coil, bent to match the letter profile. The return height determines the depth of the channel and affects LED illumination quality."
+          },
+          {
+            "question": "Back Panel",
+            "answer": "The rear surface of a channel letter, typically made from aluminum. In halo-lit letters, the back panel may be clear or translucent polycarbonate to allow light to project backward onto the mounting surface."
+          },
+          {
+            "question": "Blade Sign",
+            "answer": "A projecting sign that extends perpendicular from a building wall, designed to be visible to pedestrian and vehicular traffic approaching from either side along the street. Blade signs can be illuminated or non-illuminated and are common in urban retail and hospitality settings."
+          },
+          {
+            "question": "Channel Letter",
+            "answer": "A three-dimensional, individually fabricated letter or graphic used in commercial signage. Channel letters consist of a face, returns (sides), and back, with internal LED illumination. They are the most popular type of illuminated exterior signage in North America."
+          },
+          {
+            "question": "CNC Router",
+            "answer": "Computer Numerical Control router, a precision cutting machine used in sign manufacturing to cut acrylic faces, aluminum backs, and other materials with high accuracy. CNC routers enable complex letter shapes and tight tolerances essential for quality channel letter production."
+          },
+          {
+            "question": "Dimensional Letter",
+            "answer": "Any letter or graphic that has three-dimensional depth. This includes channel letters, flat cut letters, cast letters, and formed plastic letters. Dimensional letters add visual depth and a premium appearance compared to flat vinyl graphics."
+          },
+          {
+            "question": "Trimless Channel Letter",
+            "answer": "A channel letter construction method that eliminates the traditional trim cap, creating a seamless, modern junction between the acrylic face and aluminum return. Sunlite Signs' trimless system is engineered using German precision manufacturing techniques for a premium aesthetic."
+          },
+          {
+            "question": "Face",
+            "answer": "The front panel of a channel letter, typically made from translucent acrylic for illuminated letters or opaque material for halo-lit or non-illuminated letters. The face displays the color and finish visible to viewers and determines how light is transmitted."
+          },
+          {
+            "question": "Flat Cut Letter",
+            "answer": "A letter or logo cut from a single sheet of material (aluminum, stainless steel, acrylic, or PVC) using a CNC router or laser. Flat cut letters are dimensional but have no internal cavity or illumination, offering a clean, modern look for interior and exterior applications."
+          },
+          {
+            "question": "Front-Lit",
+            "answer": "An illumination style where LED light passes forward through a translucent acrylic face, making the letter glow from the front. Also called face-lit. Face-lit channel letters provide the highest visibility and readability, especially from a distance."
+          },
+          {
+            "question": "Halo-Lit",
+            "answer": "An illumination style where LEDs project light backward from the channel letter onto the mounting surface, creating a soft glow or 'halo' effect around the letter. The letter face is opaque. Also called back-lit. Halo-lit letters produce an elegant, architectural aesthetic."
+          },
+          {
+            "question": "LED Module",
+            "answer": "A small circuit board containing one or more LED chips, designed for installation inside channel letters. LED modules are the standard light source for modern channel letters, replacing older neon and fluorescent technologies. Quality modules offer consistent color, long life, and energy efficiency."
+          },
+          {
+            "question": "Lightbox",
+            "answer": "An illuminated sign cabinet, typically rectangular, with internal LED lighting that illuminates a translucent face panel. Lightboxes can display printed graphics, routed-out lettering, or push-through letters. Also known as a cabinet sign or illuminated sign cabinet."
+          },
+          {
+            "question": "Neon",
+            "answer": "A traditional sign illumination technology using gas-filled glass tubes that glow when electrified. While largely replaced by LEDs for channel letter interiors, neon remains popular for decorative, artistic, and retro-style signage. Some open-face channel letters still use exposed neon for aesthetic effect."
+          },
+          {
+            "question": "Non-Illuminated",
+            "answer": "Signage that contains no internal or external light source. Non-illuminated channel letters and flat cut letters rely on ambient light for visibility. They are more cost-effective, require no electrical connection, and are suitable for interior use or areas with lighting restrictions."
+          },
+          {
+            "question": "Pantone Matching System (PMS)",
+            "answer": "A standardized color matching system used across the sign and printing industries. Sign manufacturers use PMS colors to ensure that acrylic faces, painted returns, and vinyl graphics match the client's brand colors precisely."
+          },
+          {
+            "question": "Power Supply",
+            "answer": "An electrical device that converts AC line voltage (120V or 240V) to the low-voltage DC power (typically 12V or 24V) required by LED modules inside channel letters. UL-listed power supplies are required for safe, code-compliant illuminated signage installations."
+          },
+          {
+            "question": "Push-Through Letter",
+            "answer": "A letter fabricated from translucent acrylic and pushed through a precision-cut hole in a sign panel or cabinet face. Push-through letters create a clean, dimensional look and can be illuminated from behind. They are commonly used in lightbox and monument sign designs."
+          },
+          {
+            "question": "Raceway",
+            "answer": "A rectangular metal enclosure that serves as a mounting structure for channel letters. Raceways house the electrical wiring and power supplies, simplifying installation by allowing the entire letter set to be pre-wired and mounted as a unit. Also called a wireway."
+          },
+          {
+            "question": "Return",
+            "answer": "The side wall of a channel letter that creates its depth. Returns are typically fabricated from aluminum coil and bent to follow the letter's profile. Return depth typically ranges from 3\" to 6\" and affects LED illumination, letter weight, and overall appearance."
+          },
+          {
+            "question": "Reverse Channel Letter",
+            "answer": "A channel letter constructed with the open channel facing the wall rather than forward. The face is opaque metal, and light projects exclusively backward to create a halo effect. Reverse channel letters offer a clean, dimensional front face with no visible trim or fasteners."
+          },
+          {
+            "question": "Sign Cabinet",
+            "answer": "An enclosed box or structure that houses the internal components of a sign, including LED modules, wiring, and structural supports. Sign cabinets can be illuminated (lightboxes) or serve as a framework for mounted channel letters and graphics."
+          },
+          {
+            "question": "Standoff",
+            "answer": "A mounting hardware component that spaces a sign or letter away from the mounting surface. Standoffs are essential for halo-lit channel letters, creating the gap needed for the backlit glow effect. They are available in various lengths and finishes."
+          },
+          {
+            "question": "Trim Cap",
+            "answer": "A plastic retainer strip (typically PVC or polycarbonate) that snaps around the perimeter of a channel letter face, securing the acrylic panel to the aluminum return. Available in various colors, trim cap has been the industry standard for decades. See also: Trimless Channel Letter (trimless alternative)."
+          },
+          {
+            "question": "UL Listed",
+            "answer": "A certification indicating that a product has been tested and meets the safety standards of Underwriters Laboratories (UL). UL listing is required or strongly recommended for illuminated signage in most jurisdictions across the USA and Canada. All Sunlite Signs illuminated products are UL listed."
+          },
+          {
+            "question": "Vinyl",
+            "answer": "A thin, adhesive-backed film used in signage for graphics, lettering, and surface wrapping. In channel letter manufacturing, vinyl is used to apply colors or graphics to letter faces and returns. High-performance vinyl is UV-resistant and rated for multi-year exterior durability."
+          },
+          {
+            "question": "Weep Hole",
+            "answer": "A small drainage opening at the bottom of a channel letter that allows moisture and condensation to escape from inside the letter cavity. Weep holes prevent water buildup that could damage LEDs or cause electrical issues over the life of the sign."
+          }
+        ],
+        "de": {
+          "heading": "Sign Industry Glossary",
+          "items": [
+            {
+              "question": "Acrylic",
+              "answer": "A thermoplastic material used for Leuchtbuchstabe faces. Acrylic can be translucent (for illuminated letters) or opaque, and is available in a wide range of colors. It offers excellent light transmission, weather resistance, and durability for outdoor signage applications."
+            },
+            {
+              "question": "Aluminum Returns",
+              "answer": "The aluminum side walls (also called returns) that form the depth of a Leuchtbuchstabe. Returns are typically made from 0.040\" or 0.063\" aluminum coil, bent to match the letter profile. The return height determines the depth of the channel and affects LED illumination quality."
+            },
+            {
+              "question": "Back Panel",
+              "answer": "The rear surface of a Leuchtbuchstabe, typically made from aluminum. In halo-beleuchtet letters, the back panel may be clear or translucent polycarbonate to allow light to project backward onto the mounting surface."
+            },
+            {
+              "question": "Ausleger-Schild",
+              "answer": "A projecting sign that extends perpendicular from a building wall, designed to be visible to pedestrian and vehicular traffic approaching from either side along the street. Blade signs can be illuminated or nicht-beleuchtet and are common in urban retail and hospitality settings."
+            },
+            {
+              "question": "Leuchtbuchstabe",
+              "answer": "A three-dimensional, individually fabricated letter or graphic used in commercial signage. Channel letters consist of a face, returns (sides), and back, with internal LED illumination. They are the most popular type of illuminated exterior signage in North America."
+            },
+            {
+              "question": "CNC Router",
+              "answer": "Computer Numerical Control router, a precision cutting machine used in sign manufacturing to cut acrylic faces, aluminum backs, and other materials with high accuracy. CNC routers enable complex letter shapes and tight tolerances essential for quality Leuchtbuchstabe production."
+            },
+            {
+              "question": "Dimensional Letter",
+              "answer": "Any letter or graphic that has three-dimensional depth. This includes Leuchtbuchstaben, Flachbuchstaben, cast letters, and formed plastic letters. Dimensional letters add visual depth and a premium appearance compared to flat vinyl graphics."
+            },
+            {
+              "question": "Randlos Leuchtbuchstabe",
+              "answer": "A Leuchtbuchstabe construction method that eliminates the traditional Zierleiste, creating a seamless, modern junction between the acrylic face and aluminum return. Sunlite Signs' randlos system is engineered using German precision manufacturing techniques for a premium aesthetic."
+            },
+            {
+              "question": "Face",
+              "answer": "The front panel of a Leuchtbuchstabe, typically made from translucent acrylic for illuminated letters or opaque material for halo-beleuchtet or nicht-beleuchtet letters. The face displays the color and finish visible to viewers and determines how light is transmitted."
+            },
+            {
+              "question": "Flachschnitt Letter",
+              "answer": "A letter or logo cut from a single sheet of material (aluminum, Edelstahl, acrylic, or PVC) using a CNC router or laser. Flat cut letters are dimensional but have no internal cavity or illumination, offering a clean, modern look for interior and exterior applications."
+            },
+            {
+              "question": "Front-beleuchtet",
+              "answer": "An illumination style where LED light passes forward through a translucent acrylic face, making the letter glow from the front. Also called front-beleuchtet. Face-lit Leuchtbuchstaben provide the highest visibility and readability, especially from a distance."
+            },
+            {
+              "question": "Halo-beleuchtet",
+              "answer": "An illumination style where LEDs project light backward from the Leuchtbuchstabe onto the mounting surface, creating a soft glow or 'halo' effect around the letter. The letter face is opaque. Also called back-lit. Halo-lit letters produce an elegant, architectural aesthetic."
+            },
+            {
+              "question": "LED Module",
+              "answer": "A small circuit board containing one or more LED chips, designed for installation inside Leuchtbuchstaben. LED modules are the standard light source for modern Leuchtbuchstaben, replacing older neon and fluorescent technologies. Quality modules offer consistent color, long life, and energy efficiency."
+            },
+            {
+              "question": "Lichtbox",
+              "answer": "An illuminated sign cabinet, typically rectangular, with internal LED lighting that illuminates a translucent face panel. Lichtboxen can display printed graphics, routed-out lettering, or Durchsteck letters. Also known as a Leuchtkasten or illuminated sign cabinet."
+            },
+            {
+              "question": "Neon",
+              "answer": "A traditional sign illumination technology using gas-filled glass tubes that glow when electrified. While largely replaced by LEDs for Leuchtbuchstabe interiors, neon remains popular for decorative, artistic, and retro-style signage. Some open-face Leuchtbuchstaben still use exposed neon for aesthetic effect."
+            },
+            {
+              "question": "Nicht-beleuchtet",
+              "answer": "Signage that contains no internal or external light source. Non-illuminated Leuchtbuchstaben and Flachbuchstaben rely on ambient light for visibility. They are more cost-effective, require no electrical connection, and are suitable for interior use or areas with lighting restrictions."
+            },
+            {
+              "question": "Pantone Matching System (PMS)",
+              "answer": "A standardized color matching system used across the sign and printing industries. Sign manufacturers use PMS colors to ensure that acrylic faces, painted returns, and vinyl graphics match the client's brand colors precisely."
+            },
+            {
+              "question": "Power Supply",
+              "answer": "An electrical device that converts AC line voltage (120V or 240V) to the low-voltage DC power (typically 12V or 24V) required by LED modules inside Leuchtbuchstaben. UL-listed power supplies are required for safe, code-compliant illuminated signage installations."
+            },
+            {
+              "question": "Durchsteck Letter",
+              "answer": "A letter fabricated from translucent acrylic and pushed through a precision-cut hole in a sign panel or cabinet face. Push-through letters create a clean, dimensional look and can be illuminated from behind. They are commonly used in Lichtbox and monument sign designs."
+            },
+            {
+              "question": "Raceway",
+              "answer": "A rectangular metal enclosure that serves as a mounting structure for Leuchtbuchstaben. Raceways house the electrical wiring and power supplies, simplifying installation by allowing the entire letter set to be pre-wired and mounted as a unit. Also called a wireway."
+            },
+            {
+              "question": "Return",
+              "answer": "The side wall of a Leuchtbuchstabe that creates its depth. Returns are typically fabricated from aluminum coil and bent to follow the letter's profile. Return depth typically ranges from 3\" to 6\" and affects LED illumination, letter weight, and overall appearance."
+            },
+            {
+              "question": "Reverse Leuchtbuchstabe",
+              "answer": "A Leuchtbuchstabe constructed with the open channel facing the wall rather than forward. The face is opaque metal, and light projects exclusively backward to create a halo effect. Reverse Leuchtbuchstaben offer a clean, dimensional front face with no visible trim or fasteners."
+            },
+            {
+              "question": "Sign Cabinet",
+              "answer": "An enclosed box or structure that houses the internal components of a sign, including LED modules, wiring, and structural supports. Sign cabinets can be illuminated (Lichtboxen) or serve as a framework for mounted Leuchtbuchstaben and graphics."
+            },
+            {
+              "question": "Abstandshalter",
+              "answer": "A mounting hardware component that spaces a sign or letter away from the mounting surface. Abstandshalters are essential for halo-beleuchtet Leuchtbuchstaben, creating the gap needed for the backlit glow effect. They are available in various lengths and finishes."
+            },
+            {
+              "question": "Zierleiste",
+              "answer": "A plastic retainer strip (typically PVC or polycarbonate) that snaps around the perimeter of a Leuchtbuchstabe face, securing the acrylic panel to the aluminum return. Available in various colors, Zierleiste has been the industry standard for decades. See also: Randlos Leuchtbuchstabe (randlos alternative)."
+            },
+            {
+              "question": "UL-zertifiziert",
+              "answer": "A certification indicating that a product has been tested and meets the safety standards of Underwriters Laboratories (UL). UL-Zertifizierung is required or strongly recommended for illuminated signage in most jurisdictions across the USA und Kanada. All Sunlite Signs illuminated products are UL-zertifiziert."
+            },
+            {
+              "question": "Vinyl",
+              "answer": "A thin, adhesive-backed film used in signage for graphics, lettering, and surface wrapping. In Leuchtbuchstabe manufacturing, vinyl is used to apply colors or graphics to letter faces and returns. High-performance vinyl is UV-resistant and rated for multi-year exterior durability."
+            },
+            {
+              "question": "Weep Hole",
+              "answer": "A small drainage opening at the bottom of a Leuchtbuchstabe that allows moisture and condensation to escape from inside the letter cavity. Weep holes prevent water buildup that could damage LEDs or cause electrical issues over the life of the sign."
+            }
+          ]
+        }
       }
     },
     {
@@ -67,7 +296,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

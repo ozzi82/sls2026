@@ -3,9 +3,30 @@
   "pageType": "static",
   "label": "Sign Installation Tips",
   "seo": {
-    "title": "Sign Installation Tips \u2014 Wholesale Channel Letter Mounting & Best Practices | Sunlite Signs",
+    "title": "Sign Installation Tips — Wholesale Channel Letter Mounting & Best Practices | Sunlite Signs",
     "metaDescription": "Practical wholesale channel letter installation guidance for sign shop professionals and trade buyers. Covers site preparation, mounting methods, electrical requirements, weather sealing, and quality assurance.",
-    "keywords": ["wholesale channel letter installation", "sign installation tips trade", "how to install channel letters", "channel letter mounting guide wholesale", "sign installation best practices", "raceway installation trade", "channel letter wiring"]
+    "keywords": [
+      "wholesale channel letter installation",
+      "sign installation tips trade",
+      "how to install channel letters",
+      "channel letter mounting guide wholesale",
+      "sign installation best practices",
+      "raceway installation trade",
+      "channel letter wiring"
+    ],
+    "de": {
+      "title": "Sign Installation Tips — Großhandel Leuchtbuchstabe Mounting & Best Practices | Sunlite Signs",
+      "metaDescription": "Practical Großhandel Leuchtbuchstabe installation guidance for Schilderwerkstatt professionals and Fachhändler. Covers site preparation, mounting methods, electrical requirements, weather sealing, and quality assurance.",
+      "keywords": [
+        "Großhandel Leuchtbuchstabe installation",
+        "sign installation tips trade",
+        "how to install Leuchtbuchstaben",
+        "Leuchtbuchstabe mounting guide Großhandel",
+        "sign installation best practices",
+        "raceway installation trade",
+        "Leuchtbuchstabe wiring"
+      ]
+    }
   },
   "blocks": [
     {
@@ -17,7 +38,12 @@
         "badge": "Trade Resources",
         "h1": "Sign Installation Tips for Channel Letters",
         "subtitle": "Practical guidance for sign shop professionals and trade installers to ensure every wholesale channel letter installation goes smoothly. From site preparation to final quality checks, these tips help your installation crew deliver professional results every time.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "Sign Installation Tips for Leuchtbuchstaben",
+          "subtitle": "Practical guidance for Schilderwerkstatt professionals and trade installers to ensure every Großhandel Leuchtbuchstabe installation goes smoothly. From site preparation to final quality checks, these tips help your installation crew deliver professional results every time."
+        }
       }
     },
     {
@@ -28,7 +54,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

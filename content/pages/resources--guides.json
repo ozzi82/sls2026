@@ -3,9 +3,28 @@
   "pageType": "static",
   "label": "Guides",
   "seo": {
-    "title": "Wholesale Guides \u2014 Channel Letter Buying Guides for Sign Shops | Sunlite Signs",
+    "title": "Wholesale Guides — Channel Letter Buying Guides for Sign Shops | Sunlite Signs",
     "metaDescription": "In-depth wholesale guides for sign shop professionals and trade buyers. Channel letter selection, illumination types, installation best practices, and ordering from a wholesale-only manufacturer.",
-    "keywords": ["wholesale channel letter buying guide", "sign illumination guide trade", "sign installation guide wholesale", "wholesale sign ordering guide", "channel letter specification guide", "sign shop wholesale guides"]
+    "keywords": [
+      "wholesale channel letter buying guide",
+      "sign illumination guide trade",
+      "sign installation guide wholesale",
+      "wholesale sign ordering guide",
+      "channel letter specification guide",
+      "sign shop wholesale guides"
+    ],
+    "de": {
+      "title": "Großhandel Guides — Leuchtbuchstabe Buying Guides for Sign Shops | Sunlite Signs",
+      "metaDescription": "In-depth Großhandel guides for Schilderwerkstatt professionals and Fachhändler. Channel letter selection, illumination types, installation best practices, and ordering from a Großhandel-only manufacturer.",
+      "keywords": [
+        "Großhandel Leuchtbuchstabe buying guide",
+        "sign illumination guide trade",
+        "sign installation guide Großhandel",
+        "Großhandel sign ordering guide",
+        "Leuchtbuchstabe specification guide",
+        "Schilderwerkstatt Großhandel guides"
+      ]
+    }
   },
   "blocks": [
     {
@@ -17,7 +36,12 @@
         "badge": "Trade Resources",
         "h1": "Wholesale Guides",
         "subtitle": "In-depth resources written for sign shop professionals and trade buyers. Make informed decisions about wholesale channel letters, illumination, installation, and ordering from a manufacturer that sells exclusively to the trade.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "Großhandel Guides",
+          "subtitle": "In-depth resources written for Schilderwerkstatt professionals and Fachhändler. Make informed decisions about Großhandel Leuchtbuchstaben, illumination, installation, and ordering from a manufacturer that sells exclusively to the trade."
+        }
       }
     },
     {
@@ -27,11 +51,63 @@
       "visible": true,
       "data": {
         "items": [
-          { "title": "The Complete Channel Letter Buying Guide", "description": "Everything sign shop professionals need to know about specifying and ordering wholesale channel letters. Covers letter types, illumination options, materials, sizing, mounting, and what to look for in a wholesale-only manufacturer.", "href": "/resources/guides/channel-letter-buying-guide", "readTime": "12 min read", "image": "Guide cover \u2014 channel letter manufacturing process", "icon": "BookOpen" },
-          { "title": "Sign Installation Tips for Channel Letters", "description": "Practical installation guidance for trade professionals covering site preparation, mounting methods, electrical requirements, and quality assurance. Ensure every wholesale channel letter install goes smoothly.", "href": "/resources/guides/sign-installation-tips", "readTime": "8 min read", "image": "Guide cover \u2014 installer mounting channel letters on building", "icon": "Wrench" },
-          { "title": "Choosing the Right Illumination Type", "description": "A detailed comparison of face-lit, halo-lit, front-and-halo, and non-illuminated channel letters for trade buyers. Learn when to specify each type based on visibility, brand, and budget.", "href": "/resources/guides/choosing-illumination-types", "readTime": "10 min read", "image": "Guide cover \u2014 four illumination types shown at night", "icon": "Lightbulb" },
-          { "title": "What Are Trimless Channel Letters?", "description": "The definitive guide to trimless channel letters. How they differ from traditional trim cap construction, why architects are specifying them, construction details, and how to order wholesale from Sunlite Signs.", "href": "/resources/guides/trimless-channel-letters-guide", "readTime": "8 min read", "image": "Guide cover \u2014 trimless channel letter close-up showing seamless face-to-return joint", "icon": "Gem" }
-        ]
+          {
+            "title": "The Complete Channel Letter Buying Guide",
+            "description": "Everything sign shop professionals need to know about specifying and ordering wholesale channel letters. Covers letter types, illumination options, materials, sizing, mounting, and what to look for in a wholesale-only manufacturer.",
+            "href": "/resources/guides/channel-letter-buying-guide",
+            "readTime": "12 min read",
+            "image": "Guide cover — channel letter manufacturing process",
+            "icon": "BookOpen"
+          },
+          {
+            "title": "Sign Installation Tips for Channel Letters",
+            "description": "Practical installation guidance for trade professionals covering site preparation, mounting methods, electrical requirements, and quality assurance. Ensure every wholesale channel letter install goes smoothly.",
+            "href": "/resources/guides/sign-installation-tips",
+            "readTime": "8 min read",
+            "image": "Guide cover — installer mounting channel letters on building",
+            "icon": "Wrench"
+          },
+          {
+            "title": "Choosing the Right Illumination Type",
+            "description": "A detailed comparison of face-lit, halo-lit, front-and-halo, and non-illuminated channel letters for trade buyers. Learn when to specify each type based on visibility, brand, and budget.",
+            "href": "/resources/guides/choosing-illumination-types",
+            "readTime": "10 min read",
+            "image": "Guide cover — four illumination types shown at night",
+            "icon": "Lightbulb"
+          },
+          {
+            "title": "What Are Trimless Channel Letters?",
+            "description": "The definitive guide to trimless channel letters. How they differ from traditional trim cap construction, why architects are specifying them, construction details, and how to order wholesale from Sunlite Signs.",
+            "href": "/resources/guides/trimless-channel-letters-guide",
+            "readTime": "8 min read",
+            "image": "Guide cover — trimless channel letter close-up showing seamless face-to-return joint",
+            "icon": "Gem"
+          }
+        ],
+        "de": {
+          "items": [
+            {
+              "title": "The Complete Leuchtbuchstabe Buying Guide",
+              "description": "Everything Schilderwerkstatt professionals need to know about specifying and ordering Großhandel Leuchtbuchstaben. Covers letter types, illumination options, materials, sizing, mounting, and what to look for in a Großhandel-only manufacturer.",
+              "readTime": "12 Min. Lesezeit"
+            },
+            {
+              "title": "Sign Installation Tips for Leuchtbuchstaben",
+              "description": "Practical installation guidance for Fachhandel covering site preparation, mounting methods, electrical requirements, and quality assurance. Ensure every Großhandel Leuchtbuchstabe install goes smoothly.",
+              "readTime": "8 Min. Lesezeit"
+            },
+            {
+              "title": "Choosing the Right Illumination Type",
+              "description": "A detailed comparison of front-beleuchtet, halo-beleuchtet, front-and-halo, and nicht-beleuchtet Leuchtbuchstaben for Fachhändler. Learn when to specify each type based on visibility, brand, and budget.",
+              "readTime": "10 Min. Lesezeit"
+            },
+            {
+              "title": "What Are Randlos Leuchtbuchstaben?",
+              "description": "The definitive guide to randlos Leuchtbuchstaben. How they differ from traditional Zierleiste construction, why architects are specifying them, construction details, and how to order Großhandel from Sunlite Signs.",
+              "readTime": "8 Min. Lesezeit"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,7 +118,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

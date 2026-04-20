@@ -15,7 +15,21 @@
       "trade pricing",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/faux-neon-channel-letters"
+    "canonical": "https://sunlitesigns.com/faux-neon-channel-letters",
+    "de": {
+      "title": "Großhandel Faux-Neon Leuchtbuchstaben — EdgeLuxe LP 11-N | Sunlite Signs",
+      "metaDescription": "Großhandel Faux-Neon block acrylic Leuchtbuchstaben. LED-powered neon tube simulation in solid acrylic. IP67, Mit deutscher Ingenieurskunst. Händlerpreise for Schilderwerkstätten only.",
+      "keywords": [
+        "Faux-Neon Leuchtbuchstaben",
+        "LED neon letters",
+        "neon look signs Großhandel",
+        "Faux-Neon signs",
+        "block acrylic neon",
+        "Leuchtbuchstaben Großhandel",
+        "Händlerpreise",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "The classic neon aesthetic, reimagined in solid block acrylic. The EdgeLuxe LP 11-N uses precision-routed channels and embedded LEDs to simulate the warm glow of traditional neon glass tubes — without the fragility, high voltage, or maintenance.\n\nGerman-engineered precision. IP67 sealed. Wholesale direct to sign shops across the USA and Canada.",
         "image": "/products/faux-neon-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Faux-Neon",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "The classic neon aesthetic, reimagined in solid block acrylic. The EdgeLuxe LP 11-N uses precision-routed channels and embedded LEDs to simulate the warm glow of traditional neon glass tubes — without the fragility, high voltage, or maintenance.\n\nDeutsche Ingenieurs-Präzision. IP67 sealed. Großhandel direkt an Schilderwerkstätten across the USA und Kanada.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,13 +73,66 @@
       "data": {
         "heading": "Trade Specifications & Benefits",
         "items": [
-          { "icon": "Zap", "title": "Neon Tube Simulation", "description": "Precision-routed channels simulate the classic neon glass tube look using modern LED technology. All the charm, none of the fragility." },
-          { "icon": "Sparkles", "title": "Classic Neon Aesthetic", "description": "Captures the warm, authentic glow of traditional neon signage without the high voltage, gas tubes, or maintenance costs." },
-          { "icon": "Shield", "title": "IP67 Sealed", "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof — unlike traditional glass neon." },
-          { "icon": "Palette", "title": "Full Color Range", "description": "Available with any Pantone-matched color. Pigmented translucent acrylics create vivid, neon-style color effects." },
-          { "icon": "Ruler", "title": "Precision Engineering", "description": "German-engineered to minimum 12mm stroke width with uniform light distribution simulating a continuous neon tube." },
-          { "icon": "Lightbulb", "title": "Zero Maintenance", "description": "No gas refills, no transformer replacements, no broken tubes. IP67 sealed construction requires zero maintenance." }
-        ]
+          {
+            "icon": "Zap",
+            "title": "Neon Tube Simulation",
+            "description": "Precision-routed channels simulate the classic neon glass tube look using modern LED technology. All the charm, none of the fragility."
+          },
+          {
+            "icon": "Sparkles",
+            "title": "Classic Neon Aesthetic",
+            "description": "Captures the warm, authentic glow of traditional neon signage without the high voltage, gas tubes, or maintenance costs."
+          },
+          {
+            "icon": "Shield",
+            "title": "IP67 Sealed",
+            "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof — unlike traditional glass neon."
+          },
+          {
+            "icon": "Palette",
+            "title": "Full Color Range",
+            "description": "Available with any Pantone-matched color. Pigmented translucent acrylics create vivid, neon-style color effects."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Precision Engineering",
+            "description": "German-engineered to minimum 12mm stroke width with uniform light distribution simulating a continuous neon tube."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Zero Maintenance",
+            "description": "No gas refills, no transformer replacements, no broken tubes. IP67 sealed construction requires zero maintenance."
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Neon Tube Simulation",
+              "description": "Precision-routed channels simulate the classic neon glass tube look using modern LED technology. All the charm, none of the fragility."
+            },
+            {
+              "title": "Classic Neon Aesthetic",
+              "description": "Captures the warm, authentic glow of traditional neon signage without the high voltage, gas tubes, or maintenance costs."
+            },
+            {
+              "title": "IP67 Sealed",
+              "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof — unlike traditional glass neon."
+            },
+            {
+              "title": "Volle Farbpalette",
+              "description": "Available with any Pantone-matched color. Pigmented translucent acrylics create vivid, neon-style color effects."
+            },
+            {
+              "title": "Precision Engineering",
+              "description": "Mit deutscher Ingenieurskunst to minimum 12mm stroke width with uniform light distribution simulating a continuous neon tube."
+            },
+            {
+              "title": "Zero Maintenance",
+              "description": "No gas refills, no transformer replacements, no broken tubes. IP67 sealed construction requires zero maintenance."
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Faux neon channel letter — cross-section detail showing LED routing",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -80,7 +168,21 @@
           "Boutique hotels",
           "Instagram-worthy brand activations",
           "Food halls and markets"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Faux neon Leuchtbuchstaben bring the timeless appeal of traditional neon to any venue that values atmosphere and aesthetic. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Bars and nightlife venues",
+            "Trendy restaurants and cafes",
+            "Retail storefronts with vintage aesthetic",
+            "Entertainment and music venues",
+            "Barbershops and salons",
+            "Boutique hotels",
+            "Instagram-worthy brand activations",
+            "Food halls and markets"
+          ]
+        }
       }
     },
     {
@@ -91,13 +193,54 @@
       "data": {
         "heading": "Faux Neon Projects",
         "images": [
-          { "src": "", "alt": "Faux neon letters — bar entrance, night" },
-          { "src": "", "alt": "Faux neon letters — restaurant interior" },
-          { "src": "", "alt": "Faux neon letters — retail storefront, vintage style" },
-          { "src": "", "alt": "Faux neon letters — entertainment venue" },
-          { "src": "", "alt": "Faux neon letters — barbershop facade" },
-          { "src": "", "alt": "Faux neon letters — boutique hotel lobby" }
-        ]
+          {
+            "src": "",
+            "alt": "Faux neon letters — bar entrance, night"
+          },
+          {
+            "src": "",
+            "alt": "Faux neon letters — restaurant interior"
+          },
+          {
+            "src": "",
+            "alt": "Faux neon letters — retail storefront, vintage style"
+          },
+          {
+            "src": "",
+            "alt": "Faux neon letters — entertainment venue"
+          },
+          {
+            "src": "",
+            "alt": "Faux neon letters — barbershop facade"
+          },
+          {
+            "src": "",
+            "alt": "Faux neon letters — boutique hotel lobby"
+          }
+        ],
+        "de": {
+          "heading": "Faux-Neon Projects",
+          "images": [
+            {
+              "alt": "Faux neon letters — bar entrance, night"
+            },
+            {
+              "alt": "Faux neon letters — restaurant interior"
+            },
+            {
+              "alt": "Faux neon letters — retail storefront, vintage style"
+            },
+            {
+              "alt": "Faux neon letters — entertainment venue"
+            },
+            {
+              "alt": "Faux neon letters — barbershop facade"
+            },
+            {
+              "alt": "Faux neon letters — boutique hotel lobby"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Faux Neon Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Faux-Neon-Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

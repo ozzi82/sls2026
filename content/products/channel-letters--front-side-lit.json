@@ -15,7 +15,21 @@
       "trade pricing",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/front-side-lit-channel-letters"
+    "canonical": "https://sunlitesigns.com/front-side-lit-channel-letters",
+    "de": {
+      "title": "Großhandel Front Seitenbeleuchtet Leuchtbuchstaben — EdgeLuxe LP 11-FS | Sunlite Signs",
+      "metaDescription": "Großhandel partial front seitenbeleuchtet block acrylic Leuchtbuchstaben. Flush-mount with forward-facing side glow. IP67, Mit deutscher Ingenieurskunst. Händlerpreise for Schilderwerkstätten only.",
+      "keywords": [
+        "front seitenbeleuchtet Leuchtbuchstaben",
+        "partial seitenbeleuchtet signs",
+        "flächenbündige Montage Leuchtbuchstaben",
+        "side glow letters",
+        "block acrylic letters Großhandel",
+        "Leuchtbuchstaben Großhandel",
+        "Händlerpreise",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "Partial front side illumination projects a bold, forward-facing glow from the edges of each flush-mounted letterform. The EdgeLuxe LP 11-FS uses embedded LEDs within 30mm cast block acrylic to create a striking dimensional outline.\n\nGerman-engineered precision. IP67 sealed. Wholesale direct to sign shops across the USA and Canada.",
         "image": "/products/face-side-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Front Seitenbeleuchtet",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "Partial front side illumination projects a bold, forward-facing glow from the edges of each flächenbündiged letterform. The EdgeLuxe LP 11-FS uses embedded LEDs within 30mm cast block acrylic to create a striking dimensional outline.\n\nDeutsche Ingenieurs-Präzision. IP67 sealed. Großhandel direkt an Schilderwerkstätten across the USA und Kanada.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,13 +73,66 @@
       "data": {
         "heading": "Trade Specifications & Benefits",
         "items": [
-          { "icon": "Sun", "title": "Forward Side Glow", "description": "Partial front side illumination projects light forward from the edges, creating a bold dimensional outline visible from the front." },
-          { "icon": "Layers", "title": "Flush-Mount Design", "description": "Engineered for direct surface mounting with no standoff spacers. Clean, modern installation profile." },
-          { "icon": "Shield", "title": "IP67 Sealed", "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation." },
-          { "icon": "Palette", "title": "Full Color Range", "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored side-glow effects." },
-          { "icon": "Ruler", "title": "Precision Engineering", "description": "German-engineered to minimum 12mm stroke width with uniform light distribution across every letterform." },
-          { "icon": "Lightbulb", "title": "Zero Maintenance", "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance." }
-        ]
+          {
+            "icon": "Sun",
+            "title": "Forward Side Glow",
+            "description": "Partial front side illumination projects light forward from the edges, creating a bold dimensional outline visible from the front."
+          },
+          {
+            "icon": "Layers",
+            "title": "Flush-Mount Design",
+            "description": "Engineered for direct surface mounting with no standoff spacers. Clean, modern installation profile."
+          },
+          {
+            "icon": "Shield",
+            "title": "IP67 Sealed",
+            "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation."
+          },
+          {
+            "icon": "Palette",
+            "title": "Full Color Range",
+            "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored side-glow effects."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Precision Engineering",
+            "description": "German-engineered to minimum 12mm stroke width with uniform light distribution across every letterform."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Zero Maintenance",
+            "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance."
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Forward Side Glow",
+              "description": "Partial front side illumination projects light forward from the edges, creating a bold dimensional outline visible from the front."
+            },
+            {
+              "title": "Flächenbündig Design",
+              "description": "Engineered for direct surface mounting with no Abstandshalter spacers. Clean, modern installation profile."
+            },
+            {
+              "title": "IP67 Sealed",
+              "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation."
+            },
+            {
+              "title": "Volle Farbpalette",
+              "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored side-glow effects."
+            },
+            {
+              "title": "Precision Engineering",
+              "description": "Mit deutscher Ingenieurskunst to minimum 12mm stroke width with uniform light distribution across every letterform."
+            },
+            {
+              "title": "Zero Maintenance",
+              "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance."
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Front side lit channel letter — cross-section detail showing LED placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -80,7 +168,21 @@
           "Technology companies",
           "Mixed-use developments",
           "Shopping centers and malls"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Front seitenbeleuchtet Leuchtbuchstaben deliver a bold, contemporary look ideal for brands that want to stand out with a modern edge. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Modern retail storefronts",
+            "Trendy restaurants and cafes",
+            "Entertainment venues",
+            "Firmengebäude",
+            "Fitness and wellness brands",
+            "Technology companies",
+            "Mixed-use developments",
+            "Shopping centers and malls"
+          ]
+        }
       }
     },
     {
@@ -91,13 +193,54 @@
       "data": {
         "heading": "Front Side Lit Projects",
         "images": [
-          { "src": "", "alt": "Front side lit letters — modern retail storefront" },
-          { "src": "", "alt": "Front side lit letters — restaurant facade, night" },
-          { "src": "", "alt": "Front side lit letters — entertainment venue" },
-          { "src": "", "alt": "Front side lit letters — corporate office building" },
-          { "src": "", "alt": "Front side lit letters — fitness brand signage" },
-          { "src": "", "alt": "Front side lit letters — shopping center exterior" }
-        ]
+          {
+            "src": "",
+            "alt": "Front side lit letters — modern retail storefront"
+          },
+          {
+            "src": "",
+            "alt": "Front side lit letters — restaurant facade, night"
+          },
+          {
+            "src": "",
+            "alt": "Front side lit letters — entertainment venue"
+          },
+          {
+            "src": "",
+            "alt": "Front side lit letters — corporate office building"
+          },
+          {
+            "src": "",
+            "alt": "Front side lit letters — fitness brand signage"
+          },
+          {
+            "src": "",
+            "alt": "Front side lit letters — shopping center exterior"
+          }
+        ],
+        "de": {
+          "heading": "Front Seitenbeleuchtet Projects",
+          "images": [
+            {
+              "alt": "Front seitenbeleuchtet letters — modern retail storefront"
+            },
+            {
+              "alt": "Front seitenbeleuchtet letters — restaurant facade, night"
+            },
+            {
+              "alt": "Front seitenbeleuchtet letters — entertainment venue"
+            },
+            {
+              "alt": "Front seitenbeleuchtet letters — corporate office building"
+            },
+            {
+              "alt": "Front seitenbeleuchtet letters — fitness brand signage"
+            },
+            {
+              "alt": "Front seitenbeleuchtet letters — shopping center exterior"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Front Side Lit Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Vorderseitenbeleuchtete Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

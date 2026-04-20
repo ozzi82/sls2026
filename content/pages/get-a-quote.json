@@ -9,7 +9,16 @@
       "wholesale sign pricing",
       "trade sign quote",
       "channel letter wholesale quote"
-    ]
+    ],
+    "de": {
+      "title": "Großhandelspreise anfragen — Nur Händlerkonten",
+      "metaDescription": "Fordern Sie Großhandelspreise für Leuchtbuchstaben, Ausleger-Schilder, Flachbuchstaben und individuelle Beschilderung an. Detaillierte Großhandelsangebote innerhalb von 48 Stunden. Nur Schilderwerkstätten und Fachhandel.",
+      "keywords": [
+        "Großhandel-Schilderpreise",
+        "Handelsangebot Schilder",
+        "Leuchtbuchstaben Großhandelsangebot"
+      ]
+    }
   },
   "blocks": [
     {
@@ -22,7 +31,13 @@
         "h1": "Request Wholesale",
         "h1Highlight": "Pricing",
         "subtitle": "Tell us about your project and we will send detailed trade pricing with full material specs within 48 hours. No retail markup. No obligation.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Nur Händlerkonten",
+          "h1": "Großhandelspreis",
+          "h1Highlight": "Anfragen",
+          "subtitle": "Erzählen Sie uns von Ihrem Projekt und wir senden Ihnen detaillierte Händlerpreise mit vollständigen Materialspezifikationen innerhalb von 48 Stunden. Kein Einzelhandelsaufschlag. Keine Verpflichtung."
+        }
       }
     },
     {
@@ -61,6 +76,36 @@
           "notices": [
             "We sell exclusively to sign companies, sign shops, and trade professionals. We do not sell to the general public."
           ]
+        },
+        "de": {
+          "heading": "Großhandelspreis anfragen",
+          "sidebar": {
+            "notices": [
+              "Wir verkaufen ausschließlich an Schilderunternehmen, Schilderwerkstätten und Fachhandel. Wir verkaufen nicht an die Öffentlichkeit."
+            ],
+            "differentiators": [
+              {
+                "icon": "Lock",
+                "text": "Nur Großhandel — kein Einzelhandel"
+              },
+              {
+                "icon": "Clock",
+                "text": "Handelsangebote innerhalb von 48 Stunden"
+              },
+              {
+                "icon": "Shield",
+                "text": "Jedes Schild UL-zertifiziert"
+              },
+              {
+                "icon": "Truck",
+                "text": "3 Wochen Lieferung von Tür zu Tür, verpackt & versandt"
+              },
+              {
+                "icon": "Award",
+                "text": "Deutsche Ingenieurskunst mit LKF"
+              }
+            ]
+          }
         }
       }
     },
@@ -72,7 +117,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

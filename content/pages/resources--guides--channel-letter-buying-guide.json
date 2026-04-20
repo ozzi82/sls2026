@@ -3,9 +3,30 @@
   "pageType": "static",
   "label": "Channel Letter Buying Guide",
   "seo": {
-    "title": "Channel Letter Buying Guide for Sign Shops \u2014 Wholesale | Sunlite Signs",
+    "title": "Channel Letter Buying Guide for Sign Shops — Wholesale | Sunlite Signs",
     "metaDescription": "Everything sign shop professionals and trade buyers need to know about specifying and ordering wholesale channel letters. Covers types, illumination, materials, sizing, mounting options, and choosing a wholesale-only manufacturer.",
-    "keywords": ["wholesale channel letter buying guide", "how to order wholesale channel letters", "wholesale channel letter specification", "channel letter materials trade", "channel letter sizing guide", "channel letter mounting options", "sign shop wholesale ordering guide"]
+    "keywords": [
+      "wholesale channel letter buying guide",
+      "how to order wholesale channel letters",
+      "wholesale channel letter specification",
+      "channel letter materials trade",
+      "channel letter sizing guide",
+      "channel letter mounting options",
+      "sign shop wholesale ordering guide"
+    ],
+    "de": {
+      "title": "Leuchtbuchstabe Buying Guide for Sign Shops — Großhandel | Sunlite Signs",
+      "metaDescription": "Everything Schilderwerkstatt professionals and Fachhändler need to know about specifying and ordering Großhandel Leuchtbuchstaben. Covers types, illumination, materials, sizing, mounting options, and choosing a Großhandel-only manufacturer.",
+      "keywords": [
+        "Großhandel Leuchtbuchstabe buying guide",
+        "how to order Großhandel Leuchtbuchstaben",
+        "Großhandel Leuchtbuchstabe specification",
+        "Leuchtbuchstabe materials trade",
+        "Leuchtbuchstabe sizing guide",
+        "Leuchtbuchstabe mounting options",
+        "Schilderwerkstatt Großhandel ordering guide"
+      ]
+    }
   },
   "blocks": [
     {
@@ -17,7 +38,12 @@
         "badge": "Trade Resources",
         "h1": "The Complete Channel Letter Buying Guide",
         "subtitle": "A comprehensive wholesale guide for sign shop professionals and trade buyers covering every aspect of specifying, ordering, and evaluating wholesale channel letters from a manufacturer that sells exclusively to the trade.",
-        "ctas": []
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "The Complete Leuchtbuchstabe Buying Guide",
+          "subtitle": "A comprehensive Großhandel guide for Schilderwerkstatt professionals and Fachhändler covering every aspect of specifying, ordering, and evaluating Großhandel Leuchtbuchstaben from a manufacturer that sells exclusively to the trade."
+        }
       }
     },
     {
@@ -28,7 +54,12 @@
       "data": {
         "heading": "Get Your Product",
         "headingHighlight": "Started.",
-        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours."
+        "description": "Ready to put our complimentary engineering services to work on your next project? Send us your details and receive a detailed wholesale quote within 48 hours.",
+        "de": {
+          "heading": "Starten Sie Ihr",
+          "headingHighlight": "Projekt.",
+          "description": "Bereit, unsere kostenlosen Konstruktionsleistungen für Ihr nächstes Projekt einzusetzen? Senden Sie uns Ihre Details und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden."
+        }
       }
     }
   ]

@@ -19,7 +19,25 @@
       "sign shop supplier",
       "custom SEG light box"
     ],
-    "canonical": "https://sunlitesigns.com/seg-light-boxes"
+    "canonical": "https://sunlitesigns.com/seg-light-boxes",
+    "de": {
+      "title": "Großhandel SEG-Lichtboxes — Custom Silicone-Edged Graphic Light Boxes | Sunlite Signs",
+      "metaDescription": "Custom SEG Lichtboxen and silicone-edged graphic prints for Schilderwerkstätten only. Ultra-thin profiles down to 1\" deep, dye-sublimation fabric printing, tool-free graphic changes. Händlerpreise, UL-zertifiziert. 3-Wochen lead time. Wir verkaufen nie an Endkunden.",
+      "keywords": [
+        "SEG Lichtbox Großhandel",
+        "silicone edge graphic Lichtbox",
+        "SEG frame Großhandel",
+        "fabric Lichtbox Großhandel",
+        "dye sublimation Lichtbox",
+        "tool-free graphic change Lichtbox",
+        "ultra-thin Lichtbox",
+        "SEG print Großhandel",
+        "Großhandel SEG manufacturer",
+        "Händlerpreise SEG Lichtbox",
+        "Zulieferer für Schilderwerkstätten",
+        "custom SEG Lichtbox"
+      ]
+    }
   },
   "blocks": [
     {
@@ -34,9 +52,35 @@
         "subtitle": "From experiential retail experiences to advertising and wayfinding content, Sunlite Signs custom-sized Silicone-edged Graphic (SEG) Light Box solutions are like no other the USA industry has experienced — low form factors down to 1\" deep, high-resolution printed and illuminated light box signage.",
         "image": "SEG light box — silicone-edged graphic display, illuminated fabric face, retail environment",
         "ctas": [
-          { "label": "Get Your Product Started", "href": "/get-a-quote", "variant": "primary" },
-          { "label": "Download Catalog", "href": "#", "variant": "secondary" }
-        ]
+          {
+            "label": "Get Your Product Started",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          },
+          {
+            "label": "Download Catalog",
+            "href": "#",
+            "variant": "secondary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Custom",
+          "h1Highlight": "SEG-Lichtboxen",
+          "subtitle": "From experiential retail experiences to advertising and wayfinding content, Sunlite Signs custom-sized Silicone-edged Graphic (SEG) Light Box solutions are like no other the USA industry has experienced — low form factors down to 1\" deep, high-resolution printed and illuminated Lichtbox signage.",
+          "ctas": [
+            {
+              "label": "Starten Sie Ihr Projekt",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            },
+            {
+              "label": "Katalog herunterladen",
+              "href": "#",
+              "variant": "secondary"
+            }
+          ]
+        }
       }
     },
     {
@@ -77,7 +121,36 @@
             "title": "UL Listed & LED Illuminated",
             "description": "All illuminated SEG light boxes are UL listed with complete documentation for code compliance and permitting. Edge-lit or backlit LED configurations available."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Why SEG-Lichtboxes from Sunlite",
+          "items": [
+            {
+              "title": "Silicone Edge Gasket System",
+              "description": "Precision-sewn silicone gasket around the perimeter of each fabric print locks into the aluminum frame channel for a taut, wrinkle-free illuminated face every time."
+            },
+            {
+              "title": "High-Resolution Dye-Sublimation Printing",
+              "description": "Vivid, full-color graphics printed directly into the fabric weave. Dye-sublimation delivers photographic quality that won't crack, peel, or fade like vinyl."
+            },
+            {
+              "title": "Tool-Free Graphic Changes",
+              "description": "Swap graphics in minutes with no tools required. Simply pull the silicone gasket from the channel, insert the new print, and push back in. Ideal for seasonal or rotating messaging."
+            },
+            {
+              "title": "Ultra-Thin Profiles Down to 1\" Deep",
+              "description": "Low-profile aluminum frames as thin as 1\" deep. Clean, modern aesthetic that sits nearly flush against walls for sleek interior and exterior installations."
+            },
+            {
+              "title": "Fully Custom Sizes",
+              "description": "Every SEG Lichtbox is built to your exact dimensions. No standard-size constraints — specify any width and height for a perfect fit in any application."
+            },
+            {
+              "title": "UL-zertifiziert & LED Illuminated",
+              "description": "All illuminated SEG Lichtboxen are UL-zertifiziert with complete documentation for code compliance and permitting. Edge-lit or backlit LED configurations available."
+            }
+          ]
+        }
       }
     },
     {
@@ -90,7 +163,11 @@
         "content": "The silicone-edged graphic system is the modern standard for changeable illuminated displays. A precision-sewn silicone gasket around the fabric print presses into a recessed channel in the aluminum frame, creating a perfectly tensioned face with no visible hardware. Wholesale to sign companies only.",
         "image": "SEG light box — close-up of silicone gasket being inserted into aluminum frame channel",
         "imagePosition": "left",
-        "background": "navy"
+        "background": "navy",
+        "de": {
+          "heading": "How the SEG System Works",
+          "content": "The silicone-edged graphic system is the modern standard for changeable illuminated displays. A precision-sewn silicone gasket around the fabric print presses into a recessed channel in the aluminum frame, creating a perfectly tensioned face with no visible hardware. Großhandel to Schilderunternehmen only."
+        }
       }
     },
     {
@@ -103,20 +180,63 @@
         "description": "Every SEG light box is engineered for uniform illumination, structural integrity, and effortless graphic changes. Ships ready to install with frame, print, and LED system complete. Available exclusively at wholesale trade pricing.",
         "image": "SEG light box — aluminum frame detail with LED modules visible, production facility",
         "specs": [
-          { "label": "Frame Material", "value": "Extruded aluminum" },
-          { "label": "Profile Depth", "value": "1\", 2\", 3\", 4\" (application-dependent)" },
-          { "label": "Face Material", "value": "Dye-sublimation printed fabric with silicone gasket" },
-          { "label": "Illumination", "value": "LED edge-lit or LED backlit" },
-          { "label": "Graphic Resolution", "value": "High-resolution dye-sublimation printing" },
-          { "label": "Sizes", "value": "Custom sizes — any width and height" },
-          { "label": "Orientation", "value": "Single-sided or double-sided" },
-          { "label": "Frame Finish", "value": "Anodized aluminum, silver or black standard" },
-          { "label": "Mounting", "value": "Wall-mount, freestanding, ceiling-hung, or recessed" },
-          { "label": "Graphic Change", "value": "Tool-free — silicone gasket push-in system" },
-          { "label": "Certifications", "value": "UL Listed" },
-          { "label": "Warranty", "value": "5-year LED, 3-year frame and finish" },
-          { "label": "Lead Time", "value": "3 weeks door to door" }
-        ]
+          {
+            "label": "Frame Material",
+            "value": "Extruded aluminum"
+          },
+          {
+            "label": "Profile Depth",
+            "value": "1\", 2\", 3\", 4\" (application-dependent)"
+          },
+          {
+            "label": "Face Material",
+            "value": "Dye-sublimation printed fabric with silicone gasket"
+          },
+          {
+            "label": "Illumination",
+            "value": "LED edge-lit or LED backlit"
+          },
+          {
+            "label": "Graphic Resolution",
+            "value": "High-resolution dye-sublimation printing"
+          },
+          {
+            "label": "Sizes",
+            "value": "Custom sizes — any width and height"
+          },
+          {
+            "label": "Orientation",
+            "value": "Single-sided or double-sided"
+          },
+          {
+            "label": "Frame Finish",
+            "value": "Anodized aluminum, silver or black standard"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall-mount, freestanding, ceiling-hung, or recessed"
+          },
+          {
+            "label": "Graphic Change",
+            "value": "Tool-free — silicone gasket push-in system"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL Listed"
+          },
+          {
+            "label": "Warranty",
+            "value": "5-year LED, 3-year frame and finish"
+          },
+          {
+            "label": "Lead Time",
+            "value": "3 weeks door to door"
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Every SEG Lichtbox is engineered for uniform illumination, structural integrity, and effortless graphic changes. Ships ready to install with frame, print, and LED system complete. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -136,7 +256,21 @@
           "Corporate lobbies and reception areas",
           "Quick-service restaurant menu boards",
           "Airport and transit signage"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "SEG Lichtboxen bring high-impact illuminated graphics to every environment — from retail storefronts to corporate interiors and trade show floors. Großhandel direct to Schilderunternehmen for all project types.",
+          "items": [
+            "Retail displays and experiential environments",
+            "Wayfinding and directory signage",
+            "Advertising and promotional displays",
+            "Trade show exhibits and booths",
+            "Hospitality and hotel lobbies",
+            "Corporate lobbies and reception areas",
+            "Quick-service restaurant menu boards",
+            "Airport and transit signage"
+          ]
+        }
       }
     },
     {
@@ -146,7 +280,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -156,7 +293,11 @@
       "visible": true,
       "data": {
         "heading": "Ready to Get Started?",
-        "description": "Request a wholesale quote for your next project."
+        "description": "Request a wholesale quote for your next project.",
+        "de": {
+          "heading": "Bereit loszulegen?",
+          "description": "Fordern Sie ein Großhandelsangebot für Ihr nächstes Projekt an."
+        }
       }
     }
   ]

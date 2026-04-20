@@ -15,7 +15,21 @@
       "trade pricing",
       "sign shop supplier"
     ],
-    "canonical": "https://sunlitesigns.com/conical-channel-letters"
+    "canonical": "https://sunlitesigns.com/conical-channel-letters",
+    "de": {
+      "title": "Großhandel Conical Profile Leuchtbuchstaben — EdgeLuxe LP 11-C | Sunlite Signs",
+      "metaDescription": "Großhandel conical profile block acrylic Leuchtbuchstaben. Tapered design for narrow strokes and serifs. IP67, Mit deutscher Ingenieurskunst. Händlerpreise for Schilderwerkstätten only.",
+      "keywords": [
+        "conical Leuchtbuchstaben",
+        "tapered profile letters",
+        "serif Leuchtbuchstaben",
+        "narrow stroke letters",
+        "block acrylic letters Großhandel",
+        "Leuchtbuchstaben Großhandel",
+        "Händlerpreise",
+        "Zulieferer für Schilderwerkstätten"
+      ]
+    }
   },
   "blocks": [
     {
@@ -30,8 +44,25 @@
         "subtitle": "The conical taper makes the impossible possible — illuminated serif fonts, thin strokes, and delicate letterforms. The EdgeLuxe LP 11-C uses a wider back (12mm) that tapers to just 3mm at the face, allowing embedded LEDs to illuminate strokes too narrow for any conventional channel letter.\n\nGerman-engineered precision. IP67 sealed. Wholesale direct to sign shops across the USA and Canada.",
         "image": "/products/conical-day.jpg",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Conical Profile",
+          "h1Highlight": "Leuchtbuchstaben",
+          "subtitle": "The conical taper makes the impossible possible — illuminated serif fonts, thin strokes, and delicate letterforms. The EdgeLuxe LP 11-C uses a wider back (12mm) that tapers to just 3mm at the face, allowing embedded LEDs to illuminate strokes too narrow for any conventional Leuchtbuchstabe.\n\nDeutsche Ingenieurs-Präzision. IP67 sealed. Großhandel direkt an Schilderwerkstätten across the USA und Kanada.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -42,13 +73,66 @@
       "data": {
         "heading": "Trade Specifications & Benefits",
         "items": [
-          { "icon": "Triangle", "title": "Conical Taper Profile", "description": "Wider at the back (12mm) and tapered to just 3mm at the face. Enables illumination of narrow strokes and delicate serifs." },
-          { "icon": "Type", "title": "Serif-Friendly Design", "description": "The only channel letter solution engineered specifically for serif fonts, thin strokes, and intricate letterforms that standard letters cannot illuminate." },
-          { "icon": "Shield", "title": "IP67 Sealed", "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation." },
-          { "icon": "Palette", "title": "Full Color Range", "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored face-lit effects." },
-          { "icon": "Ruler", "title": "Ultra-Narrow Strokes", "description": "Face-side strokes as narrow as 3mm (0.12\") — impossible with conventional channel letters. German-engineered precision." },
-          { "icon": "Lightbulb", "title": "Zero Maintenance", "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance." }
-        ]
+          {
+            "icon": "Triangle",
+            "title": "Conical Taper Profile",
+            "description": "Wider at the back (12mm) and tapered to just 3mm at the face. Enables illumination of narrow strokes and delicate serifs."
+          },
+          {
+            "icon": "Type",
+            "title": "Serif-Friendly Design",
+            "description": "The only channel letter solution engineered specifically for serif fonts, thin strokes, and intricate letterforms that standard letters cannot illuminate."
+          },
+          {
+            "icon": "Shield",
+            "title": "IP67 Sealed",
+            "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation."
+          },
+          {
+            "icon": "Palette",
+            "title": "Full Color Range",
+            "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored face-lit effects."
+          },
+          {
+            "icon": "Ruler",
+            "title": "Ultra-Narrow Strokes",
+            "description": "Face-side strokes as narrow as 3mm (0.12\") — impossible with conventional channel letters. German-engineered precision."
+          },
+          {
+            "icon": "Lightbulb",
+            "title": "Zero Maintenance",
+            "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance."
+          }
+        ],
+        "de": {
+          "heading": "Handelsspezifikationen & Vorteile",
+          "items": [
+            {
+              "title": "Conical Taper Profile",
+              "description": "Wider at the back (12mm) and tapered to just 3mm at the face. Enables illumination of narrow strokes and delicate serifs."
+            },
+            {
+              "title": "Serif-Friendly Design",
+              "description": "The only Leuchtbuchstabe solution engineered specifically for serif fonts, thin strokes, and intricate letterforms that standard letters cannot illuminate."
+            },
+            {
+              "title": "IP67 Sealed",
+              "description": "Epoxy-sealed block acrylic construction rated IP67. Fully waterproof and dust-proof for any outdoor installation."
+            },
+            {
+              "title": "Volle Farbpalette",
+              "description": "Available with any Pantone-matched color. Pigmented translucent acrylics for colored front-beleuchtet effects."
+            },
+            {
+              "title": "Ultra-Narrow Strokes",
+              "description": "Face-side strokes as narrow as 3mm (0.12\") — impossible with conventional Leuchtbuchstaben. Deutsche Ingenieurs-Präzision."
+            },
+            {
+              "title": "Zero Maintenance",
+              "description": "Epoxy-sealed IP67 construction means no serviceable parts — letters are built to last without any maintenance."
+            }
+          ]
+        }
       }
     },
     {
@@ -60,7 +144,11 @@
         "heading": "Trade Specifications",
         "description": "Built to meet and exceed industry standards. Every specification reflects our commitment to quality and longevity. Available exclusively at wholesale trade pricing.",
         "image": "Conical profile channel letter — cross-section detail showing tapered profile and LED placement",
-        "specs": []
+        "specs": [],
+        "de": {
+          "heading": "Handelsspezifikationen",
+          "description": "Gebaut um Branchenstandards zu erfüllen und zu übertreffen. Jede Spezifikation spiegelt unser Engagement für Qualität und Langlebigkeit wider. Exklusiv zu Großhandelspreisen verfügbar."
+        }
       }
     },
     {
@@ -80,7 +168,21 @@
           "Hotels and resort entrance signs",
           "Museum and gallery wayfinding",
           "Corporate headquarters with refined branding"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Conical profile Leuchtbuchstaben unlock serif fonts and thin strokes that no other Leuchtbuchstabe can illuminate. Perfect for luxury and refined branding. Großhandel direkt an Schilderwerkstätten for all project types.",
+          "items": [
+            "Luxury brand signage with serif logos",
+            "Law firms and financial institutions",
+            "High-end restaurant typography",
+            "Boutique retail with script fonts",
+            "Architectural lettering with thin strokes",
+            "Hotels and resort entrance signs",
+            "Museum and gallery wayfinding",
+            "Corporate headquarters with refined branding"
+          ]
+        }
       }
     },
     {
@@ -91,13 +193,54 @@
       "data": {
         "heading": "Conical Profile Projects",
         "images": [
-          { "src": "", "alt": "Conical profile letters — luxury brand serif logo" },
-          { "src": "", "alt": "Conical profile letters — law firm entrance" },
-          { "src": "", "alt": "Conical profile letters — fine dining restaurant" },
-          { "src": "", "alt": "Conical profile letters — boutique retail script font" },
-          { "src": "", "alt": "Conical profile letters — hotel entrance, evening" },
-          { "src": "", "alt": "Conical profile letters — corporate headquarters" }
-        ]
+          {
+            "src": "",
+            "alt": "Conical profile letters — luxury brand serif logo"
+          },
+          {
+            "src": "",
+            "alt": "Conical profile letters — law firm entrance"
+          },
+          {
+            "src": "",
+            "alt": "Conical profile letters — fine dining restaurant"
+          },
+          {
+            "src": "",
+            "alt": "Conical profile letters — boutique retail script font"
+          },
+          {
+            "src": "",
+            "alt": "Conical profile letters — hotel entrance, evening"
+          },
+          {
+            "src": "",
+            "alt": "Conical profile letters — corporate headquarters"
+          }
+        ],
+        "de": {
+          "heading": "Conical Profile Projects",
+          "images": [
+            {
+              "alt": "Conical profile letters — luxury brand serif logo"
+            },
+            {
+              "alt": "Conical profile letters — law firm entrance"
+            },
+            {
+              "alt": "Conical profile letters — fine dining restaurant"
+            },
+            {
+              "alt": "Conical profile letters — boutique retail script font"
+            },
+            {
+              "alt": "Conical profile letters — hotel entrance, evening"
+            },
+            {
+              "alt": "Conical profile letters — corporate headquarters"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,7 +251,12 @@
       "data": {
         "heading": "Ready to Order",
         "headingHighlight": "Conical Profile Letters?",
-        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation."
+        "description": "Send us your project details and receive a detailed wholesale quote within 48 hours. No minimum order. No obligation.",
+        "de": {
+          "heading": "Bereit zur Bestellung",
+          "headingHighlight": "Konische Profil-Buchstaben?",
+          "description": "Senden Sie uns Ihre Projektdetails und erhalten Sie ein detailliertes Großhandelsangebot innerhalb von 48 Stunden. Keine Mindestbestellung. Keine Verpflichtung."
+        }
       }
     }
   ]

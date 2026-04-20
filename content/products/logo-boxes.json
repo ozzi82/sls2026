@@ -17,7 +17,23 @@
       "wholesale logo signage",
       "face-lit logo signs"
     ],
-    "canonical": "https://sunlitesigns.com/products/logo-boxes"
+    "canonical": "https://sunlitesigns.com/products/logo-boxes",
+    "de": {
+      "title": "Kontur-Logo-Boxen | Großhandel Sign Manufacturer | Sunlite Signs",
+      "metaDescription": "Großhandel contour Logo-Boxen and cloud logo signs. Custom-shaped illuminated enclosures for full-color logo reproduction. UL 48 listed, 3-Wochen delivery for Schilderwerkstätten.",
+      "keywords": [
+        "contour Logo-Boxen Großhandel",
+        "cloud logo signs",
+        "logo Leuchtkästen",
+        "illuminated Logo-Boxen",
+        "custom logo sign manufacturer",
+        "franchise logo signs",
+        "contour cut sign cabinets",
+        "logo shaped Lichtbox",
+        "Großhandel logo signage",
+        "front-beleuchtet logo signs"
+      ]
+    }
   },
   "blocks": [
     {
@@ -32,8 +48,25 @@
         "subtitle": "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Combine the dimensional impact of channel letters with full-color logo reproduction for unmistakable brand presence.",
         "image": "Contour logo box — custom-shaped illuminated logo sign on building facade",
         "ctas": [
-          { "label": "Request Wholesale Pricing", "href": "/get-a-quote", "variant": "primary" }
-        ]
+          {
+            "label": "Request Wholesale Pricing",
+            "href": "/get-a-quote",
+            "variant": "primary"
+          }
+        ],
+        "de": {
+          "badge": "Nur Großhandel — Händlerpreise",
+          "h1": "Großhandel Contour",
+          "h1Highlight": "Logo-Boxen",
+          "subtitle": "Custom-shaped illuminated enclosures that follow the exact contour of any logo. Combine the dimensional impact of Leuchtbuchstaben with full-color logo reproduction for unmistakable brand presence.",
+          "ctas": [
+            {
+              "label": "Großhandelspreis anfragen",
+              "href": "/get-a-quote",
+              "variant": "primary"
+            }
+          ]
+        }
       }
     },
     {
@@ -74,7 +107,36 @@
             "title": "UL 48 Listed",
             "description": "All illuminated contour logo boxes are UL 48 listed with proper labeling and documentation. Welded aluminum construction meets structural and electrical code requirements for commercial installations."
           }
-        ]
+        ],
+        "de": {
+          "heading": "Features & Benefits",
+          "items": [
+            {
+              "title": "Brand-Perfect Shape",
+              "description": "Every contour Logo-Box is custom-shaped to follow the exact outline of your client's logo. The result is a three-dimensional sign that reinforces brand identity with unmistakable recognition from any distance."
+            },
+            {
+              "title": "Face-Lit & Halo-Lit Options",
+              "description": "Choose from front-beleuchtet illumination for vibrant, full-color logo reproduction or halo-beleuchtet for a dramatic silhouette glow. Combination configurations are also available for maximum visual impact."
+            },
+            {
+              "title": "Full-Color Reproduction",
+              "description": "High-resolution digital printing on translucent polycarbonate faces captures every gradient, color, and detail of the original logo artwork. PMS color matching ensures brand accuracy."
+            },
+            {
+              "title": "Dimensional Impact",
+              "description": "Kontur-Logo-Boxen combine the dimensional presence of Leuchtbuchstaben with the full-color capability of Leuchtkästen. The custom-shaped enclosure creates a bold, sculptural presence on any facade."
+            },
+            {
+              "title": "Custom Finishes",
+              "description": "Cabinet returns and trim are available in any standard or custom paint color, powder coat, or vinyl wrap finish. Match corporate brand standards with precision on every project."
+            },
+            {
+              "title": "UL 48 Listed",
+              "description": "All illuminated contour Logo-Boxen are UL 48 listed with proper labeling and documentation. Welded aluminum construction meets structural and electrical code requirements for commercial installations."
+            }
+          ]
+        }
       }
     },
     {
@@ -105,7 +167,32 @@
             "title": "LED Installation & QC",
             "description": "LED modules are installed for uniform face illumination or halo glow. Every unit undergoes powered illumination testing and full quality inspection before shipping fully assembled."
           }
-        ]
+        ],
+        "de": {
+          "heading": "How Logo-Boxen Are Made",
+          "steps": [
+            {
+              "step": 1,
+              "title": "Logo Artwork & Engineering",
+              "description": "Submit your client's logo artwork and our engineering team creates detailed CAD drawings of the custom-shaped cabinet, including structural calculations and electrical layouts — all at no extra cost."
+            },
+            {
+              "step": 2,
+              "title": "Custom Cabinet Fabrication",
+              "description": "CNC-cut aluminum panels are formed and welded to follow the exact contour of the logo. Returns are fabricated to the specified depth, creating a seamless three-dimensional enclosure."
+            },
+            {
+              "step": 3,
+              "title": "Face & Graphics Application",
+              "description": "Translucent polycarbonate or acrylic faces are contour-cut and fitted to the cabinet. Full-color digital graphics are applied for accurate logo reproduction with LED-friendly translucency."
+            },
+            {
+              "step": 4,
+              "title": "LED Installation & QC",
+              "description": "LED modules are installed for uniform face illumination or halo glow. Every unit undergoes powered illumination testing and full quality inspection before shipping fully assembled."
+            }
+          ]
+        }
       }
     },
     {
@@ -118,7 +205,11 @@
         "content": "Contour logo boxes — also called cloud logos or logo cabinets — are the ideal solution for businesses with recognizable logo marks that need dimensional, illuminated signage. Unlike channel letters, which represent individual characters, logo boxes reproduce the entire logo as a single illuminated unit.\n\nThis makes them especially popular for franchise signage, where brand consistency across multiple locations is critical. The custom-shaped cabinet follows every curve and angle of the logo, creating a sign that is instantly recognizable and impossible to replicate with standard sign products.",
         "image": "Contour logo box — detail of custom-shaped aluminum cabinet with full-color face",
         "imagePosition": "left",
-        "background": "dark"
+        "background": "dark",
+        "de": {
+          "heading": "Why Choose Kontur-Logo-Boxen?",
+          "content": "Kontur-Logo-Boxen — also called cloud logos or logo cabinets — are the ideal solution for businesses with recognizable logo marks that need dimensional, illuminated signage. Unlike Leuchtbuchstaben, which represent individual characters, Logo-Boxen reproduce the entire logo as a single illuminated unit.\n\nThis makes them especially popular for franchise signage, where brand consistency across multiple locations is critical. The custom-shaped cabinet follows every curve and angle of the logo, creating a sign that is instantly recognizable and impossible to replicate with standard sign products."
+        }
       }
     },
     {
@@ -129,18 +220,54 @@
       "data": {
         "heading": "Specifications",
         "specs": [
-          { "label": "Construction", "value": "Welded aluminum, contour-shaped" },
-          { "label": "Face Material", "value": "Polycarbonate or acrylic, contour-cut" },
-          { "label": "Graphics", "value": "Full-color digital print, PMS matched" },
-          { "label": "Cabinet Depth", "value": "3.5\" to 8\" (custom available)" },
-          { "label": "Illumination", "value": "Face-lit, halo-lit, or combination" },
-          { "label": "LED System", "value": "Internal LED modules, UL listed" },
-          { "label": "Finish", "value": "Painted, powder coat, vinyl wrap" },
-          { "label": "Mounting", "value": "Wall mount, raceway, pole mount, monument" },
-          { "label": "Certifications", "value": "UL 48 Listed" },
-          { "label": "Warranty", "value": "5-year LED, 3-year construction" },
-          { "label": "Lead Time", "value": "3 weeks door to door" }
-        ]
+          {
+            "label": "Construction",
+            "value": "Welded aluminum, contour-shaped"
+          },
+          {
+            "label": "Face Material",
+            "value": "Polycarbonate or acrylic, contour-cut"
+          },
+          {
+            "label": "Graphics",
+            "value": "Full-color digital print, PMS matched"
+          },
+          {
+            "label": "Cabinet Depth",
+            "value": "3.5\" to 8\" (custom available)"
+          },
+          {
+            "label": "Illumination",
+            "value": "Face-lit, halo-lit, or combination"
+          },
+          {
+            "label": "LED System",
+            "value": "Internal LED modules, UL listed"
+          },
+          {
+            "label": "Finish",
+            "value": "Painted, powder coat, vinyl wrap"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall mount, raceway, pole mount, monument"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL 48 Listed"
+          },
+          {
+            "label": "Warranty",
+            "value": "5-year LED, 3-year construction"
+          },
+          {
+            "label": "Lead Time",
+            "value": "3 weeks door to door"
+          }
+        ],
+        "de": {
+          "heading": "Specifications"
+        }
       }
     },
     {
@@ -160,7 +287,21 @@
           "Auto dealerships and service centers",
           "Healthcare systems and hospitals",
           "Entertainment venues and stadiums"
-        ]
+        ],
+        "de": {
+          "heading": "Häufige Anwendungen",
+          "description": "Kontur-Logo-Boxen are ideal for any business with a recognizable logo mark that needs consistent, dimensional brand representation. From single locations to nationwide franchise rollouts, Logo-Boxen deliver brand impact at scale.",
+          "items": [
+            "Franchise and multi-location branding",
+            "Corporate headquarters and campuses",
+            "Retail storefronts with iconic logos",
+            "Hotels and resort properties",
+            "Restaurants and fast-casual chains",
+            "Auto dealerships and service centers",
+            "Healthcare systems and hospitals",
+            "Entertainment venues and stadiums"
+          ]
+        }
       }
     },
     {
@@ -170,7 +311,10 @@
       "visible": true,
       "data": {
         "heading": "Learn More",
-        "slugs": []
+        "slugs": [],
+        "de": {
+          "heading": "Mehr erfahren"
+        }
       }
     },
     {
@@ -181,7 +325,12 @@
       "data": {
         "heading": "Request Wholesale Pricing for",
         "headingHighlight": "Logo Boxes.",
-        "description": "Send your logo artwork, dimensions, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing."
+        "description": "Send your logo artwork, dimensions, or project details and we will return a wholesale quote within 48 hours. No retail markup — just direct trade pricing.",
+        "de": {
+          "heading": "Großhandelspreis anfragen for",
+          "headingHighlight": "Logo-Boxen.",
+          "description": "Send your logo artwork, dimensions, or project details and we will return a Großhandelsangebot within 48 Stunden. Kein Einzelhandelsaufschlag — just direct Händlerpreise."
+        }
       }
     }
   ]

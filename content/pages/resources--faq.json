@@ -3,9 +3,32 @@
   "pageType": "static",
   "label": "FAQ",
   "seo": {
-    "title": "Wholesale FAQ \u2014 Trade Account & Channel Letter Ordering Questions | Sunlite Signs",
-    "metaDescription": "Frequently asked questions about wholesale trade accounts, ordering channel letters, turnaround times, shipping, UL listing, and working with Sunlite Signs. We sell exclusively to sign shops \u2014 never retail.",
-    "keywords": ["wholesale sign FAQ", "trade account sign questions", "wholesale channel letter ordering", "wholesale sign turnaround time", "UL listed signs FAQ", "sign manufacturer wholesale FAQ", "channel letter shipping wholesale", "wholesale sign pricing trade"]
+    "title": "Wholesale FAQ — Trade Account & Channel Letter Ordering Questions | Sunlite Signs",
+    "metaDescription": "Frequently asked questions about wholesale trade accounts, ordering channel letters, turnaround times, shipping, UL listing, and working with Sunlite Signs. We sell exclusively to sign shops — never retail.",
+    "keywords": [
+      "wholesale sign FAQ",
+      "trade account sign questions",
+      "wholesale channel letter ordering",
+      "wholesale sign turnaround time",
+      "UL listed signs FAQ",
+      "sign manufacturer wholesale FAQ",
+      "channel letter shipping wholesale",
+      "wholesale sign pricing trade"
+    ],
+    "de": {
+      "title": "Großhandel FAQ — Trade Account & Leuchtbuchstabe Ordering Questions | Sunlite Signs",
+      "metaDescription": "Frequently asked questions about Großhandel Händlerkonten, ordering Leuchtbuchstaben, turnaround times, shipping, UL-Zertifizierung, and working with Sunlite Signs. We sell exclusively to Schilderwerkstätten — never retail.",
+      "keywords": [
+        "Großhandel sign FAQ",
+        "trade account sign questions",
+        "Großhandel Leuchtbuchstabe ordering",
+        "Großhandel sign turnaround time",
+        "UL-zertifiziert signs FAQ",
+        "sign manufacturer Großhandel FAQ",
+        "Leuchtbuchstabe shipping Großhandel",
+        "Großhandel sign pricing trade"
+      ]
+    }
   },
   "blocks": [
     {
@@ -16,8 +39,13 @@
       "data": {
         "badge": "Trade Resources",
         "h1": "Wholesale FAQ",
-        "subtitle": "Answers to the most common questions about wholesale trade accounts, ordering channel letters, and working with Sunlite Signs. We sell exclusively to sign shops and trade professionals \u2014 we never sell retail. If you do not find your answer here, contact our team directly.",
-        "ctas": []
+        "subtitle": "Answers to the most common questions about wholesale trade accounts, ordering channel letters, and working with Sunlite Signs. We sell exclusively to sign shops and trade professionals — we never sell retail. If you do not find your answer here, contact our team directly.",
+        "ctas": [],
+        "de": {
+          "badge": "Fachhandel-Ressourcen",
+          "h1": "Großhandel FAQ",
+          "subtitle": "Answers to the most common questions about Großhandel Händlerkonten, ordering Leuchtbuchstaben, and working with Sunlite Signs. We sell exclusively to Schilderwerkstätten and Fachhandel — wir verkaufen nie an Endkunden. If you do not find your answer here, contact our team directly."
+        }
       }
     },
     {
@@ -28,24 +56,148 @@
       "data": {
         "heading": "Wholesale FAQ",
         "items": [
-          { "question": "Do you sell to the general public?", "answer": "No. Sunlite Signs sells exclusively to sign companies, sign shops, and trade professionals. We do not sell retail. We have never sold retail, and we never will. This is a core principle of our business \u2014 your clients remain your clients, and we will never compete with you for end-user business." },
-          { "question": "How do I open a wholesale trade account?", "answer": "Opening a wholesale trade account with Sunlite Signs is straightforward. Contact us through our website or call our sales team. We will verify your sign shop business credentials and set you up as a trade partner. There is no account fee or minimum annual commitment. Once established, you can request wholesale quotes and place orders directly with our team." },
-          { "question": "Do you compete with your wholesale partners?", "answer": "Never. We do not have a retail storefront and never sell direct to end users. Sunlite Signs is a wholesale-only manufacturer built to support sign shops and trade professionals. We do not accept orders from the general public, homeowners, or businesses looking to buy their own signage. Your customer relationships are protected." },
-          { "question": "How do I get a wholesale quote for a channel letter project?", "answer": "Submit your project details through our Request Wholesale Pricing form or email us directly. We accept AI files, PDFs, hand sketches, or detailed written descriptions. Include letter height, font, color, illumination type, quantity, and any special requirements. You will receive a detailed wholesale trade quote within 48 hours." },
-          { "question": "What is your typical turnaround time?", "answer": "Standard production time is approximately 3 weeks from approval of shop drawings and receipt of deposit. Rush orders may be accommodated depending on current production capacity. Contact us to discuss timeline requirements for time-sensitive projects." },
-          { "question": "Do you ship to both the USA and Canada?", "answer": "Yes. We ship to sign shops and trade partners throughout the United States and Canada. All signs are carefully crated for safe transit with full insurance and tracking. We work with experienced freight carriers who specialize in sign shipments to minimize the risk of damage." },
-          { "question": "Are your illuminated signs UL listed?", "answer": "Yes. Every illuminated sign produced by Sunlite Signs is UL listed and carries the UL label. This includes all channel letters, lightboxes, and other illuminated products. UL listing ensures safety compliance and is required or strongly recommended by building codes in most jurisdictions across the USA and Canada." },
-          { "question": "What materials do you use for channel letters?", "answer": "Our channel letters feature aluminum returns (0.040\" or 0.063\" depending on letter size), acrylic faces in any Pantone color, premium LED modules from brands like Samsung and Nichia, and UL-listed power supplies. We use German-engineered fabrication processes from our partnership with LKF Lichtwerbung in Nuremberg for precision manufacturing." },
-          { "question": "What is the difference between trimless and trim cap channel letters?", "answer": "Traditional channel letters use a plastic trim cap to secure the acrylic face to the aluminum return. Trimless channel letters eliminate this trim cap entirely, creating a seamless, modern junction between the face and return. Trimless letters offer a cleaner, more contemporary appearance and are increasingly specified by architects and designers. Both options are available at wholesale trade pricing. See our detailed comparison in the blog." },
-          { "question": "What illumination options are available?", "answer": "We offer four illumination options at wholesale trade pricing: face-lit (light through the face for maximum visibility), halo-lit (light projected backward for an elegant halo effect), front-and-halo (dual illumination for premium impact), and non-illuminated (no internal lighting). Each option serves different aesthetic and functional needs. Our Choosing Illumination Types guide covers this in detail." },
-          { "question": "Do you provide shop drawings for approval before production?", "answer": "Yes. Before beginning production, we provide detailed shop drawings showing letter dimensions, font, colors, layout, and specifications for your review and approval. Production begins only after you approve the drawings. This ensures the final product matches your expectations exactly." },
-          { "question": "What is your minimum order size?", "answer": "We work with trade partners on projects of all sizes, from single-word sign sets to large multi-location rollouts. Contact us with your project details and we will provide a wholesale quote regardless of size. We understand that sign shops need flexible wholesale manufacturing partners who can handle both small and large orders." },
-          { "question": "How are the signs packaged for shipping?", "answer": "Every sign set is carefully crated in custom-built wooden or corrugated crating designed to protect the product during transit. Letters are individually wrapped and separated to prevent contact damage. We include installation hardware, wiring diagrams, paper patterns (for stud-mount letters), and all documentation needed for a smooth installation." },
-          { "question": "What warranty do you offer?", "answer": "Sunlite Signs stands behind every product with a comprehensive warranty covering manufacturing defects in materials and workmanship. LED modules carry a multi-year warranty, and our power supplies are warranted for reliable performance. Contact us for complete warranty details specific to your product type." },
-          { "question": "Can you match specific brand colors?", "answer": "Absolutely. We can produce acrylic faces and painted returns in virtually any Pantone color to match your client's brand specifications precisely. Provide the PMS color number with your wholesale order and we will ensure an accurate match. We can also work with custom vinyl wraps for specialty finishes." },
-          { "question": "What is German engineering and how does it apply to your signs?", "answer": "Sunlite Signs has a manufacturing partnership with LKF Lichtwerbung, a precision sign manufacturing firm based in Nuremberg, Germany. This partnership brings decades of German engineering expertise, tooling, and quality standards to our Florida-based production facility. It influences our fabrication tolerances, quality control processes, and the design of our trimless system." },
-          { "question": "Why should my sign shop choose a wholesale-only manufacturer?", "answer": "Choosing a wholesale-only manufacturer like Sunlite Signs means your supplier will never compete with you for business. Many sign manufacturers sell both wholesale and retail, which puts them in direct competition with their own trade partners. We believe that is wrong. Sunlite Signs sells only to sign shops and trade professionals \u2014 we will never sell to the end user, never undercut your pricing, and never market to your clients. Your business is safe with us." }
-        ]
+          {
+            "question": "Do you sell to the general public?",
+            "answer": "No. Sunlite Signs sells exclusively to sign companies, sign shops, and trade professionals. We do not sell retail. We have never sold retail, and we never will. This is a core principle of our business — your clients remain your clients, and we will never compete with you for end-user business."
+          },
+          {
+            "question": "How do I open a wholesale trade account?",
+            "answer": "Opening a wholesale trade account with Sunlite Signs is straightforward. Contact us through our website or call our sales team. We will verify your sign shop business credentials and set you up as a trade partner. There is no account fee or minimum annual commitment. Once established, you can request wholesale quotes and place orders directly with our team."
+          },
+          {
+            "question": "Do you compete with your wholesale partners?",
+            "answer": "Never. We do not have a retail storefront and never sell direct to end users. Sunlite Signs is a wholesale-only manufacturer built to support sign shops and trade professionals. We do not accept orders from the general public, homeowners, or businesses looking to buy their own signage. Your customer relationships are protected."
+          },
+          {
+            "question": "How do I get a wholesale quote for a channel letter project?",
+            "answer": "Submit your project details through our Request Wholesale Pricing form or email us directly. We accept AI files, PDFs, hand sketches, or detailed written descriptions. Include letter height, font, color, illumination type, quantity, and any special requirements. You will receive a detailed wholesale trade quote within 48 hours."
+          },
+          {
+            "question": "What is your typical turnaround time?",
+            "answer": "Standard production time is approximately 3 weeks from approval of shop drawings and receipt of deposit. Rush orders may be accommodated depending on current production capacity. Contact us to discuss timeline requirements for time-sensitive projects."
+          },
+          {
+            "question": "Do you ship to both the USA and Canada?",
+            "answer": "Yes. We ship to sign shops and trade partners throughout the United States and Canada. All signs are carefully crated for safe transit with full insurance and tracking. We work with experienced freight carriers who specialize in sign shipments to minimize the risk of damage."
+          },
+          {
+            "question": "Are your illuminated signs UL listed?",
+            "answer": "Yes. Every illuminated sign produced by Sunlite Signs is UL listed and carries the UL label. This includes all channel letters, lightboxes, and other illuminated products. UL listing ensures safety compliance and is required or strongly recommended by building codes in most jurisdictions across the USA and Canada."
+          },
+          {
+            "question": "What materials do you use for channel letters?",
+            "answer": "Our channel letters feature aluminum returns (0.040\" or 0.063\" depending on letter size), acrylic faces in any Pantone color, premium LED modules from brands like Samsung and Nichia, and UL-listed power supplies. We use German-engineered fabrication processes from our partnership with LKF Lichtwerbung in Nuremberg for precision manufacturing."
+          },
+          {
+            "question": "What is the difference between trimless and trim cap channel letters?",
+            "answer": "Traditional channel letters use a plastic trim cap to secure the acrylic face to the aluminum return. Trimless channel letters eliminate this trim cap entirely, creating a seamless, modern junction between the face and return. Trimless letters offer a cleaner, more contemporary appearance and are increasingly specified by architects and designers. Both options are available at wholesale trade pricing. See our detailed comparison in the blog."
+          },
+          {
+            "question": "What illumination options are available?",
+            "answer": "We offer four illumination options at wholesale trade pricing: face-lit (light through the face for maximum visibility), halo-lit (light projected backward for an elegant halo effect), front-and-halo (dual illumination for premium impact), and non-illuminated (no internal lighting). Each option serves different aesthetic and functional needs. Our Choosing Illumination Types guide covers this in detail."
+          },
+          {
+            "question": "Do you provide shop drawings for approval before production?",
+            "answer": "Yes. Before beginning production, we provide detailed shop drawings showing letter dimensions, font, colors, layout, and specifications for your review and approval. Production begins only after you approve the drawings. This ensures the final product matches your expectations exactly."
+          },
+          {
+            "question": "What is your minimum order size?",
+            "answer": "We work with trade partners on projects of all sizes, from single-word sign sets to large multi-location rollouts. Contact us with your project details and we will provide a wholesale quote regardless of size. We understand that sign shops need flexible wholesale manufacturing partners who can handle both small and large orders."
+          },
+          {
+            "question": "How are the signs packaged for shipping?",
+            "answer": "Every sign set is carefully crated in custom-built wooden or corrugated crating designed to protect the product during transit. Letters are individually wrapped and separated to prevent contact damage. We include installation hardware, wiring diagrams, paper patterns (for stud-mount letters), and all documentation needed for a smooth installation."
+          },
+          {
+            "question": "What warranty do you offer?",
+            "answer": "Sunlite Signs stands behind every product with a comprehensive warranty covering manufacturing defects in materials and workmanship. LED modules carry a multi-year warranty, and our power supplies are warranted for reliable performance. Contact us for complete warranty details specific to your product type."
+          },
+          {
+            "question": "Can you match specific brand colors?",
+            "answer": "Absolutely. We can produce acrylic faces and painted returns in virtually any Pantone color to match your client's brand specifications precisely. Provide the PMS color number with your wholesale order and we will ensure an accurate match. We can also work with custom vinyl wraps for specialty finishes."
+          },
+          {
+            "question": "What is German engineering and how does it apply to your signs?",
+            "answer": "Sunlite Signs has a manufacturing partnership with LKF Lichtwerbung, a precision sign manufacturing firm based in Nuremberg, Germany. This partnership brings decades of German engineering expertise, tooling, and quality standards to our Florida-based production facility. It influences our fabrication tolerances, quality control processes, and the design of our trimless system."
+          },
+          {
+            "question": "Why should my sign shop choose a wholesale-only manufacturer?",
+            "answer": "Choosing a wholesale-only manufacturer like Sunlite Signs means your supplier will never compete with you for business. Many sign manufacturers sell both wholesale and retail, which puts them in direct competition with their own trade partners. We believe that is wrong. Sunlite Signs sells only to sign shops and trade professionals — we will never sell to the end user, never undercut your pricing, and never market to your clients. Your business is safe with us."
+          }
+        ],
+        "de": {
+          "heading": "Großhandel FAQ",
+          "items": [
+            {
+              "question": "Do you sell to the general public?",
+              "answer": "No. Sunlite Signs sells exclusively to Schilderunternehmen, Schilderwerkstätten, and Fachhandel. We do not sell retail. We have never sold retail, and we never will. This is a core principle of our business — your clients remain your clients, and we will never compete with you for end-user business."
+            },
+            {
+              "question": "How do I open a Großhandels-Fachhandel account?",
+              "answer": "Opening a Großhandels-Fachhandel account with Sunlite Signs is straightforward. Contact us through our website or call our sales team. We will verify your Schilderwerkstatt business credentials and set you up as a Handelspartner. There is no account fee or minimum annual commitment. Once established, you can request Großhandelsangebots and place orders directly with our team."
+            },
+            {
+              "question": "Do you compete with your Großhandelspartners?",
+              "answer": "Never. We do not have a retail storefront and never sell direct to end users. Sunlite Signs is a Großhandel-only manufacturer built to support Schilderwerkstätten and Fachhandel. We do not accept orders from the general public, homeowners, or businesses looking to buy their own signage. Your customer relationships are protected."
+            },
+            {
+              "question": "How do I get a Großhandelsangebot for a Leuchtbuchstabe project?",
+              "answer": "Submit your project details through our Großhandelspreis anfragen form or email us directly. We accept AI files, PDFs, hand sketches, or detailed written descriptions. Include letter height, font, color, illumination type, quantity, and any special requirements. You will receive a detailed Großhandels-Fachhandel quote within 48 Stunden."
+            },
+            {
+              "question": "What is your typical turnaround time?",
+              "answer": "Standard production time is approximately 3 Wochen from approval of shop drawings and receipt of deposit. Rush orders may be accommodated depending on current production capacity. Contact us to discuss timeline requirements for time-sensitive projects."
+            },
+            {
+              "question": "Do you ship to both the USA und Kanada?",
+              "answer": "Yes. We ship to Schilderwerkstätten and Handelspartner throughout the United States and Canada. All signs are carefully crated for safe transit with full insurance and tracking. We work with experienced freight carriers who specialize in sign shipments to minimize the risk of damage."
+            },
+            {
+              "question": "Are your illuminated signs UL-zertifiziert?",
+              "answer": "Yes. Every illuminated sign produced by Sunlite Signs is UL-zertifiziert and carries the UL label. This includes all Leuchtbuchstaben, Lichtboxen, and other illuminated products. UL-Zertifizierung ensures safety compliance and is required or strongly recommended by building codes in most jurisdictions across the USA und Kanada."
+            },
+            {
+              "question": "What materials do you use for Leuchtbuchstaben?",
+              "answer": "Our Leuchtbuchstaben feature aluminum returns (0.040\" or 0.063\" depending on letter size), acrylic faces in any Pantone color, premium LED modules from brands like Samsung and Nichia, and UL-listed power supplies. We use Mit deutscher Ingenieurskunst fabrication processes from our partnership with LKF Lichtwerbung in Nuremberg for precision manufacturing."
+            },
+            {
+              "question": "What is the difference between randlos and Zierleiste Leuchtbuchstaben?",
+              "answer": "Traditional Leuchtbuchstaben use a plastic Zierleiste to secure the acrylic face to the aluminum return. Randlos Leuchtbuchstaben eliminate this Zierleiste entirely, creating a seamless, modern junction between the face and return. Randlos letters offer a cleaner, more contemporary appearance and are increasingly specified by architects and designers. Both options are available at Großhandel Händlerpreise. See our detailed comparison in the blog."
+            },
+            {
+              "question": "What illumination options are available?",
+              "answer": "We offer four illumination options at Großhandel Händlerpreise: front-beleuchtet (light through the face for maximum visibility), halo-beleuchtet (light projected backward for an elegant halo effect), front-and-halo (dual illumination for premium impact), and nicht-beleuchtet (no internal lighting). Each option serves different aesthetic and functional needs. Our Choosing Illumination Types guide covers this in detail."
+            },
+            {
+              "question": "Do you provide shop drawings for approval before production?",
+              "answer": "Yes. Before beginning production, we provide detailed shop drawings showing letter dimensions, font, colors, layout, and specifications for your review and approval. Production begins only after you approve the drawings. This ensures the final product matches your expectations exactly."
+            },
+            {
+              "question": "What is your minimum order size?",
+              "answer": "We work with Handelspartner on projects of all sizes, from single-word sign sets to large multi-location rollouts. Contact us with your project details and we will provide a Großhandelsangebot regardless of size. We understand that Schilderwerkstätten need flexible Großhandelsfertigung partners who can handle both small and large orders."
+            },
+            {
+              "question": "How are the signs packaged for shipping?",
+              "answer": "Every sign set is carefully crated in custom-built wooden or corrugated crating designed to protect the product during transit. Letters are individually wrapped and separated to prevent contact damage. We include installation hardware, wiring diagrams, paper patterns (for stud-mount letters), and all documentation needed for a smooth installation."
+            },
+            {
+              "question": "What warranty do you offer?",
+              "answer": "Sunlite Signs stands behind every product with a comprehensive warranty covering manufacturing defects in materials and workmanship. LED modules carry a multi-year warranty, and our power supplies are warranted for reliable performance. Contact us for complete warranty details specific to your product type."
+            },
+            {
+              "question": "Can you match specific brand colors?",
+              "answer": "Absolutely. We can produce acrylic faces and painted returns in virtually any Pantone color to match your client's brand specifications precisely. Provide the PMS color number with your Großhandel order and we will ensure an accurate match. We can also work with custom vinyl wraps for specialty finishes."
+            },
+            {
+              "question": "What is Deutsche Ingenieurskunst and how does it apply to your signs?",
+              "answer": "Sunlite Signs has a manufacturing partnership with LKF Lichtwerbung, a precision sign manufacturing firm based in Nuremberg, Germany. This partnership brings decades of Deutsche Ingenieurskunst expertise, tooling, and quality standards to our Florida-based production facility. It influences our fabrication tolerances, quality control processes, and the design of our randlos system."
+            },
+            {
+              "question": "Why should my Schilderwerkstatt choose a Großhandel-only manufacturer?",
+              "answer": "Choosing a Großhandel-only manufacturer like Sunlite Signs means your supplier will never compete with you for business. Many sign manufacturers sell both Großhandel and retail, which puts them in direct competition with their own Handelspartner. We believe that is wrong. Sunlite Signs sells only to Schilderwerkstätten and Fachhandel — we will never sell to the end user, never undercut your pricing, and never market to your clients. Your business is safe with us."
+            }
+          ]
+        }
       }
     },
     {
@@ -55,8 +207,12 @@
       "visible": true,
       "data": {
         "heading": "Still Have Questions? We Never Sell Retail.",
-        "content": "Ready to get trade pricing on your next project? Our team is ready to help sign shops and trade professionals. We sell exclusively to the trade \u2014 never to the general public.",
-        "background": "light"
+        "content": "Ready to get trade pricing on your next project? Our team is ready to help sign shops and trade professionals. We sell exclusively to the trade — never to the general public.",
+        "background": "light",
+        "de": {
+          "heading": "Still Have Questions? We Never Sell Retail.",
+          "content": "Ready to get Händlerpreise on your next project? Our team is ready to help Schilderwerkstätten and Fachhandel. We sell exclusively to the trade — never to the general public."
+        }
       }
     }
   ]
