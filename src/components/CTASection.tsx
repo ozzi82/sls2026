@@ -1,4 +1,5 @@
 import LocaleLink from "@/components/LocaleLink";
+import SafeHtml from "@/components/SafeHtml";
 import { t } from "@/lib/i18n/translations";
 import type { Locale } from "@/lib/i18n/locale";
 import { Lock, Phone } from "lucide-react";
@@ -29,10 +30,10 @@ export default function CTASection({
                 <span className="micro-label">Trade Accounts Only</span>
               </div>
               <h2 className="font-display text-4xl lg:text-[56px] leading-[1.05] mb-5 tracking-[-0.02em] font-bold">
-                {heading} <span className="text-brand-gold">{highlight}</span>
+                <SafeHtml html={heading} /> <span className="text-brand-gold"><SafeHtml html={highlight} /></span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto mb-12 text-[15px] leading-relaxed font-body">
-                {description}
+                <SafeHtml html={description} />
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                 <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary w-full sm:w-auto">

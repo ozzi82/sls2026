@@ -9,6 +9,7 @@ import RelatedPages from "@/components/RelatedPages";
 import { getLandingPagesByHub } from "@/lib/landing-pages";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import type {
   HeroData,
   FeaturesGridData,
@@ -113,12 +114,12 @@ export default async function CabinetSignsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <p className="micro-label mb-6">
-                    {hero.data.badge}
+                    <SafeHtml html={hero.data.badge} />
                   </p>
                   <div className="gold-line mb-8" />
                   <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                    {hero.data.h1}{" "}
-                    <span className="text-brand-gold">{hero.data.h1Highlight}</span>
+                    <SafeHtml html={hero.data.h1} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={hero.data.h1Highlight} /></span>
                   </h1>
                   <p className="text-lg text-white/60 mb-4 leading-relaxed">
                     {hero.data.subtitle.split(". UL listed.")[0]}. Available exclusively to trade accounts.
@@ -162,7 +163,7 @@ export default async function CabinetSignsPage() {
                     Wholesale Cabinet Sign <span className="text-brand-gold">Types</span>
                   </h2>
                   <p className="text-text-dark/60 max-w-xl mx-auto text-[15px]">
-                    {productTypes.data.description}
+                    <SafeHtml html={productTypes.data.description} />
                   </p>
                 </div>
               </AnimatedSection>
@@ -177,10 +178,10 @@ export default async function CabinetSignsPage() {
                       />
                       <div className="p-6">
                         <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
-                          {type.name}
+                          <SafeHtml html={type.name} />
                         </h3>
                         <p className="text-sm text-text-dark/60 leading-relaxed">
-                          {type.description}
+                          <SafeHtml html={type.description} />
                         </p>
                       </div>
                     </div>
@@ -219,10 +220,10 @@ export default async function CabinetSignsPage() {
                         {IconComponent && <IconComponent className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-white mb-2">
-                        {feature.title}
+                        <SafeHtml html={feature.title} />
                       </h3>
                       <p className="text-sm text-white/60 leading-relaxed">
-                        {feature.description}
+                        <SafeHtml html={feature.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -249,7 +250,7 @@ export default async function CabinetSignsPage() {
                   Trade <span className="text-brand-gold">Specifications</span>
                 </h2>
                 <p className="text-white/60 mb-8">
-                  {specs.data.description}
+                  <SafeHtml html={specs.data.description} />
                 </p>
                 <PlaceholderImage
                   label={specs.data.image || "Cabinet sign specifications"}
@@ -267,10 +268,10 @@ export default async function CabinetSignsPage() {
                       }`}
                     >
                       <span className="text-sm text-white/50 font-heading">
-                        {spec.label}
+                        <SafeHtml html={spec.label} />
                       </span>
                       <span className="text-sm text-white font-medium text-right ml-4">
-                        {spec.value}
+                        <SafeHtml html={spec.value} />
                       </span>
                     </div>
                   ))}
@@ -299,7 +300,7 @@ export default async function CabinetSignsPage() {
                       Common <span className="text-brand-gold">Applications</span>
                     </h2>
                     <p className="text-text-dark/60 mb-8">
-                      {useCases.data.description}
+                      <SafeHtml html={useCases.data.description} />
                     </p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {useCases.data.items.map((useCase) => (
@@ -308,7 +309,7 @@ export default async function CabinetSignsPage() {
                           className="flex items-center gap-2 text-sm text-text-dark/60"
                         >
                           <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                          {useCase}
+                          <SafeHtml html={useCase} />
                         </li>
                       ))}
                     </ul>

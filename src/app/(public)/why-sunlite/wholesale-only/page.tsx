@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -66,17 +67,17 @@ export default async function WholesaleOnlyPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={(hero.data as any).badge} /></span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {(hero.data as any).h1}{" "}<span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                <SafeHtml html={(hero.data as any).h1} />{" "}<span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-4">{(hero.data as any).subtitle}</p>
-              <p className="text-xl text-brand-gold font-heading font-semibold mb-8">{(hero.data as any).subtitleHighlight}</p>
+              <p className="text-lg text-white/70 leading-relaxed mb-4"><SafeHtml html={(hero.data as any).subtitle} /></p>
+              <p className="text-xl text-brand-gold font-heading font-semibold mb-8"><SafeHtml html={(hero.data as any).subtitleHighlight} /></p>
               <div className="flex flex-wrap gap-4">
                 {(hero.data as any).ctas.map((cta: any) => (
-                  <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</LocaleLink>
+                  <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}><SafeHtml html={cta.label} /></LocaleLink>
                 ))}
               </div>
             </AnimatedSection>
@@ -110,8 +111,8 @@ export default async function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{(manifesto.data as any).heading}</h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">{(manifesto.data as any).description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={(manifesto.data as any).heading} /></h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto"><SafeHtml html={(manifesto.data as any).description} /></p>
             </div>
           </AnimatedSection>
           <div className="space-y-8">
@@ -127,8 +128,8 @@ export default async function WholesaleOnlyPage() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-xl md:text-2xl font-heading font-bold text-text-dark mb-3">{item.title}</h3>
-                        <p className="text-text-dark/70 leading-relaxed">{item.description}</p>
+                        <h3 className="text-xl md:text-2xl font-heading font-bold text-text-dark mb-3"><SafeHtml html={item.title} /></h3>
+                        <p className="text-text-dark/70 leading-relaxed"><SafeHtml html={item.description} /></p>
                       </div>
                     </div>
                   </div>
@@ -197,8 +198,8 @@ export default async function WholesaleOnlyPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{(partnership.data as any).heading}</h2>
-              <p className="text-text-dark/60 leading-relaxed mb-6">{(partnership.data as any).description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6"><SafeHtml html={(partnership.data as any).heading} /></h2>
+              <p className="text-text-dark/60 leading-relaxed mb-6"><SafeHtml html={(partnership.data as any).description} /></p>
               <div className="space-y-6">
                 {(partnership.data as any).steps.map((item: any) => (
                   <div key={item.step} className="flex items-start gap-4">
@@ -206,8 +207,8 @@ export default async function WholesaleOnlyPage() {
                       <span className="text-brand-gold font-heading font-bold text-xs">{item.step}</span>
                     </div>
                     <div>
-                      <h4 className="font-heading font-semibold text-text-dark mb-1">{item.title}</h4>
-                      <p className="text-text-dark/60 text-sm">{item.description}</p>
+                      <h4 className="font-heading font-semibold text-text-dark mb-1"><SafeHtml html={item.title} /></h4>
+                      <p className="text-text-dark/60 text-sm"><SafeHtml html={item.description} /></p>
                     </div>
                   </div>
                 ))}
@@ -225,8 +226,8 @@ export default async function WholesaleOnlyPage() {
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(trust.data as any).heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-8">{(trust.data as any).content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6"><SafeHtml html={(trust.data as any).heading} /></h2>
+              <p className="text-white/60 leading-relaxed mb-8"><SafeHtml html={(trust.data as any).content} /></p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2"><Lock className="w-4 h-4 text-brand-gold" />Wholesale Only</span>
                 <span className="hidden sm:inline text-white/20">|</span>

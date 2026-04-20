@@ -9,6 +9,7 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -104,15 +105,15 @@ export default async function LightboxesPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                     <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                    <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                    <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                   </div>
                   <div className="gold-line mb-6" />
                   <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                    {heroData.h1}{" "}
-                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                    <SafeHtml html={heroData.h1} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                   </h1>
                   <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                    {heroData.subtitle}
+                    <SafeHtml html={heroData.subtitle} />
                   </p>
                   <p className="text-white/50 mb-8">
                     UL listed. German-engineered LED layouts. Wholesale direct to
@@ -120,7 +121,7 @@ export default async function LightboxesPage() {
                   </p>
                   {heroData.ctas.map((cta: any) => (
                     <LocaleLink locale={locale} key={cta.label} href={cta.href} className="btn-primary">
-                      {cta.label}
+                      <SafeHtml html={cta.label} />
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </LocaleLink>
                   ))}
@@ -144,7 +145,7 @@ export default async function LightboxesPage() {
               <div className="text-center mb-16">
                 <div className="gold-line mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  {productTypesData.heading}
+                  <SafeHtml html={productTypesData.heading} />
                 </h2>
                 <p className="text-text-dark/60 max-w-xl mx-auto">
                   Four configurations to match every application, from traditional
@@ -163,10 +164,10 @@ export default async function LightboxesPage() {
                     />
                     <div className="p-6">
                       <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
-                        {type.name}
+                        <SafeHtml html={type.name} />
                       </h3>
                       <p className="text-sm text-text-dark/60 leading-relaxed">
-                        {type.description}
+                        <SafeHtml html={type.description} />
                       </p>
                     </div>
                   </div>
@@ -185,7 +186,7 @@ export default async function LightboxesPage() {
               <div className="text-center mb-16">
                 <div className="gold-line mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  {featuresData.heading}
+                  <SafeHtml html={featuresData.heading} />
                 </h2>
               </div>
             </AnimatedSection>
@@ -199,10 +200,10 @@ export default async function LightboxesPage() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-white mb-2">
-                        {feature.title}
+                        <SafeHtml html={feature.title} />
                       </h3>
                       <p className="text-sm text-white/50 leading-relaxed">
-                        {feature.description}
+                        <SafeHtml html={feature.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -227,10 +228,10 @@ export default async function LightboxesPage() {
                 <div>
                   <div className="gold-line mb-6" />
                   <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                    {textFabricData.heading}
+                    <SafeHtml html={textFabricData.heading} />
                   </h2>
                   <p className="text-white/60 mb-6 leading-relaxed">
-                    {textFabricData.content}
+                    <SafeHtml html={textFabricData.content} />
                   </p>
                   <ul className="space-y-3">
                     {[
@@ -245,7 +246,7 @@ export default async function LightboxesPage() {
                         className="flex items-start gap-3 text-sm text-white/70"
                       >
                         <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
-                        {item}
+                        <SafeHtml html={item} />
                       </li>
                     ))}
                   </ul>
@@ -264,10 +265,10 @@ export default async function LightboxesPage() {
               <AnimatedSection>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  {specsData.heading}
+                  <SafeHtml html={specsData.heading} />
                 </h2>
                 <p className="text-white/60 mb-8">
-                  {specsData.description}
+                  <SafeHtml html={specsData.description} />
                 </p>
                 <PlaceholderImage
                   label={specsData.image}
@@ -285,10 +286,10 @@ export default async function LightboxesPage() {
                       }`}
                     >
                       <span className="text-sm text-white/50 font-heading">
-                        {spec.label}
+                        <SafeHtml html={spec.label} />
                       </span>
                       <span className="text-sm text-white font-medium text-right ml-4">
-                        {spec.value}
+                        <SafeHtml html={spec.value} />
                       </span>
                     </div>
                   ))}
@@ -308,10 +309,10 @@ export default async function LightboxesPage() {
                 <div>
                   <div className="gold-line mb-6" />
                   <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                    {useCasesData.heading}
+                    <SafeHtml html={useCasesData.heading} />
                   </h2>
                   <p className="text-text-dark/60 mb-8">
-                    {useCasesData.description}
+                    <SafeHtml html={useCasesData.description} />
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {useCasesData.items.map((useCase: string) => (
@@ -320,7 +321,7 @@ export default async function LightboxesPage() {
                         className="flex items-center gap-2 text-sm text-text-dark/70"
                       >
                         <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                        {useCase}
+                        <SafeHtml html={useCase} />
                       </li>
                     ))}
                   </ul>

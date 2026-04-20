@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import type { HeroData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -46,11 +47,11 @@ export default async function SignInstallationTipsPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>

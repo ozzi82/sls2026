@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GalleryFilter from "./GalleryFilter";
 import CTASection from "@/components/CTASection";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -55,15 +56,15 @@ export default async function GalleryPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  {(hero.data as any).badge}
+                  <SafeHtml html={(hero.data as any).badge} />
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  {(hero.data as any).h1}{" "}
-                  <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                  <SafeHtml html={(hero.data as any).h1} />{" "}
+                  <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  {(hero.data as any).subtitle}
+                  <SafeHtml html={(hero.data as any).subtitle} />
                 </p>
               </AnimatedSection>
             </div>

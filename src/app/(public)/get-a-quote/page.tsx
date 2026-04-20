@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import QuoteForm from "./QuoteForm";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -68,15 +69,15 @@ export default async function GetAQuotePage() {
               <AnimatedSection>
                 <div className="max-w-3xl">
                   <p className="micro-label mb-6">
-                    {(hero.data as any).badge}
+                    <SafeHtml html={(hero.data as any).badge} />
                   </p>
                   <div className="gold-line mb-8" />
                   <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                    {(hero.data as any).h1}{" "}
-                    <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                    <SafeHtml html={(hero.data as any).h1} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
                   </h1>
                   <p className="text-lg text-white/60 max-w-2xl">
-                    {(hero.data as any).subtitle}
+                    <SafeHtml html={(hero.data as any).subtitle} />
                   </p>
                 </div>
               </AnimatedSection>
@@ -141,7 +142,7 @@ export default async function GetAQuotePage() {
                         return (
                           <li key={item.text} className="flex items-center gap-3 text-white/60">
                             {Icon && <Icon className="w-5 h-5 text-brand-gold flex-shrink-0" />}
-                            <span className="text-sm">{item.text}</span>
+                            <span className="text-sm"><SafeHtml html={item.text} /></span>
                           </li>
                         );
                       })}
@@ -155,7 +156,7 @@ export default async function GetAQuotePage() {
                       Wholesale Only
                     </p>
                     <p className="text-white/60 text-xs">
-                      {(form.data as any).sidebar.notices[0]}
+                      <SafeHtml html={(form.data as any).sidebar.notices[0]} />
                     </p>
                   </div>
                 </div>

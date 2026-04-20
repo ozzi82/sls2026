@@ -1,7 +1,7 @@
 import { sanitizeHtml } from "@/lib/sanitize-html";
 
 interface SafeHtmlProps {
-  html: string;
+  html: string | undefined | null;
   as?: keyof JSX.IntrinsicElements;
   className?: string;
 }

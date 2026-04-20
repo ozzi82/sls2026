@@ -9,6 +9,7 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -101,15 +102,15 @@ export default async function CustomFabricationPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                     <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                    <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                    <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                   </div>
                   <div className="gold-line mb-6" />
                   <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                    {heroData.h1}{" "}
-                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                    <SafeHtml html={heroData.h1} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                   </h1>
                   <p className="text-lg text-white/70 mb-4 leading-relaxed">
-                    {heroData.subtitle}
+                    <SafeHtml html={heroData.subtitle} />
                   </p>
                   <p className="text-white/50 mb-8">
                     If you can design it, we can engineer it, build it, and ship
@@ -117,7 +118,7 @@ export default async function CustomFabricationPage() {
                   </p>
                   {heroData.ctas.map((cta: any) => (
                     <LocaleLink locale={locale} key={cta.label} href={cta.href} className="btn-primary">
-                      {cta.label}
+                      <SafeHtml html={cta.label} />
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </LocaleLink>
                   ))}
@@ -141,7 +142,7 @@ export default async function CustomFabricationPage() {
               <div className="text-center mb-16">
                 <div className="gold-line mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  {featuresData.heading}
+                  <SafeHtml html={featuresData.heading} />
                 </h2>
                 <p className="text-text-dark/60 max-w-2xl mx-auto">
                   Our fabrication shop is equipped to handle projects that other
@@ -159,10 +160,10 @@ export default async function CustomFabricationPage() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                        {item.title}
+                        <SafeHtml html={item.title} />
                       </h3>
                       <p className="text-sm text-text-dark/60 leading-relaxed">
-                        {item.description}
+                        <SafeHtml html={item.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -181,7 +182,7 @@ export default async function CustomFabricationPage() {
               <div className="text-center mb-16">
                 <div className="gold-line mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  {processData.heading}
+                  <SafeHtml html={processData.heading} />
                 </h2>
                 <p className="text-white/60 max-w-2xl mx-auto">
                   A structured process that takes your concept from idea to
@@ -207,10 +208,10 @@ export default async function CustomFabricationPage() {
                     </div>
                     <div className="pt-1">
                       <h3 className="text-xl font-heading font-semibold text-white mb-2">
-                        {step.title}
+                        <SafeHtml html={step.title} />
                       </h3>
                       <p className="text-sm text-white/50 leading-relaxed">
-                        {step.description}
+                        <SafeHtml html={step.description} />
                       </p>
                     </div>
                   </div>
@@ -230,10 +231,10 @@ export default async function CustomFabricationPage() {
                 <div>
                   <div className="gold-line mb-6" />
                   <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                    {useCasesData.heading}
+                    <SafeHtml html={useCasesData.heading} />
                   </h2>
                   <p className="text-white/60 mb-8">
-                    {useCasesData.description}
+                    <SafeHtml html={useCasesData.description} />
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {useCasesData.items.map((type: string) => (
@@ -276,7 +277,7 @@ export default async function CustomFabricationPage() {
               <div className="text-center mb-12">
                 <div className="gold-line mx-auto mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  {galleryData.heading}
+                  <SafeHtml html={galleryData.heading} />
                 </h2>
                 <p className="text-white/60 max-w-xl mx-auto">
                   A selection of custom projects that showcase the range and
@@ -314,10 +315,10 @@ export default async function CustomFabricationPage() {
                 <div>
                   <div className="gold-line mb-6" />
                   <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                    {textWhyData.heading}
+                    <SafeHtml html={textWhyData.heading} />
                   </h2>
                   <p className="text-text-dark/60 mb-6 leading-relaxed">
-                    {textWhyData.content}
+                    <SafeHtml html={textWhyData.content} />
                   </p>
                   <ul className="space-y-4">
                     {[
@@ -340,7 +341,7 @@ export default async function CustomFabricationPage() {
                     ].map((item) => (
                       <li key={item.title}>
                         <h4 className="font-heading font-semibold text-text-dark mb-1">
-                          {item.title}
+                          <SafeHtml html={item.title} />
                         </h4>
                         <p className="text-sm text-text-dark/60">{item.desc}</p>
                       </li>

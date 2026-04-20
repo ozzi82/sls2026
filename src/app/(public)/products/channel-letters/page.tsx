@@ -9,6 +9,7 @@ import { getLandingPagesByHub } from "@/lib/landing-pages";
 import ProductImageHover from "@/components/ProductImageHover";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -107,22 +108,22 @@ export default async function ChannelLettersPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
-                  {heroData.h1}{" "}
-                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  <SafeHtml html={heroData.h1} />{" "}
+                  <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                 </h1>
                 {heroData.subtitle.split("\n\n").map((para, i) => (
                   <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>
-                    {para}
+                    <SafeHtml html={para} />
                   </p>
                 ))}
                 <div className="flex flex-col sm:flex-row gap-4">
                   {heroData.ctas.map((cta) => (
                     <LocaleLink locale={locale} key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
-                      {cta.label}
+                      <SafeHtml html={cta.label} />
                       {cta.variant === "primary" && <ArrowRight className="w-4 h-4 ml-2" />}
                     </LocaleLink>
                   ))}
@@ -161,9 +162,9 @@ export default async function ChannelLettersPage() {
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-white mb-1">
-                        {adv.title}
+                        <SafeHtml html={adv.title} />
                       </h3>
-                      <p className="text-sm text-white/50">{adv.description}</p>
+                      <p className="text-sm text-white/50"><SafeHtml html={adv.description} /></p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -185,10 +186,10 @@ export default async function ChannelLettersPage() {
               <div className="mb-12">
                 <div className="gold-line mb-6" />
                 <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${familyIndex % 2 === 0 ? "text-text-dark" : "text-white"}`}>
-                  {family.heading}
+                  <SafeHtml html={family.heading} />
                 </h2>
                 <p className={`max-w-2xl ${familyIndex % 2 === 0 ? "text-text-dark/60" : "text-white/60"}`}>
-                  {family.description}
+                  <SafeHtml html={family.description} />
                 </p>
               </div>
             </AnimatedSection>

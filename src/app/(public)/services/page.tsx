@@ -6,6 +6,7 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -91,15 +92,15 @@ export default async function ServicesPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="micro-label mb-6">
-                {(hero.data as any).badge}
+                <SafeHtml html={(hero.data as any).badge} />
               </p>
               <div className="gold-line mb-8" />
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                {(hero.data as any).h1}{" "}
-                <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                <SafeHtml html={(hero.data as any).h1} />{" "}
+                <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                {(hero.data as any).subtitle}
+                <SafeHtml html={(hero.data as any).subtitle} />
               </p>
             </div>
           </AnimatedSection>
@@ -120,10 +121,10 @@ export default async function ServicesPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-8" />
               <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
-                Our <span className="text-brand-gold">{(servicesGrid.data as any).headingHighlight}</span>
+                Our <span className="text-brand-gold"><SafeHtml html={(servicesGrid.data as any).headingHighlight} /></span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto text-[15px]">
-                {(servicesGrid.data as any).description}
+                <SafeHtml html={(servicesGrid.data as any).description} />
               </p>
             </div>
           </AnimatedSection>
@@ -138,16 +139,16 @@ export default async function ServicesPage() {
                       {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                     </div>
                     <h3 className="text-xl lg:text-2xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
-                      {service.title}
+                      <SafeHtml html={service.title} />
                     </h3>
                     <p className="text-white/60 leading-relaxed mb-6 text-[15px]">
-                      {service.description}
+                      <SafeHtml html={service.description} />
                     </p>
                     <LocaleLink locale={locale}
                       href="/get-a-quote"
                       className="btn-text-link group"
                     >
-                      {service.learnMoreLabel}
+                      <SafeHtml html={service.learnMoreLabel} />
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </LocaleLink>
                   </div>
@@ -187,16 +188,16 @@ export default async function ServicesPage() {
                             {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                           </div>
                           <h2 className="text-2xl md:text-3xl font-display font-bold text-text-dark mb-4 tracking-[-0.02em]">
-                            {service.title}
+                            <SafeHtml html={service.title} />
                           </h2>
                           <p className="text-text-dark/60 leading-relaxed mb-6">
-                            {service.description}
+                            <SafeHtml html={service.description} />
                           </p>
                           <LocaleLink locale={locale}
                             href="/get-a-quote"
                             className="btn-text-link group"
                           >
-                            {service.learnMoreLabel}
+                            <SafeHtml html={service.learnMoreLabel} />
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </LocaleLink>
                         </div>
@@ -227,16 +228,16 @@ export default async function ServicesPage() {
                       {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                     </div>
                     <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
-                      {service.title}
+                      <SafeHtml html={service.title} />
                     </h2>
                     <p className="text-white/60 leading-relaxed mb-6">
-                      {service.description}
+                      <SafeHtml html={service.description} />
                     </p>
                     <LocaleLink locale={locale}
                       href="/get-a-quote"
                       className="btn-text-link group"
                     >
-                      {service.learnMoreLabel}
+                      <SafeHtml html={service.learnMoreLabel} />
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </LocaleLink>
                   </div>

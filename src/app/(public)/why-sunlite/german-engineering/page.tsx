@@ -11,6 +11,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -62,20 +63,20 @@ export default async function GermanEngineeringPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={(hero.data as any).badge} /></span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {(hero.data as any).h1}{" "}
-                <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                <SafeHtml html={(hero.data as any).h1} />{" "}
+                <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
               </h1>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
-                {(hero.data as any).subtitle}
+                <SafeHtml html={(hero.data as any).subtitle} />
               </p>
               <div className="flex flex-wrap gap-4">
                 {(hero.data as any).ctas.map((cta: any) => (
                   <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
-                    {cta.label}
+                    <SafeHtml html={cta.label} />
                   </LocaleLink>
                 ))}
               </div>
@@ -100,10 +101,10 @@ export default async function GermanEngineeringPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                {(lkf.data as any).heading}
+                <SafeHtml html={(lkf.data as any).heading} />
               </h2>
               <p className="text-text-dark/60 max-w-2xl mx-auto">
-                {(lkf.data as any).description}
+                <SafeHtml html={(lkf.data as any).description} />
               </p>
             </div>
           </AnimatedSection>
@@ -120,10 +121,10 @@ export default async function GermanEngineeringPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                        {item.title}
+                        <SafeHtml html={item.title} />
                       </h3>
                       <p className="text-text-dark/60 leading-relaxed text-sm">
-                        {item.description}
+                        <SafeHtml html={item.description} />
                       </p>
                     </div>
                   </div>
@@ -143,10 +144,10 @@ export default async function GermanEngineeringPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                {(principles.data as any).heading}
+                <SafeHtml html={(principles.data as any).heading} />
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto">
-                {(principles.data as any).description}
+                <SafeHtml html={(principles.data as any).description} />
               </p>
             </div>
           </AnimatedSection>
@@ -161,10 +162,10 @@ export default async function GermanEngineeringPage() {
                       {Icon && <Icon className="w-5 h-5 text-brand-gold" />}
                     </div>
                     <h3 className="text-xl font-heading font-semibold text-white mb-3">
-                      {principle.title}
+                      <SafeHtml html={principle.title} />
                     </h3>
                     <p className="text-white/60 leading-relaxed text-sm">
-                      {principle.description}
+                      <SafeHtml html={principle.description} />
                     </p>
                   </div>
                 </AnimatedSection>
@@ -190,7 +191,7 @@ export default async function GermanEngineeringPage() {
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">
-                {(whatItMeans.data as any).heading}
+                <SafeHtml html={(whatItMeans.data as any).heading} />
               </h2>
               <div className="space-y-4">
                 {(whatItMeans.data as any).content.split("\n").map((point: string) => (
@@ -214,7 +215,7 @@ export default async function GermanEngineeringPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-                {(edgeluxe.data as any).heading}
+                <SafeHtml html={(edgeluxe.data as any).heading} />
               </h2>
               {(edgeluxe.data as any).content.split("\n\n").map((p: string, i: number) => (
                 <p key={i} className="text-white/60 leading-relaxed mb-6">

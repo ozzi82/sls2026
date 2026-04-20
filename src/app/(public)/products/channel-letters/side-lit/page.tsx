@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -74,11 +75,11 @@ export default async function SideLitPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  {heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  <SafeHtml html={heroData.h1} />{" "}<span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                 </h1>
                 {heroData.subtitle.split("\n\n").map((para, i) => (
                   <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>{para}</p>
@@ -99,7 +100,7 @@ export default async function SideLitPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{featuresData.heading}</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={featuresData.heading} /></h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">Every side lit channel letter set is manufactured to the same exacting standards that define the Sunlite brand. Wholesale direct to your shop.</p>
             </div>
           </AnimatedSection>
@@ -108,8 +109,8 @@ export default async function SideLitPage() {
               <AnimatedSection key={feature.title} delay={index * 0.08}>
                 <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
                   <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">{Icon && <Icon className="w-6 h-6 text-brand-gold" />}</div>
-                  <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">{feature.title}</h3>
-                  <p className="text-sm text-text-dark/60 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg font-heading font-semibold text-text-dark mb-2"><SafeHtml html={feature.title} /></h3>
+                  <p className="text-sm text-text-dark/60 leading-relaxed"><SafeHtml html={feature.description} /></p>
                 </div>
               </AnimatedSection>
             ); })}
@@ -125,8 +126,8 @@ export default async function SideLitPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{specsData.heading}</h2>
-              <p className="text-white/60 mb-8">{specsData.description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={specsData.heading} /></h2>
+              <p className="text-white/60 mb-8"><SafeHtml html={specsData.description} /></p>
               <PlaceholderImage label={specsData.image || ""} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
             <AnimatedSection delay={0.1}><SpecsTable specs={product.specs} modelNumber={product.modelNumber} /></AnimatedSection>
@@ -143,8 +144,8 @@ export default async function SideLitPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{useCasesData.heading}</h2>
-                <p className="text-white/60 mb-8">{useCasesData.description}</p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={useCasesData.heading} /></h2>
+                <p className="text-white/60 mb-8"><SafeHtml html={useCasesData.description} /></p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {useCasesData.items.map((useCase) => (<li key={useCase} className="flex items-center gap-2 text-sm text-white/70"><CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />{useCase}</li>))}
                 </ul>
@@ -162,7 +163,7 @@ export default async function SideLitPage() {
       {galleryBlock?.visible && (
       <section className="section-padding bg-bg-primary">
         <div className="container-max">
-          <AnimatedSection><div className="text-center mb-12"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{galleryData.heading}</h2></div></AnimatedSection>
+          <AnimatedSection><div className="text-center mb-12"><div className="gold-line mx-auto mb-6" /><h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={galleryData.heading} /></h2></div></AnimatedSection>
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {galleryData.images.map((img, i) => (<PlaceholderImage key={i} label={img.alt} className="rounded-xl" aspectRatio="aspect-[4/3]" />))}

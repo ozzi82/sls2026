@@ -9,6 +9,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -104,12 +105,12 @@ export default async function HaloLitPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                 </div>
                 <div className="gold-line mb-6" />
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-                  {heroData.h1}{" "}
-                  <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                  <SafeHtml html={heroData.h1} />{" "}
+                  <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                 </h1>
                 {heroData.subtitle.split("\n\n").map((para, i) => (
                   <p key={i} className={i === 0 ? "text-lg text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>
@@ -140,7 +141,7 @@ export default async function HaloLitPage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                {featuresData.heading}
+                <SafeHtml html={featuresData.heading} />
               </h2>
               <p className="text-text-dark/60 max-w-xl mx-auto">
                 Halo lit channel letters deliver a refined aesthetic that
@@ -159,10 +160,10 @@ export default async function HaloLitPage() {
                       {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                     </div>
                     <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                      {feature.title}
+                      <SafeHtml html={feature.title} />
                     </h3>
                     <p className="text-sm text-text-dark/60 leading-relaxed">
-                      {feature.description}
+                      <SafeHtml html={feature.description} />
                     </p>
                   </div>
                 </AnimatedSection>
@@ -187,10 +188,10 @@ export default async function HaloLitPage() {
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                  {textData.heading}
+                  <SafeHtml html={textData.heading} />
                 </h2>
                 <p className="text-white/60 mb-6 leading-relaxed">
-                  {textData.content}
+                  <SafeHtml html={textData.content} />
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -204,7 +205,7 @@ export default async function HaloLitPage() {
                       className="flex items-start gap-3 text-sm text-white/70"
                     >
                       <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
-                      {item}
+                      <SafeHtml html={item} />
                     </li>
                   ))}
                 </ul>
@@ -223,10 +224,10 @@ export default async function HaloLitPage() {
             <AnimatedSection>
               <div className="gold-line mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                {specsData.heading}
+                <SafeHtml html={specsData.heading} />
               </h2>
               <p className="text-white/60 mb-8">
-                {specsData.description}
+                <SafeHtml html={specsData.description} />
               </p>
               <PlaceholderImage
                 label={specsData.image || ""}
@@ -251,10 +252,10 @@ export default async function HaloLitPage() {
               <div>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                  {useCasesData.heading}
+                  <SafeHtml html={useCasesData.heading} />
                 </h2>
                 <p className="text-text-dark/60 mb-8">
-                  {useCasesData.description}
+                  <SafeHtml html={useCasesData.description} />
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {useCasesData.items.map((useCase) => (
@@ -263,7 +264,7 @@ export default async function HaloLitPage() {
                       className="flex items-center gap-2 text-sm text-text-dark/70"
                     >
                       <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                      {useCase}
+                      <SafeHtml html={useCase} />
                     </li>
                   ))}
                 </ul>
@@ -287,7 +288,7 @@ export default async function HaloLitPage() {
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                {galleryData.heading}
+                <SafeHtml html={galleryData.heading} />
               </h2>
             </div>
           </AnimatedSection>

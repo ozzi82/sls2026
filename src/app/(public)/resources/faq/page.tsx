@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import type { HeroData, FAQData, TextSectionData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -69,11 +70,11 @@ export default async function FAQPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>
@@ -94,8 +95,8 @@ export default async function FAQPage() {
                   <Lock className="w-3.5 h-3.5 text-brand-gold" />
                   <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">Trade Accounts Only</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{stillQuestions.data.heading}</h2>
-                <p className="text-text-dark/60 max-w-xl mx-auto mb-8">{stillQuestions.data.content}</p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={stillQuestions.data.heading} /></h2>
+                <p className="text-text-dark/60 max-w-xl mx-auto mb-8"><SafeHtml html={stillQuestions.data.content} /></p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                   <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">Request Wholesale Pricing</LocaleLink>
                   <a href="mailto:hello@sunlitesigns.com" className="inline-flex items-center justify-center px-8 py-4 border-2 border-text-dark/20 text-text-dark font-heading font-semibold text-sm uppercase tracking-wider rounded hover:border-brand-gold hover:text-brand-gold transition-colors duration-300">Email Us</a>

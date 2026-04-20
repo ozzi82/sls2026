@@ -14,6 +14,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -62,15 +63,15 @@ export default async function WhySunlitePage() {
             <div className="max-w-3xl mt-8">
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {heroData.h1}{" "}
-                <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                <SafeHtml html={heroData.h1} />{" "}
+                <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
               </h1>
               <p className="text-lg sm:text-xl text-white/70 max-w-2xl font-body leading-relaxed">
-                {heroData.subtitle}
+                <SafeHtml html={heroData.subtitle} />
               </p>
             </div>
           </AnimatedSection>
@@ -85,10 +86,10 @@ export default async function WhySunlitePage() {
               <AnimatedSection key={stat.label} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold mb-2">
-                    {stat.sublabel}
+                    <SafeHtml html={stat.sublabel} />
                   </div>
                   <div className="text-sm text-white/50 font-heading uppercase tracking-wider">
-                    {stat.label}
+                    <SafeHtml html={stat.label} />
                   </div>
                 </div>
               </AnimatedSection>
@@ -104,10 +105,10 @@ export default async function WhySunlitePage() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">
-                {pillarsData.heading}
+                <SafeHtml html={pillarsData.heading} />
               </h2>
               <p className="text-text-dark/60 max-w-2xl mx-auto">
-                {pillarsData.description}
+                <SafeHtml html={pillarsData.description} />
               </p>
             </div>
           </AnimatedSection>
@@ -134,10 +135,10 @@ export default async function WhySunlitePage() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-2xl md:text-3xl font-heading font-bold text-text-dark mb-4">
-                        {pillar.title}
+                        <SafeHtml html={pillar.title} />
                       </h3>
                       <p className="text-text-dark/70 leading-relaxed mb-6">
-                        {pillar.description}
+                        <SafeHtml html={pillar.description} />
                       </p>
                       <LocaleLink locale={locale}
                         href={pillar.href}
@@ -161,10 +162,10 @@ export default async function WhySunlitePage() {
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-                {overviewData.heading}
+                <SafeHtml html={overviewData.heading} />
               </h2>
               <p className="text-white/60 leading-relaxed mb-8">
-                {overviewData.content}
+                <SafeHtml html={overviewData.content} />
               </p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-heading uppercase tracking-wider text-white/40">
                 <span className="flex items-center gap-2">

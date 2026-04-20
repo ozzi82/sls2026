@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import type { HeroData, ResourceCardsData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
@@ -47,11 +48,11 @@ export default async function ResourcesPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>
@@ -71,8 +72,8 @@ export default async function ResourcesPage() {
                         <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                           {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                         </div>
-                        <h2 className="text-2xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors mb-4">{card.title}</h2>
-                        <p className="text-white/50 mb-6 leading-relaxed">{card.description}</p>
+                        <h2 className="text-2xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors mb-4"><SafeHtml html={card.title} /></h2>
+                        <p className="text-white/50 mb-6 leading-relaxed"><SafeHtml html={card.description} /></p>
                         <span className="text-brand-gold text-sm font-heading font-medium uppercase tracking-wider flex items-center gap-2">
                           Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>

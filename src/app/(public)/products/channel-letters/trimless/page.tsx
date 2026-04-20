@@ -14,6 +14,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SpecsTable from "@/components/SpecsTable";
 import { getProduct } from "@/lib/product-data";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -112,13 +113,13 @@ export default async function TrimlessPage() {
               <div>
                 <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                   {(() => { const LockIcon = getIconComponent("Lock"); return LockIcon ? <LockIcon className="w-3.5 h-3.5 text-brand-gold" /> : null; })()}
-                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{heroData.badge}</span>
+                  <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={heroData.badge} /></span>
                 </div>
                 <span className="inline-block text-xs font-heading font-semibold uppercase tracking-widest text-brand-gold bg-brand-gold/10 px-4 py-1.5 rounded-full mb-6">
                   Flagship Innovation
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
-                  {heroData.h1}{" "}<span className="text-brand-gold">{heroData.h1Highlight}</span>{" "}Channel Letters
+                  <SafeHtml html={heroData.h1} />{" "}<span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>{" "}Channel Letters
                 </h1>
                 {heroData.subtitle.split("\n\n").map((para, i) => (
                   <p key={i} className={i === 0 ? "text-xl text-white/70 mb-4 leading-relaxed" : "text-white/50 mb-8"}>{para}</p>
@@ -126,7 +127,7 @@ export default async function TrimlessPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   {heroData.ctas.map((cta) => (
                     <LocaleLink locale={locale} key={cta.label} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>
-                      {cta.label}
+                      <SafeHtml html={cta.label} />
                       {cta.variant === "primary" && <ArrowRight className="w-4 h-4 ml-2" />}
                     </LocaleLink>
                   ))}
@@ -152,7 +153,7 @@ export default async function TrimlessPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{textData.heading}</h2>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6"><SafeHtml html={textData.heading} /></h2>
                 {textData.content.split("\n\n").map((para, i) => (
                   <p key={i} className="text-white/60 mb-6 leading-relaxed">{para}</p>
                 ))}
@@ -187,7 +188,7 @@ export default async function TrimlessPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{featuresData.heading}</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={featuresData.heading} /></h2>
               <p className="text-text-dark/60 max-w-2xl mx-auto">Six reasons why sign shops and their clients are choosing EdgeLuxe trimless channel letters for their most important projects. Available exclusively at trade pricing.</p>
             </div>
           </AnimatedSection>
@@ -198,8 +199,8 @@ export default async function TrimlessPage() {
                 <AnimatedSection key={item.title} delay={index * 0.08}>
                   <div className="bg-white rounded-xl p-8 border border-black/[0.04] h-full">
                     <div className="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-5">{Icon && <Icon className="w-6 h-6 text-brand-gold" />}</div>
-                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">{item.title}</h3>
-                    <p className="text-sm text-text-dark/60 leading-relaxed">{item.description}</p>
+                    <h3 className="text-lg font-heading font-semibold text-text-dark mb-2"><SafeHtml html={item.title} /></h3>
+                    <p className="text-sm text-text-dark/60 leading-relaxed"><SafeHtml html={item.description} /></p>
                   </div>
                 </AnimatedSection>
               );
@@ -257,8 +258,8 @@ export default async function TrimlessPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{specsData.heading}</h2>
-              <p className="text-white/60 mb-8">{specsData.description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={specsData.heading} /></h2>
+              <p className="text-white/60 mb-8"><SafeHtml html={specsData.description} /></p>
               <PlaceholderImage label={specsData.image || ""} className="rounded-xl" aspectRatio="aspect-[4/3]" />
             </AnimatedSection>
             <AnimatedSection delay={0.1}><SpecsTable specs={product.specs} modelNumber={product.modelNumber} /></AnimatedSection>
@@ -275,8 +276,8 @@ export default async function TrimlessPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="gold-line mb-6" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{useCasesData.heading}</h2>
-                <p className="text-text-dark/60 mb-8">{useCasesData.description}</p>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={useCasesData.heading} /></h2>
+                <p className="text-text-dark/60 mb-8"><SafeHtml html={useCasesData.description} /></p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {useCasesData.items.map((useCase) => (
                     <li key={useCase} className="flex items-center gap-2 text-sm text-text-dark/70"><CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />{useCase}</li>
@@ -297,7 +298,7 @@ export default async function TrimlessPage() {
           <AnimatedSection>
             <div className="text-center mb-12">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{galleryData.heading}</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={galleryData.heading} /></h2>
               <p className="text-white/60 max-w-xl mx-auto">See the trimless difference installed. No trim caps. Clean lines. Pure brand expression.</p>
             </div>
           </AnimatedSection>
@@ -333,19 +334,19 @@ export default async function TrimlessPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{faqData.heading}</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={faqData.heading} /></h2>
               <p className="text-text-dark/60 mb-8">Common questions about EdgeLuxe trimless channel letters, answered for sign shop professionals and trade buyers.</p>
               <div className="space-y-4">
                 {faqData.items.map((faq, index) => (
                   <AnimatedSection key={index} delay={Math.min(index * 0.05, 0.3)}>
                     <details className="group bg-white border border-black/[0.04] rounded-xl overflow-hidden hover:border-brand-gold/20 transition-colors">
                       <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <h3 className="text-base md:text-lg font-heading font-semibold text-text-dark group-hover:text-brand-gold transition-colors pr-4">{faq.question}</h3>
+                        <h3 className="text-base md:text-lg font-heading font-semibold text-text-dark group-hover:text-brand-gold transition-colors pr-4"><SafeHtml html={faq.question} /></h3>
                         <ChevronDown className="w-5 h-5 text-brand-gold flex-shrink-0 transition-transform group-open:rotate-180" />
                       </summary>
                       <div className="px-6 pb-6 pt-0">
                         <div className="border-t border-black/5 pt-4">
-                          <p className="text-text-dark/60 leading-relaxed">{faq.answer}</p>
+                          <p className="text-text-dark/60 leading-relaxed"><SafeHtml html={faq.answer} /></p>
                         </div>
                       </div>
                     </details>

@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -43,15 +44,15 @@ export default async function QualityProcessPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={(hero.data as any).badge} /></span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {(hero.data as any).h1}{" "}<span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                <SafeHtml html={(hero.data as any).h1} />{" "}<span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-8">{(hero.data as any).subtitle}</p>
+              <p className="text-lg text-white/70 leading-relaxed mb-8"><SafeHtml html={(hero.data as any).subtitle} /></p>
               {(hero.data as any).ctas.map((cta: any) => (
-                <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</LocaleLink>
+                <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}><SafeHtml html={cta.label} /></LocaleLink>
               ))}
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -70,8 +71,8 @@ export default async function QualityProcessPage() {
             {(metrics.data as any).items.map((metric: any, index: number) => (
               <AnimatedSection key={metric.label} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold mb-2">{metric.sublabel}</div>
-                  <div className="text-sm text-white/50 font-heading uppercase tracking-wider">{metric.label}</div>
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-brand-gold mb-2"><SafeHtml html={metric.sublabel} /></div>
+                  <div className="text-sm text-white/50 font-heading uppercase tracking-wider"><SafeHtml html={metric.label} /></div>
                 </div>
               </AnimatedSection>
             ))}
@@ -87,8 +88,8 @@ export default async function QualityProcessPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{(steps.data as any).heading}</h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">{(steps.data as any).description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={(steps.data as any).heading} /></h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto"><SafeHtml html={(steps.data as any).description} /></p>
             </div>
           </AnimatedSection>
           <div className="space-y-16">
@@ -107,8 +108,8 @@ export default async function QualityProcessPage() {
                         </div>
                         <span className="text-brand-gold font-heading font-bold text-sm uppercase tracking-wider">Step {String(step.step).padStart(2, "0")}</span>
                       </div>
-                      <h3 className="text-2xl font-heading font-bold text-text-dark mb-4">{step.title}</h3>
-                      <p className="text-text-dark/60 leading-relaxed">{step.description}</p>
+                      <h3 className="text-2xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={step.title} /></h3>
+                      <p className="text-text-dark/60 leading-relaxed"><SafeHtml html={step.description} /></p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -126,8 +127,8 @@ export default async function QualityProcessPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(materials.data as any).heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-6">{(materials.data as any).content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6"><SafeHtml html={(materials.data as any).heading} /></h2>
+              <p className="text-white/60 leading-relaxed mb-6"><SafeHtml html={(materials.data as any).content} /></p>
               <div className="space-y-4">
                 {["Aluminum alloys selected for corrosion resistance and formability", "UV-stabilized acrylic faces for long-term color retention", "Premium LED modules with documented lumen maintenance ratings", "Industrial-grade adhesives and sealants tested for outdoor exposure", "Power supplies rated for continuous duty with thermal protection"].map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -152,16 +153,16 @@ export default async function QualityProcessPage() {
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(benefits.data as any).heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-10">{(benefits.data as any).description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6"><SafeHtml html={(benefits.data as any).heading} /></h2>
+              <p className="text-white/60 leading-relaxed mb-10"><SafeHtml html={(benefits.data as any).description} /></p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {(benefits.data as any).items.map((item: any, index: number) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
                 <div className="bg-bg-card border border-white/[0.06] rounded-xl p-8 h-full text-center">
-                  <h3 className="text-xl font-heading font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-heading font-semibold text-white mb-3"><SafeHtml html={item.title} /></h3>
+                  <p className="text-white/60 text-sm leading-relaxed"><SafeHtml html={item.description} /></p>
                 </div>
               </AnimatedSection>
             ))}

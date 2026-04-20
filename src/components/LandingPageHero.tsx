@@ -1,6 +1,7 @@
 "use client";
 
 import LocaleLink from "@/components/LocaleLink";
+import SafeHtml from "@/components/SafeHtml";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Breadcrumbs from "./Breadcrumbs";
@@ -28,10 +29,10 @@ export default function LandingPageHero({ title, highlight, subtitle, breadcrumb
         >
           <div className="gold-line mb-8" />
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-[-0.02em] mb-6">
-            {title} <span className="text-brand-gold">{highlight}</span>
+            <SafeHtml html={title} /> <span className="text-brand-gold"><SafeHtml html={highlight} /></span>
           </h1>
           <p className="text-white/60 text-base lg:text-lg max-w-lg font-body leading-relaxed mb-10">
-            {subtitle}
+            <SafeHtml html={subtitle} />
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4">
             <LocaleLink locale={locale} href="/get-a-quote" className="btn-primary">

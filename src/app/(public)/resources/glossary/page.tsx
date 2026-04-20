@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import type { HeroData, FAQData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -102,11 +103,11 @@ export default async function GlossaryPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>
@@ -143,8 +144,8 @@ export default async function GlossaryPage() {
                     <dl className="space-y-6">
                       {grouped[letter].map((item) => (
                         <div key={item.question} id={item.question.toLowerCase().replace(/[\s()]/g, "-")} className="scroll-mt-24">
-                          <dt className="text-lg font-heading font-semibold text-white mb-2">{item.question}</dt>
-                          <dd className="text-white/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20">{item.answer}</dd>
+                          <dt className="text-lg font-heading font-semibold text-white mb-2"><SafeHtml html={item.question} /></dt>
+                          <dd className="text-white/60 leading-relaxed pl-4 border-l-2 border-brand-gold/20"><SafeHtml html={item.answer} /></dd>
                         </div>
                       ))}
                     </dl>

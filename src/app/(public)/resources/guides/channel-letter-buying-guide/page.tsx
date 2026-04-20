@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import type { HeroData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -50,11 +51,11 @@ export default async function ChannelLetterBuyingGuidePage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>
@@ -80,7 +81,7 @@ export default async function ChannelLetterBuyingGuidePage() {
                     <li key={item.id}>
                       <a href={`#${item.id}`} className="text-white/50 hover:text-brand-gold transition-colors flex items-center gap-3">
                         <span className="text-brand-gold font-heading font-bold">{i + 1}.</span>
-                        {item.label}
+                        <SafeHtml html={item.label} />
                       </a>
                     </li>
                   ))}
@@ -127,7 +128,7 @@ export default async function ChannelLetterBuyingGuidePage() {
                     { title: "Non-Illuminated", desc: "No internal lighting. Cost-effective for interior signs or areas with lighting restrictions." },
                   ].map((option) => (
                     <div key={option.title} className="bg-bg-card border border-white/[0.06] rounded-lg p-5">
-                      <h4 className="font-heading font-semibold text-brand-gold mb-2">{option.title}</h4>
+                      <h4 className="font-heading font-semibold text-brand-gold mb-2"><SafeHtml html={option.title} /></h4>
                       <p className="text-sm text-white/60">{option.desc}</p>
                     </div>
                   ))}
@@ -227,7 +228,7 @@ export default async function ChannelLetterBuyingGuidePage() {
                         <span className="font-heading font-bold text-brand-gold text-sm">{item.step}</span>
                       </div>
                       <div>
-                        <h4 className="font-heading font-semibold text-white mb-1">{item.title}</h4>
+                        <h4 className="font-heading font-semibold text-white mb-1"><SafeHtml html={item.title} /></h4>
                         <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                       </div>
                     </div>

@@ -5,6 +5,7 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -101,14 +102,14 @@ export default async function AboutPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  {(hero.data as any).badge}
+                  <SafeHtml html={(hero.data as any).badge} />
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  {(hero.data as any).h1} <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                  {(hero.data as any).h1} <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  {(hero.data as any).subtitle}
+                  <SafeHtml html={(hero.data as any).subtitle} />
                 </p>
               </AnimatedSection>
             </div>
@@ -170,10 +171,10 @@ export default async function AboutPage() {
                       <AnimatedSection className="flex-1" delay={0.1}>
                         <div className="gold-line mb-6" />
                         <h2 className="text-3xl md:text-4xl font-display font-bold text-text-dark mb-6 leading-[1.1] tracking-[-0.02em]">
-                          {entry.title}
+                          <SafeHtml html={entry.title} />
                         </h2>
                         <p className="text-text-dark/60 leading-relaxed text-lg">
-                          {entry.text}
+                          <SafeHtml html={entry.text} />
                         </p>
                       </AnimatedSection>
                     </div>
@@ -225,10 +226,10 @@ export default async function AboutPage() {
                 <AnimatedSection className="flex-1" delay={0.1}>
                   <div className="gold-line mb-6" />
                   <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 leading-[1.1] tracking-[-0.02em]">
-                    {entry.title}
+                    <SafeHtml html={entry.title} />
                   </h2>
                   <p className="text-white/60 leading-relaxed text-lg">
-                    {entry.text}
+                    <SafeHtml html={entry.text} />
                   </p>
                 </AnimatedSection>
               </div>

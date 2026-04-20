@@ -9,6 +9,7 @@ import RelatedPages from "@/components/RelatedPages";
 import { getLandingPagesByHub } from "@/lib/landing-pages";
 import { loadProductConfig } from "@/lib/admin/page-config";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -105,15 +106,15 @@ export default async function PushThroughSignsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <p className="micro-label mb-6">
-                    {heroData.badge}
+                    <SafeHtml html={heroData.badge} />
                   </p>
                   <div className="gold-line mb-8" />
                   <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                    {heroData.h1}{" "}
-                    <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                    <SafeHtml html={heroData.h1} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
                   </h1>
                   <p className="text-lg text-white/60 mb-4 leading-relaxed">
-                    {heroData.subtitle}
+                    <SafeHtml html={heroData.subtitle} />
                   </p>
                   <p className="text-white/60 mb-8">
                     German-engineered. UL 48 listed. 3-week delivery. Wholesale
@@ -121,7 +122,7 @@ export default async function PushThroughSignsPage() {
                   </p>
                   {heroData.ctas.map((cta: any) => (
                     <LocaleLink locale={locale} key={cta.label} href={cta.href} className="btn-primary">
-                      {cta.label}
+                      <SafeHtml html={cta.label} />
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </LocaleLink>
                   ))}
@@ -162,10 +163,10 @@ export default async function PushThroughSignsPage() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-white mb-2">
-                        {feature.title}
+                        <SafeHtml html={feature.title} />
                       </h3>
                       <p className="text-sm text-white/60 leading-relaxed">
-                        {feature.description}
+                        <SafeHtml html={feature.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -206,10 +207,10 @@ export default async function PushThroughSignsPage() {
                         </span>
                       </div>
                       <h3 className="text-xl font-heading font-bold text-text-dark mb-2">
-                        {item.title}
+                        <SafeHtml html={item.title} />
                       </h3>
                       <p className="text-sm text-text-dark/60 leading-relaxed">
-                        {item.description}
+                        <SafeHtml html={item.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -261,10 +262,10 @@ export default async function PushThroughSignsPage() {
                       }`}
                     >
                       <span className="text-sm text-white/50 font-heading">
-                        {spec.label}
+                        <SafeHtml html={spec.label} />
                       </span>
                       <span className="text-sm text-white font-medium text-right ml-4">
-                        {spec.value}
+                        <SafeHtml html={spec.value} />
                       </span>
                     </div>
                   ))}
@@ -291,7 +292,7 @@ export default async function PushThroughSignsPage() {
                       Common <span className="text-brand-gold">Applications</span>
                     </h2>
                     <p className="text-text-dark/60 mb-8">
-                      {useCasesData.description}
+                      <SafeHtml html={useCasesData.description} />
                     </p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {useCasesData.items.map((useCase: string) => (
@@ -300,7 +301,7 @@ export default async function PushThroughSignsPage() {
                           className="flex items-center gap-2 text-sm text-text-dark/60"
                         >
                           <CheckCircle className="w-4 h-4 text-brand-gold flex-shrink-0" />
-                          {useCase}
+                          <SafeHtml html={useCase} />
                         </li>
                       ))}
                     </ul>

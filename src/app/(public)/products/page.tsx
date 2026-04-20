@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadProductConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
 import { t } from "@/lib/i18n/translations";
@@ -86,16 +87,16 @@ export default async function ProductsPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="micro-label mb-6">
-                {heroData.badge}
+                <SafeHtml html={heroData.badge} />
               </p>
               <div className="gold-line mb-8" />
               <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                {heroData.h1}{" "}
-                <span className="text-brand-gold">{heroData.h1Highlight}</span>
+                <SafeHtml html={heroData.h1} />{" "}
+                <span className="text-brand-gold"><SafeHtml html={heroData.h1Highlight} /></span>
               </h1>
               {heroData.subtitle.split("\n\n").map((para, i) => (
                 <p key={i} className={i === 0 ? "text-lg text-white/60 max-w-2xl mb-4" : "text-white/60 mb-8"}>
-                  {para}
+                  <SafeHtml html={para} />
                 </p>
               ))}
               <div className="flex flex-wrap gap-6">
@@ -107,7 +108,7 @@ export default async function ProductsPage() {
                       className="flex items-center gap-2 text-sm text-white/50 font-heading uppercase tracking-wider"
                     >
                       {Icon && <Icon className="w-4 h-4 text-brand-gold" />}
-                      {point.label}
+                      <SafeHtml html={point.label} />
                     </span>
                   );
                 })}
@@ -159,7 +160,7 @@ export default async function ProductsPage() {
                         Wholesale {cat.name}
                       </h2>
                       <p className="text-white/60 leading-relaxed mb-6">
-                        {cat.description}
+                        <SafeHtml html={cat.description} />
                       </p>
                       <span className="btn-primary">
                         Explore Channel Letters
@@ -227,7 +228,7 @@ export default async function ProductsPage() {
                             Wholesale {cat.name}
                           </h3>
                           <p className="text-text-dark/60 text-sm leading-relaxed mb-4 flex-1">
-                            {cat.description}
+                            <SafeHtml html={cat.description} />
                           </p>
                           <span className="btn-text-link group/link">
                             Get Wholesale Pricing

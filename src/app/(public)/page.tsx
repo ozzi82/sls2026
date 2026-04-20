@@ -8,6 +8,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import HeroContent from "@/components/HeroContent";
 import HeroSlider from "@/components/HeroSlider";
 import CTASection from "@/components/CTASection";
+import SafeHtml from "@/components/SafeHtml";
 import { getIconComponent } from "@/lib/admin/icon-map";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
@@ -69,19 +70,19 @@ export default async function Home() {
             />
 
             <p className="micro-label mb-6">
-              {(hero.data as any).badge}
+              <SafeHtml html={(hero.data as any).badge} />
             </p>
 
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-6 tracking-[-0.02em] font-bold">
-              {(hero.data as any).h1}
+              <SafeHtml html={(hero.data as any).h1} />
               <br />
               <span className="text-brand-gold">
-                {(hero.data as any).h1Highlight}
+                <SafeHtml html={(hero.data as any).h1Highlight} />
               </span>
             </h1>
 
             <p className="text-sm lg:text-base text-white/60 max-w-md font-body leading-relaxed mb-8">
-              {(hero.data as any).subtitle}
+              <SafeHtml html={(hero.data as any).subtitle} />
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -91,7 +92,7 @@ export default async function Home() {
                   href={cta.href}
                   className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}
                 >
-                  {cta.label}
+                  <SafeHtml html={cta.label} />
                 </LocaleLink>
               ))}
             </div>
@@ -123,7 +124,7 @@ export default async function Home() {
                   className="flex items-center mx-6 sm:mx-8"
                 >
                   <span className="text-brand-gold/60 text-xs font-heading font-semibold uppercase tracking-[0.2em] whitespace-nowrap">
-                    {item}
+                    <SafeHtml html={item} />
                   </span>
                   <span className="ml-6 sm:ml-8 text-brand-gold/20 text-[8px]">
                     &#x25C6;
@@ -150,10 +151,10 @@ export default async function Home() {
                   <div className="px-6 py-10 lg:py-14 text-center border-r border-white/[0.04] last:border-r-0">
                     {Icon && <Icon className="w-5 h-5 text-brand-gold/40 mx-auto mb-4" />}
                     <div className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold bg-gradient-to-r from-brand-gold to-brand-gold-light bg-clip-text text-transparent mb-2">
-                      {stat.sublabel}
+                      <SafeHtml html={stat.sublabel} />
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-heading font-semibold uppercase tracking-[0.2em] text-white/30">
-                      {stat.label}
+                      <SafeHtml html={stat.label} />
                     </div>
                   </div>
                 </AnimatedSection>
@@ -231,17 +232,17 @@ export default async function Home() {
                   {/* Always-visible category badge */}
                   <div className="absolute top-4 left-4">
                     <span className="text-[10px] font-heading font-semibold uppercase tracking-[0.15em] text-brand-gold bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-brand-gold/20">
-                      {project.category}
+                      <SafeHtml html={project.category} />
                     </span>
                   </div>
 
                   {/* Hover-reveal details */}
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-white font-heading font-semibold text-sm mb-1">{project.type}</p>
+                    <p className="text-white font-heading font-semibold text-sm mb-1"><SafeHtml html={project.type} /></p>
                     <div className="flex items-center gap-3 text-white/50 text-xs">
-                      <span>{project.location}</span>
+                      <span><SafeHtml html={project.location} /></span>
                       <span className="w-1 h-1 rounded-full bg-brand-gold/40" />
-                      <span>{project.turnaround}</span>
+                      <span><SafeHtml html={project.turnaround} /></span>
                     </div>
                   </div>
 
@@ -269,10 +270,10 @@ export default async function Home() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-8" />
               <h2 className="font-display font-bold text-4xl lg:text-[56px] text-white leading-[1.05] mb-5 tracking-[-0.02em]">
-                What We <span className="text-brand-gold">{(products.data as any).headingHighlight}</span>
+                What We <span className="text-brand-gold"><SafeHtml html={(products.data as any).headingHighlight} /></span>
               </h2>
               <p className="text-white/60 max-w-md mx-auto text-[15px]">
-                {(products.data as any).description}
+                <SafeHtml html={(products.data as any).description} />
               </p>
             </div>
           </AnimatedSection>
@@ -296,7 +297,7 @@ export default async function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     {product.tag && (
                       <span className="product-tag absolute top-4 right-4">
-                        {product.tag}
+                        <SafeHtml html={product.tag} />
                       </span>
                     )}
                   </div>
@@ -305,12 +306,12 @@ export default async function Home() {
                   <div className="p-5 lg:p-6">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-lg font-heading font-bold text-white">
-                        {product.name}
+                        <SafeHtml html={product.name} />
                       </h3>
                       <ArrowUpRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <p className="text-sm text-white/50 leading-relaxed mb-4">
-                      {product.description}
+                      <SafeHtml html={product.description} />
                     </p>
 
                     {/* Spec chips */}
@@ -318,7 +319,7 @@ export default async function Home() {
                       <div className="flex flex-wrap gap-1.5 mb-3">
                         {product.chips.map((chip: string) => (
                           <span key={chip} className="text-[10px] font-heading font-medium uppercase tracking-wider text-white/40 bg-white/[0.05] px-2 py-0.5 rounded">
-                            {chip}
+                            <SafeHtml html={chip} />
                           </span>
                         ))}
                       </div>
@@ -327,7 +328,7 @@ export default async function Home() {
                     {/* Best for */}
                     {product.bestFor && (
                       <p className="text-[11px] text-brand-gold/70 font-heading font-medium uppercase tracking-wider">
-                        Best for: {product.bestFor}
+                        Best for: <SafeHtml html={product.bestFor} />
                       </p>
                     )}
                   </div>
@@ -367,10 +368,10 @@ export default async function Home() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                        {item.title}
+                        <SafeHtml html={item.title} />
                       </h3>
                       <p className="text-sm text-text-dark/60 leading-relaxed">
-                        {item.description}
+                        <SafeHtml html={item.description} />
                       </p>
                     </div>
                   </AnimatedSection>
@@ -395,14 +396,14 @@ export default async function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-center">
               <div>
                 <p className="micro-label mb-5">
-                  {(engineering.data as any).badge}
+                  <SafeHtml html={(engineering.data as any).badge} />
                 </p>
                 <h2 className="text-3xl lg:text-[42px] font-display text-white leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                  {(engineering.data as any).heading}{" "}
-                  <span className="text-brand-gold">{(engineering.data as any).headingHighlight}</span>
+                  <SafeHtml html={(engineering.data as any).heading} />{" "}
+                  <span className="text-brand-gold"><SafeHtml html={(engineering.data as any).headingHighlight} /></span>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-8 text-[15px]">
-                  {(engineering.data as any).content}
+                  <SafeHtml html={(engineering.data as any).content} />
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-10">
                   {(engineering.data as any).bulletPoints.map((service: string) => (
@@ -411,7 +412,7 @@ export default async function Home() {
                       className="flex items-center gap-3 text-white/50 text-sm"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-brand-gold to-brand-gold-light flex-shrink-0" />
-                      {service}
+                      <SafeHtml html={service} />
                     </div>
                   ))}
                 </div>
@@ -419,7 +420,7 @@ export default async function Home() {
                   href={(engineering.data as any).linkHref}
                   className="btn-ghost group"
                 >
-                  {(engineering.data as any).linkText}
+                  <SafeHtml html={(engineering.data as any).linkText} />
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </LocaleLink>
               </div>
@@ -476,7 +477,7 @@ export default async function Home() {
                     {/* Large quote mark */}
                     <div className="absolute top-6 right-8 text-6xl font-display text-brand-gold/10 leading-none select-none">&ldquo;</div>
                     <p className="text-white/70 text-[15px] leading-relaxed mb-6 relative z-10">
-                      {item.answer}
+                      <SafeHtml html={item.answer} />
                     </p>
                     <div className="flex items-center gap-4 border-t border-white/[0.06] pt-5">
                       <div className="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center">
@@ -528,8 +529,8 @@ export default async function Home() {
                   <div className="w-12 h-12 rounded-full bg-brand-gold/10 border-2 border-brand-gold/30 flex items-center justify-center mb-5 relative z-10 bg-bg-primary">
                     <span className="text-brand-gold font-heading font-bold text-sm">{step.step}</span>
                   </div>
-                  <h3 className="text-sm font-heading font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-xs text-white/40 leading-relaxed">{step.description}</p>
+                  <h3 className="text-sm font-heading font-semibold text-white mb-2"><SafeHtml html={step.title} /></h3>
+                  <p className="text-xs text-white/40 leading-relaxed"><SafeHtml html={step.description} /></p>
                 </div>
               </AnimatedSection>
             ))}
@@ -544,8 +545,8 @@ export default async function Home() {
                   <div className="absolute -left-10 top-0 w-9 h-9 rounded-full bg-brand-gold/10 border-2 border-brand-gold/30 flex items-center justify-center bg-bg-primary">
                     <span className="text-brand-gold font-heading font-bold text-xs">{step.step}</span>
                   </div>
-                  <h3 className="text-base font-heading font-semibold text-white mb-1">{step.title}</h3>
-                  <p className="text-sm text-white/40 leading-relaxed">{step.description}</p>
+                  <h3 className="text-base font-heading font-semibold text-white mb-1"><SafeHtml html={step.title} /></h3>
+                  <p className="text-sm text-white/40 leading-relaxed"><SafeHtml html={step.description} /></p>
                 </div>
               </AnimatedSection>
             ))}
@@ -590,22 +591,22 @@ export default async function Home() {
 
                 <div>
                   <p className="micro-label mb-5">
-                    {(story.data as any).badge}
+                    <SafeHtml html={(story.data as any).badge} />
                   </p>
                   <h2 className="text-3xl lg:text-[42px] font-display text-text-dark leading-[1.1] mb-6 font-bold tracking-[-0.02em]">
-                    {(story.data as any).heading}{" "}
-                    <span className="text-brand-gold">{(story.data as any).headingHighlight}</span>
+                    <SafeHtml html={(story.data as any).heading} />{" "}
+                    <span className="text-brand-gold"><SafeHtml html={(story.data as any).headingHighlight} /></span>
                   </h2>
                   {(story.data as any).content.split("\n\n").map((p: string, i: number) => (
                     <p key={i} className="text-text-dark/60 leading-relaxed mb-4 text-[15px]">
-                      {p}
+                      <SafeHtml html={p} />
                     </p>
                   ))}
                   <LocaleLink locale={locale}
                     href={(story.data as any).linkHref}
                     className="btn-text-link group"
                   >
-                    {(story.data as any).linkText}
+                    <SafeHtml html={(story.data as any).linkText} />
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </LocaleLink>
                 </div>
@@ -649,10 +650,10 @@ export default async function Home() {
                       </div>
                       <div>
                         <h3 className="text-sm font-heading font-semibold text-white mb-1.5 group-hover:text-brand-gold transition-colors">
-                          {item.title}
+                          <SafeHtml html={item.title} />
                         </h3>
                         <p className="text-xs text-white/40 leading-relaxed mb-3">
-                          {item.description}
+                          <SafeHtml html={item.description} />
                         </p>
                         <span className="text-[11px] font-heading font-semibold uppercase tracking-wider text-brand-gold/60 group-hover:text-brand-gold transition-colors flex items-center gap-1">
                           Read Guide
@@ -700,8 +701,8 @@ export default async function Home() {
                       <div className="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mx-auto mb-3">
                         {Icon && <Icon className="w-4 h-4 text-brand-gold" />}
                       </div>
-                      <h3 className="text-xs font-heading font-semibold text-white mb-1">{item.title}</h3>
-                      <p className="text-[10px] text-white/30 leading-relaxed">{item.description}</p>
+                      <h3 className="text-xs font-heading font-semibold text-white mb-1"><SafeHtml html={item.title} /></h3>
+                      <p className="text-[10px] text-white/30 leading-relaxed"><SafeHtml html={item.description} /></p>
                     </div>
                   );
                 })}

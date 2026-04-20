@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -60,16 +61,16 @@ export default async function ULListingPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{(hero.data as any).badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={(hero.data as any).badge} /></span>
               </div>
               <div className="gold-line mb-6" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                {(hero.data as any).h1}{" "}<span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                <SafeHtml html={(hero.data as any).h1} />{" "}<span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed mb-8">{(hero.data as any).subtitle}</p>
+              <p className="text-lg text-white/70 leading-relaxed mb-8"><SafeHtml html={(hero.data as any).subtitle} /></p>
               <div className="flex flex-wrap gap-4">
                 {(hero.data as any).ctas.map((cta: any) => (
-                  <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}>{cta.label}</LocaleLink>
+                  <LocaleLink locale={locale} key={cta.href} href={cta.href} className={cta.variant === "primary" ? "btn-primary" : "btn-secondary"}><SafeHtml html={cta.label} /></LocaleLink>
                 ))}
               </div>
             </AnimatedSection>
@@ -88,8 +89,8 @@ export default async function ULListingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6">{(whatUL.data as any).heading}</h2>
-              <p className="text-text-dark/60 leading-relaxed mb-8">{(whatUL.data as any).content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-6"><SafeHtml html={(whatUL.data as any).heading} /></h2>
+              <p className="text-text-dark/60 leading-relaxed mb-8"><SafeHtml html={(whatUL.data as any).content} /></p>
               <div className="space-y-4">
                 {whatULMeans.map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -114,8 +115,8 @@ export default async function ULListingPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{(ulBenefits.data as any).heading}</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">{(ulBenefits.data as any).description}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4"><SafeHtml html={(ulBenefits.data as any).heading} /></h2>
+              <p className="text-white/60 max-w-2xl mx-auto"><SafeHtml html={(ulBenefits.data as any).description} /></p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -127,8 +128,8 @@ export default async function ULListingPage() {
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/20 mb-6">
                       {Icon && <Icon className="w-5 h-5 text-brand-gold" />}
                     </div>
-                    <h3 className="text-xl font-heading font-semibold text-white mb-3">{benefit.title}</h3>
-                    <p className="text-white/60 leading-relaxed text-sm">{benefit.description}</p>
+                    <h3 className="text-xl font-heading font-semibold text-white mb-3"><SafeHtml html={benefit.title} /></h3>
+                    <p className="text-white/60 leading-relaxed text-sm"><SafeHtml html={benefit.description} /></p>
                   </div>
                 </AnimatedSection>
               );
@@ -145,8 +146,8 @@ export default async function ULListingPage() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4">{(comparison.data as any).heading}</h2>
-              <p className="text-text-dark/60 max-w-2xl mx-auto">{(comparison.data as any).content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-text-dark mb-4"><SafeHtml html={(comparison.data as any).heading} /></h2>
+              <p className="text-text-dark/60 max-w-2xl mx-auto"><SafeHtml html={(comparison.data as any).content} /></p>
             </div>
           </AnimatedSection>
           <AnimatedSection>
@@ -187,8 +188,8 @@ export default async function ULListingPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <div className="gold-line mb-6" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">{(process.data as any).heading}</h2>
-              <p className="text-white/60 leading-relaxed mb-6">{(process.data as any).content}</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6"><SafeHtml html={(process.data as any).heading} /></h2>
+              <p className="text-white/60 leading-relaxed mb-6"><SafeHtml html={(process.data as any).content} /></p>
               <div className="space-y-4">
                 {[
                   { icon: ClipboardCheck, text: "Component sourcing from UL-recognized suppliers" },
@@ -198,7 +199,7 @@ export default async function ULListingPage() {
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                    <p className="text-white/70 text-sm">{item.text}</p>
+                    <p className="text-white/70 text-sm"><SafeHtml html={item.text} /></p>
                   </div>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
+import SafeHtml from "@/components/SafeHtml";
 import type { HeroData } from "@/lib/admin/page-config-types";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -53,11 +54,11 @@ export default async function ChoosingIlluminationTypesPage() {
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-4">
                 <Lock className="w-3.5 h-3.5 text-brand-gold" />
-                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest">{hero.data.badge}</span>
+                <span className="text-brand-gold text-xs font-heading font-semibold uppercase tracking-widest"><SafeHtml html={hero.data.badge} /></span>
               </div>
               <div className="gold-line mb-6" />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">{hero.data.h1}</h1>
-              <p className="text-lg text-white/60 max-w-2xl">{hero.data.subtitle}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6"><SafeHtml html={hero.data.h1} /></h1>
+              <p className="text-lg text-white/60 max-w-2xl"><SafeHtml html={hero.data.subtitle} /></p>
             </AnimatedSection>
           </div>
         </section>
@@ -73,11 +74,11 @@ export default async function ChoosingIlluminationTypesPage() {
                     <div className="lg:w-2/5"><PlaceholderImage label={type.image} className="rounded-xl" aspectRatio="aspect-[4/3]" /></div>
                     <div className="lg:w-3/5">
                       <div className="flex items-baseline gap-3 mb-2">
-                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">{type.name}</h2>
+                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-white"><SafeHtml html={type.name} /></h2>
                         <span className="text-sm text-white/40 font-heading">({type.aka})</span>
                       </div>
                       <div className="gold-line mb-4" />
-                      <p className="text-white/70 leading-relaxed mb-6">{type.description}</p>
+                      <p className="text-white/70 leading-relaxed mb-6"><SafeHtml html={type.description} /></p>
                       <div className="grid grid-cols-3 gap-4 mb-6">
                         <div className="bg-bg-card border border-white/[0.06] rounded-lg p-3 text-center"><p className="text-xs text-white/40 font-heading uppercase tracking-wider mb-1">Visibility</p><p className="text-sm font-heading font-semibold text-white">{type.visibility}</p></div>
                         <div className="bg-bg-card border border-white/[0.06] rounded-lg p-3 text-center"><p className="text-xs text-white/40 font-heading uppercase tracking-wider mb-1">Aesthetic</p><p className="text-sm font-heading font-semibold text-white">{type.aesthetic}</p></div>
@@ -124,7 +125,7 @@ export default async function ChoosingIlluminationTypesPage() {
               <div className="space-y-6">
                 {[{question:"What is the primary viewing distance?",guidance:"Highway or major road (100+ feet): face-lit. Pedestrian or street level (under 50 feet): any illumination type works. Interior: non-illuminated is often sufficient."},{question:"What is the brand personality?",guidance:"Bold, energetic, attention-grabbing brands favor face-lit. Refined, luxury, or architectural brands favor halo-lit. Premium brands wanting maximum impact choose front-and-halo."},{question:"What is the mounting surface?",guidance:"Flat, light-colored walls are ideal for halo-lit. Dark, textured, or uneven surfaces favor face-lit or non-illuminated. Evaluate the surface before committing to halo illumination."},{question:"What is the budget range?",guidance:"Present options at multiple price points. Many clients who start with a face-lit budget upgrade to front-and-halo when they see the difference in renderings. Wholesale trade pricing from Sunlite Signs helps you maintain strong margins across all options."},{question:"Are there local sign code restrictions?",guidance:"Some municipalities restrict illumination brightness, hours, or type. Verify codes before specifying. Non-illuminated may be required in certain historic districts."}].map((item, i) => (
                   <div key={i} className="bg-bg-card border border-white/[0.06] rounded-xl p-6">
-                    <h3 className="font-heading font-semibold text-white mb-2 flex items-start gap-3"><span className="text-brand-gold">{i + 1}.</span>{item.question}</h3>
+                    <h3 className="font-heading font-semibold text-white mb-2 flex items-start gap-3"><span className="text-brand-gold">{i + 1}.</span><SafeHtml html={item.question} /></h3>
                     <p className="text-sm text-white/60 leading-relaxed pl-7">{item.guidance}</p>
                   </div>
                 ))}

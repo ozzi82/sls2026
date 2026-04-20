@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Calendar, ArrowLeft, ArrowRight, Lock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTASection from "@/components/CTASection";
+import SafeHtml from "@/components/SafeHtml";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getLocale } from "@/lib/i18n/get-locale";
@@ -409,7 +410,7 @@ export default async function BlogPostPage({
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
-                {post.title}
+                <SafeHtml html={post.title} />
               </h1>
             </div>
           </AnimatedSection>

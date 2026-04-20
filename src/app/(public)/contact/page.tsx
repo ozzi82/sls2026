@@ -12,6 +12,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "./ContactForm";
 import CTASection from "@/components/CTASection";
 import { getIconComponent } from "@/lib/admin/icon-map";
+import SafeHtml from "@/components/SafeHtml";
 import { loadStaticPageConfig } from "@/lib/admin/page-config";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
@@ -104,14 +105,14 @@ export default async function ContactPage() {
             <div className="container-max text-center px-6 sm:px-10 lg:px-16">
               <AnimatedSection>
                 <p className="micro-label mb-6">
-                  {(hero.data as any).badge}
+                  <SafeHtml html={(hero.data as any).badge} />
                 </p>
                 <div className="gold-line mx-auto mb-8" />
                 <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] mb-6 tracking-[-0.02em]">
-                  {(hero.data as any).h1} <span className="text-brand-gold">{(hero.data as any).h1Highlight}</span>
+                  {(hero.data as any).h1} <span className="text-brand-gold"><SafeHtml html={(hero.data as any).h1Highlight} /></span>
                 </h1>
                 <p className="text-lg text-white/60 max-w-2xl mx-auto">
-                  {(hero.data as any).subtitle}
+                  <SafeHtml html={(hero.data as any).subtitle} />
                 </p>
               </AnimatedSection>
             </div>
@@ -139,21 +140,21 @@ export default async function ContactPage() {
                         {Icon && <Icon className="w-6 h-6 text-brand-gold" />}
                       </div>
                       <h3 className="text-lg font-heading font-semibold text-text-dark mb-2">
-                        {item.title}
+                        <SafeHtml html={item.title} />
                       </h3>
                       {item.href ? (
                         <a
                           href={item.href}
                           className="text-brand-gold font-heading font-medium hover:text-brand-gold-light transition-colors block mb-2"
                         >
-                          {item.value}
+                          <SafeHtml html={item.value} />
                         </a>
                       ) : (
                         <p className="text-text-dark font-heading font-medium mb-2">
-                          {item.value}
+                          <SafeHtml html={item.value} />
                         </p>
                       )}
-                      <p className="text-text-dark/60 text-sm">{item.description}</p>
+                      <p className="text-text-dark/60 text-sm"><SafeHtml html={item.description} /></p>
                     </div>
                   </AnimatedSection>
                 );
@@ -178,10 +179,10 @@ export default async function ContactPage() {
               <AnimatedSection>
                 <div className="gold-line mb-6" />
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 tracking-[-0.02em]">
-                  Send Us a <span className="text-brand-gold">{(form.data as any).headingHighlight}</span>
+                  Send Us a <span className="text-brand-gold"><SafeHtml html={(form.data as any).headingHighlight} /></span>
                 </h2>
                 <p className="text-white/60 mb-8 max-w-lg">
-                  {(form.data as any).description.split("dedicated wholesale quote form")[0]}
+                  <SafeHtml html={(form.data as any).description.split("dedicated wholesale quote form")[0]} />
                   <LocaleLink locale={locale}
                     href="/get-a-quote"
                     className="text-brand-gold hover:text-brand-gold-light underline underline-offset-2 transition-colors"
@@ -210,7 +211,7 @@ export default async function ContactPage() {
                     </div>
                     {(form.data as any).sidebar.notices.map((notice: string, i: number) => (
                       <p key={i} className="text-white/60 text-sm mb-2">
-                        {notice}
+                        <SafeHtml html={notice} />
                       </p>
                     ))}
                   </div>
