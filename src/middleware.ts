@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyToken, COOKIE_NAME } from "@/lib/admin/auth";
 
-// Routes that require admin role
 const ADMIN_ONLY_PATTERNS = [
   /^\/admin\/users/,
   /^\/admin\/integrations/,
@@ -11,7 +10,6 @@ const ADMIN_ONLY_PATTERNS = [
   /^\/api\/admin\/redirects/,
 ];
 
-// In-memory redirect cache (populated from API, refreshed every 60s)
 let redirectCache: { from: string; to: string; permanent: boolean }[] | null = null;
 let redirectCacheTs = 0;
 const REDIRECT_CACHE_TTL = 60_000;
@@ -19,8 +17,13 @@ const REDIRECT_CACHE_TTL = 60_000;
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // --- Public redirects (non-admin, non-api routes) ---
-  if (!pathname.startsWith("/admin") && !pathname.startsWith("/api")) {
+  // --- Locale detection ---
+  const isDeRoute = pathname.startsWith("/de/") || pathname === "/de";
+  const strippedPath = isDeRoute ? pathname.replace(/^\/de/, "") || "/" : pathname;
+
+  // --- Public routes (non-admin, non-api) ---
+  if (!strippedPath.startsWith("/admin") && !strippedPath.startsWith("/api")) {
+    // Refresh redirect cache
     if (!redirectCache || Date.now() - redirectCacheTs > REDIRECT_CACHE_TTL) {
       try {
         const res = await fetch(`${request.nextUrl.origin}/api/public/redirects`);
@@ -34,22 +37,45 @@ export async function middleware(request: NextRequest) {
       }
     }
 
+    // Check redirects against strippedPath (works for both /de/ and non-/de/ routes)
     if (redirectCache) {
-      const match = redirectCache.find((r) => r.from === pathname);
+      const match = redirectCache.find((r) => r.from === strippedPath);
       if (match) {
-        const dest = match.to.startsWith("http")
+        const destPath = match.to.startsWith("http")
           ? match.to
-          : `${request.nextUrl.origin}${match.to}`;
-        return NextResponse.redirect(dest, match.permanent ? 308 : 307);
+          : isDeRoute
+            ? `${request.nextUrl.origin}/de${match.to}`
+            : `${request.nextUrl.origin}${match.to}`;
+        return NextResponse.redirect(destPath, match.permanent ? 308 : 307);
+      }
+    }
+
+    // If /de/ route, rewrite to unprefixed path with x-locale header
+    if (isDeRoute) {
+      const url = request.nextUrl.clone();
+      url.pathname = strippedPath;
+      const response = NextResponse.rewrite(url);
+      response.headers.set("x-locale", "de");
+      return response;
+    }
+
+    // Geo-detection for English routes (no /de/ prefix)
+    const hasLocalePref = request.cookies.has("locale-preference");
+    const wasGeoRedirected = request.cookies.has("geo-redirected");
+    if (!hasLocalePref && !wasGeoRedirected) {
+      const country = request.headers.get("cf-ipcountry");
+      if (country && ["DE", "AT", "CH"].includes(country)) {
+        const deUrl = new URL(`/de${pathname}`, request.url);
+        const response = NextResponse.redirect(deUrl, 302);
+        response.cookies.set("geo-redirected", "1", { path: "/" });
+        return response;
       }
     }
 
     return NextResponse.next();
   }
 
-  // --- Admin routes below ---
-
-  // Allow public admin routes
+  // --- Admin routes below (unchanged) ---
   if (
     pathname === "/admin/login" ||
     pathname === "/admin/setup" ||
@@ -60,7 +86,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check auth cookie
   const token = request.cookies.get(COOKIE_NAME)?.value;
   if (!token) {
     const loginUrl = new URL("/admin/login", request.url);
@@ -73,7 +98,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  // Check admin-only routes
   const isAdminOnly = ADMIN_ONLY_PATTERNS.some((p) => p.test(pathname));
   if (isAdminOnly && verified.role !== "admin") {
     if (pathname.startsWith("/api/")) {
@@ -83,7 +107,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(dashUrl);
   }
 
-  // Add username header for API routes to read
   const response = NextResponse.next();
   response.headers.set("x-admin-username", verified.username);
   response.headers.set("x-admin-role", verified.role);
@@ -94,7 +117,7 @@ export const config = {
   matcher: [
     "/admin/:path*",
     "/api/admin/:path*",
-    // Public pages for redirects (exclude static assets)
+    "/de/:path*",
     "/((?!_next|api|favicon|uploads|.*\\.).*)",
   ],
 };
