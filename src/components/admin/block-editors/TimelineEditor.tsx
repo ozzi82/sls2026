@@ -2,10 +2,10 @@
 
 import type { TimelineData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface TimelineEditorProps {
   data: TimelineData;
@@ -17,10 +17,10 @@ export default function TimelineEditor({ data, onChange }: TimelineEditorProps) 
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading ?? ""}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Timeline heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading ?? ""}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
@@ -38,15 +38,15 @@ export default function TimelineEditor({ data, onChange }: TimelineEditorProps) 
                 onChange={(e) => update({ ...item, step: Number(e.target.value) })}
                 placeholder="Step number"
               />
-              <Input
-                value={item.title}
-                onChange={(e) => update({ ...item, title: e.target.value })}
-                placeholder="Title"
+              <RichTextEditor
+                variant="compact"
+                content={item.title}
+                onChange={(html) => update({ ...item, title: html })}
               />
-              <Textarea
-                value={item.text}
-                onChange={(e) => update({ ...item, text: e.target.value })}
-                placeholder="Text"
+              <RichTextEditor
+                variant="full"
+                content={item.text}
+                onChange={(html) => update({ ...item, text: html })}
               />
               <ImageUpload
                 value={item.image ?? ""}

@@ -2,10 +2,10 @@
 
 import type { ProductGridData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface ProductGridEditorProps {
   data: ProductGridData;
@@ -17,18 +17,18 @@ export default function ProductGridEditor({ data, onChange }: ProductGridEditorP
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
         <Label>Description</Label>
-        <Textarea
-          value={data.description ?? ""}
-          onChange={(e) => onChange({ ...data, description: e.target.value })}
-          placeholder="Section description"
+        <RichTextEditor
+          variant="full"
+          content={data.description ?? ""}
+          onChange={(html) => onChange({ ...data, description: html })}
         />
       </div>
       <div>
@@ -40,10 +40,10 @@ export default function ProductGridEditor({ data, onChange }: ProductGridEditorP
           label="Product"
           renderItem={(item, _index, update) => (
             <div className="space-y-2">
-              <Input
-                value={item.name}
-                onChange={(e) => update({ ...item, name: e.target.value })}
-                placeholder="Product name"
+              <RichTextEditor
+                variant="compact"
+                content={item.name}
+                onChange={(html) => update({ ...item, name: html })}
               />
               <Input
                 value={item.model ?? ""}

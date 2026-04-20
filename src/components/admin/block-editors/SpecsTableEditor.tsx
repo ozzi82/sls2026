@@ -2,10 +2,10 @@
 
 import type { SpecsTableData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface SpecsTableEditorProps {
   data: SpecsTableData;
@@ -17,18 +17,18 @@ export default function SpecsTableEditor({ data, onChange }: SpecsTableEditorPro
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
         <Label>Description</Label>
-        <Textarea
-          value={data.description ?? ""}
-          onChange={(e) => onChange({ ...data, description: e.target.value })}
-          placeholder="Section description"
+        <RichTextEditor
+          variant="full"
+          content={data.description ?? ""}
+          onChange={(html) => onChange({ ...data, description: html })}
         />
       </div>
       <div>
@@ -48,10 +48,10 @@ export default function SpecsTableEditor({ data, onChange }: SpecsTableEditorPro
           label="Spec"
           renderItem={(item, _index, update) => (
             <div className="grid grid-cols-2 gap-2">
-              <Input
-                value={item.label}
-                onChange={(e) => update({ ...item, label: e.target.value })}
-                placeholder="Label"
+              <RichTextEditor
+                variant="compact"
+                content={item.label}
+                onChange={(html) => update({ ...item, label: html })}
               />
               <Input
                 value={item.value}

@@ -2,10 +2,10 @@
 
 import type { ProductTypesData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface ProductTypesEditorProps {
   data: ProductTypesData;
@@ -17,10 +17,10 @@ export default function ProductTypesEditor({ data, onChange }: ProductTypesEdito
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
@@ -32,15 +32,15 @@ export default function ProductTypesEditor({ data, onChange }: ProductTypesEdito
           label="Product Type"
           renderItem={(item, _index, update) => (
             <div className="space-y-2">
-              <Input
-                value={item.name}
-                onChange={(e) => update({ ...item, name: e.target.value })}
-                placeholder="Name"
+              <RichTextEditor
+                variant="compact"
+                content={item.name}
+                onChange={(html) => update({ ...item, name: html })}
               />
-              <Textarea
-                value={item.description}
-                onChange={(e) => update({ ...item, description: e.target.value })}
-                placeholder="Description"
+              <RichTextEditor
+                variant="full"
+                content={item.description}
+                onChange={(html) => update({ ...item, description: html })}
               />
               <ImageUpload
                 value={item.image ?? ""}

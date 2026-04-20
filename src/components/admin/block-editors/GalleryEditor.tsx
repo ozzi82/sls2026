@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Plus, Trash2, ArrowUp, ArrowDown, Tag, X } from "lucide-react";
 import ImageUpload, { type UploadResult } from "@/components/admin/ImageUpload";
+import RichTextEditor from "../RichTextEditor";
 
 interface GalleryEditorProps {
   data: GalleryData;
@@ -101,10 +102,10 @@ export default function GalleryEditor({ data, onChange }: GalleryEditorProps) {
       {/* Heading */}
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Gallery heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
 
@@ -230,20 +231,20 @@ export default function GalleryEditor({ data, onChange }: GalleryEditorProps) {
                 </div>
                 <div>
                   <Label className="text-xs text-muted-foreground">Sign Type</Label>
-                  <Input
-                    value={img.type ?? ""}
-                    onChange={(e) => updateImage(ri, { ...img, type: e.target.value })}
-                    placeholder="Front-Lit LED"
+                  <RichTextEditor
+                    variant="compact"
+                    content={img.type ?? ""}
+                    onChange={(html) => updateImage(ri, { ...img, type: html })}
                   />
                 </div>
               </div>
 
               <div>
                 <Label className="text-xs text-muted-foreground">Alt Text</Label>
-                <Input
-                  value={img.alt}
-                  onChange={(e) => updateImage(ri, { ...img, alt: e.target.value })}
-                  placeholder="Descriptive alt text"
+                <RichTextEditor
+                  variant="full"
+                  content={img.alt}
+                  onChange={(html) => updateImage(ri, { ...img, alt: html })}
                 />
               </div>
 

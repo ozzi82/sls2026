@@ -320,27 +320,27 @@ export default function PageForm({
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>H1</Label>
-              <Input
-                value={form.h1}
-                onChange={(e) => update("h1", e.target.value)}
-                placeholder="e.g. Wholesale Illuminated"
+              <RichTextEditor
+                variant="compact"
+                content={form.h1}
+                onChange={(html) => update("h1", html)}
               />
             </div>
             <div className="space-y-2">
               <Label>H1 Highlight</Label>
-              <Input
-                value={form.h1Highlight}
-                onChange={(e) => update("h1Highlight", e.target.value)}
-                placeholder="e.g. Cabinet Signs"
+              <RichTextEditor
+                variant="compact"
+                content={form.h1Highlight}
+                onChange={(html) => update("h1Highlight", html)}
               />
             </div>
           </div>
           <div className="space-y-2">
             <Label>Hero Subtitle</Label>
-            <Textarea
-              value={form.heroSubtitle}
-              onChange={(e) => update("heroSubtitle", e.target.value)}
-              rows={3}
+            <RichTextEditor
+              variant="full"
+              content={form.heroSubtitle}
+              onChange={(html) => update("heroSubtitle", html)}
             />
           </div>
         </CardContent>
@@ -468,9 +468,10 @@ export default function PageForm({
               </div>
               <div className="space-y-2">
                 <Label>Heading</Label>
-                <Input
-                  value={section.heading}
-                  onChange={(e) => updateSection(i, "heading", e.target.value)}
+                <RichTextEditor
+                  variant="compact"
+                  content={section.heading}
+                  onChange={(html) => updateSection(i, "heading", html)}
                 />
               </div>
               <div className="space-y-2">
@@ -534,17 +535,18 @@ export default function PageForm({
               </div>
               <div className="space-y-2">
                 <Label>Question</Label>
-                <Input
-                  value={faq.question}
-                  onChange={(e) => updateFaq(i, "question", e.target.value)}
+                <RichTextEditor
+                  variant="compact"
+                  content={faq.question}
+                  onChange={(html) => updateFaq(i, "question", html)}
                 />
               </div>
               <div className="space-y-2">
                 <Label>Answer</Label>
-                <Textarea
-                  value={faq.answer}
-                  onChange={(e) => updateFaq(i, "answer", e.target.value)}
-                  rows={3}
+                <RichTextEditor
+                  variant="full"
+                  content={faq.answer}
+                  onChange={(html) => updateFaq(i, "answer", html)}
                 />
               </div>
             </div>

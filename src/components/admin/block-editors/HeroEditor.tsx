@@ -2,7 +2,6 @@
 
 import type { HeroData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import ImageUpload from "@/components/admin/ImageUpload";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface HeroEditorProps {
   data: HeroData;
@@ -24,34 +24,34 @@ export default function HeroEditor({ data, onChange }: HeroEditorProps) {
     <div className="space-y-4">
       <div>
         <Label>Badge</Label>
-        <Input
-          value={data.badge ?? ""}
-          onChange={(e) => onChange({ ...data, badge: e.target.value })}
-          placeholder="Badge text"
+        <RichTextEditor
+          variant="compact"
+          content={data.badge ?? ""}
+          onChange={(html) => onChange({ ...data, badge: html })}
         />
       </div>
       <div>
         <Label>Heading (h1)</Label>
-        <Input
-          value={data.h1}
-          onChange={(e) => onChange({ ...data, h1: e.target.value })}
-          placeholder="Main heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.h1}
+          onChange={(html) => onChange({ ...data, h1: html })}
         />
       </div>
       <div>
         <Label>Heading Highlight</Label>
-        <Input
-          value={data.h1Highlight ?? ""}
-          onChange={(e) => onChange({ ...data, h1Highlight: e.target.value })}
-          placeholder="Highlighted portion of heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.h1Highlight ?? ""}
+          onChange={(html) => onChange({ ...data, h1Highlight: html })}
         />
       </div>
       <div>
         <Label>Subtitle</Label>
-        <Textarea
-          value={data.subtitle}
-          onChange={(e) => onChange({ ...data, subtitle: e.target.value })}
-          placeholder="Subtitle text"
+        <RichTextEditor
+          variant="full"
+          content={data.subtitle}
+          onChange={(html) => onChange({ ...data, subtitle: html })}
         />
       </div>
       <div>
@@ -90,10 +90,10 @@ export default function HeroEditor({ data, onChange }: HeroEditorProps) {
           label="CTA"
           renderItem={(item, _index, update) => (
             <div className="space-y-2">
-              <Input
-                value={item.label}
-                onChange={(e) => update({ ...item, label: e.target.value })}
-                placeholder="Button label"
+              <RichTextEditor
+                variant="compact"
+                content={item.label}
+                onChange={(html) => update({ ...item, label: html })}
               />
               <Input
                 value={item.href}

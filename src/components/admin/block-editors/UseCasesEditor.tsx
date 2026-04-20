@@ -1,10 +1,9 @@
 "use client";
 
 import type { UseCasesData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface UseCasesEditorProps {
   data: UseCasesData;
@@ -16,18 +15,18 @@ export default function UseCasesEditor({ data, onChange }: UseCasesEditorProps) 
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
         <Label>Description</Label>
-        <Textarea
-          value={data.description ?? ""}
-          onChange={(e) => onChange({ ...data, description: e.target.value })}
-          placeholder="Section description"
+        <RichTextEditor
+          variant="full"
+          content={data.description ?? ""}
+          onChange={(html) => onChange({ ...data, description: html })}
         />
       </div>
       <div>
@@ -38,10 +37,10 @@ export default function UseCasesEditor({ data, onChange }: UseCasesEditorProps) 
           createItem={() => ""}
           label="Use Case"
           renderItem={(item, _index, update) => (
-            <Input
-              value={item}
-              onChange={(e) => update(e.target.value)}
-              placeholder="Use case text"
+            <RichTextEditor
+              variant="full"
+              content={item}
+              onChange={(html) => update(html)}
             />
           )}
         />

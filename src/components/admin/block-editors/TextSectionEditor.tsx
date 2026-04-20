@@ -1,7 +1,6 @@
 "use client";
 
 import type { TextSectionData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ImageUpload from "@/components/admin/ImageUpload";
 import {
@@ -23,10 +22,10 @@ export default function TextSectionEditor({ data, onChange }: TextSectionEditorP
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>

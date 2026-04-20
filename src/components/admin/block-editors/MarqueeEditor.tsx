@@ -1,9 +1,9 @@
 "use client";
 
 import type { MarqueeData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface MarqueeEditorProps {
   data: MarqueeData;
@@ -20,10 +20,10 @@ export default function MarqueeEditor({ data, onChange }: MarqueeEditorProps) {
         createItem={() => ""}
         label="Message"
         renderItem={(item, _index, update) => (
-          <Input
-            value={item}
-            onChange={(e) => update(e.target.value)}
-            placeholder="Marquee message"
+          <RichTextEditor
+            variant="compact"
+            content={item}
+            onChange={(html) => update(html)}
           />
         )}
       />

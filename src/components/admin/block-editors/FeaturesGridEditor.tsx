@@ -1,8 +1,6 @@
 "use client";
 
 import type { FeaturesGridData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -13,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { getAvailableIconNames } from "@/lib/admin/icon-map";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface FeaturesGridEditorProps {
   data: FeaturesGridData;
@@ -24,10 +23,10 @@ export default function FeaturesGridEditor({ data, onChange }: FeaturesGridEdito
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
@@ -54,15 +53,15 @@ export default function FeaturesGridEditor({ data, onChange }: FeaturesGridEdito
                   ))}
                 </SelectContent>
               </Select>
-              <Input
-                value={item.title}
-                onChange={(e) => update({ ...item, title: e.target.value })}
-                placeholder="Feature title"
+              <RichTextEditor
+                variant="compact"
+                content={item.title}
+                onChange={(html) => update({ ...item, title: html })}
               />
-              <Textarea
-                value={item.description}
-                onChange={(e) => update({ ...item, description: e.target.value })}
-                placeholder="Feature description"
+              <RichTextEditor
+                variant="full"
+                content={item.description}
+                onChange={(html) => update({ ...item, description: html })}
               />
             </div>
           )}

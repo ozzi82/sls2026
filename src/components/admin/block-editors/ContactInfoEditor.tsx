@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { getAvailableIconNames } from "@/lib/admin/icon-map";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface ContactInfoEditorProps {
   data: ContactInfoData;
@@ -23,10 +24,10 @@ export default function ContactInfoEditor({ data, onChange }: ContactInfoEditorP
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading ?? ""}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading ?? ""}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
@@ -53,30 +54,30 @@ export default function ContactInfoEditor({ data, onChange }: ContactInfoEditorP
                   ))}
                 </SelectContent>
               </Select>
-              <Input
-                value={item.title}
-                onChange={(e) => update({ ...item, title: e.target.value })}
-                placeholder="Title"
+              <RichTextEditor
+                variant="compact"
+                content={item.title}
+                onChange={(html) => update({ ...item, title: html })}
               />
               <Input
                 value={item.value}
                 onChange={(e) => update({ ...item, value: e.target.value })}
                 placeholder="Value"
               />
-              <Input
-                value={item.note ?? ""}
-                onChange={(e) => update({ ...item, note: e.target.value })}
-                placeholder="Note"
+              <RichTextEditor
+                variant="compact"
+                content={item.note ?? ""}
+                onChange={(html) => update({ ...item, note: html })}
               />
               <Input
                 value={item.href ?? ""}
                 onChange={(e) => update({ ...item, href: e.target.value })}
                 placeholder="Link href"
               />
-              <Input
-                value={item.description ?? ""}
-                onChange={(e) => update({ ...item, description: e.target.value })}
-                placeholder="Description"
+              <RichTextEditor
+                variant="full"
+                content={item.description ?? ""}
+                onChange={(html) => update({ ...item, description: html })}
               />
             </div>
           )}

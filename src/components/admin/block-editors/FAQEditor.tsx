@@ -1,10 +1,9 @@
 "use client";
 
 import type { FAQData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface FAQEditorProps {
   data: FAQData;
@@ -16,10 +15,10 @@ export default function FAQEditor({ data, onChange }: FAQEditorProps) {
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="FAQ section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
@@ -31,15 +30,15 @@ export default function FAQEditor({ data, onChange }: FAQEditorProps) {
           label="Question"
           renderItem={(item, _index, update) => (
             <div className="space-y-2">
-              <Input
-                value={item.question}
-                onChange={(e) => update({ ...item, question: e.target.value })}
-                placeholder="Question"
+              <RichTextEditor
+                variant="compact"
+                content={item.question}
+                onChange={(html) => update({ ...item, question: html })}
               />
-              <Textarea
-                value={item.answer}
-                onChange={(e) => update({ ...item, answer: e.target.value })}
-                placeholder="Answer"
+              <RichTextEditor
+                variant="full"
+                content={item.answer}
+                onChange={(html) => update({ ...item, answer: html })}
               />
             </div>
           )}

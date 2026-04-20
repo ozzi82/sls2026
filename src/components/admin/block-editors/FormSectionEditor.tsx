@@ -2,7 +2,6 @@
 
 import type { FormSectionData } from "@/lib/admin/page-config-types";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -12,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface FormSectionEditorProps {
   data: FormSectionData;
@@ -29,18 +29,18 @@ export default function FormSectionEditor({ data, onChange }: FormSectionEditorP
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Form heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>
         <Label>Description</Label>
-        <Textarea
-          value={data.description ?? ""}
-          onChange={(e) => onChange({ ...data, description: e.target.value })}
-          placeholder="Form description"
+        <RichTextEditor
+          variant="full"
+          content={data.description ?? ""}
+          onChange={(html) => onChange({ ...data, description: html })}
         />
       </div>
       <div>
@@ -96,10 +96,10 @@ export default function FormSectionEditor({ data, onChange }: FormSectionEditorP
             createItem={() => ""}
             label="Notice"
             renderItem={(item, _index, update) => (
-              <Input
-                value={item}
-                onChange={(e) => update(e.target.value)}
-                placeholder="Notice text"
+              <RichTextEditor
+                variant="full"
+                content={item}
+                onChange={(html) => update(html)}
               />
             )}
           />
@@ -107,10 +107,10 @@ export default function FormSectionEditor({ data, onChange }: FormSectionEditorP
 
         <div>
           <Label>CTA Text</Label>
-          <Input
-            value={sidebar.ctaText ?? ""}
-            onChange={(e) => updateSidebar({ ctaText: e.target.value })}
-            placeholder="Sidebar CTA text"
+          <RichTextEditor
+            variant="compact"
+            content={sidebar.ctaText ?? ""}
+            onChange={(html) => updateSidebar({ ctaText: html })}
           />
         </div>
       </div>

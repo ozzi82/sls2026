@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { X } from "lucide-react";
+import RichTextEditor from "../RichTextEditor";
 
 interface RelatedPagesEditorProps {
   data: RelatedPagesData;
@@ -31,10 +32,10 @@ export default function RelatedPagesEditor({ data, onChange }: RelatedPagesEdito
     <div className="space-y-4">
       <div>
         <Label>Heading</Label>
-        <Input
-          value={data.heading}
-          onChange={(e) => onChange({ ...data, heading: e.target.value })}
-          placeholder="Section heading"
+        <RichTextEditor
+          variant="compact"
+          content={data.heading}
+          onChange={(html) => onChange({ ...data, heading: html })}
         />
       </div>
       <div>

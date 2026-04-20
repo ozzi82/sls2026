@@ -1,7 +1,6 @@
 "use client";
 
 import type { StatsStripData } from "@/lib/admin/page-config-types";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -12,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { getAvailableIconNames } from "@/lib/admin/icon-map";
 import ListEditor from "./ListEditor";
+import RichTextEditor from "../RichTextEditor";
 
 interface StatsStripEditorProps {
   data: StatsStripData;
@@ -44,15 +44,15 @@ export default function StatsStripEditor({ data, onChange }: StatsStripEditorPro
                 ))}
               </SelectContent>
             </Select>
-            <Input
-              value={item.label}
-              onChange={(e) => update({ ...item, label: e.target.value })}
-              placeholder="Label"
+            <RichTextEditor
+              variant="compact"
+              content={item.label}
+              onChange={(html) => update({ ...item, label: html })}
             />
-            <Input
-              value={item.sublabel ?? ""}
-              onChange={(e) => update({ ...item, sublabel: e.target.value })}
-              placeholder="Sublabel"
+            <RichTextEditor
+              variant="compact"
+              content={item.sublabel ?? ""}
+              onChange={(html) => update({ ...item, sublabel: html })}
             />
           </div>
         )}
