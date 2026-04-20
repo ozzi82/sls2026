@@ -57,7 +57,13 @@ const editorMap: Record<BlockType, React.ComponentType<{ data: any; onChange: (d
 export default function BlockCard({ block, onChange, editLocale }: BlockCardProps) {
   const [expanded, setExpanded] = useState(false);
   const Editor = editorMap[block.type];
-  const deData = (block.data as any).de || {};
+  // For DE mode: use the de data if it exists and has content, otherwise fall back to English data
+  // (so editors always have properly-shaped data and don't crash on missing fields)
+  const rawDe = (block.data as any).de;
+  const hasDeContent = rawDe && typeof rawDe === "object" && Object.keys(rawDe).length > 0;
+  const deData = hasDeContent ? rawDe : Object.fromEntries(
+    Object.entries(block.data as any).filter(([k]) => k !== "de")
+  );
 
   return (
     <div className={`border rounded-lg ${block.visible ? "border-gray-200 bg-white" : "border-gray-100 bg-gray-50 opacity-75"}`}>
@@ -97,9 +103,9 @@ export default function BlockCard({ block, onChange, editLocale }: BlockCardProp
               >
                 Copy from English
               </button>
-              {!deData || Object.keys(deData).length === 0 ? (
-                <span className="text-xs text-gray-400 ml-2">No German content yet</span>
-              ) : null}
+              {!hasDeContent && (
+                <span className="text-xs text-gray-400 ml-2">No German content yet — showing English as starting point</span>
+              )}
             </div>
           )}
           <Editor
