@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ExternalLink, Save, ChevronDown, ChevronUp } from "lucide-react";
 import BlockCard from "./BlockCard";
+import LanguageTabs from "./LanguageTabs";
 import { PageConfig, Block } from "@/lib/admin/page-config-types";
 
 interface BlockEditorProps {
@@ -24,11 +25,48 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
   const [seoOpen, setSeoOpen] = useState(false);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [editLocale, setEditLocale] = useState<"en" | "de">("en");
 
   function updateSeo(key: string, value: string | string[] | undefined) {
     setConfig((prev) => ({
       ...prev,
       seo: { ...prev.seo, [key]: value },
+    }));
+  }
+
+  function getSeoDeValue(key: string): string {
+    const de = (config.seo as unknown as Record<string, unknown>).de as Record<string, unknown> | undefined;
+    return (de?.[key] as string) || "";
+  }
+
+  function updateSeoDe(key: string, value: string | undefined) {
+    setConfig((prev) => {
+      const currentDe = ((prev.seo as unknown as Record<string, unknown>).de || {}) as Record<string, string | undefined>;
+      const newDe = { ...currentDe, [key]: value };
+      Object.keys(newDe).forEach((k) => {
+        if (!newDe[k]) delete newDe[k];
+      });
+      return {
+        ...prev,
+        seo: { ...prev.seo, de: Object.keys(newDe).length > 0 ? newDe : undefined } as typeof prev.seo,
+      };
+    });
+  }
+
+  function copySeoEnToDe() {
+    setConfig((prev) => ({
+      ...prev,
+      seo: {
+        ...prev.seo,
+        de: {
+          title: prev.seo.title,
+          metaDescription: prev.seo.metaDescription,
+          canonical: prev.seo.canonical || undefined,
+          ogTitle: prev.seo.ogTitle || undefined,
+          ogDescription: prev.seo.ogDescription || undefined,
+          ogImage: prev.seo.ogImage || undefined,
+        },
+      } as typeof prev.seo,
     }));
   }
 
@@ -60,6 +98,7 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
   }
 
   const previewUrl = config.slug.startsWith("/") ? config.slug : `/${config.slug}`;
+  const fullPreviewUrl = editLocale === "de" ? `/de${previewUrl}` : previewUrl;
 
   return (
     <div className="max-w-4xl">
@@ -72,12 +111,12 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
           </Button>
           <div>
             <h2 className="text-2xl font-bold text-gray-900">{config.label}</h2>
-            <p className="text-sm text-gray-500 font-mono">{previewUrl}</p>
+            <p className="text-sm text-gray-500 font-mono">{fullPreviewUrl}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <a
-            href={previewUrl}
+            href={fullPreviewUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1"
@@ -98,6 +137,9 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
         </div>
       )}
 
+      {/* Language Tabs */}
+      <LanguageTabs activeLocale={editLocale} onChange={setEditLocale} />
+
       {/* SEO Section */}
       <Card className="mb-6">
         <CardHeader className="cursor-pointer" onClick={() => setSeoOpen(!seoOpen)}>
@@ -108,29 +150,62 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
         </CardHeader>
         {seoOpen && (
           <CardContent className="space-y-4">
+            {editLocale === "de" && (
+              <button
+                type="button"
+                onClick={copySeoEnToDe}
+                className="text-xs text-blue-600 hover:text-blue-800 border border-blue-200 rounded px-2 py-1"
+              >
+                Copy from English
+              </button>
+            )}
             <div className="space-y-2">
               <Label>Page Title</Label>
-              <Input value={config.seo.title} onChange={(e) => updateSeo("title", e.target.value)} />
+              {editLocale === "en" ? (
+                <Input value={config.seo.title} onChange={(e) => updateSeo("title", e.target.value)} />
+              ) : (
+                <Input value={getSeoDeValue("title")} onChange={(e) => updateSeoDe("title", e.target.value || undefined)} placeholder={config.seo.title} />
+              )}
             </div>
             <div className="space-y-2">
               <Label>Meta Description</Label>
-              <Textarea value={config.seo.metaDescription} onChange={(e) => updateSeo("metaDescription", e.target.value)} rows={2} />
+              {editLocale === "en" ? (
+                <Textarea value={config.seo.metaDescription} onChange={(e) => updateSeo("metaDescription", e.target.value)} rows={2} />
+              ) : (
+                <Textarea value={getSeoDeValue("metaDescription")} onChange={(e) => updateSeoDe("metaDescription", e.target.value || undefined)} rows={2} placeholder={config.seo.metaDescription} />
+              )}
             </div>
             <div className="space-y-2">
               <Label>Canonical URL</Label>
-              <Input value={config.seo.canonical || ""} onChange={(e) => updateSeo("canonical", e.target.value || undefined)} />
+              {editLocale === "en" ? (
+                <Input value={config.seo.canonical || ""} onChange={(e) => updateSeo("canonical", e.target.value || undefined)} />
+              ) : (
+                <Input value={getSeoDeValue("canonical")} onChange={(e) => updateSeoDe("canonical", e.target.value || undefined)} placeholder={config.seo.canonical || ""} />
+              )}
             </div>
             <div className="space-y-2">
               <Label>OG Title</Label>
-              <Input value={config.seo.ogTitle || ""} onChange={(e) => updateSeo("ogTitle", e.target.value || undefined)} />
+              {editLocale === "en" ? (
+                <Input value={config.seo.ogTitle || ""} onChange={(e) => updateSeo("ogTitle", e.target.value || undefined)} />
+              ) : (
+                <Input value={getSeoDeValue("ogTitle")} onChange={(e) => updateSeoDe("ogTitle", e.target.value || undefined)} placeholder={config.seo.ogTitle || ""} />
+              )}
             </div>
             <div className="space-y-2">
               <Label>OG Description</Label>
-              <Textarea value={config.seo.ogDescription || ""} onChange={(e) => updateSeo("ogDescription", e.target.value || undefined)} rows={2} />
+              {editLocale === "en" ? (
+                <Textarea value={config.seo.ogDescription || ""} onChange={(e) => updateSeo("ogDescription", e.target.value || undefined)} rows={2} />
+              ) : (
+                <Textarea value={getSeoDeValue("ogDescription")} onChange={(e) => updateSeoDe("ogDescription", e.target.value || undefined)} rows={2} placeholder={config.seo.ogDescription || ""} />
+              )}
             </div>
             <div className="space-y-2">
               <Label>OG Image URL</Label>
-              <Input value={config.seo.ogImage || ""} onChange={(e) => updateSeo("ogImage", e.target.value || undefined)} />
+              {editLocale === "en" ? (
+                <Input value={config.seo.ogImage || ""} onChange={(e) => updateSeo("ogImage", e.target.value || undefined)} />
+              ) : (
+                <Input value={getSeoDeValue("ogImage")} onChange={(e) => updateSeoDe("ogImage", e.target.value || undefined)} placeholder={config.seo.ogImage || ""} />
+              )}
             </div>
           </CardContent>
         )}
@@ -144,6 +219,7 @@ export default function BlockEditor({ config: initial, fileSlug, apiBase, backHr
             key={block.id}
             block={block}
             onChange={(updated) => updateBlock(index, updated)}
+            editLocale={editLocale}
           />
         ))}
       </div>

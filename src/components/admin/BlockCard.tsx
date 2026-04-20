@@ -28,6 +28,7 @@ import {
 interface BlockCardProps {
   block: Block;
   onChange: (block: Block) => void;
+  editLocale: "en" | "de";
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -53,9 +54,10 @@ const editorMap: Record<BlockType, React.ComponentType<{ data: any; onChange: (d
   guides_list: GuidesListEditor,
 };
 
-export default function BlockCard({ block, onChange }: BlockCardProps) {
+export default function BlockCard({ block, onChange, editLocale }: BlockCardProps) {
   const [expanded, setExpanded] = useState(false);
   const Editor = editorMap[block.type];
+  const deData = (block.data as any).de || {};
 
   return (
     <div className={`border rounded-lg ${block.visible ? "border-gray-200 bg-white" : "border-gray-100 bg-gray-50 opacity-75"}`}>
@@ -81,9 +83,34 @@ export default function BlockCard({ block, onChange }: BlockCardProps) {
       </div>
       {expanded && Editor && (
         <div className="px-4 pb-4 border-t border-gray-100 pt-4">
+          {editLocale === "de" && (
+            <div className="mb-3">
+              <button
+                type="button"
+                onClick={() => {
+                  const enData = Object.fromEntries(
+                    Object.entries(block.data as any).filter(([k]) => k !== "de")
+                  );
+                  onChange({ ...block, data: { ...block.data, de: { ...enData } } as any });
+                }}
+                className="text-xs text-blue-600 hover:text-blue-800 border border-blue-200 rounded px-2 py-1"
+              >
+                Copy from English
+              </button>
+              {!deData || Object.keys(deData).length === 0 ? (
+                <span className="text-xs text-gray-400 ml-2">No German content yet</span>
+              ) : null}
+            </div>
+          )}
           <Editor
-            data={block.data}
-            onChange={(data) => onChange({ ...block, data })}
+            data={editLocale === "de" ? deData : block.data}
+            onChange={(newData) => {
+              if (editLocale === "de") {
+                onChange({ ...block, data: { ...block.data, de: newData } as any });
+              } else {
+                onChange({ ...block, data: newData });
+              }
+            }}
           />
         </div>
       )}
