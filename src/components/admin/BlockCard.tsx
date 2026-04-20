@@ -84,11 +84,38 @@ export default function BlockCard({ block, onChange, editLocale }: BlockCardProp
           </button>
           <span className="font-medium text-sm text-gray-900">{block.label}</span>
           <span className="text-xs text-gray-400 font-mono">{block.type}</span>
+          {block.hideOnMobile && (
+            <span className="text-[10px] bg-orange-100 text-orange-600 px-1.5 py-0.5 rounded">Hidden on mobile</span>
+          )}
+          {block.hideOnDesktop && (
+            <span className="text-[10px] bg-purple-100 text-purple-600 px-1.5 py-0.5 rounded">Hidden on desktop</span>
+          )}
         </div>
         {expanded ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
       </div>
       {expanded && Editor && (
         <div className="px-4 pb-4 border-t border-gray-100 pt-4">
+          {/* Visibility options */}
+          <div className="flex items-center gap-4 mb-3 pb-3 border-b border-gray-100">
+            <label className="flex items-center gap-2 text-xs text-gray-500">
+              <input
+                type="checkbox"
+                checked={block.hideOnMobile || false}
+                onChange={(e) => onChange({ ...block, hideOnMobile: e.target.checked || undefined })}
+                className="rounded border-gray-300"
+              />
+              Hide on mobile
+            </label>
+            <label className="flex items-center gap-2 text-xs text-gray-500">
+              <input
+                type="checkbox"
+                checked={block.hideOnDesktop || false}
+                onChange={(e) => onChange({ ...block, hideOnDesktop: e.target.checked || undefined })}
+                className="rounded border-gray-300"
+              />
+              Hide on desktop
+            </label>
+          </div>
           {editLocale === "de" && (
             <div className="mb-3">
               <button

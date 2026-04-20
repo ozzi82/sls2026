@@ -172,6 +172,8 @@ export interface Block<T extends BlockType = BlockType> {
   type: T;
   label: string;
   visible: boolean;
+  hideOnMobile?: boolean;
+  hideOnDesktop?: boolean;
   data: BlockDataMap[T];
 }
 
