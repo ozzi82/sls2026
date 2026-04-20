@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   async rewrites() {
-    return [
+    const rules = [
       // Products hub
       { source: "/wholesale-sign-products", destination: "/products" },
       // Channel letters hub
@@ -34,6 +34,14 @@ const nextConfig = {
       { source: "/seg-light-boxes", destination: "/products/seg-light-boxes" },
       { source: "/custom-sign-fabrication", destination: "/products/custom-fabrication" },
     ];
+
+    // Duplicate every rewrite with /de/ prefix for German locale
+    const deRules = rules.map((r) => ({
+      source: `/de${r.source}`,
+      destination: `/de${r.destination}`,
+    }));
+
+    return [...rules, ...deRules];
   },
 };
 
