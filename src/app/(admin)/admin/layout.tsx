@@ -20,6 +20,7 @@ import {
   ArrowRightLeft,
   Download,
   Palette,
+  Mail,
 } from "lucide-react";
 
 type NavItem = {
@@ -50,6 +51,7 @@ const navSections: NavSection[] = [
       { href: "/admin/content/static-pages", label: "Static Pages", icon: File },
       { href: "/admin/pages/new", label: "New Landing Page", icon: FilePlus },
       { href: "/admin/media", label: "Media Library", icon: Image },
+      { href: "/admin/leads", label: "Leads", icon: Mail },
     ],
   },
   {
