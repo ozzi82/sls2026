@@ -1,7 +1,8 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { useState, useCallback } from "react"
+import { Send, CheckCircle, Loader2 } from "lucide-react"
+import Turnstile from "@/components/Turnstile"
 
 const projectTypes = [
   "Channel Letters — Face Lit",
@@ -16,22 +17,70 @@ const projectTypes = [
   "SEG Light Boxes",
   "Custom Fabrication",
   "Other",
-];
+]
 
 export default function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState("")
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleToken = useCallback((token: string) => {
+    setTurnstileToken(token)
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setError("")
+
+    const form = e.currentTarget
+    const htmlFormData = new FormData(form)
 
     // Honeypot check
-    const form = e.currentTarget;
-    const honeypot = form.querySelector<HTMLInputElement>('[name="website"]');
-    if (honeypot && honeypot.value) return;
+    if (htmlFormData.get("_hp")) return
 
-    // Client-side only for now — Ozan will connect HubSpot
-    setSubmitted(true);
-  };
+    setSubmitting(true)
+
+    try {
+      const submitData = new FormData()
+      submitData.set("formType", "quote")
+      submitData.set("name", htmlFormData.get("name") as string)
+      submitData.set("email", htmlFormData.get("email") as string)
+      submitData.set("company", htmlFormData.get("company") as string || "")
+      submitData.set("phone", htmlFormData.get("phone") as string || "")
+      submitData.set("message", htmlFormData.get("description") as string || "")
+      submitData.set("projectType", htmlFormData.get("projectType") as string || "")
+      submitData.set("dimensions", htmlFormData.get("dimensions") as string || "")
+      submitData.set("quantity", htmlFormData.get("quantity") as string || "")
+      submitData.set("deadline", htmlFormData.get("deadline") as string || "")
+      submitData.set("notes", "")
+      submitData.set("turnstileToken", turnstileToken)
+
+      // Attach files
+      const fileInput = form.querySelector<HTMLInputElement>('input[name="files"]')
+      if (fileInput?.files) {
+        for (const file of Array.from(fileInput.files)) {
+          submitData.append("files", file)
+        }
+      }
+
+      const res = await fetch("/api/forms/submit", {
+        method: "POST",
+        body: submitData,
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || "Submission failed")
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   if (submitted) {
     return (
@@ -45,15 +94,21 @@ export default function QuoteForm() {
           detailed wholesale pricing within 48 hours.
         </p>
       </div>
-    );
+    )
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Honeypot */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input type="text" name="_hp" tabIndex={-1} autoComplete="off" />
       </div>
+
+      {error && (
+        <div className="bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-red-400 text-sm">
+          {error}
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
@@ -196,14 +251,16 @@ export default function QuoteForm() {
           className="w-full bg-bg-card border border-white/[0.06] rounded-lg px-4 py-3 text-white/60 file:mr-4 file:py-1 file:px-4 file:rounded file:border-0 file:bg-brand-gold/20 file:text-brand-gold file:font-heading file:text-xs file:uppercase file:tracking-wider file:cursor-pointer hover:file:bg-brand-gold/30 transition-colors"
         />
         <p className="text-white/30 text-xs mt-1">
-          PDF, AI, EPS, SVG, JPG, PNG, DWG accepted
+          PDF, AI, EPS, SVG, JPG, PNG, DWG accepted · Max 10 MB per file · Up to 3 files
         </p>
       </div>
 
+      <Turnstile onToken={handleToken} />
+
       <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-        <button type="submit" className="btn-primary w-full sm:w-auto gap-2">
-          <Send className="w-4 h-4" />
-          Request Wholesale Quote
+        <button type="submit" disabled={submitting} className="btn-primary w-full sm:w-auto gap-2">
+          {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+          {submitting ? "Submitting..." : "Request Wholesale Quote"}
         </button>
         <div className="flex items-center gap-2 text-white/40 text-xs">
           <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -215,5 +272,5 @@ export default function QuoteForm() {
         Trade accounts only. Your information is kept confidential and used exclusively to prepare your wholesale quote.
       </p>
     </form>
-  );
+  )
 }
