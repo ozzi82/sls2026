@@ -8,6 +8,7 @@ const ADMIN_ONLY_PATTERNS = [
   /^\/api\/admin\/users(?!\/check)/,
   /^\/api\/admin\/settings/,
   /^\/api\/admin\/redirects/,
+  /^\/api\/admin\/leads/,
 ];
 
 let redirectCache: { from: string; to: string; permanent: boolean }[] | null = null;
