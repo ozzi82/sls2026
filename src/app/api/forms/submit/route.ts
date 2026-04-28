@@ -47,23 +47,29 @@ export async function POST(request: Request) {
     // Parse form data (multipart for file uploads)
     const contentType = request.headers.get("content-type") || ""
     let fields: Record<string, string> = {}
-    let rawFiles: Array<{ name: string; buffer: Buffer; size: number }> = []
+    const rawFiles: Array<{ name: string; buffer: Buffer; size: number }> = []
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await request.formData()
-      for (const [key, value] of formData.entries()) {
+      const filePromises: Promise<void>[] = []
+      formData.forEach((value, key) => {
         if (value instanceof File) {
           if (rawFiles.length < MAX_FILES && value.size <= MAX_FILE_SIZE && value.size > 0) {
             const ext = value.name.split(".").pop()?.toLowerCase() || ""
             if (ALLOWED_EXTENSIONS.has(ext)) {
-              const buffer = Buffer.from(await value.arrayBuffer())
-              rawFiles.push({ name: value.name, buffer, size: value.size })
+              const file = value
+              filePromises.push(
+                file.arrayBuffer().then((ab) => {
+                  rawFiles.push({ name: file.name, buffer: Buffer.from(ab), size: file.size })
+                })
+              )
             }
           }
         } else {
           fields[key] = value.toString()
         }
-      }
+      })
+      await Promise.all(filePromises)
     } else {
       fields = await request.json()
     }
