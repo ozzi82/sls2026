@@ -52,8 +52,13 @@ export const cookieConsentSettingsSchema = z.object({
   categories: z.array(consentCategorySchema).min(1),
 })
 
+export const appearanceSettingsSchema = z.object({
+  theme: z.enum(["gold", "blue", "red", "emerald", "bold"]),
+})
+
 export const siteSettingsSchema = z.object({
   google: googleSettingsSchema,
   openreplay: openreplaySettingsSchema,
   cookieConsent: cookieConsentSettingsSchema,
+  appearance: appearanceSettingsSchema,
 })

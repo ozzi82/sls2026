@@ -31,6 +31,7 @@ export function useSettingsSection<K extends keyof SiteSettings>(sectionKey: K) 
         google: fullSettings.google,
         openreplay: fullSettings.openreplay,
         cookieConsent: fullSettings.cookieConsent,
+        appearance: fullSettings.appearance ?? { theme: "blue" },
         [sectionKey]: formData,
       }
       const res = await fetch("/api/admin/settings", {

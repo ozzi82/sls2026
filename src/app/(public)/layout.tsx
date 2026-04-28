@@ -16,11 +16,13 @@ export default async function PublicLayout({
   const consentConfig = getPublicConsentConfig(settings)
   const locale = await getLocale()
 
+  const theme = settings.appearance?.theme ?? "blue"
+
   return (
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem('sunlite-theme');if(t)document.documentElement.classList.add('theme-'+t)}catch(e){}})()`,
+          __html: `document.documentElement.classList.add('theme-${theme}');`,
         }}
       />
       <Header locale={locale} />

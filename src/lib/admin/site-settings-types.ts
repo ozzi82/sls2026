@@ -47,10 +47,15 @@ export interface CookieConsentSettings {
   categories: ConsentCategory[]
 }
 
+export interface AppearanceSettings {
+  theme: "gold" | "blue" | "red" | "emerald" | "bold"
+}
+
 export interface SiteSettings {
   google: GoogleSettings
   openreplay: OpenReplaySettings
   cookieConsent: CookieConsentSettings
+  appearance: AppearanceSettings
 }
 
 export interface EditLogEntry {

@@ -11,10 +11,12 @@ export async function loadSiteSettings(): Promise<SiteSettings> {
   if (settingsCache && Date.now() - settingsCache.ts < SETTINGS_CACHE_TTL) {
     return settingsCache.data
   }
-  const data = await readJson<SiteSettings>("settings/site-settings.json")
+  const data = await readJson<Partial<SiteSettings>>("settings/site-settings.json")
   if (data) {
-    settingsCache = { data, ts: Date.now() }
-    return data
+    const defaults = getDefaultSettings()
+    const merged: SiteSettings = { ...defaults, ...data, appearance: data.appearance ?? defaults.appearance }
+    settingsCache = { data: merged, ts: Date.now() }
+    return merged
   }
   return getDefaultSettings()
 }
@@ -55,6 +57,9 @@ function getDefaultSettings(): SiteSettings {
       serverUrl: "",
       projectKey: "",
       ingestPoint: "",
+    },
+    appearance: {
+      theme: "blue",
     },
     cookieConsent: {
       enabled: false,

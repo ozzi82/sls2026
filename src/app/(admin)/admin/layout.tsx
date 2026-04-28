@@ -19,6 +19,7 @@ import {
   Image,
   ArrowRightLeft,
   Download,
+  Palette,
 } from "lucide-react";
 
 type NavItem = {
@@ -57,6 +58,7 @@ const navSections: NavSection[] = [
     items: [
       { href: "/admin/integrations/google", label: "Google Analytics", icon: BarChart3 },
       { href: "/admin/integrations/cookie-consent", label: "Cookie Consent", icon: Cookie },
+      { href: "/admin/integrations/appearance", label: "Appearance", icon: Palette },
     ],
   },
   {
