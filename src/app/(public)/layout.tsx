@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import MobileCTABar from "@/components/MobileCTABar";
 import { loadSiteSettings, getPublicConsentConfig } from "@/lib/admin/site-settings"
 import CookieConsent from "@/components/CookieConsent"
@@ -28,7 +27,6 @@ export default async function PublicLayout({
       <main>{children}</main>
       <Footer locale={locale} />
       <MobileCTABar locale={locale} />
-      <ThemeSwitcher />
 
       {/* Consent config inlined for client components */}
       <script

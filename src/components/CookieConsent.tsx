@@ -104,7 +104,7 @@ export default function CookieConsent() {
       {hasConsentAlready && !showPreferences && (
         <button
           onClick={handleOpenSettings}
-          className="fixed bottom-4 left-4 z-[9999] rounded-full px-4 py-2 text-xs font-medium shadow-md backdrop-blur-sm transition-opacity hover:opacity-90"
+          className="fixed bottom-4 left-4 z-[9999] rounded-full px-4 py-2 text-xs font-medium shadow-md backdrop-blur-sm transition-opacity hover:opacity-90 hidden md:inline-flex"
           style={{
             background: colors.manageBg,
             color: colors.manageText,
