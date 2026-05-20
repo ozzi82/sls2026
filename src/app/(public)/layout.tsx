@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCTABar from "@/components/MobileCTABar";
 import { loadSiteSettings, getPublicConsentConfig } from "@/lib/admin/site-settings"
+
 import CookieConsent from "@/components/CookieConsent"
 import TrackingScripts from "@/components/TrackingScripts"
 import OpenReplayTracker from "@/components/OpenReplayTracker"
@@ -16,15 +17,8 @@ export default async function PublicLayout({
   const consentConfig = getPublicConsentConfig(settings)
   const locale = await getLocale()
 
-  const theme = settings.appearance?.theme ?? "blue"
-
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.classList.add('theme-${theme}');`,
-        }}
-      />
       <Header locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />

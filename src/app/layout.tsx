@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Instrument_Serif, Outfit, DM_Sans, Space_Grotesk, Inter, Bebas_Neue, Source_Sans_3 } from "next/font/google";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getAlternates } from "@/lib/i18n/locale";
+import { loadSiteSettings } from "@/lib/admin/site-settings";
 import "./globals.css";
+
+export const dynamic = "force-dynamic";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -134,8 +137,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const settings = await loadSiteSettings();
+  const theme = settings.appearance?.theme ?? "blue";
   return (
-    <html lang={locale} className={`${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable} ${bebasNeue.variable} ${sourceSans.variable}`}>
+    <html lang={locale} className={`theme-${theme} ${instrumentSerif.variable} ${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} ${inter.variable} ${bebasNeue.variable} ${sourceSans.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
